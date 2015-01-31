@@ -1,5 +1,0 @@
-{{{
-  "category_order": [
-    "Overview"
-  ] 
-}}}
