@@ -2,6 +2,7 @@
   "category_order": [
     "Overview",
     "Account",
-    "Domain Name"
+    "Domain Name",
+    "SMTP Relay"
   ] 
 }}}
