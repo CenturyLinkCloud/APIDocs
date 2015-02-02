@@ -15,4 +15,4 @@
 |--------------|--------|----------------------------------------------------------------------------------|------|
 | ParentAlias  | String | Account alias of the parent account                                              | Yes  |
 | AccountAlias | String | New, four character account alias. If left empty, one is automatically generated | No   |
-| Location     | String | Account alias of the parent account                                              |      |
+| Location     | String | Account alias of the parent account                                              | Yes  |
