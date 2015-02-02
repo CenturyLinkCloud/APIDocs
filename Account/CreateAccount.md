@@ -13,8 +13,13 @@ Create a brand new (sub) account in the CenturyLink Cloud system. Calls to this 
 
 ## URL
 
-    REST: http://...
-    SOAP: http://...
+<div class="kb-api-urls">
+
+REST: http://...
+
+SOAP: http://...
+
+</div>
 
 
 ## Request
