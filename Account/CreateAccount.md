@@ -15,7 +15,7 @@ Create a brand new (sub) account in the CenturyLink Cloud system. Calls to this 
 
 <div class="kb-api-urls">
   <div class="kb-api-urls-inner">
-    <p>REST: <span class="url">https://api.tier3.com/REST/Account/CreateAccount/</span><format> (format =  XML | JSON)</p>
+    <p>REST: <span class="url"><code>https://api.tier3.com/REST/Account/CreateAccount/</code></span><format> (format =  XML | JSON)</p>
     <p>SOAP: http://...</p>
   </div>
 </div>
