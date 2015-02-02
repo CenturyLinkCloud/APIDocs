@@ -1,5 +1,6 @@
 {{{
   "category_order": [
-    "Overview"
+    "Overview",
+    "Account"
   ] 
 }}}
