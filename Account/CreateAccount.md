@@ -9,8 +9,6 @@
   "contentIsHTML": false
 }}}
 
-## CreateAccount
-
 Create a brand new (sub) account in the CenturyLink Cloud system. Calls to this operation must include an authorization cookie acquired from the Logon operation.
 
 ## URL
