@@ -1,6 +1,7 @@
 {{{
   "category_order": [
     "Overview",
-    "Account"
+    "Account",
+    "Domain Name"
   ] 
 }}}
