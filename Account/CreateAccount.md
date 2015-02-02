@@ -34,7 +34,9 @@ Create a brand new (sub) account in the CenturyLink Cloud system. Calls to this 
 ## Examples
 
 <div class="kb-api-examples">
-  <a class="kb-api-example-title">JSON(REST)</a>
-  <a class="kb-api-example-title">XML (REST)</a>
-  <a class="kb-api-example-title">XML (SOAP)</a>
+  <div class="kb-api-examples-header">
+    <a class="kb-api-example-title active">JSON(REST)</a>
+    <a class="kb-api-example-title">XML (REST)</a>
+    <a class="kb-api-example-title">XML (SOAP)</a>
+  </div>
 </div>
