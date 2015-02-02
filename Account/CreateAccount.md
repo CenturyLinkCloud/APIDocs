@@ -13,7 +13,6 @@
 
 Create a brand new (sub) account in the CenturyLink Cloud system. Calls to this operation must include an authorization cookie acquired from the Logon operation.
 
-
 ## URL
 
     REST: http://...
@@ -21,7 +20,6 @@ Create a brand new (sub) account in the CenturyLink Cloud system. Calls to this 
 
 
 ## Request
-
 ### Attributes
 
 | Name         | Type   | Description                                                                      | Req. |
@@ -29,7 +27,6 @@ Create a brand new (sub) account in the CenturyLink Cloud system. Calls to this 
 | ParentAlias  | String | Account alias of the parent account                                              | Yes  |
 | AccountAlias | String | New, four character account alias. If left empty, one is automatically generated | No   |
 | Location     | String | Account alias of the parent account                                              | Yes  |
-
 
 ## Examples
 
