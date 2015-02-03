@@ -9,8 +9,8 @@ Powers on the server (or resumes from a paused state).
 
 ## URL
 
-  REST: https://api.tier3.com/REST/Server/PowerOnServer/&lt;format&gt;
-  SOAP: https://api.tier3.com/SOAP/Server.asmx?op=PowerOnServer
+    REST: https://api.tier3.com/REST/Server/PowerOnServer/&lt;format&gt;
+    SOAP: https://api.tier3.com/SOAP/Server.asmx?op=PowerOnServer
 
 ## Request
 ### Attributes
