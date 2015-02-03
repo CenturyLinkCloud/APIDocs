@@ -257,7 +257,8 @@
     </tr>
   </tbody>
 </table>
-<p>Examples</p>
+
+### Examples
 <pre>{
 
   "Servers": [

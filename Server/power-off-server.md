@@ -98,7 +98,7 @@ Powers off the server.
   </tbody>
 </table>
 
-## Examples
+### Examples
 <h4>JSON</h4>
 <pre>{<br />    "RequestID:1,<br />    "Success":true,<br />    "Message":"Success",<br />    "StatusCode":0<br />}</pre>
 
