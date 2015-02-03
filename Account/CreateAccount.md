@@ -12,9 +12,9 @@ Create a brand new (sub) account in the Tier 3 system. Calls to this operation m
 <div class="kb-api-urls">
   <div class="kb-api-urls-inner">
 
-REST: https://api.tier3.com/REST/Account/CreateAccount/&lt;format&gt; (format = XML | JSON)
+    <p>REST: https://api.tier3.com/REST/Account/CreateAccount/&lt;format&gt; (format = XML | JSON)</p>
 
-SOAP: https://api.tier3.com/SOAP/Account.asmx?op=CreateAccount 
+    <p>SOAP: https://api.tier3.com/SOAP/Account.asmx?op=CreateAccount</p>
 
   </div>
 </div>
