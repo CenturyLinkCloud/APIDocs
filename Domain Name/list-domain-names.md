@@ -14,7 +14,9 @@ This method retrieves the list of Domain Names that your account has registered 
     REST: https://api.tier3.com/REST/Domain/ListDomainNames<format>
 
 ## Request
+
 ### Attributes
+
 <table>
   <tbody>
     <tr>
@@ -38,25 +40,27 @@ This method retrieves the list of Domain Names that your account has registered 
 </table>
 
 ### Examples
-<pre>&lt;ListDomainNamesRequest&gt;
 
-  &lt;Search&gt;.com&lt;/Search&gt;
+#### XML
 
-&lt;/ListDomainNamesRequest&gt;</pre>
-<p>
-  <br /><strong>JSON:</strong>
-</p>
-<pre>{
+    <ListDomainNamesRequest>
 
-  "Search":".com"
+      <Search>.com</Search>
 
-}</pre>
-<p>
-  <br />
-  <br /><strong>Response Attributes:</strong>
-</p>
+    </ListDomainNamesRequest>
+
+#### JSON:
+
+    {
+
+      "Search":".com"
+
+    }
+
+## Response
+### Attributes
 <table>
-    <thead>
+  <thead>
     <tr>
       <td>Name</td>
       <td>Type</td>
@@ -111,70 +115,70 @@ This method retrieves the list of Domain Names that your account has registered 
     </tr>
   </tbody>
 </table>
-<p>
-  <br /><strong>Example Responses:</strong>&nbsp;<strong>XML:</strong>
-</p>
-<pre>&lt;ListDomainNamesResponse Success="true" Message="The domain names were successfuly listed." StatusCode="0"&gt;
 
-  &lt;Domains&gt;
+### Examples
 
-    &lt;DomainName AutoRenew="true" ExpirationDate="2011-05-24T00:00:00" ID="100001" Name="mycompany.com" /&gt;
+#### XML
 
-    &lt;DomainName AutoRenew="false" ExpirationDate="2011-05-24T00:00:00" ID="100001" Name="myotherdomain.com" /&gt;
+    <ListDomainNamesResponse Success="true" Message="The domain names were successfuly listed." StatusCode="0">
 
-  &lt;/Domains&gt;
+      <Domains>
 
-&lt;/ListDomainNamesResponse&gt;</pre>
-<p>
-  <br /><strong>JSON:</strong>
-</p>
-<pre>{
+        <DomainName AutoRenew="true" ExpirationDate="2011-05-24T00:00:00" ID="100001" Name="mycompany.com" />
 
-  "Domains":[
+        <DomainName AutoRenew="false" ExpirationDate="2011-05-24T00:00:00" ID="100001" Name="myotherdomain.com" />
+
+      </Domains>
+
+    </ListDomainNamesResponse>
+
+#### JSON:
 
     {
 
-      "AutoRenew":true,
+      "Domains":[
 
-      "ExpirationDate":"\/Date(1306220400000)\/",
+        {
 
-      "ID":1,
+          "AutoRenew":true,
 
-      "Name":"mycompany.com"
+          "ExpirationDate":"\/Date(1306220400000)\/",
 
-    },
+          "ID":1,
 
-    {
+          "Name":"mycompany.com"
 
-      "AutoRenew":false,
+        },
 
-      "ExpirationDate":"\/Date(1306220400000)\/",
+        {
 
-      "ID":2,
+          "AutoRenew":false,
 
-      "Name":"myotherdomain.com"
+          "ExpirationDate":"\/Date(1306220400000)\/",
+
+          "ID":2,
+
+          "Name":"myotherdomain.com"
+
+        }
+
+      ],
+
+      "Success":true,
+
+      "Message":"The domain names were successfuly listed.",
+
+      "StatusCode":0
 
     }
 
-  ],
-
-  "Success":true,
-
-  "Message":"The domain names were successfuly listed.",
-
-  "StatusCode":0
-
-}</pre>
-<p>
-  <br />
-  <br /><strong>Valid Status Codes returned by the ListDomainNames Method:</strong>
-</p>
+### Status Codes
 <table>
-    <thead>
-  <tr>
-    <th>Status Code</th>
-    <th>Description</th>
-  </tr>
+  <thead>
+    <tr>
+      <th>Status Code</th>
+      <th>Description</th>
+    </tr>
   </thead>
   <tbody>
     <tr>
