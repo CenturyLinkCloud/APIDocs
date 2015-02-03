@@ -5,7 +5,7 @@
     "Authentication",
     "Account",
     "Billing",
-    "Blueprint"
+    "Blueprint",
     "Domain Name",
     "Group",
     "Network",
