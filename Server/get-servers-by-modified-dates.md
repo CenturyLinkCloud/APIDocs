@@ -17,14 +17,14 @@ Gets the list of Servers for a given Hardware Group and only those that have bee
 <table>
   <thead>
     <tr>
-      <td>Name>
-      </td>
-      <td>Type
-      </td>
-      <td>Description
-      </td>
-      <td>Req.
-      </td>
+      <th>Name
+      </th>
+      <th>Type
+      </th>
+      <th>Description
+      </th>
+      <th>Req.
+      </th>
     </tr>
   </thead>
   <tbody>
@@ -79,12 +79,12 @@ Gets the list of Servers for a given Hardware Group and only those that have bee
 <table>
   <thead>
     <tr>
-      <td>Name
-      </td>
-      <td>Type
-      </td>
-      <td>Description
-      </td>
+      <th>Name
+      </th>
+      <th>Type
+      </th>
+      <th>Description
+      </th>
     </tr>
   </thead>
   <tbody>
