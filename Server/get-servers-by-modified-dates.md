@@ -122,13 +122,15 @@ Gets the list of Servers for a given Hardware Group and only those that have bee
 
 ### Status Codes
 <table>
-  <tbody>
+  <thead>
     <tr>
-      <td><strong>Status Code</strong>
-      </td>
-      <td><strong>Description</strong>
-      </td>
+      <th>Status Code
+      </th>
+      <th>Description
+      </th>
     </tr>
+  </thead>
+  <tbody>
     <tr>
       <td>0</td>
       <td>Request was successfully processed</td>
