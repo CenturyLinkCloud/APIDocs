@@ -1,5 +1,5 @@
 {{{
-  "title": "Get Servers By Modified Dates",
+  "title": "GetServersByModifiedDates",
   "date": "6-28-2013",
   "author": "Richard Seroter",
   "attachments": []
@@ -11,7 +11,7 @@ URL
 <pre>REST: https://api.tier3.com/REST/Server/GetServersByModifiedDates/&lt;format&gt;<br />SOAP: https://api.tier3.com/SOAP/Server.asmx?op=GetServersByModifiedDatesResponseMsg</pre> Request
 <h3>Attributes</h3>
 <table>
-  <tbody>
+  <thead>
     <tr>
       <td><strong>Name</strong>
       </td>
@@ -22,6 +22,8 @@ URL
       <td><strong>Required</strong>
       </td>
     </tr>
+  </thead>
+  <tbody>
     <tr>
       <td>AccountAlias</td>
       <td>String</td>
@@ -48,6 +50,7 @@ URL
     </tr>
   </tbody>
 </table>
+
 <h3>Examples</h3>
 <h4>JSON</h4>
 <pre>{
