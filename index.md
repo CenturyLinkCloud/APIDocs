@@ -10,7 +10,6 @@
     "Group",
     "Network",
     "Queue",
-    "Server",
     "SMTP Relay",
     "Users"
   ] 
