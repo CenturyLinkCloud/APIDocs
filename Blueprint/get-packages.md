@@ -55,6 +55,13 @@ Gets a list of Blueprint Packages.
   </tbody>
 </table>
 
+### Example
+#### JSON
+
+    { "Classification": "1", "Visibility": "1" }
+
+#### XML
+<pre>&lt;GetPackagesRequest&gt;<br />&nbsp; &nbsp; &lt;Classification&gt;1&lt;/Classification&gt;&nbsp;<br />&nbsp; &nbsp; &lt;Visibility&gt;1&lt;/Visibility&gt;<br />&lt;/GetPackagesRequest&gt;&nbsp;</pre> 
 
 ## Response
 ### Attributes
