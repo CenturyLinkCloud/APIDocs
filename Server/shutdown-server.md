@@ -42,25 +42,25 @@ Shuts down the operating system and then powers off server.
 </table>
 
 ### Examples
-<h4>JSON</h4>
-<pre>{
 
-  "AccountAlias": "UNK",
+#### JSON
+    {
 
-  "Name": "SERVER01"
+      "AccountAlias": "UNK",
 
-}</pre>
+      "Name": "SERVER01"
 
-<h4>XML</h4>
-<pre>&lt;ServerRequest&gt;
+    }
 
-    &lt;AccountAlias&gt;ACCT&lt;/AccountAlias&gt;
+#### XML
+    <ServerRequest>
 
-    &lt;Name&gt;SERVER01&lt;/Name&gt;
+      <AccountAlias>ACCT</AccountAlias>
 
-&lt;/ServerRequest&gt;
+      <Name>SERVER01</Name>
 
-</pre>
+    </ServerRequest>
+
 ## Response
 ### Attributes
 <table>
