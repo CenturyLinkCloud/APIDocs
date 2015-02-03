@@ -1,7 +1,6 @@
 {{{
   "category_order": [
     "Overview",
-    "Getting Started",
     "Authentication",
     "Account",
     "Billing",
@@ -10,6 +9,7 @@
     "Group",
     "Network",
     "Queue",
+    "Server",
     "SMTP Relay",
     "Users"
   ] 
