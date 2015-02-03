@@ -36,7 +36,7 @@ Gets all of the contact information and settings for a given account. Calls to t
   </tbody>
 </table>
 
-## Examples
+### Examples
 <h4>JSON (REST)</h4>
 <pre>{ <br />    "AccountAlias": "1000"<br />}</pre>
 <h4>XML (REST)</h4>

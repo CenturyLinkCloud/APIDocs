@@ -1,5 +1,5 @@
 {{{
-  "title": "GetAllServersForAccountHierarchyByModifiedDate",
+  "title": "Get All Servers For AccountHierarchy By ModifiedDate",
   "date": "6-28-2013",
   "author": "Richard Seroter",
   "attachments": []
@@ -9,8 +9,8 @@ Gets a deep list of all modified servers for a given account hierarchy within a 
 
 ## URL
 
-REST: https://api.tier3.com/REST/Server/GetAllServersForAccountHierarchyByModifiedDates/&lt;format&gt;
-SOAP: https://api.tier3.com/SOAP/Server.asmx?op=GetAllServersForAccountHierarchyByModifiedDatesMsg
+    REST: https://api.tier3.com/REST/Server/GetAllServersForAccountHierarchyByModifiedDates/&lt;format&gt;
+    SOAP: https://api.tier3.com/SOAP/Server.asmx?op=GetAllServersForAccountHierarchyByModifiedDatesMsg
 
 ## Request
 ### Attributes
