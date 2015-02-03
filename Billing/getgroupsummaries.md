@@ -387,13 +387,13 @@ Gets the charges for groups and servers within a given account, and for any date
 
 ### Status Codes
 <table>
-  <thead>
+    <thead>
   <tr>
     <th>Status Code</th>
     <th>Description</th>
   </tr>
-</thead>
-<tbody>
+  </thead>
+  <tbody>
     <tr>
       <td>0</td>
       <td>Request was successfully processed</td>

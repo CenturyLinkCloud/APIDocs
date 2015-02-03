@@ -115,13 +115,13 @@ Updates the Admin/Root password&nbsp;for a Server.
 
 ### Status Codes
 <table>
-  <thead>
+    <thead>
   <tr>
     <th>Status Code</th>
     <th>Description</th>
   </tr>
-</thead>
-<tbody>
+  </thead>
+  <tbody>
     <tr>
       <td>0</td>
       <td>Request was successfully processed</td>

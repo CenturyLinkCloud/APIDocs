@@ -426,13 +426,13 @@ Create a brand new (sub) account in the Tier 3 system. Calls to this operation m
 ### Status Codes
 
 <table>
-  <thead>
+    <thead>
   <tr>
     <th>Status Code</th>
     <th>Description</th>
   </tr>
-</thead>
-<tbody>
+  </thead>
+  <tbody>
     <tr>
       <td>0</td>
       <td>Request was successfully processed</td>

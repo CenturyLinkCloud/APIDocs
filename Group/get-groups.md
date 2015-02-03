@@ -122,13 +122,13 @@ URL
 <pre>&lt;GetGroupsResponse Success="true" Message="Success" StatusCode="0"&gt;<br />    &lt;HardwareGroups&gt;<br />        &lt;HardwareGroup ID="1" Name="Group 01" ParentID="0"&nbsp;IsSystemGroup="true" /&gt;<br />        &lt;HardwareGroup ID="2" Name="Group 02" ParentID="1"&nbsp;IsSystemGroup="false"/&gt;<br />    &lt;/HardwareGroups&gt;<br />&lt;/GetGroupsResponse&gt;</pre>
 <h3>Status Codes</h3>
 <table>
-  <thead>
+    <thead>
   <tr>
     <th>Status Code</th>
     <th>Description</th>
   </tr>
-</thead>
-<tbody>
+  </thead>
+  <tbody>
     <tr>
       <td>0</td>
       <td>Request was successfully processed</td>

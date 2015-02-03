@@ -103,13 +103,13 @@ DisableAlias
   <br /><strong>Valid Status Codes returned by the DisableAlias Method:</strong>
 </p>
 <table>
-  <thead>
+    <thead>
   <tr>
     <th>Status Code</th>
     <th>Description</th>
   </tr>
-</thead>
-<tbody>
+  </thead>
+  <tbody>
     <tr>
       <td>0</td>
       <td>DisableAlias request was successfully processed</td>

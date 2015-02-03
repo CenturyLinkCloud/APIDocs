@@ -141,13 +141,13 @@ ListAliases
   <br /><strong>Valid Status Codes returned by the ListAliases Method:</strong>
 </p>
 <table>
-  <thead>
+    <thead>
   <tr>
     <th>Status Code</th>
     <th>Description</th>
   </tr>
-</thead>
-<tbody>
+  </thead>
+  <tbody>
     <tr>
       <td>0</td>
       <td>ListAliases request was successfully processed</td>
