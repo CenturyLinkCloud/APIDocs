@@ -183,15 +183,14 @@ URL
 &lt;/UpdateIPAddressRequest&gt;</pre> Response
 <h3>Attributes</h3>
 <table>
-  <tbody>
-    <tr>
-      <td><strong>Name</strong>
-      </td>
-      <td><strong>Type</strong>
-      </td>
-      <td><strong>Description</strong>
-      </td>
-    </tr>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Description</th>
+  </tr>
+</thead>
+<tbody>
     <tr>
       <td>Success</td>
       <td>Boolean</td>

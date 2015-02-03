@@ -70,15 +70,14 @@ Deploys a Blueprint with the given set of parameter values.
 
 ### Parameter Attributes
 <table>
-  <tbody>
-    <tr>
-      <td><strong>Name</strong>
-      </td>
-      <td><strong>Type</strong>
-      </td>
-      <td><strong>Description</strong>
-      </td>
-    </tr>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Description</th>
+  </tr>
+</thead>
+<tbody>
     <tr>
       <td>Name</td>
       <td>String</td>
@@ -100,15 +99,14 @@ Deploys a Blueprint with the given set of parameter values.
 
 ### CustomField Attributes
 <table>
-  <tbody>
-    <tr>
-      <td><strong>Name</strong>
-      </td>
-      <td><strong>Type</strong>
-      </td>
-      <td><strong>Description</strong>
-      </td>
-    </tr>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Description</th>
+  </tr>
+</thead>
+<tbody>
     <tr>
       <td>CustomFieldID</td>
       <td>Int</td>
@@ -144,15 +142,14 @@ Deploys a Blueprint with the given set of parameter values.
 ## Response
 ### Attributes
 <table>
-  <tbody>
-    <tr>
-      <td><strong>Name</strong>
-      </td>
-      <td><strong>Type</strong>
-      </td>
-      <td><strong>Description</strong>
-      </td>
-    </tr>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Description</th>
+  </tr>
+</thead>
+<tbody>
     <tr>
       <td>Success</td>
       <td>Boolean</td>

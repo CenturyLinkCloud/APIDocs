@@ -100,15 +100,14 @@ Gets the server-based hourly cost for any time period. Calls to this operation m
 ## Response
 ### Attributes
 <table>
-  <tbody>
-    <tr>
-      <td><strong>Name</strong>
-      </td>
-      <td><strong>Type</strong>
-      </td>
-      <td><strong>Description</strong>
-      </td>
-    </tr>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Description</th>
+  </tr>
+</thead>
+<tbody>
     <tr>
       <td>Success</td>
       <td>Boolean</td>

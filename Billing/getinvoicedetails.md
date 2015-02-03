@@ -80,15 +80,14 @@ Gets the details for a given invoice within an account. Calls to this operation 
 ## Response
 ### Attributes
 <table>
-  <tbody>
-    <tr>
-      <td><strong>Name</strong>
-      </td>
-      <td><strong>Type</strong>
-      </td>
-      <td><strong>Description</strong>
-      </td>
-    </tr>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Description</th>
+  </tr>
+</thead>
+<tbody>
     <tr>
       <td>Success</td>
       <td>Boolean</td>
@@ -139,15 +138,14 @@ Gets the details for a given invoice within an account. Calls to this operation 
 
 ### Invoice Attributes
 <table>
-  <tbody>
-    <tr>
-      <td><strong>Name</strong>
-      </td>
-      <td><strong>Type</strong>
-      </td>
-      <td><strong>Description</strong>
-      </td>
-    </tr>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Description</th>
+  </tr>
+</thead>
+<tbody>
     <tr>
       <td>ID</td>
       <td>String</td>
@@ -223,15 +221,14 @@ Gets the details for a given invoice within an account. Calls to this operation 
 
 ### InvoiceLineItem Attributes
 <table>
-  <tbody>
-    <tr>
-      <td><strong>Name</strong>
-      </td>
-      <td><strong>Type</strong>
-      </td>
-      <td><strong>Description</strong>
-      </td>
-    </tr>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Description</th>
+  </tr>
+</thead>
+<tbody>
     <tr>
       <td>Quantity</td>
       <td>Integer</td>
@@ -267,15 +264,14 @@ Gets the details for a given invoice within an account. Calls to this operation 
 
 ### LineItemDetail Attributes
 <table>
-  <tbody>
-    <tr>
-      <td><strong>Name</strong>
-      </td>
-      <td><strong>Type</strong>
-      </td>
-      <td><strong>Description</strong>
-      </td>
-    </tr>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Description</th>
+  </tr>
+</thead>
+<tbody>
     <tr>
       <td>Description</td>
       <td>String</td>

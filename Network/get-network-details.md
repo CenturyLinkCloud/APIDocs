@@ -63,15 +63,14 @@ URL
 &lt;/GetNetworkDetailsRequest&gt;</pre> Response
 <h3>Attributes</h3>
 <table>
-  <tbody>
-    <tr>
-      <td><strong>Name</strong>
-      </td>
-      <td><strong>Type</strong>
-      </td>
-      <td><strong>Description</strong>
-      </td>
-    </tr>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Description</th>
+  </tr>
+</thead>
+<tbody>
     <tr>
       <td>Success</td>
       <td>Boolean</td>
@@ -96,15 +95,14 @@ URL
 </table>
 <h3>NetworkDetails Attributes</h3>
 <table>
-  <tbody>
-    <tr>
-      <td><strong>Name</strong>
-      </td>
-      <td><strong>Type</strong>
-      </td>
-      <td><strong>Description</strong>
-      </td>
-    </tr>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Description</th>
+  </tr>
+</thead>
+<tbody>
     <tr>
       <td>Name</td>
       <td>String</td>
@@ -145,15 +143,14 @@ URL
 </table>
 <h3>IPAddress Attributes</h3>
 <table>
-  <tbody>
-    <tr>
-      <td><strong>Name</strong>
-      </td>
-      <td><strong>Type</strong>
-      </td>
-      <td><strong>Description</strong>
-      </td>
-    </tr>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Description</th>
+  </tr>
+</thead>
+<tbody>
     <tr>
       <td>Address</td>
       <td>String</td>
