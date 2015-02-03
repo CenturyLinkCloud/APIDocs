@@ -60,6 +60,7 @@ Shuts down the operating system and then powers off server.
 
 &lt;/ServerRequest&gt;
 
+</pre>
 ## Response
 ### Attributes
 <table>
