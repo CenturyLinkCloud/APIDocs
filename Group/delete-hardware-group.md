@@ -11,17 +11,15 @@ URL
 <pre>REST: https://api.tier3.com/REST/Group/DeleteHardwareGroup/&lt;format&gt;<br />SOAP: https://api.tier3.com/SOAP/Group.asmx?op=DeleteHardwareGroup</pre> Request
 <h3>Attributes</h3>
 <table>
-  <tbody>
+    <thead>
     <tr>
-      <td><strong>Name</strong>
-      </td>
-      <td><strong>Type</strong>
-      </td>
-      <td><strong>Description</strong>
-      </td>
-      <td><strong>Required</strong>
-      </td>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Required</th>
     </tr>
+  </thead>
+  <tbody>
     <tr>
       <td>AccountAlias</td>
       <td>String</td>

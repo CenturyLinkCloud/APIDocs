@@ -16,17 +16,15 @@ Deploys a Blueprint with the given set of parameter values.
 ## Request
 ### Attributes
 <table>
-  <tbody>
+    <thead>
     <tr>
-      <td><strong>Name</strong>
-      </td>
-      <td><strong>Type</strong>
-      </td>
-      <td><strong>Description</strong>
-      </td>
-      <td><strong>Required</strong>
-      </td>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Required</th>
     </tr>
+  </thead>
+  <tbody>
     <tr>
       <td>ID</td>
       <td>Int</td>

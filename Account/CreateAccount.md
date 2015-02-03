@@ -23,17 +23,15 @@ SOAP: https://api.tier3.com/SOAP/Account.asmx?op=CreateAccount
 ### Attributes
 
 <table>
-  <tbody>
+    <thead>
     <tr>
-      <td><strong>Name</strong>
-      </td>
-      <td><strong>Type</strong>
-      </td>
-      <td><strong>Description</strong>
-      </td>
-      <td><strong>Required</strong>
-      </td>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Required</th>
     </tr>
+  </thead>
+  <tbody>
     <tr>
       <td>ParentAlias</td>
       <td>String</td>

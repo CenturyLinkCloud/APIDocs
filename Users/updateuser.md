@@ -12,17 +12,15 @@ URL
 <pre>REST: https://api.tier3.com/REST/User/UpdateUser/&lt;format&gt; (format = XML | JSON) <br />SOAP: https://api.tier3.com/SOAP/User.asmx?op=UpdateUser </pre> Request
 <h3>Attributes</h3>
 <table>
-  <tbody>
+    <thead>
     <tr>
-      <td><strong>Name</strong>
-      </td>
-      <td><strong>Type</strong>
-      </td>
-      <td><strong>Description</strong>
-      </td>
-      <td><strong>Required</strong>
-      </td>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Required</th>
     </tr>
+  </thead>
+  <tbody>
     <tr>
       <td>UserName</td>
       <td>String</td>

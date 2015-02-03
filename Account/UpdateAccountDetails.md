@@ -16,17 +16,15 @@ Make changes to an existing account in the Tier 3 system. Calls to this operatio
 ## Request
 ### Attributes
 <table>
-  <tbody>
+    <thead>
     <tr>
-      <td><strong>Name</strong>
-      </td>
-      <td><strong>Type</strong>
-      </td>
-      <td><strong>Description</strong>
-      </td>
-      <td><strong>Required</strong>
-      </td>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Required</th>
     </tr>
+  </thead>
+  <tbody>
     <tr>
       <td>AccountAlias</td>
       <td>String</td>
