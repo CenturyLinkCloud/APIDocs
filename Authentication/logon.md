@@ -19,10 +19,10 @@ This method is required to be called prior to calling any other method exposed b
     <tr>
       <thead>
       <tr>
-        <td>Name</td>
-        <td>Type</td>
-        <td>Required</td>
-        <td>Description</td>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Req.</th>
+        <th>Description</th>
       </tr>
     </thead>
     <tbody>
@@ -66,9 +66,9 @@ This method is required to be called prior to calling any other method exposed b
 <table>
     <thead>
     <tr>
-      <td>Name</td>
-      <td>Type</td>
-      <td>Description</td>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
     </tr>
   </thead>
   <tbody>

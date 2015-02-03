@@ -22,10 +22,10 @@ UpdateDomainInformation
     <tr>
       <thead>
       <tr>
-        <td>Name</td>
-        <td>Type</td>
-        <td>Required</td>
-        <td>Description</td>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Req.</th>
+        <th>Description</th>
       </tr>
     </thead>
     <tbody>
@@ -71,9 +71,9 @@ UpdateDomainInformation
 <table>
     <thead>
     <tr>
-      <td>Name</td>
-      <td>Type</td>
-      <td>Description</td>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
     </tr>
   </thead>
   <tbody>

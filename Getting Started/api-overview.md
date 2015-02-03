@@ -22,9 +22,9 @@ Summary
 <table>
     <thead>
     <tr>
-      <td>Name</td>
-      <td>Type</td>
-      <td>Description</td>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
     </tr>
   </thead>
   <tbody>

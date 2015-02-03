@@ -22,10 +22,10 @@ This method retrieves the list of Domain Names that your account has registered 
     <tr>
       <thead>
       <tr>
-        <td>Name</td>
-        <td>Type</td>
-        <td>Required</td>
-        <td>Description</td>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Req.</th>
+        <th>Description</th>
       </tr>
     </thead>
     <tbody>
@@ -62,9 +62,9 @@ This method retrieves the list of Domain Names that your account has registered 
 <table>
   <thead>
     <tr>
-      <td>Name</td>
-      <td>Type</td>
-      <td>Description</td>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
     </tr>
   </thead>
   <tbody>
@@ -118,7 +118,7 @@ This method retrieves the list of Domain Names that your account has registered 
 
 ### Examples
 
-#### XML
+#### XML:
 
     <ListDomainNamesResponse Success="true" Message="The domain names were successfuly listed." StatusCode="0">
 
