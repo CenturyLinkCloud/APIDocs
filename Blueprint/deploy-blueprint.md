@@ -5,129 +5,135 @@
   "attachments": []
 }}}
 
-<div>
-  DeployBlueprint
-  <p>Deploys a Blueprint with the given set of parameter values.</p>
-  URL
-  <pre>REST: <code>https://api.tier3.com/REST/Blueprint/DeployBlueprint/&lt;format&gt;</code><br />SOAP: <code>https://api.tier3.com/SOAP/Blueprints.asmx?op=DeployBlueprint</code></pre> Request
-  <h3>Attributes</h3>
-  <table>
-    <tbody>
-      <tr>
-        <td><strong>Name</strong>
-        </td>
-        <td><strong>Type</strong>
-        </td>
-        <td><strong>Description</strong>
-        </td>
-        <td><strong>Required</strong>
-        </td>
-      </tr>
-      <tr>
-        <td>ID</td>
-        <td>Int</td>
-        <td>
-          <p>The ID of the Blueprint to deploy.</p>
-        </td>
-        <td>
-          <p>Yes</p>
-        </td>
-      </tr>
-      <tr>
-        <td>LocationAlias</td>
-        <td>string</td>
-        <td>
-          <p>The alias of the Datacenter where you would like to deploy the blueprint to. If not provided, it will default to your primary datacenter.</p>
-        </td>
-        <td>
-          <p>No</p>
-        </td>
-      </tr>
-      <tr>
-        <td>Parameters</td>
-        <td>List</td>
-        <td>
-          <p>A list of Parameter values to use during the deployment of the Blueprint</p>
-        </td>
-        <td>
-          <p>Yes</p>
-        </td>
-      </tr>
-      <tr>
-        <td>CustomFields</td>
-        <td>Complex</td>
-        <td>
-          <p>Custom Fields that need to be set on each server created during blueprint deployment</p>
-        </td>
-        <td>
-          <p>No</p>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-<div>
-  <h3>Parameter Attributes</h3>
-  <table>
-    <tbody>
-      <tr>
-        <td><strong>Name</strong>
-        </td>
-        <td><strong>Type</strong>
-        </td>
-        <td><strong>Description</strong>
-        </td>
-      </tr>
-      <tr>
-        <td>Name</td>
-        <td>String</td>
-        <td>
-          <p>The name of the Parameter being set.</p>
-        </td>
-      </tr>
-      <tr>
-        <td>Value</td>
-        <td>String</td>
-        <td>
-          <p>The value for the Parameter.</p>
-          <p><em>This value will be validated based on the type and validation rules specified by the Blueprint Parameter definition.</em>
-          </p>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <h3>CustomField Attributes</h3>
-  <table>
-    <tbody>
-      <tr>
-        <td><strong>Name</strong>
-        </td>
-        <td><strong>Type</strong>
-        </td>
-        <td><strong>Description</strong>
-        </td>
-      </tr>
-      <tr>
-        <td>CustomFieldID</td>
-        <td>Int</td>
-        <td>Identifier that is associated with the Account Custom Field (Call Account/GetCustomFields for a list of all custom fields set at the account level)</td>
-      </tr>
-      <tr>
-        <td>Value</td>
-        <td>String</td>
-        <td>For Text: Any value;&nbsp;For Option values, call Account/GetCustomFields to see possible values to pass in. Checkbox values should be "true" or "false".
-          <br />
-          <br />
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-<h3>Examples</h3>
+
+Deploys a Blueprint with the given set of parameter values.
+
+## URL
+
+    REST: https://api.tier3.com/REST/Blueprint/DeployBlueprint/&lt;format&gt;
+    SOAP: https://api.tier3.com/SOAP/Blueprints.asmx?op=DeployBlueprint
+
+## Request
+### Attributes
+<table>
+  <tbody>
+    <tr>
+      <td><strong>Name</strong>
+      </td>
+      <td><strong>Type</strong>
+      </td>
+      <td><strong>Description</strong>
+      </td>
+      <td><strong>Required</strong>
+      </td>
+    </tr>
+    <tr>
+      <td>ID</td>
+      <td>Int</td>
+      <td>
+        <p>The ID of the Blueprint to deploy.</p>
+      </td>
+      <td>
+        <p>Yes</p>
+      </td>
+    </tr>
+    <tr>
+      <td>LocationAlias</td>
+      <td>string</td>
+      <td>
+        <p>The alias of the Datacenter where you would like to deploy the blueprint to. If not provided, it will default to your primary datacenter.</p>
+      </td>
+      <td>
+        <p>No</p>
+      </td>
+    </tr>
+    <tr>
+      <td>Parameters</td>
+      <td>List (see below)</td>
+      <td>
+        <p>A list of Parameter values to use during the deployment of the Blueprint</p>
+      </td>
+      <td>
+        <p>Yes</p>
+      </td>
+    </tr>
+    <tr>
+      <td>CustomFields</td>
+      <td>Complex (see below)</td>
+      <td>
+        <p>Custom Fields that need to be set on each server created during blueprint deployment</p>
+      </td>
+      <td>
+        <p>No</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+### Parameter Attributes
+<table>
+  <tbody>
+    <tr>
+      <td><strong>Name</strong>
+      </td>
+      <td><strong>Type</strong>
+      </td>
+      <td><strong>Description</strong>
+      </td>
+    </tr>
+    <tr>
+      <td>Name</td>
+      <td>String</td>
+      <td>
+        <p>The name of the Parameter being set.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>Value</td>
+      <td>String</td>
+      <td>
+        <p>The value for the Parameter.</p>
+        <p><em>This value will be validated based on the type and validation rules specified by the Blueprint Parameter definition.</em>
+        </p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+### CustomField Attributes
+<table>
+  <tbody>
+    <tr>
+      <td><strong>Name</strong>
+      </td>
+      <td><strong>Type</strong>
+      </td>
+      <td><strong>Description</strong>
+      </td>
+    </tr>
+    <tr>
+      <td>CustomFieldID</td>
+      <td>Int</td>
+      <td>Identifier that is associated with the Account Custom Field (Call Account/GetCustomFields for a list of all custom fields set at the account level)</td>
+    </tr>
+    <tr>
+      <td>Value</td>
+      <td>String</td>
+      <td>For Text: Any value;&nbsp;For Option values, call Account/GetCustomFields to see possible values to pass in. Checkbox values should be "true" or "false".
+        <br />
+        <br />
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+### Examples
 <h4>JSON</h4>
 <pre>{ <br />    "ID": "1",<br />    "LocationAlias": "WA1",<br />    "Parameters":[<br />        { "Name":"T3.BuildServerTask.Password", "Value":"password" },<br />        { "Name":"T3.BuildServerTask.Network","Value":"VLAN_XXX" },<br />        { "Name":"T3.BuildServerTask.PrimaryDNS","Value":"192.168.64.19" },<br />        { "Name":"T3.BuildServerTask.SecondaryDNS","Value":"192.168.64.20" }<br />    ],
 
-    "CustomFields":[<br />                { "CustomFieldID": 100,"Value": "A test"},<br />                { "CustomFieldID": 101,"Value": "2"},<br />                { "CustomFieldID": 102,"Value": "true"},]<br /> }</pre>
+    "CustomFields":[<br />                { "CustomFieldID": 100,"Value": "A test"},<br />                { "CustomFieldID": 101,"Value": "2"},<br />                { "CustomFieldID": 102,"Value": "true"},]<br /> }
+</pre>
+
 <h4>XML</h4>
 <pre>&lt;DeployBlueprintRequest&gt;<br />    &lt;ID&gt;107&lt;/ID&gt;<br />    &lt;LocationAlias&gt;WA1&lt;/LocationAlias&gt;<br />    &lt;Parameters&gt;<br />        &lt;Parameter Name="T3.BuildServerTask.Password" Value="Pass@word1" /&gt;<br />        &lt;Parameter Name="T3.BuildServerTask.Network" Value="VLAN_XXX" /&gt;<br />        &lt;Parameter Name="T3.BuildServerTask.PrimaryDNS" Value="192.168.64.19" /&gt;<br />        &lt;Parameter Name="T3.BuildServerTask.SecondaryDNS" Value="192.168.64.20" /&gt;<br />    &lt;/Parameters&gt;
 
@@ -135,8 +141,10 @@
 
     &lt;CustomFields CustomFieldID="104" Value="2" /&gt;
 
-    &lt;CustomFields CustomFieldID="108" Value="true" /&gt;<br /> &lt;/DeployBlueprintRequest&gt;</pre> Response
-<h3>Attributes</h3>
+    &lt;CustomFields CustomFieldID="108" Value="true" /&gt;<br /> &lt;/DeployBlueprintRequest&gt;</pre> 
+
+## Response
+### Attributes
 <table>
   <tbody>
     <tr>
@@ -172,7 +180,8 @@
     </tr>
   </tbody>
 </table>
-<h3>Examples</h3>
+
+### Examples
 <h4>JSON</h4>
 <pre>{<br />&nbsp; &nbsp; "RequestID": 1,<br />&nbsp; &nbsp; "Success":true,<br />&nbsp; &nbsp; "Message":"Success",<br />&nbsp; &nbsp; "StatusCode":0<br />}</pre>
 <h4>XML</h4>
@@ -181,7 +190,8 @@
     <pre>&lt;QueuedItemResponse Success="true" Message="Success" StatusCode="0"&gt;<br />&nbsp; &nbsp; &lt;RequestID&gt;1&lt;/RequestID&gt;<br />&lt;/QueuedItemResponse&gt;</pre>
   </div>
 </div>
-<h4>Status Codes</h4>
+
+### Status Codes
 <table>
   <tbody>
     <tr>

@@ -251,7 +251,8 @@ Create a brand new (sub) account in the Tier 3 system. Calls to this operation m
     </tr>
   </tbody>
 </table>
-<h3>AccountDetails Attributes</h3>
+<h3>AccountDetails</h3>
+### Attributes
 <table>
   <tbody>
     <tr>

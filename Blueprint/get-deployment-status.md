@@ -5,11 +5,15 @@
   "attachments": []
 }}}
 
-GetDeploymentStatus
-<p>Gets the status of the specified Blueprint deployment.</p>
-URL
-<pre>REST: <code>https://api.tier3.com/REST/Blueprint/GetBlueprintStatus/&lt;format&gt;</code><br />SOAP: <code>https://api.tier3.com/SOAP/Blueprints.asmx?op=GetDeploymentStatusMsg</code></pre> Request
-<h3>Attributes</h3>
+Gets the status of the specified Blueprint deployment.
+
+## URL
+
+    REST: https://api.tier3.com/REST/Blueprint/GetBlueprintStatus/&lt;format&gt;
+    SOAP: https://api.tier3.com/SOAP/Blueprints.asmx?op=GetDeploymentStatusMsg
+
+## Request
+### Attributes
 <table>
   <tbody>
     <tr>
@@ -54,12 +58,17 @@ URL
     </tr>
   </tbody>
 </table>
-<h3>Examples</h3>
+
+### Examples
+
 <h4>JSON</h4>
 <pre>{<br />    "RequestID": "1",<br />    "LocationAlias": "WA1"<br />}</pre>
+
 <h4>XML</h4>
-<pre>&lt;GetDeploymentStatusRequest&gt;<br />    &lt;RequestID&gt;1&lt;/RequestID&gt;<br />    &lt;LocationAlias&gt;WA1&lt;/LocationAlias&gt;<br />&lt;/GetDeploymentStatusRequest&gt;&nbsp;</pre> Response
-<h3>Attributes</h3>
+<pre>&lt;GetDeploymentStatusRequest&gt;<br />    &lt;RequestID&gt;1&lt;/RequestID&gt;<br />    &lt;LocationAlias&gt;WA1&lt;/LocationAlias&gt;<br />&lt;/GetDeploymentStatusRequest&gt;&nbsp;</pre> 
+
+## Response
+### Attributes
 <table>
   <tbody>
     <tr>
@@ -132,12 +141,16 @@ URL
     </tr>
   </tbody>
 </table>
-<h3>Examples</h3>
+
+### Examples
+
 <h4>JSON</h4>
 <pre>{<br />    "RequestID":210,<br />    "CurrentStatus":"Failed",<br />    "Description":"Error Building Blueprint",<br />    "StatusDate":"\/Date(1318480463790)\/",<br />    "Step":"0",<br />    "PercentComplete":0,<br />    "Success":true,<br />    "Message":"Success",<br />    "StatusCode":0,<br />    "Servers":["WA1T3NWEB01"]<br />}</pre>
+
 <h4>XML</h4>
 <pre>&lt;GetDeploymentStatusResponse <br />    Success="true" Message="Success" StatusCode="0" <br />    RequestID="210" CurrentStatus="Failed" Description="Error Building Blueprint" StatusDate="2011-10-12T21:34:23.79" Step="0" PercentComplete="0"&gt;<br />    &lt;Servers&gt;<br />        &lt;string&gt;WA1T3NWEB01&lt;/string&gt;<br />    &lt;/Servers&gt;<br />&lt;GetDeploymentStatusResponse&gt;&nbsp;</pre>
-<h3>Status Codes</h3>
+
+### Status Codes
 <table>
   <tbody>
     <tr>

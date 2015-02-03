@@ -5,11 +5,15 @@
   "attachments": []
 }}}
 
-GetBlueprints
-<p>Gets a list of all Blueprints with the specified search criteria.</p>
-URL
-<pre>REST: <code>https://api.tier3.com/REST/Blueprint/GetBlueprints/&lt;format&gt;</code><br />SOAP: <code>https://api.tier3.com/SOAP/Blueprints.asmx?op=GetBlueprintsResponseMsg</code></pre> Request
-<h3>Attributes</h3>
+Gets a list of all Blueprints with the specified search criteria.
+
+## URL
+
+    REST:https://api.tier3.com/REST/Blueprint/GetBlueprints/&lt;format&gt;
+    SOAP: https://api.tier3.com/SOAP/Blueprints.asmx?op=GetBlueprintsResponseMsg
+
+## Request
+### Attributes
 <table>
   <tbody>
     <tr>
@@ -84,12 +88,16 @@ URL
     </tr>
   </tbody>
 </table>
-<h3>Examples</h3>
+
+### Examples
 <h4>JSON</h4>
 <pre>{ <br />    "CompanySize": "2",&nbsp;<br />    "OperatingSystems": [ 4, 5, 17, 18],<br />    "Search": "High Performance",<br />    "Visibility": 1<br />}</pre>
+
 <h4>XML</h4>
-<pre>&lt;GetBlueprintsRequest&gt;<br />    &lt;CompanySize&gt;2&lt;/CompanySize&gt;<br />    &lt;OperatingSystems&gt;<br />        &lt;OS&gt;4&lt;/OS&gt;<br />        &lt;OS&gt;5&lt;/OS&gt;<br />        &lt;OS&gt;17&lt;/OS&gt;<br />        &lt;OS&gt;18&lt;/OS&gt;<br />    &lt;/OperatingSystems&gt;<br />    &lt;Search&gt;High Performance&lt;/Search&gt;<br />    &lt;Visibility&gt;1&lt;/Visibility&gt;<br />&lt;/GetBlueprintsRequest&gt;&nbsp;</pre>Response
-<h3>Attributes</h3>
+<pre>&lt;GetBlueprintsRequest&gt;<br />    &lt;CompanySize&gt;2&lt;/CompanySize&gt;<br />    &lt;OperatingSystems&gt;<br />        &lt;OS&gt;4&lt;/OS&gt;<br />        &lt;OS&gt;5&lt;/OS&gt;<br />        &lt;OS&gt;17&lt;/OS&gt;<br />        &lt;OS&gt;18&lt;/OS&gt;<br />    &lt;/OperatingSystems&gt;<br />    &lt;Search&gt;High Performance&lt;/Search&gt;<br />    &lt;Visibility&gt;1&lt;/Visibility&gt;<br />&lt;/GetBlueprintsRequest&gt;&nbsp;</pre>
+
+## Response
+### Attributes
 <table>
   <tbody>
     <tr>
@@ -117,12 +125,13 @@ URL
     </tr>
     <tr>
       <td>Blueprints</td>
-      <td>Complex</td>
+      <td>Complex (see below)</td>
       <td>A list of Blueprints (see below)</td>
     </tr>
   </tbody>
 </table>
-<h3>Blueprint Attributes</h3>
+
+### Blueprint Attributes
 <table>
   <tbody>
     <tr>
@@ -145,12 +154,15 @@ URL
     </tr>
   </tbody>
 </table>
-<h3>Examples</h3>
+
+### Examples
 <h4>JSON</h4>
 <pre>{<br />    "Blueprints":[<br />        {"ID":1,"Name":"Blueprint 01"},<br />        {"ID":2,"Name":"Blueprint 02"},<br />    ],    <br />    "Success":true,<br />    "Message":"Success",<br />    "StatusCode":0<br />}</pre>
+
 <h4>XML</h4>
 <pre>&lt;GetBlueprintsResponse Success="true" Message="Success" StatusCode="0"&gt;<br />    &lt;Blueprints&gt;<br />        &lt;Blueprint ID="1" Name="Blueprint 01" /&gt;<br />        &lt;Blueprint ID="2" Name="Blueprint 02" /&gt;<br />    &lt;/Blueprints&gt;<br />&lt;/GetBlueprintsResponse&gt;</pre>
-<h3>Status Codes</h3>
+
+### Status Codes
 <table>
   <tbody>
     <tr>

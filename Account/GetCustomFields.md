@@ -7,9 +7,10 @@
 
 Gets the account custom field definitions.
 
-URL
-REST: https://api.tier3.com/REST/Account/GetCustomFields/&lt;format&gt;
-SOAP: https://api.tier3.com/SOAP/Account.asmx?op=GetCustomFields
+## URL
+
+    REST: https://api.tier3.com/REST/Account/GetCustomFields/&lt;format&gt;
+    SOAP: https://api.tier3.com/SOAP/Account.asmx?op=GetCustomFields
 
 ## Request
 ### Attributes
@@ -37,8 +38,10 @@ SOAP: https://api.tier3.com/SOAP/Account.asmx?op=GetCustomFields
 </table>
 
 ## Examples
+
 <h4>JSON</h4>
 <pre>{ "AccountAlias": "ACCT" }</pre>
+
 <h4>XML</h4>
 <pre>&lt;GetCustomFieldsRequest&gt;
 
@@ -82,6 +85,7 @@ SOAP: https://api.tier3.com/SOAP/Account.asmx?op=GetCustomFields
 </table>
 
 ### Examples
+
 <h4>JSON</h4>
 <pre>{
 
@@ -181,7 +185,9 @@ SOAP: https://api.tier3.com/SOAP/Account.asmx?op=GetCustomFields
 
     "StatusCode": 0
 
-}</pre>
+}
+</pre>
+
 <h4>XML</h4>
 <pre>&lt;AccountCustomFieldsResponse 
 
@@ -209,7 +215,8 @@ SOAP: https://api.tier3.com/SOAP/Account.asmx?op=GetCustomFields
 
     &lt;/AccountCustomFields&gt;
 
-&lt;/AccountCustomFieldsResponse&gt;</pre>
+&lt;/AccountCustomFieldsResponse&gt;
+</pre>
 
 ### Status Codes
 <table>

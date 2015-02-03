@@ -5,413 +5,428 @@
   "attachments": []
 }}}
 
-<div>
-  GetGroupSummaries
-  <p>Gets the charges for groups and servers within a given account, and for any date range. Calls to this operation must include an authorization cookie acquired from the <a href="http://help.tier3.com/entries/20339862-logon">Logon operation.</a>
-  </p>
-  URL
-  <pre>REST: https://api.tier3.com/REST/Billing/GetGroupSummaries/&lt;format&gt; (format = XML | JSON) <br />SOAP: https://api.tier3.com/SOAP/Billing.asmx?op=GetGroupSummaries </pre> Request
-  <h3>Attributes</h3>
-  <table>
-    <tbody>
-      <tr>
-        <td><strong>Name</strong>
-        </td>
-        <td><strong>Type</strong>
-        </td>
-        <td><strong>Description</strong>
-        </td>
-        <td><strong>Required</strong>
-        </td>
-      </tr>
-      <tr>
-        <td>AccountAlias</td>
-        <td>String</td>
-        <td>Short code for a particular account. If not provided, then the API user's account is used.</td>
-        <td>No</td>
-      </tr>
-      <tr>
-        <td>StartDate</td>
-        <td>String</td>
-        <td>Start date for query range. If missing, this defaults to beginning of the current month.</td>
-        <td>No</td>
-      </tr>
-      <tr>
-        <td>EndDate</td>
-        <td>String</td>
-        <td>End date for query range. If missing, this defaults to current day of the current month.</td>
-        <td>No</td>
-      </tr>
-    </tbody>
-  </table>
-  <h3>Examples</h3>
-  <h4>JSON (REST)</h4>
-  <pre>{ <br />    "AccountAlias": "1000",<br />    "StartDate":"2012-11-01",<br />    "EndDate":"2012-11-15"<br />}</pre>
-  <h4>XML (REST)</h4>
-  <pre>&lt;BillingRequest&gt;
 
-    &lt;AccountAlias&gt;1000&lt;/AccountAlias&gt;
+Gets the charges for groups and servers within a given account, and for any date range. Calls to this operation must include an authorization cookie acquired from the <a href="http://help.tier3.com/entries/20339862-logon">Logon operation.</a>
 
-    &lt;StartDate&gt;2012-11-01&lt;/StartDate&gt;
+##URL
 
-    &lt;EndDate&gt;2012-11-15&lt;/EndDate&gt;
+    REST: https://api.tier3.com/REST/Billing/GetGroupSummaries/&lt;format&gt; (format = XML | JSON)
+    SOAP: https://api.tier3.com/SOAP/Billing.asmx?op=GetGroupSummaries
+
+## Request
+### Attributes
+<table>
+  <tbody>
+    <tr>
+      <td><strong>Name</strong>
+      </td>
+      <td><strong>Type</strong>
+      </td>
+      <td><strong>Description</strong>
+      </td>
+      <td><strong>Required</strong>
+      </td>
+    </tr>
+    <tr>
+      <td>AccountAlias</td>
+      <td>String</td>
+      <td>Short code for a particular account. If not provided, then the API user's account is used.</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>StartDate</td>
+      <td>String</td>
+      <td>Start date for query range. If missing, this defaults to beginning of the current month.</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>EndDate</td>
+      <td>String</td>
+      <td>End date for query range. If missing, this defaults to current day of the current month.</td>
+      <td>No</td>
+    </tr>
+  </tbody>
+</table>
+
+### Examples
+
+<h4>JSON (REST)</h4>
+<pre>{ <br />    "AccountAlias": "1000",<br />    "StartDate":"2012-11-01",<br />    "EndDate":"2012-11-15"<br />}</pre>
+
+<h4>XML (REST)</h4>
+<pre>&lt;BillingRequest&gt;
+
+  &lt;AccountAlias&gt;1000&lt;/AccountAlias&gt;
+
+  &lt;StartDate&gt;2012-11-01&lt;/StartDate&gt;
+
+  &lt;EndDate&gt;2012-11-15&lt;/EndDate&gt;
 
 &lt;/BillingRequest&gt;
 
-    </pre>
-  <h4>XML (SOAP)</h4>
-  <pre>&lt;soap12:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+</pre>
 
-    xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+<h4>XML (SOAP)</h4>
+<pre>&lt;soap12:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 
-    xmlns:soap12="http://www.w3.org/2003/05/soap-envelope"&gt;
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
 
-  &lt;soap12:Body&gt;
+  xmlns:soap12="http://www.w3.org/2003/05/soap-envelope"&gt;
 
-    &lt;GetGroupSummaries xmlns="http://www.tier3.com/"&gt;
+&lt;soap12:Body&gt;
 
-      &lt;accountAlias&gt;1000&lt;/accountAlias&gt;
+  &lt;GetGroupSummaries xmlns="http://www.tier3.com/"&gt;
 
-    &lt;/GetGroupSummaries&gt;
+    &lt;accountAlias&gt;1000&lt;/accountAlias&gt;
 
-  &lt;/soap12:Body&gt;
+  &lt;/GetGroupSummaries&gt;
+
+&lt;/soap12:Body&gt;
 
 &lt;/soap12:Envelope&gt;  
 
-</pre> Response
-  <h3>Attributes</h3>
-  <table>
-    <tbody>
-      <tr>
-        <td><strong>Name</strong>
-        </td>
-        <td><strong>Type</strong>
-        </td>
-        <td><strong>Description</strong>
-        </td>
-      </tr>
-      <tr>
-        <td>Success</td>
-        <td>Boolean</td>
-        <td>True if the request was successful, otherwise False.</td>
-      </tr>
-      <tr>
-        <td>Message</td>
-        <td>String</td>
-        <td>A description of the result. The contents of this field does not contain any actionable information, it is purely intended to provide a human readable description of the result.</td>
-      </tr>
-      <tr>
-        <td>StatusCode</td>
-        <td>Int</td>
-        <td>This value will help to identify any errors which were encountered while processing the request. The value of '0' indicates success, all non-zero StatusCodes indicate an error state.</td>
-      </tr>
-      <tr>
-        <td>AccountAlias</td>
-        <td>String</td>
-        <td>Account that this group summary applied to.</td>
-      </tr>
-      <tr>
-        <td>StartDate</td>
-        <td>String</td>
-        <td>Start date of the query range.</td>
-      </tr>
-      <tr>
-        <td>EndDate</td>
-        <td>Decimal</td>
-        <td>End date of the query range.</td>
-      </tr>
-      <tr>
-        <td>Summary</td>
-        <td>Complex</td>
-        <td>Overview of costs for the group.</td>
-      </tr>
-      <tr>
-        <td>ServerGroupTotals</td>
-        <td>Complex</td>
-        <td>Details of individual costs of the group.</td>
-      </tr>
-    </tbody>
-  </table>
-  <h3>Summary Attributes</h3>
-  <table>
-    <tbody>
-      <tr>
-        <td><strong>Name</strong>
-        </td>
-        <td><strong>Type</strong>
-        </td>
-        <td><strong>Description</strong>
-        </td>
-      </tr>
-      <tr>
-        <td>MonthlyEstimate</td>
-        <td>Decimal</td>
-        <td>Estimated costs for all groups based on current usage.</td>
-      </tr>
-      <tr>
-        <td>MonthToDate</td>
-        <td>Decimal</td>
-        <td>Current charges so far this month.</td>
-      </tr>
-      <tr>
-        <td>CurrentHour</td>
-        <td>Decimal</td>
-        <td>Charges for the current hour.</td>
-      </tr>
-      <tr>
-        <td>MonthToDate</td>
-        <td>Decimal</td>
-        <td>Charges for the previous hour.</td>
-      </tr>
-    </tbody>
-  </table>
-  <h3>ServerGroupTotals Attributes</h3>
-  <table>
-    <tbody>
-      <tr>
-        <td><strong>Name</strong>
-        </td>
-        <td><strong>Type</strong>
-        </td>
-        <td><strong>Description</strong>
-        </td>
-      </tr>
-      <tr>
-        <td>MonthlyEstimate</td>
-        <td>Decimal</td>
-        <td>Estimated costs for all groups based on current usage.</td>
-      </tr>
-      <tr>
-        <td>MonthToDate</td>
-        <td>Decimal</td>
-        <td>Current charges so far this month.</td>
-      </tr>
-      <tr>
-        <td>CurrentHour</td>
-        <td>Decimal</td>
-        <td>Charges for the current hour.</td>
-      </tr>
-      <tr>
-        <td>PreviousHour</td>
-        <td>Decimal</td>
-        <td>Charges for the previous hour.</td>
-      </tr>
-      <tr>
-        <td>GroupID</td>
-        <td>Integer</td>
-        <td>Unique identifier for this specific group.</td>
-      </tr>
-      <tr>
-        <td>GroupName</td>
-        <td>String</td>
-        <td>User-given name to this group.</td>
-      </tr>
-      <tr>
-        <td>LocationAlias</td>
-        <td>String</td>
-        <td>Data center alias corresponding to this group.</td>
-      </tr>
-      <tr>
-        <td>ServerTotal</td>
-        <td>Complex</td>
-        <td>Collection of servers that make up the group, and the individual cost of each.</td>
-      </tr>
-    </tbody>
-  </table>
-  <h3>ServerTotal Attributes</h3>
-  <table>
-    <tbody>
-      <tr>
-        <td><strong>Name</strong>
-        </td>
-        <td><strong>Type</strong>
-        </td>
-        <td><strong>Description</strong>
-        </td>
-      </tr>
-      <tr>
-        <td>MonthlyEstimate</td>
-        <td>Decimal</td>
-        <td>Estimated costs for the server based on current usage.</td>
-      </tr>
-      <tr>
-        <td>MonthToDate</td>
-        <td>Decimal</td>
-        <td>Current charges so far this month.</td>
-      </tr>
-      <tr>
-        <td>CurrentHour</td>
-        <td>Decimal</td>
-        <td>Charges for the current hour.</td>
-      </tr>
-      <tr>
-        <td>PreviousHour</td>
-        <td>Decimal</td>
-        <td>Charges for the previous hour.</td>
-      </tr>
-      <tr>
-        <td>ServerName</td>
-        <td>String</td>
-        <td>Name of this server that is incurring charges.</td>
-      </tr>
-    </tbody>
-  </table>
-  <h3>Examples</h3>
-  <h4>JSON (REST)</h4>
-  <pre>{<br />     "Summary":<br />     {<br />       "MonthlyEstimate":73.790,<br />       "MonthToDate":73.790,<br />       "CurrentHour":0.0,<br />       "PreviousHour":0.0<br />     },<br />       "AccountAlias":"1000",<br />       "StartDate":"11/1/2012",<br />       "EndDate":"11/15/2012",<br />       "GroupTotals":[<br />       {<br />         "GroupID":1634,<br />         "GroupName":"Group 1",<br />         "LocationAlias":"WA1",<br />         "ServerTotals":[<br />           {<br />           "ServerName":"SERVER1",<br />           "MonthlyEstimate":73.790,<br />           "MonthToDate":73.790,<br />           "CurrentHour":0.0,<br />           "PreviousHour":0.0<br />           }<br />         ],<br />         "MonthlyEstimate":73.790,<br />         "MonthToDate":73.790,<br />         "CurrentHour":0.0,<br />         "PreviousHour":0.0<br />       }],<br />       "Success":true,<br />       "Message":"Ok",<br />       "StatusCode":0<br />}</pre>
-  <h4>XML (REST)</h4>
-  <pre>&lt;GroupSummariesResponse Success="true" Message="Ok" StatusCode="0" AccountAlias="1000" StartDate="11/1/2012" EndDate="11/15/2012"&gt;
+</pre> 
 
-    &lt;Summary MonthlyEstimate="73.790" MonthToDate="73.790" CurrentHour="0.0" PreviousHour="0.0" /&gt;
+## Response
+### Attributes
+<table>
+  <tbody>
+    <tr>
+      <td><strong>Name</strong>
+      </td>
+      <td><strong>Type</strong>
+      </td>
+      <td><strong>Description</strong>
+      </td>
+    </tr>
+    <tr>
+      <td>Success</td>
+      <td>Boolean</td>
+      <td>True if the request was successful, otherwise False.</td>
+    </tr>
+    <tr>
+      <td>Message</td>
+      <td>String</td>
+      <td>A description of the result. The contents of this field does not contain any actionable information, it is purely intended to provide a human readable description of the result.</td>
+    </tr>
+    <tr>
+      <td>StatusCode</td>
+      <td>Int</td>
+      <td>This value will help to identify any errors which were encountered while processing the request. The value of '0' indicates success, all non-zero StatusCodes indicate an error state.</td>
+    </tr>
+    <tr>
+      <td>AccountAlias</td>
+      <td>String</td>
+      <td>Account that this group summary applied to.</td>
+    </tr>
+    <tr>
+      <td>StartDate</td>
+      <td>String</td>
+      <td>Start date of the query range.</td>
+    </tr>
+    <tr>
+      <td>EndDate</td>
+      <td>Decimal</td>
+      <td>End date of the query range.</td>
+    </tr>
+    <tr>
+      <td>Summary</td>
+      <td>Complex (see below)</td>
+      <td>Overview of costs for the group.</td>
+    </tr>
+    <tr>
+      <td>ServerGroupTotals</td>
+      <td>Complex (see below)</td>
+      <td>Details of individual costs of the group.</td>
+    </tr>
+  </tbody>
+</table>
 
-    &lt;GroupTotals&gt;
+### Summary Attributes
+<table>
+  <tbody>
+    <tr>
+      <td><strong>Name</strong>
+      </td>
+      <td><strong>Type</strong>
+      </td>
+      <td><strong>Description</strong>
+      </td>
+    </tr>
+    <tr>
+      <td>MonthlyEstimate</td>
+      <td>Decimal</td>
+      <td>Estimated costs for all groups based on current usage.</td>
+    </tr>
+    <tr>
+      <td>MonthToDate</td>
+      <td>Decimal</td>
+      <td>Current charges so far this month.</td>
+    </tr>
+    <tr>
+      <td>CurrentHour</td>
+      <td>Decimal</td>
+      <td>Charges for the current hour.</td>
+    </tr>
+    <tr>
+      <td>MonthToDate</td>
+      <td>Decimal</td>
+      <td>Charges for the previous hour.</td>
+    </tr>
+  </tbody>
+</table>
 
-        &lt;ServerGroupTotal MonthlyEstimate="73.790" 
+### ServerGroupTotals Attributes
+<table>
+  <tbody>
+    <tr>
+      <td><strong>Name</strong>
+      </td>
+      <td><strong>Type</strong>
+      </td>
+      <td><strong>Description</strong>
+      </td>
+    </tr>
+    <tr>
+      <td>MonthlyEstimate</td>
+      <td>Decimal</td>
+      <td>Estimated costs for all groups based on current usage.</td>
+    </tr>
+    <tr>
+      <td>MonthToDate</td>
+      <td>Decimal</td>
+      <td>Current charges so far this month.</td>
+    </tr>
+    <tr>
+      <td>CurrentHour</td>
+      <td>Decimal</td>
+      <td>Charges for the current hour.</td>
+    </tr>
+    <tr>
+      <td>PreviousHour</td>
+      <td>Decimal</td>
+      <td>Charges for the previous hour.</td>
+    </tr>
+    <tr>
+      <td>GroupID</td>
+      <td>Integer</td>
+      <td>Unique identifier for this specific group.</td>
+    </tr>
+    <tr>
+      <td>GroupName</td>
+      <td>String</td>
+      <td>User-given name to this group.</td>
+    </tr>
+    <tr>
+      <td>LocationAlias</td>
+      <td>String</td>
+      <td>Data center alias corresponding to this group.</td>
+    </tr>
+    <tr>
+      <td>ServerTotal</td>
+      <td>Complex (see below)</td>
+      <td>Collection of servers that make up the group, and the individual cost of each.</td>
+    </tr>
+  </tbody>
+</table>
 
-            MonthToDate="73.790" 
+### ServerTotal Attributes
+<table>
+  <tbody>
+    <tr>
+      <td><strong>Name</strong>
+      </td>
+      <td><strong>Type</strong>
+      </td>
+      <td><strong>Description</strong>
+      </td>
+    </tr>
+    <tr>
+      <td>MonthlyEstimate</td>
+      <td>Decimal</td>
+      <td>Estimated costs for the server based on current usage.</td>
+    </tr>
+    <tr>
+      <td>MonthToDate</td>
+      <td>Decimal</td>
+      <td>Current charges so far this month.</td>
+    </tr>
+    <tr>
+      <td>CurrentHour</td>
+      <td>Decimal</td>
+      <td>Charges for the current hour.</td>
+    </tr>
+    <tr>
+      <td>PreviousHour</td>
+      <td>Decimal</td>
+      <td>Charges for the previous hour.</td>
+    </tr>
+    <tr>
+      <td>ServerName</td>
+      <td>String</td>
+      <td>Name of this server that is incurring charges.</td>
+    </tr>
+  </tbody>
+</table>
 
-            CurrentHour="0.0" 
+### Examples
+<h4>JSON (REST)</h4>
+<pre>{<br />     "Summary":<br />     {<br />       "MonthlyEstimate":73.790,<br />       "MonthToDate":73.790,<br />       "CurrentHour":0.0,<br />       "PreviousHour":0.0<br />     },<br />       "AccountAlias":"1000",<br />       "StartDate":"11/1/2012",<br />       "EndDate":"11/15/2012",<br />       "GroupTotals":[<br />       {<br />         "GroupID":1634,<br />         "GroupName":"Group 1",<br />         "LocationAlias":"WA1",<br />         "ServerTotals":[<br />           {<br />           "ServerName":"SERVER1",<br />           "MonthlyEstimate":73.790,<br />           "MonthToDate":73.790,<br />           "CurrentHour":0.0,<br />           "PreviousHour":0.0<br />           }<br />         ],<br />         "MonthlyEstimate":73.790,<br />         "MonthToDate":73.790,<br />         "CurrentHour":0.0,<br />         "PreviousHour":0.0<br />       }],<br />       "Success":true,<br />       "Message":"Ok",<br />       "StatusCode":0<br />}</pre>
 
-            PreviousHour="0.0" 
+<h4>XML (REST)</h4>
+<pre>&lt;GroupSummariesResponse Success="true" Message="Ok" StatusCode="0" AccountAlias="1000" StartDate="11/1/2012" EndDate="11/15/2012"&gt;
 
-            GroupID="1634" 
+  &lt;Summary MonthlyEstimate="73.790" MonthToDate="73.790" CurrentHour="0.0" PreviousHour="0.0" /&gt;
 
-            GroupName="Group 1" 
+  &lt;GroupTotals&gt;
 
-            LocationAlias="WA1"&gt;
+      &lt;ServerGroupTotal MonthlyEstimate="73.790" 
 
-            &lt;ServerTotals&gt;
+          MonthToDate="73.790" 
 
-                &lt;ServerTotal MonthlyEstimate="73.790" 
+          CurrentHour="0.0" 
 
-                    MonthToDate="73.790" 
+          PreviousHour="0.0" 
 
-                    CurrentHour="0.0" 
+          GroupID="1634" 
 
-                    PreviousHour="0.0" 
+          GroupName="Group 1" 
 
-                    ServerName="SERVER1" /&gt;
+          LocationAlias="WA1"&gt;
 
-            &lt;/ServerTotals&gt;
+          &lt;ServerTotals&gt;
 
-        &lt;/ServerGroupTotal&gt;
+              &lt;ServerTotal MonthlyEstimate="73.790" 
 
-    &lt;/GroupTotals&gt;
+                  MonthToDate="73.790" 
+
+                  CurrentHour="0.0" 
+
+                  PreviousHour="0.0" 
+
+                  ServerName="SERVER1" /&gt;
+
+          &lt;/ServerTotals&gt;
+
+      &lt;/ServerGroupTotal&gt;
+
+  &lt;/GroupTotals&gt;
 
 &lt;/GroupSummariesResponse&gt;
 
-    </pre>
-  <h4>XML (SOAP)</h4>
-  <pre>&lt;soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" 
+</pre>
 
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<h4>XML (SOAP)</h4>
+<pre>&lt;soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" 
 
-    xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 
-    &lt;soap:Body&gt;
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
 
-        &lt;GetGroupSummariesResponse xmlns="http://www.tier3.com/"&gt;
+  &lt;soap:Body&gt;
 
-            &lt;GetGroupSummariesResult Success="true" 
+      &lt;GetGroupSummariesResponse xmlns="http://www.tier3.com/"&gt;
 
-                Message="Ok" 
+          &lt;GetGroupSummariesResult Success="true" 
 
-                StatusCode="0" 
+              Message="Ok" 
 
-                AccountAlias="1000" 
+              StatusCode="0" 
 
-                StartDate="11/1/2012" 
+              AccountAlias="1000" 
 
-                EndDate="11/16/2012"&gt;
+              StartDate="11/1/2012" 
 
-                &lt;Summary MonthlyEstimate="83.180" 
+              EndDate="11/16/2012"&gt;
 
-                    MonthToDate="83.180" 
+              &lt;Summary MonthlyEstimate="83.180" 
 
-                    CurrentHour="0.223600" 
+                  MonthToDate="83.180" 
 
-                    PreviousHour="0.223600" /&gt;
+                  CurrentHour="0.223600" 
 
-                &lt;GroupTotals&gt;
+                  PreviousHour="0.223600" /&gt;
 
-                    &lt;ServerGroupTotal MonthlyEstimate="83.180" 
+              &lt;GroupTotals&gt;
 
-                        MonthToDate="83.180" 
+                  &lt;ServerGroupTotal MonthlyEstimate="83.180" 
 
-                        CurrentHour="0.223600" 
+                      MonthToDate="83.180" 
 
-                        PreviousHour="0.223600" 
+                      CurrentHour="0.223600" 
 
-                        GroupID="1634" 
+                      PreviousHour="0.223600" 
 
-                        GroupName="Group 1 
+                      GroupID="1634" 
 
-                        LocationAlias="WA1"&gt;
+                      GroupName="Group 1 
 
-                        &lt;ServerTotals&gt;
+                      LocationAlias="WA1"&gt;
 
-                            &lt;ServerTotal MonthlyEstimate="83.180" 
+                      &lt;ServerTotals&gt;
 
-                                MonthToDate="83.180" 
+                          &lt;ServerTotal MonthlyEstimate="83.180" 
 
-                                CurrentHour="0.223600" 
+                              MonthToDate="83.180" 
 
-                                PreviousHour="0.223600" 
+                              CurrentHour="0.223600" 
 
-                                ServerName="SERVER1" /&gt;
+                              PreviousHour="0.223600" 
 
-                        &lt;/ServerTotals&gt;
+                              ServerName="SERVER1" /&gt;
 
-                    &lt;/ServerGroupTotal&gt;
+                      &lt;/ServerTotals&gt;
 
-                &lt;/GroupTotals&gt;
+                  &lt;/ServerGroupTotal&gt;
 
-            &lt;/GetGroupSummariesResult&gt;
+              &lt;/GroupTotals&gt;
 
-        &lt;/GetGroupSummariesResponse&gt;
+          &lt;/GetGroupSummariesResult&gt;
 
-    &lt;/soap:Body&gt;
+      &lt;/GetGroupSummariesResponse&gt;
+
+  &lt;/soap:Body&gt;
 
 &lt;/soap:Envelope&gt;
 
 </pre>
-  <h3>Status Codes</h3>
-  <table>
-    <tbody>
-      <tr>
-        <td><strong>Status Code</strong>
-        </td>
-        <td><strong>Description</strong>
-        </td>
-      </tr>
-      <tr>
-        <td>0</td>
-        <td>Request was successfully processed</td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>Unknown Error. &nbsp;An application error occurred processing your request, contact Tier3 support to resolve the issue.</td>
-      </tr>
-      <tr>
-        <td>100</td>
-        <td>Authentication Failed. &nbsp;You must logon to the API prior to calling this method.</td>
-      </tr>
-      <tr>
-        <td>541</td>
-        <td>Hardware Group Not Found. &nbsp;You must provide a valid hardware group ID when calling this method.</td>
-      </tr>
-      <tr>
-        <td>1800</td>
-        <td>Account Not Found. &nbsp;You must provide a valid account alias when calling this method.</td>
-      </tr>
-      <tr>
-        <td>1801</td>
-        <td>Invalid Start Date. &nbsp;You must provide a valid start date when calling this method.</td>
-      </tr>
-      <tr>
-        <td>1802</td>
-        <td>Invalid End Date. &nbsp;You must provide a valid end date when calling this method.</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+
+### Status Codes
+<table>
+  <tbody>
+    <tr>
+      <td><strong>Status Code</strong>
+      </td>
+      <td><strong>Description</strong>
+      </td>
+    </tr>
+    <tr>
+      <td>0</td>
+      <td>Request was successfully processed</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Unknown Error. &nbsp;An application error occurred processing your request, contact Tier3 support to resolve the issue.</td>
+    </tr>
+    <tr>
+      <td>100</td>
+      <td>Authentication Failed. &nbsp;You must logon to the API prior to calling this method.</td>
+    </tr>
+    <tr>
+      <td>541</td>
+      <td>Hardware Group Not Found. &nbsp;You must provide a valid hardware group ID when calling this method.</td>
+    </tr>
+    <tr>
+      <td>1800</td>
+      <td>Account Not Found. &nbsp;You must provide a valid account alias when calling this method.</td>
+    </tr>
+    <tr>
+      <td>1801</td>
+      <td>Invalid Start Date. &nbsp;You must provide a valid start date when calling this method.</td>
+    </tr>
+    <tr>
+      <td>1802</td>
+      <td>Invalid End Date. &nbsp;You must provide a valid end date when calling this method.</td>
+    </tr>
+  </tbody>
+</table>

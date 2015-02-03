@@ -5,14 +5,18 @@
   "attachments": []
 }}}
 
-<h3>Logout</h3>
-<p>This method will log you out of the API. The Logon method must be called again prior to accessing the API again.
-  <br />
-  <br /><strong>URL</strong>: <code>https://api.tier3.com/REST/Auth/Logout/</code>
-  <br />
-  <br /><strong>Logout Request Attributes</strong>: None Required.
-  <br />
-  <br /><strong>Valid Status Codes returned by the Logout Method</strong>:</p>
+This method will log you out of the API. The Logon method must be called again prior to accessing the API again.
+
+## URL
+
+    https://api.tier3.com/REST/Auth/Logout/
+
+## Request
+### Attributes
+
+None Required.
+
+## Status Codes
 <table>
   <tbody>
     <tr>
