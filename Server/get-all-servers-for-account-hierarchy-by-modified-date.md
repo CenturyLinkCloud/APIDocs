@@ -1,5 +1,5 @@
 {{{
-  "title": "Get All Servers For AccountHierarchy By ModifiedDate",
+  "title": "Get All Servers For Account Hierarchy By Modified Date",
   "date": "6-28-2013",
   "author": "Richard Seroter",
   "attachments": []

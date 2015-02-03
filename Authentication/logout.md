@@ -16,7 +16,7 @@ This method will log you out of the API. The Logon method must be called again p
 
 None Required.
 
-## Status Codes
+### Status Codes
 <table>
     <thead>
   <tr>
