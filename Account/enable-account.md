@@ -5,12 +5,16 @@
   "attachments": []
 }}}
 
-EnableAccount
-<p>Enable a suspended account in the Tier 3 system. Calls to this operation must include an authorization cookie acquired from the <a href="http://help.tier3.com/entries/20339862-logon">Logon operation.</a>
-</p>
-URL
-<pre>REST: https://api.tier3.com/REST/Account/EnableAccount/&lt;format&gt; (format = XML | JSON) <br />SOAP: https://api.tier3.com/SOAP/Account.asmx?op=EnableAccount </pre> Request
-<h3>Attributes</h3>
+
+Enable a suspended account in the Tier 3 system. Calls to this operation must include an authorization cookie acquired from the <a href="http://help.tier3.com/entries/20339862-logon">Logon operation.</a>
+
+## URL
+
+    REST: https://api.tier3.com/REST/Account/EnableAccount/&lt;format&gt; (format = XML | JSON)
+    SOAP: https://api.tier3.com/SOAP/Account.asmx?op=EnableAccount
+
+## Request
+### Attributes
 <table>
   <tbody>
     <tr>
@@ -31,7 +35,9 @@ URL
     </tr>
   </tbody>
 </table>
-<h3>Examples</h3>
+
+### Examples
+
 <h4>JSON (REST)</h4>
 <pre>{ <br />    "AccountAlias": "ACCT"<br />}</pre>
 <h4>XML (REST)</h4>
@@ -59,8 +65,11 @@ URL
 
 &lt;/soap:Envelope&gt;  
 
-</pre> Response
-<h3>Attributes</h3>
+</pre> 
+
+## Response
+### Attributes
+
 <table>
   <tbody>
     <tr>
@@ -93,7 +102,9 @@ URL
     </tr>
   </tbody>
 </table>
-<h3>Examples</h3>
+
+### Examples
+
 <h4>JSON (REST)</h4>
 <pre>{
 

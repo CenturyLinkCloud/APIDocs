@@ -5,11 +5,15 @@
   "attachments": []
 }}}
 
-GetCustomFields
-<p>Gets the account custom field definitions.</p>
+Gets the account custom field definitions.
+
 URL
-<pre>REST: https://api.tier3.com/REST/Account/GetCustomFields/&lt;format&gt;<br />SOAP: https://api.tier3.com/SOAP/Account.asmx?op=GetCustomFields</pre> Request
-<h3>Attributes</h3>
+REST: https://api.tier3.com/REST/Account/GetCustomFields/&lt;format&gt;
+SOAP: https://api.tier3.com/SOAP/Account.asmx?op=GetCustomFields
+
+## Request
+### Attributes
+
 <table>
   <tbody>
     <tr>
@@ -31,7 +35,8 @@ URL
     </tr>
   </tbody>
 </table>
-<h3>Examples</h3>
+
+## Examples
 <h4>JSON</h4>
 <pre>{ "AccountAlias": "ACCT" }</pre>
 <h4>XML</h4>
@@ -39,8 +44,10 @@ URL
 
     &lt;AccountAlias&gt;ACCT&lt;/AccountAlias&gt;
 
-&lt;/GetCustomFieldsRequest&gt;</pre> Response
-<h3>Attributes</h3>
+&lt;/GetCustomFieldsRequest&gt;</pre> 
+
+## Response
+### Attributes
 <table>
   <tbody>
     <tr>
@@ -73,7 +80,8 @@ URL
     </tr>
   </tbody>
 </table>
-<h3>Examples</h3>
+
+### Examples
 <h4>JSON</h4>
 <pre>{
 
@@ -202,7 +210,8 @@ URL
     &lt;/AccountCustomFields&gt;
 
 &lt;/AccountCustomFieldsResponse&gt;</pre>
-<h3>Status Codes</h3>
+
+### Status Codes
 <table>
   <tbody>
     <tr>

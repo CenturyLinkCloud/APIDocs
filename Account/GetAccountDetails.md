@@ -5,12 +5,16 @@
   "attachments": []
 }}}
 
-GetAccountDetails
-<p>Gets all of the contact information and settings for a given account. Calls to this operation must include an authorization cookie acquired from the <a href="http://help.tier3.com/entries/20339862-logon">Logon operation.</a>
-</p>
-URL
-<pre>REST: https://api.tier3.com/REST/Account/GetAccountDetails/&lt;format&gt; (format = XML | JSON) <br />SOAP: https://api.tier3.com/SOAP/Account.asmx?op=GetAccountDetails </pre> Request
-<h3>Attributes</h3>
+Gets all of the contact information and settings for a given account. Calls to this operation must include an authorization cookie acquired from the <a href="http://help.tier3.com/entries/20339862-logon">Logon operation.</a>
+
+## URL
+
+    REST: https://api.tier3.com/REST/Account/GetAccountDetails/&lt;format&gt; (format = XML | JSON)
+    SOAP: https://api.tier3.com/SOAP/Account.asmx?op=GetAccountDetails
+
+##Request
+### Attributes
+
 <table>
   <tbody>
     <tr>
@@ -31,7 +35,8 @@ URL
     </tr>
   </tbody>
 </table>
-<h3>Examples</h3>
+
+## Examples
 <h4>JSON (REST)</h4>
 <pre>{ <br />    "AccountAlias": "1000"<br />}</pre>
 <h4>XML (REST)</h4>
@@ -59,8 +64,10 @@ URL
 
 &lt;/soap:Envelope&gt;    
 
-</pre> Response
-<h3>Attributes</h3>
+</pre> 
+
+## Response
+### Attributes
 <table>
   <tbody>
     <tr>
@@ -186,7 +193,8 @@ URL
     </tr>
   </tbody>
 </table>
-<h3>Examples</h3>
+
+### Examples 
 <h4>JSON (REST)</h4>
 <pre>{<br />     "AccountDetails":{<br />              "AccountAlias":"1001",<br />              "ParentAlias":"1000",<br />              "Location":"WA1",<br />              "BusinessName":"Example Business Name",<br />              "Address1":"110 110th Avenue",<br />              "Address2":null,<br />              "City":"Bellevue",<br />              "StateProvince":"WA",<br />              "PostalCode":"98004",<br />              "Country":"USA",<br />              "Telephone":"877-388-4373",<br />              "Fax":null,<br />              "TimeZone":"Pacific Standard Time",<br />              "Status":2,<br />              "ShareParentNetworks":true},<br />     "Success":true,<br />     "Message":"Account details successfully queried.",<br />     "StatusCode":0<br />}</pre>
 <h4>XML (REST)</h4>
@@ -253,7 +261,8 @@ URL
 &lt;/soap:Envelope&gt;
 
 </pre>
-<h3>Status Codes</h3>
+
+### Status Codes
 <table>
   <tbody>
     <tr>

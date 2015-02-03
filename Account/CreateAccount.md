@@ -2,16 +2,19 @@
   "title": "CreateAccount",
   "date": "11-11-2014",
   "author": "Richard Seroter",
-  "attachments": [],
-  "contentIsHTML": true
+  "attachments": []
 }}}
 
-CreateAccount
-<p>Create a brand new (sub) account in the Tier 3 system. Calls to this operation must include an authorization cookie acquired from the <a href="http://help.tier3.com/entries/20339862-logon">Logon operation.</a>
-</p>
-URL
-<pre>REST: https://api.tier3.com/REST/Account/CreateAccount/&lt;format&gt; (format = XML | JSON) <br />SOAP: https://api.tier3.com/SOAP/Account.asmx?op=CreateAccount </pre> Request
-<h3>Attributes</h3>
+
+Create a brand new (sub) account in the Tier 3 system. Calls to this operation must include an authorization cookie acquired from the <a href="http://help.tier3.com/entries/20339862-logon">Logon operation.</a>
+
+## URL
+
+    REST: https://api.tier3.com/REST/Account/CreateAccount/&lt;format&gt; (format = XML | JSON)
+    SOAP: https://api.tier3.com/SOAP/Account.asmx?op=CreateAccount 
+
+### Attributes
+
 <table>
   <tbody>
     <tr>
@@ -119,7 +122,9 @@ URL
     </tr>
   </tbody>
 </table>
-<h3>Examples</h3>
+
+## Examples
+
 <h4>JSON (REST)</h4>
 <pre>{<br />     "ParentAlias":"1000",<br />     "AccountAlias":"1001",<br />     "Location":"WA1",<br />     "BusinessName":"Demo Biz",<br />     "Address1":"110 110th Avenue",<br />     "Address2":null,<br />     "City":"Bellevue",<br />     "StateProvince":"WA",<br />     "PostalCode":"98004",<br />     "Country":"USA",<br />     "Telephone":"877-388-4373",<br />     "Fax":null,<br />     "TimeZone":"Pacific Standard Time",<br />     "ShareParentNetworks":"true",<br />     "BillingResponsibilityID":"2"<br />}</pre>
 <h4>XML (REST)</h4>
@@ -209,8 +214,11 @@ URL
 
 &lt;/soap12:Envelope&gt;  
 
-</pre> Response
-<h3>Attributes</h3>
+</pre> 
+
+## Response
+### Attributes
+
 <table>
   <tbody>
     <tr>
@@ -334,7 +342,9 @@ URL
     </tr>
   </tbody>
 </table>
-<h3>Examples</h3>
+
+
+## Examples
 <h4>JSON (REST)</h4>
 <pre>{<br />     "AccountDetails":{<br />       "AccountAlias":"1001",<br />       "ParentAlias":"1000",<br />       "Location":"WA1",<br />       "BusinessName":"Demo Biz",<br />       "Address1":"110 110th Avenue",<br />       "Address2":null,<br />       "City":"Bellevue",<br />       "StateProvince":"WA",<br />       "PostalCode":"98004",<br />       "Country":"USA",<br />       "Telephone":"877-388-4373",<br />       "Fax":null,<br />       "TimeZone":"Pacific Standard Time",<br />       "Status":1,<br />       "ShareParentNetworks":true<br />     },<br />     "Success":true,<br />     "Message":"Account successfully created.",<br />     "StatusCode":0<br />}</pre>
 <h4>XML (REST)</h4>
@@ -409,7 +419,9 @@ URL
 &lt;/soap:Envelope&gt;
 
 </pre>
-<h3>Status Codes</h3>
+
+### Status Codes
+
 <table>
   <tbody>
     <tr>
