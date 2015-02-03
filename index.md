@@ -3,6 +3,7 @@
     "Overview",
     "Account",
     "Domain Name",
-    "SMTP Relay"
+    "SMTP Relay",
+    "Users"
   ] 
 }}}
