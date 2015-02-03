@@ -98,7 +98,9 @@ Reverts to a named snapshot for a specified server.
     </tr>
   </tbody>
 </table>
+
 ### Examples
+
 <h4>JSON</h4>
 <pre>{<br />    "Success":true,<br />    "Message":"Success",<br />    "StatusCode":0<br />}</pre>
 
@@ -106,6 +108,7 @@ Reverts to a named snapshot for a specified server.
 <pre>&lt;APIResponse Success="true" Message="Success" StatusCode="0"/&gt;</pre>
 
 ### Status Codes
+
 <table>
   <tbody>
     <tr>

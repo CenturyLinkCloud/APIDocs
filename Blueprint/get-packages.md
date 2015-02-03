@@ -64,6 +64,7 @@ Gets a list of Blueprint Packages.
 
 ## Response
 ### Attributes
+
 <table>
   <tbody>
     <tr>
