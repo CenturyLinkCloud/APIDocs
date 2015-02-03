@@ -2,7 +2,8 @@
   "title": "CreateAccount",
   "date": "11-11-2014",
   "author": "Richard Seroter",
-  "attachments": []
+  "attachments": [],
+  "contentIsHTML": true
 }}}
 
 CreateAccount
