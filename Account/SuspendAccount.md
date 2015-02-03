@@ -138,13 +138,13 @@ Disable an existing account in the Tier 3 system. Calls to this operation must i
 
 ### Status Codes
 <table>
-  <tbody>
-    <tr>
-      <td><strong>Status Code</strong>
-      </td>
-      <td><strong>Description</strong>
-      </td>
-    </tr>
+  <thead>
+  <tr>
+    <th>Status Code</th>
+    <th>Description</th>
+  </tr>
+</thead>
+<tbody>
     <tr>
       <td>0</td>
       <td>Request was successfully processed</td>

@@ -136,13 +136,13 @@ URL
 <pre>&lt;CreateHardwareGroupResponse Success="true" Message="Success" StatusCode="0"&gt;<br />    &lt;Group ID="5" Name="Group 01" ParentID="2"/&gt;<br />&lt;/CreateHardwareGroupResponse&gt;</pre>
 <h3>Status Codes</h3>
 <table>
-  <tbody>
-    <tr>
-      <td><strong>Status Code</strong>
-      </td>
-      <td><strong>Description</strong>
-      </td>
-    </tr>
+  <thead>
+  <tr>
+    <th>Status Code</th>
+    <th>Description</th>
+  </tr>
+</thead>
+<tbody>
     <tr>
       <td>0</td>
       <td>Request was successfully processed</td>

@@ -5,13 +5,12 @@
   "attachments": []
 }}}
 
-ListDomainNames
-<p><strong><em>This API is no longer supported and will no longer be available beginning November 15th, 2012</em></strong>
-</p>
-<p>This method retrieves the list of Domain Names that your account has registered with Tier 3.
-  <br />
-  <br /><strong>URL:</strong>
-</p>
+<p><strong><em>This API is no longer supported and will no longer be available beginning November 15th, 2012</em></strong></p>
+
+This method retrieves the list of Domain Names that your account has registered with Tier 3.
+
+## URL
+
 <pre>https://api.tier3.com/REST/Domain/ListDomainNames/&lt;format&gt;</pre>
 <p>
   <br />
@@ -173,13 +172,13 @@ ListDomainNames
   <br /><strong>Valid Status Codes returned by the ListDomainNames Method:</strong>
 </p>
 <table>
-  <tbody>
-    <tr>
-      <td><strong>Status Code</strong>
-      </td>
-      <td><strong>Description</strong>
-      </td>
-    </tr>
+  <thead>
+  <tr>
+    <th>Status Code</th>
+    <th>Description</th>
+  </tr>
+</thead>
+<tbody>
     <tr>
       <td>0</td>
       <td>ListDomainNames request was successfully processed</td>

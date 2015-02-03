@@ -115,13 +115,13 @@ UpdateDomainInformation
   <br /><strong>Valid Status Codes returned by the UpdateDomainInformation Method:</strong>
 </p>
 <table>
-  <tbody>
-    <tr>
-      <td><strong>Status Code</strong>
-      </td>
-      <td><strong>Description</strong>
-      </td>
-    </tr>
+  <thead>
+  <tr>
+    <th>Status Code</th>
+    <th>Description</th>
+  </tr>
+</thead>
+<tbody>
     <tr>
       <td>0</td>
       <td>UpdateDomainInformation request was successfully processed</td>

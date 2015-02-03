@@ -241,13 +241,13 @@ URL
 <pre>&lt;QueuedItemResponse Success="true" Message="Success" StatusCode="0" RequestID="1" /&gt;</pre>
 <h3>Status Codes</h3>
 <table>
-  <tbody>
-    <tr>
-      <td><strong>Status Code</strong>
-      </td>
-      <td><strong>Description</strong>
-      </td>
-    </tr>
+  <thead>
+  <tr>
+    <th>Status Code</th>
+    <th>Description</th>
+  </tr>
+</thead>
+<tbody>
     <tr>
       <td>0</td>
       <td>Request was successfully processed</td>
