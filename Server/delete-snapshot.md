@@ -98,15 +98,17 @@ SOAP: https://api.tier3.com/SOAP/Server.asmx?op=DeleteSnapshot
       <td>This value will help to identify any errors which were encountered while processing the request. The value of '0' indicates success, all non-zero StatusCodes indicate an error state.</td>
     </tr>
   </tbody>
-</table>.
+</table>
 
 ### Examples
+
 <h4>JSON</h4>
 <pre>{<br />    "Success":true,<br />    "Message":"Success",<br />    "StatusCode":0<br />}</pre>
 <h4>XML</h4>
 <pre>&lt;APIResponse Success="true" Message="Success" StatusCode="0"/&gt;</pre>
 
 ### Status Codes
+
 <table>
   <tbody>
     <tr>
