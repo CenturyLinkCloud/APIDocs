@@ -5,18 +5,16 @@
   "attachments": []
 }}}
 
-UpdateNameServers
-<p><strong><em>This API is no longer supported and will no longer be available beginning November 15th, 2012</em></strong>
-</p>
-<p>This method provides the ability to update the AutoRenew attribute of your Domain Name registration.
-  <br />
-  <br /><strong>URL:</strong>
-</p>
-<pre>https://api.tier3.com/REST/Domain/UpdateNameServers/&lt;format&gt;</pre>
-<p>
-  <br />
-  <br /><strong>UpdateNameServers Request Attributes:</strong>
-</p>
+<p><strong><em>This API is no longer supported and will no longer be available beginning November 15th, 2012</em></strong></p>
+
+This method provides the ability to update the AutoRenew attribute of your Domain Name registration.
+
+## URL
+
+    REST: https://api.tier3.com/REST/Domain/UpdateNameServers<format>
+
+## Request
+### Attributes
 <table>
   <tbody>
     <tr>
@@ -24,8 +22,8 @@ UpdateNameServers
       <tr>
         <th>Name</th>
         <th>Type</th>
-        <th>Req.</th>
         <th>Description</th>
+        <th>Req.</th>
       </tr>
     </thead>
     <tbody>
@@ -33,53 +31,54 @@ UpdateNameServers
     <tr>
       <td>NameServers</td>
       <td>List</td>
-      <td>Yes</td>
       <td>A list of DNS Name servers to set for your Domains.</td>
+      <td>Yes</td>
     </tr>
   </tbody>
 </table>
-<p>
-  <br /><strong>Example Messages:</strong>&nbsp;<strong>XML:</strong>
-</p>
-<pre>&lt;UpdateNameServersRequest&gt;
 
-  &lt;NameServers&gt;
+### Examples
 
-    &lt;string&gt;NS1.P04.DYNECT.NET&lt;/string&gt;
+#### XML
 
-    &lt;string&gt;NS2.P04.DYNECT.NET&lt;/string&gt;
+    <UpdateNameServersRequest>
 
-    &lt;string&gt;NS3.P04.DYNECT.NET&lt;/string&gt;
+      <NameServers>
 
-  &lt;/NameServers&gt;
+        <string>NS1.P04.DYNECT.NET</string>
 
-&lt;/UpdateNameServersRequest&gt;</pre>
-<p>
-  <br /><strong>JSON:</strong>
-</p>
-<pre>{
+        <string>NS2.P04.DYNECT.NET</string>
 
-  "NameServers":[
+        <string>NS3.P04.DYNECT.NET</string>
+
+      </NameServers>
+
+    </UpdateNameServersRequest>
+
+#### JSON
 
     {
 
-      "NS1.P04.DYNECT.NET",
+      "NameServers":[
 
-      "NS2.P04.DYNECT.NET",
+        {
 
-      "NS3.P04.DYNECT.NET"
+          "NS1.P04.DYNECT.NET",
+
+          "NS2.P04.DYNECT.NET",
+
+          "NS3.P04.DYNECT.NET"
+
+        }
+
+      ]
 
     }
 
-  ]
-
-}</pre>
-<p>
-  <br />
-  <br /><strong>Response Attributes:</strong>
-</p>
+## Response
+### Attributes
 <table>
-    <thead>
+  <thead>
     <tr>
       <th>Name</th>
       <th>Type</th>
@@ -104,26 +103,26 @@ UpdateNameServers
     </tr>
   </tbody>
 </table>
-<p>
-  <br /><strong>Example Responses:</strong>&nbsp;<strong>XML:</strong>
-</p>
-<pre>&lt;DomainResponse Success="true" Message="The name servers were successfully updated." StatusCode="0"/&gt;</pre>
-<p>
-  <br /><strong>JSON:</strong>
-</p>
-<pre>{
 
-  "Success":true,
+### Examples
 
-  "Message":"The name servers were successfully updated.",
+#### XML
 
-  "StatusCode":0
+    <DomainResponse Success="true" Message="The name servers were successfully updated." StatusCode="0"/>
 
-}</pre>
-<p>
-  <br />
-  <br /><strong>Valid Status Codes returned by the UpdateNameServers Method:</strong>
-</p>
+#### JSON
+    
+    {
+
+      "Success":true,
+
+      "Message":"The name servers were successfully updated.",
+
+      "StatusCode":0
+
+    }
+
+### Status Codes
 <table>
     <thead>
   <tr>

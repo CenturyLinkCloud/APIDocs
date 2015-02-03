@@ -5,18 +5,18 @@
   "attachments": []
 }}}
 
-RegisterDomainName
-<p><strong><em>This API is no longer supported and will no longer be available beginning November 15th, 2012</em></strong>
-</p>
-<p>This method registers a new Domain Name with the Tier3 DNS service.
-  <br />
-  <br /><strong>URL:</strong>
-</p>
-<pre>https://api.tier3.com/REST/Domain/RegisterDomainName/&lt;format&gt;</pre>
-<p>
-  <br />
-  <br /><strong>RegisterDomainName Request Attributes:</strong>
-</p>
+<p><strong><em>This API is no longer supported and will no longer be available beginning November 15th, 2012</em></strong></p>
+
+This method registers a new Domain Name with the Tier3 DNS service.
+
+## URL
+
+    REST: https://api.tier3.com/REST/Domain/RegisterDomainName/<format>
+
+## Request
+
+### Attributes
+
 <table>
   <tbody>
     <tr>
@@ -24,8 +24,8 @@ RegisterDomainName
       <tr>
         <th>Name</th>
         <th>Type</th>
-        <th>Req.</th>
         <th>Description</th>
+        <th>Req.</th>
       </tr>
     </thead>
     <tbody>
@@ -33,41 +33,42 @@ RegisterDomainName
     <tr>
       <td>AutoRenew</td>
       <td>Boolean</td>
-      <td>No</td>
       <td>True if you wish the domain to automatically renew when it is set to expire. The default value is 'false'.</td>
+      <td>No</td>
     </tr>
     <tr>
       <td>DomainName</td>
       <td>String</td>
-      <td>Yes</td>
       <td>The Domain Name that you wish to register.</td>
+      <td>Yes</td>
     </tr>
   </tbody>
 </table>
-<p>
-  <br /><strong>Example Messages:</strong>&nbsp;<strong>XML:</strong>
-</p>
-<pre>&lt;RegisterDomainNameRequest&gt;
 
-  &lt;AutoRenew&gt;true&lt;/AutoRenew&gt;
+### Examples
 
-  &lt;DomainName&gt;mycompany.com&lt;/DomainName&gt;
+#### XML:
 
-&lt;/RegisterDomainNameRequest&gt;</pre>
-<p>
-  <br /><strong>JSON:</strong>
-</p>
-<pre>{
+    <RegisterDomainNameRequest>
 
-  "AutoRenew":true,
+      <AutoRenew>true</AutoRenew>
 
-  "DomainName":"mycompany.com"
+      <DomainName>mycompany.com</DomainName>
 
-}</pre>
-<p>
-  <br />
-  <br /><strong>Response Attributes:</strong>
-</p>
+    </RegisterDomainNameRequest>
+
+#### JSON:
+
+    {
+
+      "AutoRenew":true,
+
+      "DomainName":"mycompany.com"
+
+    }
+
+## Response
+### Attributes
 <table>
     <thead>
     <tr>
@@ -94,14 +95,16 @@ RegisterDomainName
     </tr>
   </tbody>
 </table>
-<p>
-  <br /><strong>Example Responses:</strong>&nbsp;<strong>XML:</strong>
-</p>
-<pre>&lt;DomainResponse Success="true" Message="The domain name was successfully registered." StatusCode="0"/&gt;</pre>
-<p>
-  <br /><strong>JSON:</strong>
-</p>
-<pre>{
+
+### Examples
+
+#### XML: 
+
+    <DomainResponse Success="true" Message="The domain name was successfully registered." StatusCode="0"/>
+
+#### JSON: 
+
+{
 
   "Success":true,
 
@@ -109,13 +112,11 @@ RegisterDomainName
 
   "StatusCode":0
 
-}</pre>
-<p>
-  <br />
-  <br /><strong>Valid Status Codes returned by the RegisterDomainName Method:</strong>
-</p>
+}
+
+### Status Codes
 <table>
-    <thead>
+  <thead>
   <tr>
     <th>Status Code</th>
     <th>Description</th>

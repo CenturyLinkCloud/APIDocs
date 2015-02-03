@@ -5,18 +5,17 @@
   "attachments": []
 }}}
 
-UpdateDomainInformation
-<p><strong><em>This API is no longer supported and will no longer be available beginning November 15th, 2012</em></strong>
-</p>
-<p>This method provides the ability to update the AutoRenew attribute of your Domain Name registration.
-  <br />
-  <br /><strong>URL:</strong>
-</p>
-<pre>https://api.tier3.com/REST/Domain/UpdateDomainInformation/&lt;format&gt;</pre>
-<p>
-  <br />
-  <br /><strong>UpdateDomainInformation Request Attributes:</strong>
-</p>
+<p><strong><em>This API is no longer supported and will no longer be available beginning November 15th, 2012</em></strong></p>
+
+This method provides the ability to update the AutoRenew attribute of your Domain Name registration.
+
+## URL
+
+    REST: https://api.tier3.com/REST/Domain/UpdateDomainInformation/<format>
+
+## Request
+
+### Attributes
 <table>
   <tbody>
     <tr>
@@ -24,8 +23,8 @@ UpdateDomainInformation
       <tr>
         <th>Name</th>
         <th>Type</th>
-        <th>Req.</th>
         <th>Description</th>
+        <th>Req.</th>
       </tr>
     </thead>
     <tbody>
@@ -33,41 +32,43 @@ UpdateDomainInformation
     <tr>
       <td>AutoRenew</td>
       <td>Boolean</td>
-      <td>No</td>
       <td>True if you wish the domain to automatically renew when it is set to expire. The default value is 'false'.</td>
+      <td>No</td>
     </tr>
     <tr>
       <td>DomainName</td>
       <td>String</td>
-      <td>Yes</td>
       <td>The Domain Name that you wish to register.</td>
+      <td>Yes</td>
     </tr>
   </tbody>
 </table>
-<p>
-  <br /><strong>Example Messages:</strong>&nbsp;<strong>XML:</strong>
-</p>
-<pre>&lt;UpdateDomainInformationRequest&gt;
 
-  &lt;AutoRenew&gt;true&lt;/AutoRenew&gt;
+### Examples
 
-  &lt;DomainName&gt;mycompany.com&lt;/DomainName&gt;
+#### XML
 
-&lt;/UpdateDomainInformationRequest&gt;</pre>
-<p>
-  <br /><strong>JSON:</strong>
-</p>
-<pre>{
+    <UpdateDomainInformationRequest>
 
-  "AutoRenew":true,
+      <AutoRenew>true</AutoRenew>
 
-  "DomainName":"mycompany.com"
+      <DomainName>mycompany.com</DomainName>
 
-}</pre>
-<p>
-  <br />
-  <br /><strong>Response Attributes:</strong>
-</p>
+    </UpdateDomainInformationRequest>
+
+#### JSON
+
+    {
+
+      "AutoRenew":true,
+
+      "DomainName":"mycompany.com"
+
+    }
+
+## Response
+### Attributes
+
 <table>
     <thead>
     <tr>
@@ -94,32 +95,33 @@ UpdateDomainInformation
     </tr>
   </tbody>
 </table>
-<p>
-  <br /><strong>Example Responses:</strong>&nbsp;<strong>XML:</strong>
-</p>
-<pre>&lt;DomainResponse Success="true" Message="The domain name was successfully updated." StatusCode="0"/&gt;</pre>
-<p>
-  <br /><strong>JSON:</strong>
-</p>
-<pre>{
 
-  "Success":true,
+### Examples
 
-  "Message":"The domain name was successfully updated.",
+#### XML
 
-  "StatusCode":0
+    <DomainResponse Success="true" Message="The domain name was successfully updated." StatusCode="0"/>
 
-}</pre>
-<p>
-  <br />
-  <br /><strong>Valid Status Codes returned by the UpdateDomainInformation Method:</strong>
-</p>
+#### JSON
+
+    {
+
+      "Success":true,
+
+      "Message":"The domain name was successfully updated.",
+
+      "StatusCode":0
+
+    }
+
+### Status Codes
+
 <table>
-    <thead>
-  <tr>
-    <th>Status Code</th>
-    <th>Description</th>
-  </tr>
+  <thead>
+    <tr>
+      <th>Status Code</th>
+      <th>Description</th>
+    </tr>
   </thead>
   <tbody>
     <tr>
