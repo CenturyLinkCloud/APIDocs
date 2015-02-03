@@ -1,42 +1,26 @@
 {{{
-  "title": "Overview - Domain Name",
-  "date": "01-18-2015",
-  "author": "Author Name",
-  "attachments": [],
-  "related_products": [],
-  "related_questions": [],
-  "preview" : "",
-  "contentIsHTML": false
+  "title": "Overview",
+  "date": "10-13-2014",
+  "author": "jw@tier3.com",
+  "attachments": []
 }}}
 
-This is a description and summary of the what this API endpoint provides, and how best to interface with the endpoint. It will also state if an authorization cookie is required.
-
-## URL
-
-<div class="kb-api-urls">
-  <div class="kb-api-urls-inner">
-    <p>REST: <span class="url"><code>https://api.tier3.com/REST/DomainName/Overview/</code></span>[format](format =  XML | JSON)</p>
-    <p>SOAP: <span class="url"><code>https://api.tier3.com/SOAP/DomainName/Overview/</code></span></p>
-  </div>
-</div>
-
-
-## Request
-### Attributes
-
-| Name         | Type   | Description                                                                      | Req. |
-|--------------|--------|----------------------------------------------------------------------------------|------|
-| AttributeName1 | String | Description of the attributes                                                   | Yes  |
-| AttributeName2 | String | Attributes descriptions can sometime be a couple sentence. This is an example of that. | No   |
-| AttributeName3 | String | Attributes description.                                      | Yes  |
-
-
-## Examples
-
-<div class="kb-api-examples">
-  <div class="kb-api-examples-header">
-    <a class="kb-api-example-title active">JSON(REST)</a>
-    <a class="kb-api-example-title">XML (REST)</a>
-    <a class="kb-api-example-title">XML (SOAP)</a>
-  </div>
-</div>
+Domain Name API
+<p><strong><em>This API is no longer supported and will no longer be available beginning November 15th, 2012</em></strong>
+</p>
+<p>The Domain api provides methods for managing Domain Names.
+  <br />
+  <br />The URL to the SOAP version of the Domain Name API can be found at <code>https://api.tier3.com/soap/Domain.asmx</code>.
+  <br />
+  <br />
+</p>
+<ul>
+  <li><a href="http://help.tier3.com/entries/20350106-list-domain-names">ListDomainNames</a>
+  </li>
+  <li><a href="http://help.tier3.com/entries/20339902-register-domain-name">RegisterDomainName</a>
+  </li>
+  <li><a href="http://help.tier3.com/entries/20350111-update-domain-information">UpdateDomainInformation</a>
+  </li>
+  <li><a href="http://help.tier3.com/entries/20345473-update-name-servers">UpdateNameServers</a>
+  </li>
+</ul>
