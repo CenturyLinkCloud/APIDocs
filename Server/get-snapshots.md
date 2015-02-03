@@ -1,15 +1,19 @@
 {{{
-  "title": "Get Snapshots",
+  "title": "GetSnapshots",
   "date": "2-7-2013",
   "author": "Troy Schneringer",
   "attachments": []
 }}}
 
-GetSnapshots
-<p>Gets the list of Snapshots associated with the server.</p>
-URL
-<pre>REST: https://api.tier3.com/REST/Server/GetSnapshots/&lt;format&gt;<br />SOAP: https://api.tier3.com/SOAP/Server.asmx?op=GetSnapshots</pre> Request
-<h3>Attributes</h3>
+Gets the list of Snapshots associated with the server.
+
+## URL
+
+    REST: https://api.tier3.com/REST/Server/GetSnapshots/&lt;format&gt;
+    SOAP: https://api.tier3.com/SOAP/Server.asmx?op=GetSnapshots
+
+## Request
+### Attributes
 <table>
   <tbody>
     <tr>
@@ -36,7 +40,8 @@ URL
     </tr>
   </tbody>
 </table>
-<h3>Examples</h3>
+
+### Examples
 <h4>JSON</h4>
 <pre>{
 
@@ -45,6 +50,7 @@ URL
   "AccountAlias": "UNK"
 
 }</pre>
+
 <h4>XML</h4>
 <pre>&lt;ServerRequest&gt;
 
@@ -52,8 +58,10 @@ URL
 
     &lt;Name&gt;SERVER01&lt;/Name&gt;
 
-&lt;/ServerRequest&gt;</pre> Response
-<h3>Attributes</h3>
+&lt;/ServerRequest&gt;</pre>
+
+## Response
+### Attributes
 <table>
   <tbody>
     <tr>
@@ -81,14 +89,15 @@ URL
     </tr>
     <tr>
       <td>Snapshots</td>
-      <td>Complex</td>
+      <td>Complex (see below)</td>
       <td>
         <p>A list of Snapshots (see below)</p>
       </td>
     </tr>
   </tbody>
 </table>
-<h3>Snapshot Attributes</h3>
+
+### Snapshot Attributes
 <table>
   <tbody>
     <tr>
@@ -116,12 +125,15 @@ URL
     </tr>
   </tbody>
 </table>
-<h3>Examples</h3>
+
+### Examples
 <h4>JSON</h4>
 <pre>{<br />    "RequestID:1,<br />    "Success":true,<br />    "Message":"Success",<br />    "StatusCode":0,<br />    "Snapshots":[<br />        {"Name":"2012-01-01-12:00:00","Description":"Snapshot (2012-01-01-12:00:00)","DateCreated":"\/Date(1330047404893)\/"}]<br />}</pre>
+
 <h4>XML</h4>
 <pre>&lt;GetSnapshotsResponse Success="true" Message="Successfully retrieved snapshots" StatusCode="0"&gt;<br />    &lt;Snapshots&gt;<br />        &lt;Snapshot&gt;<br />            &lt;Name&gt;2012-01-01-12:00:00&lt;/Name&gt;<br />            &lt;Description&gt;Snapshot (2012-01-01-12:00:00)&lt;/Description&gt;<br />            &lt;DateCreated&gt;2012-01-01T12:00:00.000&lt;/DateCreated&gt;<br />        &lt;/Snapshot&gt;<br />    &lt;/Snapshots&gt;<br />&lt;/GetSnapshotsResponse&gt;</pre>
-<h3>Status Codes</h3>
+
+### Status Codes
 <table>
   <tbody>
     <tr>

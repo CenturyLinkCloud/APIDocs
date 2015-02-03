@@ -1,15 +1,19 @@
 {{{
-  "title": "Get Server",
+  "title": "GetServer",
   "date": "10-29-2014",
   "author": "Peter Kowalczyk",
   "attachments": []
 }}}
 
-GetServer
-<p>Gets the detail for one server.</p>
-URL
-<pre>REST: https://api.tier3.com/REST/Server/GetServer/&lt;format&gt;<br />SOAP: https://api.tier3.com/SOAP/Server.asmx?op=ServerResponseMsg</pre> Request
-<h3>Attributes</h3>
+Gets the detail for one server.
+
+## URL
+
+    REST: https://api.tier3.com/REST/Server/GetServer/&lt;format&gt;
+    SOAP: https://api.tier3.com/SOAP/Server.asmx?op=ServerResponseMsg
+
+## Request
+### Attributes
 <table>
   <tbody>
     <tr>
@@ -36,9 +40,11 @@ URL
     </tr>
   </tbody>
 </table>
-<h3>Examples</h3>
+
+### Examples
 <h4>JSON</h4>
 <pre>{ "Name": "WA1T3NWEB01" }</pre>
+
 <h4>XML</h4>
 <pre>&lt;ServerRequest&gt;
 
@@ -46,8 +52,10 @@ URL
 
     &lt;Name&gt;SERVER1&lt;/Name&gt;
 
-&lt;/ServerRequest&gt;</pre> Response
-<h3>Attributes</h3>
+&lt;/ServerRequest&gt;</pre>
+
+## Response
+### Attributes
 <table>
   <tbody>
     <tr>
@@ -81,17 +89,19 @@ URL
     </tr>
   </tbody>
 </table>
-<h3><a href="/entries/23105126-Server-Object" target="_blank">Server&nbsp;Object&nbsp;description</a></h3>
-<h3>Examples</h3>
+
+### Examples
 <h4>JSON</h4>
 <pre>{<br />    "Success":true,<br />    "Message":"Success",<br />    "StatusCode":0,<br />    "Server":<br />        {"ID":1001,"HardwareGroupID":1,"Name":"WA1T3NWEB01","Description":"WA1T3NWEB01",<br />            "DnsName":"WA1T3NWEB01","IsTemplate":false,"Cpu":2,"MemoryGB":4,"DiskCount":3,<br />            "TotalDiskSpaceGB":116,"Status":"Active","ServerType":2,"ServiceLevel":1,<br />            "OperatingSystem":4,"PowerState":"Started","Location":"WA1","IPAddress":"172.0.0.1"<br />            "IPAddresses:[<br />                {"Address":"172.0.01", "AddressType":1}],
 
             "CustomFields":[<br />                { "CustomFieldID": 100,"Name": "My Field", "Type": "Text", "Value": "A test"},<br />                { "CustomFieldID": 101,"Name": "My Field 2","Type": "Option","Value": "2"},<br />                { "CustomFieldID": 102,"Name": "My Field 3","Type": "Checkbox","Value": "true"},]
 
 <br />   }<br />}</pre>
+
 <h4>XML</h4>
 <pre>&lt;ServerResponse Success="true" Message="Successfully retrieved servers" StatusCode="0"&gt;<br />    &lt;Server ID="1001" HardwareGroupID="1" Name="WA1T3NWEB01" Description="WA1T3NWEB01" <br />            DnsName="WA1T3NWEB01" IsTemplate="false" Cpu="2" MemoryGB="4" DiskCount="3" <br />            TotalDiskSpaceGB="116" Status="Active" ServerType="1" ServiceLevel="2" <br />            OperatingSystem="2" PowerState="Started" Location="WA1" IPAddress="172.0.0.1"&gt;<br />        &lt;IPAddresses&gt;<br />            &lt;IPAddress Address="172.0.0.1" AddressType="RIP" /&gt;<br />        &lt;/IPAddresses&gt;<br />        &lt;CustomFields CustomFieldID="100" Name="My Field" Type="Text" Value="Test Value" /&gt;<br />        &lt;CustomFields CustomFieldID="101" Name="My 2nd Field" Type="Option" Value="Value 3" /&gt;<br />        &lt;CustomFields CustomFieldID="102" Name="My 3rd Field" Type="Checkbox" Value="true" /&gt;&nbsp;<br /> &lt;/Server&gt;<br />&lt;/ServerResponse&gt;</pre>
-<h3>Status Codes</h3>
+
+### Status Codes
 <table>
   <tbody>
     <tr>

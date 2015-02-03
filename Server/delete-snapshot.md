@@ -5,11 +5,15 @@
   "attachments": []
 }}}
 
-DeleteSnapshot
-<p>Deletes a named snapshot for a specified server.</p>
-URL
-<pre>REST: https://api.tier3.com/REST/Server/DeleteSnapshot/&lt;format&gt;<br />SOAP: https://api.tier3.com/SOAP/Server.asmx?op=DeleteSnapshot</pre> Request
-<h3>Attributes</h3>
+Deletes a named snapshot for a specified server.
+
+## URL
+
+REST: https://api.tier3.com/REST/Server/DeleteSnapshot/&lt;format&gt;
+SOAP: https://api.tier3.com/SOAP/Server.asmx?op=DeleteSnapshot
+
+## Request
+### Attributes
 <table>
   <tbody>
     <tr>
@@ -42,7 +46,8 @@ URL
     </tr>
   </tbody>
 </table>
-<h3>Examples</h3>
+
+### Examples
 <h4>JSON</h4>
 <pre>{
 
@@ -53,6 +58,7 @@ URL
   "SnapshotName": "2012-01-01-12:00:00"
 
 }</pre>
+
 <h4>XML</h4>
 <pre>&lt;SnapshotRequest&gt;
 
@@ -62,8 +68,10 @@ URL
 
     &lt;SnapshotName&gt;2012-01-01-12:00:00&lt;/SnapshotName&gt;
 
-&lt;/SnapshotRequest&gt;</pre> Response
-<h3>Attributes</h3>
+&lt;/SnapshotRequest&gt;</pre>
+
+## Response
+### Attribute
 <table>
   <tbody>
     <tr>
@@ -90,13 +98,15 @@ URL
       <td>This value will help to identify any errors which were encountered while processing the request. The value of '0' indicates success, all non-zero StatusCodes indicate an error state.</td>
     </tr>
   </tbody>
-</table>
-<h3>Examples</h3>
+</table>.
+
+### Examples
 <h4>JSON</h4>
 <pre>{<br />    "Success":true,<br />    "Message":"Success",<br />    "StatusCode":0<br />}</pre>
 <h4>XML</h4>
 <pre>&lt;APIResponse Success="true" Message="Success" StatusCode="0"/&gt;</pre>
-<h3>Status Codes</h3>
+
+### Status Codes
 <table>
   <tbody>
     <tr>

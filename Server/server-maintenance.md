@@ -1,15 +1,19 @@
 {{{
-  "title": "Server Maintenance",
+  "title": "ServerMaintenance",
   "date": "9-26-2014",
   "author": "Peter Kowalczyk",
   "attachments": []
 }}}
 
-ServerMaintenance
-<p>Enables or disables maintenance mode on a Server.</p>
-URL
-<pre>REST: https://api.tier3.com/REST/Server/ServerMaintenance/&lt;format&gt;<a href="https://api.tier3.com/REST/Server/ServerMaintenance/&lt;format&gt;"><br /></a>SOAP: https://api.tier3.com/SOAP/Server.asmx?op=ServerMaintenance</pre> Request
-<h3>Attributes</h3>
+Enables or disables maintenance mode on a Server.
+
+## URL
+
+    REST: https://api.tier3.com/REST/Server/ServerMaintenance/&lt;format&gt;
+    SOAP: https://api.tier3.com/SOAP/Server.asmx?op=ServerMaintenance
+
+## Request
+### Attributes
 <table>
   <tbody>
     <tr>
@@ -42,7 +46,8 @@ URL
     </tr>
   </tbody>
 </table>
-<h3>Examples</h3>
+
+### Examples
 <h4>JSON</h4>
 <pre>{
 
@@ -53,6 +58,7 @@ URL
   "Enable": true
 
 }</pre>
+
 <h4>XML</h4>
 <pre>&lt;ServerMaintenanceRequest&gt;
 
@@ -62,8 +68,10 @@ URL
 
     &lt;Enable&gt;true&lt;/Enable&gt;
 
-&lt;/ServerMaintenanceRequest&gt;</pre> Response
-<h3>Attributes</h3>
+&lt;/ServerMaintenanceRequest&gt;</pre>
+
+## Response
+### Attributes
 <table>
   <tbody>
     <tr>
@@ -99,12 +107,15 @@ URL
     </tr>
   </tbody>
 </table>
-<h3>Examples</h3>
+
+### Examples
 <h4>JSON</h4>
 <pre>{<br />    "RequestID:1,<br />    "Success":true,<br />    "Message":"Success",<br />    "StatusCode":0<br />}</pre>
+
 <h4>XML</h4>
 <pre>&lt;QueuedItemResponse Success="true" Message="Success" StatusCode="0"&gt;<br />&nbsp; &nbsp; &lt;RequestID&gt;1&lt;/RequestID&gt;<br />&lt;/QueuedItemResponse&gt;</pre>
-<h3>Status Codes</h3>
+
+### Status Codes
 <table>
   <tbody>
     <tr>

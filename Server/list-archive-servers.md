@@ -1,15 +1,19 @@
 {{{
-  "title": "List Archive Servers",
+  "title": "ListArchiveServers",
   "date": "2-6-2013",
   "author": "Luke Bakken",
   "attachments": []
 }}}
 
-ListArchiveServers
-<p>Lists archived servers.</p>
-URL
-<pre>REST: https://api.tier3.com/REST/Server/ListArchivedServers/&lt;format&gt;<br />SOAP: https://api.tier3.com/SOAP/Server.asmx?op=ListArchivedServers</pre> Request
-<h3>Attributes</h3>
+Lists archived servers.
+
+## URL
+
+    REST: https://api.tier3.com/REST/Server/ListArchivedServers/&lt;format&gt;
+    SOAP: https://api.tier3.com/SOAP/Server.asmx?op=ListArchivedServers
+
+## Request
+### Attributes
 <table>
   <tbody>
     <tr>
@@ -36,7 +40,8 @@ URL
     </tr>
   </tbody>
 </table>
-<h3>Examples</h3>
+
+### Examples
 <h4>JSON</h4>
 <pre>{
 
@@ -45,6 +50,7 @@ URL
   "Location": "DC1"
 
 }</pre>
+
 <h4>XML</h4>
 <pre>&lt;ListArchivedServersRequest&gt;
 
@@ -52,8 +58,10 @@ URL
 
     &lt;Location&gt;DC1&lt;/Location&gt;
 
-&lt;/ListArchivedServersRequest&gt;</pre> Response
-<h3>Attributes</h3>
+&lt;/ListArchivedServersRequest&gt;</pre>
+
+## Response
+### Attributes
 <table>
   <tbody>
     <tr>
@@ -81,14 +89,15 @@ URL
     </tr>
     <tr>
       <td>Servers</td>
-      <td>Complex</td>
+      <td>Complex (see below)</td>
       <td>
         <p>A list of Archive Servers (see below)</p>
       </td>
     </tr>
   </tbody>
 </table>
-<h3>Archive Server Attributes</h3>
+
+### Archive Server Attributes
 <table>
   <tbody>
     <tr>
@@ -116,12 +125,15 @@ URL
     </tr>
   </tbody>
 </table>
-<h3>Examples</h3>
+
+### Examples
 <h4>JSON</h4>
 <pre>{<br />    "Success":true,<br />    "Message":"Success",<br />    "StatusCode":0,<br />    "Servers":[<br />        {"ID":1001,"Name":"WA1T3NWEB01","Description":"WA1T3NWEB01"},<br />        {"ID":1002,"Name":"WA1T3NWEB02","Description":"WA1T3NWEB02"}<br />     ]<br />}</pre>
+
 <h4>XML</h4>
 <pre>&lt;GetArchiveServersResponse Success="true" Message="Successfully retrieved servers" StatusCode="0"&gt;<br />    &lt;Servers&gt;<br />        &lt;ArchiveServer ID="1001" Name="WA1T3NWEB01" Description="WA1T3NWEB01"/&gt;<br />        &lt;ArchiveServer ID="1002" Name="WA1T3NWEB02" Description="WA1T3NWEB02"/&gt;<br />    &lt;/Servers&gt;&nbsp;<br />&lt;/GetArchiveServersResponse&gt;</pre>
-<h3>Status Codes</h3>
+
+### Status Codes
 <table>
   <tbody>
     <tr>

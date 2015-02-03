@@ -1,15 +1,19 @@
 {{{
-  "title": "Get Server Credentials",
+  "title": "GetServerCredentials",
   "date": "2-6-2013",
   "author": "Troy Schneringer",
   "attachments": []
 }}}
 
-GetServerCredentials
-<p>Gets the credentials for the specified server.</p>
-URL
-<pre>REST: https://api.tier3.com/REST/Server/GetServerCredentials/&lt;format&gt;<br />SOAP: https://api.tier3.com/SOAP/Server.asmx?op=GetServerCredentials</pre> Request
-<h3>Attributes</h3>
+Gets the credentials for the specified server.
+
+## URL
+
+    REST: https://api.tier3.com/REST/Server/GetServerCredentials/&lt;format&gt;
+    SOAP: https://api.tier3.com/SOAP/Server.asmx?op=GetServerCredentials
+
+## Request
+### Attributes
 <table>
   <tbody>
     <tr>
@@ -36,7 +40,8 @@ URL
     </tr>
   </tbody>
 </table>
-<h3>Examples</h3>
+
+### Examples
 <h4>JSON</h4>
 <pre>{
 
@@ -45,6 +50,7 @@ URL
   "Name": "DC1ACCTSVR01"
 
 }</pre>
+
 <h4>XML</h4>
 <pre>&lt;ServerRequest&gt;
 
@@ -52,8 +58,10 @@ URL
 
     &lt;Name&gt;DC1ACCTSVR01&lt;/Name&gt;
 
-&lt;/ServerRequest&gt;</pre> Response
-<h3>Attributes</h3>
+&lt;/ServerRequest&gt;</pre>
+
+## Response
+### Attributes
 <table>
   <tbody>
     <tr>
@@ -95,12 +103,15 @@ URL
     </tr>
   </tbody>
 </table>
-<h3>Examples</h3>
+
+### Examples
 <h4>JSON</h4>
 <pre>{<br />    "Success":true,<br />    "Message":"Success",<br />    "StatusCode":0,<br />    "Username":"administrator",<br />    "Password":"password"<br />}</pre>
+
 <h4>XML</h4>
 <pre>&lt;GetServerCredentialsResponse Success="true" Message="Successfully retrieved servers" StatusCode="0"&gt;<br />    &lt;Username&gt;administrator&lt;/Username&gt;<br />    &lt;Password&gt;password&lt;/Password&gt;<br />&lt;/GetServerCredentialsResponse&gt;</pre>
-<h3>Status Codes</h3>
+
+### Status Codes
 <table>
   <tbody>
     <tr>

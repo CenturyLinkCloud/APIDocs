@@ -1,11 +1,11 @@
 {{{
-  "title": "Server Template Object",
+  "title": "ServerTemplateObject",
   "date": "6-11-2013",
   "author": "Luke Bakken",
   "attachments": []
 }}}
 
-<h3>Template Object</h3>
+<h3>Server Template Object</h3>
 <table>
   <tbody>
     <tr>

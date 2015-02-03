@@ -1,15 +1,19 @@
 {{{
-  "title": "Snapshot Server",
+  "title": "SnapshotServer",
   "date": "2-7-2013",
   "author": "Luke Bakken",
   "attachments": []
 }}}
 
-SnapshotServer
-<p>Takes a server snapshot.</p>
-URL
-<pre>REST: https://api.tier3.com/REST/Server/SnapshotServer/&lt;format&gt;<br />SOAP: https://api.tier3.com/SOAP/Server.asmx?op=SnapshotServer</pre> Request
-<h3>Attributes</h3>
+Takes a server snapshot.
+
+## URL
+
+    REST: https://api.tier3.com/REST/Server/SnapshotServer/&lt;format&gt;
+    SOAP: https://api.tier3.com/SOAP/Server.asmx?op=SnapshotServer
+
+## Request
+### Attributes
 <table>
   <tbody>
     <tr>
@@ -36,7 +40,8 @@ URL
     </tr>
   </tbody>
 </table>
-<h3>Examples</h3>
+
+### Examples
 <h4>JSON</h4>
 <pre>{
 
@@ -52,8 +57,10 @@ URL
 
     &lt;Name&gt;SERVER01&lt;/Name&gt;
 
-&lt;/ServerRequest&gt;</pre> Response
-<h3>Attributes</h3>
+&lt;/ServerRequest&gt;</pre>
+
+## Response
+### Attributes
 <table>
   <tbody>
     <tr>
@@ -89,12 +96,14 @@ URL
     </tr>
   </tbody>
 </table>
-<h3>Examples</h3>
+
+### Examples
 <h4>JSON</h4>
 <pre>{<br />    "RequestID:1,<br />    "Success":true,<br />    "Message":"Success",<br />    "StatusCode":0<br />}</pre>
 <h4>XML</h4>
 <pre>&lt;QueuedItemResponse Success="true" Message="Success" StatusCode="0"&gt;<br />&nbsp; &nbsp; &lt;RequestID&gt;1&lt;/RequestID&gt;<br />&lt;/QueuedItemResponse&gt;</pre>
-<h3>Status Codes</h3>
+
+### Status Codes
 <table>
   <tbody>
     <tr>

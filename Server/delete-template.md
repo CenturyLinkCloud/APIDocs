@@ -1,15 +1,19 @@
 {{{
-  "title": "Delete Template",
+  "title": "DeleteTemplate",
   "date": "2-6-2013",
   "author": "Troy Schneringer",
   "attachments": []
 }}}
 
-DeleteTemplate
-<p>Deletes the Template with the specified name.</p>
-URL
-<pre>REST: https://api.tier3.com/REST/Server/DeleteTemplate/&lt;format&gt;<br />SOAP: https://api.tier3.com/SOAP/Server.asmx?op=DeleteTemplate</pre> Request
-<h3>Attributes</h3>
+Deletes the Template with the specified name.
+
+## URL
+
+    REST: https://api.tier3.com/REST/Server/DeleteTemplate/&lt;format&gt;
+    SOAP: https://api.tier3.com/SOAP/Server.asmx?op=DeleteTemplate
+
+## Request
+### Attributes
 <table>
   <tbody>
     <tr>
@@ -36,7 +40,8 @@ URL
     </tr>
   </tbody>
 </table>
-<h3>Examples</h3>
+
+### Examples
 <h4>JSON</h4>
 <pre>{
 
@@ -45,6 +50,7 @@ URL
   "Name": "TEMPLATENAME01"
 
 }</pre>
+
 <h4>XML</h4>
 <pre>&lt;ServerRequest&gt;
 
@@ -53,8 +59,9 @@ URL
     &lt;Name&gt;TEMPLATENAME01&lt;/Name&gt;
 
 &lt;/ServerRequest&gt;</pre>
-<pre>&nbsp;</pre> Response
-<h3>Attributes</h3>
+
+## Response
+### Attributes
 <table>
   <tbody>
     <tr>
@@ -90,12 +97,15 @@ URL
     </tr>
   </tbody>
 </table>
-<h3>Examples</h3>
+
+### Examples
 <h4>JSON</h4>
 <pre>{<br />    "RequestID:1,<br />    "Success":true,<br />    "Message":"Success",<br />    "StatusCode":0<br />}</pre>
+
 <h4>XML</h4>
 <pre>&lt;QueuedItemResponse Success="true" Message="Success" StatusCode="0"&gt;<br />&nbsp; &nbsp; &lt;RequestID&gt;1&lt;/RequestID&gt;<br />&lt;/QueuedItemResponse&gt;</pre>
-<h3>Status Codes</h3>
+
+### Status Codes
 <table>
   <tbody>
     <tr>

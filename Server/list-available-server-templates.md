@@ -1,15 +1,19 @@
 {{{
-  "title": "List Available Server Templates",
+  "title": "ListAvailableServerTemplates",
   "date": "5-1-2013",
   "author": "Luke Bakken",
   "attachments": []
 }}}
 
-ListAvailableServerTemplates
-<p>Gets the list of Templates available to the account and location.</p>
-URL
-<pre>REST: https://api.tier3.com/REST/Server/ListAvailableServerTemplates/&lt;format&gt;<br />SOAP: https://api.tier3.com/SOAP/Server.asmx?op=ListAvailableServerTemplates</pre> Request
-<h3>Attributes</h3>
+Gets the list of Templates available to the account and location.
+
+## URL
+
+    REST: https://api.tier3.com/REST/Server/ListAvailableServerTemplates/&lt;format&gt;
+    SOAP: https://api.tier3.com/SOAP/Server.asmx?op=ListAvailableServerTemplates
+
+## Request
+### Attributes
 <table>
   <tbody>
     <tr>
@@ -38,15 +42,18 @@ URL
     </tr>
   </tbody>
 </table>
-Example
+
+### Examples
 <pre>&lt;ListTemplatesRequest&gt;
 
     &lt;AccountAlias&gt;ACCT&lt;/AccountAlias&gt;
 
     &lt;Location&gt;WA1&lt;/Location&gt;
 
-&lt;/ListTemplatesRequest&gt;</pre> Response
-<h3>Attributes</h3>
+&lt;/ListTemplatesRequest&gt;</pre>
+
+## Response
+### Attributes
 <table>
   <tbody>
     <tr>
@@ -82,8 +89,8 @@ Example
     </tr>
   </tbody>
 </table>
-<h3><a href="/entries/23104781-Server-Template-Object" target="_blank">Server Template Object</a></h3>
-<h3>Examples</h3>
+
+### Examples
 <h4>JSON</h4>
 <pre>{<br />    "RequestID:1,<br />    "Success":true,<br />    "Message":"Success",<br />    "StatusCode":0,<br />    "Templates":[
 
@@ -106,6 +113,7 @@ Example
      ]
 
 }</pre>
+
 <h4>XML</h4>
 <pre>&lt;GetTemplatesResponse Success="true" Message="Successfully retrieved templates" StatusCode="0"&gt;
 
@@ -122,7 +130,8 @@ Example
     &lt;/Templates&gt;
 
 &lt;/GetTemplatesResponse&gt;</pre>
-<h3>Status Codes</h3>
+
+### Status Codes
 <table>
   <tbody>
     <tr>

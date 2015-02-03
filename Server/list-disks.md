@@ -1,15 +1,19 @@
 {{{
-  "title": "List Disks",
+  "title": "ListDisks",
   "date": "11-28-2014",
   "author": "Luke Bakken",
   "attachments": []
 }}}
 
-ListDisks
-<p>Lists the disks on a Server.</p>
-URL
-<pre>REST: https://api.tier3.com/REST/Server/ListDisks/&lt;format&gt;<br />SOAP: https://api.tier3.com/SOAP/Server.asmx?op=ListDisks</pre> Request
-<h3>Attributes</h3>
+Lists the disks on a Server.
+
+## URL
+
+REST: https://api.tier3.com/REST/Server/ListDisks/&lt;format&gt
+SOAP: https://api.tier3.com/SOAP/Server.asmx?op=ListDisks
+
+## Request
+### Attributes
 <table>
   <tbody>
     <tr>
@@ -42,7 +46,8 @@ URL
     </tr>
   </tbody>
 </table>
-<h3>Examples</h3>
+
+### Examples
 <h4>JSON</h4>
 <pre>{
 
@@ -53,6 +58,7 @@ URL
   "QueryGuestDiskNames": true
 
 }</pre>
+
 <h4>XML</h4>
 <pre>&lt;ListDiskRequest&gt;
 
@@ -62,8 +68,10 @@ URL
 
     &lt;QueryGuestDiskNames&gt;true&lt;/QueryGuestDiskNames&gt;
 
-&lt;/ListDiskRequest&gt;</pre> Response
-<h3>Attributes</h3>
+&lt;/ListDiskRequest&gt;</pre>
+
+## Response
+### Attributes
 <table>
   <tbody>
     <tr>
@@ -96,7 +104,8 @@ URL
     </tr>
   </tbody>
 </table>
-<h3>Examples</h3>
+
+### Examples
 <h4>JSON</h4>
 <pre>{
 
@@ -127,6 +136,7 @@ URL
   "StatusCode": 0
 
 }</pre>
+
 <h4>XML</h4>
 <pre>&lt;ListDiskResponse Success="true" Message="OK" StatusCode="0" Server="WA1MDAUBU04" HasSnapshot="false"&gt;
 
@@ -137,7 +147,8 @@ URL
     &lt;/Disks&gt;
 
 &lt;/ListDiskResponse&gt;</pre>
-<h3>Status Codes</h3>
+
+### Status Codes
 <table>
   <tbody>
     <tr>

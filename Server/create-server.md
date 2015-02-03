@@ -5,11 +5,15 @@
   "attachments": []
 }}}
 
-CreateServer
-<p>Creates a new Server.</p>
-URL
-<pre>REST: https://api.tier3.com/REST/Server/CreateServer/&lt;format&gt;<br />SOAP: https://api.tier3.com/SOAP/Server.asmx?op=CreateServer</pre> Request
-<h3>Attributes</h3>
+Creates a new Server.
+
+## URL
+
+    REST: https://api.tier3.com/REST/Server/CreateServer/&lt;format&gt;
+    SOAP: https://api.tier3.com/SOAP/Server.asmx?op=CreateServer
+
+## Request
+### Attributes
 <table>
   <tbody>
     <tr>
@@ -116,13 +120,14 @@ URL
     </tr>
     <tr>
       <td>CustomFields</td>
-      <td>Complex</td>
+      <td>Complex (see below)</td>
       <td>A list of Custom Fields associated to this server (see below)</td>
       <td>No</td>
     </tr>
   </tbody>
 </table>
-<h3>CustomField Attributes</h3>
+
+### CustomField Attributes
 <table>
   <tbody>
     <tr>
@@ -148,7 +153,8 @@ URL
     </tr>
   </tbody>
 </table>
-<h3>Examples</h3>
+
+### Examples
 <h4>JSON</h4>
 <pre>{
 
@@ -183,6 +189,7 @@ URL
   "CustomFields":[<br />                { "CustomFieldID": 100,"Value": "A test"},<br />                { "CustomFieldID": 101,"Value": "2"},<br />                { "CustomFieldID": 102,"Value": "true"},]}
 
 }</pre>
+
 <h4>XML</h4>
 <pre>&lt;CreateServerRequest&gt;
 
@@ -220,8 +227,12 @@ URL
 
     &lt;CustomFields CustomFieldID="104" Value="2" /&gt;
 
-    &lt;CustomFields CustomFieldID="108" Value="true" /&gt;<br />&lt;/CreateServerRequest&gt;</pre> Response
-<h3>Attributes</h3>
+    &lt;CustomFields CustomFieldID="108" Value="true" /&gt;<br />&lt;/CreateServerRequest&gt;
+
+</pre> 
+
+## Response
+### Attributes
 <table>
   <tbody>
     <tr>
@@ -257,12 +268,15 @@ URL
     </tr>
   </tbody>
 </table>
-<h3>Examples</h3>
+
+### Examples
 <h4>JSON</h4>
 <pre>{<br />    "RequestID":1,<br />    "Success":true,<br />    "Message":"Success",<br />    "StatusCode":0<br />}</pre>
+
 <h4>XML</h4>
 <pre>&lt;QueuedItemResponse Success="true" Message="Success" StatusCode="0"&gt;<br />&nbsp; &nbsp; &lt;RequestID&gt;1&lt;/RequestID&gt;<br />&lt;/QueuedItemResponse&gt;</pre>
-<h3>Status Codes</h3>
+
+### Status Codes
 <table>
   <tbody>
     <tr>

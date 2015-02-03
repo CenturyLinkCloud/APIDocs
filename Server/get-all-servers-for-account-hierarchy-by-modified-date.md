@@ -1,16 +1,19 @@
 {{{
-  "title": "Get All Servers For Account Hierarchy By Modified Date",
+  "title": "GetAllServersForAccountHierarchyByModifiedDate",
   "date": "6-28-2013",
   "author": "Richard Seroter",
   "attachments": []
 }}}
 
-GetAllServersForAccountHierarchyByModifiedDate
-<p>Gets a deep list of all modified servers for a given account hierarchy within a given data center. Use this operation to get a full list of all servers contained within an account and all its subaccounts.&nbsp;To get all servers that have changed since
-  a certain date, only provide a BeginDate and omit the EndDate.</p>
-URL
-<pre>REST: https://api.tier3.com/REST/Server/GetAllServersForAccountHierarchyByModifiedDates/&lt;format&gt;<br />SOAP: https://api.tier3.com/SOAP/Server.asmx?op=GetAllServersForAccountHierarchyByModifiedDatesMsg</pre> Request
-<h3>Attributes</h3>
+Gets a deep list of all modified servers for a given account hierarchy within a given data center. Use this operation to get a full list of all servers contained within an account and all its subaccounts.&nbsp;To get all servers that have changed since a certain date, only provide a BeginDate and omit the EndDate.
+
+## URL
+
+REST: https://api.tier3.com/REST/Server/GetAllServersForAccountHierarchyByModifiedDates/&lt;format&gt;
+SOAP: https://api.tier3.com/SOAP/Server.asmx?op=GetAllServersForAccountHierarchyByModifiedDatesMsg
+
+## Request
+### Attributes
 <table>
   <tbody>
     <tr>
@@ -55,9 +58,11 @@ URL
     </tr>
   </tbody>
 </table>
-<h3>Examples</h3>
+
+### Examples
 <h4>JSON</h4>
 <pre>{ <br />   "AccountAlias": "ACCT", <br />   "Location": "WA1",<br />   "BeginDate": "2013-05-01",<br />   "EndDate": "2013-06-30"<br /> }</pre>
+
 <h4>XML</h4>
 <pre>&lt;GetAllServersByModifiedDatesRequest&gt;
 
@@ -65,8 +70,10 @@ URL
 
     &lt;Location&gt;WA1&lt;/Location&gt;<br />    &lt;BeginDate&gt;2013-05-01&lt;/BeginDate&gt;<br />    &lt;EndDate&gt;2013-06-30&lt;/EndDate&gt;
 
-&lt;/GetAllServersByModifiedDatesRequest&gt;&nbsp;</pre> Response
-<h3>Attributes</h3>
+&lt;/GetAllServersByModifiedDatesRequest&gt;&nbsp;</pre>
+
+## Response
+### Attributes
 <table>
   <tbody>
     <tr>
@@ -100,8 +107,8 @@ URL
     </tr>
   </tbody>
 </table>
-<h3><a href="/entries/23105126-Server-Object" target="_blank">Server&nbsp;Object&nbsp;description</a></h3>
-<h3>Examples</h3>
+
+### Examples
 <h4>JSON</h4>
 <pre>{"AccountServers":[
 
@@ -156,6 +163,7 @@ URL
     "Success":true,"Message":"Successfully retrieved deep view of servers","StatusCode":0}
 
 </pre>
+
 <h4>XML</h4>
 <pre>&lt;GetAccountHierarchyServersResponse Success="true" Message="Successfully retrieved deep view of servers" StatusCode="0"&gt;
 
@@ -310,7 +318,8 @@ URL
 &lt;/GetAccountHierarchyServersResponse&gt;
 
 </pre>
-<h3>Status Codes</h3>
+
+### Status Codes
 <table>
   <tbody>
     <tr>

@@ -1,15 +1,19 @@
 {{{
-  "title": "Get Archive Servers",
+  "title": "GetArchiveServers",
   "date": "2-28-2012",
   "author": "Troy Schneringer",
   "attachments": []
 }}}
 
-GetArchiveServers
-<p>Gets the list of Archive Servers.</p>
-URL
-<pre>REST: https://api.tier3.com/REST/Server/GetArchiveServers/&lt;format&gt;<br />SOAP: https://api.tier3.com/SOAP/Server.asmx?op=GetArchiveServers</pre> Response
-<h3>Attributes</h3>
+Gets the list of Archive Servers.
+
+## URL
+
+    REST: https://api.tier3.com/REST/Server/GetArchiveServers/&lt;format&gt;
+    SOAP: https://api.tier3.com/SOAP/Server.asmx?op=GetArchiveServers
+
+## Request
+### Attribute
 <table>
   <tbody>
     <tr>
@@ -37,14 +41,15 @@ URL
     </tr>
     <tr>
       <td>Servers</td>
-      <td>Complex</td>
+      <td>Complex (see below)</td>
       <td>
         <p>A list of Archive Servers (see below)</p>
       </td>
     </tr>
   </tbody>
 </table>
-<h3>Archive Server Attributes</h3>
+
+### Archive Server Attributes
 <table>
   <tbody>
     <tr>
@@ -72,12 +77,15 @@ URL
     </tr>
   </tbody>
 </table>
-<h3>Examples</h3>
+
+### Examples
 <h4>JSON</h4>
 <pre>{<br />    "Success":true,<br />    "Message":"Success",<br />    "StatusCode":0,<br />    "Servers":[<br />        {"ID":1001,"Name":"WA1T3NWEB01","Description":"WA1T3NWEB01"},<br />        {"ID":1002,"Name":"WA1T3NWEB02","Description":"WA1T3NWEB02"}<br />     ]<br />}</pre>
+
 <h4>XML</h4>
 <pre>&lt;GetServersResponse Success="true" Message="Successfully retrieved servers" StatusCode="0"&gt;<br />    &lt;Servers&gt;<br />        &lt;Server ID="1001" Name="WA1T3NWEB01" Description="WA1T3NWEB01"/&gt;<br />        &lt;Server ID="1002" Name="WA1T3NWEB02" Description="WA1T3NWEB02"/&gt;<br />    &lt;/Servers&gt;&nbsp;<br />&lt;/GetServersResponse&gt;</pre>
-<h3>Status Codes</h3>
+
+### Status Codes
 <table>
   <tbody>
     <tr>

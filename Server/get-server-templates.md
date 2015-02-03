@@ -1,15 +1,19 @@
 {{{
-  "title": "Get Server Templates",
+  "title": "GetServerTemplates",
   "date": "8-20-2014",
   "author": "Troy Schneringer",
   "attachments": []
 }}}
 
-GetServerTemplates
-<p>Gets the list of Templates available to the account.</p>
-URL
-<pre>REST: https://api.tier3.com/REST/Server/GetServerTemplates/&lt;format&gt;<br />SOAP: https://api.tier3.com/SOAP/Server.asmx?op=GetServerTemplates</pre> Response
-<h3>Attributes</h3>
+Gets the list of Templates available to the account.
+
+## URL
+
+    REST: https://api.tier3.com/REST/Server/GetServerTemplates/&lt;format&gt;
+    SOAP: https://api.tier3.com/SOAP/Server.asmx?op=GetServerTemplates
+
+## Request
+### Attributes
 <table>
   <tbody>
     <tr>
@@ -43,8 +47,8 @@ URL
     </tr>
   </tbody>
 </table>
-<h3><a href="/entries/23104781-Server-Template-Object" target="_blank">Server Template Object</a></h3>
-<p>Examples</p>
+
+### Examples
 <h4>JSON</h4>
 <pre>{<br />    "RequestID:1,<br />    "Success":true,<br />    "Message":"Success",<br />    "StatusCode":0,<br />    "Templates":[
 
@@ -67,6 +71,7 @@ URL
      ]
 
 }</pre>
+
 <h4>XML</h4>
 <pre>&lt;GetTemplatesResponse Success="true" Message="Successfully retrieved templates" StatusCode="0"&gt;
 
@@ -83,7 +88,8 @@ URL
     &lt;/Templates&gt;
 
 &lt;/GetTemplatesResponse&gt;</pre>
-<h3>Status Codes</h3>
+
+### Status Codes
 <table>
   <tbody>
     <tr>

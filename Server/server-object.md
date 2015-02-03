@@ -1,5 +1,5 @@
 {{{
-  "title": "Server Object",
+  "title": "ServerObject",
   "date": "10-28-2014",
   "author": "Luke Bakken",
   "attachments": []
