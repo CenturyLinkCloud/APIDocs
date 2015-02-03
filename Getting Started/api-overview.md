@@ -20,15 +20,14 @@ Summary
   <br />
 </p>
 <table>
-  <tbody>
+    <thead>
     <tr>
-      <td><strong>Attribute Name</strong>
-      </td>
-      <td><strong>Type</strong>
-      </td>
-      <td><strong>Description</strong>
-      </td>
+      <td>Name</td>
+      <td>Type</td>
+      <td>Description</td>
     </tr>
+  </thead>
+  <tbody>
     <tr>
       <td>Success</td>
       <td>Boolean</td>

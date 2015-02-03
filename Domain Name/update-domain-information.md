@@ -20,14 +20,15 @@ UpdateDomainInformation
 <table>
   <tbody>
     <tr>
-      <td><strong>Attribute Name</strong>
-      </td>
-      <td><strong>Type</strong>
-      </td>
-      <td><strong>Required</strong>
-      </td>
-      <td><strong>Description</strong>
-      </td>
+      <thead>
+      <tr>
+        <td>Name</td>
+        <td>Type</td>
+        <td>Required</td>
+        <td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
     </tr>
     <tr>
       <td>AutoRenew</td>
@@ -68,15 +69,14 @@ UpdateDomainInformation
   <br /><strong>Response Attributes:</strong>
 </p>
 <table>
-  <tbody>
+    <thead>
     <tr>
-      <td><strong>Attribute Name</strong>
-      </td>
-      <td><strong>Type</strong>
-      </td>
-      <td><strong>Description</strong>
-      </td>
+      <td>Name</td>
+      <td>Type</td>
+      <td>Description</td>
     </tr>
+  </thead>
+  <tbody>
     <tr>
       <td>Success</td>
       <td>Boolean</td>

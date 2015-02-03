@@ -11,22 +11,22 @@ This method retrieves the list of Domain Names that your account has registered 
 
 ## URL
 
-<pre>https://api.tier3.com/REST/Domain/ListDomainNames/&lt;format&gt;</pre>
-<p>
-  <br />
-  <br /><strong>ListDomainNames Request Attributes:</strong>
-</p>
+    REST: https://api.tier3.com/REST/Domain/ListDomainNames<format>
+
+## Request
+### Attributes
 <table>
   <tbody>
     <tr>
-      <td><strong>Attribute Name</strong>
-      </td>
-      <td><strong>Type</strong>
-      </td>
-      <td><strong>Required</strong>
-      </td>
-      <td><strong>Description</strong>
-      </td>
+      <thead>
+      <tr>
+        <td>Name</td>
+        <td>Type</td>
+        <td>Required</td>
+        <td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
     </tr>
     <tr>
       <td>Search</td>
@@ -36,9 +36,8 @@ This method retrieves the list of Domain Names that your account has registered 
     </tr>
   </tbody>
 </table>
-<p>
-  <br /><strong>Example Messages:</strong>&nbsp;<strong>XML:</strong>
-</p>
+
+### Examples
 <pre>&lt;ListDomainNamesRequest&gt;
 
   &lt;Search&gt;.com&lt;/Search&gt;
@@ -57,15 +56,14 @@ This method retrieves the list of Domain Names that your account has registered 
   <br /><strong>Response Attributes:</strong>
 </p>
 <table>
-  <tbody>
+    <thead>
     <tr>
-      <td><strong>Attribute Name</strong>
-      </td>
-      <td><strong>Type</strong>
-      </td>
-      <td><strong>Description</strong>
-      </td>
+      <td>Name</td>
+      <td>Type</td>
+      <td>Description</td>
     </tr>
+  </thead>
+  <tbody>
     <tr>
       <td>Success</td>
       <td>Boolean</td>
