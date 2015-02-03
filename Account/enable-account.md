@@ -21,7 +21,7 @@ Enable a suspended account in the Tier 3 system. Calls to this operation must in
       <th>Name</th>
       <th>Type</th>
       <th>Description</th>
-      <th>Required</th>
+      <th>Req.</th>
     </tr>
   </thead>
   <tbody>

@@ -20,7 +20,7 @@ Gets monthly and hourly charges and estimates for a given account or collection 
       <th>Name</th>
       <th>Type</th>
       <th>Description</th>
-      <th>Required</th>
+      <th>Req.</th>
     </tr>
   </thead>
   <tbody>

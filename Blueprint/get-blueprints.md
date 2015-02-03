@@ -20,7 +20,7 @@ Gets a list of all Blueprints with the specified search criteria.
       <th>Name</th>
       <th>Type</th>
       <th>Description</th>
-      <th>Required</th>
+      <th>Req.</th>
     </tr>
   </thead>
   <tbody>

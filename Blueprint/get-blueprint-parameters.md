@@ -20,7 +20,7 @@ Gets a the full list of parameters that are required to deploy a Blueprint.
       <th>Name</th>
       <th>Type</th>
       <th>Description</th>
-      <th>Required</th>
+      <th>Req.</th>
     </tr>
   </thead>
   <tbody>

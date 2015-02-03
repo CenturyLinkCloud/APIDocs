@@ -20,7 +20,7 @@ Shuts down the operating system and then powers off server.
       <th>Name</th>
       <th>Type</th>
       <th>Description</th>
-      <th>Required</th>
+      <th>Req.</th>
     </tr>
   </thead>
   <tbody>

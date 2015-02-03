@@ -21,7 +21,7 @@ Deploys a Blueprint with the given set of parameter values.
       <th>Name</th>
       <th>Type</th>
       <th>Description</th>
-      <th>Required</th>
+      <th>Req.</th>
     </tr>
   </thead>
   <tbody>

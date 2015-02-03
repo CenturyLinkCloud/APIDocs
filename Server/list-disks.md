@@ -20,7 +20,7 @@ SOAP: https://api.tier3.com/SOAP/Server.asmx?op=ListDisks
       <th>Name</th>
       <th>Type</th>
       <th>Description</th>
-      <th>Required</th>
+      <th>Req.</th>
     </tr>
   </thead>
   <tbody>

@@ -20,7 +20,7 @@ Updates the Admin/Root password&nbsp;for a Server.
       <th>Name</th>
       <th>Type</th>
       <th>Description</th>
-      <th>Required</th>
+      <th>Req.</th>
     </tr>
   </thead>
   <tbody>

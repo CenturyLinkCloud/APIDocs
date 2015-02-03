@@ -22,7 +22,7 @@ Gets the entire billing history for a given account or collection of accounts. C
       <th>Name</th>
       <th>Type</th>
       <th>Description</th>
-      <th>Required</th>
+      <th>Req.</th>
     </tr>
   </thead>
   <tbody>

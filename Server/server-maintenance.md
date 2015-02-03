@@ -20,7 +20,7 @@ Enables or disables maintenance mode on a Server.
       <th>Name</th>
       <th>Type</th>
       <th>Description</th>
-      <th>Required</th>
+      <th>Req.</th>
     </tr>
   </thead>
   <tbody>

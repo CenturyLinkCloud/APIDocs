@@ -21,7 +21,7 @@ Gets all of the contact information and settings for a given account. Calls to t
       <th>Name</th>
       <th>Type</th>
       <th>Description</th>
-      <th>Required</th>
+      <th>Req.</th>
     </tr>
   </thead>
   <tbody>

@@ -20,7 +20,7 @@ Gets the server-based hourly cost for any time period. Calls to this operation m
       <th>Name</th>
       <th>Type</th>
       <th>Description</th>
-      <th>Required</th>
+      <th>Req.</th>
     </tr>
   </thead>
   <tbody>

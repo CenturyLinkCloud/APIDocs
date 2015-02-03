@@ -20,7 +20,7 @@ Gets a deep list of all servers for a given account hierarchy within a given dat
       <th>Name</th>
       <th>Type</th>
       <th>Description</th>
-      <th>Required</th>
+      <th>Req.</th>
     </tr>
   </thead>
   <tbody>

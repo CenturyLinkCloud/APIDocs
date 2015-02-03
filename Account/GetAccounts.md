@@ -21,7 +21,7 @@ Gets details of the API user's account and any sub-accounts. Calls to this opera
       <th>Name</th>
       <th>Type</th>
       <th>Description</th>
-      <th>Required</th>
+      <th>Req.</th>
     </tr>
   </thead>
   <tbody>

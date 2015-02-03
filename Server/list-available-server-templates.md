@@ -20,7 +20,7 @@ Gets the list of Templates available to the account and location.
       <th>Name</th>
       <th>Type</th>
       <th>Description</th>
-      <th>Required</th>
+      <th>Req.</th>
     </tr>
   </thead>
   <tbody>

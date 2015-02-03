@@ -21,7 +21,7 @@ Gets the charges for groups and servers within a given account, and for any date
       <th>Name</th>
       <th>Type</th>
       <th>Description</th>
-      <th>Required</th>
+      <th>Req.</th>
     </tr>
   </thead>
   <tbody>

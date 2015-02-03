@@ -20,7 +20,7 @@ Gets a deep list of all modified Servers for a given Hardware Group and its sub 
       <th>Name</th>
       <th>Type</th>
       <th>Description</th>
-      <th>Required</th>
+      <th>Req.</th>
     </tr>
   </thead>
   <tbody>

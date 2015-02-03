@@ -28,7 +28,7 @@ Create a brand new (sub) account in the Tier 3 system. Calls to this operation m
       <th>Name</th>
       <th>Type</th>
       <th>Description</th>
-      <th>Required</th>
+      <th>Req.</th>
     </tr>
   </thead>
   <tbody>

@@ -22,7 +22,7 @@ Gets estimated costs for a group of servers. Calls to this operation must includ
       <th>Name</th>
       <th>Type</th>
       <th>Description</th>
-      <th>Required</th>
+      <th>Req.</th>
     </tr>
   </thead>
   <tbody>

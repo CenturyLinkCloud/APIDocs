@@ -21,7 +21,7 @@ Gets the estimated monthly cost for a given server. Calls to this operation must
       <th>Name</th>
       <th>Type</th>
       <th>Description</th>
-      <th>Required</th>
+      <th>Req.</th>
     </tr>
   </thead>
   <tbody>

@@ -20,7 +20,7 @@ Gets list of all valid data center location codes that are used in subsequent Ac
       <th>Name</th>
       <th>Type</th>
       <th>Description</th>
-      <th>Required</th>
+      <th>Req.</th>
     </tr>
   </thead>
   <tbody>

@@ -20,7 +20,7 @@ Gets the details for a given invoice within an account. Calls to this operation 
       <th>Name</th>
       <th>Type</th>
       <th>Description</th>
-      <th>Required</th>
+      <th>Req.</th>
     </tr>
   </thead>
   <tbody>

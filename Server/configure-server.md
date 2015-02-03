@@ -20,7 +20,7 @@ Configures the CPU, Memory, Group and additional storage for a Server.
       <th>Name</th>
       <th>Type</th>
       <th>Description</th>
-      <th>Required</th>
+      <th>Req.</th>
     </tr>
   </thead>
   <tbody>

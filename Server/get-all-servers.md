@@ -20,7 +20,7 @@ Gets a deep list of all Servers for a given Hardware Group and its sub groups, o
       <th>Name</th>
       <th>Type</th>
       <th>Description</th>
-      <th>Required</th>
+      <th>Req.</th>
     </tr>
   </thead>
   <tbody>

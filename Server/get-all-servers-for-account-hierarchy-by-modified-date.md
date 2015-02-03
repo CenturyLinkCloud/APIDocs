@@ -20,7 +20,7 @@ Gets a deep list of all modified servers for a given account hierarchy within a 
       <th>Name</th>
       <th>Type</th>
       <th>Description</th>
-      <th>Required</th>
+      <th>Req.</th>
     </tr>
   </thead>
   <tbody>
