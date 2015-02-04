@@ -5,12 +5,12 @@
   "attachments": []
 }}}
 
-Deactivate a user associated with a given account. Calls to this operation must include an authorization cookie acquired from the <a href="http://help.tier3.com/entries/20339862-logon">Logon operation.
+Deactivate a user associated with a given account. Calls to this operation must include an authorization cookie acquired from the <a href="http://help.tier3.com/entries/20339862-logon">Logon operation.</a>
 
 ## URL
 
-REST: https://api.tier3.com/REST/User/SuspendUser/<format>
-SOAP: https://api.tier3.com/SOAP/User.asmx?op=SuspendUser
+    REST: https://api.tier3.com/REST/User/SuspendUser/<format>
+    SOAP: https://api.tier3.com/SOAP/User.asmx?op=SuspendUser
 
 ## Request
 
