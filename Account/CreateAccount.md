@@ -12,7 +12,7 @@ Create a brand new (sub) account in the Tier 3 system. Calls to this operation m
 <div class="kb-api-urls">
   <div class="kb-api-urls-inner">
 
-    <p>REST: https://api.tier3.com/REST/Account/CreateAccount/&lt;format&gt; (format = XML | JSON)</p>
+    <p>REST: https://api.tier3.com/REST/Account/CreateAccount/<format> (format = XML | JSON)</p>
 
     <p>SOAP: https://api.tier3.com/SOAP/Account.asmx?op=CreateAccount</p>
 
@@ -132,91 +132,91 @@ Create a brand new (sub) account in the Tier 3 system. Calls to this operation m
 <h4>JSON (REST)</h4>
 <pre>{<br />     "ParentAlias":"1000",<br />     "AccountAlias":"1001",<br />     "Location":"WA1",<br />     "BusinessName":"Demo Biz",<br />     "Address1":"110 110th Avenue",<br />     "Address2":null,<br />     "City":"Bellevue",<br />     "StateProvince":"WA",<br />     "PostalCode":"98004",<br />     "Country":"USA",<br />     "Telephone":"877-388-4373",<br />     "Fax":null,<br />     "TimeZone":"Pacific Standard Time",<br />     "ShareParentNetworks":"true",<br />     "BillingResponsibilityID":"2"<br />}</pre>
 <h4>XML (REST)</h4>
-<pre>&lt;CreateAccountRequest&gt; 
+<pre><CreateAccountRequest> 
 
-    &lt;ParentAlias&gt;1000&lt;/ParentAlias&gt; 
+    <ParentAlias>1000</ParentAlias> 
 
-    &lt;AccountAlias&gt;1001&lt;/AccountAlias&gt;
+    <AccountAlias>1001</AccountAlias>
 
-    &lt;Location&gt;QA1&lt;/Location&gt; 
+    <Location>QA1</Location> 
 
-    &lt;BusinessName&gt;Demo Biz&lt;/BusinessName&gt; 
+    <BusinessName>Demo Biz</BusinessName> 
 
-    &lt;Address1&gt;110 110th Avenue&lt;/Address1&gt; 
+    <Address1>110 110th Avenue</Address1> 
 
-    &lt;Address2&gt;Suite 520&lt;/Address2&gt; 
+    <Address2>Suite 520</Address2> 
 
-    &lt;City&gt;Bellevue&lt;/City&gt; 
+    <City>Bellevue</City> 
 
-    &lt;StateProvince&gt;WA&lt;/StateProvince&gt; 
+    <StateProvince>WA</StateProvince> 
 
-    &lt;PostalCode&gt;98004&lt;/PostalCode&gt; 
+    <PostalCode>98004</PostalCode> 
 
-    &lt;Country&gt;USA&lt;/Country&gt; 
+    <Country>USA</Country> 
 
-    &lt;Telephone&gt;877-388-4373&lt;/Telephone&gt; 
+    <Telephone>877-388-4373</Telephone> 
 
-    &lt;Fax&gt;&lt;/Fax&gt; 
+    <Fax></Fax> 
 
-    &lt;TimeZone&gt;Pacific Standard Time&lt;/TimeZone&gt; 
+    <TimeZone>Pacific Standard Time</TimeZone> 
 
-    &lt;ShareParentNetworks&gt;true&lt;/ShareParentNetworks&gt; 
+    <ShareParentNetworks>true</ShareParentNetworks> 
 
-    &lt;BillingResponsibilityID&gt;2&lt;/BillingResponsibilityID&gt; 
+    <BillingResponsibilityID>2</BillingResponsibilityID> 
 
-&lt;/CreateAccountRequest&gt;
+</CreateAccountRequest>
 
     </pre>
 <h4>XML (SOAP)</h4>
-<pre>&lt;soap12:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<pre><soap12:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 
                 xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
 
-                xmlns:soap12="http://www.w3.org/2003/05/soap-envelope"&gt;
+                xmlns:soap12="http://www.w3.org/2003/05/soap-envelope">
 
-    &lt;soap12:Body&gt;
+    <soap12:Body>
 
-        &lt;CreateAccount xmlns="http://www.tier3.com/"&gt;
+        <CreateAccount xmlns="http://www.tier3.com/">
 
-            &lt;request&gt;
+            <request>
 
-            &lt;ParentAlias&gt;1000&lt;/ParentAlias&gt;
+            <ParentAlias>1000</ParentAlias>
 
-            &lt;AccountAlias&gt;1001&lt;/AccountAlias&gt;
+            <AccountAlias>1001</AccountAlias>
 
-            &lt;Location&gt;WA&lt;/Location&gt;
+            <Location>WA</Location>
 
-            &lt;BusinessName&gt;Demo Biz&lt;/BusinessName&gt;
+            <BusinessName>Demo Biz</BusinessName>
 
-            &lt;Address1&gt;110 110th Avenue&lt;/Address1&gt;
+            <Address1>110 110th Avenue</Address1>
 
-            &lt;Address2&gt;Suite 520&lt;/Address2&gt;
+            <Address2>Suite 520</Address2>
 
-            &lt;City&gt;Bellevue&lt;/City&gt;
+            <City>Bellevue</City>
 
-            &lt;StateProvince&gt;WA&lt;/StateProvince&gt;
+            <StateProvince>WA</StateProvince>
 
-            &lt;PostalCode&gt;98004&lt;/PostalCode&gt;
+            <PostalCode>98004</PostalCode>
 
-            &lt;Country&gt;USA&lt;/Country&gt;
+            <Country>USA</Country>
 
-            &lt;Telephone&gt;877-388-4373&lt;/Telephone&gt;
+            <Telephone>877-388-4373</Telephone>
 
-            &lt;Fax&gt;&lt;/Fax&gt;
+            <Fax></Fax>
 
-            &lt;TimeZone&gt;Pacific Standard Time&lt;/TimeZone&gt;
+            <TimeZone>Pacific Standard Time</TimeZone>
 
-            &lt;ShareParentNetworks&gt;true&lt;/ShareParentNetworks&gt;
+            <ShareParentNetworks>true</ShareParentNetworks>
 
-            &lt;BillingResponsibilityID&gt;2&lt;/BillingResponsibilityID&gt;
+            <BillingResponsibilityID>2</BillingResponsibilityID>
 
-            &lt;/request&gt;
+            </request>
 
-        &lt;/CreateAccount&gt;
+        </CreateAccount>
 
-    &lt;/soap12:Body&gt; 
+    </soap12:Body> 
 
-&lt;/soap12:Envelope&gt;  
+</soap12:Envelope>  
 
 </pre> 
 
@@ -348,89 +348,133 @@ Create a brand new (sub) account in the Tier 3 system. Calls to this operation m
 
 
 ### Examples
-<h4>JSON (REST)</h4>
-<pre>{<br />     "AccountDetails":{<br />       "AccountAlias":"1001",<br />       "ParentAlias":"1000",<br />       "Location":"WA1",<br />       "BusinessName":"Demo Biz",<br />       "Address1":"110 110th Avenue",<br />       "Address2":null,<br />       "City":"Bellevue",<br />       "StateProvince":"WA",<br />       "PostalCode":"98004",<br />       "Country":"USA",<br />       "Telephone":"877-388-4373",<br />       "Fax":null,<br />       "TimeZone":"Pacific Standard Time",<br />       "Status":1,<br />       "ShareParentNetworks":true<br />     },<br />     "Success":true,<br />     "Message":"Account successfully created.",<br />     "StatusCode":0<br />}</pre>
-<h4>XML (REST)</h4>
-<pre>&lt;AccountDetailsResponse Success="true" Message="Account successfully created." StatusCode="0"&gt;
 
-       &lt;AccountDetails AccountAlias="1001" ParentAlias="1000" Location="WA1" TimeZone="Pacific Standard Time" Status="1" ShareParentNetworks="true"&gt;
+### JSON (REST)
 
-           &lt;BusinessName&gt;Demo Biz&lt;/BusinessName&gt;
+    {
 
-           &lt;Address1&gt;110 110th Avenue&lt;/Address1&gt;
+      "AccountDetails": {
 
-           &lt;Address2&gt;Suite 520&lt;/Address2&gt;
+        "AccountAlias":"1001",
 
-           &lt;City&gt;Bellevue&lt;/City&gt;
+        "ParentAlias":"1000",
 
-           &lt;StateProvince&gt;WA&lt;/StateProvince&gt;
+        "Location":"WA1",
 
-           &lt;PostalCode&gt;98004&lt;/PostalCode&gt;
+        "BusinessName":"Demo Biz",
 
-           &lt;Country&gt;USA&lt;/Country&gt;
+        "Address1":"110 110th Avenue",
 
-           &lt;Telephone&gt;877-388-4373&lt;/Telephone&gt;
+        "Address2":null,
 
-           &lt;Fax /&gt;
+        "City":"Bellevue",
 
-       &lt;/AccountDetails&gt;
+        "StateProvince":"WA",
 
-&lt;/AccountDetailsResponse&gt;
+        "PostalCode":"98004",
 
-    </pre>
-<h4>XML (SOAP)</h4>
-<pre>&lt;soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" 
+        "Country":"USA",
 
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        "Telephone":"877-388-4373",
 
-    xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+        "Fax":null,
 
-    &lt;soap:Body&gt;
+        "TimeZone":"Pacific Standard Time",
 
-        &lt;CreateAccountResponse xmlns="http://www.tier3.com/"&gt;
+        "Status":1,
 
-            &lt;CreateAccountResult Success="true" Message="Account successfully created." StatusCode="0"&gt;
+        "ShareParentNetworks":true
 
-                &lt;AccountDetails AccountAlias="1001" ParentAlias="1000" Location="WA1" TimeZone="Pacific Standard Time" Status="1" ShareParentNetworks="true"&gt;
+      },  
 
-                    &lt;BusinessName&gt;Demo Biz&lt;/BusinessName&gt;
+      "Success":true,
 
-                    &lt;Address1&gt;110 110th Avenue&lt;/Address1&gt;
+      "Message":"Account successfully created.",
 
-                    &lt;Address2&gt;Suite 520&lt;/Address2&gt;
+      "StatusCode":0
 
-                    &lt;City&gt;Bellevue&lt;/City&gt;
+    }
 
-                    &lt;StateProvince&gt;WA&lt;/StateProvince&gt;
+#### XML (REST)
 
-                    &lt;PostalCode&gt;98004&lt;/PostalCode&gt;
+    <AccountDetailsResponse Success="true" Message="Account successfully created." StatusCode="0">
 
-                    &lt;Country&gt;USA&lt;/Country&gt;
+        <AccountDetails AccountAlias="1001" ParentAlias="1000" Location="WA1" TimeZone="Pacific Standard Time" Status="1" ShareParentNetworks="true">
 
-                    &lt;Telephone&gt;877-388-4373&lt;/Telephone&gt;
+            <BusinessName>Demo Biz</BusinessName>
 
-                    &lt;Fax /&gt;
+            <Address1>110 110th Avenue</Address1>
 
-                &lt;/AccountDetails&gt;
+            <Address2>Suite 520</Address2>
 
-            &lt;/CreateAccountResult&gt;
+            <City>Bellevue</City>
 
-        &lt;/CreateAccountResponse&gt;
+            <StateProvince>WA</StateProvince>
 
-    &lt;/soap:Body&gt;
+            <PostalCode>98004</PostalCode>
 
-&lt;/soap:Envelope&gt;
+            <Country>USA</Country>
 
-</pre>
+            <Telephone>877-388-4373</Telephone>
+
+            <Fax />
+
+        </AccountDetails>
+
+    </AccountDetailsResponse>
+
+#### XML (SOAP)
+
+    <soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" 
+
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+        <soap:Body>
+
+            <CreateAccountResponse xmlns="http://www.tier3.com/">
+
+                <CreateAccountResult Success="true" Message="Account successfully created." StatusCode="0">
+
+                    <AccountDetails AccountAlias="1001" ParentAlias="1000" Location="WA1" TimeZone="Pacific Standard Time" Status="1" ShareParentNetworks="true">
+
+                        <BusinessName>Demo Biz</BusinessName>
+
+                        <Address1>110 110th Avenue</Address1>
+
+                        <Address2>Suite 520</Address2>
+
+                        <City>Bellevue</City>
+
+                        <StateProvince>WA</StateProvince>
+
+                        <PostalCode>98004</PostalCode>
+
+                        <Country>USA</Country>
+
+                        <Telephone>877-388-4373</Telephone>
+
+                        <Fax />
+
+                    </AccountDetails>
+
+                </CreateAccountResult>
+
+            </CreateAccountResponse>
+
+        </soap:Body>
+
+    </soap:Envelope>
 
 ### Status Codes
 
 <table>
-    <thead>
-  <tr>
-    <th>Status Code</th>
-    <th>Description</th>
-  </tr>
+  <thead>
+    <tr>
+      <th>Status Code</th>
+      <th>Description</th>
+    </tr>
   </thead>
   <tbody>
     <tr>

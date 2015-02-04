@@ -21,21 +21,20 @@ None.
 ### Examples
 
 #### XML (SOAP)
-<pre><soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 
-      xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+    <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 
-      xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+          xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
 
-<soap:Body>
+          xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
 
-  <AccountsResponseMsg xmlns="http://www.tier3.com/" />
+    <soap:Body>
 
-</soap:Body>
+      <AccountsResponseMsg xmlns="http://www.tier3.com/" />
 
-</soap:Envelope>  
+    </soap:Body>
 
-</pre> 
+    </soap:Envelope>  
 
 ## Response
 
