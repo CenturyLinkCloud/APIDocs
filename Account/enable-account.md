@@ -6,17 +6,19 @@
 }}}
 
 
-Enable a suspended account in the Tier 3 system. Calls to this operation must include an authorization cookie acquired from the <a href="http://help.tier3.com/entries/20339862-logon">Logon operation.</a>
+Enable a suspended account in the Tier 3 system. Calls to this operation must include an authorization cookie acquired from the <a href="/api-docs#authentication-logon">Logon operation.</a>
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Account/EnableAccount/&lt;format&gt; (format = XML | JSON)
+    REST: https://api.tier3.com/REST/Account/EnableAccount/<format> (format = XML | JSON)
     SOAP: https://api.tier3.com/SOAP/Account.asmx?op=EnableAccount
 
 ## Request
+
 ### Attributes
+
 <table>
-    <thead>
+  <thead>
     <tr>
       <th>Name</th>
       <th>Type</th>
@@ -36,47 +38,59 @@ Enable a suspended account in the Tier 3 system. Calls to this operation must in
 
 ### Examples
 
-<h4>JSON (REST)</h4>
-<pre>{ <br />    "AccountAlias": "ACCT"<br />}</pre>
-<h4>XML (REST)</h4>
-<pre>&lt;AccountStatusRequest&gt;<br />     &lt;AccountAlias&gt;ACCT&lt;/AccountAlias&gt;<br />&lt;/AccountStatusRequest&gt;</pre>
-<h4>XML (SOAP)</h4>
-<pre>&lt;soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+#### JSON (REST)
 
-        xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+    {
 
-        xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"&gt;
+      "AccountAlias": "ACCT"
 
-  &lt;soap:Body&gt;
+    }
 
-    &lt;EnableAccount xmlns="http://www.tier3.com/"&gt;
+#### XML (REST)
 
-      &lt;request&gt;
+    <AccountStatusRequest>
 
-         &lt;AccountAlias&gt;ACCT&lt;/AccountAlias&gt;
+        <AccountAlias>ACCT</AccountAlias>
 
-      &lt;/request&gt;
+    </AccountStatusRequest>
 
-    &lt;/EnableAccount&gt;
+#### XML (SOAP)
 
-  &lt;/soap:Body&gt;
+    <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 
-&lt;/soap:Envelope&gt;  
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
 
-</pre> 
+            xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+
+      <soap:Body>
+
+        <EnableAccount xmlns="http://www.tier3.com/">
+
+          <request>
+
+             <AccountAlias>ACCT</AccountAlias>
+
+          </request>
+
+        </EnableAccount>
+
+      </soap:Body>
+
+    </soap:Envelope>  
 
 ## Response
+
 ### Attributes
 
 <table>
   <thead>
-  <tr>
-    <th>Name</th>
-    <th>Type</th>
-    <th>Description</th>
-  </tr>
-</thead>
-<tbody>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
     <tr>
       <td>Success</td>
       <td>Boolean</td>
@@ -102,49 +116,56 @@ Enable a suspended account in the Tier 3 system. Calls to this operation must in
 
 ### Examples
 
-<h4>JSON (REST)</h4>
-<pre>{
+#### JSON (REST)
 
-  "Success": true,
+    {
 
-  "Message": "Account Enabled.",
+      "Success": true,
 
-  "StatusCode": 0,
+      "Message": "Account Enabled.",
 
-  "RequestID": 100
+      "StatusCode": 0,
 
-}</pre>
-<h4>XML (REST)</h4>
-<pre>&lt;QueuedItemResponse Success="true" Message="Success" StatusCode="0"&gt;
+      "RequestID": 100
 
-    &lt;RequestID&gt;1&lt;/RequestID&gt;
+    }
 
-&lt;/QueuedItemResponse&gt;</pre>
-<h4>XML (SOAP)</h4>
-<pre>&lt;soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+#### XML (REST)
 
-&lt;soap:Body&gt;
+    <QueuedItemResponse Success="true" Message="Success" StatusCode="0">
 
-    &lt;EnableAccountResponse xmlns="http://www.tier3.com/"&gt;
+        <RequestID>1</RequestID>
 
-    &lt;QueuedItemResponse Success="true" Message="Account Enabled." StatusCode="0"&gt;
+    </QueuedItemResponse>
 
-        &lt;ResponseID&gt;100&lt;/ResponseID&gt;
+#### XML (SOAP)
 
-    &lt;/QueuedItemResponse&gt;
+    <soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 
-&lt;/EnableAccountResponse&gt;
+    <soap:Body>
 
-&lt;/soap:Body&gt;
+        <EnableAccountResponse xmlns="http://www.tier3.com/">
 
-&lt;/soap:Envelope&gt;</pre>
-<h3>Status Codes</h3>
+        <QueuedItemResponse Success="true" Message="Account Enabled." StatusCode="0">
+
+            <ResponseID>100</ResponseID>
+
+        </QueuedItemResponse>
+
+    </EnableAccountResponse>
+
+    </soap:Body>
+
+    </soap:Envelope>
+
+### Status Codes
+
 <table>
-    <thead>
-  <tr>
-    <th>Status Code</th>
-    <th>Description</th>
-  </tr>
+  <thead>
+    <tr>
+      <th>Status Code</th>
+      <th>Description</th>
+    </tr>
   </thead>
   <tbody>
     <tr>

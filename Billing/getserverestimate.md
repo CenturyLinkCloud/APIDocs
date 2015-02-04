@@ -6,7 +6,7 @@
 }}}
 
 
-Gets the estimated monthly cost for a given server. Calls to this operation must include an authorization cookie acquired from the <a href="http://help.tier3.com/entries/20339862-logon">Logon operation.</a>
+Gets the estimated monthly cost for a given server. Calls to this operation must include an authorization cookie acquired from the <a href="/api-docs#authentication-logon">Logon operation.</a>
 
 ## URL
 

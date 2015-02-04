@@ -5,7 +5,7 @@
   "attachments": []
 }}}
 
-Disable an existing account in the Tier 3 system. Calls to this operation must include an authorization cookie acquired from the <a href="http://help.tier3.com/entries/20339862-logon">Logon operation.</a>
+Disable an existing account in the Tier 3 system. Calls to this operation must include an authorization cookie acquired from the <a href="/api-docs#authentication-logon">Logon operation.</a>
 
 ## URL
 

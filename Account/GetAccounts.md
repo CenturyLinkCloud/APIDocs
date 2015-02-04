@@ -5,7 +5,7 @@
   "attachments": []
 }}}
 
-Gets details of the API user's account and any sub-accounts. Calls to this operation must include an authorization cookie acquired from the <a href="http://help.tier3.com/entries/20339862-logon">Logon operation.</a>
+Gets details of the API user's account and any sub-accounts. Calls to this operation must include an authorization cookie acquired from the <a href="/api-docs#authentication-logon">Logon operation.</a>
 
 ## URL
 

@@ -5,18 +5,19 @@
   "attachments": []
 }}}
 
-Gets all of the contact information and settings for a given account. Calls to this operation must include an authorization cookie acquired from the <a href="http://help.tier3.com/entries/20339862-logon">Logon operation.</a>
+Gets all of the contact information and settings for a given account. Calls to this operation must include an authorization cookie acquired from the <a href="/api-docs#authentication-logon">Logon operation.</a>
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Account/GetAccountDetails/&lt;format&gt; (format = XML | JSON)
+    REST: https://api.tier3.com/REST/Account/GetAccountDetails/<format> (format = XML | JSON)
     SOAP: https://api.tier3.com/SOAP/Account.asmx?op=GetAccountDetails
 
-##Request
+## Request
+
 ### Attributes
 
 <table>
-    <thead>
+  <thead>
     <tr>
       <th>Name</th>
       <th>Type</th>
@@ -35,37 +36,51 @@ Gets all of the contact information and settings for a given account. Calls to t
 </table>
 
 ### Examples
-<h4>JSON (REST)</h4>
-<pre>{ <br />    "AccountAlias": "1000"<br />}</pre>
-<h4>XML (REST)</h4>
-<pre>&lt;GetAccountDetailsRequest&gt;<br />     &lt;AccountAlias&gt;1000&lt;/AccountAlias&gt;<br />&lt;/GetAccountDetailsRequest&gt;</pre>
-<h4>XML (SOAP)</h4>
-<pre>&lt;soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 
-        xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+#### JSON (REST)
 
-        xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"&gt;
+{
 
-  &lt;soap:Body&gt;
+  "AccountAlias": "1000"
 
-    &lt;GetAccountDetails xmlns="http://www.tier3.com/"&gt;
+}
 
-      &lt;request&gt;
+#### XML (REST)
 
-         &lt;AccountAlias&gt;1000&lt;/AccountAlias&gt;
+    <GetAccountDetailsRequest>
 
-      &lt;/request&gt;
+        <AccountAlias>1000</AccountAlias>
 
-    &lt;/GetAccountDetails&gt;
+    </GetAccountDetailsRequest>
 
-  &lt;/soap:Body&gt;
+#### XML (SOAP)
 
-&lt;/soap:Envelope&gt;    
+    <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 
-</pre> 
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+
+            xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+
+      <soap:Body>
+
+        <GetAccountDetails xmlns="http://www.tier3.com/">
+
+          <request>
+
+             <AccountAlias>1000</AccountAlias>
+
+          </request>
+
+        </GetAccountDetails>
+
+      </soap:Body>
+
+    </soap:Envelope>    
 
 ## Response
+
 ### Attributes
+
 <table>
   <thead>
   <tr>
@@ -97,16 +112,18 @@ Gets all of the contact information and settings for a given account. Calls to t
     </tr>
   </tbody>
 </table>
-<h3>AccountDetails Attributes</h3>
+
+### AccountDetails Attributes
+
 <table>
   <thead>
-  <tr>
-    <th>Name</th>
-    <th>Type</th>
-    <th>Description</th>
-  </tr>
-</thead>
-<tbody>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
     <tr>
       <td>AccountAlias</td>
       <td>String</td>
@@ -190,81 +207,126 @@ Gets all of the contact information and settings for a given account. Calls to t
   </tbody>
 </table>
 
-### Examples 
-<h4>JSON (REST)</h4>
-<pre>{<br />     "AccountDetails":{<br />              "AccountAlias":"1001",<br />              "ParentAlias":"1000",<br />              "Location":"WA1",<br />              "BusinessName":"Example Business Name",<br />              "Address1":"110 110th Avenue",<br />              "Address2":null,<br />              "City":"Bellevue",<br />              "StateProvince":"WA",<br />              "PostalCode":"98004",<br />              "Country":"USA",<br />              "Telephone":"877-388-4373",<br />              "Fax":null,<br />              "TimeZone":"Pacific Standard Time",<br />              "Status":2,<br />              "ShareParentNetworks":true},<br />     "Success":true,<br />     "Message":"Account details successfully queried.",<br />     "StatusCode":0<br />}</pre>
-<h4>XML (REST)</h4>
-<pre>&lt;AccountDetailsResponse Success="true" Message="Account details successfully queried." StatusCode="0"&gt;
+### Examples
 
-        &lt;AccountDetails AccountAlias="1001" ParentAlias="1000" Location="WA1" TimeZone="Pacific Standard Time" Status="2" ShareParentNetworks="true"&gt;
+#### JSON (REST)
 
-            &lt;BusinessName&gt;Example Business Name&lt;/BusinessName&gt;
+{
+  "AccountDetails": {
 
-            &lt;Address1&gt;110 110th Avenue&lt;/Address1&gt;
+    "AccountAlias":"1001",
 
-            &lt;City&gt;Bellevue&lt;/City&gt;
+    "ParentAlias":"1000",
 
-            &lt;StateProvince&gt;WA&lt;/StateProvince&gt;
+    "Location":"WA1",
 
-            &lt;PostalCode&gt;98004&lt;/PostalCode&gt;
+    "BusinessName":"Example Business Name",
 
-            &lt;Country&gt;USA&lt;/Country&gt;
+    "Address1":"110 110th Avenue",
 
-            &lt;Telephone&gt;877-388-4373&lt;/Telephone&gt;
+    "Address2":null,
 
-        &lt;/AccountDetails&gt;
+    "City":"Bellevue",
 
-&lt;/AccountDetailsResponse&gt;
+    "StateProvince":"WA",
 
-    </pre>
-<h4>XML (SOAP)</h4>
-<pre>&lt;soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" 
+    "PostalCode":"98004",
 
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    "Country":"USA",
 
-        xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+    "Telephone":"877-388-4373",
 
-     &lt;soap:Body&gt;
+    "Fax":null,
 
-        &lt;GetAccountDetailsResponse xmlns="http://www.tier3.com/"&gt;
+    "TimeZone":"Pacific Standard Time",
 
-            &lt;GetAccountDetailsResult Success="true" Message="Account details successfully queried." StatusCode="0"&gt;
+    "Status":2,
 
-                &lt;AccountDetails AccountAlias="1001" ParentAlias="1000" Location="WA1" TimeZone="Pacific Standard Time" Status="2" ShareParentNetworks="true"&gt;
+    "ShareParentNetworks":true
 
-                    &lt;BusinessName&gt;Example Business Name&lt;/BusinessName&gt;
+  },
 
-                    &lt;Address1&gt;110 110th Avenue&lt;/Address1&gt;
+  "Success":true,
 
-                    &lt;City&gt;Bellevue&lt;/City&gt;
+  "Message":"Account details successfully queried.",
 
-            	    &lt;StateProvince&gt;WA&lt;/StateProvince&gt;
+  "StatusCode":0
 
-                    &lt;PostalCode&gt;98004&lt;/PostalCode&gt;
+}
 
-                    &lt;Country&gt;USA&lt;/Country&gt;
+#### XML (REST)
 
-                    &lt;Telephone&gt;877-388-4373&lt;/Telephone&gt;
+    <AccountDetailsResponse Success="true" Message="Account details successfully queried." StatusCode="0">
 
-                &lt;/AccountDetails&gt;
+            <AccountDetails AccountAlias="1001" ParentAlias="1000" Location="WA1" TimeZone="Pacific Standard Time" Status="2" ShareParentNetworks="true">
 
-            &lt;/GetAccountDetailsResult&gt;
+                <BusinessName>Example Business Name</BusinessName>
 
-        &lt;/GetAccountDetailsResponse&gt;
+                <Address1>110 110th Avenue</Address1>
 
-      &lt;/soap:Body&gt;
+                <City>Bellevue</City>
 
-&lt;/soap:Envelope&gt;
+                <StateProvince>WA</StateProvince>
 
-</pre>
+                <PostalCode>98004</PostalCode>
+
+                <Country>USA</Country>
+
+                <Telephone>877-388-4373</Telephone>
+
+            </AccountDetails>
+
+    </AccountDetailsResponse>
+
+ 
+#### XML (SOAP)
+
+    <soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" 
+
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+         <soap:Body>
+
+            <GetAccountDetailsResponse xmlns="http://www.tier3.com/">
+
+                <GetAccountDetailsResult Success="true" Message="Account details successfully queried." StatusCode="0">
+
+                    <AccountDetails AccountAlias="1001" ParentAlias="1000" Location="WA1" TimeZone="Pacific Standard Time" Status="2" ShareParentNetworks="true">
+
+                        <BusinessName>Example Business Name</BusinessName>
+
+                        <Address1>110 110th Avenue</Address1>
+
+                        <City>Bellevue</City>
+
+                	    <StateProvince>WA</StateProvince>
+
+                        <PostalCode>98004</PostalCode>
+
+                        <Country>USA</Country>
+
+                        <Telephone>877-388-4373</Telephone>
+
+                    </AccountDetails>
+
+                </GetAccountDetailsResult>
+
+            </GetAccountDetailsResponse>
+
+          </soap:Body>
+
+    </soap:Envelope>
 
 ### Status Codes
+
 <table>
-    <thead>
-  <tr>
-    <th>Status Code</th>
-    <th>Description</th>
-  </tr>
+  <thead>
+    <tr>
+      <th>Status Code</th>
+      <th>Description</th>
+    </tr>
   </thead>
   <tbody>
     <tr>
