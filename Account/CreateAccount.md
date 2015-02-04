@@ -6,7 +6,7 @@
 }}}
 
 
-Create a brand new (sub) account in the Tier 3 system. Calls to this operation must include an authorization cookie acquired from the <a href="http://help.tier3.com/entries/20339862-logon">Logon operation.</a>
+Create a brand new (sub) account in the Tier 3 system. Calls to this operation must include an authorization cookie acquired from the <a href="/api-docs#authentication-logon">Logon operation.</a>
 
 ## URL
 
@@ -134,98 +134,133 @@ Create a brand new (sub) account in the Tier 3 system. Calls to this operation m
 
 ### Examples
 
-<h4>JSON (REST)</h4>
-<pre>{<br />     "ParentAlias":"1000",<br />     "AccountAlias":"1001",<br />     "Location":"WA1",<br />     "BusinessName":"Demo Biz",<br />     "Address1":"110 110th Avenue",<br />     "Address2":null,<br />     "City":"Bellevue",<br />     "StateProvince":"WA",<br />     "PostalCode":"98004",<br />     "Country":"USA",<br />     "Telephone":"877-388-4373",<br />     "Fax":null,<br />     "TimeZone":"Pacific Standard Time",<br />     "ShareParentNetworks":"true",<br />     "BillingResponsibilityID":"2"<br />}</pre>
-<h4>XML (REST)</h4>
-<pre><CreateAccountRequest> 
+#### JSON (REST)
 
-    <ParentAlias>1000</ParentAlias> 
+    {
 
-    <AccountAlias>1001</AccountAlias>
+      "ParentAlias":"1000",
 
-    <Location>QA1</Location> 
+      "AccountAlias":"1001",
 
-    <BusinessName>Demo Biz</BusinessName> 
+      "Location":"WA1",
 
-    <Address1>110 110th Avenue</Address1> 
+      "BusinessName":"Demo Biz",
 
-    <Address2>Suite 520</Address2> 
+      "Address1":"110 110th Avenue",
 
-    <City>Bellevue</City> 
+      "Address2":null,
 
-    <StateProvince>WA</StateProvince> 
+      "City":"Bellevue",
 
-    <PostalCode>98004</PostalCode> 
+      "StateProvince":"WA",
 
-    <Country>USA</Country> 
+      "PostalCode":"98004",
 
-    <Telephone>877-388-4373</Telephone> 
+      "Country":"USA",    
 
-    <Fax></Fax> 
+      "Telephone":"877-388-4373",
 
-    <TimeZone>Pacific Standard Time</TimeZone> 
+      "Fax":null,
 
-    <ShareParentNetworks>true</ShareParentNetworks> 
+      "TimeZone":"Pacific Standard Time",
 
-    <BillingResponsibilityID>2</BillingResponsibilityID> 
+      "ShareParentNetworks":"true",
 
-</CreateAccountRequest>
+      "BillingResponsibilityID":"2"
 
-    </pre>
-<h4>XML (SOAP)</h4>
-<pre><soap12:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    }
 
-                xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+#### XML (REST)
 
-                xmlns:soap12="http://www.w3.org/2003/05/soap-envelope">
+    <CreateAccountRequest> 
 
-    <soap12:Body>
+        <ParentAlias>1000</ParentAlias> 
 
-        <CreateAccount xmlns="http://www.tier3.com/">
+        <AccountAlias>1001</AccountAlias>
 
-            <request>
+        <Location>QA1</Location> 
 
-            <ParentAlias>1000</ParentAlias>
+        <BusinessName>Demo Biz</BusinessName> 
 
-            <AccountAlias>1001</AccountAlias>
+        <Address1>110 110th Avenue</Address1> 
 
-            <Location>WA</Location>
+        <Address2>Suite 520</Address2> 
 
-            <BusinessName>Demo Biz</BusinessName>
+        <City>Bellevue</City> 
 
-            <Address1>110 110th Avenue</Address1>
+        <StateProvince>WA</StateProvince> 
 
-            <Address2>Suite 520</Address2>
+        <PostalCode>98004</PostalCode> 
 
-            <City>Bellevue</City>
+        <Country>USA</Country> 
 
-            <StateProvince>WA</StateProvince>
+        <Telephone>877-388-4373</Telephone> 
 
-            <PostalCode>98004</PostalCode>
+        <Fax></Fax> 
 
-            <Country>USA</Country>
+        <TimeZone>Pacific Standard Time</TimeZone> 
 
-            <Telephone>877-388-4373</Telephone>
+        <ShareParentNetworks>true</ShareParentNetworks> 
 
-            <Fax></Fax>
+        <BillingResponsibilityID>2</BillingResponsibilityID> 
 
-            <TimeZone>Pacific Standard Time</TimeZone>
+    </CreateAccountRequest>
 
-            <ShareParentNetworks>true</ShareParentNetworks>
+   
+#### XML (SOAP)
 
-            <BillingResponsibilityID>2</BillingResponsibilityID>
+    <soap12:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 
-            </request>
+                    xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
 
-        </CreateAccount>
+                    xmlns:soap12="http://www.w3.org/2003/05/soap-envelope">
 
-    </soap12:Body> 
+        <soap12:Body>
 
-</soap12:Envelope>  
+            <CreateAccount xmlns="http://www.tier3.com/">
 
-</pre> 
+                <request>
+
+                <ParentAlias>1000</ParentAlias>
+
+                <AccountAlias>1001</AccountAlias>
+
+                <Location>WA</Location>
+
+                <BusinessName>Demo Biz</BusinessName>
+
+                <Address1>110 110th Avenue</Address1>
+
+                <Address2>Suite 520</Address2>
+
+                <City>Bellevue</City>
+
+                <StateProvince>WA</StateProvince>
+
+                <PostalCode>98004</PostalCode>
+
+                <Country>USA</Country>
+
+                <Telephone>877-388-4373</Telephone>
+
+                <Fax></Fax>
+
+                <TimeZone>Pacific Standard Time</TimeZone>
+
+                <ShareParentNetworks>true</ShareParentNetworks>
+
+                <BillingResponsibilityID>2</BillingResponsibilityID>
+
+                </request>
+
+            </CreateAccount>
+
+        </soap12:Body> 
+
+    </soap12:Envelope>  
 
 ## Response
+
 ### Attributes
 
 <table>
@@ -261,6 +296,7 @@ Create a brand new (sub) account in the Tier 3 system. Calls to this operation m
 </table>
 
 ### AccountDetails Attributes
+
 <table>
   <thead>
   <tr>
@@ -350,7 +386,6 @@ Create a brand new (sub) account in the Tier 3 system. Calls to this operation m
     </tr>
   </tbody>
 </table>
-
 
 ### Examples
 
