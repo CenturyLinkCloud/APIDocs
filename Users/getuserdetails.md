@@ -8,10 +8,11 @@
 Gets the details of a specific user associated with a given account. Calls to this operation must include an authorization cookie acquired from the <a href="http://help.tier3.com/entries/20339862-logon">Logon operation.</a>
 
 ## URL
-REST: https://api.tier3.com/REST/User/GetUserDetails/<format> 
-SOAP: https://api.tier3.com/SOAP/User.asmx?op=GetUserDetails
 
-##Request
+    REST: https://api.tier3.com/REST/User/GetUserDetails/<format> 
+    SOAP: https://api.tier3.com/SOAP/User.asmx?op=GetUserDetails
+
+## Request
 
 ### Attributes
 

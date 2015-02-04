@@ -406,11 +406,11 @@ Gets all of users assigned to a given account. Calls to this operation must incl
 ### Status Codes
 
 <table>
-    <thead>
-  <tr>
-    <th>Status Code</th>
-    <th>Description</th>
-  </tr>
+  <thead>
+    <tr>
+      <th>Status Code</th>
+      <th>Description</th>
+    </tr>
   </thead>
   <tbody>
     <tr>

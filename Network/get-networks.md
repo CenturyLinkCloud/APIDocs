@@ -86,7 +86,7 @@ Gets the list of Networks mapped to the account in its Primary Data Center.
 
 ## Response
 
-### Attributes<
+### Attributes
 
 <table>
   <thead>
