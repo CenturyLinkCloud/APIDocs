@@ -9,49 +9,38 @@ Gets details of the API user's account and any sub-accounts. Calls to this opera
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Account/GetAccounts/&lt;format&gt; (format = XML | JSON)
+    REST: https://api.tier3.com/REST/Account/GetAccounts/<format> (format = XML | JSON)
     SOAP: https://api.tier3.com/SOAP/Account.asmx?op=AccountsResponseMsg
 
 ## Request
+
 ### Attributes
 
-<table>
-    <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Req.</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>None</td>
-    </tr>
-  </tbody>
-</table>
+None.
 
 ### Examples
 
 #### XML (SOAP)
-<pre>&lt;soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+<pre><soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 
       xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
 
-      xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"&gt;
+      xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
 
-&lt;soap:Body&gt;
+<soap:Body>
 
-  &lt;AccountsResponseMsg xmlns="http://www.tier3.com/" /&gt;
+  <AccountsResponseMsg xmlns="http://www.tier3.com/" />
 
-&lt;/soap:Body&gt;
+</soap:Body>
 
-&lt;/soap:Envelope&gt;  
+</soap:Envelope>  
 
 </pre> 
 
-### Response
-## Attributes
+## Response
+
+### Attributes
+
 <table>
   <thead>
   <tr>
@@ -85,6 +74,7 @@ Gets details of the API user's account and any sub-accounts. Calls to this opera
 </table>
 
 ### Account Attributes
+
 <table>
   <thead>
   <tr>
@@ -125,39 +115,89 @@ Gets details of the API user's account and any sub-accounts. Calls to this opera
 ### Examples
 
 #### JSON (REST)
-<pre>{<br />     "Accounts":[<br />       {"AccountAlias":"1001","ParentAlias":"1000","Location":"WA1","BusinessName":"Example Business Name","IsActive":true},<br />       {"AccountAlias":"1002","ParentAlias":"1001","Location":"WA1","BusinessName":"Example Department","IsActive":true}<br />     ],<br />     "Success":true,<br />     "Message":"Accounts successfully queried.",<br />     "StatusCode":0<br />}</pre>
+
+    {
+
+      "Accounts":[
+
+        {
+
+          "AccountAlias":"1001",
+
+          "ParentAlias":"1000",
+
+          "Location":"WA1",
+
+          "BusinessName":"Example Business Name",
+
+          "IsActive":true
+
+        },
+
+        {
+
+          "AccountAlias":"1002",
+
+          "ParentAlias":"1001",
+
+          "Location":"WA1",
+
+          "BusinessName":"Example Department",
+
+          "IsActive":true}
+
+      ],
+
+      "Success":true,
+
+      "Message":"Accounts successfully queried.",
+
+      "StatusCode":0
+
+    }
 
 #### XML (REST)
-<pre>&lt;AccountsResponse Success="true" Message="Accounts successfully queried." StatusCode="0"&gt;<br />     &lt;Accounts&gt;<br />       &lt;Account AccountAlias="1001" ParentAlias="1000" Location="WA1" BusinessName="Example Business Name" IsActive="true"/&gt;<br />       &lt;Account AccountAlias="1002" ParentAlias="1001" Location="WA1" BusinessName="Example Department" IsActive="true" /&gt;<br />     &lt;/Accounts&gt;<br />&lt;/AccountsResponse&gt;</pre>
+
+    <AccountsResponse Success="true" Message="Accounts successfully queried." StatusCode="0">
+
+      <Accounts>
+        <Account AccountAlias="1001" ParentAlias="1000" Location="WA1" BusinessName="Example Business Name" IsActive="true"/>
+
+        <Account AccountAlias="1002" ParentAlias="1001" Location="WA1" BusinessName="Example Department" IsActive="true" />
+
+      </Accounts>
+
+    </AccountsResponse>
 
 #### XML (SOAP)
-<pre>&lt;soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"&gt;
 
-&lt;soap:Body&gt;
+    <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
 
-  &lt;AccountsResponseMsgResponse xmlns="http://www.tier3.com/"&gt;
+      <soap:Body>
 
-    &lt;AccountsResponseMsgResult&gt;
+        <AccountsResponseMsgResponse xmlns="http://www.tier3.com/">
 
-      &lt;Accounts&gt;
+          <AccountsResponseMsgResult>
 
-        &lt;Account AccountAlias="1001" ParentAlias="1000" Location="WA1" BusinessName="Example Business Name" IsActive="true" /&gt;
+            <Accounts>
 
-        &lt;Account AccountAlias="1002" ParentAlias="1001" Location="WA1" BusinessName="Example Department" IsActive="true" /&gt;
+              <Account AccountAlias="1001" ParentAlias="1000" Location="WA1" BusinessName="Example Business Name" IsActive="true" />
 
-      &lt;/Accounts&gt;
+              <Account AccountAlias="1002" ParentAlias="1001" Location="WA1" BusinessName="Example Department" IsActive="true" />
 
-    &lt;/AccountsResponseMsgResult&gt;
+            </Accounts>
 
-  &lt;/AccountsResponseMsgResponse&gt;
+          </AccountsResponseMsgResult>
 
-&lt;/soap:Body&gt;
+        </AccountsResponseMsgResponse>
 
-&lt;/soap:Envelope&gt;
+      </soap:Body>
 
-</pre>
+    </soap:Envelope>
+
 
 ### Status Codes
+
 <table>
     <thead>
   <tr>
