@@ -9,20 +9,25 @@
 Create a brand new (sub) account in the Tier 3 system. Calls to this operation must include an authorization cookie acquired from the <a href="http://help.tier3.com/entries/20339862-logon">Logon operation.</a>
 
 ## URL
+
 <div class="kb-api-urls">
+
   <div class="kb-api-urls-inner">
 
-    <p>REST: https://api.tier3.com/REST/Account/CreateAccount/<format> (format = XML | JSON)</p>
+    <p>REST: https://api.tier3.com/REST/Account/CreateAccount/&lt;format&gt; (format = XML | JSON)</p>
 
     <p>SOAP: https://api.tier3.com/SOAP/Account.asmx?op=CreateAccount</p>
 
   </div>
+
 </div>
     
 ## Request
+
 ### Attributes
+
 <table>
-    <thead>
+  <thead>
     <tr>
       <th>Name</th>
       <th>Type</th>
