@@ -1,29 +1,38 @@
 {{{
-  "title": "Create Alias",
+  "title": "CreateAlias",
   "date": "8-8-2011",
   "author": "jw@tier3.com",
   "attachments": []
 }}}
 
-CreateAlias
-<p>This method will create a new SMTP Relay alias.
-  <br />
-  <br /><strong>URL:</strong>
-</p>
-<pre>https://api.tier3.com/REST/SMTPRelay/CreateAlias/&lt;format&gt;</pre>
-<p>
-  <br />
-  <br /><strong>DeleteSite Request Attributes:</strong>&nbsp;None
-  <br />
-  <br /><strong>Example Messages:</strong>&nbsp;<strong>XML:</strong>&nbsp;N/A
-  <br />
-  <br /><strong>JSON:</strong>&nbsp;N/A
-  <br />
-  <br />
-  <br /><strong>Response Attributes:</strong>
-</p>
+This method will create a new SMTP Relay alias.
+
+## URL
+
+    REST: https://api.tier3.com/REST/SMTPRelay/CreateAlias/<format>
+
+## Request
+
+### Attributes
+
+None.
+
+### Examples
+
+#### JSON
+
+N/A
+
+#### XML
+
+N/A
+
+## Response
+
+### Attributes
+
 <table>
-    <thead>
+  <thead>
     <tr>
       <th>Name</th>
       <th>Type</th>
@@ -58,36 +67,37 @@ CreateAlias
     </tr>
   </tbody>
 </table>
-<p>
-  <br /><strong>Example Responses:</strong>&nbsp;<strong>XML:</strong>
-</p>
-<pre>&lt;CreateAliasResponse Success="true" Message="Alias has been created." StatusCode="0" RelayAlias="ZZZ1-relay@t3mx.com" Password="password" /&gt;</pre>
-<p>
-  <br /><strong>JSON:</strong>
-</p>
-<pre>{
 
-  "Success":true,
+### Examples
 
-  "Message":"Alias has been disabled.",
+#### XML
 
-  "StatusCode":0,
+    <CreateAliasResponse Success="true" Message="Alias has been created." StatusCode="0" RelayAlias="ZZZ1-relay@t3mx.com" Password="password" />
 
-  "RelayAlias":"ZZZ1-relay@t3mx.com",
+#### JSON
 
-  "Password":"password"
+    {
 
-}</pre>
-<p>
-  <br />
-  <br /><strong>Valid Status Codes returned by the CreateAlias Method:</strong>
-</p>
+      "Success":true,
+
+      "Message":"Alias has been disabled.",
+
+      "StatusCode":0,
+
+      "RelayAlias":"ZZZ1-relay@t3mx.com",
+
+      "Password":"password"
+
+    }
+
+### Status Codes
+
 <table>
-    <thead>
-  <tr>
-    <th>Status Code</th>
-    <th>Description</th>
-  </tr>
+  <thead>
+    <tr>
+      <th>Status Code</th>
+      <th>Description</th>
+    </tr>
   </thead>
   <tbody>
     <tr>

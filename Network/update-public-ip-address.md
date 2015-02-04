@@ -1,17 +1,23 @@
 {{{
-  "title": "Update Public IP Address",
+  "title": "UpdatePublicIPAddress",
   "date": "5-1-2013",
   "author": "Peter Kowalczyk",
   "attachments": []
 }}}
 
-UpdatePublicIPAddress
-<p>Configures firewall settings on a public IP Address.</p>
-URL
-<pre>REST: https://api.tier3.com/REST/Network/UpdatePublicIPAddress/&lt;format&gt;<br />SOAP: https://api.tier3.com/SOAP/Network.asmx?op=UpdatePublicIPAddress</pre> Request
-<h3>Attributes</h3>
+Configures firewall settings on a public IP Address.
+
+## URL
+
+    REST: https://api.tier3.com/REST/Network/UpdatePublicIPAddress/<format>
+    SOAP: https://api.tier3.com/SOAP/Network.asmx?op=UpdatePublicIPAddress
+
+## Request
+
+### Attributes
+
 <table>
-    <thead>
+  <thead>
     <tr>
       <th>Name</th>
       <th>Type</th>
@@ -128,69 +134,78 @@ URL
     </tr>
   </tbody>
 </table>
-<h3>Examples</h3>
-<h4>JSON</h4>
-<pre>{
 
-  "AccountAlias": "SUB1",
+### Examples
 
-  "ServerName": "WA1T3NWEB01",
+#### JSON
 
-  "PublicIPAddress": "1.1.1.1",
+    {
 
-  "AllowHTTP": true,
+      "AccountAlias": "SUB1",
 
-  "AllowHTTPonPort8080": false,
+      "ServerName": "WA1T3NWEB01",
 
-  "AllowHTTPS": false,
+      "PublicIPAddress": "1.1.1.1",
 
-  "AllowFTP": false,
+      "AllowHTTP": true,
 
-  "AllowFTPS": false,
+      "AllowHTTPonPort8080": false,
 
-  "AllowSFTP": false,
+      "AllowHTTPS": false,
 
-  "AllowSSH": false,
+      "AllowFTP": false,
 
-  "AllowRDP": false
+      "AllowFTPS": false,
 
-}</pre>
-<h4>XML</h4>
-<pre>&lt;UpdateIPAddressRequest&gt;
+      "AllowSFTP": false,
 
-    &lt;AccountAlias&gt;SUB1&lt;/AccountAlias&gt;
+      "AllowSSH": false,
 
-    &lt;ServerName&gt;WA1T3NWEB01&lt;/ServerName&gt;
+      "AllowRDP": false
 
-    &lt;PublicIPAddress&gt;1.1.1.1&lt;/PublicIPAddress&gt;
+    }
 
-    &lt;AllowHTTP&gt;true&lt;/AllowHTTP&gt;
+#### XML
 
-    &lt;AllowHTTPonPort8080&gt;false&lt;/AllowHTTPonPort8080&gt;
+    <UpdateIPAddressRequest>
 
-    &lt;AllowHTTPS&gt;false&lt;/AllowHTTPS&gt;
+        <AccountAlias>SUB1</AccountAlias>
 
-    &lt;AllowFTP&gt;false&lt;/AllowFTP&gt;
+        <ServerName>WA1T3NWEB01</ServerName>
 
-    &lt;AllowFTPS&gt;false&lt;/AllowFTPS&gt;
+        <PublicIPAddress>1.1.1.1</PublicIPAddress>
 
-    &lt;AllowSFTP&gt;false&lt;/AllowSFTP&gt;
+        <AllowHTTP>true</AllowHTTP>
 
-    &lt;AllowSSH&gt;false&lt;/AllowSSH&gt;
+        <AllowHTTPonPort8080>false</AllowHTTPonPort8080>
 
-    &lt;AllowRDP&gt;false&lt;/AllowRDP&gt;
+        <AllowHTTPS>false</AllowHTTPS>
 
-&lt;/UpdateIPAddressRequest&gt;</pre> Response
-<h3>Attributes</h3>
+        <AllowFTP>false</AllowFTP>
+
+        <AllowFTPS>false</AllowFTPS>
+
+        <AllowSFTP>false</AllowSFTP>
+
+        <AllowSSH>false</AllowSSH>
+
+        <AllowRDP>false</AllowRDP>
+
+    </UpdateIPAddressRequest>
+
+## Response
+
+### Attributes
+
 <table>
   <thead>
-  <tr>
-    <th>Name</th>
-    <th>Type</th>
-    <th>Description</th>
-  </tr>
-</thead>
-<tbody>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
     <tr>
       <td>Success</td>
       <td>Boolean</td>
@@ -217,28 +232,35 @@ URL
     </tr>
   </tbody>
 </table>
-<h3>Examples</h3>
-<h4>JSON</h4>
-<pre>{
 
-  "Success": true,
+### Examples
 
-  "Message": "Success",
+#### JSON
 
-  "StatusCode": 0,
+    {
 
-  "RequestID": 1
+      "Success": true,
 
-}</pre>
-<h4>XML</h4>
-<pre>&lt;QueuedItemResponse Success="true" Message="Success" StatusCode="0" RequestID="1"&nbsp;/&gt;</pre>
-<h3>Status Codes</h3>
+      "Message": "Success",
+
+      "StatusCode": 0,
+
+      "RequestID": 1
+
+    }
+
+#### XML
+
+    <QueuedItemResponse Success="true" Message="Success" StatusCode="0" RequestID="1" />
+
+### Status Codes
+
 <table>
-    <thead>
-  <tr>
-    <th>Status Code</th>
-    <th>Description</th>
-  </tr>
+  <thead>
+    <tr>
+      <th>Status Code</th>
+      <th>Description</th>
+    </tr>
   </thead>
   <tbody>
     <tr>

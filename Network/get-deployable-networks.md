@@ -1,17 +1,23 @@
 {{{
-  "title": "Get Deployable Networks",
+  "title": "GetDeployableNetworks",
   "date": "9-15-2014",
   "author": "Luke Bakken",
   "attachments": []
 }}}
 
-GetDeployableNetworks
-<p>Gets the list of Networks mapped to an account in any Data Center that are deployable.</p>
-URL
-<pre>REST: https://api.tier3.com/REST/Network/GetDeployableNetworks/&lt;format&gt;<br />SOAP: https://api.tier3.com/SOAP/Network.asmx?op=GetDeployableNetworks</pre> Request
-<h3>Attributes</h3>
+Gets the list of Networks mapped to an account in any Data Center that are deployable.
+
+## URL
+
+    REST: https://api.tier3.com/REST/Network/GetDeployableNetworks/<format>
+    SOAP: https://api.tier3.com/SOAP/Network.asmx?op=GetDeployableNetworks
+
+## Request
+
+### Attributes
+
 <table>
-    <thead>
+  <thead>
     <tr>
       <th>Name</th>
       <th>Type</th>
@@ -34,33 +40,42 @@ URL
     </tr>
   </tbody>
 </table>
-<h3>Examples</h3>
-<h4>JSON</h4>
-<pre>{
 
-  "AccountAlias": "UNK",
+### Examples
 
-  "Location": "UN1"
+#### JSON
 
-}</pre>
-<h4>XML</h4>
-<pre>&lt;NetworkRequest&gt;
+    {
 
-    &lt;AccountAlias&gt;UNK&lt;/AccountAlias&gt;
+      "AccountAlias": "UNK",
 
-    &lt;Location&gt;UN1&lt;/Location&gt;
+      "Location": "UN1"
 
-&lt;/NetworkRequest&gt;</pre> Response
-<h3>Attributes</h3>
+    }
+
+#### XML
+
+    <NetworkRequest>
+
+        <AccountAlias>UNK</AccountAlias>
+
+        <Location>UN1</Location>
+
+    </NetworkRequest>
+
+## Response
+
+### Attributes
+
 <table>
   <thead>
-  <tr>
-    <th>Name</th>
-    <th>Type</th>
-    <th>Description</th>
-  </tr>
-</thead>
-<tbody>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
     <tr>
       <td>Success</td>
       <td>Boolean</td>
@@ -78,21 +93,23 @@ URL
     </tr>
     <tr>
       <td>Networks</td>
-      <td>Complex</td>
+      <td>Complex (see below)</td>
       <td>A list of Network (see below)</td>
     </tr>
   </tbody>
 </table>
-<h3>Network Attributes</h3>
+
+### Network Attributes
+
 <table>
   <thead>
-  <tr>
-    <th>Name</th>
-    <th>Type</th>
-    <th>Description</th>
-  </tr>
-</thead>
-<tbody>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
     <tr>
       <td>Name</td>
       <td>String</td>
@@ -113,68 +130,75 @@ URL
     </tr>
   </tbody>
 </table>
-<h3>Examples</h3>
-<h4>JSON</h4>
-<pre>{
 
-  "Networks": [
+### Examples
 
-    {
-
-      "Name": "vlan_1114_10.81.14",
-
-      "Description": "vlan_1114_10.81.14",
-
-      "Gateway": "10.81.14.1",
-
-      "Location": "UN1",
-
-      "AccountAlias": "UNK"
-
-    },
+#### JSON
 
     {
 
-      "Name": "vlan_1241_10.81.141",
+      "Networks": [
 
-      "Description": "vlan_1241_10.81.141",
+        {
 
-      "Gateway": "10.81.141.1",
+          "Name": "vlan_1114_10.81.14",
 
-      "Location": "UN1",
+          "Description": "vlan_1114_10.81.14",
 
-      "AccountAlias": "UNK"
+          "Gateway": "10.81.14.1",
+
+          "Location": "UN1",
+
+          "AccountAlias": "UNK"
+
+        },
+
+        {
+
+          "Name": "vlan_1241_10.81.141",
+
+          "Description": "vlan_1241_10.81.141",
+
+          "Gateway": "10.81.141.1",
+
+          "Location": "UN1",
+
+          "AccountAlias": "UNK"
+
+        }
+
+      ],
+
+      "Success": true,
+
+      "Message": "Networks successfully queried.",
+
+      "StatusCode": 0
 
     }
 
-  ],
+#### XML
 
-  "Success": true,
+    <GetNetworksResponse Success="true" Message="Networks successfully queried." StatusCode="0">
 
-  "Message": "Networks successfully queried.",
+        <Networks>
 
-  "StatusCode": 0
+            <Network Name="vlan_1114_10.81.14" Description="vlan_1114_10.81.14" Gateway="10.81.14.1" Location="UN1" AccountAlias="UNK"/>
 
-}</pre>
-<h4>XML</h4>
-<pre>&lt;GetNetworksResponse Success="true" Message="Networks successfully queried." StatusCode="0"&gt;
+            <Network Name="vlan_1241_10.81.141" Description="vlan_1241_10.81.141" Gateway="10.81.141.1" Location="UN1" AccountAlias="UNK"/>
 
-&lt;Networks&gt;
+        </Networks>
 
-    &lt;Network Name="vlan_1114_10.81.14" Description="vlan_1114_10.81.14" Gateway="10.81.14.1" Location="UN1" AccountAlias="UNK"/&gt;
+    </GetNetworksResponse>
 
-    &lt;Network Name="vlan_1241_10.81.141" Description="vlan_1241_10.81.141" Gateway="10.81.141.1" Location="UN1" AccountAlias="UNK"/&gt;
+## Status Codes
 
-&lt;/Networks&gt;
-
-&lt;/GetNetworksResponse&gt;</pre>
-<h3>Status Codes</h3>
 <table>
-    <thead>
-  <tr>
-    <th>Status Code</th>
-    <th>Description</th>
-  </tr>
+  <thead>
+    <tr>
+      <th>Status Code</th>
+      <th>Description</th>
+    </tr>
   </thead>
   <tbody>
     <tr>

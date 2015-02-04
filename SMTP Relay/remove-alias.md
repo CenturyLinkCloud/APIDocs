@@ -1,20 +1,20 @@
 {{{
-  "title": "Remove Alias",
+  "title": "RemoveAlias",
   "date": "8-8-2011",
   "author": "jw@tier3.com",
   "attachments": []
 }}}
 
-RemoveAlias
-<p>This method will delete an existing SMTP Relay alias.
-  <br />
-  <br /><strong>URL:</strong>
-</p>
-<pre>https://api.tier3.com/REST/SMTPRelay/RemoveAlias/&lt;format&gt;</pre>
-<p>
-  <br />
-  <br /><strong>DeleteSite Request Attributes:</strong>
-</p>
+This method will delete an existing SMTP Relay alias.
+
+## URL
+
+    REST: https://api.tier3.com/REST/SMTPRelay/RemoveAlias/<format>
+
+## Request
+
+### Attributes
+
 <table>
   <tbody>
     <tr>
@@ -22,8 +22,8 @@ RemoveAlias
       <tr>
         <th>Name</th>
         <th>Type</th>
-        <th>Req.</th>
         <th>Description</th>
+        <th>Req.</th>
       </tr>
     </thead>
     <tbody>
@@ -31,33 +31,36 @@ RemoveAlias
     <tr>
       <td>RelayAlias</td>
       <td>String</td>
-      <td>Yes</td>
       <td>The the SMTP relay alias to delete.</td>
+      <td>Yes</td>
     </tr>
   </tbody>
 </table>
-<p>
-  <br /><strong>Example Messages:</strong>&nbsp;<strong>XML:</strong>
-</p>
-<pre>&lt;SMTPUserRequest&gt;
 
-    &lt;RelayAlias&gt;ZZZ1-relay@t3mx.com&lt;/RelayAlias&gt;
+### Examples
 
-&lt;/SMTPUserRequest&gt;</pre>
-<p>
-  <br /><strong>JSON:</strong>
-</p>
-<pre>{
+#### JSON
 
-  "RelayAlias":"ZZZ1-relay@t3mx.com"
+    {
 
-}</pre>
-<p>
-  <br />
-  <br /><strong>Response Attributes:</strong>
-</p>
+      "RelayAlias":"ZZZ1-relay@t3mx.com"
+
+    }
+
+#### XML
+
+    <SMTPUserRequest>
+
+        <RelayAlias>ZZZ1-relay@t3mx.com</RelayAlias>
+
+    </SMTPUserRequest>
+
+## Response
+
+### Attributes
+
 <table>
-    <thead>
+  <thead>
     <tr>
       <th>Name</th>
       <th>Type</th>
@@ -82,26 +85,27 @@ RemoveAlias
     </tr>
   </tbody>
 </table>
-<p>
-  <br /><strong>Example Responses:</strong>&nbsp;<strong>XML:</strong>
-</p>
-<pre>&lt;APIResponse Success="true" Message="Alias has been deleted." StatusCode="0" /&gt;</pre>
-<p>
-  <br /><strong>JSON:</strong>
-</p>
-<pre>{
 
-  "Success":true,
+### Examples
 
-  "Message":"Alias has been deleted.",
+#### JSON
 
-  "StatusCode":0 
+    {
 
-}</pre>
-<p>
-  <br />
-  <br /><strong>Valid Status Codes returned by the RemoveAlias Method:</strong>
-</p>
+      "Success":true,
+
+      "Message":"Alias has been deleted.",
+
+      "StatusCode":0 
+
+    }
+
+#### XML
+
+    <APIResponse Success="true" Message="Alias has been deleted." StatusCode="0" />
+
+### Status Codes
+
 <table>
     <thead>
   <tr>

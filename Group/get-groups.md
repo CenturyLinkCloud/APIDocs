@@ -1,17 +1,23 @@
 {{{
-  "title": "Get Groups",
+  "title": "GetGroups",
   "date": "2-7-2013",
   "author": "Troy Schneringer",
   "attachments": []
 }}}
 
-GetGroups
-<p>Gets a list of all groups with the specified search criteria.</p>
-URL
-<pre>REST: https://api.tier3.com/REST/Group/GetGroups/&lt;format&gt;<br />SOAP: https://api.tier3.com/SOAP/Group.asmx?op=GetGroups</pre> Request
-<h3>Attributes</h3>
+Gets a list of all groups with the specified search criteria.
+
+## URL
+
+    REST: https://api.tier3.com/REST/Group/GetGroups/<format>
+    SOAP: https://api.tier3.com/SOAP/Group.asmx?op=GetGroups
+
+## Request
+
+### Attributes
+
 <table>
-    <thead>
+  <thead>
     <tr>
       <th>Name</th>
       <th>Type</th>
@@ -34,24 +40,33 @@ URL
     </tr>
   </tbody>
 </table>
-<h3>Examples</h3>
-<h4>JSON</h4>
-<pre>{
 
-  "AccountAlias": "UNK",
+### Examples
 
-  "Location": "DC1"
+#### JSON
 
-}</pre>
-<h4>XML</h4>
-<pre>&lt;GetGroupsRequest&gt;
+    {
 
-    &lt;AccountAlias&gt;ACCT&lt;/AccountAlias&gt;
+      "AccountAlias": "UNK",
 
-    &lt;Location&gt;WA1&lt;/Location&gt;
+      "Location": "DC1"
 
-&lt;/GetGroupsRequest&gt;</pre> Response
-<h3>Attributes</h3>
+    }
+
+#### XML
+
+    <GetGroupsRequest>
+
+        <AccountAlias>ACCT</AccountAlias>
+
+        <Location>WA1</Location>
+
+    </GetGroupsRequest>
+
+## Response
+
+### Attributes
+
 <table>
   <thead>
   <tr>
@@ -83,7 +98,9 @@ URL
     </tr>
   </tbody>
 </table>
-<h3>Hardware Group Attributes</h3>
+
+### Hardware Group Attributes
+
 <table>
   <thead>
   <tr>
@@ -115,14 +132,64 @@ URL
     </tr>
   </tbody>
 </table>
-<h3>Examples</h3>
-<h4>JSON</h4>
-<pre>{<br />    "Groups":[<br />        {"ID":1,"Name":"Group 01","ParentID":0,"IsSystemGroup":true},<br />        {"ID":2,"Name":"Group 02",:"ParentID":1,"IsSystemGroup":false},<br />    ],<br />    "Success":true,<br />    "Message":"Success",<br />    "StatusCode":0<br />}</pre>
-<h4>XML</h4>
-<pre>&lt;GetGroupsResponse Success="true" Message="Success" StatusCode="0"&gt;<br />    &lt;HardwareGroups&gt;<br />        &lt;HardwareGroup ID="1" Name="Group 01" ParentID="0"&nbsp;IsSystemGroup="true" /&gt;<br />        &lt;HardwareGroup ID="2" Name="Group 02" ParentID="1"&nbsp;IsSystemGroup="false"/&gt;<br />    &lt;/HardwareGroups&gt;<br />&lt;/GetGroupsResponse&gt;</pre>
-<h3>Status Codes</h3>
+
+### Examples
+
+#### JSON
+
+    {
+      
+      "Groups": [
+
+        {
+          "ID":1,
+
+          "Name":"Group 01",
+
+          "ParentID":0,
+
+          "IsSystemGroup":true
+
+        },
+
+        {
+          "ID":2,
+
+          "Name":"Group 02",
+
+          "ParentID":1,
+
+          "IsSystemGroup":false
+
+        },
+      ],
+
+      "Success":true,
+
+      "Message":"Success",
+
+      "StatusCode":0
+
+    }
+
+#### XML
+
+    <GetGroupsResponse Success="true" Message="Success" StatusCode="0">
+
+      <HardwareGroups>
+
+        <HardwareGroup ID="1" Name="Group 01" ParentID="0"&nbsp;IsSystemGroup="true" />
+
+        <HardwareGroup ID="2" Name="Group 02" ParentID="1"&nbsp;IsSystemGroup="false"/>
+
+      </HardwareGroups>
+
+    </GetGroupsResponse>
+
+### Status Codes
+
 <table>
-    <thead>
+  <thead>
   <tr>
     <th>Status Code</th>
     <th>Description</th>

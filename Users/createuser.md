@@ -5,14 +5,19 @@
   "attachments": []
 }}}
 
-CreateUser
-<p>Create a new user within a given account. Calls to this operation must include an authorization cookie acquired from the <a href="http://help.tier3.com/entries/20339862-logon">Logon operation.</a>
-</p>
-URL
-<pre>REST: https://api.tier3.com/REST/User/CreateUser/&lt;format&gt; (format = XML | JSON) <br />SOAP: https://api.tier3.com/SOAP/User.asmx?op=CreateUser </pre> Request
-<h3>Attributes</h3>
+Create a new user within a given account. Calls to this operation must include an authorization cookie acquired from the <a href="http://help.tier3.com/entries/20339862-logon">Logon operation.</a>
+
+## URL
+
+    REST: https://api.tier3.com/REST/User/CreateUser/<format>
+    SOAP: https://api.tier3.com/SOAP/User.asmx?op=CreateUser
+
+## Request
+
+### Attributes
+
 <table>
-    <thead>
+  <thead>
     <tr>
       <th>Name</th>
       <th>Type</th>
@@ -112,140 +117,145 @@ URL
     <tr>
       <td>TimeZoneID</td>
       <td>String</td>
-      <td>Time zone of the user. Timezone must be one of the values in <a href="#tz">the table below</a>, otherwise the value is set to the account's Timezone.</td>
+      <td>Time zone of the user. Timezone must be one of the values in <a href="#tz">the table below</a>, otherwise the value is set to the account"s Timezone.</td>
       <td>No</td>
     </tr>
   </tbody>
 </table>
-<h3>Examples</h3>
-<h4>JSON (REST)</h4>
-<pre>{ 
 
-        'UserName':'user3',
+### Examples
 
-        'AccountAlias':'1000', 
+#### JSON
 
-        'EmailAddress':'user3@company.com', 
+    { 
 
-        'FirstName':'Watson', 
+        "UserName":"user3",
 
-        'LastName':'User', 
+        "AccountAlias":"1000", 
 
-        'AlternateEmailAddress':null, 
+        "EmailAddress":"user3@company.com", 
 
-        'Title':null, 
+        "FirstName":"Watson", 
 
-        'OfficeNumber':null, 
+        "LastName":"User", 
 
-        'MobileNumber':null,
+        "AlternateEmailAddress":null, 
 
-         'AllowSMSAlerts':false, 
+        "Title":null, 
 
-        'FaxNumber':null, 
+         "OfficeNumber":null, 
 
-        'SAMLUserName':null, 
+        "MobileNumber":null,
 
-        'Roles':[2,8], 
+          "AllowSMSAlerts":false, 
 
-        'TimeZoneID':null 
+        "FaxNumber":null, 
 
-}
+        "SAMLUserName":null, 
 
-    </pre>
-<h4>XML (REST)</h4>
-<pre>&lt;CreateUserRequest&gt; 
+        "Roles":[2,8], 
 
-    &lt;UserName&gt;user3&lt;/UserName&gt; 
+        "TimeZoneID":null 
 
-    &lt;AccountAlias&gt;1000&lt;/AccountAlias&gt; 
+    }
 
-    &lt;EmailAddress&gt;user3@company.com&lt;/EmailAddress&gt; 
+#### XML (REST)
 
-    &lt;FirstName&gt;Watson&lt;/FirstName&gt; 
+    <CreateUserRequest> 
 
-    &lt;LastName&gt;User&lt;/LastName&gt; 
+        <UserName>user3</UserName> 
 
-    &lt;AlternateEmailAddress&gt;&lt;/AlternateEmailAddress&gt; 
+        <AccountAlias>1000</AccountAlias> 
 
-    &lt;Title&gt;&lt;/Title&gt; 
+        <EmailAddress>user3@company.com</EmailAddress> 
 
-    &lt;OfficeNumber&gt;&lt;/OfficeNumber&gt; 
+        <FirstName>Watson</FirstName> 
 
-    &lt;MobileNumber&gt;&lt;/MobileNumber&gt; 
+        <LastName>User</LastName> 
 
-    &lt;AllowSMSAlerts&gt;false&lt;/AllowSMSAlerts&gt;
+        <AlternateEmailAddress></AlternateEmailAddress> 
 
-    &lt;FaxNumber&gt;&lt;/FaxNumber&gt; 
+        <Title></Title> 
 
-    &lt;SAMLUserName&gt;&lt;/SAMLUserName&gt; 
+        <OfficeNumber></OfficeNumber> 
 
-    &lt;Roles&gt;&lt;int&gt;8&lt;/int&gt;&lt;/Roles&gt; 
+        <MobileNumber></MobileNumber> 
 
-    &lt;TimeZoneID&gt;&lt;/TimeZoneID&gt; 
+        <AllowSMSAlerts>false</AllowSMSAlerts>
 
-&lt;/CreateUserRequest&gt;
+        <FaxNumber></FaxNumber> 
 
-    </pre>
-<h4>XML (SOAP)</h4>
-<pre>&lt;soap12:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        <SAMLUserName></SAMLUserName> 
 
-    xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+        <Roles><int>8</int></Roles> 
 
-    xmlns:soap12="http://www.w3.org/2003/05/soap-envelope"&gt;
+        <TimeZoneID></TimeZoneID> 
 
-  &lt;soap12:Body&gt;
+    </CreateUserRequest>
 
-    &lt;CreateUser xmlns="http://www.tier3.com/"&gt;
+#### XML (SOAP)
 
-      &lt;request&gt;
+    <soap12:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 
-        &lt;UserName&gt;user3&lt;/UserName&gt; 
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
 
-        &lt;AccountAlias&gt;1000&lt;/AccountAlias&gt; 
+        xmlns:soap12="http://www.w3.org/2003/05/soap-envelope">
 
-        &lt;EmailAddress&gt;user3@company.com&lt;/EmailAddress&gt; 
+      <soap12:Body>
 
-        &lt;FirstName&gt;Watson&lt;/FirstName&gt; 
+        <CreateUser xmlns="http://www.tier3.com/">
 
-        &lt;LastName&gt;User&lt;/LastName&gt; 
+          <request>
 
-        &lt;AlternateEmailAddress&gt;&lt;/AlternateEmailAddress&gt; 
+            <UserName>user3</UserName> 
 
-        &lt;Title&gt;&lt;/Title&gt; 
+            <AccountAlias>1000</AccountAlias> 
 
-        &lt;OfficeNumber&gt;&lt;/OfficeNumber&gt; 
+            <EmailAddress>user3@company.com</EmailAddress> 
 
-        &lt;MobileNumber&gt;&lt;/MobileNumber&gt; 
+            <FirstName>Watson</FirstName> 
 
-        &lt;AllowSMSAlerts&gt;false&lt;/AllowSMSAlerts&gt;
+            <LastName>User</LastName> 
 
-        &lt;FaxNumber&gt;&lt;/FaxNumber&gt; 
+            <AlternateEmailAddress></AlternateEmailAddress> 
 
-        &lt;SAMLUserName&gt;&lt;/SAMLUserName&gt; 
+            <Title></Title> 
 
-        &lt;Roles&gt;&lt;int&gt;8&lt;/int&gt;&lt;/Roles&gt; 
+            <OfficeNumber></OfficeNumber> 
 
-        &lt;TimeZoneID&gt;&lt;/TimeZoneID&gt; 
+            <MobileNumber></MobileNumber> 
 
-      &lt;/request&gt;
+            <AllowSMSAlerts>false</AllowSMSAlerts>
 
-    &lt;/CreateUser&gt;
+            <FaxNumber></FaxNumber> 
 
-  &lt;/soap12:Body&gt;
+            <SAMLUserName></SAMLUserName> 
 
-&lt;/soap12:Envelope&gt;  
+            <Roles><int>8</int></Roles> 
 
-</pre> Response
-<h3>Attributes</h3>
+            <TimeZoneID></TimeZoneID> 
+
+          </request>
+
+        </CreateUser>
+
+      </soap12:Body>
+
+    </soap12:Envelope>  
+
+## Response
+
+### Attributes
+
 <table>
   <thead>
-  <tr>
-    <th>Name</th>
-    <th>Type</th>
-    <th>Description</th>
-  </tr>
-</thead>
-<tbody>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
     <tr>
       <td>Success</td>
       <td>Boolean</td>
@@ -259,7 +269,7 @@ URL
     <tr>
       <td>StatusCode</td>
       <td>Int</td>
-      <td>This value will help to identify any errors which were encountered while processing the request. The value of '0' indicates success, all non-zero StatusCodes indicate an error state.</td>
+      <td>This value will help to identify any errors which were encountered while processing the request. The value of "0" indicates success, all non-zero StatusCodes indicate an error state.</td>
     </tr>
     <tr>
       <td>UserDetails</td>
@@ -268,7 +278,9 @@ URL
     </tr>
   </tbody>
 </table>
-<h3>UserDetails Attributes</h3>
+
+### UserDetails Attributes
+
 <table>
   <thead>
   <tr>
@@ -355,9 +367,12 @@ URL
     </tr>
   </tbody>
 </table>
-<h3>Examples</h3>
-<h4>JSON (REST)</h4>
-<pre>{
+
+### Examples
+
+#### JSON
+
+    {
 
         "UserDetails":
 
@@ -399,96 +414,97 @@ URL
 
         "StatusCode":0
 
-}
+    }
 
-    </pre>
-<h4>XML (REST)</h4>
-<pre>&lt;UserDetailsResponse Success="true" Message="User successfully created." StatusCode="0"&gt;
 
-    &lt;UserDetails AccountAlias="1000" 
+#### XML (REST)
 
-        UserName="user3@company.com" 
+    <UserDetailsResponse Success="true" Message="User successfully created." StatusCode="0">
 
-        EmailAddress="user3@company.com" 
+        <UserDetails AccountAlias="1000" 
 
-        FirstName="Watson" 
+            UserName="user3@company.com" 
 
-        LastName="Demo" 
+            EmailAddress="user3@company.com" 
 
-        AlternateEmailAddress="" 
+            FirstName="Watson" 
 
-        OfficeNumber="" 
+            LastName="Demo" 
 
-        MobileNumber="" 
+            AlternateEmailAddress="" 
 
-        AllowSMS="false"
+            OfficeNumber="" 
 
-        FaxNumber="" 
+            MobileNumber="" 
 
-        TimeZoneID="Pacific Standard Time"&gt;
+            AllowSMS="false"
 
-        &lt;Roles&gt;&lt;int&gt;8&lt;/int&gt;&lt;/Roles&gt;
+            FaxNumber="" 
 
-    &lt;/UserDetails&gt;
+            TimeZoneID="Pacific Standard Time">
 
-&lt;/UserDetailsResponse&gt;
+            <Roles><int>8</int></Roles>
 
-    </pre>
-<h4>XML (SOAP)</h4>
-<pre>&lt;soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" 
+        </UserDetails>
 
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    </UserDetailsResponse>
 
-    xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+#### XML (SOAP)
 
-    &lt;soap:Body&gt;
+    <soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" 
 
-        &lt;CreateUserResponse xmlns="http://www.tier3.com/"&gt;
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 
-            &lt;CreateUserResult Success="true" Message="User successfully created." StatusCode="0"&gt;
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 
-                &lt;UserDetails AccountAlias="1000" 
+        <soap:Body>
 
-                    UserName="user3@company.com" 
+            <CreateUserResponse xmlns="http://www.tier3.com/">
 
-                    EmailAddress="user3@company.com" 
+                <CreateUserResult Success="true" Message="User successfully created." StatusCode="0">
 
-                    FirstName="Watson" 
+                    <UserDetails AccountAlias="1000" 
 
-                    LastName="Demo" 
+                        UserName="user3@company.com" 
 
-                    AlternateEmailAddress="" 
+                        EmailAddress="user3@company.com" 
 
-                    OfficeNumber="" 
+                        FirstName="Watson" 
 
-                    MobileNumber="" 
+                        LastName="Demo" 
 
-                    AllowSMS="false"
+                        AlternateEmailAddress="" 
 
-                    FaxNumber="" 
+                        OfficeNumber="" 
 
-                    TimeZoneID="Pacific Standard Time"&gt;
+                        MobileNumber="" 
 
-                    &lt;Roles&gt;&lt;int&gt;8&lt;/int&gt;&lt;/Roles&gt;
+                        AllowSMS="false"
 
-                &lt;/UserDetails&gt;
+                        FaxNumber="" 
 
-            &lt;/CreateUserResult&gt;
+                        TimeZoneID="Pacific Standard Time">
 
-        &lt;/CreateUserResponse&gt;
+                        <Roles><int>8</int></Roles>
 
-    &lt;/soap:Body&gt;
+                    </UserDetails>
 
-&lt;/soap:Envelope&gt;
+                </CreateUserResult>
 
-</pre>
-<h3>Status Codes</h3>
+            </CreateUserResponse>
+
+        </soap:Body>
+
+    </soap:Envelope>
+
+### Status Codes
+
 <table>
-    <thead>
-  <tr>
-    <th>Status Code</th>
-    <th>Description</th>
-  </tr>
+  <thead>
+    <tr>
+      <th>Status Code</th>
+      <th>Description</th>
+    </tr>
   </thead>
   <tbody>
     <tr>
@@ -521,11 +537,11 @@ URL
     </tr>
     <tr>
       <td>1702</td>
-      <td>First Name Required. &nbsp;You must provide user's first name when calling this method.</td>
+      <td>First Name Required. &nbsp;You must provide user"s first name when calling this method.</td>
     </tr>
     <tr>
       <td>1703</td>
-      <td>Last Name Required. &nbsp;You must provide a user's last name when calling this method.</td>
+      <td>Last Name Required. &nbsp;You must provide a user"s last name when calling this method.</td>
     </tr>
     <tr>
       <td>1706</td>
@@ -540,13 +556,17 @@ URL
 <p>
   <a name="tz"></a>
 </p>
-<h3>Valid Timezone Entries</h3>
+
+### Valid Timezone Entries
+
 <table>
-  <tbody>
+  <thead>
     <tr>
-      <td><strong>Timezone Value</strong>
-      </td>
+      <th>Timezone Value</th>
     </tr>
+  </thead>
+  <tbody>
+    
     <tr>
       <td>Dateline Standard Time
         <br /> UTC-11

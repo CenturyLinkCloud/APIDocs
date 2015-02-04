@@ -1,17 +1,23 @@
 {{{
-  "title": "Hardware Group Maintenance",
+  "title": "HardwareGroupMaintenance",
   "date": "5-1-2013",
   "author": "Peter Kowalczyk",
   "attachments": []
 }}}
 
-HardwareGroupMaintenance
-<p>Enables or disables Maintenance Mode on a&nbsp;Hardware Group.</p>
-URL
-<pre>REST: https://api.tier3.com/REST/Group/HardwareGroupMaintenance/&lt;format&gt;<br />SOAP: https://api.tier3.com/SOAP/Group.asmx?op=HardwareGroupMaintenance</pre> Request
-<h3>Attributes</h3>
+Enables or disables Maintenance Mode on a&nbsp;Hardware Group.
+
+## URL
+
+    REST: https://api.tier3.com/REST/Group/HardwareGroupMaintenance/<format>
+    SOAP: https://api.tier3.com/SOAP/Group.asmx?op=HardwareGroupMaintenance
+
+## Request
+
+### Attributes
+
 <table>
-    <thead>
+  <thead>
     <tr>
       <th>Name</th>
       <th>Type</th>
@@ -40,28 +46,37 @@ URL
     </tr>
   </tbody>
 </table>
-<h3>Examples</h3>
-<h4>JSON</h4>
-<pre>{
 
-  "AccountAlias": "UNK",
+### Examples
 
-  "ID": 1007,
+#### JSON
 
-  "Enable": true
+    {
 
-}</pre>
-<h4>XML</h4>
-<pre>&lt;GroupMaintenanceRequest&gt;
+      "AccountAlias": "UNK",
 
-    &lt;AccountAlias&gt;ACCT&lt;/AccountAlias&gt;
+      "ID": 1007,
 
-    &lt;ID&gt;1&lt;/ID&gt;
+      "Enable": true
 
-    &lt;Enable&gt;true&lt;/Enable&gt;
+    }
 
-&lt;/GroupMaintenanceRequest&gt;</pre> Response
-<h3>Attributes</h3>
+#### XML
+
+    <GroupMaintenanceRequest>
+
+        <AccountAlias>ACCT</AccountAlias>
+
+        <ID>1</ID>
+
+        <Enable>true</Enable>
+
+    </GroupMaintenanceRequest>
+
+## Response
+
+### Attributes
+
 <table>
   <thead>
   <tr>
@@ -96,14 +111,33 @@ URL
     </tr>
   </tbody>
 </table>
-<h3>Examples</h3>
-<h4>JSON</h4>
-<pre>{<br />    "RequestID:1,<br />    "Success":true,<br />    "Message":"Success",<br />    "StatusCode":0<br />}</pre>
-<h4>XML</h4>
-<pre>&lt;QueuedItemResponse Success="true" Message="Success" StatusCode="0"&gt;<br />&nbsp; &nbsp; &lt;RequestID&gt;1&lt;/RequestID&gt;<br />&lt;/QueuedItemResponse&gt;</pre>
-<h3>Status Codes</h3>
+
+### Examples
+
+#### JSON
+
+    {
+
+      "RequestID:1,
+
+      "Success":true,
+
+      "Message":"Success",
+
+      "StatusCode":0
+    }
+
+#### XML
+
+    <QueuedItemResponse Success="true" Message="Success" StatusCode="0">
+
+      <RequestID>1</RequestID>
+
+    </QueuedItemResponse>
+
+### Status Codes
 <table>
-    <thead>
+  <thead>
   <tr>
     <th>Status Code</th>
     <th>Description</th>

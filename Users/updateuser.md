@@ -5,14 +5,19 @@
   "attachments": []
 }}}
 
-UpdateUser
-<p>Update a specific user within a given account. Calls to this operation must include an authorization cookie acquired from the <a href="http://help.tier3.com/entries/20339862-logon">Logon operation.</a>
-</p>
-URL
-<pre>REST: https://api.tier3.com/REST/User/UpdateUser/&lt;format&gt; (format = XML | JSON) <br />SOAP: https://api.tier3.com/SOAP/User.asmx?op=UpdateUser </pre> Request
-<h3>Attributes</h3>
+Update a specific user within a given account. Calls to this operation must include an authorization cookie acquired from the <a href="http://help.tier3.com/entries/20339862-logon">Logon operation.
+
+## URL
+
+    REST: https://api.tier3.com/REST/User/UpdateUser/<format>
+    SOAP: https://api.tier3.com/SOAP/User.asmx?op=UpdateUser
+
+## Request
+
+### Attributes
+
 <table>
-    <thead>
+  <thead>
     <tr>
       <th>Name</th>
       <th>Type</th>
@@ -111,129 +116,135 @@ URL
     </tr>
   </tbody>
 </table>
-<h3>Examples</h3>
-<h4>JSON (REST)</h4>
-<pre>{ 
 
-        'UserName':'user3@company.com', 
+### Examples
 
-        'EmailAddress':'user3@company.com', 
+#### JSON
 
-        'FirstName':'Watson', 
+    { 
 
-        'LastName':'User', 
+            'UserName':'user3@company.com', 
 
-        'AlternateEmailAddress':null, 
+            'EmailAddress':'user3@company.com', 
 
-        'Title':'President', 
+            'FirstName':'Watson', 
 
-        'OfficeNumber':null, 
+            'LastName':'User', 
 
-        'MobileNumber':null,
+            'AlternateEmailAddress':null, 
 
-         'AllowSMSAlerts':false, 
+            'Title':'President', 
 
-        'FaxNumber':null, 
+            'OfficeNumber':null, 
 
-        'SAMLUserName':null, 
+            'MobileNumber':null,
 
-        'Roles':[8], 
+             'AllowSMSAlerts':false, 
 
-        'TimeZoneID':null 
+            'FaxNumber':null, 
 
-}
+            'SAMLUserName':null, 
 
-    </pre>
-<h4>XML (REST)</h4>
-<pre>&lt;UpdateUserRequest&gt; 
+            'Roles':[8], 
 
-    &lt;UserName&gt;user3@company.com&lt;/UserName&gt; 
+            'TimeZoneID':null 
 
-    &lt;EmailAddress&gt;user3@company.com&lt;/EmailAddress&gt; 
+    }
 
-    &lt;FirstName&gt;Watson&lt;/FirstName&gt; 
+#### XML (REST)
 
-    &lt;LastName&gt;User&lt;/LastName&gt; 
+    <UpdateUserRequest> 
 
-    &lt;AlternateEmailAddress&gt;&lt;/AlternateEmailAddress&gt; 
+        <UserName>user3@company.com</UserName> 
 
-    &lt;Title&gt;President&lt;/Title&gt; 
+        <EmailAddress>user3@company.com</EmailAddress> 
 
-    &lt;OfficeNumber&gt;&lt;/OfficeNumber&gt; 
+        <FirstName>Watson</FirstName> 
 
-    &lt;MobileNumber&gt;&lt;/MobileNumber&gt; 
+        <LastName>User</LastName> 
 
-    &lt;AllowSMSAlerts&gt;false&lt;/AllowSMSAlerts&gt;
+        <AlternateEmailAddress></AlternateEmailAddress> 
 
-    &lt;FaxNumber&gt;&lt;/FaxNumber&gt; 
+        <Title>President</Title> 
 
-    &lt;SAMLUserName&gt;&lt;/SAMLUserName&gt; 
+        <OfficeNumber></OfficeNumber> 
 
-    &lt;Roles&gt;&lt;int&gt;8&lt;/int&gt;&lt;/Roles&gt; 
+        <MobileNumber></MobileNumber> 
 
-    &lt;TimeZoneID&gt;&lt;/TimeZoneID&gt; 
+        <AllowSMSAlerts>false</AllowSMSAlerts>
 
-&lt;/UpdateUserRequest&gt;
+        <FaxNumber></FaxNumber> 
 
-    </pre>
-<h4>XML (SOAP)</h4>
-<pre>&lt;soap12:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        <SAMLUserName></SAMLUserName> 
 
-    xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+        <Roles><int>8</int></Roles> 
 
-    xmlns:soap12="http://www.w3.org/2003/05/soap-envelope"&gt;
+        <TimeZoneID></TimeZoneID> 
 
-  &lt;soap12:Body&gt;
+    </UpdateUserRequest>
 
-    &lt;UpdateUser xmlns="http://www.tier3.com/"&gt;
+#### XML (SOAP)
 
-      &lt;request&gt;
+    <soap12:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 
-        &lt;UserName&gt;user3@company.com&lt;/UserName&gt; 
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
 
-        &lt;EmailAddress&gt;user3@company.com&lt;/EmailAddress&gt; 
+        xmlns:soap12="http://www.w3.org/2003/05/soap-envelope">
 
-        &lt;FirstName&gt;Watson&lt;/FirstName&gt; 
+      <soap12:Body>
 
-        &lt;LastName&gt;User&lt;/LastName&gt; 
+        <UpdateUser xmlns="http://www.tier3.com/">
 
-        &lt;AlternateEmailAddress&gt;&lt;/AlternateEmailAddress&gt; 
+          <request>
 
-        &lt;Title&gt;President&lt;/Title&gt; 
+            <UserName>user3@company.com</UserName> 
 
-        &lt;OfficeNumber&gt;&lt;/OfficeNumber&gt; 
+            <EmailAddress>user3@company.com</EmailAddress> 
 
-        &lt;MobileNumber&gt;&lt;/MobileNumber&gt; 
+            <FirstName>Watson</FirstName> 
 
-        &lt;AllowSMSAlerts&gt;false&lt;/AllowSMSAlerts&gt;
+            <LastName>User</LastName> 
 
-        &lt;FaxNumber&gt;&lt;/FaxNumber&gt; 
+            <AlternateEmailAddress></AlternateEmailAddress> 
 
-        &lt;SAMLUserName&gt;&lt;/SAMLUserName&gt; 
+            <Title>President</Title> 
 
-        &lt;Roles&gt;&lt;int&gt;8&lt;/int&gt;&lt;/Roles&gt; 
+            <OfficeNumber></OfficeNumber> 
 
-        &lt;TimeZoneID&gt;&lt;/TimeZoneID&gt; 
+            <MobileNumber></MobileNumber> 
 
-      &lt;/request&gt;
+            <AllowSMSAlerts>false</AllowSMSAlerts>
 
-    &lt;/UpdateUser&gt;
+            <FaxNumber></FaxNumber> 
 
-  &lt;/soap12:Body&gt;
+            <SAMLUserName></SAMLUserName> 
 
-&lt;/soap12:Envelope&gt;  
+            <Roles><int>8</int></Roles> 
 
-</pre> Response
-<h3>Attributes</h3>
+            <TimeZoneID></TimeZoneID> 
+
+          </request>
+
+        </UpdateUser>
+
+      </soap12:Body>
+
+    </soap12:Envelope>  
+
+
+## Response
+
+### Attributes
+
 <table>
   <thead>
-  <tr>
-    <th>Name</th>
-    <th>Type</th>
-    <th>Description</th>
-  </tr>
-</thead>
-<tbody>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
     <tr>
       <td>Success</td>
       <td>Boolean</td>
@@ -256,7 +267,9 @@ URL
     </tr>
   </tbody>
 </table>
-<h3>UserDetails Attributes</h3>
+
+### UserDetails Attributes
+
 <table>
   <thead>
   <tr>
@@ -343,144 +356,148 @@ URL
     </tr>
   </tbody>
 </table>
-<h3>Examples</h3>
-<h4>JSON (REST)</h4>
-<pre>{
 
-        "UserDetails":
+### Examples
 
-        {
+#### JSON
 
-            "AccountAlias":"1000",
+    {
 
-            "UserName":"user3@company.com",
+            "UserDetails":
 
-            "EmailAddress":"user3@company.com",
+            {
 
-            "FirstName":"Watson",
+                "AccountAlias":"1000",
 
-            "LastName":"Demo",
+                "UserName":"user3@company.com",
 
-            "AlternateEmailAddress":null,
+                "EmailAddress":"user3@company.com",
 
-            "Title":'President',
+                "FirstName":"Watson",
 
-            "OfficeNumber":null,
+                "LastName":"Demo",
 
-            "MobileNumber":null,
+                "AlternateEmailAddress":null,
 
-            "AllowSMS":false,
+                "Title":'President',
 
-            "FaxNumber":null,
+                "OfficeNumber":null,
 
-            "SAMLUserName":null,
+                "MobileNumber":null,
 
-            "TimeZoneID":"Pacific Standard Time",
+                "AllowSMS":false,
 
-            "Roles":[8]
+                "FaxNumber":null,
 
-         },
+                "SAMLUserName":null,
 
-        "Success":true,
+                "TimeZoneID":"Pacific Standard Time",
 
-        "Message":"User successfully updated.",
+                "Roles":[8]
 
-        "StatusCode":0
+             },
 
-}
+            "Success":true,
 
-    </pre>
-<h4>XML (REST)</h4>
-<pre>&lt;UserDetailsResponse Success="true" Message="User successfully updated." StatusCode="0"&gt;
+            "Message":"User successfully updated.",
 
-    &lt;UserDetails AccountAlias="1000" 
+            "StatusCode":0
 
-        UserName="user3@company.com" 
+    }
 
-        EmailAddress="user3@company.com" 
+#### XML (REST)
 
-        FirstName="Watson" 
+    <UserDetailsResponse Success="true" Message="User successfully updated." StatusCode="0">
 
-        LastName="Demo" 
+        <UserDetails AccountAlias="1000" 
 
-        AlternateEmailAddress="" 
+            UserName="user3@company.com" 
 
-        Title="President"
+            EmailAddress="user3@company.com" 
 
-        OfficeNumber="" 
+            FirstName="Watson" 
 
-        MobileNumber="" 
+            LastName="Demo" 
 
-        AllowSMS="false"
+            AlternateEmailAddress="" 
 
-        FaxNumber="" 
+            Title="President"
 
-        TimeZoneID="Pacific Standard Time"&gt;
+            OfficeNumber="" 
 
-        &lt;Roles&gt;&lt;int&gt;8&lt;/int&gt;&lt;/Roles&gt;
+            MobileNumber="" 
 
-    &lt;/UserDetails&gt;
+            AllowSMS="false"
 
-&lt;/UserDetailsResponse&gt;
+            FaxNumber="" 
 
-    </pre>
-<h4>XML (SOAP)</h4>
-<pre>&lt;soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" 
+            TimeZoneID="Pacific Standard Time">
 
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            <Roles><int>8</int></Roles>
 
-    xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+        </UserDetails>
 
-    &lt;soap:Body&gt;
+    </UserDetailsResponse>
 
-        &lt;UpdateUserResponse xmlns="http://www.tier3.com/"&gt;
 
-            &lt;UpdateUserResult Success="true" Message="User successfully updated." StatusCode="0"&gt;
+#### XML (SOAP)
 
-                &lt;UserDetails AccountAlias="1000" 
+    <soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" 
 
-                    UserName="user3@company.com" 
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 
-                    EmailAddress="user3@company.com" 
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 
-                    FirstName="Watson" 
+        <soap:Body>
 
-                    LastName="Demo" 
+            <UpdateUserResponse xmlns="http://www.tier3.com/">
 
-                    AlternateEmailAddress="" 
+                <UpdateUserResult Success="true" Message="User successfully updated." StatusCode="0">
 
-                    Title="President"
+                    <UserDetails AccountAlias="1000" 
 
-                    OfficeNumber="" 
+                        UserName="user3@company.com" 
 
-                    MobileNumber="" 
+                        EmailAddress="user3@company.com" 
 
-                    AllowSMS="false"
+                        FirstName="Watson" 
 
-                    FaxNumber="" 
+                        LastName="Demo" 
 
-                    TimeZoneID="Pacific Standard Time"&gt;
+                        AlternateEmailAddress="" 
 
-                    &lt;Roles&gt;&lt;int&gt;8&lt;/int&gt;&lt;/Roles&gt;
+                        Title="President"
 
-                &lt;/UserDetails&gt;
+                        OfficeNumber="" 
 
-            &lt;/UpdateUserResult&gt;
+                        MobileNumber="" 
 
-        &lt;/UpdateUserResponse&gt;
+                        AllowSMS="false"
 
-    &lt;/soap:Body&gt;
+                        FaxNumber="" 
 
-&lt;/soap:Envelope&gt;
+                        TimeZoneID="Pacific Standard Time">
 
-</pre>
-<h3>Status Codes</h3>
+                        <Roles><int>8</int></Roles>
+
+                    </UserDetails>
+
+                </UpdateUserResult>
+
+            </UpdateUserResponse>
+
+        </soap:Body>
+
+    </soap:Envelope>
+
+### Status Codes
+
 <table>
-    <thead>
-  <tr>
-    <th>Status Code</th>
-    <th>Description</th>
-  </tr>
+  <thead>
+    <tr>
+      <th>Status Code</th>
+      <th>Description</th>
+    </tr>
   </thead>
   <tbody>
     <tr>

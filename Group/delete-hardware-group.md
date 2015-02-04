@@ -1,17 +1,23 @@
 {{{
-  "title": "Delete Hardware Group",
+  "title": "DeleteHardwareGroup",
   "date": "2-7-2013",
   "author": "Troy Schneringer",
   "attachments": []
 }}}
 
-DeleteHardwareGroup
-<p>Deletes the Hardware Group along with all child groups and servers.</p>
-URL
-<pre>REST: https://api.tier3.com/REST/Group/DeleteHardwareGroup/&lt;format&gt;<br />SOAP: https://api.tier3.com/SOAP/Group.asmx?op=DeleteHardwareGroup</pre> Request
-<h3>Attributes</h3>
+Deletes the Hardware Group along with all child groups and servers.
+
+## URL
+
+    REST: https://api.tier3.com/REST/Group/DeleteHardwareGroup/<format>
+    SOAP: https://api.tier3.com/SOAP/Group.asmx?op=DeleteHardwareGroup
+
+## Request
+
+### Attributes
+
 <table>
-    <thead>
+  <thead>
     <tr>
       <th>Name</th>
       <th>Type</th>
@@ -34,24 +40,31 @@ URL
     </tr>
   </tbody>
 </table>
-<h3>Examples</h3>
-<h4>JSON</h4>
-<pre>{
 
-  "AccountAlias": "UNK",
+### Examples
 
-  "ID": "2"
+#### JSON
 
-}</pre>
-<h4>XML</h4>
-<pre>&lt;DeleteGroupRequest&gt;
+    {
 
-    &lt;AccountAlias&gt;ACCT&lt;/AccountAlias&gt;
+      "AccountAlias": "UNK",
 
-    &lt;ID&gt;1&lt;/ID&gt;
+      "ID": "2"
 
-&lt;/DeleteGroupRequest&gt;</pre> Response
-<h3>Attributes</h3>
+    }
+
+#### XML
+
+    <DeleteGroupRequest>
+
+      <AccountAlias>ACCT</AccountAlias>
+
+      <ID>1</ID>
+
+    </DeleteGroupRequest>
+
+## Response
+### Attributes
 <table>
   <thead>
   <tr>
@@ -86,18 +99,37 @@ URL
     </tr>
   </tbody>
 </table>
-<h3>Examples</h3>
-<h4>JSON</h4>
-<pre>{<br />    "RequestID:1,<br />    "Success":true,<br />    "Message":"Success",<br />    "StatusCode":0<br />}</pre>
-<h4>XML</h4>
-<pre>&lt;QueuedItemResponse Success="true" Message="Success" StatusCode="0"&gt;<br />&nbsp; &nbsp; &lt;RequestID&gt;1&lt;/RequestID&gt;<br />&lt;/QueuedItemResponse&gt;</pre>
-<h3>Status Codes</h3>
+
+### Examples
+
+#### JSON
+
+    {
+      "RequestID:1,
+
+      "Success":true,
+
+      "Message":"Success",
+
+      "StatusCode":0
+
+    }
+
+#### XML
+
+    <QueuedItemResponse Success="true" Message="Success" StatusCode="0">
+
+      <RequestID>1</RequestID>
+
+    </QueuedItemResponse>
+
+### Status Codes
 <table>
-    <thead>
-  <tr>
-    <th>Status Code</th>
-    <th>Description</th>
-  </tr>
+  <thead>
+    <tr>
+      <th>Status Code</th>
+      <th>Description</th>
+    </tr>
   </thead>
   <tbody>
     <tr>

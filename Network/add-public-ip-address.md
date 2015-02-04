@@ -1,18 +1,21 @@
 {{{
-  "title": "Add Public IP Address",
+  "title": "AddPublicIPAddress",
   "date": "2-6-2014",
   "author": "Peter Kowalczyk",
   "attachments": []
 }}}
 
-AddPublicIPAddress
-<p>Maps a public IP Address to&nbsp;a&nbsp;Server.</p>
-URL
-<pre>REST: https://api.tier3.com/REST/Network/AddPublicIPAddress/&lt;format&gt;<br />SOAP: https://api.tier3.com/SOAP/Network.asmx?op=AddPublicIPAddress</pre> Request
-<h3>Attributes</h3>
-<p>AllowHTTPBoolean</p>
-<p>&nbsp;The public IP mapping will allow&nbsp;HTTP requests.</p>
-<p>&nbsp;No</p>
+Maps a public IP Address to a Server.
+
+## URL
+
+REST: https://api.tier3.com/REST/Network/AddPublicIPAddress/<format>
+SOAP: https://api.tier3.com/SOAP/Network.asmx?op=AddPublicIPAddress
+
+## Request
+
+### Attributes
+
 <table>
     <thead>
     <tr>
@@ -57,6 +60,16 @@ URL
       </td>
       <td>
         <p>Depends</p>
+      </td>
+    </tr>
+    <tr>
+      <td>AllowHTTP</td>
+      <td>Boolean</td>
+      <td>
+        <p>&nbsp;The public IP mapping will allow&nbsp;HTTP requests.</p>
+      </td>
+      <td>
+        <p>&nbsp;No</p>
       </td>
     </tr>
     <tr>
@@ -131,73 +144,82 @@ URL
     </tr>
   </tbody>
 </table>
-<h3>Examples</h3>
-<h4>JSON</h4>
-<pre>{
 
-  "AccountAlias": "SUB1",
+### Examples
 
-  "ServerName": "WA1T3NWEB01",
+#### JSON
 
-  "IPAddress": "1.1.1.1",
+    {
 
-  "ServerPassword": "password",
+      "AccountAlias": "SUB1",
 
-  "AllowHTTP": true,
+      "ServerName": "WA1T3NWEB01",
 
-  "AllowHTTPonPort8080": false,
+      "IPAddress": "1.1.1.1",
 
-  "AllowHTTPS": false,
+      "ServerPassword": "password",
 
-  "AllowFTP": false,
+      "AllowHTTP": true,
 
-  "AllowFTPS": false,
+      "AllowHTTPonPort8080": false,
 
-  "AllowSFTP": false,
+      "AllowHTTPS": false,
 
-  "AllowSSH": false,
+      "AllowFTP": false,
 
-  "AllowRDP": false
+      "AllowFTPS": false,
 
-}</pre>
-<h4>XML</h4>
-<pre>&lt;AddIPAddressRequest&gt;
+      "AllowSFTP": false,
 
-    &lt;AccountAlias&gt;SUB1&lt;/AccountAlias&gt;
+      "AllowSSH": false,
 
-    &lt;ServerName&gt;WA1T3NWEB01&lt;/ServerName&gt;
+      "AllowRDP": false
 
-    &lt;IPAddress&gt;1.1.1.1&lt;/IPAddress&gt;
+    }
 
-    &lt;ServerPassword&gt;password&lt;/ServerPassword&gt;
+#### XML
 
-    &lt;AllowHTTP&gt;true&lt;/AllowHTTP&gt;
+    <AddIPAddressRequest>
 
-    &lt;AllowHTTPonPort8080&gt;false&lt;/AllowHTTPonPort8080&gt;
+        <AccountAlias>SUB1</AccountAlias>
 
-    &lt;AllowHTTPS&gt;false&lt;/AllowHTTPS&gt;
+        <ServerName>WA1T3NWEB01</ServerName>
 
-    &lt;AllowFTP&gt;false&lt;/AllowFTP&gt;
+        <IPAddress>1.1.1.1</IPAddress>
 
-    &lt;AllowFTPS&gt;false&lt;/AllowFTPS&gt;
+        <ServerPassword>password</ServerPassword>
 
-    &lt;AllowSFTP&gt;false&lt;/AllowSFTP&gt;
+        <AllowHTTP>true</AllowHTTP>
 
-    &lt;AllowSSH&gt;false&lt;/AllowSSH&gt;
+        <AllowHTTPonPort8080>false</AllowHTTPonPort8080>
 
-    &lt;AllowRDP&gt;false&lt;/AllowRDP&gt;
+        <AllowHTTPS>false</AllowHTTPS>
 
-&lt;/AddIPAddressRequest&gt;</pre> Response
-<h3>Attributes</h3>
+        <AllowFTP>false</AllowFTP>
+
+        <AllowFTPS>false</AllowFTPS>
+
+        <AllowSFTP>false</AllowSFTP>
+
+        <AllowSSH>false</AllowSSH>
+
+        <AllowRDP>false</AllowRDP>
+
+    </AddIPAddressRequest>
+
+## Response
+
+### Attributes
+
 <table>
   <thead>
-  <tr>
-    <th>Name</th>
-    <th>Type</th>
-    <th>Description</th>
-  </tr>
-</thead>
-<tbody>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
     <tr>
       <td>Success</td>
       <td>Boolean</td>
@@ -224,28 +246,35 @@ URL
     </tr>
   </tbody>
 </table>
-<h3>Examples</h3>
-<h4>JSON</h4>
-<pre>{
 
- "Success":true,
+### Examples
 
- "Message":"Success",
+#### JSON
 
- "StatusCode":0,
+    {
 
- "RequestID":1
+     "Success":true,
 
-}</pre>
-<h4>XML</h4>
-<pre>&lt;QueuedItemResponse Success="true" Message="Success" StatusCode="0" RequestID="1" /&gt;</pre>
-<h3>Status Codes</h3>
+     "Message":"Success",
+
+     "StatusCode":0,
+
+     "RequestID":1
+
+    }
+
+#### XML
+
+    <QueuedItemResponse Success="true" Message="Success" StatusCode="0" RequestID="1" />
+
+### Status Codes
+
 <table>
-    <thead>
-  <tr>
-    <th>Status Code</th>
-    <th>Description</th>
-  </tr>
+  <thead>
+    <tr>
+      <th>Status Code</th>
+      <th>Description</th>
+    </tr>
   </thead>
   <tbody>
     <tr>

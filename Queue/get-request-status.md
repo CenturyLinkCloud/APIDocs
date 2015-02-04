@@ -1,22 +1,22 @@
 {{{
-  "title": "Get Request Status",
+  "title": "GetRequestStatus",
   "date": "11-24-2014",
   "author": "jw@tier3.com",
   "attachments": []
 }}}
 
-<p><strong>This API has been deprecated. Please use the following API to make requests:</strong>
-</p>
-<h3><a href="https://t3n.zendesk.com/entries/20561586-Get-Deployment-Status">Get Deployment Status</a></h3> GetRequestStatus
-<p>This method can be used to check the status of any of the long running requests which must be performed asynchronously, including CreateServer, CloneServerToLab, and InstallSQLServer. The main input to this method is the Request ID value returned by the
-  above methods.
-  <br />
-  <br /><strong>URL:</strong>
-</p>
-<pre>https://api.tier3.com/REST/Queue/GetRequestStatus/&lt;format&gt;</pre>
-<p>
-  <br /><strong>QueueStatusRequestRequest Attributes:</strong>
-</p>
+<p><strong>This API has been deprecated. Please use the following API to make requests:</strong></p>
+
+This method can be used to check the status of any of the long running requests which must be performed asynchronously, including CreateServer, CloneServerToLab, and InstallSQLServer. The main input to this method is the Request ID value returned by the above methods.
+
+## URL
+
+    REST: https://api.tier3.com/REST/Queue/GetRequestStatus/<format>
+
+## Request
+
+### Attributes
+
 <table>
   <tbody>
     <tr>
@@ -24,8 +24,8 @@
       <tr>
         <th>Name</th>
         <th>Type</th>
-        <th>Req.</th>
         <th>Description</th>
+        <th>Req.</th>
       </tr>
     </thead>
     <tbody>
@@ -33,31 +33,32 @@
     <tr>
       <td>RequestID</td>
       <td>Int</td>
-      <td>Yes</td>
       <td>This is the Request ID returned by any of the operations which Queues an async request to perform any given task.</td>
+      <td>Yes</td>
     </tr>
   </tbody>
 </table>
-<p>
-  <br /><strong>Example Messages:</strong>
-  <br />
-  <br /><strong>XML:</strong>
-</p>
-<pre>&lt;QueueStatusRequest&gt;
 
-    &lt;RequestID&gt;50&lt;/RequestID&gt;
+### Examples
 
-&lt;/QueueStatusRequest&gt;</pre>
-<p>
-  <br /><strong>JSON:</strong>
-</p>
-<pre>{"RequestID":"50"}</pre>
-<p>
-  <br />
-  <br /><strong>Response Attributes:</strong>
-</p>
+#### XML
+
+    <QueueStatusRequest>
+
+        <RequestID>50</RequestID>
+
+    </QueueStatusRequest>
+
+#### JSON
+
+    {"RequestID":"50"}
+
+## Response
+
+### Attributes
+
 <table>
-    <thead>
+  <thead>
     <tr>
       <th>Name</th>
       <th>Type</th>
@@ -128,32 +129,54 @@
     </tr>
   </tbody>
 </table>
-<p>
-  <br /><strong>Example Responses:</strong>
-  <br />
-  <br /><strong>XML:</strong>
-</p>
-<pre>&lt;QueueStatusResponse Success="true" Message="Request Status successfully retrieved." StatusCode="0"&gt;  
 
-     &lt;RequestDetails RequestID="50" RequestTitle="Creating Server UT1XXLAB01" ProgressDesc="Request completed" StatusDate="2010-05-28T18:48:49.527" PercentComplete="100" CurrentStatus="Succeeded" StepNumber="0" /&gt;
+### Examples
 
-&lt;/QueueStatusResponse&gt;</pre>
-<p>
-  <br /><strong>JSON:</strong>
-</p>
-<pre>{"RequestDetails":{"RequestID":50,"RequestTitle":"Creating Server UT1XXLAB01","ProgressDesc":"Request completed","StatusDate":"\/Date(1275097729527)\/","PercentComplete":100,"CurrentStatus":"Succeeded","StepNumber":0},
+#### XML
 
-"Success":true,"Message":"Request Status successfully retrieved.","StatusCode":0}</pre>
-<p>
-  <br />
-  <br /><strong>Valid Status Codes returned by the CheckServerRequestStatus Method:</strong>
-</p>
+    <QueueStatusResponse Success="true" Message="Request Status successfully retrieved." StatusCode="0">  
+
+         <RequestDetails RequestID="50" RequestTitle="Creating Server UT1XXLAB01" ProgressDesc="Request completed" StatusDate="2010-05-28T18:48:49.527" PercentComplete="100" CurrentStatus="Succeeded" StepNumber="0" />
+
+    </QueueStatusResponse>
+
+#### JSON
+
+    {
+
+      "RequestDetails": {
+
+        "RequestID":50,
+
+        "RequestTitle":"Creating Server UT1XXLAB01",
+
+        "ProgressDesc":"Request completed",
+
+        "StatusDate":"\/Date(1275097729527)\/",
+
+        "PercentComplete":100,
+
+        "CurrentStatus":"Succeeded",
+
+        "StepNumber":0
+
+      },
+
+      Success":true,
+
+      "Message":"Request Status successfully retrieved.",
+
+      "StatusCode":0
+
+    }
+
+## Status Codes
 <table>
-    <thead>
-  <tr>
-    <th>Status Code</th>
-    <th>Description</th>
-  </tr>
+  <thead>
+    <tr>
+      <th>Status Code</th>
+      <th>Description</th>
+    </tr>
   </thead>
   <tbody>
     <tr>

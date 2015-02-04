@@ -1,17 +1,23 @@
 {{{
-  "title": "Create Hardware Group",
+  "title": "CreateHardwareGroup",
   "date": "10-24-2013",
   "author": "Troy Schneringer",
   "attachments": []
 }}}
 
-CreateHardwareGroup
-<p>Creates a new Hardware Group.</p>
-URL
-<pre>REST: https://api.tier3.com/REST/Group/CreateHardwareGroup/&lt;format&gt;<br />SOAP: https://api.tier3.com/SOAP/Group.asmx?op=CreateHardwareGroup</pre> Request
-<h3>Attributes</h3>
+Creates a new Hardware Group.
+
+## URL
+
+    REST: https://api.tier3.com/REST/Group/CreateHardwareGroup/<format>
+    SOAP: https://api.tier3.com/SOAP/Group.asmx?op=CreateHardwareGroup
+
+## Request
+
+### Attributes
+
 <table>
-    <thead>
+  <thead>
     <tr>
       <th>Name</th>
       <th>Type</th>
@@ -46,31 +52,39 @@ URL
     </tr>
   </tbody>
 </table>
-<h3>Examples</h3>
-<h4>JSON</h4>
-<pre>&nbsp;</pre>
-<pre>  "AccountAlias": "UNK",
 
-  "ParentID": "2",
+### Examples
 
-  "Name": "Group 01",
+#### JSON
 
-  "Description": "My new group"
+    {
 
-}</pre>
-<h4>XML</h4>
-<pre>&lt;CreateHardwareGroupRequest&gt;
+      "AccountAlias": "UNK",
 
-    &lt;AccountAlias&gt;ACCT&lt;/AccountAlias&gt;
+      "ParentID": "2",
 
-    &lt;ParentID&gt;2&lt;/ParentID&gt;
+      "Name": "Group 01",
 
-    &lt;Name&gt;Group 01&lt;/Name&gt;
+      "Description": "My new group"
 
-    &lt;Description&gt;My new group&lt;/Description&gt;
+    }
 
-&lt;/CreateHardwareGroupRequest&gt;</pre> Response
-<h3>Attributes</h3>
+#### XML
+
+    <CreateHardwareGroupRequest>
+
+        <AccountAlias>ACCT</AccountAlias>
+
+        <ParentID>2</ParentID>
+
+        <Name>Group 01</Name>
+
+        <Description>My new group</Description>
+
+    </CreateHardwareGroupRequest>
+
+## Response
+### Attributes
 <table>
   <thead>
   <tr>
@@ -102,7 +116,8 @@ URL
     </tr>
   </tbody>
 </table>
-<h3>Group&nbsp;Attributes</h3>
+
+### Group Attributes
 <table>
   <thead>
   <tr>
@@ -129,18 +144,47 @@ URL
     </tr>
   </tbody>
 </table>
-<h3>Examples</h3>
-<h4>JSON</h4>
-<pre>{<br />    "Group":{"ID":5,"Name":"Group 01","ParentID":2},<br />    "Success":true,<br />    "Message":"Success",<br />    "StatusCode":0<br />}</pre>
-<h4>XML</h4>
-<pre>&lt;CreateHardwareGroupResponse Success="true" Message="Success" StatusCode="0"&gt;<br />    &lt;Group ID="5" Name="Group 01" ParentID="2"/&gt;<br />&lt;/CreateHardwareGroupResponse&gt;</pre>
-<h3>Status Codes</h3>
+
+### Examples
+
+#### JSON
+
+    {
+
+      "Group": {
+
+        "ID":5,
+
+        "Name":"Group 01",
+
+        "ParentID":2
+
+        },
+
+      "Success":true,
+
+      "Message":"Success",
+
+      "StatusCode":0
+
+    }
+
+#### XML
+
+    <CreateHardwareGroupResponse Success="true" Message="Success" StatusCode="0">
+
+      <Group ID="5" Name="Group 01" ParentID="2"/>
+
+    </CreateHardwareGroupResponse>
+
+### Status Codes
+
 <table>
-    <thead>
-  <tr>
-    <th>Status Code</th>
-    <th>Description</th>
-  </tr>
+  <thead>
+    <tr>
+      <th>Status Code</th>
+      <th>Description</th>
+    </tr>
   </thead>
   <tbody>
     <tr>

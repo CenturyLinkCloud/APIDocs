@@ -10,11 +10,12 @@ GetInvalidAddresses
   <br />
   <br /><strong>URL:</strong>
 </p>
-<pre>https://api.tier3.com/REST/SMTPRelay/GetInvalidAddresses/&lt;format&gt;</pre>
+<pre>https://api.tier3.com/REST/SMTPRelay/GetInvalidAddresses/<format></pre>
 <p>
   <br />
   <br /><strong>GetInvalidAddresses Request Attributes:</strong>
 </p>
+
 <table>
   <tbody>
     <tr>
@@ -22,8 +23,8 @@ GetInvalidAddresses
       <tr>
         <th>Name</th>
         <th>Type</th>
-        <th>Req.</th>
         <th>Description</th>
+        <th>Req.</th>
       </tr>
     </thead>
     <tbody>
@@ -31,55 +32,56 @@ GetInvalidAddresses
     <tr>
       <td>DomainAlias</td>
       <td>String</td>
-      <td>Yes</td>
       <td>The domain to search for as the source of SMTP Relay errors.</td>
+      <td>Yes</td>
     </tr>
     <tr>
       <td>StartDate</td>
       <td>Date</td>
-      <td>Yes</td>
       <td>This is the starting date to use for the query. This value is inclusive.</td>
+      <td>Yes</td>
     </tr>
     <tr>
       <td>EndDate</td>
       <td>Date</td>
-      <td>Yes</td>
       <td>This is the ending date to use for the query. This value is inclusive.</td>
+      <td>Yes</td>
     </tr>
   </tbody>
 </table>
-<p>
-  <br /><strong>Example Messages:</strong>&nbsp;<strong>XML:</strong>
-</p>
-<pre>&lt;InvalidAddressRequest&gt;
 
-  &lt;DomainAlias&gt;mydomain&lt;/DomainAlias&gt;
+### Examples
 
-  &lt;StartDate&gt;2010-09-01&lt;/StartDate&gt;
+#### JSON
 
-  &lt;EndDate&gt;2010-09-02&lt;/EndDate&gt;
+    {
 
-&lt;/InvalidAddressRequest&gt;
+      "DomainAlias":"mydomain",
 
-</pre>
-<p>
-  <br /><strong>JSON:</strong>
-</p>
-<pre>{
+      "StartDate":"\/Date(1261014726677)\/",
 
-  "DomainAlias":"mydomain",
+      "EndDate":"\/Date(1261045879270)\/"
 
-  "StartDate":"\/Date(1261014726677)\/",
+    }
 
-  "EndDate":"\/Date(1261045879270)\/"
+#### XML
 
-}</pre>
-<p>
-  <br />
-  <br /><strong>Response Attributes:</strong>
-</p>
+    <InvalidAddressRequest>
+
+      <DomainAlias>mydomain</DomainAlias>
+
+      <StartDate>2010-09-01</StartDate>
+
+      <EndDate>2010-09-02</EndDate>
+
+    </InvalidAddressRequest>
+
+## Response
+
+### Attributes
+
 <table>
-    <thead>
+  <thead>
     <tr>
       <th>Name</th>
       <th>Type</th>
@@ -128,94 +130,93 @@ GetInvalidAddresses
     </tr>
   </tbody>
 </table>
-<p>
-  <br /><strong>Example Responses:</strong>&nbsp;<strong>XML:</strong>
-</p>
-<pre>&lt;InvalidAddressResponse Success="true" Message="GetInvalidAddresses completed successfully" StatusCode="0"&gt;  
 
-  &lt;BadAddresses&gt;    
+### Examples
 
-    &lt;BadAddress&gt;      
-
-      &lt;Address&gt;user@xyz.net&lt;/Address&gt;      
-
-      &lt;Reason&gt;mydomain.com sender, but not from mydomain.com-approved relay.&lt;/Reason&gt;      
-
-      &lt;Server&gt;mail2.xyz.net&lt;/Server&gt;      
-
-      &lt;LogDate&gt;2010-09-01T19:52:06.677&lt;/LogDate&gt;    
-
-    &lt;/BadAddress&gt;    
-
-    &lt;BadAddress&gt;      
-
-      &lt;Address&gt;user@mail.com&lt;/Address&gt;      
-
-      &lt;Reason&gt;00.000.000.000 is not allowed to send mail for service@mydomain.com' : Reason: mechanism&lt;/Reason&gt;
-
-      &lt;Server&gt;mx.mail.com&lt;/Server&gt;      
-
-      &lt;LogDate&gt;2010-09-02T04:31:19.27&lt;/LogDate&gt;    
-
-    &lt;/BadAddress&gt;
-
-  &lt;/BadAddresses&gt;
-
-&lt;/InvalidAddressResponse&gt;
-
-</pre>
-<p>
-  <br /><strong>JSON:</strong>
-</p>
-<pre>{
-
-  "BadAddresses":
-
-  [
+#### JSON
 
     {
 
-      "Address":" user@xyz.net ",
+      "BadAddresses":
 
-      "Reason":"mydomain.com sender, but not from mydomain.com-approved relay.",
+      [
 
-      "Server":"mail2.xyz.net",
+        {
 
-      "LogDate":"\/Date(1261014726677)\/"
+          "Address":" user@xyz.net ",
 
-    },
+          "Reason":"mydomain.com sender, but not from mydomain.com-approved relay.",
 
-    {
+          "Server":"mail2.xyz.net",
 
-      "Address":"user@mail.com",
+          "LogDate":"\/Date(1261014726677)\/"
 
-      "Reason":"00.000.000.000 is not allowed to send mail for \u0027service@mydomain.com\u0027 : Reason: mechanism",
+        },
 
-      "Server":"mx.mail.com",
+        {
 
-      "LogDate":"\/Date(1261045879270)\/"
+          "Address":"user@mail.com",
+
+          "Reason":"00.000.000.000 is not allowed to send mail for \u0027service@mydomain.com\u0027 : Reason: mechanism",
+
+          "Server":"mx.mail.com",
+
+          "LogDate":"\/Date(1261045879270)\/"
+
+        }
+
+      ],
+
+      "Success":true,
+
+      "Message":"GetInvalidAddresses completed successfully",
+
+      "StatusCode":0 
 
     }
 
-  ],
+#### XML
 
-  "Success":true,
+    <InvalidAddressResponse Success="true" Message="GetInvalidAddresses completed successfully" StatusCode="0">  
 
-  "Message":"GetInvalidAddresses completed successfully",
+      <BadAddresses>    
 
-  "StatusCode":0 
+        <BadAddress>      
 
-}</pre>
-<p>
-  <br />
-  <br /><strong>Valid Status Codes returned by the GetInvalidAddresses Method:</strong>
-</p>
+          <Address>user@xyz.net</Address>      
+
+          <Reason>mydomain.com sender, but not from mydomain.com-approved relay.</Reason>      
+
+          <Server>mail2.xyz.net</Server>      
+
+          <LogDate>2010-09-01T19:52:06.677</LogDate>    
+
+        </BadAddress>    
+
+        <BadAddress>      
+
+          <Address>user@mail.com</Address>      
+
+          <Reason>00.000.000.000 is not allowed to send mail for service@mydomain.com' : Reason: mechanism</Reason>
+
+          <Server>mx.mail.com</Server>      
+
+          <LogDate>2010-09-02T04:31:19.27</LogDate>    
+
+        </BadAddress>
+
+      </BadAddresses>
+
+    </InvalidAddressResponse>
+
+### Status Codes
+
 <table>
-    <thead>
-  <tr>
-    <th>Status Code</th>
-    <th>Description</th>
-  </tr>
+  <thead>
+    <tr>
+      <th>Status Code</th>
+      <th>Description</th>
+    </tr>
   </thead>
   <tbody>
     <tr>

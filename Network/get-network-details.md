@@ -1,17 +1,23 @@
 {{{
-  "title": "Get Network Details",
+  "title": "GetNetworkDetails",
   "date": "5-1-2013",
   "author": "Peter Kowalczyk",
   "attachments": []
 }}}
 
-GetNetworkDetails
-<p>Gets the&nbsp;details for a Network and its&nbsp;IP Addresses.</p>
-URL
-<pre>REST: https://api.tier3.com/REST/Network/GetNetworkDetails/&lt;format&gt;<br />SOAP: https://api.tier3.com/SOAP/Network.asmx?op=GetNetworkDetailsResponseMsg</pre> Request
-<h3>Attributes</h3>
+Gets the details for a Network and its IP Addresses.
+
+## URL
+
+    REST: https://api.tier3.com/REST/Network/GetNetworkDetails/<format>
+    SOAP: https://api.tier3.com/SOAP/Network.asmx?op=GetNetworkDetailsResponseMsg
+
+## Request
+
+### Attributes
+
 <table>
-    <thead>
+  <thead>
     <tr>
       <th>Name</th>
       <th>Type</th>
@@ -40,37 +46,46 @@ URL
     </tr>
   </tbody>
 </table>
-<h3>Examples</h3>
-<h4>JSON</h4>
-<pre>{
 
-  "AccountAlias": "UNK",
+### Examples
 
-  "Location": "UN1",
+#### JSON
 
-  "Name": "vlan_1114_10.81.14"
+    {
 
-}</pre>
-<h4>XML</h4>
-<pre>&lt;GetNetworkDetailsRequest&gt;
+      "AccountAlias": "UNK",
 
-    &lt;AccountAlias&gt;UNK&lt;/AccountAlias&gt;
+      "Location": "UN1",
 
-    &lt;Location&gt;UN1&lt;/Location&gt;
+      "Name": "vlan_1114_10.81.14"
 
-    &lt;Name&gt;vlan250_172.21.250&lt;/Name&gt;
+    }
 
-&lt;/GetNetworkDetailsRequest&gt;</pre> Response
-<h3>Attributes</h3>
+#### XML
+
+    <GetNetworkDetailsRequest>
+
+        <AccountAlias>UNK</AccountAlias>
+
+        <Location>UN1</Location>
+
+        <Name>vlan250_172.21.250</Name>
+
+    </GetNetworkDetailsRequest>
+
+## Response
+
+### Attributes
+
 <table>
   <thead>
-  <tr>
-    <th>Name</th>
-    <th>Type</th>
-    <th>Description</th>
-  </tr>
-</thead>
-<tbody>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
     <tr>
       <td>Success</td>
       <td>Boolean</td>
@@ -93,16 +108,18 @@ URL
     </tr>
   </tbody>
 </table>
-<h3>NetworkDetails Attributes</h3>
+
+### NetworkDetails Attributes
+
 <table>
   <thead>
-  <tr>
-    <th>Name</th>
-    <th>Type</th>
-    <th>Description</th>
-  </tr>
-</thead>
-<tbody>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
     <tr>
       <td>Name</td>
       <td>String</td>
@@ -141,16 +158,18 @@ URL
     </tr>
   </tbody>
 </table>
-<h3>IPAddress Attributes</h3>
+
+### IPAddress Attributes
+
 <table>
   <thead>
-  <tr>
-    <th>Name</th>
-    <th>Type</th>
-    <th>Description</th>
-  </tr>
-</thead>
-<tbody>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
     <tr>
       <td>Address</td>
       <td>String</td>
@@ -184,72 +203,79 @@ URL
     </tr>
   </tbody>
 </table>
-<h3>Examples</h3>
-<h4>JSON</h4>
-<pre>{
 
-    "Success":true,
+### Examples
 
-    "Message":"Success",
+#### JSON
 
-    "StatusCode":0,
+    {
 
-    "NetworkDetails":{
+        "Success":true,
 
-        "Name":"vlan250_172.21.250",
+        "Message":"Success",
 
-        "Description":"vlan250_172.21.250",
+        "StatusCode":0,
 
-        "Gateway":"172.21.250.1",
+        "NetworkDetails":{
 
-        "NetworkMask":"255.255.255.0",
+            "Name":"vlan250_172.21.250",
 
-        "Location":"WA1",
+            "Description":"vlan250_172.21.250",
 
-        "IPAddresses:[
+            "Gateway":"172.21.250.1",
 
-            {"Address":"172.21.250.2", "AddressType":"RIP", 
+            "NetworkMask":"255.255.255.0",
 
-            "IsClaimed":false, "ServerName":""},
+            "Location":"WA1",
 
-            {"Address":"172.21.250.3", "AddressType":"RIP", 
+            "IPAddresses:[
 
-            "IsClaimed":true, "ServerName":"DEMOFIRST01"}
+                {"Address":"172.21.250.2", "AddressType":"RIP", 
 
-        ]}
+                "IsClaimed":false, "ServerName":""},
+
+                {"Address":"172.21.250.3", "AddressType":"RIP", 
+
+                "IsClaimed":true, "ServerName":"DEMOFIRST01"}
+
+            ]}
+
+        }
 
     }
 
-}</pre>
-<h4>XML</h4>
-<pre>&lt;NetworkDetailsResponse Success="true" Message="Success" StatusCode="0"&gt;
+#### XML
 
-    &lt;NetworkDetails Name="vlan250_172.21.250" Description="vlan250_172.21.250" 
+    <NetworkDetailsResponse Success="true" Message="Success" StatusCode="0">
 
-        Gateway="172.21.250.1" NetworkMask="255.255.255.0" Location="WA1"&gt;
+        <NetworkDetails Name="vlan250_172.21.250" Description="vlan250_172.21.250" 
 
-        &lt;IPAddresses&gt;
+            Gateway="172.21.250.1" NetworkMask="255.255.255.0" Location="WA1">
 
-            &lt;IPAddress Address="172.21.250.2" AddressType="RIP" 
+            <IPAddresses>
 
-            IsClaimed="false" ServerName="" /&gt;
+                <IPAddress Address="172.21.250.2" AddressType="RIP" 
 
-            &lt;IPAddress Address="172.21.250.3" AddressType="RIP" 
+                IsClaimed="false" ServerName="" />
 
-            IsClaimed="true" ServerName="DEMOFIRST01" /&gt;
+                <IPAddress Address="172.21.250.3" AddressType="RIP" 
 
-        &lt;/IPAddresses&gt;
+                IsClaimed="true" ServerName="DEMOFIRST01" />
 
-    &lt;/NetworkDetails&gt;
+            </IPAddresses>
 
-&lt;/NetworkDetailsResponse&gt;</pre>
-<h3>Status Codes</h3>
+        </NetworkDetails>
+
+    </NetworkDetailsResponse>
+
+## Status Codes
+
 <table>
-    <thead>
-  <tr>
-    <th>Status Code</th>
-    <th>Description</th>
-  </tr>
+  <thead>
+    <tr>
+      <th>Status Code</th>
+      <th>Description</th>
+    </tr>
   </thead>
   <tbody>
     <tr>

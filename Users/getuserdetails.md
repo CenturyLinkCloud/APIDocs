@@ -5,14 +5,18 @@
   "attachments": []
 }}}
 
-GetUserDetails
-<p>Gets the details of a specific user associated with a given account. Calls to this operation must include an authorization cookie acquired from the <a href="http://help.tier3.com/entries/20339862-logon">Logon operation.</a>
-</p>
-URL
-<pre>REST: https://api.tier3.com/REST/User/GetUserDetails/&lt;format&gt; (format = XML | JSON) <br />SOAP: https://api.tier3.com/SOAP/User.asmx?op=GetUserDetails </pre> Request
-<h3>Attributes</h3>
+Gets the details of a specific user associated with a given account. Calls to this operation must include an authorization cookie acquired from the <a href="http://help.tier3.com/entries/20339862-logon">Logon operation.</a>
+
+## URL
+REST: https://api.tier3.com/REST/User/GetUserDetails/<format> 
+SOAP: https://api.tier3.com/SOAP/User.asmx?op=GetUserDetails
+
+##Request
+
+### Attributes
+
 <table>
-    <thead>
+  <thead>
     <tr>
       <th>Name</th>
       <th>Type</th>
@@ -35,47 +39,68 @@ URL
     </tr>
   </tbody>
 </table>
-<h3>Examples</h3>
-<h4>JSON (REST)</h4>
-<pre>{ <br />    "AccountAlias": "1000", "UserName": "user1@company.com"<br />}</pre>
-<h4>XML (REST)</h4>
-<pre>&lt;GetUserRequest&gt;&lt;AccountAlias&gt;RSDA&lt;/AccountAlias&gt;&lt;UserName&gt;user1@company.com&lt;/UserName&gt;&lt;/GetUserRequest&gt;</pre>
-<h4>XML (SOAP)</h4>
-<pre>&lt;soap12:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 
-        xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+### Examples
 
-        xmlns:soap12="http://www.w3.org/2003/05/soap-envelope"&gt;
+#### JSON
 
-  &lt;soap12:Body&gt;
+    {
 
-    &lt;GetUserDetails xmlns="http://www.tier3.com/"&gt;
+      "AccountAlias": "1000",
 
-      &lt;request&gt;
+      "UserName": "user1@company.com"
 
-        &lt;AccountAlias&gt;1000&lt;/AccountAlias&gt;
+    }
 
-        &lt;UserName&gt;user1@company.com&lt;/UserName&gt;
+#### XML (REST)
 
-      &lt;/request&gt;
+    <GetUserRequest>
 
-    &lt;/GetUserDetails&gt;
+        <AccountAlias>RSDA</AccountAlias>
 
-  &lt;/soap12:Body&gt;
+        <UserName>user1@company.com</UserName>
 
-&lt;/soap12:Envelope&gt;   
+    </GetUserRequest>
 
-</pre> Response
-<h3>Attributes</h3>
+#### XML (SOAP)
+
+    <soap12:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+
+            xmlns:soap12="http://www.w3.org/2003/05/soap-envelope">
+
+      <soap12:Body>
+
+        <GetUserDetails xmlns="http://www.tier3.com/">
+
+          <request>
+
+            <AccountAlias>1000</AccountAlias>
+
+            <UserName>user1@company.com</UserName>
+
+          </request>
+
+        </GetUserDetails>
+
+      </soap12:Body>
+
+    </soap12:Envelope>   
+
+## Response
+
+### Attributes
+
 <table>
   <thead>
-  <tr>
-    <th>Name</th>
-    <th>Type</th>
-    <th>Description</th>
-  </tr>
-</thead>
-<tbody>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
     <tr>
       <td>Success</td>
       <td>Boolean</td>
@@ -98,7 +123,9 @@ URL
     </tr>
   </tbody>
 </table>
-<h3>UserDetails Attributes</h3>
+
+### UserDetails Attributes
+
 <table>
   <thead>
   <tr>
@@ -190,152 +217,153 @@ URL
     </tr>
   </tbody>
 </table>
-<h3>Examples</h3>
-<h4>JSON (REST)</h4>
-<pre>{
 
-        "UserDetails":
+### Examples
 
-            {
+#### JSON
 
-                "AccountAlias":"1000",
+    {
 
-                "UserName":"user1@company.com",
+      "UserDetails": {
 
-                "EmailAddress":"user1@company.com",
+        "AccountAlias":"1000",
 
-                "FirstName":"Ellie",
+        "UserName":"user1@company.com",
 
-                "LastName":"User",
+        "EmailAddress":"user1@company.com",
 
-                "AlternateEmailAddress":"",
+        "FirstName":"Ellie",
 
-                "Title":"",
+        "LastName":"User",
 
-                "OfficeNumber":"",
+        "AlternateEmailAddress":"",
 
-                "MobileNumber":"",
+        "Title":"",
 
-                "AllowSMS":false,
+        "OfficeNumber":"",
 
-                "FaxNumber":"",
+        "MobileNumber":"",
 
-                "SAMLUserName":null,
+        "AllowSMS":false,
 
-                "TimeZoneID":"Pacific Standard Time",
+        "FaxNumber":"",
 
-                "Roles":[8]
+        "SAMLUserName":null,
 
-            },
+        "TimeZoneID":"Pacific Standard Time",
 
-            "Success":true,
+        "Roles":[8]
 
-            "Message":"User successfully located.",
+      },
 
-            "StatusCode":0
+      "Success":true,
 
-}
+      "Message":"User successfully located.",
 
-    </pre>
-<h4>XML (REST)</h4>
-<pre>&lt;UserDetailsResponse Success="true" Message="User successfully located." StatusCode="0"&gt;
+      "StatusCode":0
 
-    &lt;UserDetails AccountAlias="1000" 
+    }
 
-        UserName="user1@company.com" 
+#### XML (REST)
 
-        EmailAddress="user1@company.com" 
+    <UserDetailsResponse Success="true" Message="User successfully located." StatusCode="0">
 
-        FirstName="Ellie" 
+        <UserDetails AccountAlias="1000" 
 
-        LastName="User" 
+            UserName="user1@company.com" 
 
-        AlternateEmailAddress="" 
+            EmailAddress="user1@company.com" 
 
-        Title="" 
+            FirstName="Ellie" 
 
-        OfficeNumber="" 
+            LastName="User" 
 
-        MobileNumber="" 
+            AlternateEmailAddress="" 
 
-        AllowSMS="false" 
+            Title="" 
 
-        FaxNumber="" 
+            OfficeNumber="" 
 
-        TimeZoneID="Pacific Standard Time"&gt;
+            MobileNumber="" 
 
-        &lt;Roles&gt;
+            AllowSMS="false" 
 
-            &lt;int&gt;8&lt;/int&gt;
+            FaxNumber="" 
 
-        &lt;/Roles&gt;
+            TimeZoneID="Pacific Standard Time">
 
-    &lt;/UserDetails&gt;
+            <Roles>
 
-&lt;/UserDetailsResponse&gt;
+                <int>8</int>
 
-    </pre>
-<h4>XML (SOAP)</h4>
-<pre>&lt;soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" 
+            </Roles>
 
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        </UserDetails>
 
-    xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+    </UserDetailsResponse>
 
-    &lt;soap:Body&gt;
+#### XML (SOAP)
 
-        &lt;GetUserDetailsResponse xmlns="http://www.tier3.com/"&gt;
+    <soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" 
 
-            &lt;GetUserDetailsResult Success="true" Message="User successfully located." StatusCode="0"&gt;
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 
-                &lt;UserDetails AccountAlias="1000" 
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 
-                    UserName="user1@company.com" 
+        <soap:Body>
 
-                    EmailAddress="user1@company.com" 
+            <GetUserDetailsResponse xmlns="http://www.tier3.com/">
 
-                    FirstName="Ellie" 
+                <GetUserDetailsResult Success="true" Message="User successfully located." StatusCode="0">
 
-                    LastName="User" 
+                    <UserDetails AccountAlias="1000" 
 
-                    AlternateEmailAddress="" 
+                        UserName="user1@company.com" 
 
-                    Title="" 
+                        EmailAddress="user1@company.com" 
 
-                    OfficeNumber="" 
+                        FirstName="Ellie" 
 
-                    MobileNumber="" 
+                        LastName="User" 
 
-                    AllowSMS="false" 
+                        AlternateEmailAddress="" 
 
-                    FaxNumber="" 
+                        Title="" 
 
-                    TimeZoneID="Pacific Standard Time"&gt;
+                        OfficeNumber="" 
 
-                    &lt;Roles&gt;
+                        MobileNumber="" 
 
-                        &lt;int&gt;8&lt;/int&gt;
+                        AllowSMS="false" 
 
-                    &lt;/Roles&gt;
+                        FaxNumber="" 
 
-                &lt;/UserDetails&gt;
+                        TimeZoneID="Pacific Standard Time">
 
-            &lt;/GetUserDetailsResult&gt;
+                        <Roles>
 
-        &lt;/GetUserDetailsResponse&gt;
+                            <int>8</int>
 
-    &lt;/soap:Body&gt;
+                        </Roles>
 
-&lt;/soap:Envelope&gt;
+                    </UserDetails>
 
-</pre>
-<h3>Status Codes</h3>
+                </GetUserDetailsResult>
+
+            </GetUserDetailsResponse>
+
+        </soap:Body>
+
+    </soap:Envelope>
+
+### Status Codes
+
 <table>
-    <thead>
-  <tr>
-    <th>Status Code</th>
-    <th>Description</th>
-  </tr>
+  <thead>
+    <tr>
+      <th>Status Code</th>
+      <th>Description</th>
+    </tr>
   </thead>
   <tbody>
     <tr>

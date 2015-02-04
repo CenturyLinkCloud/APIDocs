@@ -5,14 +5,19 @@
   "attachments": []
 }}}
 
-GetUsers
-<p>Gets all of users assigned to a given account. Calls to this operation must include an authorization cookie acquired from the <a href="http://help.tier3.com/entries/20339862-logon">Logon operation.</a>
-</p>
-URL
-<pre>REST: https://api.tier3.com/REST/User/GetUsers/&lt;format&gt; (format = XML | JSON) <br />SOAP: https://api.tier3.com/SOAP/User.asmx?op=GetUsers </pre> Request
-<h3>Attributes</h3>
+Gets all of users assigned to a given account. Calls to this operation must include an authorization cookie acquired from the <a href="http://help.tier3.com/entries/20339862-logon">Logon operation.</a>
+
+## URL
+
+    REST: https://api.tier3.com/REST/User/GetUsers/<format>
+    SOAP: https://api.tier3.com/SOAP/User.asmx?op=GetUsers
+
+## Request
+
+### Attributes
+
 <table>
-    <thead>
+  <thead>
     <tr>
       <th>Name</th>
       <th>Type</th>
@@ -29,36 +34,58 @@ URL
     </tr>
   </tbody>
 </table>
-<h3>Examples</h3>
-<h4>JSON (REST)</h4>
-<pre>{ <br />    "AccountAlias": "1000"<br />}</pre>
-<h4>XML (REST)</h4>
-<pre>&lt;GetUserRequest&gt;&lt;AccountAlias&gt;RSDA&lt;/AccountAlias&gt;&lt;/GetUserRequest&gt;</pre>
-<h4>XML (SOAP)</h4>
-<pre>&lt;soap12:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 
-        xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+### Examples
 
-        xmlns:soap12="http://www.w3.org/2003/05/soap-envelope"&gt;
+#### JSON
 
-  &lt;soap12:Body&gt;
+    {
 
-    &lt;GetUsers xmlns="http://www.tier3.com/"&gt;
+      "AccountAlias": "1000"
 
-      &lt;request&gt;
+    }
 
-        &lt;AccountAlias&gt;1000&lt;/AccountAlias&gt;
 
-      &lt;/request&gt;
+#### XML (REST)
 
-    &lt;/GetUsers&gt;
+    <GetUserRequest>
 
-  &lt;/soap12:Body&gt;
+        <AccountAlias>RSDA</AccountAlias>
 
-&lt;/soap12:Envelope&gt;   
+    </GetUserRequest>
 
-</pre> Response
-<h3>Attributes</h3>
+#### XML (SOAP)
+
+    <soap12:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+
+            xmlns:soap12="http://www.w3.org/2003/05/soap-envelope">
+
+      <soap12:Body>
+
+        <GetUsers xmlns="http://www.tier3.com/">
+
+          <request>
+
+            <AccountAlias>1000</AccountAlias>
+
+          </request>
+
+        </GetUsers>
+
+      </soap12:Body>
+
+    </soap12:Envelope>
+
+
+
+   
+
+## Response
+
+### Attributes
+
 <table>
   <thead>
   <tr>
@@ -90,7 +117,9 @@ URL
     </tr>
   </tbody>
 </table>
-<h3>UserDetails Attributes</h3>
+
+### UserDetails Attributes
+
 <table>
   <thead>
   <tr>
@@ -177,151 +206,94 @@ URL
     </tr>
   </tbody>
 </table>
-<h3>Examples</h3>
-<h4>JSON (REST)</h4>
-<pre>{
 
-        "Users":[
+### Examples
 
-        {
+#### JSON
 
-            "AccountAlias":null,
+    {
 
-            "UserName":"user1@company.com",
+            "Users":[
 
-            "EmailAddress":"user1@company.com",
+            {
 
-            "FirstName":"Ellie",
+                "AccountAlias":null,
 
-            "LastName":"User",
+                "UserName":"user1@company.com",
 
-            "AlternateEmailAddress":null,
+                "EmailAddress":"user1@company.com",
 
-            "Title":"",
+                "FirstName":"Ellie",
 
-            "OfficeNumber":"",
+                "LastName":"User",
 
-            "MobileNumber":"",
+                "AlternateEmailAddress":null,
 
-            "AllowSMS":false,
+                "Title":"",
 
-            "FaxNumber":null,
+                "OfficeNumber":"",
 
-            "SAMLUserName":null,
+                "MobileNumber":"",
 
-            "TimeZoneID":null,
+                "AllowSMS":false,
 
-            "Roles":[8]
+                "FaxNumber":null,
 
-        },
+                "SAMLUserName":null,
 
-        {
+                "TimeZoneID":null,
 
-            "AccountAlias":null,
+                "Roles":[8]
 
-            "UserName":"user2@company.com",
+            },
 
-            "EmailAddress":"user2@company.com",
+            {
 
-            "FirstName":"Jessie",
+                "AccountAlias":null,
 
-            "LastName":"User",
+                "UserName":"user2@company.com",
 
-            "AlternateEmailAddress":null,
+                "EmailAddress":"user2@company.com",
 
-            "Title":null,
+                "FirstName":"Jessie",
 
-            "OfficeNumber":null,
+                "LastName":"User",
 
-            "MobileNumber":null,
+                "AlternateEmailAddress":null,
 
-            "AllowSMS":false,
+                "Title":null,
 
-            "FaxNumber":null,
+                "OfficeNumber":null,
 
-            "SAMLUserName":null,
+                "MobileNumber":null,
 
-            "TimeZoneID":null,
+                "AllowSMS":false,
 
-            "Roles":[9]
+                "FaxNumber":null,
 
-        }],
+                "SAMLUserName":null,
 
-        "Success":true,
+                "TimeZoneID":null,
 
-        "Message":"Users successfully located.",
+                "Roles":[9]
 
-        "StatusCode":0
+            }],
 
-}
+            "Success":true,
 
-    </pre>
-<h4>XML (REST)</h4>
-<pre>&lt;UserListResponse Success="true" Message="Users successfully located." StatusCode="0"&gt;
+            "Message":"Users successfully located.",
 
-        &lt;Users&gt;
+            "StatusCode":0
 
-            &lt;UserDetails UserName="user1@company.com" 
+    }
 
-                    EmailAddress="user1@company.com" 
+#### XML (REST)
 
-                    FirstName="Ellie" 
+    <UserListResponse Success="true" Message="Users successfully located." StatusCode="0">
 
-                    LastName="User" 
+            <Users>
 
-                    Title="" OfficeNumber="" 
-
-                    MobileNumber="" 
-
-                    AllowSMS="false"&gt;
-
-                    &lt;Roles&gt;
-
-                        &lt;int&gt;8&lt;/int&gt;
-
-                    &lt;/Roles&gt;
-
-            &lt;/UserDetails&gt;
-
-            &lt;UserDetails UserName="user2@company.com" 
-
-                    EmailAddress="user2@company.com" 
-
-                    FirstName="Jessie" 
-
-                    LastName="User" 
-
-                    AllowSMS="false"&gt;
-
-                    &lt;Roles&gt;
-
-                        &lt;int&gt;9&lt;/int&gt;
-
-                    &lt;/Roles&gt;
-
-            &lt;/UserDetails&gt;
-
-        &lt;/Users&gt;
-
-&lt;/UserListResponse&gt;
-
-    </pre>
-<h4>XML (SOAP)</h4>
-<pre>&lt;soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" 
-
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-
-    xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-
-    &lt;soap:Body&gt;
-
-        &lt;GetUsersResponse xmlns="http://www.tier3.com/"&gt;
-
-            &lt;GetUsersResult Success="true" Message="Users successfully located." StatusCode="0"&gt;
-
-                &lt;Users&gt;
-
-                    &lt;UserDetails UserName="user1@company.com" 
+                <UserDetails UserName="user1@company.com" 
 
                         EmailAddress="user1@company.com" 
 
@@ -333,46 +305,106 @@ URL
 
                         MobileNumber="" 
 
-                        AllowSMS="false"&gt;
+                        AllowSMS="false">
 
-                        &lt;Roles&gt;
+                        <Roles>
 
-                            &lt;int&gt;8&lt;/int&gt;
+                            <int>8</int>
 
-                        &lt;/Roles&gt;
+                        </Roles>
 
-                    &lt;/UserDetails&gt;
+                </UserDetails>
 
-                    &lt;UserDetails UserName="user2@company.com" 
+                <UserDetails UserName="user2@company.com" 
 
-                            EmailAddress="user2@company.com" 
+                        EmailAddress="user2@company.com" 
 
-                            FirstName="Jessie" 
+                        FirstName="Jessie" 
+
+                        LastName="User" 
+
+                        AllowSMS="false">
+
+                        <Roles>
+
+                            <int>9</int>
+
+                        </Roles>
+
+                </UserDetails>
+
+            </Users>
+
+    </UserListResponse>
+
+#### XML (SOAP)
+
+    <soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" 
+
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+        <soap:Body>
+
+            <GetUsersResponse xmlns="http://www.tier3.com/">
+
+                <GetUsersResult Success="true" Message="Users successfully located." StatusCode="0">
+
+                    <Users>
+
+                        <UserDetails UserName="user1@company.com" 
+
+                            EmailAddress="user1@company.com" 
+
+                            FirstName="Ellie" 
 
                             LastName="User" 
 
-                            AllowSMS="false"&gt;
+                            Title="" OfficeNumber="" 
 
-                            &lt;Roles&gt;
+                            MobileNumber="" 
 
-                                &lt;int&gt;9&lt;/int&gt;
+                            AllowSMS="false">
 
-                            &lt;/Roles&gt;
+                            <Roles>
 
-                    &lt;/UserDetails&gt;
+                                <int>8</int>
 
-                &lt;/Users&gt;
+                            </Roles>
 
-            &lt;/GetUsersResult&gt;
+                        </UserDetails>
 
-        &lt;/GetUsersResponse&gt;
+                        <UserDetails UserName="user2@company.com" 
 
-    &lt;/soap:Body&gt;
+                                EmailAddress="user2@company.com" 
 
-&lt;/soap:Envelope&gt;
+                                FirstName="Jessie" 
 
-</pre>
-<h3>Status Codes</h3>
+                                LastName="User" 
+
+                                AllowSMS="false">
+
+                                <Roles>
+
+                                    <int>9</int>
+
+                                </Roles>
+
+                        </UserDetails>
+
+                    </Users>
+
+                </GetUsersResult>
+
+            </GetUsersResponse>
+
+        </soap:Body>
+
+    </soap:Envelope>
+
+### Status Codes
+
 <table>
     <thead>
   <tr>

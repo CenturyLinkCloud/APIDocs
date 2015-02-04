@@ -1,17 +1,23 @@
 {{{
-  "title": "Power On Hardware Group",
+  "title": "PowerOnHardwareGroup",
   "date": "2-7-2013",
   "author": "Troy Schneringer",
   "attachments": []
 }}}
 
-PowerOnHardwareGroup
-<p>Power on the Hardware Group along with all child groups and servers.</p>
-URL
-<pre>REST: https://api.tier3.com/REST/Group/PowerOnHardwareGroup/&lt;format&gt;<br />SOAP: https://api.tier3.com/SOAP/Group.asmx?op=PowerOnHardwareGroup</pre> Request
-<h3>Attributes</h3>
+Power on the Hardware Group along with all child groups and servers.
+
+## URL
+
+    REST: https://api.tier3.com/REST/Group/PowerOnHardwareGroup/<format>
+    SOAP: https://api.tier3.com/SOAP/Group.asmx?op=PowerOnHardwareGroup
+
+## Request
+
+### Attributes
+
 <table>
-    <thead>
+  <thead>
     <tr>
       <th>Name</th>
       <th>Type</th>
@@ -34,33 +40,41 @@ URL
     </tr>
   </tbody>
 </table>
-<h3>Examples</h3>
-<h4>JSON</h4>
-<pre>{
 
-  "AccountAlias": "UNK",
+### Examples
 
-  "ID": 1007
+#### JSON
 
-}</pre>
-<h4>XML</h4>
-<pre>&lt;GroupRequest&gt;
+    {
 
-    &lt;AccountAlias&gt;ACCT&lt;/AccountAlias&gt;
+      "AccountAlias": "UNK",
 
-    &lt;ID&gt;1&lt;/ID&gt;
+      "ID": 1007
 
-&lt;/GroupRequest&gt;</pre>
-<pre>&nbsp;</pre> Response
-<h3>Attributes</h3>
+    }
+
+#### XML
+
+    <GroupRequest>
+
+        <AccountAlias>ACCT</AccountAlias>
+
+        <ID>1</ID>
+
+    </GroupRequest>
+
+## Response
+
+### Attributes
+
 <table>
   <thead>
-  <tr>
-    <th>Name</th>
-    <th>Type</th>
-    <th>Description</th>
-  </tr>
-</thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
 <tbody>
     <tr>
       <td>Success</td>
@@ -87,18 +101,38 @@ URL
     </tr>
   </tbody>
 </table>
-<h3>Examples</h3>
-<h4>JSON</h4>
-<pre>{<br />    "RequestID:1,<br />    "Success":true,<br />    "Message":"Success",<br />    "StatusCode":0<br />}</pre>
-<h4>XML</h4>
-<pre>&lt;QueuedItemResponse Success="true" Message="Success" StatusCode="0"&gt;<br />&nbsp; &nbsp; &lt;RequestID&gt;1&lt;/RequestID&gt;<br />&lt;/QueuedItemResponse&gt;</pre>
-<h3>Status Codes</h3>
+
+### Examples
+
+#### JSON
+
+    {
+
+      "RequestID:1,
+
+      "Success":true,
+
+      "Message":"Success",
+
+      "StatusCode":0
+
+    }
+
+#### XML
+
+    <QueuedItemResponse Success="true" Message="Success" StatusCode="0">
+
+      <RequestID>1</RequestID>
+
+    </QueuedItemResponse>
+
+### Status Codes
 <table>
-    <thead>
-  <tr>
-    <th>Status Code</th>
-    <th>Description</th>
-  </tr>
+  <thead>
+    <tr>
+      <th>Status Code</th>
+      <th>Description</th>
+    </tr>
   </thead>
   <tbody>
     <tr>

@@ -1,17 +1,23 @@
 {{{
-  "title": "Get Networks",
+  "title": "GetNetworks",
   "date": "12-3-2014",
   "author": "Troy Schneringer",
   "attachments": []
 }}}
 
-GetNetworks
-<p>Gets the list of Networks mapped to the account in its Primary Data Center.&nbsp;</p>
-URL
-<pre>REST: https://api.tier3.com/REST/Network/GetNetworks/&lt;format&gt;<br />SOAP: https://api.tier3.com/SOAP/Network.asmx?op=GetNetworks</pre> Request
-<h3>Attributes</h3>
+Gets the list of Networks mapped to the account in its Primary Data Center.
+
+## URL
+
+    REST: https://api.tier3.com/REST/Network/GetNetworks/<format>
+    SOAP: https://api.tier3.com/SOAP/Network.asmx?op=GetNetworks
+
+## Request
+
+### Attributes
+
 <table>
-    <thead>
+  <thead>
     <tr>
       <th>Name</th>
       <th>Type</th>
@@ -34,51 +40,63 @@ URL
     </tr>
   </tbody>
 </table>
-<h3>Examples</h3>
-<h4>JSON (REST)</h4>
-<pre>{ <br />    "AccountAlias": "1000",<br />    "Location":"WA1"<br />}</pre>
-<h4>XML (REST)</h4>
-<pre>&lt;Networks&gt;
 
-    &lt;AccountAlias&gt;1000&lt;/AccountAlias&gt;
+### Examples
 
-    &lt;Location&gt;WA1&lt;/Location&gt;
+#### JSON (REST)
 
-&lt;/Networks&gt;
+    {
 
-    </pre>
-<h4>XML (SOAP)</h4>
-<pre>&lt;soap12:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        "AccountAlias": "1000",
 
-    xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+        "Location":"WA1"
 
-    xmlns:soap12="http://www.w3.org/2003/05/soap-envelope"&gt;
+    }
 
-  &lt;soap12:Body&gt;
+#### XML (REST)
 
-    &lt;Networks xmlns="http://www.tier3.com/"&gt;
+    <Networks>
 
-        &lt;AccountAlias&gt;1000&lt;/AccountAlias&gt;<br />&nbsp; &nbsp; &nbsp; &nbsp; &lt;Location&gt;WA1&lt;/Location&gt;
+        <AccountAlias>1000</AccountAlias>
 
-    &lt;/Networks&gt;
+        <Location>WA1</Location>
 
-  &lt;/soap12:Body&gt;
+    </Networks>
 
-&lt;/soap12:Envelope&gt;    
+   
+#### XML (SOAP)
 
-</pre>
-<p>&nbsp;</p>
-Response
-<h3>Attributes</h3>
+    <soap12:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+
+        xmlns:soap12="http://www.w3.org/2003/05/soap-envelope">
+
+      <soap12:Body>
+
+        <Networks xmlns="http://www.tier3.com/">
+
+            <AccountAlias>1000</AccountAlias><br />&nbsp; &nbsp; &nbsp; &nbsp; <Location>WA1</Location>
+
+        </Networks>
+
+      </soap12:Body>
+
+    </soap12:Envelope>    
+
+## Response
+
+### Attributes<
+
 <table>
   <thead>
-  <tr>
-    <th>Name</th>
-    <th>Type</th>
-    <th>Description</th>
-  </tr>
-</thead>
-<tbody>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
     <tr>
       <td>Success</td>
       <td>Boolean</td>
@@ -103,16 +121,18 @@ Response
     </tr>
   </tbody>
 </table>
-<h3>Network Attributes</h3>
+
+### Network Attributes
+
 <table>
   <thead>
-  <tr>
-    <th>Name</th>
-    <th>Type</th>
-    <th>Description</th>
-  </tr>
-</thead>
-<tbody>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
     <tr>
       <td>Name</td>
       <td>String</td>
@@ -133,68 +153,76 @@ Response
     </tr>
   </tbody>
 </table>
-<h3>Examples</h3>
-<h4>JSON</h4>
-<pre>{
 
-  "Networks": [
+### Examples
 
-    {
-
-      "Name": "vlan_1114_10.81.14",
-
-      "Description": "vlan_1114_10.81.14",
-
-      "Gateway": "10.81.14.1",
-
-      "Location": "UN1",
-
-      "AccountAlias": "UNK"
-
-    },
+#### JSON
 
     {
 
-      "Name": "vlan_1241_10.81.141",
+      "Networks": [
 
-      "Description": "vlan_1241_10.81.141",
+        {
 
-      "Gateway": "10.81.141.1",
+          "Name": "vlan_1114_10.81.14",
 
-      "Location": "UN1",
+          "Description": "vlan_1114_10.81.14",
 
-      "AccountAlias": "UNK"
+          "Gateway": "10.81.14.1",
+
+          "Location": "UN1",
+
+          "AccountAlias": "UNK"
+
+        },
+
+        {
+
+          "Name": "vlan_1241_10.81.141",
+
+          "Description": "vlan_1241_10.81.141",
+
+          "Gateway": "10.81.141.1",
+
+          "Location": "UN1",
+
+          "AccountAlias": "UNK"
+
+        }
+
+      ],
+
+      "Success": true,
+
+      "Message": "Networks successfully queried.",
+
+      "StatusCode": 0
 
     }
 
-  ],
 
-  "Success": true,
+#### XML
 
-  "Message": "Networks successfully queried.",
+    <GetNetworksResponse Success="true" Message="Networks successfully queried." StatusCode="0">
 
-  "StatusCode": 0
+        <Networks>
 
-}</pre>
-<h4>XML</h4>
-<pre>&lt;GetNetworksResponse Success="true" Message="Networks successfully queried." StatusCode="0"&gt;
+            <Network Name="vlan_1114_10.81.14" Description="vlan_1114_10.81.14" Gateway="10.81.14.1" Location="UN1" AccountAlias="UNK"/>
 
-&lt;Networks&gt;
+            <Network Name="vlan_1241_10.81.141" Description="vlan_1241_10.81.141" Gateway="10.81.141.1" Location="UN1" AccountAlias="UNK"/>
 
-    &lt;Network Name="vlan_1114_10.81.14" Description="vlan_1114_10.81.14" Gateway="10.81.14.1" Location="UN1" AccountAlias="UNK"/&gt;
+        </Networks>
 
-    &lt;Network Name="vlan_1241_10.81.141" Description="vlan_1241_10.81.141" Gateway="10.81.141.1" Location="UN1" AccountAlias="UNK"/&gt;
+    </GetNetworksResponse>
 
-&lt;/Networks&gt;
+### Status Codes
 
-&lt;/GetNetworksResponse&gt;</pre>
-<h3>Status Codes</h3>
 <table>
-    <thead>
-  <tr>
-    <th>Status Code</th>
-    <th>Description</th>
-  </tr>
+  <thead>
+    <tr>
+      <th>Status Code</th>
+      <th>Description</th>
+    </tr>
   </thead>
   <tbody>
     <tr>

@@ -1,29 +1,39 @@
 {{{
-  "title": "List Aliases",
+  "title": "ListAliases",
   "date": "8-8-2011",
   "author": "jw@tier3.com",
   "attachments": []
 }}}
 
-ListAliases
-<p>This method will s list of all SMTP Relay aliases for your account.
-  <br />
-  <br /><strong>URL:</strong>
-</p>
-<pre>https://api.tier3.com/REST/SMTPRelay/ListAliases/&lt;format&gt;</pre>
-<p>
-  <br />
-  <br /><strong>DeleteSite Request Attributes:</strong>None
-  <br />
-  <br /><strong>Example Messages:</strong>&nbsp;<strong>XML:</strong>&nbsp;N/A
-  <br />
-  <br /><strong>JSON:</strong>&nbsp;N/A
-  <br />
-  <br />
-  <br /><strong>Response Attributes:</strong>
-</p>
+
+This method will s list of all SMTP Relay aliases for your account.
+
+## URL
+
+    https://api.tier3.com/REST/SMTPRelay/ListAliases/<format>
+
+## Request
+
+### Attributes
+
+None.
+
+### Examples
+
+#### JSON
+
+N/A
+
+#### XML
+
+N/A
+
+## Response
+
+### Attributes
+
 <table>
-    <thead>
+  <thead>
     <tr>
       <th>Name</th>
       <th>Type</th>
@@ -73,78 +83,79 @@ ListAliases
     </tr>
   </tbody>
 </table>
-<p>
-  <br /><strong>Example Responses:</strong>&nbsp;<strong>XML:</strong>
-</p>
-<pre>&lt;ListAliasesResponse Success="true" Message="ListAliases completed successfully" StatusCode="0"&gt;
 
-  &lt;SMTPRelayAliases&gt;
+### Examples
 
-    &lt;RelayAlias Alias="ZZZ1-relay@t3mx.com" Password="password" Status="Active" /&gt;
+#### XML
 
-    &lt;RelayAlias Alias="ZZZ2-relay@t3mx.com" Password="password" Status="Deleted" /&gt;
+    <ListAliasesResponse Success="true" Message="ListAliases completed successfully" StatusCode="0">
 
-    &lt;RelayAlias Alias="ZZZ3-relay@t3mx.com" Password="password" Status="Disabled" /&gt;
+      <SMTPRelayAliases>
 
-  &lt;/SMTPRelayAliases&gt;
+        <RelayAlias Alias="ZZZ1-relay@t3mx.com" Password="password" Status="Active" />
 
-&lt;/ListAliasesResponse&gt;</pre>
-<p>
-  <br /><strong>JSON:</strong>
-</p>
-<pre>{
+        <RelayAlias Alias="ZZZ2-relay@t3mx.com" Password="password" Status="Deleted" />
 
-  "SMTPRelayAliases":[
+        <RelayAlias Alias="ZZZ3-relay@t3mx.com" Password="password" Status="Disabled" />
+
+      </SMTPRelayAliases>
+
+    </ListAliasesResponse>
+
+#### JSON
 
     {
 
-      "Alias":"ZZZ1-relay@t3mx.com",
+      "SMTPRelayAliases":[
 
-      "Password":"password",
+        {
 
-      "Status":"Active"
+          "Alias":"ZZZ1-relay@t3mx.com",
 
-    },
+          "Password":"password",
 
-    {
+          "Status":"Active"
 
-      "Alias":"ZZZ2-relay@t3mx.com",
+        },
 
-      "Password":"password",
+        {
 
-      "Status":"Deleted"
+          "Alias":"ZZZ2-relay@t3mx.com",
 
-    },
+          "Password":"password",
 
-    {
+          "Status":"Deleted"
 
-      "Alias":"ZZZ3-relay@t3mx.com",
+        },
 
-      "Password":"password",
+        {
 
-      "Status":"Disabled"
+          "Alias":"ZZZ3-relay@t3mx.com",
 
-    }    
+          "Password":"password",
 
-  ],
+          "Status":"Disabled"
 
-  "Success":true,
+        }    
 
-  "Message":"ListAliases completed successfully",
+      ],
 
-  "StatusCode":0
+      "Success":true,
 
-}</pre>
-<p>
-  <br />
-  <br /><strong>Valid Status Codes returned by the ListAliases Method:</strong>
-</p>
+      "Message":"ListAliases completed successfully",
+
+      "StatusCode":0
+
+    }
+
+### Status Codes
+
 <table>
-    <thead>
-  <tr>
-    <th>Status Code</th>
-    <th>Description</th>
-  </tr>
+  <thead>
+    <tr>
+      <th>Status Code</th>
+      <th>Description</th>
+    </tr>
   </thead>
   <tbody>
     <tr>

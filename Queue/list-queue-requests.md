@@ -1,19 +1,20 @@
 {{{
-  "title": "List Queue Requests",
+  "title": "ListQueueRequests",
   "date": "10-13-2014",
   "author": "jw@tier3.com",
   "attachments": []
 }}}
 
-ListQueueRequests
-<p>This method can be used to get a list of Queued requests and their current status details
-  <br />
-  <br /><strong>URL:</strong>
-</p>
-<pre>https://api.tier3.com/REST/Queue/ListQueueRequests/&lt;format&gt;</pre>
-<p>
-  <br /><strong>ListQueueRequests Attributes:</strong>
-</p>
+This method can be used to get a list of Queued requests and their current status details.
+
+## URL
+
+    https://api.tier3.com/REST/Queue/ListQueueRequests/<format>
+
+## Request
+
+### Attributes
+
 <table>
   <tbody>
     <tr>
@@ -21,8 +22,8 @@ ListQueueRequests
       <tr>
         <th>Name</th>
         <th>Type</th>
-        <th>Req.</th>
         <th>Description</th>
+        <th>Req.</th>
       </tr>
     </thead>
     <tbody>
@@ -30,36 +31,42 @@ ListQueueRequests
     <tr>
       <td>ItemStatusType</td>
       <td>Int</td>
-      <td>Yes</td>
       <td>This value indicates the types of statuses you want to get. Valid values are:&nbsp;
         <br />
         <br />1- All
         <br />2 - Pending
         <br />3 - Complete
-        <br />4 - Error</td>
+        <br />4 - Error
+      </td>
+      <td>Yes</td>
     </tr>
   </tbody>
 </table>
-<p>
-  <br /><strong>Example Messages:</strong>
-  <br />
-  <br /><strong>XML:</strong>
-</p>
-<pre>&lt;ListQueueItemsRequest&gt;
 
-    &lt;ItemStatusType&gt;1&lt;/ItemStatusType&gt;
+### Examples
 
-&lt;/ListQueueItemsRequest&gt;</pre>
-<p>
-  <br /><strong>JSON:</strong>
-</p>
-<pre>{"ItemStatusType":"1"}</pre>
-<p>
-  <br />
-  <br /><strong>Response Attributes:</strong>
-</p>
+#### XML
+
+    <ListQueueItemsRequest>
+
+        <ItemStatusType>1</ItemStatusType>
+
+    </ListQueueItemsRequest>
+
+#### JSON
+
+    {
+
+      "ItemStatusType":"1"
+
+    }
+
+## Response
+
+### Attributes
+
 <table>
-    <thead>
+  <thead>
     <tr>
       <th>Name</th>
       <th>Type</th>
@@ -135,44 +142,100 @@ ListQueueRequests
     </tr>
   </tbody>
 </table>
-<p>
-  <br /><strong>Example Responses:</strong>
-  <br />
-  <br /><strong>XML:</strong>
-</p>
-<pre>&lt;ListQueueItemsResponse Success="true" Message="3 Queue requests were found for your account" StatusCode="0"&gt;
 
-    &lt;Requests&gt;
+### Examples
 
-      &lt;QueueItem RequestID="106" RequestTitle="Installing SQL Server on WA1XXLAB01" ProgressDesc="Request completed" StatusDate="2010-06-15T22:31:33.633" PercentComplete="100" CurrentStatus="Succeeded" StepNumber="0" /&gt;
+#### XML
 
-      &lt;QueueItem RequestID="105" RequestTitle="Creating Server WA1XXPREM01" ProgressDesc="Request completed" StatusDate="2010-06-15T16:11:03.083" PercentComplete="100" CurrentStatus="Succeeded" StepNumber="0" /&gt;
+    <ListQueueItemsResponse Success="true" Message="3 Queue requests were found for your account" StatusCode="0">
 
-      &lt;QueueItem RequestID="104" RequestTitle="Creating Lab Server WA1XXLAB01" ProgressDesc="Request completed" StatusDate="2010-06-15T15:59:10.76" PercentComplete="100" CurrentStatus="Succeeded" StepNumber="0" /&gt;
+        <Requests>
 
-    &lt;/Requests&gt;
+          <QueueItem RequestID="106" RequestTitle="Installing SQL Server on WA1XXLAB01" ProgressDesc="Request completed" StatusDate="2010-06-15T22:31:33.633" PercentComplete="100" CurrentStatus="Succeeded" StepNumber="0" />
 
-  &lt;/ListQueueItemsResponse&gt;</pre>
-<p>
-  <br /><strong>JSON:</strong>
-</p>
-<pre>{"Requests":[{"RequestID":106,"RequestTitle":"Installing SQL Server on WA1XXLAB01","ProgressDesc":"Request completed","StatusDate":"\/Date(1276666293633)\/","PercentComplete":100,"CurrentStatus":"Succeeded","StepNumber":0},
+          <QueueItem RequestID="105" RequestTitle="Creating Server WA1XXPREM01" ProgressDesc="Request completed" StatusDate="2010-06-15T16:11:03.083" PercentComplete="100" CurrentStatus="Succeeded" StepNumber="0" />
 
-  {"RequestID":105,"RequestTitle":"Creating Server WA1XXPREM01":"Request completed","StatusDate":"\/Date(1276643463083)\/","PercentComplete":100,"CurrentStatus":"Succeeded","StepNumber":0},
+          <QueueItem RequestID="104" RequestTitle="Creating Lab Server WA1XXLAB01" ProgressDesc="Request completed" StatusDate="2010-06-15T15:59:10.76" PercentComplete="100" CurrentStatus="Succeeded" StepNumber="0" />
 
-  {"RequestID":104,"RequestTitle":"Creating Lab Server WA1XXLAB01","ProgressDesc":"Request completed","StatusDate":"\/Date(1276642750760)\/","PercentComplete":100,"CurrentStatus":"Succeeded","StepNumber":0}],
+        </Requests>
 
-  "Success":true,"Message":"15 Queue requests were found for your account","StatusCode":0}</pre>
-<p>
-  <br />
-  <br /><strong>Valid Status Codes returned by the ListQueueRequests Method:</strong>
-</p>
+    </ListQueueItemsResponse>
+
+#### JSON
+
+    {
+
+      "Requests":[
+
+        {
+          "RequestID":106,
+
+          "RequestTitle":"Installing SQL Server on WA1XXLAB01",
+
+          "ProgressDesc":"Request completed",
+
+          "StatusDate":"\/Date(1276666293633)\/",
+
+          "PercentComplete":100,
+
+          "CurrentStatus":"Succeeded",
+
+          "StepNumber":0
+
+        },
+
+        {
+          "RequestID":105,
+
+          "RequestTitle":"Creating Server WA1XXPREM01",
+
+          "ProgressDesc":"Request completed",
+
+          "StatusDate":"\/Date(1276643463083)\/",
+
+          "PercentComplete":100,
+
+          "CurrentStatus":"Succeeded",
+
+          "StepNumber":0
+
+        },
+
+        {
+
+          "RequestID":104,
+
+          "RequestTitle":"Creating Lab Server WA1XXLAB01",
+
+          "ProgressDesc":"Request completed",
+
+          "StatusDate":"\/Date(1276642750760)\/",
+
+          "PercentComplete":100,
+
+          "CurrentStatus":"Succeeded",
+
+          "StepNumber":0
+
+        }
+
+      ],
+
+       "Success":true,
+
+      "Message":"15 Queue requests were found for your account",
+
+      "StatusCode":0
+    }
+
+### Status Codes
+
 <table>
-    <thead>
-  <tr>
-    <th>Status Code</th>
-    <th>Description</th>
-  </tr>
+  <thead>
+    <tr>
+      <th>Status Code</th>
+      <th>Description</th>
+    </tr>
   </thead>
   <tbody>
     <tr>
