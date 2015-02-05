@@ -211,48 +211,48 @@ Gets all of the contact information and settings for a given account. Calls to t
 
 #### JSON (REST)
 
-{
-  "AccountDetails": {
+    {
+      "AccountDetails": {
 
-    "AccountAlias":"1001",
+        "AccountAlias":"1001",
 
-    "ParentAlias":"1000",
+        "ParentAlias":"1000",
 
-    "Location":"WA1",
+        "Location":"WA1",
 
-    "BusinessName":"Example Business Name",
+        "BusinessName":"Example Business Name",
 
-    "Address1":"110 110th Avenue",
+        "Address1":"110 110th Avenue",
 
-    "Address2":null,
+        "Address2":null,
 
-    "City":"Bellevue",
+        "City":"Bellevue",
 
-    "StateProvince":"WA",
+        "StateProvince":"WA",
 
-    "PostalCode":"98004",
+        "PostalCode":"98004",
 
-    "Country":"USA",
+        "Country":"USA",
 
-    "Telephone":"877-388-4373",
+        "Telephone":"877-388-4373",
 
-    "Fax":null,
+        "Fax":null,
 
-    "TimeZone":"Pacific Standard Time",
+        "TimeZone":"Pacific Standard Time",
 
-    "Status":2,
+        "Status":2,
 
-    "ShareParentNetworks":true
+        "ShareParentNetworks":true
 
-  },
+      },
 
-  "Success":true,
+      "Success":true,
 
-  "Message":"Account details successfully queried.",
+      "Message":"Account details successfully queried.",
 
-  "StatusCode":0
+      "StatusCode":0
 
-}
+    }
 
 #### XML (REST)
 
