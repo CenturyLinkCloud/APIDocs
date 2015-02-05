@@ -23,13 +23,13 @@ In this article, we'll walk through the steps necessary to authenticate a user a
 
 1. Create variables to hold the API credentials used to call the Tier 3 API.
 
-  - wrtffbgkjfll;kk
-
+    ```
     //set API credentials
 
     string key = "[API key]";
 
     string pw = "[API password]";
+    ```
 
 2. Create an HTTP request object that points to the API's Login URL. Set the method of the request to the HTTP POST verb.
 
