@@ -46,7 +46,7 @@ In this article, we'll walk through the steps necessary to authenticate a user a
     ```
     //build up payload message (XML)
 
-    //string payload = string.Format("<LogonRequest><APIKey>{0}</APIKey><Password>{1}</Password></LogonRequest>", key, pw); ;
+    //string payload = string.Format("<LogonRequest><APIKey>{0}</APIKey><Password>{1}</Password></LogonRequest>", key, pw);
 
     //req.ContentType = "text/xml";
 
