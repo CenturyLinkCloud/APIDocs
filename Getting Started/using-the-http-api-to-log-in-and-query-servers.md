@@ -44,6 +44,7 @@ In this article, we'll walk through the steps necessary to authenticate a user a
 3. Users of the Tier 3 HTTP API can use either XML or JSON to interact with the service endpoints. The next step is to create the payload for the Login service. In the example below, both an XML and JSON payload are shown. Notice that the "content type" of the HTTP request must match the data format being sent to the service.
 
     ```
+    
     //build up payload message (XML)
 
     //string payload = string.Format("<LogonRequest><APIKey>{0}</APIKey><Password>{1}</Password></LogonRequest>", key, pw); ;
