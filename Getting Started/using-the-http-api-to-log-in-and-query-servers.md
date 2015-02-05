@@ -123,7 +123,7 @@ In this article, we'll walk through the steps necessary to authenticate a user a
 
     //build up payload message (JSON)
 
-    string queryPayload = string.Format("{{\"AccountAlias\":\"{0}\", \"HardwareGroupID\":\"{1}\"}}", acctAlias, groupId); ;
+    string queryPayload = string.Format("{{'AccountAlias':'{0}', 'HardwareGroupID':'{1}'}}", acctAlias, groupId);
 
     reqQuery.ContentType = "application/json";
 
