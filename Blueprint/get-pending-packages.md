@@ -11,15 +11,19 @@ This list contains all Packages that were uploaded to Tier 3 via FTP or that wer
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Blueprint/GetPendingPackages/&lt;format&gt;
+    REST: https://api.tier3.com/REST/Blueprint/GetPendingPackages/<format>
     SOAP: https://api.tier3.com/SOAP/Blueprints.asmx?op=GetPendingPackages
 
 ## Request
+
 ### Attributes
+
 None.
 
 ## Response
+
 ### Attributes
+
 <table>
   <thead>
   <tr>
@@ -55,6 +59,7 @@ None.
 </table>
 
 ### Package Attributes
+
 <table>
   <thead>
   <tr>
@@ -92,20 +97,48 @@ None.
 
 ### Examples
 
-<h4>JSON</h4>
-<pre>{<br />&nbsp; &nbsp; "Packages": [<br />&nbsp; &nbsp; &nbsp; &nbsp; {"ID":0,"Name":"Script 01","Classification":0},<br />&nbsp; &nbsp; &nbsp; &nbsp; {"ID":0,"Name":"Software 01","Classification":0}<br />&nbsp; &nbsp; ],<br />&nbsp; &nbsp; "Success":true,<br />&nbsp; &nbsp; "Message":"Success",<br />&nbsp; &nbsp; "StatusCode":0<br />}</pre>
+#### JSON
 
-<h4>XML</h4>
+    {
 
-<pre>&lt;GetPackagesResponse Success="true" Message="Success" StatusCode="0"&gt;<br />&nbsp; &nbsp; &lt;Packages&gt;<br />&nbsp; &nbsp; &nbsp; &nbsp;  &lt;Package ID="0" Name="Script 01" Classification="0" /&gt;<br /> &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&lt;Package ID="0" Name="Software 01" Classification="0" /&gt;<br />&nbsp; &nbsp; &lt;/Packages&gt;<br />&lt;/GetPackagesResponse&gt;</pre>
+      "Packages": [
+
+          {"ID":0,"Name":"Script 01","Classification":0},
+
+          {"ID":0,"Name":"Software 01","Classification":0}
+
+      ],
+
+      "Success":true,
+
+      "Message":"Success",
+
+      "StatusCode":0
+
+    }
+
+#### XML
+
+    <GetPackagesResponse Success="true" Message="Success" StatusCode="0">
+
+        <Packages>
+
+            <Package ID="0" Name="Script 01" Classification="0" />
+
+            <Package ID="0" Name="Software 01" Classification="0" />
+
+        </Packages>
+
+    </GetPackagesResponse>
 
 ### Status Codes
+
 <table>
-    <thead>
-  <tr>
-    <th>Status Code</th>
-    <th>Description</th>
-  </tr>
+  <thead>
+    <tr>
+      <th>Status Code</th>
+      <th>Description</th>
+    </tr>
   </thead>
   <tbody>
     <tr>

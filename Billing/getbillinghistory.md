@@ -10,12 +10,13 @@ Gets the entire billing history for a given account or collection of accounts. C
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Billing/GetBillingHistory/&lt;format&gt; (format = XML | JSON)
+    REST: https://api.tier3.com/REST/Billing/GetBillingHistory/<format> (format = XML | JSON)
     SOAP: https://api.tier3.com/SOAP/Billing.asmx?op=GetBillingHistory
 
-
 ## Request
+
 ### Attributes
+
 <table>
     <thead>
     <tr>
@@ -36,48 +37,61 @@ Gets the entire billing history for a given account or collection of accounts. C
 </table>
 
 ### Examples
-<h4>JSON (REST)</h4>
-<pre>{ <br />    "AccountAlias": "1000"<br />}</pre>
 
-<h4>XML (REST)</h4>
-<pre>&lt;BillingRequest&gt;<br />     &lt;AccountAlias&gt;1000&lt;/AccountAlias&gt;<br />&lt;/BillingRequest&gt;</pre>
+#### JSON (REST)
 
-<h4>XML (SOAP)</h4>
-<pre>&lt;soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    { 
 
-      xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+      "AccountAlias": "1000"
 
-      xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"&gt;
+    }
 
-&lt;soap:Body&gt;
+#### XML (REST)
 
-  &lt;GetBillingHistory xmlns="http://www.tier3.com/"&gt;
+    <BillingRequest>
 
-    &lt;request&gt;
+      <AccountAlias>1000</AccountAlias>
 
-       &lt;accountAlias&gt;1000&lt;/accountAlias&gt;
+    </BillingRequest>
 
-    &lt;/request&gt;
 
-  &lt;/GetBillingHistory&gt;
+#### XML (SOAP)
 
-&lt;/soap:Body&gt;
+    <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 
-&lt;/soap:Envelope&gt;    
+          xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
 
-</pre> 
+          xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+
+    <soap:Body>
+
+      <GetBillingHistory xmlns="http://www.tier3.com/">
+
+        <request>
+
+           <accountAlias>1000</accountAlias>
+
+        </request>
+
+      </GetBillingHistory>
+
+    </soap:Body>
+
+    </soap:Envelope>    
 
 ## Response
+
 ### Attributes
+
 <table>
   <thead>
-  <tr>
-    <th>Name</th>
-    <th>Type</th>
-    <th>Description</th>
-  </tr>
-</thead>
-<tbody>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
     <tr>
       <td>Success</td>
       <td>Boolean</td>
@@ -112,6 +126,7 @@ Gets the entire billing history for a given account or collection of accounts. C
 </table>
 
 ### LedgerEntry Attributes
+
 <table>
   <thead>
   <tr>
@@ -155,100 +170,158 @@ Gets the entire billing history for a given account or collection of accounts. C
 </table>
 
 ###Examples
-<h4>JSON (REST)</h4>
-<pre>{<br />     "AccountAlias":"1001",<br />     "OutstandingBalance":1722.4500,<br />     "BillingHistory":[<br />       {<br />              "InvoiceID":"ID123456",<br />              "Date":"\/Date(1343775600000)\/",<br />              "Description":"Invoice ID123456",<br />              "Debit":1258.8100,<br />              "Credit":0,<br />              "OutstandingBalance":1363.8900,<br />              "ItemID":244,<br />              "DisplayPrecedence":1<br />             },<br />             {<br />              "InvoiceID":"ID67890",<br />              "Date":"\/Date(1346454000000)\/",<br />              "Description":"Invoice ID67890",<br />              "Debit":358.5600,<br />              "Credit":0,<br />              "OutstandingBalance":1722.4500,<br />              "ItemID":277,<br />              "DisplayPrecedence":1<br />       }],<br />     "Success":true,<br />     "Message":"OK",<br />     "StatusCode":0<br />}</pre>
 
-<h4>XML (REST)</h4>
-<pre>&lt;BillingHistoryResponse Success="true" Message="OK" StatusCode="0" AccountAlias="RSDA" OutstandingBalance="1722.4500"&gt;
+#### JSON (REST)
 
-  &lt;BillingHistory&gt;
+    {
 
-      &lt;LedgerEntry InvoiceID="ID123456" 
+      "AccountAlias":"1001",
 
-          Date="2012-08-31T23:00:00" 
+      "OutstandingBalance":1722.4500,
 
-          Description="Invoice ID123456" 
+      "BillingHistory":[
 
-          Debit="1258.8100" 
+        {
 
-          Credit="0" 
+         "InvoiceID":"ID123456",
 
-          OutstandingBalance="1363.8900" /&gt;
+         "Date":"\/Date(1343775600000)\/",
 
-      &lt;LedgerEntry InvoiceID="ID67890" 
+         "Description":"Invoice ID123456",
 
-          Date="2012-09-30T23:00:00" 
+         "Debit":1258.8100,
 
-          Description="Invoice ID67890" 
+         "Credit":0,
 
-          Debit="358.5600" 
+         "OutstandingBalance":1363.8900,
 
-          Credit="0" 
+         "ItemID":244,
 
-          OutstandingBalance="1722.4500" /&gt;
+         "DisplayPrecedence":1
 
-  &lt;/BillingHistory&gt;
+        },
 
-&lt;/BillingHistoryResponse&gt;
+        {
 
-  </pre>
+        "InvoiceID":"ID67890",
 
-<h4>XML (SOAP)</h4>
-<pre>&lt;soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" 
+        "Date":"\/Date(1346454000000)\/",
 
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        "Description":"Invoice ID67890",
 
-  xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+        "Debit":358.5600,
 
-  &lt;soap:Body&gt;
+        "Credit":0,
 
-      &lt;GetBillingHistoryResponse xmlns="http://www.tier3.com/"&gt;
+        "OutstandingBalance":1722.4500,
 
-          &lt;GetBillingHistoryResult Success="true" Message="OK" StatusCode="0" AccountAlias="RSDA" OutstandingBalance="1722.4500"&gt;
+        "ItemID":277,
 
-              &lt;BillingHistory&gt;
+        "DisplayPrecedence":1
 
-                  &lt;LedgerEntry InvoiceID="RSDA4503BF68" 
+        }
 
-                      Date="2012-08-31T23:00:00" 
+      ],
 
-                      Description="Invoice RSDA4503BF68" 
+      "Success":true,
 
-                      Debit="1258.8100" 
+      "Message":"OK",
 
-                      Credit="0" 
+      "StatusCode":0
 
-                      OutstandingBalance="1363.8900" /&gt;
+    }
 
-                  &lt;LedgerEntry InvoiceID="RSDA9278D23F" 
+#### XML (REST)
 
-                      Date="2012-09-30T23:00:00" 
+    <BillingHistoryResponse Success="true" Message="OK" StatusCode="0" AccountAlias="RSDA" OutstandingBalance="1722.4500">
 
-                      Description="Invoice RSDA9278D23F" 
+      <BillingHistory>
 
-                      Debit="358.5600" Credit="0" 
+          <LedgerEntry InvoiceID="ID123456" 
 
-                      OutstandingBalance="1722.4500" /&gt;
+              Date="2012-08-31T23:00:00" 
 
-              &lt;/BillingHistory&gt;
+              Description="Invoice ID123456" 
 
-          &lt;/GetBillingHistoryResult&gt;
+              Debit="1258.8100" 
 
-      &lt;/GetBillingHistoryResponse&gt;
+              Credit="0" 
 
-  &lt;/soap:Body&gt;
+              OutstandingBalance="1363.8900" />
 
-&lt;/soap:Envelope&gt;
+          <LedgerEntry InvoiceID="ID67890" 
 
-</pre>
+              Date="2012-09-30T23:00:00" 
+
+              Description="Invoice ID67890" 
+
+              Debit="358.5600" 
+
+              Credit="0" 
+
+              OutstandingBalance="1722.4500" />
+
+      </BillingHistory>
+
+    </BillingHistoryResponse>
+
+
+#### XML (SOAP)
+
+    <soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" 
+
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+      <soap:Body>
+
+          <GetBillingHistoryResponse xmlns="http://www.tier3.com/">
+
+              <GetBillingHistoryResult Success="true" Message="OK" StatusCode="0" AccountAlias="RSDA" OutstandingBalance="1722.4500">
+
+                  <BillingHistory>
+
+                      <LedgerEntry InvoiceID="RSDA4503BF68" 
+
+                          Date="2012-08-31T23:00:00" 
+
+                          Description="Invoice RSDA4503BF68" 
+
+                          Debit="1258.8100" 
+
+                          Credit="0" 
+
+                          OutstandingBalance="1363.8900" />
+
+                      <LedgerEntry InvoiceID="RSDA9278D23F" 
+
+                          Date="2012-09-30T23:00:00" 
+
+                          Description="Invoice RSDA9278D23F" 
+
+                          Debit="358.5600" Credit="0" 
+
+                          OutstandingBalance="1722.4500" />
+
+                  </BillingHistory>
+
+              </GetBillingHistoryResult>
+
+          </GetBillingHistoryResponse>
+
+      </soap:Body>
+
+    </soap:Envelope>
 
 ### Status Codes
+
 <table>
-    <thead>
-  <tr>
-    <th>Status Code</th>
-    <th>Description</th>
-  </tr>
+  <thead>
+    <tr>
+      <th>Status Code</th>
+      <th>Description</th>
+    </tr>
   </thead>
   <tbody>
     <tr>

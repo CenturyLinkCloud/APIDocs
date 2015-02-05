@@ -39,11 +39,11 @@ Gets all of the contact information and settings for a given account. Calls to t
 
 #### JSON (REST)
 
-{
+    {
 
-  "AccountAlias": "1000"
+      "AccountAlias": "1000"
 
-}
+    }
 
 #### XML (REST)
 

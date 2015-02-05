@@ -9,10 +9,11 @@ Gets the account custom field definitions.
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Account/GetCustomFields/&lt;format&gt;
+    REST: https://api.tier3.com/REST/Account/GetCustomFields/<format>
     SOAP: https://api.tier3.com/SOAP/Account.asmx?op=GetCustomFields
 
 ## Request
+
 ### Attributes
 
 <table>
@@ -37,27 +38,35 @@ Gets the account custom field definitions.
 
 ### Examples
 
-<h4>JSON</h4>
-<pre>{ "AccountAlias": "ACCT" }</pre>
+#### JSON
 
-<h4>XML</h4>
-<pre>&lt;GetCustomFieldsRequest&gt;
+    { 
 
-    &lt;AccountAlias&gt;ACCT&lt;/AccountAlias&gt;
+      "AccountAlias": "ACCT" 
 
-&lt;/GetCustomFieldsRequest&gt;</pre> 
+    }
+
+#### XML
+
+    <GetCustomFieldsRequest>
+
+        <AccountAlias>ACCT</AccountAlias>
+
+    </GetCustomFieldsRequest>
 
 ## Response
+
 ### Attributes
+
 <table>
   <thead>
-  <tr>
-    <th>Name</th>
-    <th>Type</th>
-    <th>Description</th>
-  </tr>
-</thead>
-<tbody>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
     <tr>
       <td>Success</td>
       <td>Boolean</td>
@@ -83,145 +92,148 @@ Gets the account custom field definitions.
 
 ### Examples
 
-<h4>JSON</h4>
-<pre>{
+#### JSON
 
-    "AccountCustomFields": [
+    {
 
-        {
+        "AccountCustomFields": [
 
-            "ID": 100,
+            {
 
-            "CustomFieldTypeID": 1,
+                "ID": 100,
 
-            "CustomFieldType": "Text",
+                "CustomFieldTypeID": 1,
 
-            "Name": "Name",
+                "CustomFieldType": "Text",
 
-            "IsRequired": true,
+                "Name": "Name",
 
-            "AccountCustomFieldOptions": null
+                "IsRequired": true,
 
-        },
+                "AccountCustomFieldOptions": null
 
-        {
+            },
 
-            "ID": 104,
+            {
 
-            "CustomFieldTypeID": 2,
+                "ID": 104,
 
-            "CustomFieldType": "Option",
+                "CustomFieldTypeID": 2,
 
-            "Name": "Type",
+                "CustomFieldType": "Option",
 
-            "IsRequired": true,
+                "Name": "Type",
 
-            "AccountCustomFieldOptions": [
+                "IsRequired": true,
 
-                {
+                "AccountCustomFieldOptions": [
 
-                    "ID": 48,
+                    {
 
-                    "Name": "My Type",
+                        "ID": 48,
 
-                    "Value": "1"
+                        "Name": "My Type",
 
-                },
+                        "Value": "1"
 
-                {
+                    },
 
-                    "ID": 49,
+                    {
 
-                    "Name": "Your Type",
+                        "ID": 49,
 
-                    "Value": "2"
+                        "Name": "Your Type",
 
-                }
+                        "Value": "2"
 
-            ]
+                    }
 
-        },
+                ]
 
-        {
+            },
 
-            "ID": 108,
+            {
 
-            "CustomFieldTypeID": 3,
+                "ID": 108,
 
-            "CustomFieldType": "Checkbox",
+                "CustomFieldTypeID": 3,
 
-            "Name": "Enabled",
+                "CustomFieldType": "Checkbox",
 
-            "IsRequired": true,
+                "Name": "Enabled",
 
-            "AccountCustomFieldOptions": []
+                "IsRequired": true,
 
-        },
+                "AccountCustomFieldOptions": []
 
-        {
+            },
 
-            "ID": 116,
+            {
 
-            "CustomFieldTypeID": 1,
+                "ID": 116,
 
-            "CustomFieldType": "Text",
+                "CustomFieldTypeID": 1,
 
-            "Name": "Not required",
+                "CustomFieldType": "Text",
 
-            "IsRequired": false,
+                "Name": "Not required",
 
-            "AccountCustomFieldOptions": null
+                "IsRequired": false,
 
-        }
+                "AccountCustomFieldOptions": null
 
-    ],
+            }
 
-    "Success": true,
+        ],
 
-    "Message": "Custom Fields retrieved successfully.",
+        "Success": true,
 
-    "StatusCode": 0
+        "Message": "Custom Fields retrieved successfully.",
 
-}
-</pre>
+        "StatusCode": 0
 
-<h4>XML</h4>
-<pre>&lt;AccountCustomFieldsResponse 
+    }
 
-  Success="true"
 
-  Message="Custom Fields retrieved successfully."
+#### XML
 
-  StatusCode="0"&gt;
+    <AccountCustomFieldsResponse 
 
-    &lt;AccountCustomFields&gt;
+      Success="true"
 
-        &lt;AccountCustomField ID="100" CustomFieldTypeID="1" CustomFieldType="Text" Name="Name" IsRequired="true" /&gt;
+      Message="Custom Fields retrieved successfully."
 
-        &lt;AccountCustomField ID="104" CustomFieldTypeID="2" CustomFieldType="Option" Name="Type" IsRequired="true"&gt;
+      StatusCode="0">
 
-            &lt;AccountCustomFieldOptions ID="48" Name="My Type" Value="1" /&gt;
+        <AccountCustomFields>
 
-            &lt;AccountCustomFieldOptions ID="49" Name="Your Type" Value="2" /&gt;
+            <AccountCustomField ID="100" CustomFieldTypeID="1" CustomFieldType="Text" Name="Name" IsRequired="true" />
 
-        &lt;/AccountCustomField&gt;
+            <AccountCustomField ID="104" CustomFieldTypeID="2" CustomFieldType="Option" Name="Type" IsRequired="true">
 
-        &lt;AccountCustomField ID="108" CustomFieldTypeID="3" CustomFieldType="Checkbox" Name="Enabled" IsRequired="true" /&gt;
+                <AccountCustomFieldOptions ID="48" Name="My Type" Value="1" />
 
-        &lt;AccountCustomField ID="116" CustomFieldTypeID="1" CustomFieldType="Text" Name="Not required" IsRequired="false" /&gt;
+                <AccountCustomFieldOptions ID="49" Name="Your Type" Value="2" />
 
-    &lt;/AccountCustomFields&gt;
+            </AccountCustomField>
 
-&lt;/AccountCustomFieldsResponse&gt;
-</pre>
+            <AccountCustomField ID="108" CustomFieldTypeID="3" CustomFieldType="Checkbox" Name="Enabled" IsRequired="true" />
+
+            <AccountCustomField ID="116" CustomFieldTypeID="1" CustomFieldType="Text" Name="Not required" IsRequired="false" />
+
+        </AccountCustomFields>
+
+    </AccountCustomFieldsResponse>
+
 
 ### Status Codes
+
 <table>
-    <thead>
-  <tr>
-    <th>Status Code</th>
-    <th>Description</th>
-  </tr>
+  <thead>
+    <tr>
+      <th>Status Code</th>
+      <th>Description</th>
+    </tr>
   </thead>
   <tbody>
     <tr>

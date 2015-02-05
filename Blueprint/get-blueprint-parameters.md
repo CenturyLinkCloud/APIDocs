@@ -9,11 +9,13 @@ Gets a the full list of parameters that are required to deploy a Blueprint.
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Blueprint/GetBlueprintParameters/&lt;format&gt;
+    REST: https://api.tier3.com/REST/Blueprint/GetBlueprintParameters/<format>
     SOAP: https://api.tier3.com/SOAP/Blueprints.asmx?op=GetBlueprintParamatersResponseMsg
 
 ## Request
+
 ### Attributes
+
 <table>
     <thead>
     <tr>
@@ -38,23 +40,32 @@ Gets a the full list of parameters that are required to deploy a Blueprint.
 </table>
 
 ### Examples
-<h4>JSON</h4>
-<pre>{ "ID":1 }</pre>
 
-<h4>XML</h4>
-<pre>&lt;BlueprintRequest&gt;<br />    &lt;ID&gt;1&lt;/ID&gt;<br />&lt;/BlueprintRequest&gt;&nbsp;</pre> 
+#### JSON
+
+    { "ID":1 }
+
+#### XML
+
+    <BlueprintRequest>
+
+        <ID>1</ID>
+
+    </BlueprintRequest>
 
 ## Response
+
 ### Attributes
+
 <table>
   <thead>
-  <tr>
-    <th>Name</th>
-    <th>Type</th>
-    <th>Description</th>
-  </tr>
-</thead>
-<tbody>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
     <tr>
       <td>Success</td>
       <td>Boolean</td>
@@ -79,15 +90,16 @@ Gets a the full list of parameters that are required to deploy a Blueprint.
 </table>
 
 ### Parameter Attributes
+
 <table>
   <thead>
-  <tr>
-    <th>Name</th>
-    <th>Type</th>
-    <th>Description</th>
-  </tr>
-</thead>
-<tbody>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
     <tr>
       <td>Name</td>
       <td>String</td>
@@ -135,17 +147,79 @@ Gets a the full list of parameters that are required to deploy a Blueprint.
 </table>
 
 ### Examples
-<h4>JSON</h4>
-<pre>{<br />    "ID":1,<br />    "Parameters":[<br />        {<br />            "Name":"T3.ScriptTask.Parameter01",<br />            "Regex":null,<br />            "Type":7,<br />            "Options":[]<br />        },
 
-    {<br />            "Name":"T3.ScriptTask.Parameter02",<br />            "Regex":null,<br />            "Type":3,<br />            "Options":[<br />                {"Name":"Option 1","Value":"1"},<br />                {"Name":"Option 2","Value":"2"}<br />            ]<br />        } <br />    ],<br />    "Success":true,<br />    "Message":"Success",<br />    "StatusCode":0<br />}</pre>
+#### JSON
 
-<h4>XML</h4>
-<pre>&lt;GetBlueprintParamatersResponse Success="true" Message="Success" StatusCode="0"&gt;<br />    &lt;ID&gt;46&lt;/ID&gt;<br />    &lt;Parameters&gt;<br />        &lt;Parameter Name="T3.ScriptTask.Parameter01" Type="String" /&gt;
+    {
 
-    &lt;Parameter Name="T3.ScriptTask.Parameter02" Type="Option"&gt;<br />            &lt;Option Name="Option 1" Value="1"/&gt;<br />            &lt;Option Name="Option 2" Value="1"/&gt;<br />        &lt;/Parameter&gt;<br />    &lt;/Parameters&gt;<br />&lt;/GetBlueprintParamatersResponse&gt;</pre>
+      "ID":1,
+
+      "Parameters":[
+
+        {
+
+          "Name":"T3.ScriptTask.Parameter01",
+
+          "Regex":null,
+
+          "Type":7,
+
+          "Options":[]
+
+        },
+
+        {
+
+          "Name":"T3.ScriptTask.Parameter02",
+
+          "Regex":null,
+
+          "Type":3,
+
+          "Options":[
+
+            {"Name":"Option 1","Value":"1"},
+
+            {"Name":"Option 2","Value":"2"}
+
+          ]
+
+        }
+
+      ],
+
+      "Success":true,
+
+      "Message":"Success",
+
+      "StatusCode":0
+
+     }
+
+#### XML
+
+    <GetBlueprintParamatersResponse Success="true" Message="Success" StatusCode="0">
+
+        <ID>46</ID>
+
+        <Parameters>
+
+              <Parameter Name="T3.ScriptTask.Parameter01" Type="String" />
+
+              <Parameter Name="T3.ScriptTask.Parameter02" Type="Option">
+
+                  <Option Name="Option 1" Value="1"/>
+
+                  <Option Name="Option 2" Value="1"/>
+
+              </Parameter>
+
+          </Parameters>
+
+    </GetBlueprintParamatersResponse>
 
 ### Status Codes
+
 <table>
     <thead>
   <tr>

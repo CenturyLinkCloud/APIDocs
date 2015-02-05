@@ -5,18 +5,19 @@
   "attachments": []
 }}}
 
-
 Deploys a Blueprint with the given set of parameter values.
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Blueprint/DeployBlueprint/&lt;format&gt;
+    REST: https://api.tier3.com/REST/Blueprint/DeployBlueprint/<format>
     SOAP: https://api.tier3.com/SOAP/Blueprints.asmx?op=DeployBlueprint
 
 ## Request
+
 ### Attributes
+
 <table>
-    <thead>
+  <thead>
     <tr>
       <th>Name</th>
       <th>Type</th>
@@ -69,15 +70,16 @@ Deploys a Blueprint with the given set of parameter values.
 </table>
 
 ### Parameter Attributes
+
 <table>
   <thead>
-  <tr>
-    <th>Name</th>
-    <th>Type</th>
-    <th>Description</th>
-  </tr>
-</thead>
-<tbody>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
     <tr>
       <td>Name</td>
       <td>String</td>
@@ -98,6 +100,7 @@ Deploys a Blueprint with the given set of parameter values.
 </table>
 
 ### CustomField Attributes
+
 <table>
   <thead>
   <tr>
@@ -124,32 +127,80 @@ Deploys a Blueprint with the given set of parameter values.
 </table>
 
 ### Examples
-<h4>JSON</h4>
-<pre>{ <br />    "ID": "1",<br />    "LocationAlias": "WA1",<br />    "Parameters":[<br />        { "Name":"T3.BuildServerTask.Password", "Value":"password" },<br />        { "Name":"T3.BuildServerTask.Network","Value":"VLAN_XXX" },<br />        { "Name":"T3.BuildServerTask.PrimaryDNS","Value":"192.168.64.19" },<br />        { "Name":"T3.BuildServerTask.SecondaryDNS","Value":"192.168.64.20" }<br />    ],
 
-    "CustomFields":[<br />                { "CustomFieldID": 100,"Value": "A test"},<br />                { "CustomFieldID": 101,"Value": "2"},<br />                { "CustomFieldID": 102,"Value": "true"},]<br /> }
-</pre>
+#### JSON
 
-<h4>XML</h4>
-<pre>&lt;DeployBlueprintRequest&gt;<br />    &lt;ID&gt;107&lt;/ID&gt;<br />    &lt;LocationAlias&gt;WA1&lt;/LocationAlias&gt;<br />    &lt;Parameters&gt;<br />        &lt;Parameter Name="T3.BuildServerTask.Password" Value="Pass@word1" /&gt;<br />        &lt;Parameter Name="T3.BuildServerTask.Network" Value="VLAN_XXX" /&gt;<br />        &lt;Parameter Name="T3.BuildServerTask.PrimaryDNS" Value="192.168.64.19" /&gt;<br />        &lt;Parameter Name="T3.BuildServerTask.SecondaryDNS" Value="192.168.64.20" /&gt;<br />    &lt;/Parameters&gt;
+    {
 
-    &lt;CustomFields CustomFieldID="100" Value="Test text" /&gt;
+      "ID": "1",
 
-    &lt;CustomFields CustomFieldID="104" Value="2" /&gt;
+      "LocationAlias": "WA1",
 
-    &lt;CustomFields CustomFieldID="108" Value="true" /&gt;<br /> &lt;/DeployBlueprintRequest&gt;</pre> 
+      "Parameters": [
+
+        { "Name":"T3.BuildServerTask.Password", "Value":"password" },
+
+        { "Name":"T3.BuildServerTask.Network","Value":"VLAN_XXX" },
+
+        { "Name":"T3.BuildServerTask.PrimaryDNS","Value":"192.168.64.19" },
+
+        { "Name":"T3.BuildServerTask.SecondaryDNS","Value":"192.168.64.20" }
+
+      ],
+
+      "CustomFields": [
+
+        { "CustomFieldID": 100,"Value": "A test"},
+
+        { "CustomFieldID": 101,"Value": "2"},
+
+        { "CustomFieldID": 102,"Value": "true"}
+
+      ]
+
+    }
+
+#### XML
+
+    <DeployBlueprintRequest>
+
+        <ID>107</ID>
+
+        <LocationAlias>WA1</LocationAlias>
+
+        <Parameters>
+
+            <Parameter Name="T3.BuildServerTask.Password" Value="Pass@word1" />
+
+            <Parameter Name="T3.BuildServerTask.Network" Value="VLAN_XXX" />
+
+            <Parameter Name="T3.BuildServerTask.PrimaryDNS" Value="192.168.64.19" />
+
+            <Parameter Name="T3.BuildServerTask.SecondaryDNS" Value="192.168.64.20" />
+
+        </Parameters>
+
+        <CustomFields CustomFieldID="100" Value="Test text" />
+
+        <CustomFields CustomFieldID="104" Value="2" />
+
+        <CustomFields CustomFieldID="108" Value="true" />
+
+    </DeployBlueprintRequest>
 
 ## Response
+
 ### Attributes
+
 <table>
   <thead>
-  <tr>
-    <th>Name</th>
-    <th>Type</th>
-    <th>Description</th>
-  </tr>
-</thead>
-<tbody>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
     <tr>
       <td>Success</td>
       <td>Boolean</td>
@@ -177,22 +228,37 @@ Deploys a Blueprint with the given set of parameter values.
 </table>
 
 ### Examples
-<h4>JSON</h4>
-<pre>{<br />&nbsp; &nbsp; "RequestID": 1,<br />&nbsp; &nbsp; "Success":true,<br />&nbsp; &nbsp; "Message":"Success",<br />&nbsp; &nbsp; "StatusCode":0<br />}</pre>
-<h4>XML</h4>
-<div>
-  <div>
-    <pre>&lt;QueuedItemResponse Success="true" Message="Success" StatusCode="0"&gt;<br />&nbsp; &nbsp; &lt;RequestID&gt;1&lt;/RequestID&gt;<br />&lt;/QueuedItemResponse&gt;</pre>
-  </div>
-</div>
+
+#### JSON
+
+    {
+
+      "RequestID": 1,
+
+      "Success":true,
+
+      "Message":"Success",
+
+      "StatusCode":0
+
+    }
+
+#### XML
+
+    <QueuedItemResponse Success="true" Message="Success" StatusCode="0">
+
+      RequestID>1</RequestID>
+
+    </QueuedItemResponse>
 
 ### Status Codes
+
 <table>
-    <thead>
-  <tr>
-    <th>Status Code</th>
-    <th>Description</th>
-  </tr>
+  <thead>
+    <tr>
+      <th>Status Code</th>
+      <th>Description</th>
+    </tr>
   </thead>
   <tbody>
     <tr>

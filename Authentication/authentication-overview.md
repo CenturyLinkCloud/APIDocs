@@ -17,8 +17,8 @@ For a complete walkthrough of the authentication process with the REST/HTTP API,
 <strong>Authentication API Methods:</strong>
 
 <ul>
-  <li><a href="http://help.tier3.com/entries/20339862-logon">Logon</a>
+  <li><a href="/api-docs#authentication-logon">Logon</a>
   </li>
-  <li><a href="http://help.tier3.com/entries/20345428-logout">Logout</a>
+  <li><a href="/api-docs#authentication-logout">Logout</a>
   </li>
 </ul>

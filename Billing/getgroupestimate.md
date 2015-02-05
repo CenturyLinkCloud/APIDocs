@@ -11,13 +11,15 @@ Gets estimated costs for a group of servers. Calls to this operation must includ
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Billing/GetGroupEstimate/&lt;format&gt; (format = XML | JSON) 
+    REST: https://api.tier3.com/REST/Billing/GetGroupEstimate/<format> (format = XML | JSON) 
     SOAP: https://api.tier3.com/SOAP/Billing.asmx?op=GetGroupEstimate 
 
 ##Request
+
 ### Attributes
+
 <table>
-    <thead>
+  <thead>
     <tr>
       <th>Name</th>
       <th>Type</th>
@@ -42,52 +44,60 @@ Gets estimated costs for a group of servers. Calls to this operation must includ
 </table>
 
 ### Examples
-<h4>JSON (REST)</h4>
-<pre>{ <br />    "AccountAlias": "1000",<br />    "HardwareGroupID":"5000"<br />}</pre>
 
-<h4>XML (REST)</h4>
-<pre>&lt;GroupEstimateRequest&gt;
+#### JSON (REST)
 
-  &lt;AccountAlias&gt;1000&lt;/AccountAlias&gt;
+    {
 
-  &lt;HardwareGroupID&gt;5000&lt;/HardwareGroupID&gt;
+      AccountAlias": "1000",
 
-&lt;/GroupEstimateRequest&gt;
+      "HardwareGroupID":"5000"
 
-  </pre>
+    }
 
-<h4>XML (SOAP)</h4>
-<pre>&lt;soap12:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+#### XML (REST)
 
-  xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+    <GroupEstimateRequest>
 
-  xmlns:soap12="http://www.w3.org/2003/05/soap-envelope"&gt;
+      <AccountAlias>1000</AccountAlias>
 
-&lt;soap12:Body&gt;
+      <HardwareGroupID>5000</HardwareGroupID>
 
-  &lt;GetGroupEstimate xmlns="http://www.tier3.com/"&gt;
+    </GroupEstimateRequest>
 
-      &lt;groupId&gt;5000&lt;/groupId&gt;
+#### XML (SOAP)
 
-  &lt;/GetGroupEstimate&gt;
+    <soap12:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 
-&lt;/soap12:Body&gt;
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
 
-&lt;/soap12:Envelope&gt;    
+      xmlns:soap12="http://www.w3.org/2003/05/soap-envelope">
 
-</pre> 
+    <soap12:Body>
+
+      <GetGroupEstimate xmlns="http://www.tier3.com/">
+
+          <groupId>5000</groupId>
+
+      </GetGroupEstimate>
+
+    </soap12:Body>
+
+    </soap12:Envelope>    
 
 ## Response
+
 ### Attributes
+
 <table>
   <thead>
-  <tr>
-    <th>Name</th>
-    <th>Type</th>
-    <th>Description</th>
-  </tr>
-</thead>
-<tbody>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
     <tr>
       <td>Success</td>
       <td>Boolean</td>
@@ -127,66 +137,85 @@ Gets estimated costs for a group of servers. Calls to this operation must includ
 </table>
 
 ### Examples
-<h4>JSON (REST)</h4>
-<pre>{<br />     "MonthlyEstimate":0,<br />     "MonthToDate":0,<br />     "CurrentHour":0,<br />     "PreviousHour":0,<br />     "Success":true,<br />     "Message":"OK",<br />     "StatusCode":0<br />}</pre>
 
-<h4>XML (REST)</h4>
-<pre>&lt;BillingResponse Success="true" 
+#### JSON (REST)
 
-  Message="OK" 
+    {
 
-  StatusCode="0" 
+      "MonthlyEstimate":0,
 
-  MonthlyEstimate="0" 
+      "MonthToDate":0,
 
-  MonthToDate="0" 
+      "CurrentHour":0,
 
-  CurrentHour="0" 
+      "PreviousHour":0,
 
-  PreviousHour="0" /&gt;
+      "Success":true,
 
-</pre>
+      "Message":"OK",
 
-<h4>XML (SOAP)</h4>
-<pre>&lt;soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" 
+      "StatusCode":0
 
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    }
 
-  xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+#### XML (REST)
 
-  &lt;soap:Body&gt;
+    <BillingResponse Success="true" 
 
-      &lt;GetGroupEstimateResponse xmlns="http://www.tier3.com/"&gt;
+      Message="OK" 
 
-          &lt;GetGroupEstimateResult Success="true" 
+      StatusCode="0" 
 
-              Message="OK" 
+      MonthlyEstimate="0" 
 
-              StatusCode="0" 
+      MonthToDate="0" 
 
-              MonthlyEstimate="0" 
+      CurrentHour="0" 
 
-              MonthToDate="0" 
+      PreviousHour="0" />
 
-              CurrentHour="0" 
 
-              PreviousHour="0" /&gt;
 
-      &lt;/GetGroupEstimateResponse&gt;
+#### XML (SOAP)
 
-  &lt;/soap:Body&gt;
+    <soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" 
 
-&lt;/soap:Envelope&gt;
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 
-</pre>
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+      <soap:Body>
+
+          <GetGroupEstimateResponse xmlns="http://www.tier3.com/">
+
+              <GetGroupEstimateResult Success="true" 
+
+                  Message="OK" 
+
+                  StatusCode="0" 
+
+                  MonthlyEstimate="0" 
+
+                  MonthToDate="0" 
+
+                  CurrentHour="0" 
+
+                  PreviousHour="0" />
+
+          </GetGroupEstimateResponse>
+
+      </soap:Body>
+
+    </soap:Envelope>
 
 ### Status Codes
+
 <table>
-    <thead>
-  <tr>
-    <th>Status Code</th>
-    <th>Description</th>
-  </tr>
+  <thead>
+    <tr>
+      <th>Status Code</th>
+      <th>Description</th>
+    </tr>
   </thead>
   <tbody>
     <tr>

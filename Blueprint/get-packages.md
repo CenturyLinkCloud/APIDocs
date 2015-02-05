@@ -9,13 +9,15 @@ Gets a list of Blueprint Packages.
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Blueprint/GetPackages/&lt;format&gt;
+    REST: https://api.tier3.com/REST/Blueprint/GetPackages/<format>
     SOAP: https://api.tier3.com/SOAP/Blueprints.asmx?op=GetPackagesResponseMsg
 
 ## Request
+
 ### Attributes
+
 <table>
-    <thead>
+  <thead>
     <tr>
       <th>Name</th>
       <th>Type</th>
@@ -56,15 +58,21 @@ Gets a list of Blueprint Packages.
 ### Examples
 
 #### JSON
+
     { "Classification": "1", "Visibility": "1" }
 
 #### XML
+
     <GetPackagesRequest>
+
       <Classification>1</Classification> 
+
       <Visibility>1</Visibility>
+
     </GetPackagesRequest> 
 
 ## Response
+
 ### Attributes
 
 <table>
@@ -102,6 +110,7 @@ Gets a list of Blueprint Packages.
 </table>
 
 ### Package Attributes
+
 <table>
   <thead>
   <tr>
@@ -136,20 +145,60 @@ Gets a list of Blueprint Packages.
 
 ### Examples
 
-<h4>JSON</h4>
-<pre>{<br />&nbsp; &nbsp; "Packages": [<br />&nbsp; &nbsp; &nbsp; &nbsp; {"ID":2,"Name":"Add Disk","Classification":1},<br />&nbsp; &nbsp; &nbsp; &nbsp; {"ID":3,"Name":"Add IP Address","Classification":1},<br />&nbsp; &nbsp; &nbsp; &nbsp; {"ID":4,"Name":"Add Mapped IP Address","Classification":1},<br />&nbsp; &nbsp; &nbsp; &nbsp; {"ID":5,"Name":"Snapshot Server","Classification":1},<br />&nbsp; &nbsp; &nbsp; &nbsp; {"ID":6,"Name":"Reboot Server","Classification":1}<br />&nbsp; &nbsp; ],<br />&nbsp; &nbsp; "Success":true,<br />&nbsp; &nbsp; "Message":"Success",<br />&nbsp; &nbsp; "StatusCode":0<br />}</pre>
+#### JSON
 
-<h4>XML</h4>
+    {
 
-<pre>&lt;GetPackagesResponse Success="true" Message="Success" StatusCode="0"&gt;<br />&nbsp; &nbsp; &lt;Packages&gt;<br />&nbsp; &nbsp; &nbsp; &nbsp;  &lt;Package ID="2" Name="Add Disk" Classification="1" /&gt;<br /> &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&lt;Package ID="3" Name="Add IP Address" Classification="1" /&gt;<br /> &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&lt;Package ID="4" Name="Add Mapped IP Address" Classification="1" /&gt;<br /> &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&lt;Package ID="5" Name="Snapshot Server" Classification="1" /&gt;<br /> &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&lt;Package ID="6" Name="Reboot Server" Classification="1" /&gt;<br />&nbsp; &nbsp; &lt;/Packages&gt;<br />&lt;/GetPackagesResponse&gt;</pre>
+      "Packages": [
+
+        {"ID":2,"Name":"Add Disk","Classification":1},
+
+        {"ID":3,"Name":"Add IP Address","Classification":1},
+
+        {"ID":4,"Name":"Add Mapped IP Address","Classification":1},
+
+        {"ID":5,"Name":"Snapshot Server","Classification":1},
+
+        {"ID":6,"Name":"Reboot Server","Classification":1}
+
+      ],
+
+      "Success":true,
+
+      "Message":"Success",
+
+      "StatusCode":0
+
+    }
+
+#### XML
+
+    <GetPackagesResponse Success="true" Message="Success" StatusCode="0">
+
+        <Packages>
+
+            <Package ID="2" Name="Add Disk" Classification="1" />
+
+            <Package ID="3" Name="Add IP Address" Classification="1" />
+
+            <Package ID="4" Name="Add Mapped IP Address" Classification="1" />
+
+            <Package ID="5" Name="Snapshot Server" Classification="1" />
+
+            <Package ID="6" Name="Reboot Server" Classification="1" />
+
+        </Packages>
+
+    </GetPackagesResponse>
 
 ### Status Codes
+
 <table>
-    <thead>
-  <tr>
-    <th>Status Code</th>
-    <th>Description</th>
-  </tr>
+  <thead>
+    <tr>
+      <th>Status Code</th>
+      <th>Description</th>
+    </tr>
   </thead>
   <tbody>
     <tr>

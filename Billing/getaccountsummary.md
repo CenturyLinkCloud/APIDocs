@@ -9,13 +9,15 @@ Gets monthly and hourly charges and estimates for a given account or collection 
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Billing/GetAccountSummary/&lt;format&gt; (format = XML | JSON)
+    REST: https://api.tier3.com/REST/Billing/GetAccountSummary/<format> (format = XML | JSON)
     SOAP: https://api.tier3.com/SOAP/Billing.asmx?op=GetAccountSummary
 
 ## Request
+
 ### Attributes
+
 <table>
-    <thead>
+  <thead>
     <tr>
       <th>Name</th>
       <th>Type</th>
@@ -34,48 +36,60 @@ Gets monthly and hourly charges and estimates for a given account or collection 
 </table>
 
 ### Examples
-<h4>JSON (REST)</h4>
-<pre>{ <br />    "AccountAlias": "1000"<br />}</pre>
 
-<h4>XML (REST)</h4>
-<pre>&lt;BillingRequest&gt;<br />     &lt;AccountAlias&gt;1000&lt;/AccountAlias&gt;<br />&lt;/BillingRequest&gt;</pre>
+#### JSON (REST)
 
-<h4>XML (SOAP)</h4>
-<pre>&lt;soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    {
 
-      xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+      "AccountAlias": "1000"
 
-      xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"&gt;
+    }
 
-&lt;soap:Body&gt;
+#### XML (REST)
 
-  &lt;GetAccountSummary xmlns="http://www.tier3.com/"&gt;
+    <BillingRequest>
 
-    &lt;request&gt;
+        <AccountAlias>1000</AccountAlias>
 
-       &lt;accountAlias&gt;1000&lt;/accountAlias&gt;
+    </BillingRequest>
 
-    &lt;/request&gt;
+#### XML (SOAP)
 
-  &lt;/GetAccountSummary&gt;
+    <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 
-&lt;/soap:Body&gt;
+          xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
 
-&lt;/soap:Envelope&gt;    
+          xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
 
-</pre> 
+    <soap:Body>
+
+      <GetAccountSummary xmlns="http://www.tier3.com/">
+
+        <request>
+
+           <accountAlias>1000</accountAlias>
+
+        </request>
+
+      </GetAccountSummary>
+
+    </soap:Body>
+
+    </soap:Envelope>    
 
 ## Response
+
 ### Attributes
+
 <table>
   <thead>
-  <tr>
-    <th>Name</th>
-    <th>Type</th>
-    <th>Description</th>
-  </tr>
-</thead>
-<tbody>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
     <tr>
       <td>Success</td>
       <td>Boolean</td>
@@ -125,78 +139,103 @@ Gets monthly and hourly charges and estimates for a given account or collection 
 </table>
 
 ### Examples
-<h4>JSON (REST)</h4>
-<pre>{<br />     "OneTimeCharges":0,<br />     "MonthToDateTotal":2.000000,<br />     "MonthlyEstimate":2.000000,<br />     "MonthToDate":2.000000,<br />     "CurrentHour":0.0,<br />     "PreviousHour":0.0,<br />     "Success":true,<br />     "Message":"OK",<br />     "StatusCode":0<br />}</pre>
 
-<h4>XML (REST)</h4>
-<pre>&lt;BillingSummmaryResponse 
+####JSON (REST)
 
-  Success="true" 
+    {
 
-  Message="OK" 
+      "OneTimeCharges":0,
 
-  StatusCode="0" 
+      "MonthToDateTotal":2.000000,
 
-  MonthlyEstimate="161.870000" 
+      "MonthlyEstimate":2.000000,
 
-  MonthToDate="82.050000" 
+      "MonthToDate":2.000000,
 
-  CurrentHour="0.223600" 
+      "CurrentHour":0.0,
 
-  PreviousHour="0.223600" 
+      "PreviousHour":0.0,
 
-  OneTimeCharges="0" 
+      "Success":true,
 
-  MonthToDateTotal="82.050000" /&gt;
+      "Message":"OK",
 
-  </pre>
+      "StatusCode":0
 
-<h4>XML (SOAP)</h4>
-<pre>&lt;soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" 
 
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    }
 
-  xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+#### XML (REST)
 
-  &lt;soap:Body&gt;
+    <BillingSummmaryResponse 
 
-      &lt;GetAccountSummaryResponse xmlns="http://www.tier3.com/"&gt;
+      Success="true" 
 
-          &lt;GetAccountSummaryResult 
+      Message="OK" 
 
-              Success="true" 
+      StatusCode="0" 
 
-              Message="OK" 
+      MonthlyEstimate="161.870000" 
 
-              StatusCode="0" 
+      MonthToDate="82.050000" 
 
-              MonthlyEstimate="2.000000" 
+      CurrentHour="0.223600" 
 
-              MonthToDate="2.000000" 
+      PreviousHour="0.223600" 
 
-              CurrentHour="0.0" 
+      OneTimeCharges="0" 
 
-              PreviousHour="0.0" 
+      MonthToDateTotal="82.050000" />
 
-              OneTimeCharges="0" 
 
-              MonthToDateTotal="2.000000" /&gt;
 
-      &lt;/GetAccountSummaryResponse&gt;
+#### XML (SOAP)
 
-  &lt;/soap:Body&gt;
+    <soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" 
 
-&lt;/soap:Envelope&gt;
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 
-</pre>
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+      <soap:Body>
+
+          <GetAccountSummaryResponse xmlns="http://www.tier3.com/">
+
+              <GetAccountSummaryResult 
+
+                  Success="true" 
+
+                  Message="OK" 
+
+                  StatusCode="0" 
+
+                  MonthlyEstimate="2.000000" 
+
+                  MonthToDate="2.000000" 
+
+                  CurrentHour="0.0" 
+
+                  PreviousHour="0.0" 
+
+                  OneTimeCharges="0" 
+
+                  MonthToDateTotal="2.000000" />
+
+          </GetAccountSummaryResponse>
+
+      </soap:Body>
+
+    </soap:Envelope>
+
 
 ### Status Codes
+
 <table>
-    <thead>
-  <tr>
-    <th>Status Code</th>
-    <th>Description</th>
-  </tr>
+  <thead>
+    <tr>
+      <th>Status Code</th>
+      <th>Description</th>
+    </tr>
   </thead>
   <tbody>
     <tr>

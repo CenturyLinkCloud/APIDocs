@@ -12,6 +12,7 @@ This method is required to be called prior to calling any other method exposed b
     REST: https://api.tier3.com/REST/Auth/Logon/
 
 ## Request
+
 ### Attributes
 
 <table>
@@ -21,8 +22,8 @@ This method is required to be called prior to calling any other method exposed b
       <tr>
         <th>Name</th>
         <th>Type</th>
-        <th>Req.</th>
         <th>Description</th>
+        <th>Req.</th>
       </tr>
     </thead>
     <tbody>
@@ -30,39 +31,44 @@ This method is required to be called prior to calling any other method exposed b
     <tr>
       <td>APIKey</td>
       <td>String</td>
-      <td>Yes</td>
       <td>The API access key provided by Tier3.</td>
+      <td>Yes</td>
     </tr>
     <tr>
       <td>Password</td>
       <td>String</td>
-      <td>Yes</td>
       <td>The API password provided by Tier3.</td>
+      <td>Yes</td>
     </tr>
   </tbody>
 </table>
 
 ### Examples
-<pre>&lt;LogonRequest&gt;
 
-  &lt;APIKey&gt;apikey&lt;/APIKey&gt;
+#### XML
 
-  &lt;Password&gt;password&lt;/Password&gt;
+    <LogonRequest>
 
-&lt;/LogonRequest&gt;</pre>
-      <br />
-      <br /><strong>JSON</strong>:
-      <br />
-      <pre>{
+      <APIKey>apikey</APIKey>
 
-  "APIKey":"apikey",
+      <Password>password</Password>
 
-  "Password":"password"
+    </LogonRequest>
 
-}</pre>
+#### JSON
+
+    {
+
+      "APIKey":"apikey",
+
+      "Password":"password"
+
+    }
 
 ## Response
+
 ### Attributes
+
 <table>
     <thead>
     <tr>
@@ -91,27 +97,31 @@ This method is required to be called prior to calling any other method exposed b
 </table>
 
 ### Examples
-<strong>XML</strong>:
-<pre>&lt;LogonResponse Success="true" Message="Login Successful" StatusCode="0" /&gt;</pre>
 
-<strong>JSON</strong>:
-<pre>{
+#### XML
 
-  "Success":true,
+    <LogonResponse Success="true" Message="Login Successful" StatusCode="0" />
 
-  "Message":"Login Successful",
+#### JSON
 
-  "StatusCode":0
+    {
 
-}</pre>
+      "Success":true,
+
+      "Message":"Login Successful",
+
+      "StatusCode":0
+
+    }
 
 ### Status Codes
+
 <table>
-    <thead>
-  <tr>
-    <th>Status Code</th>
-    <th>Description</th>
-  </tr>
+  <thead>
+    <tr>
+      <th>Status Code</th>
+      <th>Description</th>
+    </tr>
   </thead>
   <tbody>
     <tr>

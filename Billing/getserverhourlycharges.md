@@ -9,13 +9,15 @@ Gets the server-based hourly cost for any time period. Calls to this operation m
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Billing/GetServerHourlyCharges/&lt;format&gt; (format = XML | JSON)
+    REST: https://api.tier3.com/REST/Billing/GetServerHourlyCharges/<format> (format = XML | JSON)
     SOAP: https://api.tier3.com/SOAP/Billing.asmx?op=GetServerHourlyCharges
 
 ## Request
+
 ### Attributes
+
 <table>
-    <thead>
+  <thead>
     <tr>
       <th>Name</th>
       <th>Type</th>
@@ -52,53 +54,65 @@ Gets the server-based hourly cost for any time period. Calls to this operation m
 </table>
 
 ### Examples
-<h4>JSON (REST)</h4>
-<pre>{ <br />    "AccountAlias": "1000",<br />    "ServerName":"QA1RSDASER101",<br />     "StartDate":"2012-11-14",<br />     "EndDate":"2012-11-15"<br />}</pre>
 
-<h4>XML (REST)</h4>
-<pre>&lt;ServerRequest&gt;
+#### JSON (REST)
 
-  &lt;AccountAlias&gt;RSDA&lt;/AccountAlias&gt;
+    {
 
-  &lt;ServerName&gt;QA1RSDASER101&lt;/ServerName&gt;
+      "AccountAlias": "1000",
 
-  &lt;StartDate&gt;2012-11-14&lt;/StartDate&gt;
+      "ServerName":"QA1RSDASER101",
 
-  &lt;EndDate&gt;2012-11-15&lt;/EndDate&gt;
+      "StartDate":"2012-11-14",
 
-&lt;/ServerRequest&gt;
+      "EndDate":"2012-11-15"
 
-</pre>
+    }
 
-<h4>XML (SOAP)</h4>
-<pre>&lt;soap12:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+#### XML (REST)
 
-  xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+    <ServerRequest>
 
-  xmlns:soap12="http://www.w3.org/2003/05/soap-envelope"&gt;
+      <AccountAlias>RSDA</AccountAlias>
 
-&lt;soap12:Body&gt;
+      <ServerName>QA1RSDASER101</ServerName>
 
-  &lt;GetServerHourlyCharges xmlns="http://www.tier3.com/"&gt;
+      <StartDate>2012-11-14</StartDate>
 
-      &lt;accountAlias&gt;1000&lt;/accountAlias&gt;
+      <EndDate>2012-11-15</EndDate>
 
-      &lt;name&gt;QA1RSDASER101&lt;/name&gt;
+    </ServerRequest>
 
-      &lt;startDate&gt;2012-11-15&lt;/startDate&gt;
+#### XML (SOAP)
 
-      &lt;endDate&gt;2012-11-15&lt;/endDate&gt;
+    <soap12:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 
-  &lt;/GetServerHourlyCharges&gt;
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
 
-&lt;/soap12:Body&gt;
+      xmlns:soap12="http://www.w3.org/2003/05/soap-envelope">
 
-&lt;/soap12:Envelope&gt;    
+    <soap12:Body>
 
-</pre> 
+      <GetServerHourlyCharges xmlns="http://www.tier3.com/">
+
+          <accountAlias>1000</accountAlias>
+
+          <name>QA1RSDASER101</name>
+
+          <startDate>2012-11-15</startDate>
+
+          <endDate>2012-11-15</endDate>
+
+      </GetServerHourlyCharges>
+
+    </soap12:Body>
+
+    </soap12:Envelope>
 
 ## Response
+
 ### Attributes
+
 <table>
   <thead>
   <tr>
@@ -157,156 +171,155 @@ Gets the server-based hourly cost for any time period. Calls to this operation m
 </table>
 
 ### Examples
-<h4>JSON (REST)</h4>
-<pre>{
 
-  "Summary":
+#### JSON (REST)
 
-      {
+    {
 
-      "MonthlyEstimate":0.0,
+      "Summary":
 
-      "MonthToDate":0.0,
+          {
 
-      "CurrentHour":0.0,
+          "MonthlyEstimate":0.0,
 
-      "PreviousHour":0.0
+          "MonthToDate":0.0,
 
-      },
+          "CurrentHour":0.0,
 
-  "AccountAlias":"RSDA",
+          "PreviousHour":0.0
 
-  "ServerName":"QA1RSDASER101",
+          },
 
-  "StartDate":"\/Date(1352851200000)\/",
+      "AccountAlias":"RSDA",
 
-  "EndDate":"\/Date(1352937600000)\/",
+      "ServerName":"QA1RSDASER101",
 
-  "HourlyCharges":[
+      "StartDate":"\/Date(1352851200000)\/",
 
-      {
+      "EndDate":"\/Date(1352937600000)\/",
 
-          "Hour":"2012-11-14T12:00:00", 
+      "HourlyCharges":[
 
-          "ProcessorCost":"0", 
+          {
 
-          "MemoryCost":"0", 
+              "Hour":"2012-11-14T12:00:00", 
 
-          "StorageCost":"0", 
+              "ProcessorCost":"0", 
 
-          "OSCost":"0"
+              "MemoryCost":"0", 
 
-      }, 
+              "StorageCost":"0", 
 
-      {
+              "OSCost":"0"
 
-          "Hour":"2012-11-14T01:00:00", 
+          }, 
 
-          "ProcessorCost":"0", 
+          {
 
-          "MemoryCost":"0", 
+              "Hour":"2012-11-14T01:00:00", 
 
-          "StorageCost":"0", 
+              "ProcessorCost":"0", 
 
-          "OSCost":"0"
+              "MemoryCost":"0", 
 
-      } 
+              "StorageCost":"0", 
 
-      ],
+              "OSCost":"0"
 
-  "Success":true,
+          } 
 
-  "Message":"OK",
+          ],
 
-  "StatusCode":0
+      "Success":true,
 
-}
+      "Message":"OK",
 
-</pre>
+      "StatusCode":0
 
-<h4>XML (REST)</h4>
-<pre>&lt;ServerHourlyChargesResponse 
+    }
 
-  Success="true" 
+#### XML (REST)
 
-  Message="OK" 
+    <ServerHourlyChargesResponse 
 
-  StatusCode="0" 
+      Success="true" 
 
-  AccountAlias="RSDA" 
+      Message="OK" 
 
-  ServerName="QA1RSDASER101" 
+      StatusCode="0" 
 
-  StartDate="2012-11-14T00:00:00" 
+      AccountAlias="RSDA" 
 
-  EndDate="2012-11-15T00:00:00"&gt;
+      ServerName="QA1RSDASER101" 
 
-  &lt;Summary MonthlyEstimate="0.0" MonthToDate="0.0" CurrentHour="0.0" PreviousHour="0.0" /&gt;
+      StartDate="2012-11-14T00:00:00" 
 
-  &lt;HourlyCharge&gt;
+      EndDate="2012-11-15T00:00:00">
 
-      &lt;ServerHourlyCost Hour="2012-11-14T12:00:00" ProcessorCost="0" MemoryCost="0" StorageCost="0" OSCost="0" /&gt;
+      <Summary MonthlyEstimate="0.0" MonthToDate="0.0" CurrentHour="0.0" PreviousHour="0.0" />
 
-      &lt;ServerHourlyCost Hour="2012-11-14T01:00:00" ProcessorCost="0" MemoryCost="0" StorageCost="0" OSCost="0" /&gt;
+      <HourlyCharge>
 
-  &lt;/HourlyCharge&gt;
+          <ServerHourlyCost Hour="2012-11-14T12:00:00" ProcessorCost="0" MemoryCost="0" StorageCost="0" OSCost="0" />
 
-&lt;/ServerHourlyChargesResponse&gt;
+          <ServerHourlyCost Hour="2012-11-14T01:00:00" ProcessorCost="0" MemoryCost="0" StorageCost="0" OSCost="0" />
 
-</pre>
+      </HourlyCharge>
 
-<h4>XML (SOAP)</h4>
-<pre>&lt;soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" 
+    </ServerHourlyChargesResponse>
 
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+#### XML (SOAP)
 
-  xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+    <soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" 
 
-  &lt;soap:Body&gt;
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 
-      &lt;GetServerHourlyChargesResponse xmlns="http://www.tier3.com/"&gt;
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 
-          &lt;GetServerHourlyChargesResult Success="true" 
+      <soap:Body>
 
-              Message="OK" 
+          <GetServerHourlyChargesResponse xmlns="http://www.tier3.com/">
 
-              StatusCode="0" 
+              <GetServerHourlyChargesResult Success="true" 
 
-              AccountAlias="RSDA" 
+                  Message="OK" 
 
-              ServerName="QA1RSDASER101" 
+                  StatusCode="0" 
 
-              StartDate="2012-11-14T00:00:00" 
+                  AccountAlias="RSDA" 
 
-              EndDate="2012-11-15T00:00:00"&gt;
+                  ServerName="QA1RSDASER101" 
 
-              &lt;Summary MonthlyEstimate="0.0" MonthToDate="0.0" CurrentHour="0.0" PreviousHour="0.0" /&gt;
+                  StartDate="2012-11-14T00:00:00" 
 
-              &lt;HourlyCharges&gt;
+                  EndDate="2012-11-15T00:00:00">
 
-                  &lt;ServerHourlyCost Hour="2012-11-14T12:00:00" ProcessorCost="0" MemoryCost="0" StorageCost="0" OSCost="0" /&gt;
+                  <Summary MonthlyEstimate="0.0" MonthToDate="0.0" CurrentHour="0.0" PreviousHour="0.0" />
 
-                  &lt;ServerHourlyCost Hour="2012-11-14T01:00:00" ProcessorCost="0" MemoryCost="0" StorageCost="0" OSCost="0" /&gt;
+                  <HourlyCharges>
 
-              &lt;/HourlyCharges&gt;
+                      <ServerHourlyCost Hour="2012-11-14T12:00:00" ProcessorCost="0" MemoryCost="0" StorageCost="0" OSCost="0" />
 
-          &lt;/GetServerHourlyChargesResult&gt;
+                      <ServerHourlyCost Hour="2012-11-14T01:00:00" ProcessorCost="0" MemoryCost="0" StorageCost="0" OSCost="0" />
 
-      &lt;/GetServerHourlyChargesResponse&gt;
+                  </HourlyCharges>
 
-  &lt;/soap:Body&gt;
+              </GetServerHourlyChargesResult>
 
-&lt;/soap:Envelope&gt;
+          </GetServerHourlyChargesResponse>
 
-</pre>
+      </soap:Body>
+
+    </soap:Envelope>
 
 ### Status Codes
+
 <table>
-    <thead>
-  <tr>
-    <th>Status Code</th>
-    <th>Description</th>
-  </tr>
+  <thead>
+    <tr>
+      <th>Status Code</th>
+      <th>Description</th>
+    </tr>
   </thead>
   <tbody>
     <tr>

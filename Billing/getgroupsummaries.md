@@ -10,13 +10,15 @@ Gets the charges for groups and servers within a given account, and for any date
 
 ##URL
 
-    REST: https://api.tier3.com/REST/Billing/GetGroupSummaries/&lt;format&gt; (format = XML | JSON)
+    REST: https://api.tier3.com/REST/Billing/GetGroupSummaries/<format> (format = XML | JSON)
     SOAP: https://api.tier3.com/SOAP/Billing.asmx?op=GetGroupSummaries
 
 ## Request
+
 ### Attributes
+
 <table>
-    <thead>
+  <thead>
     <tr>
       <th>Name</th>
       <th>Type</th>
@@ -48,54 +50,64 @@ Gets the charges for groups and servers within a given account, and for any date
 
 ### Examples
 
-<h4>JSON (REST)</h4>
-<pre>{ <br />    "AccountAlias": "1000",<br />    "StartDate":"2012-11-01",<br />    "EndDate":"2012-11-15"<br />}</pre>
+#### JSON (REST)
 
-<h4>XML (REST)</h4>
-<pre>&lt;BillingRequest&gt;
+    { 
 
-  &lt;AccountAlias&gt;1000&lt;/AccountAlias&gt;
+      "AccountAlias": "1000",
 
-  &lt;StartDate&gt;2012-11-01&lt;/StartDate&gt;
+      "StartDate":"2012-11-01",
 
-  &lt;EndDate&gt;2012-11-15&lt;/EndDate&gt;
+      "EndDate":"2012-11-15"
 
-&lt;/BillingRequest&gt;
+    }
 
-</pre>
+#### XML (REST)
 
-<h4>XML (SOAP)</h4>
-<pre>&lt;soap12:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    <BillingRequest>
 
-  xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+      <AccountAlias>1000</AccountAlias>
 
-  xmlns:soap12="http://www.w3.org/2003/05/soap-envelope"&gt;
+      <StartDate>2012-11-01</StartDate>
 
-&lt;soap12:Body&gt;
+      <EndDate>2012-11-15</EndDate>
 
-  &lt;GetGroupSummaries xmlns="http://www.tier3.com/"&gt;
+    </BillingRequest>
 
-    &lt;accountAlias&gt;1000&lt;/accountAlias&gt;
 
-  &lt;/GetGroupSummaries&gt;
+#### XML (SOAP)
 
-&lt;/soap12:Body&gt;
+    <soap12:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 
-&lt;/soap12:Envelope&gt;  
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
 
-</pre> 
+      xmlns:soap12="http://www.w3.org/2003/05/soap-envelope">
+
+    <soap12:Body>
+
+      <GetGroupSummaries xmlns="http://www.tier3.com/">
+
+        <accountAlias>1000</accountAlias>
+
+      </GetGroupSummaries>
+
+    </soap12:Body>
+
+    </soap12:Envelope>  
 
 ## Response
+
 ### Attributes
+
 <table>
   <thead>
-  <tr>
-    <th>Name</th>
-    <th>Type</th>
-    <th>Description</th>
-  </tr>
-</thead>
-<tbody>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
     <tr>
       <td>Success</td>
       <td>Boolean</td>
@@ -140,15 +152,16 @@ Gets the charges for groups and servers within a given account, and for any date
 </table>
 
 ### Summary Attributes
+
 <table>
   <thead>
-  <tr>
-    <th>Name</th>
-    <th>Type</th>
-    <th>Description</th>
-  </tr>
-</thead>
-<tbody>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
     <tr>
       <td>MonthlyEstimate</td>
       <td>Decimal</td>
@@ -173,15 +186,16 @@ Gets the charges for groups and servers within a given account, and for any date
 </table>
 
 ### ServerGroupTotals Attributes
+
 <table>
   <thead>
-  <tr>
-    <th>Name</th>
-    <th>Type</th>
-    <th>Description</th>
-  </tr>
-</thead>
-<tbody>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
     <tr>
       <td>MonthlyEstimate</td>
       <td>Decimal</td>
@@ -226,15 +240,16 @@ Gets the charges for groups and servers within a given account, and for any date
 </table>
 
 ### ServerTotal Attributes
+
 <table>
   <thead>
-  <tr>
-    <th>Name</th>
-    <th>Type</th>
-    <th>Description</th>
-  </tr>
-</thead>
-<tbody>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
     <tr>
       <td>MonthlyEstimate</td>
       <td>Decimal</td>
@@ -264,134 +279,201 @@ Gets the charges for groups and servers within a given account, and for any date
 </table>
 
 ### Examples
-<h4>JSON (REST)</h4>
-<pre>{<br />     "Summary":<br />     {<br />       "MonthlyEstimate":73.790,<br />       "MonthToDate":73.790,<br />       "CurrentHour":0.0,<br />       "PreviousHour":0.0<br />     },<br />       "AccountAlias":"1000",<br />       "StartDate":"11/1/2012",<br />       "EndDate":"11/15/2012",<br />       "GroupTotals":[<br />       {<br />         "GroupID":1634,<br />         "GroupName":"Group 1",<br />         "LocationAlias":"WA1",<br />         "ServerTotals":[<br />           {<br />           "ServerName":"SERVER1",<br />           "MonthlyEstimate":73.790,<br />           "MonthToDate":73.790,<br />           "CurrentHour":0.0,<br />           "PreviousHour":0.0<br />           }<br />         ],<br />         "MonthlyEstimate":73.790,<br />         "MonthToDate":73.790,<br />         "CurrentHour":0.0,<br />         "PreviousHour":0.0<br />       }],<br />       "Success":true,<br />       "Message":"Ok",<br />       "StatusCode":0<br />}</pre>
 
-<h4>XML (REST)</h4>
-<pre>&lt;GroupSummariesResponse Success="true" Message="Ok" StatusCode="0" AccountAlias="1000" StartDate="11/1/2012" EndDate="11/15/2012"&gt;
+#### JSON (REST)
 
-  &lt;Summary MonthlyEstimate="73.790" MonthToDate="73.790" CurrentHour="0.0" PreviousHour="0.0" /&gt;
+    {
 
-  &lt;GroupTotals&gt;
+      "Summary": {
 
-      &lt;ServerGroupTotal MonthlyEstimate="73.790" 
+          "MonthlyEstimate":73.790,
 
-          MonthToDate="73.790" 
+          "MonthToDate":73.790,
 
-          CurrentHour="0.0" 
+          "CurrentHour":0.0,
 
-          PreviousHour="0.0" 
+          "PreviousHour":0.0
 
-          GroupID="1634" 
+      },
 
-          GroupName="Group 1" 
+      "AccountAlias":"1000",
 
-          LocationAlias="WA1"&gt;
+      "StartDate":"11/1/2012",
 
-          &lt;ServerTotals&gt;
+      "EndDate":"11/15/2012",
 
-              &lt;ServerTotal MonthlyEstimate="73.790" 
+      "GroupTotals": [
 
-                  MonthToDate="73.790" 
+        {
 
-                  CurrentHour="0.0" 
+          "GroupID":1634,
 
-                  PreviousHour="0.0" 
+          "GroupName":"Group 1",
 
-                  ServerName="SERVER1" /&gt;
+          "LocationAlias":"WA1",
 
-          &lt;/ServerTotals&gt;
+          "ServerTotals":[
 
-      &lt;/ServerGroupTotal&gt;
+            {
 
-  &lt;/GroupTotals&gt;
+              "ServerName":"SERVER1",
 
-&lt;/GroupSummariesResponse&gt;
+              "MonthlyEstimate":73.790,
 
-</pre>
+              "MonthToDate":73.790,
 
-<h4>XML (SOAP)</h4>
-<pre>&lt;soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" 
+              "CurrentHour":0.0,
 
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              "PreviousHour":0.0
 
-  xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+            }
+          ],
+          
+          "MonthlyEstimate":73.790,
 
-  &lt;soap:Body&gt;
+          "MonthToDate":73.790,
 
-      &lt;GetGroupSummariesResponse xmlns="http://www.tier3.com/"&gt;
+          "CurrentHour":0.0,
 
-          &lt;GetGroupSummariesResult Success="true" 
+          "PreviousHour":0.0
 
-              Message="Ok" 
+        }
+      ],
 
-              StatusCode="0" 
+      "Success":true,
 
-              AccountAlias="1000" 
+      "Message":"Ok",
 
-              StartDate="11/1/2012" 
+      "StatusCode":0
 
-              EndDate="11/16/2012"&gt;
+    }
 
-              &lt;Summary MonthlyEstimate="83.180" 
+#### XML (REST)
 
-                  MonthToDate="83.180" 
+    <GroupSummariesResponse Success="true" Message="Ok" StatusCode="0" AccountAlias="1000" StartDate="11/1/2012" EndDate="11/15/2012">
 
-                  CurrentHour="0.223600" 
+      <Summary MonthlyEstimate="73.790" MonthToDate="73.790" CurrentHour="0.0" PreviousHour="0.0" />
 
-                  PreviousHour="0.223600" /&gt;
+      <GroupTotals>
 
-              &lt;GroupTotals&gt;
+          <ServerGroupTotal MonthlyEstimate="73.790" 
 
-                  &lt;ServerGroupTotal MonthlyEstimate="83.180" 
+              MonthToDate="73.790" 
+
+              CurrentHour="0.0" 
+
+              PreviousHour="0.0" 
+
+              GroupID="1634" 
+
+              GroupName="Group 1" 
+
+              LocationAlias="WA1">
+
+              <ServerTotals>
+
+                  <ServerTotal MonthlyEstimate="73.790" 
+
+                      MonthToDate="73.790" 
+
+                      CurrentHour="0.0" 
+
+                      PreviousHour="0.0" 
+
+                      ServerName="SERVER1" />
+
+              </ServerTotals>
+
+          </ServerGroupTotal>
+
+      </GroupTotals>
+
+    </GroupSummariesResponse>
+
+
+
+#### XML (SOAP)
+
+    <soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" 
+
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+      <soap:Body>
+
+          <GetGroupSummariesResponse xmlns="http://www.tier3.com/">
+
+              <GetGroupSummariesResult Success="true" 
+
+                  Message="Ok" 
+
+                  StatusCode="0" 
+
+                  AccountAlias="1000" 
+
+                  StartDate="11/1/2012" 
+
+                  EndDate="11/16/2012">
+
+                  <Summary MonthlyEstimate="83.180" 
 
                       MonthToDate="83.180" 
 
                       CurrentHour="0.223600" 
 
-                      PreviousHour="0.223600" 
+                      PreviousHour="0.223600" />
 
-                      GroupID="1634" 
+                  <GroupTotals>
 
-                      GroupName="Group 1 
+                      <ServerGroupTotal MonthlyEstimate="83.180" 
 
-                      LocationAlias="WA1"&gt;
+                          MonthToDate="83.180" 
 
-                      &lt;ServerTotals&gt;
+                          CurrentHour="0.223600" 
 
-                          &lt;ServerTotal MonthlyEstimate="83.180" 
+                          PreviousHour="0.223600" 
 
-                              MonthToDate="83.180" 
+                          GroupID="1634" 
 
-                              CurrentHour="0.223600" 
+                          GroupName="Group 1 
 
-                              PreviousHour="0.223600" 
+                          LocationAlias="WA1">
 
-                              ServerName="SERVER1" /&gt;
+                          <ServerTotals>
 
-                      &lt;/ServerTotals&gt;
+                              <ServerTotal MonthlyEstimate="83.180" 
 
-                  &lt;/ServerGroupTotal&gt;
+                                  MonthToDate="83.180" 
 
-              &lt;/GroupTotals&gt;
+                                  CurrentHour="0.223600" 
 
-          &lt;/GetGroupSummariesResult&gt;
+                                  PreviousHour="0.223600" 
 
-      &lt;/GetGroupSummariesResponse&gt;
+                                  ServerName="SERVER1" />
 
-  &lt;/soap:Body&gt;
+                          </ServerTotals>
 
-&lt;/soap:Envelope&gt;
+                      </ServerGroupTotal>
 
-</pre>
+                  </GroupTotals>
+
+              </GetGroupSummariesResult>
+
+          </GetGroupSummariesResponse>
+
+      </soap:Body>
+
+    </soap:Envelope>
 
 ### Status Codes
+
 <table>
-    <thead>
-  <tr>
-    <th>Status Code</th>
-    <th>Description</th>
-  </tr>
+  <thead>
+    <tr>
+      <th>Status Code</th>
+      <th>Description</th>
+    </tr>
   </thead>
   <tbody>
     <tr>

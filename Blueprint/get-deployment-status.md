@@ -9,13 +9,15 @@ Gets the status of the specified Blueprint deployment.
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Blueprint/GetBlueprintStatus/&lt;format&gt;
+    REST: https://api.tier3.com/REST/Blueprint/GetBlueprintStatus/<format>
     SOAP: https://api.tier3.com/SOAP/Blueprints.asmx?op=GetDeploymentStatusMsg
 
 ## Request
+
 ### Attributes
+
 <table>
-    <thead>
+  <thead>
     <tr>
       <th>Name</th>
       <th>Type</th>
@@ -59,23 +61,39 @@ Gets the status of the specified Blueprint deployment.
 
 ### Examples
 
-<h4>JSON</h4>
-<pre>{<br />    "RequestID": "1",<br />    "LocationAlias": "WA1"<br />}</pre>
+#### JSON
 
-<h4>XML</h4>
-<pre>&lt;GetDeploymentStatusRequest&gt;<br />    &lt;RequestID&gt;1&lt;/RequestID&gt;<br />    &lt;LocationAlias&gt;WA1&lt;/LocationAlias&gt;<br />&lt;/GetDeploymentStatusRequest&gt;&nbsp;</pre> 
+    {
+
+      "RequestID": "1",
+
+      "LocationAlias": "WA1"
+
+    }
+
+#### XML
+
+    <GetDeploymentStatusRequest>
+
+        <RequestID>1</RequestID>
+
+        <LocationAlias>WA1</LocationAlias>
+
+    </GetDeploymentStatusRequest>
 
 ## Response
+
 ### Attributes
+
 <table>
   <thead>
-  <tr>
-    <th>Name</th>
-    <th>Type</th>
-    <th>Description</th>
-  </tr>
-</thead>
-<tbody>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
     <tr>
       <td>Success</td>
       <td>Boolean</td>
@@ -141,13 +159,66 @@ Gets the status of the specified Blueprint deployment.
 
 ### Examples
 
-<h4>JSON</h4>
-<pre>{<br />    "RequestID":210,<br />    "CurrentStatus":"Failed",<br />    "Description":"Error Building Blueprint",<br />    "StatusDate":"\/Date(1318480463790)\/",<br />    "Step":"0",<br />    "PercentComplete":0,<br />    "Success":true,<br />    "Message":"Success",<br />    "StatusCode":0,<br />    "Servers":["WA1T3NWEB01"]<br />}</pre>
+#### JSON
 
-<h4>XML</h4>
-<pre>&lt;GetDeploymentStatusResponse <br />    Success="true" Message="Success" StatusCode="0" <br />    RequestID="210" CurrentStatus="Failed" Description="Error Building Blueprint" StatusDate="2011-10-12T21:34:23.79" Step="0" PercentComplete="0"&gt;<br />    &lt;Servers&gt;<br />        &lt;string&gt;WA1T3NWEB01&lt;/string&gt;<br />    &lt;/Servers&gt;<br />&lt;GetDeploymentStatusResponse&gt;&nbsp;</pre>
+    {
+
+      "RequestID":210,
+
+      "CurrentStatus":"Failed",
+
+      "Description":"Error Building Blueprint",
+
+      "StatusDate":"\/Date(1318480463790)\/",
+
+      "Step":"0",
+
+      "PercentComplete":0,
+
+      "Success":true,
+
+      "Message":"Success",
+
+      "StatusCode":0,
+
+      "Servers":["WA1T3NWEB01"]
+
+    }
+
+
+#### XML
+
+    <GetDeploymentStatusResponse
+
+      Success="true"
+
+      Message="Success"
+
+      StatusCode="0"
+
+      RequestID="210"
+
+      CurrentStatus="Failed" 
+
+      Description="Error Building Blueprint" 
+
+      StatusDate="2011-10-12T21:34:23.79" 
+
+      Step="0" 
+
+      PercentComplete="0"
+    >
+
+        <Servers>
+
+          <string>WA1T3NWEB01</string>
+
+        </Servers>
+
+    </GetDeploymentStatusResponse>
 
 ### Status Codes
+
 <table>
     <thead>
   <tr>

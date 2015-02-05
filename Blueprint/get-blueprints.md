@@ -9,13 +9,15 @@ Gets a list of all Blueprints with the specified search criteria.
 
 ## URL
 
-    REST:https://api.tier3.com/REST/Blueprint/GetBlueprints/&lt;format&gt;
+    REST:https://api.tier3.com/REST/Blueprint/GetBlueprints/<format>
     SOAP: https://api.tier3.com/SOAP/Blueprints.asmx?op=GetBlueprintsResponseMsg
 
 ## Request
+
 ### Attributes
+
 <table>
-    <thead>
+  <thead>
     <tr>
       <th>Name</th>
       <th>Type</th>
@@ -88,23 +90,58 @@ Gets a list of all Blueprints with the specified search criteria.
 </table>
 
 ### Examples
-<h4>JSON</h4>
-<pre>{ <br />    "CompanySize": "2",&nbsp;<br />    "OperatingSystems": [ 4, 5, 17, 18],<br />    "Search": "High Performance",<br />    "Visibility": 1<br />}</pre>
 
-<h4>XML</h4>
-<pre>&lt;GetBlueprintsRequest&gt;<br />    &lt;CompanySize&gt;2&lt;/CompanySize&gt;<br />    &lt;OperatingSystems&gt;<br />        &lt;OS&gt;4&lt;/OS&gt;<br />        &lt;OS&gt;5&lt;/OS&gt;<br />        &lt;OS&gt;17&lt;/OS&gt;<br />        &lt;OS&gt;18&lt;/OS&gt;<br />    &lt;/OperatingSystems&gt;<br />    &lt;Search&gt;High Performance&lt;/Search&gt;<br />    &lt;Visibility&gt;1&lt;/Visibility&gt;<br />&lt;/GetBlueprintsRequest&gt;&nbsp;</pre>
+#### JSON
+
+    {
+
+      "CompanySize": "2",
+
+      "OperatingSystems": [ 4, 5, 17, 18],
+
+      "Search": "High Performance",
+
+      "Visibility": 1
+
+    }
+
+#### XML
+
+    <GetBlueprintsRequest>
+
+          <CompanySize>2</CompanySize>
+
+          <OperatingSystems>
+
+              <OS>4</OS>
+
+              <OS>5</OS>
+
+              <OS>17</OS>
+
+              <OS>18</OS>
+
+          </OperatingSystems>
+
+          <Search>High Performance</Search>
+
+          <Visibility>1</Visibility>
+
+    </GetBlueprintsRequest>
 
 ## Response
+
 ### Attributes
+
 <table>
   <thead>
-  <tr>
-    <th>Name</th>
-    <th>Type</th>
-    <th>Description</th>
-  </tr>
-</thead>
-<tbody>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
     <tr>
       <td>Success</td>
       <td>Boolean</td>
@@ -129,6 +166,7 @@ Gets a list of all Blueprints with the specified search criteria.
 </table>
 
 ### Blueprint Attributes
+
 <table>
   <thead>
   <tr>
@@ -152,19 +190,50 @@ Gets a list of all Blueprints with the specified search criteria.
 </table>
 
 ### Examples
-<h4>JSON</h4>
-<pre>{<br />    "Blueprints":[<br />        {"ID":1,"Name":"Blueprint 01"},<br />        {"ID":2,"Name":"Blueprint 02"},<br />    ],    <br />    "Success":true,<br />    "Message":"Success",<br />    "StatusCode":0<br />}</pre>
 
-<h4>XML</h4>
-<pre>&lt;GetBlueprintsResponse Success="true" Message="Success" StatusCode="0"&gt;<br />    &lt;Blueprints&gt;<br />        &lt;Blueprint ID="1" Name="Blueprint 01" /&gt;<br />        &lt;Blueprint ID="2" Name="Blueprint 02" /&gt;<br />    &lt;/Blueprints&gt;<br />&lt;/GetBlueprintsResponse&gt;</pre>
+#### JSON
+
+    {
+
+      "Blueprints":[
+
+        {"ID":1,"Name":"Blueprint 01"},
+
+        {"ID":2,"Name":"Blueprint 02"},
+
+      ], 
+
+      "Success":true,
+
+      "Message":"Success",
+
+      "StatusCode":0
+
+    }
+
+#### XML
+
+    <GetBlueprintsResponse Success="true" Message="Success" StatusCode="0">
+
+        <Blueprints>
+
+            <Blueprint ID="1" Name="Blueprint 01" />
+
+            <Blueprint ID="2" Name="Blueprint 02" />
+
+        </Blueprints>
+
+    </GetBlueprintsResponse>
+
 
 ### Status Codes
+
 <table>
-    <thead>
-  <tr>
-    <th>Status Code</th>
-    <th>Description</th>
-  </tr>
+  <thead>
+    <tr>
+      <th>Status Code</th>
+      <th>Description</th>
+    </tr>
   </thead>
   <tbody>
     <tr>

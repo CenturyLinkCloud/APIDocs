@@ -9,13 +9,15 @@ Gets list of all valid data center location codes that are used in subsequent Ac
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Account/GetLocations/&lt;format&gt; (format = XML | JSON)
+    REST: https://api.tier3.com/REST/Account/GetLocations/<format> (format = XML | JSON)
     SOAP: https://api.tier3.com/SOAP/Account.asmx?op=LocationsResponseMsg
 
 ## Request
+
 ### Attributes
+
 <table>
-    <thead>
+  <thead>
     <tr>
       <th>Name</th>
       <th>Type</th>
@@ -31,34 +33,36 @@ Gets list of all valid data center location codes that are used in subsequent Ac
 </table>
 
 ### Examples
-<h4>XML (SOAP)</h4>
-<pre>&lt;soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 
-      xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+#### XML (SOAP)</h4>
 
-      xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"&gt;
+    <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 
-&lt;soap:Body&gt;
+          xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
 
-  &lt;LocationsResponseMsg xmlns="http://www.tier3.com/" /&gt;
+          xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
 
-&lt;/soap:Body&gt;
+    <soap:Body>
 
-&lt;/soap:Envelope&gt;   
+      <LocationsResponseMsg xmlns="http://www.tier3.com/" />
 
-</pre> 
+    </soap:Body>
+
+    </soap:Envelope>   
 
 ## Response
+
 ### Attributes
+
 <table>
   <thead>
-  <tr>
-    <th>Name</th>
-    <th>Type</th>
-    <th>Description</th>
-  </tr>
-</thead>
-<tbody>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
     <tr>
       <td>Success</td>
       <td>Boolean</td>
@@ -86,13 +90,13 @@ Gets list of all valid data center location codes that are used in subsequent Ac
 
 <table>
   <thead>
-  <tr>
-    <th>Name</th>
-    <th>Type</th>
-    <th>Description</th>
-  </tr>
-</thead>
-<tbody>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
     <tr>
       <td>Alias</td>
       <td>String</td>
@@ -108,44 +112,94 @@ Gets list of all valid data center location codes that are used in subsequent Ac
 
 ### Examples
 
-<h4>JSON (REST)</h4>
-<pre>{<br />     "Locations":[<br />       {"Alias":"100","Region":"Demo Region 1"},<br />       {"Alias":"101","Region":"Demo Region 2"},<br />       {"Alias":"102","Region":"Demo Region 3"}<br />     ],<br />     "Success":true,<br />     "Message":"Locations successfully queried.",<br />     "StatusCode":0<br />}</pre>
-<h4>XML (REST)</h4>
-<pre>&lt;LocationsResponse Success="true" Message="Locations successfully queried." StatusCode="0"&gt;<br />     &lt;Locations&gt;<br />       &lt;Location Alias="100" Region="Demo Region 1" /&gt;<br />       &lt;Location Alias="101" Region="Demo Region 2" /&gt;<br />       &lt;Location Alias="102" Region="Demo Region #3" /&gt;<br />     &lt;/Locations&gt;<br />&lt;/LocationsResponse&gt;</pre>
-<h4>XML (SOAP)</h4>
-<pre>&lt;soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"&gt;
+#### JSON (REST)
 
-&lt;soap:Body&gt;
+    {
 
-  &lt;LocationsResponseMsgResponse xmlns="http://www.tier3.com/"&gt;
+      "Locations":[
 
-    &lt;LocationsResponseMsgResult&gt;
+        {
+          "Alias":"100",
 
-      &lt;Locations&gt;
+          "Region":"Demo Region 1"
 
-        &lt;Location Alias="string" Region="string" /&gt;
+        },
 
-        &lt;Location Alias="string" Region="string" /&gt;
+        {
 
-      &lt;/Locations&gt;
+          "Alias":"101",
 
-    &lt;/LocationsResponseMsgResult&gt;
+          "Region":"Demo Region 2"
 
-  &lt;/LocationsResponseMsgResponse&gt;
+        },
 
-&lt;/soap:Body&gt;
+        {
 
-&lt;/soap:Envelope&gt;
+          "Alias":"102",
 
-</pre>
+          "Region":"Demo Region 3"
+
+        }   
+      ],
+          
+      "Success":true,
+
+      "Message":"Locations successfully queried.",
+
+      "StatusCode":0
+          
+    }
+
+#### XML (REST)
+
+    <LocationsResponse Success="true" Message="Locations successfully queried." StatusCode="0">
+
+          <Locations>
+
+              <Location Alias="100" Region="Demo Region 1" />
+
+              <Location Alias="101" Region="Demo Region 2" />
+
+              <Location Alias="102" Region="Demo Region #3" />
+
+          </Locations>
+
+    </LocationsResponse>
+
+#### XML (SOAP)
+
+    <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+
+    <soap:Body>
+
+      <LocationsResponseMsgResponse xmlns="http://www.tier3.com/">
+
+        <LocationsResponseMsgResult>
+
+          <Locations>
+
+            <Location Alias="string" Region="string" />
+
+            <Location Alias="string" Region="string" />
+
+          </Locations>
+
+        </LocationsResponseMsgResult>
+
+      </LocationsResponseMsgResponse>
+
+    </soap:Body>
+
+    </soap:Envelope>
 
 ### Status Codes
+
 <table>
-    <thead>
-  <tr>
-    <th>Status Code</th>
-    <th>Description</th>
-  </tr>
+  <thead>
+    <tr>
+      <th>Status Code</th>
+      <th>Description</th>
+    </tr>
   </thead>
   <tbody>
     <tr>

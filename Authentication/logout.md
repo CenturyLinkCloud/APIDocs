@@ -12,17 +12,19 @@ This method will log you out of the API. The Logon method must be called again p
     https://api.tier3.com/REST/Auth/Logout/
 
 ## Request
+
 ### Attributes
 
 None Required.
 
 ### Status Codes
+
 <table>
-    <thead>
-  <tr>
-    <th>Status Code</th>
-    <th>Description</th>
-  </tr>
+  <thead>
+    <tr>
+      <th>Status Code</th>
+      <th>Description</th>
+    </tr>
   </thead>
   <tbody>
     <tr>

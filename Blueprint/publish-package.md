@@ -10,7 +10,7 @@ Publishes a Blueprint Package for use within the Blueprint Designer.
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Blueprint/PublishPackage/&lt;format&gt;
+    REST: https://api.tier3.com/REST/Blueprint/PublishPackage/<format>
     SOAP: https://api.tier3.com/SOAP/Blueprints.asmx?op=PublishPackage
 
 ## Request
@@ -143,9 +143,9 @@ Publishes a Blueprint Package for use within the Blueprint Designer.
 <pre>{ <br />    "Classification": "2",<br />    "Name":"Script01.zip",<br />    "OperatingSystems":[4,5],<br />    "Visibility": "1" <br />}&nbsp;</pre>
 
 <h4>XML</h4>
-<pre>&lt;PublishPackageRequest&gt;<br />&nbsp; &nbsp; &lt;Classification&gt;2&lt;/Classification&gt;<br />    &lt;Name&gt;Script01.zip&lt;/Name&gt;<br />    &lt;OperatingSystems&gt;<br />        &lt;OS&gt;4&lt;/OS&gt;<br />        &lt;OS&gt;5&lt;/OS&gt;&nbsp;
+<pre><PublishPackageRequest><br />&nbsp; &nbsp; <Classification>2</Classification><br />    <Name>Script01.zip</Name><br />    <OperatingSystems><br />        <OS>4</OS><br />        <OS>5</OS>&nbsp;
 
-  &lt;/OperatingSystems&gt;<br />&nbsp; &nbsp; &lt;Visibility&gt;1&lt;/Visibility&gt;<br />&lt;/PublishPackageRequest&gt;&nbsp;</pre> 
+  </OperatingSystems><br />&nbsp; &nbsp; <Visibility>1</Visibility><br /></PublishPackageRequest>&nbsp;</pre> 
 
 ## Response
 ### Attributes
@@ -190,7 +190,7 @@ Publishes a Blueprint Package for use within the Blueprint Designer.
 <h4>XML</h4>
 <div>
   <div>
-    <pre>&lt;QueuedItemResponse Success="true" Message="Success" StatusCode="0"&gt;<br />&nbsp; &nbsp; &lt;RequestID&gt;1&lt;/RequestID&gt;<br />&lt;/QueuedItemResponse&gt;</pre>
+    <pre><QueuedItemResponse Success="true" Message="Success" StatusCode="0"><br />&nbsp; &nbsp; <RequestID>1</RequestID><br /></QueuedItemResponse></pre>
   </div>
 </div>
 

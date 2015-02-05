@@ -9,13 +9,15 @@ Gets the details for a given invoice within an account. Calls to this operation 
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Billing/GetInvoiceDetails/&lt;format&gt; (format = XML | JSON)
+    REST: https://api.tier3.com/REST/Billing/GetInvoiceDetails/<format> (format = XML | JSON)
     SOAP: https://api.tier3.com/SOAP/Billing.asmx?op=GetInvoiceDetails
 
 ## Request
-###Attributes
+
+### Attributes
+
 <table>
-    <thead>
+  <thead>
     <tr>
       <th>Name</th>
       <th>Type</th>
@@ -40,54 +42,62 @@ Gets the details for a given invoice within an account. Calls to this operation 
 </table>
 
 ### Examples
+
 <h4>JSON (REST)</h4>
-<pre>{ <br />    "AccountAlias": "1000",<br />    "InvoiceID":"ABC1235"<br />}</pre>
 
-<h4>XML (REST)</h4>
-<pre>&lt;InvoiceRequest&gt;
+    {
 
-  &lt;AccountAlias&gt;1000&lt;/AccountAlias&gt;
+      "AccountAlias": "1000",
 
-  &lt;InvoiceID&gt;ABC1235&lt;/InvoiceID&gt;
+      "InvoiceID":"ABC1235"
 
-&lt;/InvoiceRequest&gt;
+    }
 
-  </pre>
+#### XML (REST)
 
-<h4>XML (SOAP)</h4>
-<pre>&lt;soap12:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    <InvoiceRequest>
 
-  xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+      <AccountAlias>1000</AccountAlias>
 
-  xmlns:soap12="http://www.w3.org/2003/05/soap-envelope"&gt;
+      <InvoiceID>ABC1235</InvoiceID>
 
-&lt;soap12:Body&gt;
+    </InvoiceRequest>
 
-  &lt;GetInvoiceDetails xmlns="http://www.tier3.com/"&gt;
+#### XML (SOAP)
 
-    &lt;accountAlias&gt;1000&lt;/accountAlias&gt;
+    <soap12:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 
-    &lt;invoiceId&gt;ABC1235&lt;/invoiceId&gt;
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
 
-  &lt;/GetInvoiceDetails &gt;
+      xmlns:soap12="http://www.w3.org/2003/05/soap-envelope">
 
-&lt;/soap12:Body&gt;
+    <soap12:Body>
 
-&lt;/soap12:Envelope&gt;  
+      <GetInvoiceDetails xmlns="http://www.tier3.com/">
 
-</pre> 
+        <accountAlias>1000</accountAlias>
+
+        <invoiceId>ABC1235</invoiceId>
+
+      </GetInvoiceDetails >
+
+    </soap12:Body>
+
+    </soap12:Envelope>  
 
 ## Response
+
 ### Attributes
+
 <table>
   <thead>
-  <tr>
-    <th>Name</th>
-    <th>Type</th>
-    <th>Description</th>
-  </tr>
-</thead>
-<tbody>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
     <tr>
       <td>Success</td>
       <td>Boolean</td>
@@ -137,6 +147,7 @@ Gets the details for a given invoice within an account. Calls to this operation 
 </table>
 
 ### Invoice Attributes
+
 <table>
   <thead>
   <tr>
@@ -220,6 +231,7 @@ Gets the details for a given invoice within an account. Calls to this operation 
 </table>
 
 ### InvoiceLineItem Attributes
+
 <table>
   <thead>
   <tr>
@@ -263,6 +275,7 @@ Gets the details for a given invoice within an account. Calls to this operation 
 </table>
 
 ### LineItemDetail Attributes
+
 <table>
   <thead>
   <tr>
@@ -286,302 +299,303 @@ Gets the details for a given invoice within an account. Calls to this operation 
 </table>
 
 ### Examples
-<h4>JSON (REST)</h4>
-<pre>{
 
-   "OpeningBalance":1363.8900,
+#### JSON (REST)
 
-   "NewCharges":358.5600,
+    {
 
-   "Payments":0.0,
+       "OpeningBalance":1363.8900,
 
-   "EndingBalance":1722.4500,
+       "NewCharges":358.5600,
 
-   "CurrentOutstandingBalance":1722.4500,
+       "Payments":0.0,
 
-   "Invoice":
+       "EndingBalance":1722.4500,
 
-      {
+       "CurrentOutstandingBalance":1722.4500,
 
-      "ID":"RSDA9278D23F",
-
-      "Terms":"Upon Receipt",
-
-      "CompanyName":"Demo Account",
-
-      "AccountAlias":"1000",
-
-      "ParentAccountAlias":null,
-
-      "Address1":"123 100th St NE",
-
-      "Address2":null,
-
-      "City":"Bellevue",
-
-      "StateProvince":"WA",
-
-      "PostalCode":"98155",
-
-      "BillingContactEmail":"user@company.com",
-
-      "InvoiceCCEmail":"",
-
-      "TotalAmount":358.5600,
-
-      "InvoiceDate":"\/Date(1349046000000)\/",
-
-      "PONumber":null,
-
-      "LineItems":[
-
-         {
-
-            "Quantity":1,
-
-            "Description":"Group 1",
-
-            "UnitCost":103.5800,
-
-            "ItemTotal":103.5800,
-
-            "ServiceLocation":"WA1",
-
-            "ItemDetails":[
-
-              {
-
-                  "Description":"SERVER123",
-
-                  "Cost":103.5800
-
-              }]
-
-          },
+       "Invoice":
 
           {
 
-              "Quantity":1,
+          "ID":"RSDA9278D23F",
 
-              "Description":"Demo Group 2",
+          "Terms":"Upon Receipt",
 
-              "UnitCost":252.9800,
+          "CompanyName":"Demo Account",
 
-              "ItemTotal":252.9800,
+          "AccountAlias":"1000",
 
-              "ServiceLocation":"WA1",
+          "ParentAccountAlias":null,
 
-              "ItemDetails":[
+          "Address1":"123 100th St NE",
 
-                {
+          "Address2":null,
 
-                    "Description":"SERVER987",
+          "City":"Bellevue",
 
-                    "Cost":252.9800
+          "StateProvince":"WA",
 
-                }]
+          "PostalCode":"98155",
 
-            },
+          "BillingContactEmail":"user@company.com",
 
-            {
+          "InvoiceCCEmail":"",
+
+          "TotalAmount":358.5600,
+
+          "InvoiceDate":"\/Date(1349046000000)\/",
+
+          "PONumber":null,
+
+          "LineItems":[
+
+             {
 
                 "Quantity":1,
 
-                "Description":"External IP Address (QA1)",
+                "Description":"Group 1",
 
-                "UnitCost":2.0000,
+                "UnitCost":103.5800,
 
-                "ItemTotal":2.0000,
+                "ItemTotal":103.5800,
 
                 "ServiceLocation":"WA1",
 
-                "ItemDetails":[]
+                "ItemDetails":[
 
-             }
+                  {
 
-         ]},
+                      "Description":"SERVER123",
 
-         "Success":true,
+                      "Cost":103.5800
 
-         "Message":"Ok",
+                  }]
 
-         "StatusCode":0
+              },
 
-}</pre>
+              {
 
-<h4>XML (REST)</h4>
-<pre>&lt;InvoiceDetailResponse 
+                  "Quantity":1,
 
-  Success="true" 
+                  "Description":"Demo Group 2",
 
-  Message="Ok" 
+                  "UnitCost":252.9800,
 
-  StatusCode="0" 
+                  "ItemTotal":252.9800,
 
-  OpeningBalance="1363.8900" 
+                  "ServiceLocation":"WA1",
 
-  NewCharges="358.5600" 
+                  "ItemDetails":[
 
-  Payments="0.0" 
+                    {
 
-  EndingBalance="1722.4500" 
+                        "Description":"SERVER987",
 
-  CurrentOutstandingBalance="1722.4500"&gt;
+                        "Cost":252.9800
 
-  &lt;Invoice 
+                    }]
 
-      ID="RSDA9278D23F" 
+                },
 
-      Terms="Upon Receipt" 
+                {
 
-      CompanyName="Demo Company" 
+                    "Quantity":1,
 
-      AccountAlias="1000" 
+                    "Description":"External IP Address (QA1)",
 
-      Address1="123 100th St NE" 
+                    "UnitCost":2.0000,
 
-      City="Bellevue" 
+                    "ItemTotal":2.0000,
 
-      StateProvince="WA" 
+                    "ServiceLocation":"WA1",
 
-      PostalCode="98155" 
+                    "ItemDetails":[]
 
-      BillingContactEmail="user@company.com" 
+                 }
 
-      InvoiceCCEmail="" 
+             ]},
 
-      TotalAmount="358.5600" 
+             "Success":true,
 
-      InvoiceDate="2012-09-30T23:00:00"&gt;
+             "Message":"Ok",
 
-      &lt;LineItems&gt;
+             "StatusCode":0
 
-          &lt;InvoiceLineItem Quantity="1" Description="Demo Group 1" UnitCost="103.5800" ItemTotal="103.5800" ServiceLocation="WA1"&gt;
+    }
 
-              &lt;ItemDetails&gt;
+#### XML (REST)
 
-                  &lt;LineItemDetail Description="SERVER123" Cost="103.5800" /&gt;
+    <InvoiceDetailResponse 
 
-              &lt;/ItemDetails&gt;
+      Success="true" 
 
-          &lt;/InvoiceLineItem&gt;
+      Message="Ok" 
 
-          &lt;InvoiceLineItem Quantity="1" Description="Demo Group 2" UnitCost="252.9800" ItemTotal="252.9800" ServiceLocation="WA1"&gt;
+      StatusCode="0" 
 
-              &lt;ItemDetails&gt;
+      OpeningBalance="1363.8900" 
 
-                  &lt;LineItemDetail Description="SERVER987" Cost="252.9800" /&gt;
+      NewCharges="358.5600" 
 
-              &lt;/ItemDetails&gt;
+      Payments="0.0" 
 
-          &lt;/InvoiceLineItem&gt;
+      EndingBalance="1722.4500" 
 
-          &lt;InvoiceLineItem Quantity="1" Description="External IP Address (QA1)" UnitCost="2.0000" ItemTotal="2.0000" ServiceLocation="QA1"&gt;
+      CurrentOutstandingBalance="1722.4500">
 
-              &lt;ItemDetails /&gt;
+      <Invoice 
 
-          &lt;/InvoiceLineItem&gt;
+          ID="RSDA9278D23F" 
 
-      &lt;/LineItems&gt;
+          Terms="Upon Receipt" 
 
-  &lt;/Invoice&gt;
+          CompanyName="Demo Company" 
 
-&lt;/InvoiceDetailResponse&gt;
+          AccountAlias="1000" 
 
-</pre>
+          Address1="123 100th St NE" 
 
-<h4>XML (SOAP)</h4>
-<pre>&lt;soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" 
+          City="Bellevue" 
 
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+          StateProvince="WA" 
 
-  xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+          PostalCode="98155" 
 
-  &lt;soap:Body&gt;
+          BillingContactEmail="user@company.com" 
 
-      &lt;GetInvoiceDetailsResponse xmlns="http://www.tier3.com/"&gt;
+          InvoiceCCEmail="" 
 
-          &lt;GetInvoiceDetailsResult 
+          TotalAmount="358.5600" 
 
-              Success="true" 
+          InvoiceDate="2012-09-30T23:00:00">
 
-              Message="Ok" 
+          <LineItems>
 
-              StatusCode="0" 
+              <InvoiceLineItem Quantity="1" Description="Demo Group 1" UnitCost="103.5800" ItemTotal="103.5800" ServiceLocation="WA1">
 
-              OpeningBalance="1363.8900" 
+                  <ItemDetails>
 
-              NewCharges="358.5600" 
+                      <LineItemDetail Description="SERVER123" Cost="103.5800" />
 
-              Payments="0.0" 
+                  </ItemDetails>
 
-              EndingBalance="1722.4500" 
+              </InvoiceLineItem>
 
-              CurrentOutstandingBalance="1722.4500"&gt;
+              <InvoiceLineItem Quantity="1" Description="Demo Group 2" UnitCost="252.9800" ItemTotal="252.9800" ServiceLocation="WA1">
 
-              &lt;Invoice ID="RSDA9278D23F" 
+                  <ItemDetails>
 
-                  Terms="Upon Receipt" 
+                      <LineItemDetail Description="SERVER987" Cost="252.9800" />
 
-                  CompanyName="Demo Account" 
+                  </ItemDetails>
 
-                  AccountAlias="1000" 
+              </InvoiceLineItem>
 
-                  Address1="123 100th St NE" 
+              <InvoiceLineItem Quantity="1" Description="External IP Address (QA1)" UnitCost="2.0000" ItemTotal="2.0000" ServiceLocation="QA1">
 
-                  City="Bellevue" 
+                  <ItemDetails />
 
-                  StateProvince="WA" 
+              </InvoiceLineItem>
 
-                  PostalCode="98155" 
+          </LineItems>
 
-                  BillingContactEmail="user@company.com" 
+      </Invoice>
 
-                  InvoiceCCEmail="" 
+    </InvoiceDetailResponse>
 
-                  TotalAmount="358.5600" 
+#### XML (SOAP)
 
-                  InvoiceDate="2012-09-30T23:00:00"&gt;
+    <soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" 
 
-                  &lt;LineItems&gt;
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 
-                      &lt;InvoiceLineItem Quantity="1" Description="Group 1" UnitCost="103.5800" ItemTotal="103.5800" ServiceLocation="WA1"&gt;
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 
-                          &lt;ItemDetails&gt;
+      <soap:Body>
 
-                              &lt;LineItemDetail Description="SERVER123" Cost="103.5800" /&gt;&lt;/ItemDetails&gt;
+          <GetInvoiceDetailsResponse xmlns="http://www.tier3.com/">
 
-                      &lt;/InvoiceLineItem&gt;
+              <GetInvoiceDetailsResult 
 
-                      &lt;InvoiceLineItem Quantity="1" Description="Group 2" UnitCost="252.9800" ItemTotal="252.9800" ServiceLocation="WA1"&gt;
+                  Success="true" 
 
-                          &lt;ItemDetails&gt;&lt;LineItemDetail Description="SERVER987" Cost="252.9800" /&gt;&lt;/ItemDetails&gt;
+                  Message="Ok" 
 
-                          &lt;/InvoiceLineItem&gt;
+                  StatusCode="0" 
 
-                      &lt;InvoiceLineItem Quantity="1" Description="External IP Address (QA1)" UnitCost="2.0000" ItemTotal="2.0000" ServiceLocation="WA1"&gt;
+                  OpeningBalance="1363.8900" 
 
-                          &lt;ItemDetails /&gt;
+                  NewCharges="358.5600" 
 
-                      &lt;/InvoiceLineItem&gt;
+                  Payments="0.0" 
 
-                  &lt;/LineItems&gt;
+                  EndingBalance="1722.4500" 
 
-              &lt;/Invoice&gt;
+                  CurrentOutstandingBalance="1722.4500">
 
-          &lt;/GetInvoiceDetailsResult&gt;
+                  <Invoice ID="RSDA9278D23F" 
 
-      &lt;/GetInvoiceDetailsResponse&gt;
+                      Terms="Upon Receipt" 
 
-  &lt;/soap:Body&gt;
+                      CompanyName="Demo Account" 
 
-&lt;/soap:Envelope&gt;
+                      AccountAlias="1000" 
 
-</pre>
+                      Address1="123 100th St NE" 
+
+                      City="Bellevue" 
+
+                      StateProvince="WA" 
+
+                      PostalCode="98155" 
+
+                      BillingContactEmail="user@company.com" 
+
+                      InvoiceCCEmail="" 
+
+                      TotalAmount="358.5600" 
+
+                      InvoiceDate="2012-09-30T23:00:00">
+
+                      <LineItems>
+
+                          <InvoiceLineItem Quantity="1" Description="Group 1" UnitCost="103.5800" ItemTotal="103.5800" ServiceLocation="WA1">
+
+                              <ItemDetails>
+
+                                  <LineItemDetail Description="SERVER123" Cost="103.5800" /></ItemDetails>
+
+                          </InvoiceLineItem>
+
+                          <InvoiceLineItem Quantity="1" Description="Group 2" UnitCost="252.9800" ItemTotal="252.9800" ServiceLocation="WA1">
+
+                              <ItemDetails><LineItemDetail Description="SERVER987" Cost="252.9800" /></ItemDetails>
+
+                              </InvoiceLineItem>
+
+                          <InvoiceLineItem Quantity="1" Description="External IP Address (QA1)" UnitCost="2.0000" ItemTotal="2.0000" ServiceLocation="WA1">
+
+                              <ItemDetails />
+
+                          </InvoiceLineItem>
+
+                      </LineItems>
+
+                  </Invoice>
+
+              </GetInvoiceDetailsResult>
+
+          </GetInvoiceDetailsResponse>
+
+      </soap:Body>
+
+    </soap:Envelope>
 
 ### Status Codes
+
 <table>
-    <thead>
+  <thead>
   <tr>
     <th>Status Code</th>
     <th>Description</th>

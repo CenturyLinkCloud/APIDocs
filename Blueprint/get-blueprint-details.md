@@ -5,18 +5,19 @@
   "attachments": []
 }}}
 
-
 Gets the full details of the specified Blueprint.
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Blueprint/GetBlueprintDetails/&lt;format&gt;
+    REST: https://api.tier3.com/REST/Blueprint/GetBlueprintDetails/<format>
     SOAP: https://api.tier3.com/SOAP/Blueprints.asmx?op=GetBlueprintDetailsResponseMsg
 
 ## Request
+
 ### Attributes
+
 <table>
-    <thead>
+  <thead>
     <tr>
       <th>Name</th>
       <th>Type</th>
@@ -39,14 +40,24 @@ Gets the full details of the specified Blueprint.
 </table>
 
 ### Examples
-<h4>JSON</h4>
-<pre>{ "ID": "1" }</pre>
 
-<h4>XML</h4>
-<pre>&lt;BlueprintRequest&gt;<br />    &lt;ID&gt;1&lt;/ID&gt;<br />&lt;/BlueprintRequest&gt;&nbsp;</pre> 
+#### JSON
+
+    { "ID": "1" }
+
+#### XML
+
+    <BlueprintRequest>
+
+        <ID>1</ID>
+
+    </BlueprintRequest>
+
 
 ## Response
+
 ### Attributes
+
 <table>
   <thead>
   <tr>
@@ -80,6 +91,7 @@ Gets the full details of the specified Blueprint.
 </table>
 
 ### BlueprintDetails Attributes
+
 <table>
   <thead>
   <tr>
@@ -137,20 +149,61 @@ Gets the full details of the specified Blueprint.
 </table>
 
 ### Examples
-<h4>JSON</h4>
-<pre>{<br />    "BlueprintDetails":{<br />        "ID":1,<br />        "Name":"Blueprint 01",<br />        "Visibility":1,<br />        "Status":1,<br />        "Author":"Tier 3",<br />        "Capabilities":["Web Applications","CDN"],<br />        "Description":"This is the first Blueprint"<br />    },<br />    "Success":true,<br />    "Message":"Success",<br />    "StatusCode":0<br />}</pre>
 
-<h4>XML</h4>
-<pre>&lt;GetBlueprintDetailsResponse Success="true" Message="Success" StatusCode="0"&gt;<br />    &lt;BlueprintDetails ID="1" Status="1" Visibility="1"&gt;<br />        &lt;Name&gt;Blueprint 01&lt;/Name&gt;<br />        &lt;Author&gt;Tier 3&lt;/Author&gt;<br />        &lt;Description&gt;This is the first Blueprint&lt;/Description&gt;<br />    &lt;/BlueprintDetails&gt;<br />&lt;/GetBlueprintDetailsResponse&gt;
-</pre>
+#### JSON
+
+    {
+
+      "BlueprintDetails":{
+
+        "ID":1,
+
+        "Name":"Blueprint 01",
+
+        "Visibility":1,
+
+        "Status":1
+
+        "Author":"Tier 3",
+
+        "Capabilities":["Web Applications","CDN"],
+
+        "Description":"This is the first Blueprint"
+
+      },
+
+      "Success":true,
+
+      "Message":"Success",
+
+      "StatusCode":0
+
+    }
+
+#### XML
+
+    <GetBlueprintDetailsResponse Success="true" Message="Success" StatusCode="0">
+
+        <BlueprintDetails ID="1" Status="1" Visibility="1">
+
+            <Name>Blueprint 01</Name>
+
+            <Author>Tier 3</Author>
+
+            <Description>This is the first Blueprint</Description>
+
+        </BlueprintDetails>
+
+    </GetBlueprintDetailsResponse>
 
 ### Status Codes
+
 <table>
-    <thead>
-  <tr>
-    <th>Status Code</th>
-    <th>Description</th>
-  </tr>
+  <thead>
+    <tr>
+      <th>Status Code</th>
+      <th>Description</th>
+    </tr>
   </thead>
   <tbody>
     <tr>

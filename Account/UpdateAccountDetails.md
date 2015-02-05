@@ -5,18 +5,19 @@
   "attachments": []
 }}}
 
-
 Make changes to an existing account in the Tier 3 system. Calls to this operation must include an authorization cookie acquired from the <a href="/api-docs#authentication-logon">Logon operation.</a>
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Account/UpdateAccountDetails/&lt;format&gt; (format = XML | JSON)
+    REST: https://api.tier3.com/REST/Account/UpdateAccountDetails/<format> (format = XML | JSON)
     SOAP: https://api.tier3.com/SOAP/Account.asmx?op=UpdateAccountDetails
 
 ## Request
+
 ### Attributes
+
 <table>
-    <thead>
+  <thead>
     <tr>
       <th>Name</th>
       <th>Type</th>
@@ -101,96 +102,126 @@ Make changes to an existing account in the Tier 3 system. Calls to this operatio
 </table>
 
 ### Examples
-<h4>JSON (REST)</h4>
-<pre>{<br />     "AccountAlias":"1001",<br />     "BusinessName":"Demo Biz",<br />     "Address1":"110 110th Avenue",<br />     "Address2":null,<br />     "City":"Bellevue",<br />     "StateProvince":"WA",<br />     "PostalCode":"98004",<br />     "Country":"USA",<br />     "Telephone":"877-388-4373",<br />     "Fax":null,<br />     "TimeZone":"Pacific Standard Time",<br />     "ShareParentNetworks":"true"<br />}</pre>
-<h4>XML (REST)</h4>
-<pre>&lt;UpdateAccountDetailsRequest&gt; 
 
-  &lt;AccountAlias&gt;1001&lt;/AccountAlias&gt;
+#### JSON (REST)
 
-  &lt;BusinessName&gt;Demo Biz&lt;/BusinessName&gt; 
+    {
 
-  &lt;Address1&gt;110 110th Avenue&lt;/Address1&gt; 
+      "AccountAlias":"1001",
 
-  &lt;Address2&gt;Suite 520&lt;/Address2&gt; 
+      "BusinessName":"Demo Biz",
 
-  &lt;City&gt;Bellevue&lt;/City&gt; 
+      "Address1":"110 110th Avenue",
 
-  &lt;StateProvince&gt;WA&lt;/StateProvince&gt; 
+      "Address2":null,
 
-  &lt;PostalCode&gt;98004&lt;/PostalCode&gt; 
+      "City":"Bellevue",
 
-  &lt;Country&gt;USA&lt;/Country&gt; 
+      "StateProvince":"WA",
 
-  &lt;Telephone&gt;877-388-4373&lt;/Telephone&gt; 
+      "PostalCode":"98004",
 
-  &lt;Fax&gt;&lt;/Fax&gt; 
+      "Country":"USA",
 
-  &lt;TimeZone&gt;Pacific Standard Time&lt;/TimeZone&gt; 
+      "Telephone":"877-388-4373",
 
-  &lt;ShareParentNetworks&gt;true&lt;/ShareParentNetworks&gt; 
+      "Fax":null,
 
-&lt;/UpdateAccountDetailsRequest&gt;
+      "TimeZone":"Pacific Standard Time",
 
-  </pre>
-<h4>XML (SOAP)</h4>
-<pre>&lt;soap12:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      "ShareParentNetworks":"true"
 
-              xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+    }
 
-              xmlns:soap12="http://www.w3.org/2003/05/soap-envelope"&gt;
+#### XML (REST)
 
-  &lt;soap12:Body&gt;
+    <UpdateAccountDetailsRequest> 
 
-      &lt;UpdateAccountDetails xmlns="http://www.tier3.com/"&gt;
+      <AccountAlias>1001</AccountAlias>
 
-          &lt;request&gt;
+      <BusinessName>Demo Biz</BusinessName> 
 
-          &lt;AccountAlias&gt;1001&lt;/AccountAlias&gt;
+      <Address1>110 110th Avenue</Address1> 
 
-          &lt;BusinessName&gt;Demo Biz&lt;/BusinessName&gt;
+      <Address2>Suite 520</Address2> 
 
-          &lt;Address1&gt;110 110th Avenue&lt;/Address1&gt;
+      <City>Bellevue</City> 
 
-          &lt;Address2&gt;Suite 520&lt;/Address2&gt;
+      <StateProvince>WA</StateProvince> 
 
-          &lt;City&gt;Bellevue&lt;/City&gt;
+      <PostalCode>98004</PostalCode> 
 
-          &lt;StateProvince&gt;WA&lt;/StateProvince&gt;
+      <Country>USA</Country> 
 
-          &lt;PostalCode&gt;98004&lt;/PostalCode&gt;
+      <Telephone>877-388-4373</Telephone> 
 
-          &lt;Country&gt;USA&lt;/Country&gt;
+      <Fax></Fax> 
 
-          &lt;Telephone&gt;877-388-4373&lt;/Telephone&gt;
+      <TimeZone>Pacific Standard Time</TimeZone> 
 
-          &lt;Fax&gt;&lt;/Fax&gt;
+      <ShareParentNetworks>true</ShareParentNetworks> 
 
-          &lt;TimeZone&gt;Pacific Standard Time&lt;/TimeZone&gt;
+    </UpdateAccountDetailsRequest>
 
-          &lt;ShareParentNetworks&gt;true&lt;/ShareParentNetworks&gt;
+#### XML (SOAP)
 
-          &lt;/request&gt;
+    <soap12:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 
-      &lt;/UpdateAccountDetails&gt;
+                  xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
 
-  &lt;/soap12:Body&gt; 
+                  xmlns:soap12="http://www.w3.org/2003/05/soap-envelope">
 
-&lt;/soap12:Envelope&gt;  
+      <soap12:Body>
 
-</pre> 
+          <UpdateAccountDetails xmlns="http://www.tier3.com/">
+
+              <request>
+
+              <AccountAlias>1001</AccountAlias>
+
+              <BusinessName>Demo Biz</BusinessName>
+
+              <Address1>110 110th Avenue</Address1>
+
+              <Address2>Suite 520</Address2>
+
+              <City>Bellevue</City>
+
+              <StateProvince>WA</StateProvince>
+
+              <PostalCode>98004</PostalCode>
+
+              <Country>USA</Country>
+
+              <Telephone>877-388-4373</Telephone>
+
+              <Fax></Fax>
+
+              <TimeZone>Pacific Standard Time</TimeZone>
+
+              <ShareParentNetworks>true</ShareParentNetworks>
+
+              </request>
+
+          </UpdateAccountDetails>
+
+      </soap12:Body> 
+
+    </soap12:Envelope>  
 
 ## Response
+
 ### Attributes
+
 <table>
   <thead>
-  <tr>
-    <th>Name</th>
-    <th>Type</th>
-    <th>Description</th>
-  </tr>
-</thead>
-<tbody>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
     <tr>
       <td>Success</td>
       <td>Boolean</td>
@@ -213,16 +244,18 @@ Make changes to an existing account in the Tier 3 system. Calls to this operatio
     </tr>
   </tbody>
 </table>
-<h3>AccountDetails Attributes</h3>
+
+### AccountDetails Attributes
+
 <table>
   <thead>
-  <tr>
-    <th>Name</th>
-    <th>Type</th>
-    <th>Description</th>
-  </tr>
-</thead>
-<tbody>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
     <tr>
       <td>AccountAlias</td>
       <td>String</td>
@@ -305,88 +338,134 @@ Make changes to an existing account in the Tier 3 system. Calls to this operatio
 </table>
 
 ### Examples
-<h4>JSON (REST)</h4>
-<pre>{<br />     "AccountDetails":{<br />       "AccountAlias":"1001",<br />       "ParentAlias":"1000",<br />       "Location":"WA1",<br />       "BusinessName":"Demo Biz",<br />       "Address1":"110 110th Avenue",<br />       "Address2":null,<br />       "City":"Bellevue",<br />       "StateProvince":"WA",<br />       "PostalCode":"98004",<br />       "Country":"USA",<br />       "Telephone":"877-388-4373",<br />       "Fax":null,<br />       "TimeZone":"Pacific Standard Time",<br />       "Status":1,<br />       "ShareParentNetworks":true<br />     },<br />     "Success":true,<br />     "Message":"Account details successfully updated.",<br />     "StatusCode":0<br />}</pre>
-<h4>XML (REST)</h4>
-<pre>&lt;AccountDetailsResponse Success="true" Message="Account details successfully updated." StatusCode="0"&gt;
 
-     &lt;AccountDetails AccountAlias="1001" ParentAlias="1000" Location="WA1" TimeZone="Pacific Standard Time" Status="1" ShareParentNetworks="true"&gt;
+#### JSON (REST)
 
-         &lt;BusinessName&gt;Demo Biz&lt;/BusinessName&gt;
+    {
 
-         &lt;Address1&gt;110 110th Avenue&lt;/Address1&gt;
+      "AccountDetails":{
 
-         &lt;Address2&gt;Suite 520&lt;/Address2&gt;
+        "AccountAlias":"1001",
 
-         &lt;City&gt;Bellevue&lt;/City&gt;
+        "ParentAlias":"1000",
 
-         &lt;StateProvince&gt;WA&lt;/StateProvince&gt;
+        "Location":"WA1",
 
-         &lt;PostalCode&gt;98004&lt;/PostalCode&gt;
+        "BusinessName":"Demo Biz"
 
-         &lt;Country&gt;USA&lt;/Country&gt;
+        "Address1":"110 110th Avenue",
 
-         &lt;Telephone&gt;877-388-4373&lt;/Telephone&gt;
+        "Address2":null,
 
-         &lt;Fax /&gt;
+        "City":"Bellevue",
 
-     &lt;/AccountDetails&gt;
+        "StateProvince":"WA",
 
-&lt;/AccountDetailsResponse&gt;
+        "PostalCode":"98004",
 
-  </pre>
-<h4>XML (SOAP)</h4>
-<pre>&lt;soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" 
+        "Country":"USA",
 
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        "Telephone":"877-388-4373",
 
-  xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+        "Fax":null,
 
-  &lt;soap:Body&gt;
+        "TimeZone":"Pacific Standard Time",
 
-      &lt;UpdateAccountDetailsResponse xmlns="http://www.tier3.com/"&gt;
+        "Status":1,
 
-          &lt;UpdateAccountDetailsResult Success="true" Message="Account details successfully updated." StatusCode="0"&gt;
+        "ShareParentNetworks":true
 
-              &lt;AccountDetails AccountAlias="1001" ParentAlias="1000" Location="WA1" TimeZone="Pacific Standard Time" Status="1" ShareParentNetworks="true"&gt;
+      },
 
-                  &lt;BusinessName&gt;Demo Biz&lt;/BusinessName&gt;
+      "Success":true,
 
-                  &lt;Address1&gt;110 110th Avenue&lt;/Address1&gt;
+      "Message":"Account details successfully updated.",
 
-                  &lt;Address2&gt;Suite 520&lt;/Address2&gt;
+      "StatusCode":0
 
-                  &lt;City&gt;Bellevue&lt;/City&gt;
+    }
 
-                  &lt;StateProvince&gt;WA&lt;/StateProvince&gt;
+#### XML (REST)
 
-                  &lt;PostalCode&gt;98004&lt;/PostalCode&gt;
+    <AccountDetailsResponse Success="true" Message="Account details successfully updated." StatusCode="0">
 
-                  &lt;Country&gt;USA&lt;/Country&gt;
+         <AccountDetails AccountAlias="1001" ParentAlias="1000" Location="WA1" TimeZone="Pacific Standard Time" Status="1" ShareParentNetworks="true">
 
-                  &lt;Telephone&gt;877-388-4373&lt;/Telephone&gt;
+             <BusinessName>Demo Biz</BusinessName>
 
-                  &lt;Fax /&gt;
+             <Address1>110 110th Avenue</Address1>
 
-              &lt;/AccountDetails&gt;
+             <Address2>Suite 520</Address2>
 
-          &lt;/UpdateAccountDetailsResult&gt;
+             <City>Bellevue</City>
 
-      &lt;/UpdateAccountDetailsResponse&gt;
+             <StateProvince>WA</StateProvince>
 
-  &lt;/soap:Body&gt;
+             <PostalCode>98004</PostalCode>
 
-&lt;/soap:Envelope&gt;
+             <Country>USA</Country>
 
-</pre>
+             <Telephone>877-388-4373</Telephone>
+
+             <Fax />
+
+         </AccountDetails>
+
+    </AccountDetailsResponse>
+
+
+#### XML (SOAP)
+
+    <soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" 
+
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+      <soap:Body>
+
+          <UpdateAccountDetailsResponse xmlns="http://www.tier3.com/">
+
+              <UpdateAccountDetailsResult Success="true" Message="Account details successfully updated." StatusCode="0">
+
+                  <AccountDetails AccountAlias="1001" ParentAlias="1000" Location="WA1" TimeZone="Pacific Standard Time" Status="1" ShareParentNetworks="true">
+
+                      <BusinessName>Demo Biz</BusinessName>
+
+                      <Address1>110 110th Avenue</Address1>
+
+                      <Address2>Suite 520</Address2>
+
+                      <City>Bellevue</City>
+
+                      <StateProvince>WA</StateProvince>
+
+                      <PostalCode>98004</PostalCode>
+
+                      <Country>USA</Country>
+
+                      <Telephone>877-388-4373</Telephone>
+
+                      <Fax />
+
+                  </AccountDetails>
+
+              </UpdateAccountDetailsResult>
+
+          </UpdateAccountDetailsResponse>
+
+      </soap:Body>
+
+    </soap:Envelope>
 
 ### Status Codes
+
 <table>
-    <thead>
-  <tr>
-    <th>Status Code</th>
-    <th>Description</th>
-  </tr>
+  <thead>
+    <tr>
+      <th>Status Code</th>
+      <th>Description</th>
+    </tr>
   </thead>
   <tbody>
     <tr>
@@ -456,14 +535,16 @@ Make changes to an existing account in the Tier 3 system. Calls to this operatio
   </tbody>
 </table>
 
-
 ### Valid Timezone Entries
+
 <table>
-  <tbody>
+  <thead>
     <tr>
-      <td><strong>Timezone Value</strong>
-      </td>
+      <th>Timezone Value</th>
     </tr>
+  </thead>
+  <tbody>
+    
     <tr>
       <td>Dateline Standard Time
         <br /> UTC-11

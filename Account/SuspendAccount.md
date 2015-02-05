@@ -9,13 +9,15 @@ Disable an existing account in the Tier 3 system. Calls to this operation must i
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Account/SuspendAccount/&lt;format&gt; (format = XML | JSON)
+    REST: https://api.tier3.com/REST/Account/SuspendAccount/<format> (format = XML | JSON)
     SOAP: https://api.tier3.com/SOAP/Account.asmx?op=SuspendAccount
 
 ## Request
+
 ### Attributes
+
 <table>
-    <thead>
+  <thead>
     <tr>
       <th>Name</th>
       <th>Type</th>
@@ -34,46 +36,60 @@ Disable an existing account in the Tier 3 system. Calls to this operation must i
 </table>
 
 ### Examples
-<h4>JSON (REST)</h4>
-<pre>{ <br />    "AccountAlias": "1000"<br />}</pre>
-<h4>XML (REST)</h4>
-<pre>&lt;AccountStatusRequest&gt;<br />     &lt;AccountAlias&gt;1000&lt;/AccountAlias&gt;<br />&lt;/AccountStatusRequest&gt;</pre>
-<h4>XML (SOAP)</h4>
-<pre>&lt;soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 
-        xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+#### JSON (REST)
 
-        xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"&gt;
+    {
 
-  &lt;soap:Body&gt;
+      "AccountAlias": "1000"
 
-    &lt;SuspendAccount xmlns="http://www.tier3.com/"&gt;
+    }
 
-      &lt;request&gt;
+#### XML (REST)
 
-         &lt;AccountAlias&gt;1000&lt;/AccountAlias&gt;
+    <AccountStatusRequest>
 
-      &lt;/request&gt;
+      <AccountAlias>1000</AccountAlias>
 
-    &lt;/SuspendAccount&gt;
+    </AccountStatusRequest>
 
-  &lt;/soap:Body&gt;
+#### XML (SOAP
 
-&lt;/soap:Envelope&gt;  
+    <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 
-</pre> 
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+
+            xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+
+      <soap:Body>
+
+        <SuspendAccount xmlns="http://www.tier3.com/">
+
+          <request>
+
+             <AccountAlias>1000</AccountAlias>
+
+          </request>
+
+        </SuspendAccount>
+
+      </soap:Body>
+
+    </soap:Envelope>  
 
 ## Response
+
 ### Attributes
+
 <table>
   <thead>
-  <tr>
-    <th>Name</th>
-    <th>Type</th>
-    <th>Description</th>
-  </tr>
-</thead>
-<tbody>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
     <tr>
       <td>Success</td>
       <td>Boolean</td>
@@ -98,51 +114,58 @@ Disable an existing account in the Tier 3 system. Calls to this operation must i
 </table>
 
 ### Examples
-<h4>JSON (REST)</h4>
-<pre>{
 
-  "Success": true,
+#### JSON (REST)
 
-  "Message": "Account Suspended.",
+    {
 
-  "StatusCode": 0,
+      "Success": true,
 
-  "RequestID": 100
+      "Message": "Account Suspended.",
 
-}</pre>
-<h4>XML (REST)</h4>
-<pre>&lt;QueuedItemResponse Success="true" Message="Account Suspended." StatusCode="0"&gt;
+      "StatusCode": 0,
 
-    &lt;RequestID&gt;100&lt;/RequestID&gt;
+      "RequestID": 100
 
-&lt;/QueuedItemResponse&gt;</pre>
-<h4>XML (SOAP)</h4>
-<pre>&lt;soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+    }
 
-&lt;soap:Body&gt;
+#### XML (REST)
 
-    &lt;SuspendAccountResponse xmlns="http://www.tier3.com/"&gt;
+    <QueuedItemResponse Success="true" Message="Account Suspended." StatusCode="0">
 
-    &lt;QueuedItemResponse Success="true" Message="Account Suspended." StatusCode="0"&gt;
+        <RequestID>100</RequestID>
 
-        &lt;ResponseID&gt;100&lt;/ResponseID&gt;
+    </QueuedItemResponse>
 
-    &lt;/QueuedItemResponse&gt;
+#### XML (SOAP)
 
-&lt;/SuspendAccountResponse&gt;
+    <soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 
-&lt;/soap:Body&gt;
+    <soap:Body>
 
-&lt;/soap:Envelope&gt;
-</pre>
+        <SuspendAccountResponse xmlns="http://www.tier3.com/">
+
+        <QueuedItemResponse Success="true" Message="Account Suspended." StatusCode="0">
+
+            <ResponseID>100</ResponseID>
+
+        </QueuedItemResponse>
+
+    </SuspendAccountResponse>
+
+    </soap:Body>
+
+    </soap:Envelope>
+
 
 ### Status Codes
+
 <table>
-    <thead>
-  <tr>
-    <th>Status Code</th>
-    <th>Description</th>
-  </tr>
+  <thead>
+    <tr>
+      <th>Status Code</th>
+      <th>Description</th>
+    </tr>
   </thead>
   <tbody>
     <tr>
