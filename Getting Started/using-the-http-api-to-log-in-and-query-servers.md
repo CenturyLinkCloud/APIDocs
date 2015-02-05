@@ -32,16 +32,18 @@ In this article, we'll walk through the steps necessary to authenticate a user a
     ```
 
 2. Create an HTTP request object that points to the API's Login URL. Set the method of the request to the HTTP POST verb.
-
+    
+    ```
     //set URL for login operation
 
     HttpWebRequest req = WebRequest.Create("https://api.tier3.com/REST/Auth/Logon/") as HttpWebRequest;
 
     req.Method = "POST";
+    ```
 
 3. Users of the Tier 3 HTTP API can use either XML or JSON to interact with the service endpoints. The next step is to create the payload for the Login service. In the example below, both an XML and JSON payload are shown. Notice that the "content type" of the HTTP request must match the data format being sent to the service.
 
-
+    ```
     //build up payload message (XML)
 
     //string payload = string.Format("<LogonRequest><APIKey>{0}</APIKey><Password>{1}</Password></LogonRequest>", key, pw); ;
@@ -75,10 +77,12 @@ In this article, we'll walk through the steps necessary to authenticate a user a
         postStream.Write(byteData, 0, byteData.Length);
 
     }
+    ```
 
 
 4. Parse the response and save the cookie for future API calls. A valid cookie looks like: <strong>Tier3.API.Cookie=Seed=[seed value]; expires=Fri, 01-Mar-2013 21:59:58 GMT; path=/; HttpOnly</strong>
 
+    ```
     //create variable to hold cookie; there is a shortcut in .NET, but this demo uses the most basic technique
 
     string authCookie = string.Empty;
@@ -94,9 +98,11 @@ In this article, we'll walk through the steps necessary to authenticate a user a
          authCookie = resp.Headers["Set-Cookie"];
 
     }
+    ```
 
 5. With an authentication cookie handy, you can now invoke an API operation such as GetServers, which returns the servers within a particular Tier 3 group. First, create a reference to the HTTP URL of the operation. Notice that the method is set to POST and the authentication cookie is added to the HTTP header of the request.
 
+    ```
     //create new web request
 
     HttpWebRequest reqQuery = WebRequest.Create("https://api.tier3.com/REST/Server/GetServers/") as HttpWebRequest;
@@ -104,9 +110,11 @@ In this article, we'll walk through the steps necessary to authenticate a user a
     reqQuery.Method = "POST";
 
     reqQuery.Headers.Add("Cookie", authCookie);
+    ```
 
 6. As with above, requests to the service can be done with JSON or XML payloads. Both examples are shown below.
 
+    ```
     //set query variables
 
     string groupId = "[group ID]";
@@ -128,9 +136,11 @@ In this article, we'll walk through the steps necessary to authenticate a user a
     string queryPayload = string.Format("{'AccountAlias':'{0}', 'HardwareGroupID':'{1}'}", acctAlias, groupId);
 
     reqQuery.ContentType = "application/json";
+    ```
 
 7. Send the request message to the endpoint and retrieve the response payload.
 
+    ```
     //convert message to send to byte array
 
     byte[] byteDataQuery = UTF8Encoding.UTF8.GetBytes(queryPayload.ToString());
@@ -174,5 +184,6 @@ In this article, we'll walk through the steps necessary to authenticate a user a
          }
 
     }
+    ```
 
 8. Process the response as XML or JSON, depending on how it was returned.
