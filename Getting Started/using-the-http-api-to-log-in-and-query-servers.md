@@ -22,6 +22,7 @@ In this article, we'll walk through the steps necessary to authenticate a user a
 ### Detailed Steps
 
 1. Create variables to hold the API credentials used to call the Tier 3 API.
+
     ```
     //set API credentials
 
@@ -31,7 +32,7 @@ In this article, we'll walk through the steps necessary to authenticate a user a
     ```
 
 2. Create an HTTP request object that points to the API's Login URL. Set the method of the request to the HTTP POST verb.
-  
+    
     ```
     //set URL for login operation
 
@@ -41,6 +42,7 @@ In this article, we'll walk through the steps necessary to authenticate a user a
     ```
 
 3. Users of the Tier 3 HTTP API can use either XML or JSON to interact with the service endpoints. The next step is to create the payload for the Login service. In the example below, both an XML and JSON payload are shown. Notice that the "content type" of the HTTP request must match the data format being sent to the service.
+
     ```
     //build up payload message (XML)
 
@@ -55,16 +57,16 @@ In this article, we'll walk through the steps necessary to authenticate a user a
     string payload = string.Format("{'APIKey':'0}', 'Password':'{1}}'}", key, pw);
 
     req.ContentType = "application/json";
+    ```
 
-    4. Send the payload to the Login operation.
+4. Send the payload to the Login operation.
 
+    ```
     //convert message to send to byte array
 
     byte[] byteData = UTF8Encoding.UTF8.GetBytes(payload.ToString());
 
     req.ContentLength = byteData.Length;
-
-
 
     //put request into stream
 
@@ -78,14 +80,12 @@ In this article, we'll walk through the steps necessary to authenticate a user a
     ```
 
 
-4. Parse the response and save the cookie for future API calls. A valid cookie looks like: <strong>Tier3.API.Cookie=Seed=[seed value]; expires=Fri, 01-Mar-2013 21:59:58 GMT; path=/; HttpOnly</strong>
+5. Parse the response and save the cookie for future API calls. A valid cookie looks like: <strong>Tier3.API.Cookie=Seed=[seed value]; expires=Fri, 01-Mar-2013 21:59:58 GMT; path=/; HttpOnly</strong>
 
     ```
     //create variable to hold cookie; there is a shortcut in .NET, but this demo uses the most basic technique
 
     string authCookie = string.Empty;
-
-
 
     //get response and process it
 
@@ -98,7 +98,7 @@ In this article, we'll walk through the steps necessary to authenticate a user a
     }
     ```
 
-5. With an authentication cookie handy, you can now invoke an API operation such as GetServers, which returns the servers within a particular Tier 3 group. First, create a reference to the HTTP URL of the operation. Notice that the method is set to POST and the authentication cookie is added to the HTTP header of the request.
+6. With an authentication cookie handy, you can now invoke an API operation such as GetServers, which returns the servers within a particular Tier 3 group. First, create a reference to the HTTP URL of the operation. Notice that the method is set to POST and the authentication cookie is added to the HTTP header of the request.
 
     ```
     //create new web request
@@ -110,7 +110,7 @@ In this article, we'll walk through the steps necessary to authenticate a user a
     reqQuery.Headers.Add("Cookie", authCookie);
     ```
 
-6. As with above, requests to the service can be done with JSON or XML payloads. Both examples are shown below.
+7. As with above, requests to the service can be done with JSON or XML payloads. Both examples are shown below.
 
     ```
     //set query variables
@@ -119,15 +119,11 @@ In this article, we'll walk through the steps necessary to authenticate a user a
 
     string acctAlias = "[alias]";
 
-
-
     //build up payload message (XML)
 
     //string queryPayload = string.Format("<GetServersRequest><AccountAlias>{0}</AccountAlias><HardwareGroupID>{1}</HardwareGroupID></GetServersRequest>", acctAlias, groupId);
 
     //reqQuery.ContentType = "text/xml";
-
-
 
     //build up payload message (JSON)
 
@@ -136,7 +132,7 @@ In this article, we'll walk through the steps necessary to authenticate a user a
     reqQuery.ContentType = "application/json";
     ```
 
-7. Send the request message to the endpoint and retrieve the response payload.
+8. Send the request message to the endpoint and retrieve the response payload.
 
     ```
     //convert message to send to byte array
@@ -145,11 +141,7 @@ In this article, we'll walk through the steps necessary to authenticate a user a
 
     reqQuery.ContentLength = byteDataQuery.Length;
 
-
-
     string queryResponse = string.Empty;
-
-
 
     //put request into stream
 
@@ -160,8 +152,6 @@ In this article, we'll walk through the steps necessary to authenticate a user a
        postStream.Write(byteDataQuery, 0, byteDataQuery.Length);
 
     }
-
-
 
     //invoke service
 
@@ -184,4 +174,4 @@ In this article, we'll walk through the steps necessary to authenticate a user a
     }
     ```
 
-8. Process the response as XML or JSON, depending on how it was returned.
+9. Process the response as XML or JSON, depending on how it was returned.
