@@ -22,7 +22,6 @@ In this article, we'll walk through the steps necessary to authenticate a user a
 ### Detailed Steps
 
 1. Create variables to hold the API credentials used to call the Tier 3 API.
-
     ```
     //set API credentials
 
@@ -32,7 +31,7 @@ In this article, we'll walk through the steps necessary to authenticate a user a
     ```
 
 2. Create an HTTP request object that points to the API's Login URL. Set the method of the request to the HTTP POST verb.
-    
+  
     ```
     //set URL for login operation
 
@@ -42,9 +41,7 @@ In this article, we'll walk through the steps necessary to authenticate a user a
     ```
 
 3. Users of the Tier 3 HTTP API can use either XML or JSON to interact with the service endpoints. The next step is to create the payload for the Login service. In the example below, both an XML and JSON payload are shown. Notice that the "content type" of the HTTP request must match the data format being sent to the service.
-
     ```
-    
     //build up payload message (XML)
 
     //string payload = string.Format("<LogonRequest><APIKey>{0}</APIKey><Password>{1}</Password></LogonRequest>", key, pw); ;
