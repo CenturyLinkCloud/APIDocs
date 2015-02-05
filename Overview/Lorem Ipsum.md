@@ -15,7 +15,7 @@ This is a description and summary of the what this API endpoint provides, and ho
 
 <div class="kb-api-urls">
   <div class="kb-api-urls-inner">
-    <p>REST: <span class="url"><code>https://api.tier3.com/REST/DomainName/Overview/</code></span>[format](format =  XML | JSON)</p>
+    <p>REST: <span class="url"><code>https://api.tier3.com/REST/DomainName/Overview/</code></span>&lt;format&gt;</p>
     <p>SOAP: <span class="url"><code>https://api.tier3.com/SOAP/DomainName/Overview/</code></span></p>
   </div>
 </div>
