@@ -50,8 +50,6 @@ In this article, we'll walk through the steps necessary to authenticate a user a
 
     //req.ContentType = "text/xml";
 
-                
-
     //build up payload message (JSON)
 
     string payload = string.Format("{'APIKey':'0}', 'Password':'{1}}'}", key, pw);
