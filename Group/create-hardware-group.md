@@ -84,7 +84,9 @@ Creates a new Hardware Group.
     </CreateHardwareGroupRequest>
 
 ## Response
+
 ### Attributes
+
 <table>
   <thead>
   <tr>
@@ -118,6 +120,7 @@ Creates a new Hardware Group.
 </table>
 
 ### Group Attributes
+
 <table>
   <thead>
   <tr>

@@ -127,6 +127,7 @@ Pauses the Hardware Group along with all child groups and servers.
     </QueuedItemResponse>
 
 ### Status Codes
+
 <table>
   <thead>
   <tr>

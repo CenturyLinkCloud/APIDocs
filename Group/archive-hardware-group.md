@@ -66,6 +66,7 @@ Archives all Servers in the Group and then archives the Group.
 ## Response
 
 ### Attributes
+
 <table>
   <thead>
   <tr>
@@ -127,6 +128,7 @@ Archives all Servers in the Group and then archives the Group.
 
 
 ### Status Codes
+
 <table>
   <thead>
   <tr>

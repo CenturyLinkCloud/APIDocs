@@ -20,6 +20,10 @@ This is a description and summary of the what this API endpoint provides, and ho
   </div>
 </div>
 
+```
+REST: https://api.tier3.com/REST/DomainName/Overview/
+```
+
 
 ## Request
 ### Attributes

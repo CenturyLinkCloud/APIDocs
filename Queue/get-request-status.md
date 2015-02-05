@@ -171,6 +171,7 @@ This method can be used to check the status of any of the long running requests 
     }
 
 ## Status Codes
+
 <table>
   <thead>
     <tr>

@@ -9,11 +9,13 @@ Archives the server.
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Server/ArchiveServer/&lt;format&gt;
+    REST: https://api.tier3.com/REST/Server/ArchiveServer/<format>
     SOAP: https://api.tier3.com/SOAP/Server.asmx?op=ArchiveServer
 
 ## Request
+
 ### Attributes
+
 <table>
     <thead>
     <tr>
@@ -40,22 +42,25 @@ Archives the server.
 </table>
 
 ### Examples
-<h4>JSON</h4>
-<pre>{ "Name": "SERVER01" }</pre>
 
-<h4>XML</h4>
-<pre>&lt;ServerRequest&gt;
+#### JSON
 
-    &lt;AccountAlias&gt;UNK&lt;/AccountAlias&gt;
+    { "Name": "SERVER01" }
 
-    &lt;Name&gt;SERVER01&lt;/Name&gt;
+#### XML
 
-&lt;/ServerRequest&gt;</pre>
+    <ServerRequest>
 
-<pre>&nbsp;</pre> 
+        <AccountAlias>UNK</AccountAlias>
+
+        <Name>SERVER01</Name>
+
+    </ServerRequest>
 
 ## Response
+
 ### Attributes
+
 <table>
   <thead>
   <tr>
@@ -92,13 +97,32 @@ Archives the server.
 </table>
 
 ### Examples
-<h4>JSON</h4>
-<pre>{<br />    "RequestID:1,<br />    "Success":true,<br />    "Message":"Success",<br />    "StatusCode":0<br />}</pre>
 
-<h4>XML</h4>
-<pre>&lt;QueuedItemResponse Success="true" Message="Success" StatusCode="0"&gt;<br />&nbsp; &nbsp; &lt;RequestID&gt;1&lt;/RequestID&gt;<br />&lt;/QueuedItemResponse&gt;</pre>
+#### JSON
+
+    {
+
+      "RequestID:1,
+
+      "Success":true,
+
+      "Message":"Success",
+
+      "StatusCode":0
+
+    }
+
+#### XML
+
+    <QueuedItemResponse Success="true" Message="Success" StatusCode="0">
+
+        <RequestID>1</RequestID>
+
+    </QueuedItemResponse>
+
 
 ### Status Codes
+
 <table>
     <thead>
   <tr>

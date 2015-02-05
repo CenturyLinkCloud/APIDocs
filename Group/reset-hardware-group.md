@@ -15,6 +15,7 @@ Reset the Hardware Group along with all child groups and servers.
 ## Request
 
 ### Attributes
+
 <table>
   <thead>
     <tr>
