@@ -24,8 +24,8 @@ This method retrieves the list of Domain Names that your account has registered 
       <tr>
         <th>Name</th>
         <th>Type</th>
-        <th>Req.</th>
         <th>Description</th>
+        <th>Req.</th>
       </tr>
     </thead>
     <tbody>
@@ -33,8 +33,8 @@ This method retrieves the list of Domain Names that your account has registered 
     <tr>
       <td>Search</td>
       <td>String</td>
-      <td>No</td>
       <td>This text, if provided, will be used as a search value to filter your Domains. If not provided, all Domain Names will be retrieved.</td>
+      <td>No</td>
     </tr>
   </tbody>
 </table>
@@ -58,7 +58,9 @@ This method retrieves the list of Domain Names that your account has registered 
     }
 
 ## Response
+
 ### Attributes
+
 <table>
   <thead>
     <tr>
@@ -122,13 +124,13 @@ This method retrieves the list of Domain Names that your account has registered 
 
     <ListDomainNamesResponse Success="true" Message="The domain names were successfuly listed." StatusCode="0">
 
-      <Domains>
+        <Domains>
 
-        <DomainName AutoRenew="true" ExpirationDate="2011-05-24T00:00:00" ID="100001" Name="mycompany.com" />
+            <DomainName AutoRenew="true" ExpirationDate="2011-05-24T00:00:00" ID="100001" Name="mycompany.com" />
 
-        <DomainName AutoRenew="false" ExpirationDate="2011-05-24T00:00:00" ID="100001" Name="myotherdomain.com" />
+            <DomainName AutoRenew="false" ExpirationDate="2011-05-24T00:00:00" ID="100001" Name="myotherdomain.com" />
 
-      </Domains>
+        </Domains>
 
     </ListDomainNamesResponse>
 
@@ -173,6 +175,7 @@ This method retrieves the list of Domain Names that your account has registered 
     }
 
 ### Status Codes
+
 <table>
   <thead>
     <tr>

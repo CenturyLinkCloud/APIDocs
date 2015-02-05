@@ -14,9 +14,11 @@ Publishes a Blueprint Package for use within the Blueprint Designer.
     SOAP: https://api.tier3.com/SOAP/Blueprints.asmx?op=PublishPackage
 
 ## Request
+
 ### Attributes
+
 <table>
-    <thead>
+  <thead>
     <tr>
       <th>Name</th>
       <th>Type</th>
@@ -139,25 +141,54 @@ Publishes a Blueprint Package for use within the Blueprint Designer.
 
 ### Examples
 
-<h4>JSON</h4>
-<pre>{ <br />    "Classification": "2",<br />    "Name":"Script01.zip",<br />    "OperatingSystems":[4,5],<br />    "Visibility": "1" <br />}&nbsp;</pre>
+#### JSON
 
-<h4>XML</h4>
-<pre><PublishPackageRequest><br />&nbsp; &nbsp; <Classification>2</Classification><br />    <Name>Script01.zip</Name><br />    <OperatingSystems><br />        <OS>4</OS><br />        <OS>5</OS>&nbsp;
+    {
 
-  </OperatingSystems><br />&nbsp; &nbsp; <Visibility>1</Visibility><br /></PublishPackageRequest>&nbsp;</pre> 
+      "Classification": "2",
+
+      "Name":"Script01.zip",
+
+      "OperatingSystems":[4,5],
+
+      "Visibility": "1"
+
+    }
+
+#### XML
+
+    <PublishPackageRequest>
+
+        <Classification>2</Classification>
+
+        <Name>Script01.zip</Name>
+
+        <OperatingSystems>
+
+        <OS>4</OS>
+
+        <OS>5</OS>
+
+        </OperatingSystems>
+
+        <Visibility>1</Visibility>
+
+    </PublishPackageRequest>
+
 
 ## Response
+
 ### Attributes
+
 <table>
   <thead>
-  <tr>
-    <th>Name</th>
-    <th>Type</th>
-    <th>Description</th>
-  </tr>
-</thead>
-<tbody>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
     <tr>
       <td>Success</td>
       <td>Boolean</td>
@@ -185,22 +216,37 @@ Publishes a Blueprint Package for use within the Blueprint Designer.
 </table>
 
 ### Examples
-<h4>JSON</h4>
-<pre>{<br />&nbsp; &nbsp; "RequestID": 1,<br />&nbsp; &nbsp; "Success":true,<br />&nbsp; &nbsp; "Message":"Success",<br />&nbsp; &nbsp; "StatusCode":0<br />}</pre>
-<h4>XML</h4>
-<div>
-  <div>
-    <pre><QueuedItemResponse Success="true" Message="Success" StatusCode="0"><br />&nbsp; &nbsp; <RequestID>1</RequestID><br /></QueuedItemResponse></pre>
-  </div>
-</div>
+
+#### JSON
+
+    {
+
+      "RequestID": 1,
+
+      "Success":true,
+
+      "Message":"Success",
+
+      "StatusCode":0
+
+    }
+
+#### XML
+
+    <QueuedItemResponse Success="true" Message="Success" StatusCode="0">
+
+        <RequestID>1</RequestID>
+
+    </QueuedItemResponse>
 
 ### Status Codes
+
 <table>
-    <thead>
-  <tr>
-    <th>Status Code</th>
-    <th>Description</th>
-  </tr>
+  <thead>
+    <tr>
+      <th>Status Code</th>
+      <th>Description</th>
+    </tr>
   </thead>
   <tbody>
     <tr>

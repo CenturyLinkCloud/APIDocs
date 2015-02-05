@@ -16,6 +16,7 @@ This method provides the ability to update the AutoRenew attribute of your Domai
 ## Request
 
 ### Attributes
+
 <table>
   <tbody>
     <tr>
@@ -67,6 +68,7 @@ This method provides the ability to update the AutoRenew attribute of your Domai
     }
 
 ## Response
+
 ### Attributes
 
 <table>

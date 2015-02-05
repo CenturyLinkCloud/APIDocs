@@ -68,9 +68,11 @@ This method registers a new Domain Name with the Tier3 DNS service.
     }
 
 ## Response
+
 ### Attributes
+
 <table>
-    <thead>
+  <thead>
     <tr>
       <th>Name</th>
       <th>Type</th>
@@ -104,23 +106,24 @@ This method registers a new Domain Name with the Tier3 DNS service.
 
 #### JSON: 
 
-{
+    {
 
-  "Success":true,
+      "Success":true,
 
-  "Message":"The domain name was successfully registered.",
+      "Message":"The domain name was successfully registered.",
 
-  "StatusCode":0
+      "StatusCode":0
 
-}
+    }
 
 ### Status Codes
+
 <table>
   <thead>
-  <tr>
-    <th>Status Code</th>
-    <th>Description</th>
-  </tr>
+    <tr>
+      <th>Status Code</th>
+      <th>Description</th>
+    </tr>
   </thead>
   <tbody>
     <tr>

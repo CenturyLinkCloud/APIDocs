@@ -14,7 +14,9 @@ This method provides the ability to update the AutoRenew attribute of your Domai
     REST: https://api.tier3.com/REST/Domain/UpdateNameServers<format>
 
 ## Request
+
 ### Attributes
+
 <table>
   <tbody>
     <tr>
@@ -76,7 +78,9 @@ This method provides the ability to update the AutoRenew attribute of your Domai
     }
 
 ## Response
+
 ### Attributes
+
 <table>
   <thead>
     <tr>
@@ -123,12 +127,13 @@ This method provides the ability to update the AutoRenew attribute of your Domai
     }
 
 ### Status Codes
+
 <table>
-    <thead>
-  <tr>
-    <th>Status Code</th>
-    <th>Description</th>
-  </tr>
+  <thead>
+    <tr>
+      <th>Status Code</th>
+      <th>Description</th>
+    </tr>
   </thead>
   <tbody>
     <tr>

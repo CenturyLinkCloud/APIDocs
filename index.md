@@ -1,5 +1,6 @@
 {{{
   "category_order": [
+    "Getting Started",
     "Overview",
     "Authentication",
     "Account",
