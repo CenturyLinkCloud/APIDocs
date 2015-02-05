@@ -77,7 +77,6 @@ In this article, we'll walk through the steps necessary to authenticate a user a
     }
     ```
 
-
 5. Parse the response and save the cookie for future API calls. A valid cookie looks like: <strong>Tier3.API.Cookie=Seed=[seed value]; expires=Fri, 01-Mar-2013 21:59:58 GMT; path=/; HttpOnly</strong>
 
     ```
@@ -171,5 +170,5 @@ In this article, we'll walk through the steps necessary to authenticate a user a
 
     }
     ```
-
+    
 9. Process the response as XML or JSON, depending on how it was returned.
