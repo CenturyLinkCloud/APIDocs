@@ -47,7 +47,7 @@ REST: https://api.tier3.com/REST/DomainName/Overview/
 
   </div>
   <div class="kb-api-examples-content tab-content">
-    <div class="kb-api-examples-content__item tab-pane" id="json1">
+    <div class="kb-api-examples-content__item tab-pane active" id="json1">
       <pre>
         <code>
           some josn 1
