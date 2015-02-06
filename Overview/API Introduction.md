@@ -29,11 +29,13 @@ All requests will receive a response (in either JSON or XML format) with at leas
 
 Many API calls will also return additional information which will be described in detail.
 
+<div>
 ```ruby
 require 'redcarpet'
 markdown = Redcarpet.new("Hello World!")
 puts markdown.to_html
 ```
+</div>
 
 
 
