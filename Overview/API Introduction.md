@@ -38,7 +38,7 @@ h1
     <li role="presentation" class="active">
       <a href="#json" aria-controls="json" role="tab" data-toggle="tab">JSON</a>
     </li>
-    <li role="presentation" class="active">
+    <li role="presentation" class="">
       <a href="#xml" aria-controls="xml" role="tab" data-toggle="tab">XML</a>
     </li>
   </ul>
