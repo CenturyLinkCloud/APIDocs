@@ -38,9 +38,35 @@ REST: https://api.tier3.com/REST/DomainName/Overview/
 ## Examples
 
 <div class="kb-api-examples">
+
   <div class="kb-api-examples-header">
-    <a class="kb-api-example-title active">JSON(REST)</a>
-    <a class="kb-api-example-title">XML (REST)</a>
-    <a class="kb-api-example-title">XML (SOAP)</a>
+    
+    <a class="kb-api-example-title active" data-toggle="tab" data-target="#json1">JSON(REST)</a>
+    <a class="kb-api-example-title" data-toggle="tab" data-target="#xml1">XML (REST)</a>
+    <a class="kb-api-example-title" data-toggle="tab" data-target="#xml2">XML (SOAP)</a>
+
+  </div>
+  <div class="kb-api-examples-content tab-content">
+    <div class="kb-api-examples-content__item tab-pane active" id="json1">
+      <pre>
+        <code>
+some josn 1
+        </code>
+      </pre>
+    </div>
+    <div class="kb-api-examples-content__item tab-pane" id="xml1">
+      <pre>
+        <code>
+some xml 1
+        </code>
+      </pre>
+    </div>
+    <div class="kb-api-examples-content__item tab-pane" id="xml2">
+      <pre>
+        <code>
+some xml2
+        </code>
+      </pre>
+    </div>
   </div>
 </div>
