@@ -50,21 +50,21 @@ REST: https://api.tier3.com/REST/DomainName/Overview/
     <div class="kb-api-examples-content__item tab-pane active" id="json1">
       <pre>
         <code>
-          some josn 1
+some josn 1
         </code>
       </pre>
     </div>
     <div class="kb-api-examples-content__item tab-pane" id="xml1">
       <pre>
         <code>
-          some xml 1
+some xml 1
         </code>
       </pre>
     </div>
     <div class="kb-api-examples-content__item tab-pane" id="xml2">
       <pre>
         <code>
-          some xml2
+some xml2
         </code>
       </pre>
     </div>
