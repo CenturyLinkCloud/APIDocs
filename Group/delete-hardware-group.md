@@ -64,7 +64,9 @@ Deletes the Hardware Group along with all child groups and servers.
     </DeleteGroupRequest>
 
 ## Response
+
 ### Attributes
+
 <table>
   <thead>
   <tr>
@@ -124,6 +126,7 @@ Deletes the Hardware Group along with all child groups and servers.
     </QueuedItemResponse>
 
 ### Status Codes
+
 <table>
   <thead>
     <tr>
