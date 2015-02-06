@@ -43,4 +43,14 @@ REST: https://api.tier3.com/REST/DomainName/Overview/
     <a class="kb-api-example-title">XML (REST)</a>
     <a class="kb-api-example-title">XML (SOAP)</a>
   </div>
+  <div class="kb-api-examples-content-container">
+    <div class="kb-api-examples-content">
+      <pre>
+        <code>
+          some cdkfjdkfj
+        </code>
+      </pre>
+    </div>
+    </div>
+  </div>
 </div>
