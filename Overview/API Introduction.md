@@ -33,6 +33,29 @@ h1 hello
 h1
   hello
 
+<div role="tabpanel">
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active">
+      <a href="#json" aria-controls="json" role="tab" data-toggle="tab">JSON</a>
+    </li>
+    <li role="presentation" class="active">
+      <a href="#xml" aria-controls="xml" role="tab" data-toggle="tab">XML</a>
+    </li>
+  </ul>
+
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="json">
+      ```
+      JSON
+      ```
+    </div>
+    <div role="tabpanel" class="tab-pane" id="xml">
+      ```
+      XML
+      ```
+    </div>
+  </div>
+
 
 
 
