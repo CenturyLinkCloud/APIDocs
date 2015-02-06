@@ -33,29 +33,54 @@ h1 hello
 h1
   hello
 
-<div >
-  <ul class="nav nav-tabs" r>
-    <li class="active">
-      <a href="#json" data-toggle="tab"><h4>JSON</h4></a>
-    </li>
-    <li class="">
-      <a href="#xml" data-toggle="tab"><h4>XML</h4></a>
-    </li>
-  </ul>
 
-  <div class="tab-content">
-    <div class="tab-pane active" id="json">
-      ```
-      JSON
-      ```
-    </div>
-    <div class="tab-pane" id="xml">
-      ```
-      XML
-      ```
-    </div>
-  </div>
+<div class="code-panel">
+
+### Examples
+
+#### JSON
+
+```
+{
+  t: t,
+  t: t,
+}
+```
+
+#### XML
+
+```
+<sdsds>s</sdsds>>
+```
+
+
+
 </div>
+
+
+
+<span class="code-panel">
+
+### Examples
+
+#### JSON
+
+```
+{
+  t: t,
+  t: t,
+}
+```
+
+#### XML
+
+```
+<sdsds>s</sdsds>>
+```
+
+
+
+</span>
 
 
 
