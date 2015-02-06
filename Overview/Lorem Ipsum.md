@@ -51,6 +51,5 @@ REST: https://api.tier3.com/REST/DomainName/Overview/
         </code>
       </pre>
     </div>
-    </div>
   </div>
 </div>
