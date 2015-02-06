@@ -34,20 +34,14 @@ h1
   hello
 
 
-<div class="code-panel">
-  ### Examples
-  #### JSON
-  ```
-  {
-    t: t,
-    t: t,
-  }
-  ```
-  #### XML
-  ```
-  <sdsds>s</sdsds>>
-  ```
-</div>
+<pre class="code-panel">
+```
+{
+  t: t,
+  t: t,
+}
+```
+</pre>
 
 
 
