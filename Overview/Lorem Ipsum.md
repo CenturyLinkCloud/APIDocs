@@ -41,9 +41,9 @@ REST: https://api.tier3.com/REST/DomainName/Overview/
 
   <div class="kb-api-examples-header">
     
-    <div class="kb-api-example-title active"><a href="#json1" data-toggle="tab" data-target="#json1">JSON(REST)</div>
-    <div class="kb-api-example-title"><a href="#xml1" data-toggle="tab" data-target="#xml1">XML (REST)</a></div>
-    <div class="kb-api-example-title"><a href="#xml2" data-toggle="tab" data-target="#xml2">XML (SOAP)</a></div>
+    <a class="kb-api-example-title active" data-toggle="tab" data-target="#json1">JSON(REST)</a>
+    <a class="kb-api-example-title" data-toggle="tab" data-target="#xml1">XML (REST)</a>
+    <a class="kb-api-example-title" data-toggle="tab" data-target="#xml2">XML (SOAP)</a>
 
   </div>
   <div class="kb-api-examples-content tab-content">
