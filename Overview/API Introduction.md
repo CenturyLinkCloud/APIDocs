@@ -29,37 +29,6 @@ All requests will receive a response (in either JSON or XML format) with at leas
 
 Many API calls will also return additional information which will be described in detail.
 
-h1 hello
-h1
-  hello
-
-
-<pre class="code-panel">
-```
-{
-  t: t,
-  t: t,
-}
-```
-</pre>
-
-
-
-
-<span class="code-panel">
-  ### Examples
-  #### JSON
-  ```
-  {
-    t: t,
-    t: t,
-  }
-  ```
-  #### XML
-  ```
-  <sdsds>s</sdsds>
-  ```
-</span>
 
 
 
