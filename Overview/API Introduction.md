@@ -33,23 +33,23 @@ h1 hello
 h1
   hello
 
-<div role="tabpanel">
-  <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation" class="active">
-      <a href="#json" aria-controls="json" role="tab" data-toggle="tab">JSON</a>
+<div >
+  <ul class="nav nav-tabs" r>
+    <li class="active">
+      <a href="#json" data-toggle="tab"><h4>JSON</h4></a>
     </li>
-    <li role="presentation" class="">
-      <a href="#xml" aria-controls="xml" role="tab" data-toggle="tab">XML</a>
+    <li class="">
+      <a href="#xml" data-toggle="tab"><h4>XML</h4></a>
     </li>
   </ul>
 
   <div class="tab-content">
-    <div role="tabpanel" class="tab-pane active" id="json">
+    <div class="tab-pane active" id="json">
       ```
       JSON
       ```
     </div>
-    <div role="tabpanel" class="tab-pane" id="xml">
+    <div class="tab-pane" id="xml">
       ```
       XML
       ```
