@@ -35,51 +35,36 @@ h1
 
 
 <div class="code-panel">
-
 ### Examples
-
 #### JSON
-
 ```
 {
   t: t,
   t: t,
 }
 ```
-
 #### XML
-
 ```
 <sdsds>s</sdsds>>
 ```
-
-
-
 </div>
 
 
 
+
 <span class="code-panel">
-
 ### Examples
-
 #### JSON
-
 ```
 {
   t: t,
   t: t,
 }
 ```
-
 #### XML
-
 ```
 <sdsds>s</sdsds>>
 ```
-
-
-
 </span>
 
 
