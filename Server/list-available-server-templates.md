@@ -42,6 +42,7 @@ Gets the list of Templates available to the account and location.
 </table>
 
 ### Examples
+#### XML
 <pre>&lt;ListTemplatesRequest&gt;
 
     &lt;AccountAlias&gt;ACCT&lt;/AccountAlias&gt;
