@@ -9,10 +9,11 @@ Configures the CPU, Memory, Group and additional storage for a Server.
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Server/ConfigureServer/&lt;format&gt;
+    REST: https://api.tier3.com/REST/Server/ConfigureServer/<format>
     SOAP: https://api.tier3.com/SOAP/Server.asmx?op=ConfigureServer
 
 ## Request
+
 ### Attributes
 <table>
     <thead>
@@ -70,6 +71,7 @@ Configures the CPU, Memory, Group and additional storage for a Server.
 </table>
 
 ### CustomField Attributes
+
 <table>
   <thead>
   <tr>
@@ -96,50 +98,63 @@ Configures the CPU, Memory, Group and additional storage for a Server.
 </table>
 
 ### Examples
-<h4>JSON</h4>
-<pre>{
 
-  "AccountAlias": "UNK",
+#### JSON
 
-  "Name": "WA1T3NWEB01",
+    {
 
-  "HardwareGroupID": 1,
+      "AccountAlias": "UNK",
 
-  "Cpu": 2,
+      "Name": "WA1T3NWEB01",
 
-  "MemoryGB": 4,
+      "HardwareGroupID": 1,
 
-  "AdditionalStorageGB": 50,
+      "Cpu": 2,
 
-  "CustomFields":[<br />                { "CustomFieldID": 100,"Value": "A test"},<br />                { "CustomFieldID": 101,"Value": "2"},<br />                { "CustomFieldID": 102,"Value": "true"},]
+      "MemoryGB": 4,
 
-}</pre>
+      "AdditionalStorageGB": 50,
 
-<h4>XML</h4>
-<pre>&lt;ConfigureServerRequest&gt;
+      "CustomFields":[
 
-    &lt;AccountAlias&gt;UNK&lt;/AccountAlias&gt;
+        { "CustomFieldID": 100,"Value": "A test"},
 
-    &lt;Name&gt;WEB&lt;/Name&gt;
+        { "CustomFieldID": 101,"Value": "2"},
 
-    &lt;HardwareGroupID&gt;1&lt;/HardwareGroupID&gt;
+        { "CustomFieldID": 102,"Value": "true"}
 
-    &lt;Cpu&gt;2&lt;/Cpu&gt;
+      ]
 
-    &lt;MemoryGB&gt;4&lt;/MemoryGB&gt;
+    }
 
-    &lt;AdditionalStorageGB&gt;50&lt;/AdditionalStorageGB&gt;
+#### XML
 
-    &lt;CustomFields CustomFieldID="100" Value="Test text" /&gt;
+    <ConfigureServerRequest>
 
-    &lt;CustomFields CustomFieldID="104" Value="2" /&gt;
+        <AccountAlias>UNK</AccountAlias>
 
-    &lt;CustomFields CustomFieldID="108" Value="true" /&gt;
+        <Name>WEB</Name>
 
-&lt;/ConfigureServerRequest&gt;</pre> 
+        <HardwareGroupID>1</HardwareGroupID>
+
+        <Cpu>2</Cpu>
+
+        <MemoryGB>4</MemoryGB>
+
+        <AdditionalStorageGB>50</AdditionalStorageGB>
+
+        <CustomFields CustomFieldID="100" Value="Test text" />
+
+        <CustomFields CustomFieldID="104" Value="2" />
+
+        <CustomFields CustomFieldID="108" Value="true" />
+
+    </ConfigureServerRequest>
 
 ## Response
+
 ### Attributes
+
 <table>
   <thead>
   <tr>
@@ -176,13 +191,33 @@ Configures the CPU, Memory, Group and additional storage for a Server.
 </table>
 
 ### Examples
-<h4>JSON</h4>
-<pre>{<br />    "RequestID":1,<br />    "Success":true,<br />    "Message":"Success",<br />    "StatusCode":0<br />}</pre>
 
-<h4>XML</h4>
-<pre>&lt;QueuedItemResponse Success="true" Message="Success" StatusCode="0"&gt;<br />&nbsp; &nbsp; &lt;RequestID&gt;1&lt;/RequestID&gt;<br />&lt;/QueuedItemResponse&gt;</pre>
+#### JSON
+
+    {
+
+      "RequestID":1,
+
+      "Success":true,
+
+      "Message":"Success",
+
+      "StatusCode":0
+
+    }
+
+
+#### XML
+
+    <QueuedItemResponse Success="true" Message="Success" StatusCode="0">
+
+        <RequestID>1</RequestID>
+
+    </QueuedItemResponse>
+
 
 ### Status Codes
+
 <table>
     <thead>
   <tr>

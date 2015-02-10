@@ -9,11 +9,13 @@ Enables or disables maintenance mode on a Server.
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Server/ServerMaintenance/&lt;format&gt;
+    REST: https://api.tier3.com/REST/Server/ServerMaintenance/<format>
     SOAP: https://api.tier3.com/SOAP/Server.asmx?op=ServerMaintenance
 
 ## Request
+
 ### Attributes
+
 <table>
     <thead>
     <tr>
@@ -46,30 +48,35 @@ Enables or disables maintenance mode on a Server.
 </table>
 
 ### Examples
-<h4>JSON</h4>
-<pre>{
 
-  "Name": "DEMOFIRST01",
+#### JSON
 
-  "AccountAlias": "UNK",
+    {
 
-  "Enable": true
+      "Name": "DEMOFIRST01",
 
-}</pre>
+      "AccountAlias": "UNK",
 
-<h4>XML</h4>
-<pre>&lt;ServerMaintenanceRequest&gt;
+      "Enable": true
 
-    &lt;AccountAlias&gt;ACCT&lt;/AccountAlias&gt;
+    }
 
-    &lt;Name&gt;DEMOFIRST01&lt;/Name&gt;
+#### XML
 
-    &lt;Enable&gt;true&lt;/Enable&gt;
+    <ServerMaintenanceRequest>
 
-&lt;/ServerMaintenanceRequest&gt;</pre>
+        <AccountAlias>ACCT</AccountAlias>
+
+        <Name>DEMOFIRST01</Name>
+
+        <Enable>true</Enable>
+
+    </ServerMaintenanceRequest>
 
 ## Response
+
 ### Attributes
+
 <table>
   <thead>
   <tr>
@@ -106,13 +113,24 @@ Enables or disables maintenance mode on a Server.
 </table>
 
 ### Examples
-<h4>JSON</h4>
-<pre>{<br />    "RequestID:1,<br />    "Success":true,<br />    "Message":"Success",<br />    "StatusCode":0<br />}</pre>
 
-<h4>XML</h4>
-<pre>&lt;QueuedItemResponse Success="true" Message="Success" StatusCode="0"&gt;<br />&nbsp; &nbsp; &lt;RequestID&gt;1&lt;/RequestID&gt;<br />&lt;/QueuedItemResponse&gt;</pre>
+#### JSON
+
+    {
+        "RequestID:1,
+        "Success":true,
+        "Message":"Success",
+        "StatusCode":0
+    }
+
+#### XML
+
+    <QueuedItemResponse Success="true" Message="Success" StatusCode="0">
+        <RequestID>1</RequestID>
+    </QueuedItemResponse>
 
 ### Status Codes
+
 <table>
     <thead>
   <tr>

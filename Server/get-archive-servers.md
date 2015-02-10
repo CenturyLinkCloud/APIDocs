@@ -9,11 +9,13 @@ Gets the list of Archive Servers.
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Server/GetArchiveServers/&lt;format&gt;
+    REST: https://api.tier3.com/REST/Server/GetArchiveServers/<format>
     SOAP: https://api.tier3.com/SOAP/Server.asmx?op=GetArchiveServers
 
 ## Request
+
 ### Attribute
+
 <table>
   <thead>
   <tr>
@@ -49,6 +51,7 @@ Gets the list of Archive Servers.
 </table>
 
 ### Archive Server Attributes
+
 <table>
   <thead>
   <tr>
@@ -77,13 +80,30 @@ Gets the list of Archive Servers.
 </table>
 
 ### Examples
-<h4>JSON</h4>
-<pre>{<br />    "Success":true,<br />    "Message":"Success",<br />    "StatusCode":0,<br />    "Servers":[<br />        {"ID":1001,"Name":"WA1T3NWEB01","Description":"WA1T3NWEB01"},<br />        {"ID":1002,"Name":"WA1T3NWEB02","Description":"WA1T3NWEB02"}<br />     ]<br />}</pre>
 
-<h4>XML</h4>
-<pre>&lt;GetServersResponse Success="true" Message="Successfully retrieved servers" StatusCode="0"&gt;<br />    &lt;Servers&gt;<br />        &lt;Server ID="1001" Name="WA1T3NWEB01" Description="WA1T3NWEB01"/&gt;<br />        &lt;Server ID="1002" Name="WA1T3NWEB02" Description="WA1T3NWEB02"/&gt;<br />    &lt;/Servers&gt;&nbsp;<br />&lt;/GetServersResponse&gt;</pre>
+#### JSON
+
+    {
+        "Success":true,
+        "Message":"Success",
+        "StatusCode":0,
+        "Servers":[
+            {"ID":1001,"Name":"WA1T3NWEB01","Description":"WA1T3NWEB01"},
+            {"ID":1002,"Name":"WA1T3NWEB02","Description":"WA1T3NWEB02"}
+         ]
+    }
+
+#### XML
+
+    <GetServersResponse Success="true" Message="Successfully retrieved servers" StatusCode="0">
+        <Servers>
+            <Server ID="1001" Name="WA1T3NWEB01" Description="WA1T3NWEB01"/>
+            <Server ID="1002" Name="WA1T3NWEB02" Description="WA1T3NWEB02"/>
+        </Servers> 
+    </GetServersResponse>
 
 ### Status Codes
+
 <table>
     <thead>
   <tr>

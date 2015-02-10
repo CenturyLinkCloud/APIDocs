@@ -9,11 +9,13 @@ Gets the list of Templates available to the account.
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Server/GetServerTemplates/&lt;format&gt;
+    REST: https://api.tier3.com/REST/Server/GetServerTemplates/<format>
     SOAP: https://api.tier3.com/SOAP/Server.asmx?op=GetServerTemplates
 
 ## Request
+
 ### Attributes
+
 <table>
   <thead>
   <tr>
@@ -48,47 +50,39 @@ Gets the list of Templates available to the account.
 </table>
 
 ### Examples
-<h4>JSON</h4>
-<pre>{<br />    "RequestID:1,<br />    "Success":true,<br />    "Message":"Success",<br />    "StatusCode":0,<br />    "Templates":[
 
-        {
+#### JSON
 
-            "ID":1001,"Name":"CENTOS-6-32","Description":"Cent OS 6 | 32-bit",
+    {
+        "RequestID:1,
+        "Success":true,
+        "Message":"Success",
+        "StatusCode":0,
+        "Templates":[
+            {
+                "ID":1001,"Name":"CENTOS-6-32","Description":"Cent OS 6 | 32-bit",
+                "Cpu":1,"MemoryGB":2 "DiskCount":1 "TotalDiskSpaceGB":8 "OperatingSystem":6
+            },
+            {
+                "ID":1002,"Name":"WIN2008R2STD-64","Description":"Windows 2008 R2 Standard | 64-bit",
+                "Cpu":1,"MemoryGB":4 "DiskCount":1 "TotalDiskSpaceGB":16 "OperatingSystem":18
+            }
+         ]
+    }
 
-            "Cpu":1,"MemoryGB":2 "DiskCount":1 "TotalDiskSpaceGB":8 "OperatingSystem":6
+#### XML
 
-        },
-
-        {
-
-            "ID":1002,"Name":"WIN2008R2STD-64","Description":"Windows 2008 R2 Standard | 64-bit",
-
-            "Cpu":1,"MemoryGB":4 "DiskCount":1 "TotalDiskSpaceGB":16 "OperatingSystem":18
-
-        }
-
-     ]
-
-}</pre>
-
-<h4>XML</h4>
-<pre>&lt;GetTemplatesResponse Success="true" Message="Successfully retrieved templates" StatusCode="0"&gt;
-
-    &lt;Templates&gt;
-
-        &lt;Template ID="1001" Name="CENTOS-6-32" Description="CentOS 6 | 32-bit" Cpu="1"
-
-        MemoryGB="2" DiskCount="1" TotalDiskSpaceGB="8" OperatingSystem="6" /&gt;
-
-        &lt;Template ID="1001" Name="WIN2008R2STD-64" Description="Windows 2008 R2 Standard | 64-bit" 
-
-        Cpu="1" MemoryGB="4" DiskCount="1" TotalDiskSpaceGB="16" OperatingSystem="18" /&gt;
-
-    &lt;/Templates&gt;
-
-&lt;/GetTemplatesResponse&gt;</pre>
+    <GetTemplatesResponse Success="true" Message="Successfully retrieved templates" StatusCode="0">
+        <Templates>
+            <Template ID="1001" Name="CENTOS-6-32" Description="CentOS 6 | 32-bit" Cpu="1"
+            MemoryGB="2" DiskCount="1" TotalDiskSpaceGB="8" OperatingSystem="6" />
+            <Template ID="1001" Name="WIN2008R2STD-64" Description="Windows 2008 R2 Standard | 64-bit" 
+            Cpu="1" MemoryGB="4" DiskCount="1" TotalDiskSpaceGB="16" OperatingSystem="18" />
+        </Templates>
+    </GetTemplatesResponse>
 
 ### Status Codes
+
 <table>
     <thead>
   <tr>

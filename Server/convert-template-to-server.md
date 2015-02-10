@@ -9,11 +9,13 @@ Converts the Template to a Server.
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Server/ConvertTemplateToServer/&lt;format&gt;
+    REST: https://api.tier3.com/REST/Server/ConvertTemplateToServer/<format>
     SOAP: https://api.tier3.com/SOAP/Server.asmx?op=ConvertTemplateToServer
 
 ## Request
+
 ### Attributes
+
 <table>
     <thead>
     <tr>
@@ -59,8 +61,9 @@ Converts the Template to a Server.
 
 ### Examples
 
-<h4>JSON</h4>
-<pre>{
+#### JSON
+
+{
 
   "AccountAlias": "UNK",
 
@@ -72,25 +75,28 @@ Converts the Template to a Server.
 
   "Network": "VLAN113_172.21.113"
 
-}</pre>
+}
 
-<h4>XML</h4>
-<pre>&lt;ConvertTemplateToServerRequest&gt;
+#### XML
 
-    &lt;AccountAlias&gt;ACCT&lt;/AccountAlias&gt;
+    <ConvertTemplateToServerRequest>
 
-    &lt;Name&gt;WEB&lt;/Name&gt;
+        <AccountAlias>ACCT</AccountAlias>
 
-    &lt;Password&gt;password&lt;/Password&gt;
+        <Name>WEB</Name>
 
-    &lt;HardwareGroupID&gt;1&lt;/HardwareGroupID&gt;
+        <Password>password</Password>
 
-    &lt;Network&gt;VLAN113_172.21.113&lt;/Network&gt;
+        <HardwareGroupID>1</HardwareGroupID>
 
-&lt;/ConvertTemplateToServerRequest&gt;</pre>
+        <Network>VLAN113_172.21.113</Network>
+
+    </ConvertTemplateToServerRequest>
 
 ## Response
+
 ### Attributes
+
 <table>
   <thead>
   <tr>
@@ -124,13 +130,32 @@ Converts the Template to a Server.
 </table>
 
 ### Examples
-<h4>JSON</h4>
-<pre>{<br />    "RequestID":1,<br />    "Success":true,<br />    "Message":"Success",<br />    "StatusCode":0<br />}</pre>
 
-<h4>XML</h4>
-<pre>&lt;QueuedItemResponse Success="true" Message="Success" StatusCode="0"&gt;<br />&nbsp; &nbsp; &lt;RequestID&gt;1&lt;/RequestID&gt;<br />&lt;/QueuedItemResponse&gt;</pre>
+#### JSON
+
+    {
+
+      "RequestID":1,
+
+      "Success":true,
+
+      "Message":"Success",
+
+      "StatusCode":0
+
+    }
+
+
+#### XML
+
+    <QueuedItemResponse Success="true" Message="Success" StatusCode="0">
+
+        <RequestID>1</RequestID>
+
+    </QueuedItemResponse>
 
 ### Status Codes
+
 <table>
     <thead>
   <tr>

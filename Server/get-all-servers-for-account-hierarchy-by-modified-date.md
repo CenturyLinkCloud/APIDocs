@@ -9,11 +9,13 @@ Gets a deep list of all modified servers for a given account hierarchy within a 
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Server/GetAllServersForAccountHierarchyByModifiedDates/&lt;format&gt;
+    REST: https://api.tier3.com/REST/Server/GetAllServersForAccountHierarchyByModifiedDates/<format>
     SOAP: https://api.tier3.com/SOAP/Server.asmx?op=GetAllServersForAccountHierarchyByModifiedDatesMsg
 
 ## Request
+
 ### Attributes
+
 <table>
     <thead>
     <tr>
@@ -58,20 +60,35 @@ Gets a deep list of all modified servers for a given account hierarchy within a 
 </table>
 
 ### Examples
-<h4>JSON</h4>
-<pre>{ <br />   "AccountAlias": "ACCT", <br />   "Location": "WA1",<br />   "BeginDate": "2013-05-01",<br />   "EndDate": "2013-06-30"<br /> }</pre>
+
+#### JSON
+
+    { 
+
+      "AccountAlias": "ACCT",
+
+      "Location": "WA1",
+
+      "BeginDate": "2013-05-01",
+
+      "EndDate": "2013-06-30"
+
+    }
+
 
 <h4>XML</h4>
-<pre>&lt;GetAllServersByModifiedDatesRequest&gt;
 
-    &lt;AccountAlias&gt;ACCT&lt;/AccountAlias&gt;
-
-    &lt;Location&gt;WA1&lt;/Location&gt;<br />    &lt;BeginDate&gt;2013-05-01&lt;/BeginDate&gt;<br />    &lt;EndDate&gt;2013-06-30&lt;/EndDate&gt;
-
-&lt;/GetAllServersByModifiedDatesRequest&gt;&nbsp;</pre>
+    <GetAllServersByModifiedDatesRequest>
+        <AccountAlias>ACCT</AccountAlias>
+        <Location>WA1</Location>
+        <BeginDate>2013-05-01</BeginDate>
+        <EndDate>2013-06-30</EndDate>
+    </GetAllServersByModifiedDatesRequest> 
 
 ## Response
+
 ### Attributes
+
 <table>
   <thead>
   <tr>
@@ -106,217 +123,192 @@ Gets a deep list of all modified servers for a given account hierarchy within a 
 </table>
 
 ### Examples
-<h4>JSON</h4>
-<pre>{"AccountServers":[
 
-    {"AccountAlias":"ACT1","Servers":[
+#### JSON
 
-        {"ID":2646,"HardwareGroupID":1197,"Location":"WA1","Name":"SERVERDEMO01","Description":"Demo server",
+    {"AccountServers":[
+        {"AccountAlias":"ACT1","Servers":[
+            {"ID":2646,"HardwareGroupID":1197,"Location":"WA1","Name":"SERVERDEMO01","Description":"Demo server",
+                "DnsName":"", "IsTemplate":false,"Cpu":1,"MemoryGB":2,"DiskCount":1,"TotalDiskSpaceGB":24,
+                "Status":"UnderConstruction","PowerState":"Stopped","InMaintenanceMode":false,
+                "IPAddress":"","ServerType":1,"ServiceLevel":2,"OperatingSystem":18,
+                "DateModified":"\/Date(1347577422943)\/","ModifiedBy":"user@tier3.com",
+                "IPAddresses":[
+                    {"Address":"142.25.114.13","AddressType":"RIP"}],
+                "CustomFields":null},
+            {"ID":3015," HardwareGroupID":1111,"Location":"WA1","Name":"SERVERDEMO02","Description":"Demo server",
+                "DnsName":null,"IsTemplate":false,"Cpu":0,"MemoryGB":0,"DiskCount":0,"TotalDiskSpaceGB":0,
+                "Status":"Deleted"," PowerState":"Stopped", "InMaintenanceMode":false,
+                "IPAddress":null,"ServerType":1,"ServiceLevel":2,"OperatingSystem":5,
+                "DateModified":"\/Date(1355446615983)\/","ModifiedBy":"user@tier3.com",
+                "IPAddresses":[],"CustomFields":null}]},
+        {"AccountAlias":"ACT2","Servers":[
+            {"ID":4316,"HardwareGroupID":1595,"Location":"WA1","Name":"SERVERDEMO03","Description":"demo server",\
+                "DnsName":"QA1SSUBSERO9401","IsTemplate":false,"Cpu":1,"MemoryGB":1,"DiskCount":3,"TotalDiskSpaceGB":17,
+                "Status":"Active","PowerState":"Started","InMaintenanceMode":false,
+                "IPAddress":"173.25.114.15","ServerType":1,"ServiceLevel":2,"OperatingSystem":20,
+                "DateModified":"\/Date(1372476852953)\/","ModifiedBy":"user@tier3.com",
+                "IPAddresses":[
+                    {"Address":"173.25.114.15","AddressType":"RIP"}],
+                "CustomFields":null}]}],
+        "Success":true,"Message":"Successfully retrieved deep view of servers","StatusCode":0}
 
-            "DnsName":"", "IsTemplate":false,"Cpu":1,"MemoryGB":2,"DiskCount":1,"TotalDiskSpaceGB":24,
+#### XML
 
-            "Status":"UnderConstruction","PowerState":"Stopped","InMaintenanceMode":false,
+    <GetAccountHierarchyServersResponse Success="true" Message="Successfully retrieved deep view of servers" StatusCode="0">
 
-            "IPAddress":"","ServerType":1,"ServiceLevel":2,"OperatingSystem":18,
+      <AccountServers>
 
-            "DateModified":"\/Date(1347577422943)\/","ModifiedBy":"user@tier3.com",
+        <AccountServerGroup AccountAlias="ACT1">
 
-            "IPAddresses":[
+          <Servers>
 
-                {"Address":"142.25.114.13","AddressType":"RIP"}],
+            <Server
 
-            "CustomFields":null},
+              ID="1000"
 
-        {"ID":3015," HardwareGroupID":1111,"Location":"WA1","Name":"SERVERDEMO02","Description":"Demo server",
+              HardwareGroupID="1197"
 
-            "DnsName":null,"IsTemplate":false,"Cpu":0,"MemoryGB":0,"DiskCount":0,"TotalDiskSpaceGB":0,
+              Location="WA1"
 
-            "Status":"Deleted"," PowerState":"Stopped", "InMaintenanceMode":false,
+              Name="SERVERDEMO01"
 
-            "IPAddress":null,"ServerType":1,"ServiceLevel":2,"OperatingSystem":5,
+              Description="Server1"
 
-            "DateModified":"\/Date(1355446615983)\/","ModifiedBy":"user@tier3.com",
+              DnsName=""
 
-            "IPAddresses":[],"CustomFields":null}]},
+              IsTemplate="false"
 
-    {"AccountAlias":"ACT2","Servers":[
+              Cpu="1"
 
-        {"ID":4316,"HardwareGroupID":1595,"Location":"WA1","Name":"SERVERDEMO03","Description":"demo server",\
+              MemoryGB="2"
 
-            "DnsName":"QA1SSUBSERO9401","IsTemplate":false,"Cpu":1,"MemoryGB":1,"DiskCount":3,"TotalDiskSpaceGB":17,
+              DiskCount="1"
 
-            "Status":"Active","PowerState":"Started","InMaintenanceMode":false,
+              TotalDiskSpaceGB="24"
 
-            "IPAddress":"173.25.114.15","ServerType":1,"ServiceLevel":2,"OperatingSystem":20,
+              Status="UnderConstruction"
 
-            "DateModified":"\/Date(1372476852953)\/","ModifiedBy":"user@tier3.com",
+              PowerState="Stopped"
 
-            "IPAddresses":[
+              InMaintenanceMode="false"
 
-                {"Address":"173.25.114.15","AddressType":"RIP"}],
+              IPAddress=""
 
-            "CustomFields":null}]}],
+              ServerType="1"
 
-    "Success":true,"Message":"Successfully retrieved deep view of servers","StatusCode":0}
+              ServiceLevel="2"
 
-</pre>
+              OperatingSystem="18"
 
-<h4>XML</h4>
-<pre>&lt;GetAccountHierarchyServersResponse Success="true" Message="Successfully retrieved deep view of servers" StatusCode="0"&gt;
+              DateModified="2012-09-13T16:03:42.943"
 
-  &lt;AccountServers&gt;
+              ModifiedBy="user@tier3.com">
 
-    &lt;AccountServerGroup AccountAlias="ACT1"&gt;
+              <IPAddresses  Address="142.25.114.13"  AddressType="RIP" />
 
-      &lt;Servers&gt;
+            </Server>
 
-        &lt;Server
+            <Server
 
-          ID="1000"
+              ID="1001"
 
-          HardwareGroupID="1197"
+              HardwareGroupID="1111"
 
-          Location="WA1"
+              Location="WA1"
 
-          Name="SERVERDEMO01"
+              Name="SERVERDEMO02"
 
-          Description="Server1"
+              Description="Server 2"
 
-          DnsName=""
+              IsTemplate="false"
 
-          IsTemplate="false"
+              Cpu="0"
 
-          Cpu="1"
+              MemoryGB="0"
 
-          MemoryGB="2"
+              DiskCount="0"
 
-          DiskCount="1"
+              TotalDiskSpaceGB="0"
 
-          TotalDiskSpaceGB="24"
+              Status="Deleted"
 
-          Status="UnderConstruction"
+              PowerState="Stopped"
 
-          PowerState="Stopped"
+              InMaintenanceMode="false"
 
-          InMaintenanceMode="false"
+              ServerType="1"
 
-          IPAddress=""
+              ServiceLevel="2"
 
-          ServerType="1"
+              OperatingSystem="5"
 
-          ServiceLevel="2"
+              DateModified="2012-12-13T16:56:55.983"
 
-          OperatingSystem="18"
+              ModifiedBy="user@tier3.com" />
 
-          DateModified="2012-09-13T16:03:42.943"
+          </Servers>
 
-          ModifiedBy="user@tier3.com"&gt;
+        </AccountServerGroup>
 
-          &lt;IPAddresses  Address="142.25.114.13"  AddressType="RIP" /&gt;
+        <AccountServerGroup AccountAlias="ACT2">
 
-        &lt;/Server&gt;
+          <Servers>
 
-        &lt;Server
+            <Server
 
-          ID="1001"
+              ID="1003"
 
-          HardwareGroupID="1111"
+              HardwareGroupID="1595"
 
-          Location="WA1"
+              Location="WA1"
 
-          Name="SERVERDEMO02"
+              Name="SERVERDEMO03"
 
-          Description="Server 2"
+              Description="Server 3"
 
-          IsTemplate="false"
+              DnsName="SERVERDEMO03"
 
-          Cpu="0"
+              IsTemplate="false"
 
-          MemoryGB="0"
+              Cpu="1"
 
-          DiskCount="0"
+              MemoryGB="1"
 
-          TotalDiskSpaceGB="0"
+              DiskCount="3"
 
-          Status="Deleted"
+              TotalDiskSpaceGB="17"
 
-          PowerState="Stopped"
+              Status="Active"
 
-          InMaintenanceMode="false"
+              PowerState="Started"
 
-          ServerType="1"
+              InMaintenanceMode="false"
 
-          ServiceLevel="2"
+              IPAddress="173.25.114.15"
 
-          OperatingSystem="5"
+              ServerType="1"
 
-          DateModified="2012-12-13T16:56:55.983"
+              ServiceLevel="2"
 
-          ModifiedBy="user@tier3.com" /&gt;
+              OperatingSystem="20"
 
-      &lt;/Servers&gt;
+              DateModified="2013-06-28T20:34:12.953"
 
-    &lt;/AccountServerGroup&gt;
+              ModifiedBy="user@tier3.com">
 
-    &lt;AccountServerGroup AccountAlias="ACT2"&gt;
+            </Server>
 
-      &lt;Servers&gt;
+          </Servers>
 
-        &lt;Server
+        </AccountServerGroup>
 
-          ID="1003"
+      </AccountServers>
 
-          HardwareGroupID="1595"
-
-          Location="WA1"
-
-          Name="SERVERDEMO03"
-
-          Description="Server 3"
-
-          DnsName="SERVERDEMO03"
-
-          IsTemplate="false"
-
-          Cpu="1"
-
-          MemoryGB="1"
-
-          DiskCount="3"
-
-          TotalDiskSpaceGB="17"
-
-          Status="Active"
-
-          PowerState="Started"
-
-          InMaintenanceMode="false"
-
-          IPAddress="173.25.114.15"
-
-          ServerType="1"
-
-          ServiceLevel="2"
-
-          OperatingSystem="20"
-
-          DateModified="2013-06-28T20:34:12.953"
-
-          ModifiedBy="user@tier3.com"&gt;
-
-        &lt;/Server&gt;
-
-      &lt;/Servers&gt;
-
-    &lt;/AccountServerGroup&gt;
-
-  &lt;/AccountServers&gt;
-
-&lt;/GetAccountHierarchyServersResponse&gt;
-
-</pre>
+    </GetAccountHierarchyServersResponse>
 
 ### Status Codes
+
 <table>
     <thead>
   <tr>

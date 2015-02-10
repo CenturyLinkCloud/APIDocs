@@ -256,111 +256,62 @@
 </table>
 
 ### Examples
+
 #### JSON
-<pre>{
-
-  "Servers": [
 
     {
-
-      "ID": 105421,
-
-      "HardwareGroupID": 2158,
-
-      "Location": "WA1",
-
-      "Name": "WA1MDAS-STD01",
-
-      "Description": "foo",
-
-      "DnsName": null,
-
-      "IsTemplate": false,
-
-      "Cpu": 0,
-
-      "MemoryGB": 0,
-
-      "DiskCount": 0,
-
-      "TotalDiskSpaceGB": 0,
-
-      "Status": "Archived",
-
-      "PowerState": "Stopped",
-
-      "InMaintenanceMode": false,
-
-      "IPAddress": null,
-
-      "ServerType": 1,
-
-      "ServiceLevel": 2,
-
-      "OperatingSystem": 20,
-
-      "DateModified": "\/Date(1358410186310)\/",
-
-      "ModifiedBy": "Tier3 System",
-
-      "IPAddresses": [
-
-        
-
-      ],<br />      "CustomFields": []
-
-    },
-
-    {
-
-      "ID": 105191,
-
-      "HardwareGroupID": 5199,
-
-      "Location": "WA1",
-
-      "Name": "WA1MDA2K1202",
-
-      "Description": "2k12",
-
-      "DnsName": "WA1MDA2K1202",
-
-      "IsTemplate": false,
-
-      "Cpu": 1,
-
-      "MemoryGB": 1,
-
-      "DiskCount": 3,
-
-      "TotalDiskSpaceGB": 110,
-
-      "Status": "Active",
-
-      "PowerState": "Stopped",
-
-      "InMaintenanceMode": false,
-
-      "IPAddress": "10.81.14.18",
-
-      "ServerType": 1,
-
-      "ServiceLevel": 2,
-
-      "OperatingSystem": 24,
-
-      "DateModified": "\/Date(1358793254250)\/",
-
-      "ModifiedBy": "bob@tier3.com",
-
-      "IPAddresses": [
-
-        
-
-      ],<br />      "CustomFields": []
-
+      "Servers": [
+        {
+          "ID": 105421,
+          "HardwareGroupID": 2158,
+          "Location": "WA1",
+          "Name": "WA1MDAS-STD01",
+          "Description": "foo",
+          "DnsName": null,
+          "IsTemplate": false,
+          "Cpu": 0,
+          "MemoryGB": 0,
+          "DiskCount": 0,
+          "TotalDiskSpaceGB": 0,
+          "Status": "Archived",
+          "PowerState": "Stopped",
+          "InMaintenanceMode": false,
+          "IPAddress": null,
+          "ServerType": 1,
+          "ServiceLevel": 2,
+          "OperatingSystem": 20,
+          "DateModified": "\/Date(1358410186310)\/",
+          "ModifiedBy": "Tier3 System",
+          "IPAddresses": [
+            
+          ],
+          "CustomFields": []
+        },
+        {
+          "ID": 105191,
+          "HardwareGroupID": 5199,
+          "Location": "WA1",
+          "Name": "WA1MDA2K1202",
+          "Description": "2k12",
+          "DnsName": "WA1MDA2K1202",
+          "IsTemplate": false,
+          "Cpu": 1,
+          "MemoryGB": 1,
+          "DiskCount": 3,
+          "TotalDiskSpaceGB": 110,
+          "Status": "Active",
+          "PowerState": "Stopped",
+          "InMaintenanceMode": false,
+          "IPAddress": "10.81.14.18",
+          "ServerType": 1,
+          "ServiceLevel": 2,
+          "OperatingSystem": 24,
+          "DateModified": "\/Date(1358793254250)\/",
+          "ModifiedBy": "bob@tier3.com",
+          "IPAddresses": [
+            
+          ],
+          "CustomFields": []
+        }
+      ]
     }
-
-  ]
-
-}</pre>

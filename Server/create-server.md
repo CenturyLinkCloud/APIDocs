@@ -9,11 +9,13 @@ Creates a new Server.
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Server/CreateServer/&lt;format&gt;
+    REST: https://api.tier3.com/REST/Server/CreateServer/<format>
     SOAP: https://api.tier3.com/SOAP/Server.asmx?op=CreateServer
 
 ## Request
+
 ### Attributes
+
 <table>
     <thead>
     <tr>
@@ -126,6 +128,7 @@ Creates a new Server.
 </table>
 
 ### CustomField Attributes
+
 <table>
   <thead>
   <tr>
@@ -152,83 +155,99 @@ Creates a new Server.
 </table>
 
 ### Examples
-<h4>JSON</h4>
-<pre>{
 
-  "AccountAlias": "UNK",
+#### JSON
 
-  "LocationAlias": "UN1",
+    {
 
-  "Template": "WIN2K8R2",
+      "AccountAlias": "UNK",
 
-  "Alias": "WEB",
+      "LocationAlias": "UN1",
 
-  "Description": "Web server",
+      "Template": "WIN2K8R2",
 
-  "HardwareGroupID": 1,
+      "Alias": "WEB",
 
-  "ServerType": 1,
+      "Description": "Web server",
 
-  "ServiceLevel": 2,
+      "HardwareGroupID": 1,
 
-  "Cpu": 2,
+      "ServerType": 1,
 
-  "MemoryGB": 4,
+      "ServiceLevel": 2,
 
-  "ExtraDriveGB": 50,
+      "Cpu": 2,
 
-  "PrimaryDns": "4.2.2.2",
+      "MemoryGB": 4,
 
-  "SecondaryDns": "4.2.2.3",
+      "ExtraDriveGB": 50,
 
-  "Network": "VLAN113_172.21.113",
+      "PrimaryDns": "4.2.2.2",
 
-  "CustomFields":[<br />                { "CustomFieldID": 100,"Value": "A test"},<br />                { "CustomFieldID": 101,"Value": "2"},<br />                { "CustomFieldID": 102,"Value": "true"},]}
+      "SecondaryDns": "4.2.2.3",
 
-}</pre>
+      "Network": "VLAN113_172.21.113",
 
-<h4>XML</h4>
-<pre>&lt;CreateServerRequest&gt;
+      "CustomFields": [
 
-    &lt;AccountAlias&gt;ACCT&lt;/AccountAlias&gt;
+        { "CustomFieldID": 100,"Value": "A test"},
 
-    &lt;LocationAlias&gt;QA1&lt;/LocationAlias&gt;
+        { "CustomFieldID": 101,"Value": "2"},
 
-    &lt;Template&gt;UBUNTU-10-32-TEMPLATE&lt;/Template&gt;
+        { "CustomFieldID": 102,"Value": "true"}
 
-    &lt;MemoryGB&gt;1&lt;/MemoryGB&gt;
+        ]
 
-    &lt;Cpu&gt;1&lt;/Cpu&gt;
+      }
 
-    &lt;HardwareGroupID&gt;1234&lt;/HardwareGroupID&gt;    
+    }
 
-    &lt;Alias&gt;WHEE&lt;/Alias&gt;
+#### XML
 
-    &lt;Description&gt;Web server&lt;/Description&gt;            
+    <CreateServerRequest>
 
-    &lt;ExtraDriveGB&gt;0&lt;/ExtraDriveGB&gt;
+        <AccountAlias>ACCT</AccountAlias>
 
-    &lt;PrimaryDns&gt;172.17.1.26&lt;/PrimaryDns&gt;
+        <LocationAlias>QA1</LocationAlias>
 
-    &lt;SecondaryDns&gt;172.17.1.27&lt;/SecondaryDns&gt;
+        <Template>UBUNTU-10-32-TEMPLATE</Template>
 
-    &lt;Network&gt;vlan199_172.21.199&lt;/Network&gt;
+        <MemoryGB>1</MemoryGB>
 
-    &lt;Password&gt;Pass@word1&lt;/Password&gt;
+        <Cpu>1</Cpu>
 
-    &lt;ServerType&gt;1&lt;/ServerType&gt;
+        <HardwareGroupID>1234</HardwareGroupID>    
 
-    &lt;ServiceLevel&gt;2&lt;/ServiceLevel&gt;
+        <Alias>WHEE</Alias>
 
-    &lt;CustomFields CustomFieldID="100" Value="Test text" /&gt;
+        <Description>Web server</Description>            
 
-    &lt;CustomFields CustomFieldID="104" Value="2" /&gt;
+        <ExtraDriveGB>0</ExtraDriveGB>
 
-    &lt;CustomFields CustomFieldID="108" Value="true" /&gt;<br />&lt;/CreateServerRequest&gt;
+        <PrimaryDns>172.17.1.26</PrimaryDns>
+
+        <SecondaryDns>172.17.1.27</SecondaryDns>
+
+        <Network>vlan199_172.21.199</Network>
+
+        <Password>Pass@word1</Password>
+
+        <ServerType>1</ServerType>
+
+        <ServiceLevel>2</ServiceLevel>
+
+        <CustomFields CustomFieldID="100" Value="Test text" />
+
+        <CustomFields CustomFieldID="104" Value="2" />
+
+        <CustomFields CustomFieldID="108" Value="true" />
+
+    </CreateServerRequest>
 
 </pre> 
 
 ## Response
+
 ### Attributes
 <table>
   <thead>
@@ -266,13 +285,31 @@ Creates a new Server.
 </table>
 
 ### Examples
-<h4>JSON</h4>
-<pre>{<br />    "RequestID":1,<br />    "Success":true,<br />    "Message":"Success",<br />    "StatusCode":0<br />}</pre>
 
-<h4>XML</h4>
-<pre>&lt;QueuedItemResponse Success="true" Message="Success" StatusCode="0"&gt;<br />&nbsp; &nbsp; &lt;RequestID&gt;1&lt;/RequestID&gt;<br />&lt;/QueuedItemResponse&gt;</pre>
+#### JSON
+
+    {
+
+      "RequestID":1,
+
+      "Success":true,
+
+      "Message":"Success",
+
+      "StatusCode":0
+
+    }
+
+#### XML
+
+    <QueuedItemResponse Success="true" Message="Success" StatusCode="0">
+
+        <RequestID>1</RequestID>
+
+    </QueuedItemResponse>
 
 ### Status Codes
+
 <table>
     <thead>
   <tr>

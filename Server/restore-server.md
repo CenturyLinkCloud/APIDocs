@@ -9,11 +9,13 @@ Restores an archived server.
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Server/RestoreServer/&lt;format&gt;
+    REST: https://api.tier3.com/REST/Server/RestoreServer/<format>
     SOAP: https://api.tier3.com/SOAP/Server.asmx?op=RestoreServer
 
 ## Request
+
 ### Attributes
+
 <table>
     <thead>
     <tr>
@@ -46,30 +48,35 @@ Restores an archived server.
 </table>
 
 ### Examples
-<h4>JSON</h4>
-<pre>{
 
-  "AccountAlias": "UNK",
+#### JSON
 
-  "Name": "SERVER01",
+    {
 
-  "HardwareGroupID": 1
+      "AccountAlias": "UNK",
 
-}</pre>
+      "Name": "SERVER01",
 
-<h4>XML</h4>
-<pre>&lt;RestoreServerRequest&gt;
+      "HardwareGroupID": 1
 
-    &lt;AccountAlias&gt;ACCT&lt;/AccountAlias&gt;
+    }
 
-    &lt;Name&gt;SERVER01&lt;/Name&gt;
+#### XML
 
-    &lt;HardwareGroupID&gt;1&lt;/HardwareGroupID&gt;
+    <RestoreServerRequest>
 
-&lt;/RestoreServerRequest&gt;</pre>
+        <AccountAlias>ACCT</AccountAlias>
+
+        <Name>SERVER01</Name>
+
+        <HardwareGroupID>1</HardwareGroupID>
+
+    </RestoreServerRequest>
 
 ## Response
+
 ### Attributes
+
 <table>
   <thead>
   <tr>
@@ -103,13 +110,24 @@ Restores an archived server.
 </table>
 
 ### Examples
-<h4>JSON</h4>
-<pre>{<br />    "RequestID:1,<br />    "Success":true,<br />    "Message":"Success",<br />    "StatusCode":0<br />}</pre>
 
-<h4>XML</h4>
-<pre>&lt;QueuedItemResponse Success="true" Message="Success" StatusCode="0"&gt;<br />&nbsp; &nbsp; &lt;RequestID&gt;1&lt;/RequestID&gt;<br />&lt;/QueuedItemResponse&gt;</pre>
+#### JSON
+
+    {
+        "RequestID:1,
+        "Success":true,
+        "Message":"Success",
+        "StatusCode":0
+    }
+
+#### XML
+
+    <QueuedItemResponse Success="true" Message="Success" StatusCode="0">
+        <RequestID>1</RequestID>
+    </QueuedItemResponse>
 
 ### Status Codes
+
 <table>
     <thead>
   <tr>

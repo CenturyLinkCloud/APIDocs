@@ -9,7 +9,7 @@ Lists archived servers.
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Server/ListArchivedServers/&lt;format&gt;
+    REST: https://api.tier3.com/REST/Server/ListArchivedServers/<format>
     SOAP: https://api.tier3.com/SOAP/Server.asmx?op=ListArchivedServers
 
 ## Request
@@ -40,26 +40,31 @@ Lists archived servers.
 </table>
 
 ### Examples
-<h4>JSON</h4>
-<pre>{
 
-  "AccountAlias": "ACCT",
+#### JSON
 
-  "Location": "DC1"
+    {
 
-}</pre>
+      "AccountAlias": "ACCT",
 
-<h4>XML</h4>
-<pre>&lt;ListArchivedServersRequest&gt;
+      "Location": "DC1"
 
-    &lt;AccountAlias&gt;ACCT&lt;/AccountAlias&gt;
+    }
 
-    &lt;Location&gt;DC1&lt;/Location&gt;
+#### XML
 
-&lt;/ListArchivedServersRequest&gt;</pre>
+    <ListArchivedServersRequest>
+
+        <AccountAlias>ACCT</AccountAlias>
+
+        <Location>DC1</Location>
+
+    </ListArchivedServersRequest>
 
 ## Response
+
 ### Attributes
+
 <table>
   <thead>
   <tr>
@@ -95,6 +100,7 @@ Lists archived servers.
 </table>
 
 ### Archive Server Attributes
+
 <table>
   <thead>
   <tr>
@@ -123,13 +129,30 @@ Lists archived servers.
 </table>
 
 ### Examples
-<h4>JSON</h4>
-<pre>{<br />    "Success":true,<br />    "Message":"Success",<br />    "StatusCode":0,<br />    "Servers":[<br />        {"ID":1001,"Name":"WA1T3NWEB01","Description":"WA1T3NWEB01"},<br />        {"ID":1002,"Name":"WA1T3NWEB02","Description":"WA1T3NWEB02"}<br />     ]<br />}</pre>
 
-<h4>XML</h4>
-<pre>&lt;GetArchiveServersResponse Success="true" Message="Successfully retrieved servers" StatusCode="0"&gt;<br />    &lt;Servers&gt;<br />        &lt;ArchiveServer ID="1001" Name="WA1T3NWEB01" Description="WA1T3NWEB01"/&gt;<br />        &lt;ArchiveServer ID="1002" Name="WA1T3NWEB02" Description="WA1T3NWEB02"/&gt;<br />    &lt;/Servers&gt;&nbsp;<br />&lt;/GetArchiveServersResponse&gt;</pre>
+#### JSON
+
+    {
+        "Success":true,
+        "Message":"Success",
+        "StatusCode":0,
+        "Servers":[
+            {"ID":1001,"Name":"WA1T3NWEB01","Description":"WA1T3NWEB01"},
+            {"ID":1002,"Name":"WA1T3NWEB02","Description":"WA1T3NWEB02"}
+         ]
+    }
+
+#### XML
+
+    <GetArchiveServersResponse Success="true" Message="Successfully retrieved servers" StatusCode="0">
+        <Servers>
+            <ArchiveServer ID="1001" Name="WA1T3NWEB01" Description="WA1T3NWEB01"/>
+            <ArchiveServer ID="1002" Name="WA1T3NWEB02" Description="WA1T3NWEB02"/>
+        </Servers> 
+    </GetArchiveServersResponse>
 
 ### Status Codes
+
 <table>
     <thead>
   <tr>

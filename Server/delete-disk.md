@@ -9,11 +9,13 @@ Deletes a disk on a Server.
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Server/DeleteDisk/&lt;format&gt;
+    REST: https://api.tier3.com/REST/Server/DeleteDisk/<format>
     SOAP: https://api.tier3.com/SOAP/Server.asmx?op=DeleteDisk
 
 ## Request
+
 ### Attributes
+
 <table>
     <thead>
     <tr>
@@ -59,40 +61,43 @@ Deletes a disk on a Server.
 </table>
 
 ### Examples
-<h4>JSON</h4>
-<pre>{
 
-  "AccountAlias": "UNK",
+####
 
-  "Name": "WA1UNKWEB01",
+    {
 
-  "ScsiBusID": "0",
+      "AccountAlias": "UNK",
 
-  "ScsiDeviceID": "1",
+      "Name": "WA1UNKWEB01",
 
-  "OverrideFailsafes": false
+      "ScsiBusID": "0",
 
-}</pre>
+      "ScsiDeviceID": "1",
 
-<h4>XML</h4>
-<pre>&lt;DeleteDiskRequest&gt;
+      "OverrideFailsafes": false
 
-    &lt;AccountAlias&gt;UNK&lt;/AccountAlias&gt;
+    }
 
-    &lt;Name&gt;WA1UNKWEB01&lt;/Name&gt;
+#### XML
 
-    &lt;ScsiBusID&gt;0&lt;/ScsiBusID&gt;
+    <DeleteDiskRequest>
 
-    &lt;ScsiDeviceID&gt;1&lt;/ScsiDeviceID&gt;
+        <AccountAlias>UNK</AccountAlias>
 
-    &lt;OverrideFailsafes&gt;false&lt;/OverrideFailsafes&gt;
+        <Name>WA1UNKWEB01</Name>
 
-&lt;/DeleteDiskRequest&gt;
+        <ScsiBusID>0</ScsiBusID>
 
-</pre> 
+        <ScsiDeviceID>1</ScsiDeviceID>
+
+        <OverrideFailsafes>false</OverrideFailsafes>
+
+    </DeleteDiskRequest>
 
 ## Response
+
 ### Attributes
+
 <table>
   <thead>
   <tr>
@@ -126,13 +131,31 @@ Deletes a disk on a Server.
 </table>
 
 ### Examples
-<h4>JSON</h4>
-<pre>{<br />    "RequestID":1,<br />    "Success":true,<br />    "Message":"Success",<br />    "StatusCode":0<br />}</pre>
 
-<h4>XML</h4>
-<pre>&lt;QueuedItemResponse Success="true" Message="Success" StatusCode="0"&gt;<br />&nbsp; &nbsp; &lt;RequestID&gt;1&lt;/RequestID&gt;<br />&lt;/QueuedItemResponse&gt;</pre>
+#### JSON
+
+    {
+
+        "RequestID":1,
+
+        "Success":true,
+
+        "Message":"Success",
+
+        "StatusCode":0
+
+    }
+
+#### XML
+
+    <QueuedItemResponse Success="true" Message="Success" StatusCode="0">
+
+        <RequestID>1</RequestID>
+
+    </QueuedItemResponse>
 
 ### Status Codes
+
 <table>
     <thead>
   <tr>

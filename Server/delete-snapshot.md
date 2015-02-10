@@ -9,11 +9,13 @@ Deletes a named snapshot for a specified server.
 
 ## URL
 
-REST: https://api.tier3.com/REST/Server/DeleteSnapshot/&lt;format&gt;
-SOAP: https://api.tier3.com/SOAP/Server.asmx?op=DeleteSnapshot
+    REST: https://api.tier3.com/REST/Server/DeleteSnapshot/<format>
+    SOAP: https://api.tier3.com/SOAP/Server.asmx?op=DeleteSnapshot
 
 ## Request
+
 ### Attributes
+
 <table>
     <thead>
     <tr>
@@ -46,30 +48,35 @@ SOAP: https://api.tier3.com/SOAP/Server.asmx?op=DeleteSnapshot
 </table>
 
 ### Examples
-<h4>JSON</h4>
-<pre>{
 
-  "AccountAlias": "UNK",
+#### JSON
 
-  "Name": "1",
+    {
 
-  "SnapshotName": "2012-01-01-12:00:00"
+      "AccountAlias": "UNK",
 
-}</pre>
+      "Name": "1",
 
-<h4>XML</h4>
-<pre>&lt;SnapshotRequest&gt;
+      "SnapshotName": "2012-01-01-12:00:00"
 
-    &lt;AccountAlias&gt;ACCT&lt;/AccountAlias&gt;
+    }
 
-    &lt;Name&gt;SERVER01&lt;/Name&gt;
+#### XML
 
-    &lt;SnapshotName&gt;2012-01-01-12:00:00&lt;/SnapshotName&gt;
+    <SnapshotRequest>
 
-&lt;/SnapshotRequest&gt;</pre>
+        <AccountAlias>ACCT</AccountAlias>
+
+        <Name>SERVER01</Name>
+
+        <SnapshotName>2012-01-01-12:00:00</SnapshotName>
+
+    </SnapshotRequest>
 
 ## Response
+
 ### Attribute
+
 <table>
   <thead>
   <tr>
@@ -99,10 +106,21 @@ SOAP: https://api.tier3.com/SOAP/Server.asmx?op=DeleteSnapshot
 
 ### Examples
 
-<h4>JSON</h4>
-<pre>{<br />    "Success":true,<br />    "Message":"Success",<br />    "StatusCode":0<br />}</pre>
-<h4>XML</h4>
-<pre>&lt;APIResponse Success="true" Message="Success" StatusCode="0"/&gt;</pre>
+#### JSON
+
+    {
+
+      "Success":true,
+
+      "Message":"Success",
+
+      "StatusCode":0
+
+    }
+
+#### XML
+
+    <APIResponse Success="true" Message="Success" StatusCode="0"/>
 
 ### Status Codes
 

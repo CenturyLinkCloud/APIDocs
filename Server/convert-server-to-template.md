@@ -8,10 +8,14 @@
 Converts the server to a template.
 
 ## URL
-<pre>REST: https://api.tier3.com/REST/Server/ConvertServerToTemplate/&lt;format&gt;<br />SOAP: https://api.tier3.com/SOAP/Server.asmx?op=ConvertServerToTemplate</pre> 
+
+    REST: https://api.tier3.com/REST/Server/ConvertServerToTemplate/<format>
+    SOAP: https://api.tier3.com/SOAP/Server.asmx?op=ConvertServerToTemplate 
 
 ## Request
+
 ### Attributes
+
 <table>
     <thead>
     <tr>
@@ -50,34 +54,39 @@ Converts the server to a template.
 </table>
 
 ### Examples
-<h4>JSON</h4>
-<pre>{
 
-  "Name": "WA1T3NWEB01",
+#### JSON
 
-  "AccountAlias": "UNK",
+    {
 
-  "Password": "password",
+      "Name": "WA1T3NWEB01",
 
-  "TemplateAlias": "TEMP"
+      "AccountAlias": "UNK",
 
-}</pre>
+      "Password": "password",
 
-<h4>XML</h4>
-<pre>&lt;ConvertServerToTemplateRequest&gt;
+      "TemplateAlias": "TEMP"
 
-    &lt;AccountAlias&gt;ACCT&lt;/AccountAlias&gt;
+    }
 
-    &lt;Name&gt;WEB&lt;/Name&gt;
+#### XML
 
-    &lt;Password&gt;password&lt;/Password&gt;
+    <ConvertServerToTemplateRequest>
 
-    &lt;TemplateAlias&gt;TEMP&lt;/TemplateAlias&gt;
+        <AccountAlias>ACCT</AccountAlias>
 
-&lt;/ConvertServerToTemplateRequest&gt;</pre> 
+        <Name>WEB</Name>
+
+        <Password>password</Password>
+
+        <TemplateAlias>TEMP</TemplateAlias>
+
+    </ConvertServerToTemplateRequest>
 
 ## Response
+
 ### Attributes
+
 <table>
   <thead>
   <tr>
@@ -114,11 +123,28 @@ Converts the server to a template.
 </table>
 
 ### Examples
-<h4>JSON</h4>
-<pre>{<br />    "RequestID":1,<br />    "Success":true,<br />    "Message":"Success",<br />    "StatusCode":0<br />}</pre>
 
-<h4>XML</h4>
-<pre>&lt;QueuedItemResponse Success="true" Message="Success" StatusCode="0"&gt;<br />&nbsp; &nbsp; &lt;RequestID&gt;1&lt;/RequestID&gt;<br />&lt;/QueuedItemResponse&gt;</pre>
+#### JSON
+
+    {
+
+      "RequestID":1,
+
+      "Success":true,
+
+      "Message":"Success",
+
+      "StatusCode":0
+
+    }
+
+#### XML
+
+    <QueuedItemResponse Success="true" Message="Success" StatusCode="0">
+
+        <RequestID>1</RequestID>
+
+    </QueuedItemResponse>
 
 ### Status Codes
 <table>

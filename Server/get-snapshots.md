@@ -9,11 +9,13 @@ Gets the list of Snapshots associated with the server.
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Server/GetSnapshots/&lt;format&gt;
+    REST: https://api.tier3.com/REST/Server/GetSnapshots/<format>
     SOAP: https://api.tier3.com/SOAP/Server.asmx?op=GetSnapshots
 
 ## Request
+
 ### Attributes
+
 <table>
     <thead>
     <tr>
@@ -40,26 +42,31 @@ Gets the list of Snapshots associated with the server.
 </table>
 
 ### Examples
-<h4>JSON</h4>
-<pre>{
 
-  "Name": "DEMOFIRST01",
+#### JSON
 
-  "AccountAlias": "UNK"
+    {
 
-}</pre>
+      "Name": "DEMOFIRST01",
 
-<h4>XML</h4>
-<pre>&lt;ServerRequest&gt;
+      "AccountAlias": "UNK"
 
-    &lt;AccountAlias&gt;ACCT&lt;/AccountAlias&gt;
+    }
 
-    &lt;Name&gt;SERVER01&lt;/Name&gt;
+#### XML
 
-&lt;/ServerRequest&gt;</pre>
+    <ServerRequest>
+
+        <AccountAlias>ACCT</AccountAlias>
+
+        <Name>SERVER01</Name>
+
+    </ServerRequest>
 
 ## Response
+
 ### Attributes
+
 <table>
   <thead>
   <tr>
@@ -95,6 +102,7 @@ Gets the list of Snapshots associated with the server.
 </table>
 
 ### Snapshot Attributes
+
 <table>
   <thead>
   <tr>
@@ -123,13 +131,32 @@ Gets the list of Snapshots associated with the server.
 </table>
 
 ### Examples
-<h4>JSON</h4>
-<pre>{<br />    "RequestID:1,<br />    "Success":true,<br />    "Message":"Success",<br />    "StatusCode":0,<br />    "Snapshots":[<br />        {"Name":"2012-01-01-12:00:00","Description":"Snapshot (2012-01-01-12:00:00)","DateCreated":"\/Date(1330047404893)\/"}]<br />}</pre>
 
-<h4>XML</h4>
-<pre>&lt;GetSnapshotsResponse Success="true" Message="Successfully retrieved snapshots" StatusCode="0"&gt;<br />    &lt;Snapshots&gt;<br />        &lt;Snapshot&gt;<br />            &lt;Name&gt;2012-01-01-12:00:00&lt;/Name&gt;<br />            &lt;Description&gt;Snapshot (2012-01-01-12:00:00)&lt;/Description&gt;<br />            &lt;DateCreated&gt;2012-01-01T12:00:00.000&lt;/DateCreated&gt;<br />        &lt;/Snapshot&gt;<br />    &lt;/Snapshots&gt;<br />&lt;/GetSnapshotsResponse&gt;</pre>
+#### JSON
+
+    {
+        "RequestID:1,
+        "Success":true,
+        "Message":"Success",
+        "StatusCode":0,
+        "Snapshots":[
+            {"Name":"2012-01-01-12:00:00","Description":"Snapshot (2012-01-01-12:00:00)","DateCreated":"\/Date(1330047404893)\/"}]
+    }
+
+#### XML
+
+    <GetSnapshotsResponse Success="true" Message="Successfully retrieved snapshots" StatusCode="0">
+        <Snapshots>
+            <Snapshot>
+                <Name>2012-01-01-12:00:00</Name>
+                <Description>Snapshot (2012-01-01-12:00:00)</Description>
+                <DateCreated>2012-01-01T12:00:00.000</DateCreated>
+            </Snapshot>
+        </Snapshots>
+    </GetSnapshotsResponse>
 
 ### Status Codes
+
 <table>
     <thead>
   <tr>

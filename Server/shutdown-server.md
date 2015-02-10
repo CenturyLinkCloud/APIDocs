@@ -13,7 +13,9 @@ Shuts down the operating system and then powers off server.
     SOAP: https://api.tier3.com/SOAP/Server.asmx?op=ShutdownServer
 
 ## Request
+
 ### Attributes
+
 <table>
     <thead>
     <tr>
@@ -42,6 +44,7 @@ Shuts down the operating system and then powers off server.
 ### Examples
 
 #### JSON
+
     {
 
       "AccountAlias": "UNK",
@@ -51,6 +54,7 @@ Shuts down the operating system and then powers off server.
     }
 
 #### XML
+
     <ServerRequest>
 
       <AccountAlias>ACCT</AccountAlias>
@@ -60,7 +64,9 @@ Shuts down the operating system and then powers off server.
     </ServerRequest>
 
 ## Response
+
 ### Attributes
+
 <table>
   <thead>
   <tr>
@@ -97,12 +103,24 @@ Shuts down the operating system and then powers off server.
 </table>
 
 ### Examples
-<h4>JSON</h4>
-<pre>{<br />    "RequestID:1,<br />    "Success":true,<br />    "Message":"Success",<br />    "StatusCode":0<br />}</pre>
-<h4>XML</h4>
-<pre>&lt;QueuedItemResponse Success="true" Message="Success" StatusCode="0"&gt;<br />&nbsp; &nbsp; &lt;RequestID&gt;1&lt;/RequestID&gt;<br />&lt;/QueuedItemResponse&gt;</pre>
+
+#### JSON
+
+    {
+        "RequestID:1,
+        "Success":true,
+        "Message":"Success",
+        "StatusCode":0
+    }
+
+#### XML
+
+    <QueuedItemResponse Success="true" Message="Success" StatusCode="0">
+        <RequestID>1</RequestID>
+    </QueuedItemResponse>
 
 ### Status Codes
+
 <table>
     <thead>
   <tr>

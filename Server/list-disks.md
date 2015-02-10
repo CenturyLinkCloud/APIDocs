@@ -9,11 +9,13 @@ Lists the disks on a Server.
 
 ## URL
 
-REST: https://api.tier3.com/REST/Server/ListDisks/&lt;format&gt
-SOAP: https://api.tier3.com/SOAP/Server.asmx?op=ListDisks
+    REST: https://api.tier3.com/REST/Server/ListDisks/<format>
+    SOAP: https://api.tier3.com/SOAP/Server.asmx?op=ListDisks
 
 ## Request
+
 ### Attributes
+
 <table>
     <thead>
     <tr>
@@ -46,8 +48,10 @@ SOAP: https://api.tier3.com/SOAP/Server.asmx?op=ListDisks
 </table>
 
 ### Examples
-<h4>JSON</h4>
-<pre>{
+
+#### JSON
+
+{
 
   "AccountAlias": "UNK",
 
@@ -55,21 +59,24 @@ SOAP: https://api.tier3.com/SOAP/Server.asmx?op=ListDisks
 
   "QueryGuestDiskNames": true
 
-}</pre>
+}
 
-<h4>XML</h4>
-<pre>&lt;ListDiskRequest&gt;
+#### XML
 
-    &lt;AccountAlias&gt;UNK&lt;/AccountAlias&gt;
+<ListDiskRequest>
 
-    &lt;Name&gt;WEB&lt;/Name&gt;
+    <AccountAlias>UNK</AccountAlias>
 
-    &lt;QueryGuestDiskNames&gt;true&lt;/QueryGuestDiskNames&gt;
+    <Name>WEB</Name>
 
-&lt;/ListDiskRequest&gt;</pre>
+    <QueryGuestDiskNames>true</QueryGuestDiskNames>
+
+</ListDiskRequest>
 
 ## Response
+
 ### Attributes
+
 <table>
   <thead>
   <tr>
@@ -103,49 +110,53 @@ SOAP: https://api.tier3.com/SOAP/Server.asmx?op=ListDisks
 </table>
 
 ### Examples
-<h4>JSON</h4>
-<pre>{
 
-  "Server": "WA1MDAUBU04",
-
-  "HasSnapshot": false,
-
-  "Disks": [
+#### JSON
 
     {
 
-      "Name": "[0:0]",
+      "Server": "WA1MDAUBU04",
 
-      "ScsiBusID": "0",
+      "HasSnapshot": false,
 
-      "ScsiDeviceID": "0",
+      "Disks": [
 
-      "SizeGB": 16
+        {
+
+          "Name": "[0:0]",
+
+          "ScsiBusID": "0",
+
+          "ScsiDeviceID": "0",
+
+          "SizeGB": 16
+
+        }
+
+      ],
+
+      "Success": true,
+
+      "Message": "OK",
+
+      "StatusCode": 0
 
     }
 
-  ],
+#### XML
 
-  "Success": true,
+    <ListDiskResponse Success="true" Message="OK" StatusCode="0" Server="WA1MDAUBU04" HasSnapshot="false">
 
-  "Message": "OK",
+        <Disks>
 
-  "StatusCode": 0
+            <DiskInfo Name="[0:0]" ScsiBusID="0" ScsiDeviceID="0" SizeGB="16"/>
 
-}</pre>
+        </Disks>
 
-<h4>XML</h4>
-<pre>&lt;ListDiskResponse Success="true" Message="OK" StatusCode="0" Server="WA1MDAUBU04" HasSnapshot="false"&gt;
-
-    &lt;Disks&gt;
-
-        &lt;DiskInfo Name="[0:0]" ScsiBusID="0" ScsiDeviceID="0" SizeGB="16"/&gt;
-
-    &lt;/Disks&gt;
-
-&lt;/ListDiskResponse&gt;</pre>
+    </ListDiskResponse>
 
 ### Status Codes
+
 <table>
     <thead>
   <tr>

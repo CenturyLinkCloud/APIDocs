@@ -9,11 +9,13 @@ Resizes a disk on a Server.
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Server/ResizeDisk/&lt;format&gt;
+    REST: https://api.tier3.com/REST/Server/ResizeDisk/<format>
     SOAP: https://api.tier3.com/SOAP/Server.asmx?op=ResizeDisk
 
 ## Request
+
 ### Attributes
+
 <table>
     <thead>
     <tr>
@@ -64,41 +66,47 @@ Resizes a disk on a Server.
 </table>
 
 ### Examples
-<h4>JSON</h4>
-<pre>{
 
-  "AccountAlias": "UNK",
+#### JSON
 
-  "Name": "WA1T3NWEB01",
+    {
 
-  "ScsiBusID": "0",
+      "AccountAlias": "UNK",
 
-  "ScsiDeviceID": "2",
+      "Name": "WA1T3NWEB01",
 
-  "ResizeGuestDisk": true,
+      "ScsiBusID": "0",
 
-  "NewSizeGB": 50
+      "ScsiDeviceID": "2",
 
-}</pre>
-<h4>XML</h4>
-<pre>&lt;ResizeDiskRequest&gt;
+      "ResizeGuestDisk": true,
 
-    &lt;AccountAlias&gt;UNK&lt;/AccountAlias&gt;
+      "NewSizeGB": 50
 
-    &lt;Name&gt;WEB&lt;/Name&gt;
+    }
 
-    &lt;ScsiBusID&gt;0&lt;/ScsiBusID&gt;
+#### XML
 
-    &lt;ScsiDeviceID&gt;2&lt;/ScsiDeviceID&gt;
+    <ResizeDiskRequest>
 
-    &lt;ResizeGuestDisk&gt;true&lt;/ResizeGuestDisk&gt;
+        <AccountAlias>UNK</AccountAlias>
 
-    &lt;NewSizeGB&gt;50&lt;/NewSizeGB&gt;
+        <Name>WEB</Name>
 
-&lt;/ResizeDiskRequest&gt;</pre>
+        <ScsiBusID>0</ScsiBusID>
+
+        <ScsiDeviceID>2</ScsiDeviceID>
+
+        <ResizeGuestDisk>true</ResizeGuestDisk>
+
+        <NewSizeGB>50</NewSizeGB>
+
+    </ResizeDiskRequest>
 
 ## Response
+
 ### Attributes
+
 <table>
   <thead>
   <tr>
@@ -132,11 +140,21 @@ Resizes a disk on a Server.
 </table>
 
 ### Examples
-<h4>JSON</h4>
-<pre>{<br />    "RequestID":1,<br />    "Success":true,<br />    "Message":"Success",<br />    "StatusCode":0<br />}</pre>
 
-<h4>XML</h4>
-<pre>&lt;QueuedItemResponse Success="true" Message="Success" StatusCode="0"&gt;<br />&nbsp; &nbsp; &lt;RequestID&gt;1&lt;/RequestID&gt;<br />&lt;/QueuedItemResponse&gt;</pre>
+#### JSON
+
+    {
+        "RequestID":1,
+        "Success":true,
+        "Message":"Success",
+        "StatusCode":0
+    }
+
+#### XML
+
+    <QueuedItemResponse Success="true" Message="Success" StatusCode="0">
+        <RequestID>1</RequestID>
+    </QueuedItemResponse>
 
 ### Status Codes
 <table>

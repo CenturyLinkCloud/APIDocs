@@ -9,11 +9,13 @@ Powers on the server (or resumes from a paused state).
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Server/PowerOnServer/&lt;format&gt;
+    REST: https://api.tier3.com/REST/Server/PowerOnServer/<format>
     SOAP: https://api.tier3.com/SOAP/Server.asmx?op=PowerOnServer
 
 ## Request
+
 ### Attributes
+
 <table>
     <thead>
     <tr>
@@ -40,26 +42,28 @@ Powers on the server (or resumes from a paused state).
 </table>
 
 ### Examples
-<h4>JSON</h4>
-<pre>{
 
-  "AccountAlias": "UNK",
+#### JSON
 
-  "Name": "SERVER01"
+    {
+      "AccountAlias": "UNK",
+      "Name": "SERVER01"
+    }
 
-}</pre>
+#### XML
 
-<h4>XML</h4>
-<pre>&lt;ServerRequest&gt;
+    <ServerRequest>
 
-    &lt;AccountAlias&gt;ACCT&lt;/AccountAlias&gt;
+        <AccountAlias>ACCT</AccountAlias>
 
-    &lt;Name&gt;SERVER01&lt;/Name&gt;
+        <Name>SERVER01</Name>
 
-&lt;/ServerRequest&gt;</pre>
+    </ServerRequest>
 
 ## Response
+
 ### Attributes
+
 <table>
   <thead>
   <tr>
@@ -96,13 +100,24 @@ Powers on the server (or resumes from a paused state).
 </table>
 
 ### Examples
-<h4>JSON</h4>
-<pre>{<br />    "RequestID:1,<br />    "Success":true,<br />    "Message":"Success",<br />    "StatusCode":0<br />}</pre>
 
-<h4>XML</h4>
-<pre>&lt;QueuedItemResponse Success="true" Message="Success" StatusCode="0"&gt;<br />&nbsp; &nbsp; &lt;RequestID&gt;1&lt;/RequestID&gt;<br />&lt;/QueuedItemResponse&gt;</pre>
+#### JSON
+
+    {
+        "RequestID:1,
+        "Success":true,
+        "Message":"Success",
+        "StatusCode":0
+    }
+
+#### XML
+
+    <QueuedItemResponse Success="true" Message="Success" StatusCode="0">
+        <RequestID>1</RequestID>
+    </QueuedItemResponse>
 
 ### Status Codes
+
 <table>
     <thead>
   <tr>

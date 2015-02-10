@@ -9,11 +9,13 @@ Reverts to a named snapshot for a specified server.
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Server/RevertToSnapshot/&lt;format&gt;
+    REST: https://api.tier3.com/REST/Server/RevertToSnapshot/<format>
     SOAP: https://api.tier3.com/SOAP/Server.asmx?op=RevertToSnapshot
 
 ## Request
+
 ### Attributes
+
 <table>
     <thead>
     <tr>
@@ -46,29 +48,35 @@ Reverts to a named snapshot for a specified server.
 </table>
 
 ### Examples
-<h4>JSON</h4>
-<pre>{
 
-  "AccountAlias": "UNK",
+#### JSON
 
-  "Name": "1",
+    {
 
-  "SnapshotName": "2012-01-01-12:00:00"
+      "AccountAlias": "UNK",
 
-}</pre>
-<h4>XML</h4>
-<pre>&lt;SnapshotRequest&gt;
+      "Name": "1",
 
-    &lt;AccountAlias&gt;ACCT&lt;/AccountAlias&gt;
+      "SnapshotName": "2012-01-01-12:00:00"
 
-    &lt;Name&gt;SERVER01&lt;/Name&gt;
+    }
 
-    &lt;SnapshotName&gt;2012-01-01-12:00:00&lt;/SnapshotName&gt;
+#### XML
 
-&lt;/SnapshotRequest&gt;</pre>
+    <SnapshotRequest>
+
+        <AccountAlias>ACCT</AccountAlias>
+
+        <Name>SERVER01</Name>
+
+        <SnapshotName>2012-01-01-12:00:00</SnapshotName>
+
+    </SnapshotRequest>
 
 ## Response
+
 ### Attributes
+
 <table>
   <thead>
   <tr>
@@ -98,11 +106,17 @@ Reverts to a named snapshot for a specified server.
 
 ### Examples
 
-<h4>JSON</h4>
-<pre>{<br />    "Success":true,<br />    "Message":"Success",<br />    "StatusCode":0<br />}</pre>
+#### JSON
 
-<h4>XML</h4>
-<pre>&lt;APIResponse Success="true" Message="Success" StatusCode="0"/&gt;</pre>
+    {
+        "Success":true,
+        "Message":"Success",
+        "StatusCode":0
+    }
+
+#### XML
+
+    <APIResponse Success="true" Message="Success" StatusCode="0"/>
 
 ### Status Codes
 

@@ -9,11 +9,13 @@ Gets the credentials for the specified server.
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Server/GetServerCredentials/&lt;format&gt;
+    REST: https://api.tier3.com/REST/Server/GetServerCredentials/<format>
     SOAP: https://api.tier3.com/SOAP/Server.asmx?op=GetServerCredentials
 
 ## Request
+
 ### Attributes
+
 <table>
     <thead>
     <tr>
@@ -40,26 +42,31 @@ Gets the credentials for the specified server.
 </table>
 
 ### Examples
-<h4>JSON</h4>
-<pre>{
 
-  "AccountAlias": "ACCT",
+#### JSON
 
-  "Name": "DC1ACCTSVR01"
+    {
 
-}</pre>
+      "AccountAlias": "ACCT",
 
-<h4>XML</h4>
-<pre>&lt;ServerRequest&gt;
+      "Name": "DC1ACCTSVR01"
 
-    &lt;AccountAlias&gt;ACCT&lt;/AccountAlias&gt;
+    }
 
-    &lt;Name&gt;DC1ACCTSVR01&lt;/Name&gt;
+#### XML
 
-&lt;/ServerRequest&gt;</pre>
+    <ServerRequest>
+
+        <AccountAlias>ACCT</AccountAlias>
+
+        <Name>DC1ACCTSVR01</Name>
+
+    </ServerRequest>
 
 ## Response
+
 ### Attributes
+
 <table>
   <thead>
   <tr>
@@ -102,13 +109,26 @@ Gets the credentials for the specified server.
 </table>
 
 ### Examples
-<h4>JSON</h4>
-<pre>{<br />    "Success":true,<br />    "Message":"Success",<br />    "StatusCode":0,<br />    "Username":"administrator",<br />    "Password":"password"<br />}</pre>
 
-<h4>XML</h4>
-<pre>&lt;GetServerCredentialsResponse Success="true" Message="Successfully retrieved servers" StatusCode="0"&gt;<br />    &lt;Username&gt;administrator&lt;/Username&gt;<br />    &lt;Password&gt;password&lt;/Password&gt;<br />&lt;/GetServerCredentialsResponse&gt;</pre>
+#### JSON
+
+    {
+        "Success":true,
+        "Message":"Success",
+        "StatusCode":0,
+        "Username":"administrator",
+        "Password":"password"
+    }
+
+#### XML
+
+    <GetServerCredentialsResponse Success="true" Message="Successfully retrieved servers" StatusCode="0">
+        <Username>administrator</Username>
+        <Password>password</Password>
+    </GetServerCredentialsResponse>
 
 ### Status Codes
+
 <table>
     <thead>
   <tr>
