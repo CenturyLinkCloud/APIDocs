@@ -10,8 +10,12 @@ Create a brand new (sub) account in the Tier 3 system. Calls to this operation m
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Account/CreateAccount/<format> (format = XML | JSON)
-    SOAP: https://api.tier3.com/SOAP/Account.asmx?op=CreateAccount
+```
+REST: https://api.tier3.com/REST/Account/CreateAccount/<format> (format = XML | JSON)
+```
+```
+SOAP: https://api.tier3.com/SOAP/Account.asmx?op=CreateAccount
+```
 
     
 ## Request

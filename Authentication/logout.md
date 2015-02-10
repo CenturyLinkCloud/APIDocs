@@ -9,7 +9,7 @@ This method will log you out of the API. The Logon method must be called again p
 
 ## URL
 
-    https://api.tier3.com/REST/Auth/Logout/
+    REST: https://api.tier3.com/REST/Auth/Logout/
 
 ## Request
 
