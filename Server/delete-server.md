@@ -97,7 +97,13 @@ Deletes the machine and releases all associated resources.
 
 ### Examples
 <h4>JSON</h4>
-<pre>{<br />    "RequestID:1,<br />    "Success":true,<br />    "Message":"Success",<br />    "StatusCode":0<br />}</pre>
+<pre>{
+  "RequestID:1,
+  "Success":true,
+  "Message":"Success",
+  "StatusCode":0
+  }
+</pre>
 
 <h4>XML</h4>
 <pre>&lt;QueuedItemResponse Success="true" Message="Success" StatusCode="0"&gt;<br />&nbsp; &nbsp; &lt;RequestID&gt;1&lt;/RequestID&gt;<br />&lt;/QueuedItemResponse&gt;</pre>
