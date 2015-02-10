@@ -5,16 +5,15 @@
   "attachments": []
 }}}
 
-GetInvalidAddresses
-<p>This method will retrieve the list of invalid address responses that have been saved by the SMTP Relay system related to your domain.
-  <br />
-  <br /><strong>URL:</strong>
-</p>
-<pre>https://api.tier3.com/REST/SMTPRelay/GetInvalidAddresses/<format></pre>
-<p>
-  <br />
-  <br /><strong>GetInvalidAddresses Request Attributes:</strong>
-</p>
+This method will retrieve the list of invalid address responses that have been saved by the SMTP Relay system related to your domain.
+
+## URL
+
+    REST: https://api.tier3.com/REST/SMTPRelay/GetInvalidAddresses/<format>
+
+## Request
+
+### Attributes
 
 <table>
   <tbody>
