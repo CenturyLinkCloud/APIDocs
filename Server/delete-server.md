@@ -40,26 +40,33 @@ Deletes the machine and releases all associated resources.
 </table>
 
 ### Examples
-<h4>JSON</h4>
-<pre>{
+
+#### JSON
+```
+{
 
   "AccountAlias": "ACCT",
 
   "Name": "DC1ACCTSVR01"
 
-}</pre>
+}
+```
 
-<h4>XML</h4>
-<pre><ServerRequest>
 
-    <AccountAlias>UNK</AccountAlias>
+#### XML
 
-    <Name>SERVER01</Name>
+    <ServerRequest>
 
-</ServerRequest></pre>
+        <AccountAlias>UNK</AccountAlias>
+
+        <Name>SERVER01</Name>
+
+    </ServerRequest>
 
 ## Response
+
 ### Attributes
+
 <table>
   <thead>
   <tr>
