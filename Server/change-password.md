@@ -5,17 +5,20 @@
   "attachments": []
 }}}
 
-Updates the Admin/Root password&nbsp;for a Server.
+Updates the Admin/Root password for a Server.
 
 ### URL
 
-    REST: https://api.tier3.com/REST/Server/ChangePassword/&lt;format&gt;
+    REST: https://api.tier3.com/REST/Server/ChangePassword/<format>
+    
     SOAP: https://api.tier3.com/SOAP/Server.asmx?op=ChangePassword
 
 ## Request
+
+
 ### Attributes
 <table>
-    <thead>
+  <thead>
     <tr>
       <th>Name</th>
       <th>Type</th>
@@ -52,34 +55,39 @@ Updates the Admin/Root password&nbsp;for a Server.
 </table>
 
 ### Examples
-<h4>JSON</h4>
-<pre>{
 
-  "AccountAlias": "UNK",
+#### JSON
 
-  "Name": "WA1T3NWEB01",
+    {
 
-  "CurrentPassword": "password",
+      "AccountAlias": "UNK",
 
-  "NewPassword": "newPassword"
+      "Name": "WA1T3NWEB01",
 
-}</pre>
+      "CurrentPassword": "password",
 
-<h4>XML</h4>
-<pre>&lt;ChangePasswordRequest&gt;
+      "NewPassword": "newPassword"
 
-    &lt;AccountAlias&gt;UNK&lt;/AccountAlias&gt;
+    }
 
-    &lt;Name&gt;QA1FMACC554L01&lt;/Name&gt;
+#### XML
 
-    &lt;CurrentPassword&gt;password&lt;/CurrentPassword&gt;
+    <ChangePasswordRequest>
 
-    &lt;NewPassword&gt;newPassword&lt;/NewPassword&gt;
+        <AccountAlias>UNK</AccountAlias>
 
-&lt;/ChangePasswordRequest&gt;</pre> 
+        <Name>QA1FMACC554L01</Name>
+
+        <CurrentPassword>password</CurrentPassword>
+
+        <NewPassword>newPassword</NewPassword>
+
+    </ChangePasswordRequest>
 
 ## Response
+
 ### Attributes
+
 <table>
   <thead>
   <tr>
@@ -108,10 +116,22 @@ Updates the Admin/Root password&nbsp;for a Server.
 </table>
 
 ### Examples
-<h4>JSON</h4>
-<pre>{<br />    "Success":true,<br />    "Message":"Success",<br />    "StatusCode":0<br />}</pre>
-<h4>XML</h4>
-<pre>&lt;APIResponse Success="true" Message="Success" StatusCode="0" /&gt;</pre>
+
+#### JSON
+
+    {
+
+      "Success":true,
+
+      "Message":"Success",
+
+      "StatusCode":0
+
+    }
+
+#### XML
+
+    <APIResponse Success="true" Message="Success" StatusCode="0" />
 
 ### Status Codes
 <table>
