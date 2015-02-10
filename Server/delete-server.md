@@ -9,7 +9,7 @@ Deletes the machine and releases all associated resources.
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Server/DeleteServer/&lt;format&gt;
+    REST: https://api.tier3.com/REST/Server/DeleteServer/<format>
     SOAP: https://api.tier3.com/SOAP/Server.asmx?op=DeleteServer
 
 ## Request
@@ -50,13 +50,13 @@ Deletes the machine and releases all associated resources.
 }</pre>
 
 <h4>XML</h4>
-<pre>&lt;ServerRequest&gt;
+<pre><ServerRequest>
 
-    &lt;AccountAlias&gt;UNK&lt;/AccountAlias&gt;
+    <AccountAlias>UNK</AccountAlias>
 
-    &lt;Name&gt;SERVER01&lt;/Name&gt;
+    <Name>SERVER01</Name>
 
-&lt;/ServerRequest&gt;</pre>
+</ServerRequest></pre>
 
 ## Response
 ### Attributes
@@ -96,17 +96,28 @@ Deletes the machine and releases all associated resources.
 </table>
 
 ### Examples
-<h4>JSON</h4>
-<pre>{
-  "RequestID:1,
-  "Success":true,
-  "Message":"Success",
-  "StatusCode":0
-  }
-</pre>
 
-<h4>XML</h4>
-<pre>&lt;QueuedItemResponse Success="true" Message="Success" StatusCode="0"&gt;<br />&nbsp; &nbsp; &lt;RequestID&gt;1&lt;/RequestID&gt;<br />&lt;/QueuedItemResponse&gt;</pre>
+#### JSON
+
+    {
+      "RequestID:1,
+
+      "Success":true,
+
+      "Message":"Success",
+
+      "StatusCode":0
+
+    }
+
+#### XML
+
+    <QueuedItemResponse Success="true" Message="Success" StatusCode="0">
+
+        <RequestID>1</RequestID>
+
+    </QueuedItemResponse>
+
 
 ### Status Codes
 <table>
