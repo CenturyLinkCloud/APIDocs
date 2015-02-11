@@ -63,19 +63,19 @@ Converts the Template to a Server.
 
 #### JSON
 
-{
+    {
 
-  "AccountAlias": "UNK",
+      "AccountAlias": "UNK",
 
-  "Name": "WA1T3NWEB01",
+      "Name": "WA1T3NWEB01",
 
-  "Password": "password",
+      "Password": "password",
 
-  "HadwareGroupID": 1,
+      "HadwareGroupID": 1,
 
-  "Network": "VLAN113_172.21.113"
+      "Network": "VLAN113_172.21.113"
 
-}
+    }
 
 #### XML
 
