@@ -11,7 +11,7 @@
 
 Below you will find a current list of the available methods on our CenturyLink Cloud API. If you need help or support, please head over to our Knowledge Base or Getting Started pages.
 
-The calling conventions for the REST API is to send a POST request to the URL of the given method (e.g.  https://api.tier3.com/rest/VirtualServer/CreateServer/FORMAT   where FORMAT is either XML or JSON). In addition, the content type of the HTTP request must be set as well to either "text/xml" for XML requests, or "application/json; charset=utf-8" for JSON requests. The combination of the format node and the Content Type will determine how the request is interpreted as well as control what format the responses are returned.
+The calling conventions for the REST API is to send a POST request to the URL of the given method (e.g.  `https://api.tier3.com/rest/VirtualServer/CreateServer/FORMAT`   where FORMAT is either XML or JSON). In addition, the content type of the HTTP request must be set as well to either "text/xml" for XML requests, or "application/json; charset=utf-8" for JSON requests. The combination of the format node and the Content Type will determine how the request is interpreted as well as control what format the responses are returned.
 
 The SOAP based API supports the same features as the REST API, and while the request and response messages are essentially identical to those of the REST API, you will want to pull down the WSDL for each API to verify the details. URL's to each API's SOAP WSDL can be found on the individual API pages.
 

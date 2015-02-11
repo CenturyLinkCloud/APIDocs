@@ -51,27 +51,27 @@ Lists the disks on a Server.
 
 #### JSON
 
-{
+    {
 
-  "AccountAlias": "UNK",
+      "AccountAlias": "UNK",
 
-  "Name": "WA1T3NWEB01",
+      "Name": "WA1T3NWEB01",
 
-  "QueryGuestDiskNames": true
+      "QueryGuestDiskNames": true
 
-}
+    }
 
 #### XML
 
-<ListDiskRequest>
+    <ListDiskRequest>
 
-    <AccountAlias>UNK</AccountAlias>
+        <AccountAlias>UNK</AccountAlias>
 
-    <Name>WEB</Name>
+        <Name>WEB</Name>
 
-    <QueryGuestDiskNames>true</QueryGuestDiskNames>
+        <QueryGuestDiskNames>true</QueryGuestDiskNames>
 
-</ListDiskRequest>
+    </ListDiskRequest>
 
 ## Response
 
