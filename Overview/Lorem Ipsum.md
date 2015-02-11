@@ -37,36 +37,34 @@ REST: https://api.tier3.com/REST/DomainName/Overview/
 
 ## Examples
 
-<div class="kb-api-examples">
+<div class="panel--pre-code panel--pre-code--with-page-numbers">
 
-  <div class="kb-api-examples-header">
-    
-    <a class="kb-api-example-title active" data-toggle="tab" data-target="#json1">JSON(REST)</a>
-    <a class="kb-api-example-title" data-toggle="tab" data-target="#xml1">XML (REST)</a>
-    <a class="kb-api-example-title" data-toggle="tab" data-target="#xml2">XML (SOAP)</a>
+  <div>
+    <a data-toggle="tab" data-target="#2-1-0" class="active">XML</a>
+    <a data-toggle="tab" data-target="#2-1-1">JSON</a>
+  </div>
 
-  </div>
-  <div class="kb-api-examples-content tab-content">
-    <div class="kb-api-examples-content__item tab-pane active" id="json1">
+  <div class="tab-content">
+    <div class="tab-pane active" id="2-1-0">
       <pre>
         <code>
-some josn 1
+          &lt;LogonResponse Success="true" Message="Login Successful" StatusCode="0" /&gt;
         </code>
       </pre>
     </div>
-    <div class="kb-api-examples-content__item tab-pane" id="xml1">
+    <div class="tab-pane" id="2-1-1">
       <pre>
         <code>
-some xml 1
+{
+
+  "Success":true,
+
+  "Message":"Login Successful",
+
+  "StatusCode":0
+
+}
         </code>
       </pre>
     </div>
-    <div class="kb-api-examples-content__item tab-pane" id="xml2">
-      <pre>
-        <code>
-some xml2
-        </code>
-      </pre>
-    </div>
-  </div>
-</div>
+</div></div>
