@@ -35,7 +35,7 @@ REST: https://api.tier3.com/REST/DomainName/Overview/
 | AttributeName3 | String | Attributes description.                                      | Yes  |
 
 
-## Examples
+### Examples
 
 #### JSON
 
@@ -49,5 +49,5 @@ REST: https://api.tier3.com/REST/DomainName/Overview/
     <XML>
 
       <content>some</content>
-      
+
     </XML
