@@ -37,34 +37,17 @@ REST: https://api.tier3.com/REST/DomainName/Overview/
 
 ## Examples
 
-<div class="panel--pre-code panel--pre-code--with-page-numbers">
+#### JSON
 
-  <div>
-    <a data-toggle="tab" data-target="#2-1-0" class="active">XML</a>
-    <a data-toggle="tab" data-target="#2-1-1">JSON</a>
-  </div>
+    {
+      some: content,
+      that_is: json
+    }
 
-  <div class="tab-content">
-    <div class="tab-pane active" id="2-1-0">
-      <pre>
-        <code>
-          &lt;LogonResponse Success="true" Message="Login Successful" StatusCode="0" /&gt;
-        </code>
-      </pre>
-    </div>
-    <div class="tab-pane" id="2-1-1">
-      <pre>
-        <code>
-{
+#### XML
+    
+    <XML>
 
-  "Success":true,
-
-  "Message":"Login Successful",
-
-  "StatusCode":0
-
-}
-        </code>
-      </pre>
-    </div>
-</div></div>
+      <content>some</content>
+      
+    </XML
