@@ -1,0 +1,192 @@
+{{{
+  "title": "Create Snapshot",
+  "date": "11-19-2014",
+  "author": "Bryan Friedman",
+  "attachments": []
+}}}
+
+Sends the create snapshot operation to a list of servers (along with the number of days to keep the snapshot for) and adds operation to queue. Calls to this operation must include a token acquired from the authentication endpoint. See the <a href="/api-docs/v2#authentication-login">Login API</a> for information on acquiring this token.
+
+### When to Use It
+
+Use this API operation when you want to create a snapshot of a single server or group of servers. It should be used in conjunction with the <a href="/api-docs/v2#queue-get-status">Get Status</a> operation to check the result of the create snapshot command.
+
+### Supported HTTP Verbs
+
+Requests to this endpoint are done via HTTP POST.
+
+## URL
+
+### Structure
+
+    https://api.tier3.com/v2/operations/{accountAlias}/servers/createSnapshot
+
+### Example
+
+    https://api.tier3.com/v2/operations/ALIAS/servers/createSnapshot
+
+## Request
+
+### URI Parameters
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Req.</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>AccountAlias</td>
+      <td>string</td>
+      <td>Short code for a particular account</td>
+      <td>Yes</td>
+    </tr>
+  </tbody>
+</table>
+
+### Content Properties
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Req.</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>snapshotExpirationDays</td>
+      <td>int</td>
+      <td>Number of days to keep the snapshot for (must be between 1 and 10).</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>serverIds</td>
+      <td>array</td>
+      <td>List of server names to perform create snapshot operation on.</td>
+      <td>Yes</td>
+    </tr>
+  </tbody>
+</table>
+
+### Examples
+
+#### JSON
+
+    {
+
+      "snapshotExpirationDays":"7",
+
+      "serverIds":[
+
+          "WA1ALIASWB01",
+
+          "WA1ALIASWB02"
+
+        ]
+    }
+
+## Response
+
+The response will be an array containing one entity for each server that the operation was performed on.
+
+### Entity Definition
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>server</td>
+      <td>string</td>
+      <td>ID of the server that the operation was performed on.</td>
+    </tr>
+    <tr>
+      <td>isQueued</td>
+      <td>boolean</td>
+      <td>Boolean indicating whether the operation was successfully added to the queue.</td>
+    </tr>
+    <tr>
+      <td>links</td>
+      <td>complex</td>
+      <td>Collection of entity links that point to resources related to this server operation.</td>
+    </tr>
+    <tr>
+      <td>errorMessage</td>
+      <td>string</td>
+      <td>If something goes wrong or the request is not queued, this is the message that contains the details about what happened.</td>
+    </tr>
+  </tbody>
+</table>
+
+### Links Definition
+
+<table>
+  <tbody>
+    <tr>
+      <td><strong>&nbsp;</strong>
+      </td>
+      <td><strong>Name</strong>
+      </td>
+      <td><strong>Type</strong>
+      </td>
+      <td><strong>Value</strong>
+      </td>
+      <td><strong>Description</strong>
+      </td>
+    </tr>
+    <tr>
+      <td>Status Link</td>
+      <td>rel</td>
+      <td>string</td>
+      <td>status</td>
+      <td>The link type</td>
+    </tr>
+    <tr>
+      <td>href</td>
+      <td>string</td>
+      <td>/v2/operations/[ALIAS]/status/[ID]</td>
+      <td>Address of the resource itself</td>
+    </tr>
+    <tr>
+      <td>id</td>
+      <td>string</td>
+      <td>[ID]</td>
+      <td>The identifier of the job in queue. Can be passed to <a href="/api-docs/v2#queue-get-status">Get Status</a> call to retrieve status of job.</td>
+    </tr>
+  </tbody>
+</table>
+
+### Examples
+
+#### JSON
+
+    [
+      {
+        "server":"wa1aliaswb01",
+        "isQueued":true,
+        "links":[
+          {
+            "rel":"status",
+            "href":"/v2/operations/alias/status/wa1-12345",
+            "id":"wa1-12345"
+          }
+        ]
+      },
+      {
+        "server":"wa1aliaswb02",
+        "isQueued":false,
+        "errorMessage":"The operation cannot be queued because the server cannot be found or it is not in a valid state."
+      }
+    ]

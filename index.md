@@ -1,16 +1,12 @@
 {{{
   "category_order": [
-    "Overview",
-    "Authentication",
+    "Getting Started",
     "Account",
-    "Billing",
-    "Blueprint",
-    "Domain Name",
-    "Group",
-    "Network",
+    "Authentication",
+    "Data Centers",
+    "Groups",
     "Queue",
-    "Server",
-    "SMTP Relay",
-    "Users"
+    "Servers",
+    "Webhooks"
   ] 
 }}}
