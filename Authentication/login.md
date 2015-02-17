@@ -54,11 +54,8 @@ Requests to this endpoint are done via HTTP POST.
 #### JSON Request
 
     {
-
        "username":"demouser1",
-
        "password":"mypassword"
-
     }
 
 ## Response
@@ -107,21 +104,12 @@ Requests to this endpoint are done via HTTP POST.
 #### JSON
 
     {
-
         "userName": "user@email.com",
-
         "accountAlias": "ALIAS",
-
         "locationAlias": "DC1",
-
         "roles": [
-
-        "AccountAdmin",
-
-        "ServerAdmin"
-
+            "AccountAdmin",
+            "ServerAdmin"
         ],
-
         "bearerToken": "ABCDEF"
-
     }

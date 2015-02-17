@@ -12,7 +12,7 @@
 <p>The Operations team wishes to integrate alert notifications from the CenturyLink cloud into their real time Slack chat system used by the NOC. &nbsp;Slack provides the NOC teams&nbsp;one-on-one messaging, private groups, persistent chat rooms, direct
   messaging as well as group chats organized by topic. &nbsp;By pushing alerts into slack the operations organization hopes to be more responsive and collaborative to events occurring in the CenturyLink Cloud. &nbsp;</p>
 <p>The organization does not wish to build an integration system from scratch to consume and push notifications into slack. &nbsp;Instead they choose Zapier&nbsp;which connects web apps to easily move your data and automate tedious tasks. &nbsp;In this case
-  zapier will consume an alert webhook from CenturyLink Cloud and move that data into the NOC slack channel for immediate action.</p>
+  Zapier will consume an alert webhook from CenturyLink Cloud and move that data into the NOC Slack channel for immediate action.</p>
 <h3>Prerequisites</h3>
 <ul>
   <li>A CenturyLink Cloud Account</li>
@@ -38,14 +38,13 @@
   configuration. &nbsp;</p>
 <p><img src="https://t3n.zendesk.com/attachments/token/zUbmvzFwXjdzxkntKqWoVsbzD/?name=webhook.png" alt="webhook.png" />
 </p>
-<p>5. &nbsp;Select a slack account for the webhook event to be sent to. &nbsp;If you are setting up your first Zap to Slack you will need to connect and authorize Zapier to connect to your slack account. &nbsp;These steps are not shown.</p>
+<p>5. &nbsp;Select a Slack account for the webhook event to be sent to. &nbsp;If you are setting up your first Zap to Slack you will need to connect and authorize Zapier to connect to your slack account. &nbsp;These steps are not shown.</p>
 <p><img src="https://t3n.zendesk.com/attachments/token/i9pvEQVTxNLoTZHFChjxojHvu/?name=03.png" alt="03.png" />
 </p>
 <p>6. &nbsp;Optional: &nbsp;Add key or filters (not required)</p>
 <p><img src="https://t3n.zendesk.com/attachments/token/3ipLnDTLacNGaNS2m6C5owKPk/?name=04.png" alt="04.png" />
 </p>
-<p>7. &nbsp;Input the slack channel or user you wish to send Alert Notifications. &nbsp;Typically, if pushing to an operations group you'd want to use a channel (i.e. #operations) as the destination for events. &nbsp;However, events can be pushed via the
-  slack bot to individual users as well (i.e. @username). &nbsp;</p>
+<p>7. &nbsp;Input the Slack channel or user you wish to send Alert Notifications. &nbsp;Typically, if pushing to an operations group you'd want to use a channel (i.e. #operations) as the destination for events. &nbsp;However, events can be pushed via the Slack bot to individual users as well (i.e. @username). &nbsp;</p>
 <p>In the Text area of the form select the 'Insert Fields' button. &nbsp;</p>
 <p><img src="https://t3n.zendesk.com/attachments/token/6jdOLv9Eb73vQ57IhiVx0l61E/?name=07a.png" alt="07a.png" />
 </p>

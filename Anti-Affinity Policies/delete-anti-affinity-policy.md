@@ -26,7 +26,7 @@ https://api.tier3.com/v2/antiAffinityPolicies/{accountAlias}/{policyId}
 ### Example
 
 ```
-https://api.tier3.com/v2/antiAffinityPolicies/ALIAS/{policyId}
+https://api.tier3.com/v2/antiAffinityPolicies/ALIAS/80a7bf90b199454b859399bff54f4173
 ```
 
 ## Request

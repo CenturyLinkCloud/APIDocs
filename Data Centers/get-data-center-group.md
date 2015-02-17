@@ -231,63 +231,34 @@ Requests to this endpoint are done via HTTP GET.
 #### JSON
 
     {
-
-        "id": "DC1",
-
-        "name": "DC FRIENDLY NAME",
-
-        "links": [
-
-            {
-
-               "rel": "self",
-
-               "href": "/v2/datacenters/ALIAS/DC1"
-
-            },
-
-            {
-
-               "rel": "group",
-
-               "href": "/v2/groups/ALIAS/GROUP123",
-
-               "id": "groupid",
-
-               "name": "DC1 Hardware"
-
-            },
-
-            {
-
-               "rel": "billing",
-
-               "href": "/v2/groups/ALIAS/GROUP123/billing"
-
-            },
-
-            {
-
-               "rel": "archiveGroupAction",
-
-               "href": "/v2/groups/ALIAS/GROUP123/archive"
-
-            },
-
-            {
-
-               "rel": "statistics",
-
-               "href": "/v2/groups/ALIAS/GROUP123/statistics"
-
-            },
-
-            {
-
-               "rel": "scheduledActivities",
-
-               "href": "/v2/groups/ALIAS/GROUP123/scheduledActivities"
-
-            }]
-
+      "id": "DC1",
+      "name": "DC FRIENDLY NAME",
+      "links": [
+        {
+          "rel": "self",
+          "href": "/v2/datacenters/ALIAS/DC1"
+        },
+        {
+          "rel": "group",
+          "href": "/v2/groups/ALIAS/GROUP123",
+          "id": "groupid",
+          "name": "DC1 Hardware"
+        },
+        {
+          "rel": "billing",
+          "href": "/v2/groups/ALIAS/GROUP123/billing"
+        },
+        {
+          "rel": "archiveGroupAction",
+          "href": "/v2/groups/ALIAS/GROUP123/archive"
+        },
+        {
+          "rel": "statistics",
+          "href": "/v2/groups/ALIAS/GROUP123/statistics"
+        },
+        {
+          "rel": "scheduledActivities",
+          "href": "/v2/groups/ALIAS/GROUP123/scheduledActivities"
+        }
+      ]
     }

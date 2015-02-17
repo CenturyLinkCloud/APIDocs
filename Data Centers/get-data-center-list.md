@@ -111,41 +111,24 @@ Requests to this endpoint are done via HTTP GET.
 #### JSON
 
     [
-
-        {
-
+      {
         "id": "DC1",
-
         "name": "DC FRIENDLY NAME",
-
         "links": [
-
-            {
-
+          {
             "rel": "self",
-
             "href": "/v2/datacenters/ALIAS/DC1"
-
-            }]
-
-        },
-
-        {
-
+          }
+        ]
+      },
+      {
         "id": "DC2",
-
         "name": "DC2 FRIENDLY NAME",
-
         "links": [
-
-            {
-
+          {
             "rel": "self",
-
             "href": "/v2/datacenters/ALIAS/DC2"
-
-            }]
-
-        }
-
+          }
+        ]
+      }
     ]

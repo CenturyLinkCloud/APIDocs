@@ -7,7 +7,7 @@
 
 The CenturyLink Cloud has a new, improved API for performing the same actions programmatically as you can with the Control Portal. The API is RESTful and works with JSON messages over HTTP. It relies on the standard HTTP verbs including GET, POST, PUT, DELETE.
 
-The URI format of the service is: `https://api.tier3.com/v2/[resource]/[account alias]`. As an example, to retrieve the top level Group for a given data center, you would issue a GET request to `https://api.tier3.com/v2/datacenters/ALIAS/WA1`. The HTTP request must includ `Content` and `Accepts` headers set to `application/json`.
+The URL format of the service is: `https://api.tier3.com/v2/{resource}/{account alias}`. As an example, to retrieve the top level Group for a given data center, you would issue a GET request to `https://api.tier3.com/v2/datacenters/ALIAS/WA1`. The HTTP request must include `Content-Type` and `Accepts` headers set to `application/json`.
 
 Service authentication is done via bearer tokens and is outlined in the <a href="/api-docs/v2#authentication-login">Login API</a> description.
 
@@ -31,7 +31,7 @@ The service responds to requests using <a href="http://en.wikipedia.org/wiki/Lis
     </tr>
     <tr>
       <td>202</td>
-      <td>ACCEPTED. Sent when requests result in a scheduled activity. Response body will include a URL for them to get the response.</td>
+      <td>ACCEPTED. Sent when requests result in a scheduled activity. Response body will include a URL for them to get the status of the activity.</td>
     </tr>
     <tr>
       <td>400</td>
@@ -43,7 +43,7 @@ The service responds to requests using <a href="http://en.wikipedia.org/wiki/Lis
     </tr>
     <tr>
       <td>403</td>
-      <td>FORBIDDEN. Sent if the requests violates the security demands of the service.</td>
+      <td>FORBIDDEN. Sent if the request violates the security demands of the service.</td>
     </tr>
     <tr>
       <td>404</td>
