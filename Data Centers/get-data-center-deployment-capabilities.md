@@ -185,120 +185,6 @@ Requests to this endpoint are done via HTTP GET.
       ],
       "templates":[
         {
-          "name":"CENTOS-6-64-TEMPLATE",
-          "description":"CentOS 6 | 64-bit",
-          "storageSizeGB":17,
-          "capabilities":[
-            "cpuAutoscale"
-          ],
-          "reservedDrivePaths":[
-            "bin",
-            "boot",
-            "build",
-            "cdrom",
-            "compat",
-            "dist",
-            "dev",
-            "entropy",
-            "etc",
-            "home",
-            "initrd.img",
-            "lib",
-            "lib64",
-            "libexec",
-            "lost+found",
-            "media",
-            "mnt",
-            "opt",
-            "proc",
-            "root",
-            "sbin",
-            "selinux",
-            "srv",
-            "sys",
-            "tmp",
-            "usr",
-            "var",
-            "vmlinuz"
-          ]
-        },
-        {
-          "name":"WA1ACCTCUST01",
-          "description":"My Custom Template",
-          "storageSizeGB":16,
-          "capabilities":[
-            "cpuAutoscale"
-          ],
-          "reservedDrivePaths":[
-            "bin",
-            "boot",
-            "build",
-            "cdrom",
-            "compat",
-            "dist",
-            "dev",
-            "entropy",
-            "etc",
-            "home",
-            "initrd.img",
-            "lib",
-            "lib64",
-            "libexec",
-            "lost+found",
-            "media",
-            "mnt",
-            "opt",
-            "proc",
-            "root",
-            "sbin",
-            "selinux",
-            "srv",
-            "sys",
-            "tmp",
-            "usr",
-            "var",
-            "vmlinuz"
-          ]
-        },
-        {
-          "name":"RHEL-6-64-TEMPLATE",
-          "description":"RedHat Enterprise Linux 6 | 64-bit",
-          "storageSizeGB":17,
-          "capabilities":[
-            "cpuAutoscale"
-          ],
-          "reservedDrivePaths":[
-            "bin",
-            "boot",
-            "build",
-            "cdrom",
-            "compat",
-            "dist",
-            "dev",
-            "entropy",
-            "etc",
-            "home",
-            "initrd.img",
-            "lib",
-            "lib64",
-            "libexec",
-            "lost+found",
-            "media",
-            "mnt",
-            "opt",
-            "proc",
-            "root",
-            "sbin",
-            "selinux",
-            "srv",
-            "sys",
-            "tmp",
-            "usr",
-            "var",
-            "vmlinuz"
-          ]
-        },
-        {
           "name":"UBUNTU-14-64-TEMPLATE",
           "description":"Ubuntu 14 | 64-bit",
           "storageSizeGB":17,
@@ -337,32 +223,6 @@ Requests to this endpoint are done via HTTP GET.
           ]
         },
         {
-          "name":"WIN2008R2ENT-64",
-          "description":"Windows 2008 R2 Enterprise | 64-bit",
-          "storageSizeGB":60,
-          "capabilities":[],
-          "reservedDrivePaths":[
-            "a",
-            "b",
-            "c",
-            "d"
-          ],
-          "drivePathLength":1
-        },
-        {
-          "name":"WIN2008R2STD-64",
-          "description":"Windows 2008 R2 Standard | 64-bit",
-          "storageSizeGB":60,
-          "capabilities":[],
-          "reservedDrivePaths":[
-            "a",
-            "b",
-            "c",
-            "d"
-          ],
-          "drivePathLength":1
-        },
-        {
           "name":"WIN2012R2DTC-64",
           "description":"Windows 2012 R2 Datacenter Edition | 64-bit",
           "storageSizeGB":60,
@@ -376,6 +236,44 @@ Requests to this endpoint are done via HTTP GET.
             "d"
           ],
           "drivePathLength":1
+        },
+        {
+          "name":"WA1ACCTCUST01",
+          "description":"My Custom Template",
+          "storageSizeGB":16,
+          "capabilities":[
+            "cpuAutoscale"
+          ],
+          "reservedDrivePaths":[
+            "bin",
+            "boot",
+            "build",
+            "cdrom",
+            "compat",
+            "dist",
+            "dev",
+            "entropy",
+            "etc",
+            "home",
+            "initrd.img",
+            "lib",
+            "lib64",
+            "libexec",
+            "lost+found",
+            "media",
+            "mnt",
+            "opt",
+            "proc",
+            "root",
+            "sbin",
+            "selinux",
+            "srv",
+            "sys",
+            "tmp",
+            "usr",
+            "var",
+            "vmlinuz"
+          ]
         }
       ]
     }
