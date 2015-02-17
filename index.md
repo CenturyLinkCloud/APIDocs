@@ -1,10 +1,12 @@
 {{{
   "category_order": [
     "Getting Started",
-    "Account",
+    "Anti-Affinity Policies",
     "Authentication",
     "Data Centers",
     "Groups",
+    "Power Operations",
+    "Public IP",
     "Queue",
     "Servers",
     "Webhooks"
