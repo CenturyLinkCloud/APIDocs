@@ -11,19 +11,15 @@ Gets a list of anti-affinity policies within a given account. Calls to this oper
 
 Use this API operation when you want to get a list of anti-affinity policies within a given account and what servers are part of these policies. You can also use the IDs provided in this list to add a server to that anti-affinity policy using the API.
 
-### Supported HTTP Verbs
-
-Requests to this endpoint are done via HTTP GET.
-
 ## URL
 
 ### Structure
 
-    https://api.tier3.com/v2/antiAffinityPolicies/{accountAlias}
+    GET https://api.tier3.com/v2/antiAffinityPolicies/{accountAlias}
 
 ### Example
 
-    https://api.tier3.com/v2/antiAffinityPolicies/ALIAS
+    GET https://api.tier3.com/v2/antiAffinityPolicies/ALIAS
 
 ## Request
 

@@ -11,23 +11,15 @@ Deletes a given anti-affinity policy by ID. Calls to this operation must include
 
 Use this API operation when you want to delete a specific anti-affinity policy within a given account.
 
-### Supported HTTP Verbs
-
-Requests to this endpoint are done via HTTP DELETE.
-
 ## URL
 
 ### Structure
 
-```
-https://api.tier3.com/v2/antiAffinityPolicies/{accountAlias}/{policyId}
-```
+    DELETE https://api.tier3.com/v2/antiAffinityPolicies/{accountAlias}/{policyId}
 
 ### Example
 
-```
-https://api.tier3.com/v2/antiAffinityPolicies/ALIAS/80a7bf90b199454b859399bff54f4173
-```
+    DELETE https://api.tier3.com/v2/antiAffinityPolicies/ALIAS/80a7bf90b199454b859399bff54f4173
 
 ## Request
 
@@ -60,4 +52,4 @@ https://api.tier3.com/v2/antiAffinityPolicies/ALIAS/80a7bf90b199454b859399bff54f
 
 ## Response
 
-The response will not contain JSON content, but should return a standard HTTP 200 OK response upon deletion of the policy.
+The response will not contain JSON content, but should return a standard HTTP `200 OK` response upon deletion of the policy.

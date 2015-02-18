@@ -11,19 +11,15 @@ Gets a given anti-affinity policy by ID. Calls to this operation must include a 
 
 Use this API operation when you want to get the details of a specific anti-affinity policy within a given account.
 
-### Supported HTTP Verbs
-
-Requests to this endpoint are done via HTTP GET.
-
 ## URL
 
 ### Structure
 
-    https://api.tier3.com/v2/antiAffinityPolicies/{accountAlias}/{policyId}
+    GET https://api.tier3.com/v2/antiAffinityPolicies/{accountAlias}/{policyId}
 
 ### Example
 
-    https://api.tier3.com/v2/antiAffinityPolicies/ALIAS/80a7bf90b199454b859399bff54f4173
+    GET https://api.tier3.com/v2/antiAffinityPolicies/ALIAS/80a7bf90b199454b859399bff54f4173
 
 ## Request
 
@@ -90,69 +86,70 @@ Requests to this endpoint are done via HTTP GET.
   </tbody>
 </table>
 
-### Links Definition
+### Self Link Definition
 
-<table style="border: 1px solid gray; border-image: none; border-collapse: collapse;">
-<tbody>
-<tr>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;" width="100"><strong>&nbsp;</strong></td>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;" width="100"><strong>Name</strong></td>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;" width="75"><strong>Type</strong></td>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;" width="250"><strong>Value</strong></td>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;" width="300"><strong>Description</strong></td>
-</tr>
-<tr>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;" rowspan="2">Self Link</td>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;">rel</td>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;">string</td>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;">self</td>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;">The link type</td>
-</tr>
-<tr>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;">href</td>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;">string</td>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;">/v2/antiAffinityPolicies/[ALIAS]/[POLICYID]</td>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;">Address of the resource itself</td>
-</tr>
-</tbody>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>rel</td>
+      <td>string</td>
+      <td>self</td>
+      <td>The link type</td>
+    </tr>
+    <tr>
+      <td>href</td>
+      <td>string</td>
+      <td>/v2/antiAffinityPolicies/[ALIAS]/[POLICYID]</td>
+      <td>Address of the resource itself</td>
+    </tr>
+  </tbody>
 </table>
 
+### Server Link Definition
 
-<table style="border: 1px solid gray; border-image: none; border-collapse: collapse;">
-<tbody>
-<tr>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;" width="100"><strong>&nbsp;</strong></td>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;" width="100"><strong>Name</strong></td>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;" width="75"><strong>Type</strong></td>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;" width="250"><strong>Value</strong></td>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;" width="300"><strong>Description</strong></td>
-</tr>
-<tr>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;" rowspan="4">Server Link</td>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;">rel</td>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;">string</td>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;">server</td>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;">The link type</td>
-</tr>
-<tr>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;">href</td>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;">string</td>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;">/v2/servers/[ALIAS]/[SERVERID]</td>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;">Address of a server that is part of this policy</td>
-</tr>
-<tr>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;">id</td>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;">string</td>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;">[SERVERID]</td>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;"><span>ID of a server that is part of this policy</span></td>
-</tr>
-<tr>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;">name</td>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;">string</td>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;">[SERVER NAME]</td>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;"><span>Name of a server that&nbsp;is part of this policy&nbsp;</span></td>
-</tr>
-</tbody>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>rel</td>
+      <td>string</td>
+      <td>server</td>
+      <td>The link type</td>
+    </tr>
+    <tr>
+      <td>href</td>
+      <td>string</td>
+      <td>/v2/servers/[ALIAS]/[SERVERID]</td>
+      <td>Address of a server that is part of this policy</td>
+    </tr>
+    <tr>
+      <td>id</td>
+      <td>string</td>
+      <td>[SERVERID]</td>
+      <td>ID of a server that is part of this policy</td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>string</td>
+      <td>[SERVER NAME]</td>
+      <td>Name of a server that is part of this policy </td>
+    </tr>
+  </tbody>
 </table>
 
 ### Examples
