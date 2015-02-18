@@ -343,22 +343,19 @@ Requests to this endpoint are done via HTTP POST.
 
 ### Links Definition
 
+#### Status Link
+
 <table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
   <tbody>
     <tr>
-      <td><strong>&nbsp;</strong>
-      </td>
-      <td><strong>Name</strong>
-      </td>
-      <td><strong>Type</strong>
-      </td>
-      <td><strong>Value</strong>
-      </td>
-      <td><strong>Description</strong>
-      </td>
-    </tr>
-    <tr>
-      <td>Status Link</td>
       <td>rel</td>
       <td>string</td>
       <td>status</td>
@@ -379,23 +376,19 @@ Requests to this endpoint are done via HTTP POST.
   </tbody>
 </table>
 
+#### Self Link
 
 <table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
   <tbody>
     <tr>
-      <td><strong>&nbsp;</strong>
-      </td>
-      <td><strong>Name</strong>
-      </td>
-      <td><strong>Type</strong>
-      </td>
-      <td><strong>Value</strong>
-      </td>
-      <td><strong>Description</strong>
-      </td>
-    </tr>
-    <tr>
-      <td>Self Link</td>
       <td>rel</td>
       <td>string</td>
       <td>self</td>
@@ -417,7 +410,7 @@ Requests to this endpoint are done via HTTP POST.
       <td>verbs</td>
       <td>string</td>
       <td>GET</td>
-      <td>Valid HTTP verbs that can act on this resource&nbsp;</td>
+      <td>Valid HTTP verbs that can act on this resource</td>
     </tr>
   </tbody>
 </table>
@@ -427,39 +420,20 @@ Requests to this endpoint are done via HTTP POST.
 #### JSON
 
     {
-
       "server":"web",
-
       "isQueued":true,
-
       "links":[
-
         {
-
           "rel":"status",
-
           "href":"/v2/operations/alias/status/wa1-12345",
-
           "id":"wa1-12345"
-
         },
-
         {
-
-          "rel":"self",
-
-          "href":"/v2/servers/alias/8134c91a66784c6dada651eba90a5123?uuid=True",
-
+          "rel":"self",  "href":"/v2/servers/alias/8134c91a66784c6dada651eba90a5123?uuid=True",
           "id":"8134c91a66784c6dada651eba90a5123",
-
           "verbs":[
-
             "GET"
-
           ]
-
         }
-
       ]
-
     }
