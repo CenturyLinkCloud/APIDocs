@@ -11,19 +11,15 @@ Releases the given public IP address of a server so that it is no longer associa
 
 Use this API operation when you want to stop using a specific public IP address on an existing server.
 
-### Supported HTTP Verbs
-
-Requests to this endpoint are done via HTTP DELETE.
-
 ## URL
 
 ### Structure
 
-    https://api.tier3.com/v2/servers/{accountAlias}/{serverId}/publicIPAddresses/{publicIP}
+    DELETE https://api.tier3.com/v2/servers/{accountAlias}/{serverId}/publicIPAddresses/{publicIP}
 
 ### Example
 
-    https://api.tier3.com/v2/servers/ACCT/WA1ACCTSERV0101/publicIPAddresses/12.34.56.789
+    DELETE https://api.tier3.com/v2/servers/ACCT/WA1ACCTSERV0101/publicIPAddresses/12.34.56.789
 
 ## Request
 
@@ -104,11 +100,7 @@ The response is a link to the <a href="/api-docs/v2#queue-get-status">Get Status
 #### JSON
 
     {
-
       "rel":"status",
-
       "href":"/v2/operations/alias/status/wa1-12345",
-
       "id":"wa1-12345"
-
     }

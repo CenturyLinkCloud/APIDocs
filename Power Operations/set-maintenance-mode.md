@@ -11,19 +11,15 @@ Sends a specified setting for maintenance mode per server to a list of servers a
 
 Use this API operation when you want to explicitly turn on or off maintenance mode on multiple servers. Specifically, this call can be used if you want set some servers to have maintenance mode on and others to have it off. If you want to set maintenance mode for servers to all on or all off, you can use the respective methods for <a href="/api-docs/v2#servers-start-maintenance-mode">starting maintenance mode</a> or <a href="/api-docs/v2#servers-stop-maintenance-mode">stopping maintenance mode</a> for multiple servers.
 
-### Supported HTTP Verbs
-
-Requests to this endpoint are done via HTTP POST.
-
 ## URL
 
 ### Structure
 
-    https://api.tier3.com/v2/operations/{accountAlias}/servers/setMaintenance
+    POST https://api.tier3.com/v2/operations/{accountAlias}/servers/setMaintenance
 
 ### Example
 
-    https://api.tier3.com/v2/operations/ALIAS/servers/setMaintenance
+    POST https://api.tier3.com/v2/operations/ALIAS/servers/setMaintenance
 
 ## Request
 
@@ -114,7 +110,7 @@ Requests to this endpoint are done via HTTP POST.
 
 ## Response
 
-The response will be an array containing one&nbsp;entity for each server that the operation was performed on.
+The response will be an array containing one entity for each server that the operation was performed on.
 
 ### Entity Definition
 
@@ -150,40 +146,38 @@ The response will be an array containing one&nbsp;entity for each server that th
   </tbody>
 </table>
 
-### Links Definition
+### Status Link Definition
 
-<table style="border: 1px solid gray; border-image: none; border-collapse: collapse;">
-<tbody>
-<tr>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;" width="100"><strong>&nbsp;</strong></td>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;" width="100"><strong>Name</strong></td>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;" width="75"><strong>Type</strong></td>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;" width="250"><strong>Value</strong></td>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;" width="300"><strong>Description</strong></td>
-</tr>
-<tr>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;" rowspan="3">Status Link</td>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;">rel</td>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;">string</td>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;">status</td>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;">The link type</td>
-</tr>
-<tr>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;">href</td>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;">string</td>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;">/v2/operations/[ALIAS]/status/[ID]</td>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;">Address of the resource itself</td>
-</tr>
-<tr>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;">id</td>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;">string</td>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;">[ID]</td>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;">The identifier of the job in queue. Can be passed to <a href="/api-docs/v2#queue-get-status">Get Status</a> call to retrieve status of job.</td>
-</tr>
-</tbody>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>rel</td>
+      <td>string</td>
+      <td>status</td>
+      <td>The link type</td>
+    </tr>
+    <tr>
+      <td>href</td>
+      <td>string</td>
+      <td>/v2/operations/[ALIAS]/status/[ID]</td>
+      <td>Address of the server creation job in the queue</td>
+    </tr>
+    <tr>
+      <td>id</td>
+      <td>string</td>
+      <td>[ID]</td>
+      <td>The identifier of the job in queue. Can be passed to <a href="/api-docs/v2#queue-get-status">Get Status</a> call to retrieve status of job.</td>
+    </tr>
+  </tbody>
 </table>
-
-### Examples
 
 #### JSON
 

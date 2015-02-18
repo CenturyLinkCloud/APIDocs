@@ -11,19 +11,15 @@ Gets the details for the public IP address of a server, including the specific s
 
 Use this API operation when you want to find out information about a specific public IP address for an existing server. This operation is linked to from the <a href="/api-docs/v2#servers-get-server">Get Servers</a> response that lists all public IPs assigned to a server.
 
-### Supported HTTP Verbs
-
-Requests to this endpoint are done via HTTP GET.
-
 ## URL
 
 ### Structure
 
-    https://api.tier3.com/v2/servers/{accountAlias}/{serverId}/publicIPAddresses/{publicIP}
+    GET https://api.tier3.com/v2/servers/{accountAlias}/{serverId}/publicIPAddresses/{publicIP}
 
 ### Example
 
-    https://api.tier3.com/v2/servers/ACCT/WA1ACCTSERV0101/publicIPAddresses/12.34.56.789
+    GET https://api.tier3.com/v2/servers/ACCT/WA1ACCTSERV0101/publicIPAddresses/12.34.56.789
 
 ## Request
 
@@ -76,7 +72,7 @@ Requests to this endpoint are done via HTTP GET.
     <tr>
       <td>internalIPAddress</td>
       <td>string</td>
-      <td>The internal (private) IP address mapped to the&nbsp; public IP address.</td>
+      <td>The internal (private) IP address mapped to the public IP address.</td>
     </tr>
     <tr>
       <td>ports</td>
@@ -134,8 +130,7 @@ Requests to this endpoint are done via HTTP GET.
     <tr>
       <td>cidr</td>
       <td>string</td>
-      <td>The IP range allowed to access the public IP, specified using <a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;cad=rja&amp;uact=8&amp;ved=0CB4QFjAA&amp;url=http%3A%2F%2Fen.wikipedia.org%2Fwiki%2FClassless_Inter-Domain_Routing&amp;ei=tsFyVMKfOuvvigKu7IDICQ&amp;usg=AFQjCNEbcMOAzeOfJzXisTF11jzSBoqkRQ&amp;sig2=NY2fEJs8CfYS-L7fIqqTRA&amp;bvm=bv.80185997,d.cGE"
-        target="_blank">CIDR notation</a>.</td>
+      <td>The IP range allowed to access the public IP, specified using <a href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing" target="_blank">CIDR notation</a>.</td>
     </tr>
   </tbody>
 </table>

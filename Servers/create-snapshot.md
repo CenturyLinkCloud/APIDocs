@@ -11,19 +11,15 @@ Sends the create snapshot operation to a list of servers (along with the number 
 
 Use this API operation when you want to create a snapshot of a single server or group of servers. It should be used in conjunction with the <a href="/api-docs/v2#queue-get-status">Get Status</a> operation to check the result of the create snapshot command.
 
-### Supported HTTP Verbs
-
-Requests to this endpoint are done via HTTP POST.
-
 ## URL
 
 ### Structure
 
-    https://api.tier3.com/v2/operations/{accountAlias}/servers/createSnapshot
+    POST https://api.tier3.com/v2/operations/{accountAlias}/servers/createSnapshot
 
 ### Example
 
-    https://api.tier3.com/v2/operations/ALIAS/servers/createSnapshot
+    POST https://api.tier3.com/v2/operations/ALIAS/servers/createSnapshot
 
 ## Request
 
@@ -80,15 +76,10 @@ Requests to this endpoint are done via HTTP POST.
 #### JSON
 
     {
-
       "snapshotExpirationDays":"7",
-
       "serverIds":[
-
           "WA1ALIASWB01",
-
           "WA1ALIASWB02"
-
         ]
     }
 
@@ -130,24 +121,19 @@ The response will be an array containing one entity for each server that the ope
   </tbody>
 </table>
 
-### Links Definition
+### Status Link Definition
 
 <table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
   <tbody>
     <tr>
-      <td><strong>&nbsp;</strong>
-      </td>
-      <td><strong>Name</strong>
-      </td>
-      <td><strong>Type</strong>
-      </td>
-      <td><strong>Value</strong>
-      </td>
-      <td><strong>Description</strong>
-      </td>
-    </tr>
-    <tr>
-      <td>Status Link</td>
       <td>rel</td>
       <td>string</td>
       <td>status</td>
@@ -157,7 +143,7 @@ The response will be an array containing one entity for each server that the ope
       <td>href</td>
       <td>string</td>
       <td>/v2/operations/[ALIAS]/status/[ID]</td>
-      <td>Address of the resource itself</td>
+      <td>Address of the server creation job in the queue</td>
     </tr>
     <tr>
       <td>id</td>

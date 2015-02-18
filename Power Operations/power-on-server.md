@@ -11,19 +11,15 @@ Sends the power on operation to a list of servers and adds operation to queue. (
 
 Use this API operation when you want to power on a single server or group of servers. It should be used in conjunction with the <a href="/api-docs/v2#queue-get-status">Get Status</a> operation to check the result of the power on command.
 
-### Supported HTTP Verbs
-
-Requests to this endpoint are done via HTTP POST.
-
 ## URL
 
 ### Structure
 
-    https://api.tier3.com/v2/operations/{accountAlias}/servers/powerOn
+    POST https://api.tier3.com/v2/operations/{accountAlias}/servers/powerOn
 
 ### Example
 
-    https://api.tier3.com/v2/operations/ALIAS/servers/powerOn 
+    POST https://api.tier3.com/v2/operations/ALIAS/servers/powerOn
 
 ## Request
 
@@ -72,11 +68,8 @@ Requests to this endpoint are done via HTTP POST.
 ### JSON
 
     [
-
        "WA1ALIASWB01",
-
        "WA1ALIASWB02"
-
     ]
 
 ## Response
@@ -117,37 +110,37 @@ The response will be an array containing one&nbsp;entity for each server that th
   </tbody>
 </table>
 
-### Links Definition
+### Status Link Definition
 
-<table style="border: 1px solid gray; border-image: none; border-collapse: collapse;">
-<tbody>
-<tr>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;" width="100"><strong>&nbsp;</strong></td>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;" width="100"><strong>Name</strong></td>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;" width="75"><strong>Type</strong></td>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;" width="250"><strong>Value</strong></td>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;" width="300"><strong>Description</strong></td>
-</tr>
-<tr>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;" rowspan="3">Status Link</td>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;">rel</td>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;">string</td>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;">status</td>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;">The link type</td>
-</tr>
-<tr>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;">href</td>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;">string</td>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;">/v2/operations/[ALIAS]/status/[ID]</td>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;">Address of the resource itself</td>
-</tr>
-<tr>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;">id</td>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;">string</td>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;">[ID]</td>
-<td style="padding: 5px; border: 1px solid gray; border-image: none;">The identifier of the job in queue. Can be passed to <a href="/api-docs/v2#queue-get-status">Get Status</a> call to retrieve status of job.</td>
-</tr>
-</tbody>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>rel</td>
+      <td>string</td>
+      <td>status</td>
+      <td>The link type</td>
+    </tr>
+    <tr>
+      <td>href</td>
+      <td>string</td>
+      <td>/v2/operations/[ALIAS]/status/[ID]</td>
+      <td>Address of the server creation job in the queue</td>
+    </tr>
+    <tr>
+      <td>id</td>
+      <td>string</td>
+      <td>[ID]</td>
+      <td>The identifier of the job in queue. Can be passed to <a href="/api-docs/v2#queue-get-status">Get Status</a> call to retrieve status of job.</td>
+    </tr>
+  </tbody>
 </table>
 
 ### Examples

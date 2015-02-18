@@ -11,19 +11,15 @@ Changes the administrator/root password on an existing server given the current 
 
 Use this API operation when you want to change the administrator/root password on an existing server.
 
-### Supported HTTP Verbs
-
-Requests to this endpoint are done via HTTP PATCH.
-
 ## URL
 
 ### Structure
 
-    https://api.tier3.com/v2/servers/{accountAlias}/{serverId}
+    PATCH https://api.tier3.com/v2/servers/{accountAlias}/{serverId}
 
 ### Example
 
-    https://api.tier3.com/v2/servers/ACCT/WA1ACCTSERV0101
+    PATCH https://api.tier3.com/v2/servers/ACCT/WA1ACCTSERV0101
 
 ## Request
 

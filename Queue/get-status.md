@@ -11,19 +11,15 @@ Gets the status of a particular job in the queue, which keeps track of any long-
 
 Use this API operation when you want to check the status of a specific job in the queue. It is usually called after running a batch job and receiving the job identifier from the status link (e.g. <a href="/api-docs/v2#servers-power-on-server">Power On</a>, Create Server, etc.) and will typically continue to get called until a "succeeded" or "failed" response is returned.
 
-### Supported HTTP Verbs
-
-Requests to this endpoint are done via HTTP GET.
-
 ## URL
 
 ### Structure
 
-    https://api.tier3.com/v2/operations/{acctAlias}/status/{statusId}
+    GET https://api.tier3.com/v2/operations/{acctAlias}/status/{statusId}
 
 ### Example
 
-    https://api.tier3.com/v2/operations/ALIAS/status/wa1-12345
+    GET https://api.tier3.com/v2/operations/ALIAS/status/wa1-12345
 
 ## Request
 
@@ -42,7 +38,7 @@ Requests to this endpoint are done via HTTP GET.
     <tr>
       <td>AccountAlias</td>
       <td>string</td>
-      <td>Short code for a particular account.&nbsp;</td>
+      <td>Short code for a particular account.</td>
       <td>Yes</td>
     </tr>
     <tr>
@@ -80,7 +76,5 @@ Requests to this endpoint are done via HTTP GET.
 #### JSON
 
     {
-
       "status":"succeeded"
-
     }

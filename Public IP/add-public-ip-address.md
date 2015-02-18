@@ -11,19 +11,15 @@ Claims a public IP address and associates it with a server, allowing access to i
 
 Use this API operation when you want to add a public IP address to an existing server. The public IP can be exposed on multiple protocols and ports and also be set to restrict access based on source IP ranges.
 
-### Supported HTTP Verbs
-
-Requests to this endpoint are done via HTTP POST.
-
 ## URL
 
 ### Structure
 
-    https://api.tier3.com/v2/servers/{accountAlias}/{serverId}/publicIPAddresses
+    POST https://api.tier3.com/v2/servers/{accountAlias}/{serverId}/publicIPAddresses
 
 ### Example
 
-    https://api.tier3.com/v2/servers/ACCT/WA1ACCTSERV0101/publicIPAddresses
+    POST https://api.tier3.com/v2/servers/ACCT/WA1ACCTSERV0101/publicIPAddresses
 
 ## Request
 
@@ -130,8 +126,7 @@ Requests to this endpoint are done via HTTP POST.
     <tr>
       <td>cidr</td>
       <td>string</td>
-      <td>The IP range allowed to access the public IP, specified using <a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;cad=rja&amp;uact=8&amp;ved=0CB4QFjAA&amp;url=http%3A%2F%2Fen.wikipedia.org%2Fwiki%2FClassless_Inter-Domain_Routing&amp;ei=tsFyVMKfOuvvigKu7IDICQ&amp;usg=AFQjCNEbcMOAzeOfJzXisTF11jzSBoqkRQ&amp;sig2=NY2fEJs8CfYS-L7fIqqTRA&amp;bvm=bv.80185997,d.cGE"
-        target="_blank">CIDR notation</a>.</td>
+      <td>The IP range allowed to access the public IP, specified using <a href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing" target="_blank">CIDR notation</a>.</td>
     </tr>
   </tbody>
 </table>
@@ -202,7 +197,7 @@ The response is a link to the <a href="/api-docs/v2#queue-get-status">Get Status
       <td>id</td>
       <td>string</td>
       <td>[ID]</td>
-      <td>The identifier of the job in queue. Can be passed to&nbsp;<a href="/api-docs/v2#queue-get-status">Get Status</a>&nbsp;call to retrieve status of job.</td>
+      <td>The identifier of the job in queue. Can be passed to&nbsp;<a href="/api-docs/v2#queue-get-status">Get Status</a> call to retrieve status of job.</td>
     </tr>
   </tbody>
 </table>
@@ -213,11 +208,7 @@ The response is a link to the <a href="/api-docs/v2#queue-get-status">Get Status
 #### JSON
 
     {
-
       "rel":"status",
-
       "href":"/v2/operations/alias/status/wa1-12345",
-
       "id":"wa1-12345"
-
     }

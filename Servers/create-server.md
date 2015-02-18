@@ -336,9 +336,7 @@ Use this API operation when you want to create a new server from a standard or c
   </tbody>
 </table>
 
-### Links Definition
-
-#### Status Link
+### Status Link Definition
 
 <table>
   <thead>
@@ -371,7 +369,7 @@ Use this API operation when you want to create a new server from a standard or c
   </tbody>
 </table>
 
-#### Self Link
+### Self Link Definition
 
 <table>
   <thead>
