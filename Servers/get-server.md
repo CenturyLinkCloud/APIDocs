@@ -2,7 +2,8 @@
   "title": "Get Server",
   "date": "12-29-2014",
   "author": "Richard Seroter",
-  "attachments": []
+  "attachments": [],
+  "sticky": "true"
 }}}
 
 Gets the details for a individual server. Calls to this operation must include a token acquired from the authentication endpoint. See the <a href="/api-docs/v2#authentication-login">Login API</a> for information on acquiring this token.
