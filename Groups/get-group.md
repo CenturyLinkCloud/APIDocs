@@ -11,19 +11,15 @@ Gets the details for a individual server group and any sub-groups and servers th
 
 Use this API operation when you want to identify the servers in a particular group, retrieve a group hierarchy, or get links to information (e.g. billing, monitoring, scheduled activities) about a group.
 
-### Supported HTTP Verbs
-
-Requests to this endpoint are done via HTTP GET.
-
 ## URL
 
 ### Structure
 
-    https://api.tier3.com/v2/groups/{accountAlias}/{groupId}
+    GET https://api.tier3.com/v2/groups/{accountAlias}/{groupId}
 
 ### Example
 
-    https://api.tier3.com/v2/groups/ALIAS/wa1-5030
+    GET https://api.tier3.com/v2/groups/ALIAS/wa1-5030
 
 ## Request
 
@@ -42,7 +38,7 @@ Requests to this endpoint are done via HTTP GET.
     <tr>
       <td>AccountAlias</td>
       <td>string</td>
-      <td>Short code for a particular account.&nbsp;</td>
+      <td>Short code for a particular account.</td>
       <td>Yes</td>
     </tr>
     <tr>
@@ -105,7 +101,7 @@ Requests to this endpoint are done via HTTP GET.
     <tr>
       <td>Groups</td>
       <td>array</td>
-      <td>&nbsp;Refers to this same entity type for each sub-group</td>
+      <td>Refers to this same entity type for each sub-group</td>
     </tr>
     <tr>
       <td>Links</td>
@@ -144,199 +140,205 @@ Requests to this endpoint are done via HTTP GET.
   </tbody>
 </table>
 
-### Links Definition
+### Self Link Definition
 
-<table style="border: 1px solid gray; border-collapse: collapse;">
-<tbody>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="100"><strong>&nbsp;</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="100"><strong>Name</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="75"><strong>Type</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="250"><strong>Value</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="300"><strong>Description</strong></td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" rowspan="2">Self Link</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">rel</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">self</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">The link type</td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">href</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">/v2/groups/[ALIAS]/[GROUPID]</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">Address of the resource itself</td>
-</tr>
-</tbody>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>rel</td>
+      <td>string</td>
+      <td>self</td>
+      <td>The link type</td>
+    </tr>
+    <tr>
+      <td>href</td>
+      <td>string</td>
+      <td>/v2/groups/[ALIAS]/[GROUPID]</td>
+      <td>Address of the resource itself</td>
+    </tr>
+  </tbody>
 </table>
 
+### Parent Group Link Definition
 
-<table style="border: 1px solid gray; border-collapse: collapse;">
-<tbody>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="100"><strong>&nbsp;</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="100"><strong>Name</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="75"><strong>Type</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="250"><strong>Value</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="300"><strong>Description</strong></td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" rowspan="3">Parent Group<br>Link</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">rel</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">parentGroup</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">The link type</td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">href</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">/v2/groups/[ALIAS]/[GROUPID]</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">Address of the parent group</td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">id</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">[GROUPID]</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">Unique ID of the parent group</td>
-</tr>
-</tbody>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>rel</td>
+      <td>string</td>
+      <td>parentGroup</td>
+      <td>The link type</td>
+    </tr>
+    <tr>
+      <td>href</td>
+      <td>string</td>
+      <td>/v2/groups/[ALIAS]/[GROUPID]</td>
+      <td>Address of the parent group</td>
+      </tr>
+    <tr>
+      <td>id</td>
+      <td>string</td>
+      <td>[GROUPID]</td>
+      <td>Unique ID of the parent group</td>
+    </tr>
+  </tbody>
 </table>
 
+### Billing Link Definition
 
-<table style="border: 1px solid gray; border-collapse: collapse;">
-<tbody>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="100"><strong>&nbsp;</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="100"><strong>Name</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="75"><strong>Type</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="250"><strong>Value</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="300"><strong>Description</strong></td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" rowspan="2">Billing Link</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">rel</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">billing</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">The link type</td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">href</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">/v2/groups/[ALIAS]/[GROUPID]/<br>billing</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">Address of the billing information for the grou</td>
-</tr>
-</tbody>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>rel</td>
+      <td>string</td>
+      <td>billing</td>
+      <td>The link type</td>
+    </tr>
+    <tr>
+      <td>href</td>
+      <td>string</td>
+      <td>/v2/groups/[ALIAS]/[GROUPID]/billing</td>
+      <td>Address of the billing information for the group</td>
+    </tr>
+  </tbody>
 </table>
 
+### Archive Link Definition
 
-<table style="border: 1px solid gray; border-collapse: collapse;">
-<tbody>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="100"><strong>&nbsp;</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="100"><strong>Name</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="75"><strong>Type</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="250"><strong>Value</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="300"><strong>Description</strong></td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" rowspan="2">Archive Link</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">rel</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">archiveGroupAction</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">The link type</td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">href</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;"><span data-mce-mark="1">/v2/groups/[ALIAS]/[GROUPID]/</span><br><span data-mce-mark="1">archive</span></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">Address of the archive details for this group</td>
-</tr>
-</tbody>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>rel</td>
+      <td>string</td>
+      <td>archiveGroupAction</td>
+      <td>The link type</td>
+    </tr>
+    <tr>
+      <td>href</td>
+      <td>string</td>
+      <td>/v2/groups/[ALIAS]/[GROUPID]/archive</td>
+      <td>Address of the archive details for this group</td>
+    </tr>
+  </tbody>
 </table>
 
+### Statistics Link Definition
 
-<table style="border: 1px solid gray; border-collapse: collapse;">
-<tbody>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="100"><strong>&nbsp;</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="100"><strong>Name</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="75"><strong>Type</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="250"><strong>Value</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="300"><strong>Description</strong></td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" rowspan="2">Statistics Link</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">rel</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">statistics</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">The link type</td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">href</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;"><span data-mce-mark="1">/v2/groups/[ALIAS]/[GROUPID]/</span><br><span data-mce-mark="1">statistics</span></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">Address of usage statistics for this group</td>
-</tr>
-</tbody>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>rel</td>
+      <td>string</td>
+      <td>statistics</td>
+      <td>The link type</td>
+    </tr>
+    <tr>
+      <td>href</td>
+      <td>string</td>
+      <td>/v2/groups/[ALIAS]/[GROUPID]/statistics</td>
+      <td>Address of usage statistics for this group</td>
+    </tr>
+  </tbody>
 </table>
 
+### Activities Link Definition
 
-<table style="border: 1px solid gray; border-collapse: collapse;">
-<tbody>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="100"><strong>&nbsp;</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="100"><strong>Name</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="75"><strong>Type</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="250"><strong>Value</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="300"><strong>Description</strong></td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" rowspan="2">Activities Link</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">rel</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">scheduledActivities</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">The link type</td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">href</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;"><span data-mce-mark="1">/v2/groups/[ALIAS]/[GROUPID]/</span><br><span data-mce-mark="1">scheduledActivities</span></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">Address of the scheduled activities <br>(e.g.&nbsp;<span>restarts, pause) for this group</span></td>
-</tr>
-</tbody>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>rel</td>
+      <td>string</td>
+      <td>scheduledActivities</td>
+      <td>The link type</td>
+    </tr>
+    <tr>
+      <td>href</td>
+      <td>string</td>
+      <td>/v2/groups/[ALIAS]/[GROUPID]/scheduledActivities</td>
+      <td>Address of the scheduled activities (e.g. restarts, pause) for this group</td>
+    </tr>
+  </tbody>
 </table>
 
+### Server Link
 
-<table style="border: 1px solid gray; border-collapse: collapse;">
-<tbody>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="100"><strong>&nbsp;</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="100"><strong>Name</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="75"><strong>Type</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="250"><strong>Value</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="300"><strong>Description</strong></td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" rowspan="3">Server Link</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">rel</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">server</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">The link type</td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">href</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;"><span data-mce-mark="1">/v2/servers/[ALIAS]/[SERVERID]</span><span data-mce-mark="1"><br></span></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">Address of the server<span>&nbsp;in this group</span></td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">id</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;"><span data-mce-mark="1">[SERVERID]</span><span data-mce-mark="1"><br></span></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;"><span>ID of the server in this group</span></td>
-</tr>
-</tbody>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>rel</td>
+      <td>string</td>
+      <td>server</td>
+      <td>The link type</td>
+    </tr>
+    <tr>
+      <td>href</td>
+      <td>string</td>
+      <td>/v2/servers/[ALIAS]/[SERVERID]</td>
+      <td>Address of the server in this group</td>
+    </tr>
+    <tr>
+      <td>id</td>
+      <td>string</td>
+      <td>[SERVERID]</td>
+      <td>ID of the server in this group</td>
+    </tr>
+  </tbody>
 </table>
 
 ### Examples
@@ -344,193 +346,98 @@ Requests to this endpoint are done via HTTP GET.
 #### JSON
 
     {
-
       "id": "wa1-0001",
-
       "name": "Web Applications",
-
       "description": "public facing web apps",
-
       "type": "default",
-
       "status": "active",
-
       "serversCount": 2,
-
       "limits": {
-
         "cpu": 80,
-
         "memoryGB": 160,
-
         "storageGB": 4096
-
       },
-
       "groups": [
-
         {
-
           "id": "wa1-0002",
-
           "name": "Training Environment",
-
           "description": "Temporary servers",
-
           "type": "default",
-
           "status": "active",
-
           "serversCount": 0,
-
           "limits": {
-
             "cpu": 80,
-
             "memoryGB": 160,
-
             "storageGB": 4096
-
           },
-
           "groups": [],
-
           "links": [
-
             {
-
               "rel": "self",
-
               "href": "/v2/groups/acct/wa1-0002"
-
             },
-
             {
-
               "rel": "delete",
-
               "href": "/v2/groups/acct/wa1-0002"
-
             },
-
             {
-
               "rel": "billing",
-
               "href": "/v2/groups/acct/wa1-0002/billing"
-
             },
-
             {
-
               "rel": "archiveGroupAction",
-
               "href": "/v2/groups/acct/wa1-0002/archive"
-
             },
-
             {
-
               "rel": "statistics",
-
               "href": "/v2/groups/acct/wa1-0002/statistics"
-
             },
-
             {
-
               "rel": "scheduledActivities",
-
               "href": "/v2/groups/acct/wa1-0002/scheduledActivities"
-
             }
-
           ]
-
         }
-
       ],
-
       "links": [
-
         {
-
           "rel": "self",
-
           "href": "/v2/groups/acct/wa1-0001"
-
         },
-
         {
-
           "rel": "delete",
-
           "href": "/v2/groups/acct/wa1-0001"
-
         },
-
         {
-
           "rel": "parentGroup",
-
           "href": "/v2/groups/acct/wa1-0000",
-
           "id": "wa1-3728"
-
         },
-
         {
-
           "rel": "billing",
-
           "href": "/v2/groups/acct/wa1-0001/billing"
-
         },
-
         {
-
           "rel": "archiveGroupAction",
-
           "href": "/v2/groups/acct/wa1-0001/archive"
-
         },
-
         {
-
           "rel": "statistics",
-
           "href": "/v2/groups/acct/wa1-0001/statistics"
-
         },
-
         {
-
           "rel": "scheduledActivities",
-
           "href": "/v2/groups/acct/wa1-0001/scheduledActivities"
-
         },
-
         {
-
           "rel": "server",
-
           "href": "/v2/servers/acct/wa1acctpre7101",
-
           "id": "WA1ACCTPRE7101"
-
         },
-
         {
-
           "rel": "server",
-
           "href": "/v2/servers/btdi/wa1acctpre7202",
-
           "id": "WA1ACCTPRE7202"
-
         }
-
       ]
-
     }

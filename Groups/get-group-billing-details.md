@@ -11,19 +11,15 @@ Gets the current and estimated charges for each server in a designated group hie
 
 Use this API operation when you want to find out the charges associated with a specific group.
 
-### Supported HTTP Verbs
-
-Requests to this endpoint are done via HTTP GET.
-
 ## URL
 
 ### Structure
 
-    https://api.tier3.com/v2/groups/{accountAlias}/{groupId}/billing
+    GET https://api.tier3.com/v2/groups/{accountAlias}/{groupId}/billing
 
 ### Example
 
-    https://api.tier3.com/v2/groups/ALIAS/wa1-5030/billing
+    GET https://api.tier3.com/v2/groups/ALIAS/wa1-5030/billing
 
 ## Request
 
@@ -150,57 +146,30 @@ Requests to this endpoint are done via HTTP GET.
 #### JSON
 
     {
-
       "date": "2014-04-07T21:33:51.9743015Z",
-
       "groups": {
-
         "wa1-0003": {
-
           "name": "Web Applications",
-
           "servers": {
-
             "wa1acctserv7101": {
-
               "templateCost": 0.0,
-
               "archiveCost": 0.0,
-
               "monthlyEstimate": 77.76,
-
               "monthToDate": 17.93,
-
               "currentHour": 0.108
-
             },
-
             "wa1acctserv7202": {
-
               "templateCost": 0.0,
-
               "archiveCost": 0.0,
-
               "monthlyEstimate": 156.96,
-
               "monthToDate": 36.19,
-
               "currentHour": 0.218
-
             }
-
           }
-
         },
-
         "wa1-0004": {
-
           "name": "Training Environment",
-
           "servers": {}
-
         }
-
       }
-
     }

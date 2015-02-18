@@ -11,17 +11,14 @@ Acquires an authentication token used for subsequent queries to the API.
 
 Use this API operation before you call any other API operation. It shows a user's roles, primary data center, and a valid bearer token.
 
-### Supported HTTP Verbs
-
-Requests to this endpoint are done via HTTP POST.
-
 ## URL
 
 ### Structure
 
-    https://api.tier3.com/v2/authentication/login
+    POST https://api.tier3.com/v2/authentication/login
 
 ## Request
+
 ### Content Properties
 
 <table>

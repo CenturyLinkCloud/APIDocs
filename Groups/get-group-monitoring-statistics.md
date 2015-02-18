@@ -11,19 +11,15 @@ Gets the resource consumption details for whatever window specified in the reque
 
 Use this API operation when you want to track the resource usage of servers within a group hierarchy. It can be used to populate a local data mart or chart the results on a dashboard.
 
-### Supported HTTP Verbs
-
-Requests to this endpoint are done via HTTP GET.
-
 ## URL
 
 ### Structure
 
-    https://api.tier3.com/v2/groups/{accountAlias}/{groupId}/statistics?start={datetime}&sampleInterval=dd:hh:mm:ss
+    GET https://api.tier3.com/v2/groups/{accountAlias}/{groupId}/statistics?start={datetime}&sampleInterval=dd:hh:mm:ss
 
 ### Example
 
-    https://api.tier3.com/v2/groups/ALIAS/wa1-5003/statistics?start=2014-04-05&sampleInterval=01:00:00
+    GET https://api.tier3.com/v2/groups/ALIAS/wa1-5003/statistics?start=2014-04-05&sampleInterval=01:00:00
 
 ## Request
 
@@ -52,23 +48,23 @@ Requests to this endpoint are done via HTTP GET.
       <td>Yes</td>
     </tr>
     <tr>
-      <td>&nbsp;start</td>
+      <td>start</td>
       <td>datetime</td>
-      <td>&nbsp;DateTime (UTC) of the query window. Note that statistics are only held for 14 days. Start date (and optional end date) must be within the past 14 days. Value is not required if choosing the "Latest" query type.</td>
-      <td>&nbsp;No</td>
+      <td>DateTime (UTC) of the query window. Note that statistics are only held for 14 days. Start date (and optional end date) must be within the past 14 days. Value is not required if choosing the "Latest" query type.</td>
+      <td>No</td>
     </tr>
     <tr>
-      <td>&nbsp;end</td>
+      <td>end</td>
       <td>datetime</td>
-      <td>&nbsp;DateTime (UTC) of the query window. End date (and start date) must be within the past 14 days. Not a required value if results should be up to the current time.</td>
-      <td>&nbsp;No</td>
+      <td>DateTime (UTC) of the query window. End date (and start date) must be within the past 14 days. Not a required value if results should be up to the current time.</td>
+      <td>No</td>
     </tr>
     <tr>
-      <td>&nbsp;sampleInterval</td>
+      <td>sampleInterval</td>
       <td>timespan</td>
-      <td>&nbsp;Result interval. For the default "hourly" type, the minimum value is 1 hour (01:00:00) and maximum is the full window size of 14 days. Note that interval must fit within start/end window, or you will get an exception that states: "The 'end'
+      <td>Result interval. For the default "hourly" type, the minimum value is 1 hour (01:00:00) and maximum is the full window size of 14 days. Note that interval must fit within start/end window, or you will get an exception that states: "The 'end'
         parameter must represent a time that occurs at least one 'sampleInterval' before 'start." If "realtime" type specified, interval can be as small as 5 minutes (05:00).</td>
-      <td>&nbsp;No</td>
+      <td>No</td>
     </tr>
     <tr>
       <td>type</td>
@@ -80,7 +76,6 @@ Requests to this endpoint are done via HTTP GET.
     </tr>
   </tbody>
 </table>
-
 
 ## Response
 
@@ -229,188 +224,97 @@ Requests to this endpoint are done via HTTP GET.
 
 #### JSON
 
-    (/v2/groups/ALIAS/GROUP/statistics?start=2014-04-09T20:00:00&amp;sampleInterval=01:00:00)
+    (/v2/groups/ALIAS/GROUP/statistics?start=2014-04-09T20:00:00&sampleInterval=01:00:00)
 
     [
-
       {
-
         "name": "wa1acctser7101",
-
         "stats": [
-
           {
-
             "timestamp": "2014-04-09T20:00:00Z",
-
             "cpu": 2.0,
-
             "cpuPercent": 5.0,
-
             "memoryMB": 3072.0,
-
             "memoryPercent": 0.0,
-
             "networkReceivedKBps": 0.0,
-
             "networkTransmittedKBps": 0.0,
-
             "diskUsageTotalCapacityMB": 40960.0,
-
             "diskUsage": [
-
               {
-
                 "id": "0:0",
-
                 "capacityMB": 40960
-
               }
-
             ],
-
             "guestDiskUsage": []
-
           },
-
           {
-
             "timestamp": "2014-04-09T21:00:00Z",
-
             "cpu": 2.0,
-
             "cpuPercent": 2.0,
-
             "memoryMB": 3072.0,
-
             "memoryPercent": 0.0,
-
             "networkReceivedKBps": 0.0,
-
             "networkTransmittedKBps": 0.0,
-
             "diskUsageTotalCapacityMB": 40960.0,
-
             "diskUsage": [
-
               {
-
                 "id": "0:0",
-
                 "capacityMB": 40960
-
               }
-
             ],
-
             "guestDiskUsage": []
-
           }
-
         ]
-
       },
-
       {
-
         "name": "wa1acctser7202",
-
         "stats": [
-
           {
-
             "timestamp": "2014-04-09T20:00:00Z",
-
             "cpu": 1.0,
-
             "cpuPercent": 1.14,
-
             "memoryMB": 2048.0,
-
             "memoryPercent": 9.24,
-
             "networkReceivedKBps": 0.0,
-
             "networkTransmittedKBps": 0.0,
-
             "diskUsageTotalCapacityMB": 40960.0,
-
             "diskUsage": [
-
               {
-
                 "id": "0:0",
-
                 "capacityMB": 40960
-
               }
-
             ],
-
             "guestDiskUsage": [
-
               {
-
                 "path": "C:\\",
-
                 "capacityMB": 40607,
-
                 "consumedMB": 16619
-
               }
-
             ]
-
           },
-
           {
-
             "timestamp": "2014-04-09T21:00:00Z",
-
             "cpu": 1.0,
-
             "cpuPercent": 1.02,
-
             "memoryMB": 2048.0,
-
             "memoryPercent": 2.32,
-
             "networkReceivedKBps": 0.0,
-
             "networkTransmittedKBps": 0.0,
-
             "diskUsageTotalCapacityMB": 40960.0,
-
             "diskUsage": [
-
               {
-
                 "id": "0:0",
-
                 "capacityMB": 40960
-
               }
-
             ],
-
             "guestDiskUsage": [
-
               {
-
                 "path": "C:\\",
-
                 "capacityMB": 40607,
-
                 "consumedMB": 16619
-
               }
-
             ]
-
           }
-
         ]
-
       }
-
     ]

@@ -11,19 +11,15 @@ Gets the list of capabilities that a specific data center supports for a given a
 
 Use this API operation when you want to discover the available capabilities of a data center for your account. Specifically, this operation is helpful for retrieving network identifiers and OS template names to use when creating a server.
 
-### Supported HTTP Verbs
-
-Requests to this endpoint are done via HTTP GET.
-
 ## URL
 
 ### Structure
 
-    https://api.tier3.com/v2/datacenters/{accountAlias}/{dataCenter}/deploymentCapabilities
+    GET https://api.tier3.com/v2/datacenters/{accountAlias}/{dataCenter}/deploymentCapabilities
 
 ### Example
 
-    https://api.tier3.com/v2/datacenters/ALIAS/UC1/deploymentCapabilities
+    GET https://api.tier3.com/v2/datacenters/ALIAS/UC1/deploymentCapabilities
 
 ## Request
 
@@ -170,7 +166,7 @@ Requests to this endpoint are done via HTTP GET.
 
 ### Examples
 
-### JSON
+#### JSON
 
     {
       "supportsPremiumStorage":true,

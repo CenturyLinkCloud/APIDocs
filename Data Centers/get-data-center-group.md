@@ -11,19 +11,15 @@ Gets the full hierarchy of groups that exist within a particular account and dat
 
 Use this API operation when you want to discover the name of the root hardware group for a data center. Once you have that group alias, you can issue a secondary query to retrieve the entire group hierarchy for a given data center.
 
-### Supported HTTP Verbs
-
-Requests to this endpoint are done via HTTP GET.
-
 ## URL
 
 ### Structure
 
-    https://api.tier3.com/v2/datacenters/{accountAlias}/{dataCenter}?groupLinks=true|false
+    GET https://api.tier3.com/v2/datacenters/{accountAlias}/{dataCenter}?groupLinks=true|false
 
 ### Example
 
-    https://api.tier3.com/v2/datacenters/ALIAS/UC1?groupLinks=true
+    GET https://api.tier3.com/v2/datacenters/ALIAS/UC1?groupLinks=true
 
 ## Request
 
@@ -64,166 +60,205 @@ Requests to this endpoint are done via HTTP GET.
 
 ### Entity Definition
 
-<table style="border: 1px solid gray; border-collapse: collapse;">
-<tbody>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="100"><strong>&nbsp;</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="100"><strong>Name</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="75"><strong>Type</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="250"><strong>Value</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="300"><strong>Description</strong></td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" rowspan="2">Self Link</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">rel</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">self</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">The link type</td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">href</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">/v2/datacenters/[ALIAS]/[DC]</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">Address of the resource itself</td>
-</tr>
-</tbody>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>id</td>
+      <td>string</td>
+      <td>Short value representing the data center code</td>
+    </tr>
+    <tr>
+      <td>Name</td>
+      <td>string</td>
+      <td>Full, friendly name of the data center</td>
+    </tr>
+    <tr>
+      <td>Links</td>
+      <td>array</td>
+      <td>Collection of entity links that point to resources related to this data center</td>
+    </tr>
+  </tbody>
 </table>
 
-<table style="border: 1px solid gray; border-collapse: collapse;">
-<tbody>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="100"><strong>&nbsp;</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="100"><strong>Name</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="75"><strong>Type</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="250"><strong>Value</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="300"><strong>Description</strong></td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" rowspan="4">Group Link</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">rel</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">group</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">The link type</td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">href</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">/v2/datacenters/[ALIAS]/[DC]</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">Address of the root hardware group</td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">id</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">[GROUPID]</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">Identifier of the root hardware group</td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">name</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">[GROUP NAME]</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">Friendly name of the group</td>
-</tr>
-</tbody>
+### Self Link Definition
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>rel</td>
+      <td>string</td>
+      <td>self</td>
+      <td>The link type</td>
+    </tr>
+    <tr>
+      <td>href</td>
+      <td>string</td>
+      <td>/v2/datacenters/[ALIAS]/[DC]</td>
+      <td>Address of the resource itself</td>
+    </tr>
+  </tbody>
 </table>
 
-<table style="border: 1px solid gray; border-collapse: collapse;">
-<tbody>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="100"><strong>&nbsp;</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="100"><strong>Name</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="75"><strong>Type</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="250"><strong>Value</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="300"><strong>Description</strong></td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" rowspan="2">Billing Link</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">rel</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">billing</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">The link type</td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">href</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">/v2/datacenters/[ALIAS]/[GROUPID]/<br>billing</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">Address of the billing information for the group</td>
-</tr>
-</tbody>
+### Group Link Definition
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>rel</td>
+      <td>string</td>
+      <td>group</td>
+      <td>The link type</td>
+    </tr>
+    <tr>
+      <td>href</td>
+      <td>string</td>
+      <td>/v2/datacenters/[ALIAS]/[DC]</td>
+      <td>Address of the root hardware group</td>
+      </tr>
+    <tr>
+      <td>id</td>
+      <td>string</td>
+      <td>[GROUPID]</td>
+      <td>Identifier of the root hardware group</td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>string</td>
+      <td>[GROUP NAME]</td>
+      <td>Friendly name of the group</td>
+    </tr>
+  </tbody>
 </table>
 
-<table style="border: 1px solid gray; border-collapse: collapse;">
-<tbody>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="100"><strong>&nbsp;</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="100"><strong>Name</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="75"><strong>Type</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="250"><strong>Value</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="300"><strong>Description</strong></td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" rowspan="2">Archive Link</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">rel</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">archiveGroupAction</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">The link type</td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">href</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;"><span data-mce-mark="1">/v2/datacenters/[ALIAS]/[GROUPID]/</span><br><span data-mce-mark="1">archive</span></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">Address of the archive details for this group</td>
-</tr>
-</tbody>
+### Billing Link Definition
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>rel</td>
+      <td>string</td>
+      <td>billing</td>
+      <td>The link type</td>
+    </tr>
+    <tr>
+      <td>href</td>
+      <td>string</td>
+      <td>/v2/datacenters/[ALIAS]/[GROUPID]/billing</td>
+      <td>Address of the billing information for the group</td>
+    </tr>
+  </tbody>
 </table>
 
-<table style="border: 1px solid gray; border-collapse: collapse;">
-<tbody>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="100"><strong>&nbsp;</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="100"><strong>Name</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="75"><strong>Type</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="250"><strong>Value</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="300"><strong>Description</strong></td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" rowspan="2">Statistics Link</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">rel</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">statistics</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">The link type</td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">href</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;"><span data-mce-mark="1">/v2/datacenters/[ALIAS]/[GROUPID]/</span><br><span data-mce-mark="1">statistics</span></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">Address of usage statistics for this group</td>
-</tr>
-</tbody>
+### Archive Link Definition
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>rel</td>
+      <td>string</td>
+      <td>archiveGroupAction</td>
+      <td>The link type</td>
+    </tr>
+    <tr>
+      <td>href</td>
+      <td>string</td>
+      <td>/v2/datacenters/[ALIAS]/[GROUPID]/archive</td>
+      <td>Address of the archive details for this group</td>
+    </tr>
+  </tbody>
 </table>
 
-<table style="border: 1px solid gray; border-collapse: collapse;">
-<tbody>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="100"><strong>&nbsp;</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="100"><strong>Name</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="75"><strong>Type</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="250"><strong>Value</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="300"><strong>Description</strong></td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" rowspan="2">Activities Link</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">rel</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">scheduledActivities</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">The link type</td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">href</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;"><span data-mce-mark="1">/v2/datacenters/[ALIAS]/[GROUPID]/</span><br><span data-mce-mark="1">scheduledActivities</span></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">Address of the scheduled activities <br>(e.g.&nbsp;<span>restarts, pause) for this group</span></td>
-</tr>
-</tbody>
+### Statistics Link Definition
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>rel</td>
+      <td>string</td>
+      <td>statistics</td>
+      <td>The link type</td>
+    </tr>
+    <tr>
+      <td>href</td>
+      <td>string</td>
+      <td>/v2/datacenters/[ALIAS]/[GROUPID]/statistics</td>
+      <td>Address of usage statistics for this group</td>
+    </tr>
+  </tbody>
+</table>
+
+### Activities Link Definition
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>rel</td>
+      <td>string</td>
+      <td>scheduledActivities</td>
+      <td>The link type</td>
+    </tr>
+    <tr>
+      <td>href</td>
+      <td>string</td>
+      <td>/v2/datacenters/[ALIAS]/[GROUPID]/scheduledActivities</td>
+      <td>Address of the scheduled activities (e.g.restarts, pause) for this group</td>
+    </tr>
+  </tbody>
 </table>
 
 ### Examples

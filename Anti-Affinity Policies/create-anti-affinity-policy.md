@@ -116,31 +116,29 @@ Use this API operation when you want to create a new anti-affinity policy within
   </tbody>
 </table>
 
-### Links Definition
+### Self Link Definition
 
 <table>
-<tbody>
-<tr>
-<td width="100"><strong>&nbsp;</strong></td>
-<td width="100"><strong>Name</strong></td>
-<td width="75"><strong>Type</strong></td>
-<td width="250"><strong>Value</strong></td>
-<td width="300"><strong>Description</strong></td>
-</tr>
-<tr>
-<td rowspan="2">Self Link</td>
-<td>rel</td>
-<td>string</td>
-<td>self</td>
-<td>The link type</td>
-</tr>
-<tr>
-<td>href</td>
-<td>string</td>
-<td>/v2/antiAffinityPolicies/[ALIAS]/[POLICYID]</td>
-<td>Address of the resource itself</td>
-</tr>
-</tbody>
+  <tbody>
+    <tr>
+      <td width="100"><strong>Name</strong></td>
+      <td width="75"><strong>Type</strong></td>
+      <td width="250"><strong>Value</strong></td>
+      <td width="300"><strong>Description</strong></td>
+    </tr>
+    <tr>
+      <td>rel</td>
+      <td>string</td>
+      <td>self</td>
+      <td>The link type</td>
+    </tr>
+    <tr>
+      <td>href</td>
+      <td>string</td>
+      <td>/v2/antiAffinityPolicies/[ALIAS]/[POLICYID]</td>
+      <td>Address of the resource itself</td>
+    </tr>
+  </tbody>
 </table>
 
 ### Examples
@@ -150,20 +148,12 @@ Use this API operation when you want to create a new anti-affinity policy within
     {
 
       "id":"80a7bf90b459454b859399aef54f4173",
-
       "name":"New Anti-Affinity Policy",
-
       "location":"VA1",
-
       "links":[
-
         {
-
           "rel":"self",
-
           "href":"/v2/antiAffinityPolicies/alias/80a7bf90b459454b859399aef54f4173"
-
         }
       ]
-
     }
