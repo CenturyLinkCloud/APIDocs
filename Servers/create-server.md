@@ -12,19 +12,15 @@ Creates a new server. Calls to this operation must include a token acquired from
 
 Use this API operation when you want to create a new server from a standard or custom template, or clone an existing server.
 
-### Supported HTTP Verbs
-
-Requests to this endpoint are done via HTTP POST.
-
 ## URL
 
 ### Structure
 
-    https://api.tier3.com/v2/servers/{accountAlias}
+    POST https://api.tier3.com/v2/servers/{accountAlias}
 
 ### Example
 
-    https://api.tier3.com/v2/servers/ALIAS/
+    POST https://api.tier3.com/v2/servers/ALIAS/
 
 ## Request
 
@@ -64,7 +60,7 @@ Requests to this endpoint are done via HTTP POST.
     <tr>
       <td>name</td>
       <td>string</td>
-      <td>Name of the server to create. Alphanumeric characters and dashes only. Must be between 1-7 characters depending on the length of the account alias.&nbsp;(This name will be appended with a two digit number and prepended with the datacenter code and
+      <td>Name of the server to create. Alphanumeric characters and dashes only. Must be between 1-7 characters depending on the length of the account alias. (This name will be appended with a two digit number and prepended with the datacenter code and
         account alias to make up the final server name.)</td>
       <td>Yes</td>
     </tr>
@@ -83,7 +79,7 @@ Requests to this endpoint are done via HTTP POST.
     <tr>
       <td>sourceServerId</td>
       <td>string</td>
-      <td>ID of the server to use a source. May be the ID of a template, or when cloning, an existing server ID. The list of available templates for a given account in a data center can be retrieved from the <a href="https://t3n.zendesk.com/entries/59048754-Get-Data-Center-Deployment-Capabilities">Get Data Center Deployment Capabilities</a>        API operation.</td>
+      <td>ID of the server to use a source. May be the ID of a template, or when cloning, an existing server ID. The list of available templates for a given account in a data center can be retrieved from the <a href="/api-docs/v2#data-centers-get-data-center-deployment-capabilities">Get Data Center Deployment Capabilities</a> API operation.</td>
       <td>Yes</td>
     </tr>
     <tr>
@@ -95,20 +91,20 @@ Requests to this endpoint are done via HTTP POST.
     <tr>
       <td>primaryDns</td>
       <td>string</td>
-      <td>Primary DNS to set on the server. If not supplied the default value set on the account will be used.&nbsp;</td>
+      <td>Primary DNS to set on the server. If not supplied the default value set on the account will be used.</td>
       <td>No</td>
     </tr>
     <tr>
       <td>secondaryDns</td>
       <td>string</td>
-      <td>Secondary DNS to set on the server. If not supplied the default value set on the account will be used.&nbsp;</td>
+      <td>Secondary DNS to set on the server. If not supplied the default value set on the account will be used.</td>
       <td>No</td>
     </tr>
     <tr>
       <td>networkId</td>
       <td>string</td>
-      <td>ID of the network to which to deploy the server. If not provided, a network will be chosen automatically. If your account has not yet been assigned a network, leave this blank and&nbsp;one will be assigned automatically.&nbsp;The list of available
-        networks for a given account in a data center can be retrieved from the&nbsp;<a href="https://t3n.zendesk.com/entries/59048754-Get-Data-Center-Deployment-Capabilities">Get Data Center Deployment Capabilities</a>&nbsp;API operation.&nbsp;</td>
+      <td>ID of the network to which to deploy the server. If not provided, a network will be chosen automatically. If your account has not yet been assigned a network, leave this blank and one will be assigned automatically. The list of available
+        networks for a given account in a data center can be retrieved from the <a href="/api-docs/v2#data-centers-get-data-center-deployment-capabilities">Get Data Center Deployment Capabilities</a> API operation. </td>
       <td>No</td>
     </tr>
     <tr>
@@ -120,7 +116,7 @@ Requests to this endpoint are done via HTTP POST.
     <tr>
       <td>password</td>
       <td>string</td>
-      <td>Password of administrator or root user on server. If not provided, one will be generated automatically.&nbsp;</td>
+      <td>Password of administrator or root user on server. If not provided, one will be generated automatically.</td>
       <td>No</td>
     </tr>
     <tr>
@@ -138,7 +134,7 @@ Requests to this endpoint are done via HTTP POST.
     <tr>
       <td>cpuAutoscalePolicyId</td>
       <td>string</td>
-      <td>ID of the vertical CPU Autoscale policy to associate the server with. Available IDs can be retrieved from the <strong>Get&nbsp;Autoscale Policies </strong>API operation.</td>
+      <td>ID of the vertical CPU Autoscale policy to associate the server with. Available IDs can be retrieved from the <strong>Get Autoscale Policies</strong> API operation.</td>
       <td>No</td>
     </tr>
     <tr>
@@ -156,14 +152,13 @@ Requests to this endpoint are done via HTTP POST.
     <tr>
       <td>storageType</td>
       <td>string</td>
-      <td>For standard servers, whether to use standard or premium storage. If not provided, will default to premium storage.&nbsp;For hyperscale servers, storage type must be hyperscale.&nbsp;</td>
+      <td>For standard servers, whether to use standard or premium storage. If not provided, will default to premium storage. For hyperscale servers, storage type must be hyperscale.</td>
       <td>No</td>
     </tr>
     <tr>
       <td>antiAffinityPolicyId</td>
       <td>string</td>
-      <td>ID of the Anti-Affinity policy to associate the server with. Only valid for hyperscale servers. Available IDs can be retrieved from the&nbsp;<a href="https://t3n.zendesk.com/entries/44657214-Get-Anti-Affinity-Policies">Get&nbsp;Anti-Affinity Policies</a><strong>&nbsp;</strong>API
-        operation.</td>
+      <td>ID of the Anti-Affinity policy to associate the server with. Only valid for hyperscale servers. Available IDs can be retrieved from the <a href="/api-docs/v2#anti-affinity-policies-get-antiaffinity-policies">Get Anti-Affinity Policies</a>API operation.</td>
       <td>No</td>
     </tr>
     <tr>
@@ -181,13 +176,13 @@ Requests to this endpoint are done via HTTP POST.
     <tr>
       <td>ttl</td>
       <td>dateTime</td>
-      <td>Date/time that the server should be deleted&nbsp;</td>
+      <td>Date/time that the server should be deleted</td>
       <td>No</td>
     </tr>
     <tr>
       <td>packages</td>
       <td>complex</td>
-      <td>Collection of packages to run on the server after it has been built&nbsp;</td>
+      <td>Collection of packages to run on the server after it has been built</td>
       <td>No</td>
     </tr>
   </tbody>
@@ -207,7 +202,7 @@ Requests to this endpoint are done via HTTP POST.
     <tr>
       <td>id</td>
       <td>string</td>
-      <td>ID of the custom field to set.&nbsp;Available custom field IDs can be retrieved from the&nbsp;<strong>Get Custom Fields</strong>&nbsp;API operation.</td>
+      <td>ID of the custom field to set. Available custom field IDs can be retrieved from the <strong>Get Custom Fields</strong> API operation.</td>
     </tr>
     <tr>
       <td>value</td>
@@ -260,11 +255,11 @@ Requests to this endpoint are done via HTTP POST.
     <tr>
       <td>packageId</td>
       <td>string</td>
-      <td>ID of the package to run on the server after it builds.&nbsp;Available package IDs can be retrieved from the&nbsp;<strong>Get Packages</strong>&nbsp;API operation.</td>
+      <td>ID of the package to run on the server after it builds. Available package IDs can be retrieved from the <strong>Get Packages</strong> API operation.</td>
     </tr>
     <tr>
       <td>parameters</td>
-      <td>complex&nbsp;</td>
+      <td>complex</td>
       <td>Collection of name-value pairs to specify package-specific parameters.</td>
     </tr>
   </tbody>
@@ -371,7 +366,7 @@ Requests to this endpoint are done via HTTP POST.
       <td>id</td>
       <td>string</td>
       <td>[ID]</td>
-      <td>The identifier of the job in queue. Can be passed to&nbsp;<a href="/api-docs/v2#queue-get-status">Get Status</a>&nbsp;call to retrieve status of job.</td>
+      <td>The identifier of the job in queue. Can be passed to <a href="/api-docs/v2#queue-get-status">Get Status</a> call to retrieve status of job.</td>
     </tr>
   </tbody>
 </table>
