@@ -12,19 +12,15 @@ Gets the details for a individual server. Calls to this operation must include a
 
 Use this API operation when you want to find out all the details for a server. It can be used to look for changes, its status, or to retrieve links to associated resources.
 
-### Supported HTTP Verbs
-
-Requests to this endpoint are done via HTTP GET.
-
 ## URL
 
 ### Structure
 
-    https://api.tier3.com/v2/servers/{accountAlias}/{serverId}
+    GET https://api.tier3.com/v2/servers/{accountAlias}/{serverId}
 
 ### Example
 
-    https://api.tier3.com/v2/servers/ALIAS/WA1ACCTSERV0101
+    GET https://api.tier3.com/v2/servers/ALIAS/WA1ACCTSERV0101
 
 ## Request
 
@@ -150,7 +146,7 @@ Requests to this endpoint are done via HTTP GET.
     <tr>
       <td>ipAddresses</td>
       <td>complex</td>
-      <td>&nbsp;Details about IP addresses associated with the server</td>
+      <td>Details about IP addresses associated with the server</td>
     </tr>
     <tr>
       <td>alertPolicies</td>
@@ -199,7 +195,7 @@ Requests to this endpoint are done via HTTP GET.
     </tr>
     <tr>
       <td>customFields</td>
-      <td>&nbsp;complex</td>
+      <td>complex</td>
       <td>Details about any custom fields and their values</td>
     </tr>
   </tbody>
@@ -217,8 +213,8 @@ Requests to this endpoint are done via HTTP GET.
   </thead>
   <tbody>
     <tr>
-      <td>&nbsp;public</td>
-      <td>string&nbsp;</td>
+      <td>public</td>
+      <td>string</td>
       <td>If applicable, the public IP</td>
     </tr>
     <tr>
@@ -241,9 +237,9 @@ Requests to this endpoint are done via HTTP GET.
   </thead>
   <tbody>
     <tr>
-      <td>&nbsp;id</td>
-      <td>string&nbsp;</td>
-      <td>Unique identifier of the policy&nbsp;</td>
+      <td>id</td>
+      <td>string</td>
+      <td>Unique identifier of the policy</td>
     </tr>
     <tr>
       <td>name</td>
@@ -258,65 +254,68 @@ Requests to this endpoint are done via HTTP GET.
   </tbody>
 </table>
 
-### AlertPolicies Links Definition
 
-<table style="border: 1px solid gray; border-collapse: collapse;">
-<tbody>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="100"><strong>&nbsp;</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="100"><strong>Name</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="75"><strong>Type</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="250"><strong>Value</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="300"><strong>Description</strong></td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" rowspan="2">Self Link</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">rel</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">self</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">The link type</td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">href</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">/v2/policies/alerts/ID?account=[ALIAS]&amp;<br>location=WA1&amp;name=[SERVER]</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">Address of the resource itself</td>
-</tr>
-</tbody>
+
+
+### AlertPolicies Self Link Definition
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</td>
+      <th>Type</th>
+      <th>Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>rel</td>
+      <td>string</td>
+      <td>self</td>
+      <td>The link type</td>
+    </tr>
+    <tr>
+      <td>href</td>
+      <td>string</td>
+      <td>/v2/policies/alerts/ID?account=[ALIAS]&amp;<br>location=WA1&amp;name=[SERVER]</td>
+      <td>Address of the resource itself</td>
+    </tr>
+  </tbody>
 </table>
 
+### AlertPolicies Policy Map Link Definition
 
-<table style="border: 1px solid gray; border-collapse: collapse;">
-<tbody>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="100"><strong>&nbsp;</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="100"><strong>Name</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="75"><strong>Type</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="250"><strong>Value</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="300"><strong>Description</strong></td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" rowspan="3">Policy Map<br>Link</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">rel</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">alertPolicyMap</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">The link type</td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">href</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">/v2/servers/[ALIAS]/[SERVER]/alertPolicies/[ID]</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">Address of the mapping to this server</td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">verbs</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">array</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">DELETE</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">Valid HTTP verbs that can act on this resource</td>
-</tr>
-</tbody>
+<table>
+  <thead>
+    <tr>
+      <th>Name</td>
+      <th>Type</th>
+      <th>Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>rel</td>
+      <td>string</td>
+      <td>alertPolicyMap</td>
+      <td>The link type</td>
+    </tr>
+    <tr>
+      <td>href</td>
+      <td>string</td>
+      <td>/v2/servers/[ALIAS]/[SERVER]/alertPolicies/[ID]</td>
+      <td>Address of the mapping to this server</td>
+    </tr>
+    <tr>
+      <td>verbs</td>
+      <td>array</td>
+      <td>DELETE</td>
+      <td>Valid HTTP verbs that can act on this resource</td>
+    </tr>
+  </tbody>
 </table>
-
 
 ### Snapshots Definition
 
@@ -331,8 +330,8 @@ Requests to this endpoint are done via HTTP GET.
   <tbody>
     <tr>
       <td>name</td>
-      <td>string&nbsp;</td>
-      <td>Timestamp of the snapshot&nbsp;</td>
+      <td>string</td>
+      <td>Timestamp of the snapshot</td>
     </tr>
     <tr>
       <td>links</td>
@@ -342,83 +341,85 @@ Requests to this endpoint are done via HTTP GET.
   </tbody>
 </table>
 
-<h3>Snapshot Links Definition</h3>
+### Snapshot Self Link Definition
 
-<table style="border: 1px solid gray; border-collapse: collapse;">
-<tbody>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="100"><strong>&nbsp;</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="100"><strong>Name</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="75"><strong>Type</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="250"><strong>Value</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="300"><strong>Description</strong></td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" rowspan="2">Self Link</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">rel</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">self</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">The link type</td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">href</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">/v2/servers/[ALIAS]/[<span>SERVER]</span>/snapshots/[ID]</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">Address of the resource itself</td>
-</tr>
-</tbody>
+<table>
+  <thead>
+    <tr>
+      <th>Name</td>
+      <th>Type</th>
+      <th>Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>rel</td>
+      <td>string</td>
+      <td>self</td>
+      <td>The link type</td>
+    </tr>
+    <tr>
+      <td>href</td>
+      <td>string</td>
+      <td>/v2/servers/[ALIAS]/[SERVER]/snapshots/[ID]</td>
+      <td>Address of the resource itself</td>
+    </tr>
+  </tbody>
 </table>
 
+### Snapshot Delete Link Definition
 
-<table style="border: 1px solid gray; border-collapse: collapse;">
-<tbody>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="100"><strong>&nbsp;</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="100"><strong>Name</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="75"><strong>Type</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="250"><strong>Value</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="300"><strong>Description</strong></td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" rowspan="2">Delete<br>Link</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">rel</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">delete</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">The link type</td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">href</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;"><span>/v2/servers/[ALIAS]/[</span><span>SERVER]</span><span>/snapshots/[ID]</span></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">Address of the snapshot for deletion</td>
-</tr>
-</tbody>
+<table>
+  <thead>
+    <tr>
+      <th>Name</td>
+      <th>Type</th>
+      <th>Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>rel</td>
+      <td>string</td>
+      <td>delete</td>
+      <td>The link type</td>
+    </tr>
+    <tr>
+      <td>href</td>
+      <td>string</td>
+      <td>/v2/servers/[ALIAS]/[SERVER]/snapshots/[ID]</td>
+      <td>Address of the snapshot for deletion</td>
+    </tr>
+  </tbody>
 </table>
 
+### Snapshot Restore Link Definition
 
-<table style="border: 1px solid gray; border-collapse: collapse;">
-<tbody>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="100"><strong>&nbsp;</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="100"><strong>Name</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="75"><strong>Type</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="250"><strong>Value</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="300"><strong>Description</strong></td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" rowspan="2">Restore<br>Link</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">rel</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">restore</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">The link type</td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">href</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;"><span>/v2/servers/[ALIAS]/[</span><span>SERVER]</span><span>/snapshots/[ID]/restore</span></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">Address of the snapshot for restoration</td>
-</tr>
-</tbody>
+<table>
+  <thead>
+    <tr>
+      <th>Name</td>
+      <th>Type</th>
+      <th>Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>rel</td>
+      <td>string</td>
+      <td>restore</td>
+      <td>The link type</td>
+    </tr>
+    <tr>
+      <td>href</td>
+      <td>string</td>
+      <td>/v2/servers/[ALIAS]/[SERVER]/snapshots/[ID]/restore</td>
+      <td>Address of the snapshot for restoration</td>
+    </tr>
+  </tbody>
 </table>
 
 
@@ -470,7 +471,7 @@ Requests to this endpoint are done via HTTP GET.
     <tr>
       <td>createdDate</td>
       <td>dateTime</td>
-      <td>Date/time that the server was created&nbsp;</td>
+      <td>Date/time that the server was created</td>
     </tr>
     <tr>
       <td>createdBy</td>
@@ -490,397 +491,409 @@ Requests to this endpoint are done via HTTP GET.
   </tbody>
 </table>
 
-### Links Definition
+### Self Link Definition
 
-<table style="border: 1px solid gray; border-collapse: collapse;">
-<tbody>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="100"><strong>&nbsp;</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="100"><strong>Name</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="75"><strong>Type</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="250"><strong>Value</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="300"><strong>Description</strong></td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" rowspan="3">Self Link</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">rel</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">self</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">The link type</td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">href</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">/v2/servers/[ALIAS]/[SERVER]</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">Address of the resource itself</td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">verbs</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">array</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">GET | PATCH | DELETE</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;"><span>Valid HTTP verbs that can act on this resource</span></td>
-</tr>
-</tbody>
+<table>
+  <thead>
+    <tr>
+      <th>Name</td>
+      <th>Type</th>
+      <th>Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>rel</td>
+      <td>string</td>
+      <td>self</td>
+      <td>The link type</td>
+    </tr>
+    <tr>
+      <td>href</td>
+      <td>string</td>
+      <td>/v2/servers/[ALIAS]/[SERVER]</td>
+      <td>Address of the resource itself</td>
+    </tr>
+    <tr>
+      <td>verbs</td>
+      <td>array</td>
+      <td>GET | PATCH | DELETE</td>
+      <td>Valid HTTP verbs that can act on this resource</td>
+    </tr>
+  </tbody>
 </table>
 
+### Group Link Definition
 
-<table style="border: 1px solid gray; border-collapse: collapse;">
-<tbody>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="100"><strong>&nbsp;</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="100"><strong>Name</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="75"><strong>Type</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="250"><strong>Value</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="300"><strong>Description</strong></td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" rowspan="3">Group Link</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">rel</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">group</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">The link type</td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">href</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">/v2/groups/[ALIAS]/[GROUP]</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">Address of the group</td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">id</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">[GROUP]</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">Unique ID of the group</td>
-</tr>
-</tbody>
+<table>
+  <thead>
+    <tr>
+      <th>Name</td>
+      <th>Type</th>
+      <th>Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>rel</td>
+      <td>string</td>
+      <td>group</td>
+      <td>The link type</td>
+    </tr>
+    <tr>
+      <td>href</td>
+      <td>string</td>
+      <td>/v2/groups/[ALIAS]/[GROUP]</td>
+      <td>Address of the group</td>
+    </tr>
+    <tr>
+      <td>id</td>
+      <td>string</td>
+      <td>[GROUP]</td>
+      <td>Unique ID of the group</td>
+    </tr>
+  </tbody>
 </table>
 
+### Account Link Definition
 
-<table style="border: 1px solid gray; border-collapse: collapse;">
-<tbody>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="100"><strong>&nbsp;</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="100"><strong>Name</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="75"><strong>Type</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="250"><strong>Value</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="300"><strong>Description</strong></td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" rowspan="3">Account Link</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">rel</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">account</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">The link type</td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">href</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">/v2/accounts/[ALIAS]</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">Address of the account</td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">id</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">[ALIAS]</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">Unique ID of the account</td>
-</tr>
-</tbody>
+<table>
+  <thead>
+    <tr>
+      <th>Name</td>
+      <th>Type</th>
+      <th>Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>rel</td>
+      <td>string</td>
+      <td>account</td>
+      <td>The link type</td>
+    </tr>
+    <tr>
+      <td>href</td>
+      <td>string</td>
+      <td>/v2/accounts/[ALIAS]</td>
+      <td>Address of the account</td>
+    </tr>
+    <tr>
+      <td>id</td>
+      <td>string</td>
+      <td>[ALIAS]</td>
+      <td>Unique ID of the account</td>
+    </tr>
+  </tbody>
 </table>
 
+### Billing Link Definition
 
-<table style="border: 1px solid gray; border-collapse: collapse;">
-<tbody>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="100"><strong>&nbsp;</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="100"><strong>Name</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="75"><strong>Type</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="250"><strong>Value</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="300"><strong>Description</strong></td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" rowspan="2">Billing Link</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">rel</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">billing</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">The link type</td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">href</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;"><span data-mce-mark="1">/v2/servers/[ALIAS]/estimate-server/[SERVER]</span><span data-mce-mark="1"><br></span></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">Address of billing details &nbsp;for this server</td>
-</tr>
-</tbody>
+<table>
+  <thead>
+    <tr>
+      <th>Name</td>
+      <th>Type</th>
+      <th>Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>rel</td>
+      <td>string</td>
+      <td>billing</td>
+      <td>The link type</td>
+    </tr>
+    <tr>
+      <td>href</td>
+      <td>string</td>
+      <td>/v2/servers/[ALIAS]/estimate-server/[SERVER]</td>
+      <td>Address of billing details for this server</td>
+    </tr>
+  </tbody>
 </table>
 
+### Statistics Link Definition
 
-<table style="border: 1px solid gray; border-collapse: collapse;">
-<tbody>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="100"><strong>&nbsp;</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="100"><strong>Name</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="75"><strong>Type</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="250"><strong>Value</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="300"><strong>Description</strong></td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" rowspan="2">Statistics Link</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">rel</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">statistics</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">The link type</td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">href</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;"><span data-mce-mark="1">/v2/servers/[ALIAS]/[SERVER]/</span><br><span data-mce-mark="1">statistics</span></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">Address of usage statistics for this server</td>
-</tr>
-</tbody>
+<table>
+  <thead>
+    <tr>
+      <th>Name</td>
+      <th>Type</th>
+      <th>Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>rel</td>
+      <td>string</td>
+      <td>statistics</td>
+      <td>The link type</td>
+    </tr>
+    <tr>
+      <td>href</td>
+      <td>string</td>
+      <td>/v2/servers/[ALIAS]/[SERVER]/statistics</td>
+      <td>Address of usage statistics for this server</td>
+    </tr>
+  </tbody>
 </table>
 
+### Activities Link Definition
 
-<table style="border: 1px solid gray; border-collapse: collapse;">
-<tbody>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="100"><strong>&nbsp;</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="100"><strong>Name</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="75"><strong>Type</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="250"><strong>Value</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="300"><strong>Description</strong></td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" rowspan="2">Activities Link</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">rel</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">scheduledActivities</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">The link type</td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">href</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;"><span data-mce-mark="1">/v2/servers/[ALIAS]/[SERVER]/</span><br><span data-mce-mark="1">scheduledActivities</span></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">Address of the scheduled activities <br>(e.g.&nbsp;<span>restarts, pause) for this server</span></td>
-</tr>
-</tbody>
+<table>
+  <thead>
+    <tr>
+      <th>Name</td>
+      <th>Type</th>
+      <th>Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>rel</td>
+      <td>string</td>
+      <td>scheduledActivities</td>
+      <td>The link type</td>
+    </tr>
+    <tr>
+      <td>href</td>
+      <td>string</td>
+      <td>/v2/servers/[ALIAS]/[SERVER]/scheduledActivities</td>
+      <td>Address of the scheduled activities (e.g. restarts, pause) for this server</td>
+    </tr>
+  </tbody>
 </table>
 
+### Public IPs Link Definition
 
-<table style="border: 1px solid gray; border-collapse: collapse;">
-<tbody>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="100"><strong>&nbsp;</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="100"><strong>Name</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="75"><strong>Type</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="250"><strong>Value</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="300"><strong>Description</strong></td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" rowspan="3">Public IPs Link</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">rel</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">publicIPAddresses</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">The link type</td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">href</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">/v2/servers/[ALIAS]/[SERVER] /publicIPAddresses</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">Address of the resource itself</td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">verbs</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">array</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">POST</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;"><span>Valid HTTP verbs that can act on this resource</span></td>
-</tr>
-</tbody>
+<table>
+  <thead>
+    <tr>
+      <th>Name</td>
+      <th>Type</th>
+      <th>Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>rel</td>
+      <td>string</td>
+      <td>publicIPAddresses</td>
+      <td>The link type</td>
+    </tr>
+    <tr>
+      <td>href</td>
+      <td>string</td>
+      <td>/v2/servers/[ALIAS]/[SERVER]/publicIPAddresses</td>
+      <td>Address of the resource itself</td>
+    </tr>
+    <tr>
+      <td>verbs</td>
+      <td>array</td>
+      <td>POST</td>
+      <td>Valid HTTP verbs that can act on this resource</td>
+    </tr>
+  </tbody>
 </table>
 
+### Alert Policy Link Definition
 
-<table style="border: 1px solid gray; border-collapse: collapse;">
-<tbody>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="100"><strong>&nbsp;</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="100"><strong>Name</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="75"><strong>Type</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="250"><strong>Value</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="300"><strong>Description</strong></td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" rowspan="3">Alert Policies Link</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">rel</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">alertPolicyMappings</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">The link type</td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">href</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">/v2/servers/[ALIAS]/[SERVER] /alertPolicies</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">Address of the resource itself</td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">verbs</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">array</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">POST</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;"><span>Valid HTTP verbs that can act on this resource</span></td>
-</tr>
-</tbody>
+<table>
+  <thead>
+    <tr>
+      <th>Name</td>
+      <th>Type</th>
+      <th>Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>rel</td>
+      <td>string</td>
+      <td>alertPolicyMappings</td>
+      <td>The link type</td>
+    </tr>
+    <tr>
+      <td>href</td>
+      <td>string</td>
+      <td>/v2/servers/[ALIAS]/[SERVER]/alertPolicies</td>
+      <td>Address of the resource itself</td>
+    </tr>
+    <tr>
+      <td>verbs</td>
+      <td>array</td>
+      <td>POST</td>
+      <td>Valid HTTP verbs that can act on this resource</td>
+    </tr>
+  </tbody>
 </table>
 
+### Anti-Affinity Policy Link Definition
 
-<table style="border: 1px solid gray; border-collapse: collapse;">
-<tbody>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="100"><strong>&nbsp;</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="100"><strong>Name</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="75"><strong>Type</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="250"><strong>Value</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="300"><strong>Description</strong></td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" rowspan="3">Anti-Affinity Policies Link</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">rel</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">antiAffinityPolicyMapping</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">The link type</td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">href</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">/v2/servers/[ALIAS]/[SERVER] /antiAffinityPolicy</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">Address of the resource itself</td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">verbs</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">array</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">PUT | DELETE</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;"><span>Valid HTTP verbs that can act on this resource</span></td>
-</tr>
-</tbody>
+<table>
+  <thead>
+    <tr>
+      <th>Name</td>
+      <th>Type</th>
+      <th>Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>rel</td>
+      <td>string</td>
+      <td>antiAffinityPolicyMapping</td>
+      <td>The link type</td>
+    </tr>
+    <tr>
+      <td>href</td>
+      <td>string</td>
+      <td>/v2/servers/[ALIAS]/[SERVER]/antiAffinityPolicy</td>
+      <td>Address of the resource itself</td>
+    </tr>
+    <tr>
+      <td>verbs</td>
+      <td>array</td>
+      <td>PUT | DELETE</td>
+      <td>Valid HTTP verbs that can act on this resource</td>
+    </tr>
+  </tbody>
 </table>
 
+### Autoscale Policy Link Definition
 
-<table style="border: 1px solid gray; border-collapse: collapse;">
-<tbody>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="100"><strong>&nbsp;</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="100"><strong>Name</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="75"><strong>Type</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="250"><strong>Value</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="300"><strong>Description</strong></td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" rowspan="3">Autoscale Policy Link</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">rel</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">cpuAutoscalePolicyMapping</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">The link type</td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">href</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">/v2/servers/[ALIAS]/[SERVER] /cpuAutoscalePolicy</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">Address of the resource itself</td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">verbs</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">array</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">PUT | DELETE</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;"><span>Valid HTTP verbs that can act on this resource</span></td>
-</tr>
-</tbody>
+<table>
+  <thead>
+    <tr>
+      <th>Name</td>
+      <th>Type</th>
+      <th>Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>rel</td>
+      <td>string</td>
+      <td>cpuAutoscalePolicyMapping</td>
+      <td>The link type</td>
+    </tr>
+    <tr>
+      <td>href</td>
+      <td>string</td>
+      <td>/v2/servers/[ALIAS]/[SERVER]/cpuAutoscalePolicy</td>
+      <td>Address of the resource itself</td>
+    </tr>
+    <tr>
+      <td>verbs</td>
+      <td>array</td>
+      <td>PUT | DELETE</td>
+      <td>Valid HTTP verbs that can act on this resource</td>
+    </tr>
+  </tbody>
 </table>
 
+### Capabilities Link Definition
 
-<table style="border: 1px solid gray; border-collapse: collapse;">
-<tbody>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="100"><strong>&nbsp;</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="100"><strong>Name</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="75"><strong>Type</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="250"><strong>Value</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="300"><strong>Description</strong></td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" rowspan="2">Capabilities Link</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">rel</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">capabilities</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">The link type</td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">href</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;"><span data-mce-mark="1">/v2/servers/[ALIAS]/[SERVER] /capabilities</span><span data-mce-mark="1"><br></span></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">Address of the capabilities resource</td>
-</tr>
-</tbody>
+<table>
+  <thead>
+    <tr>
+      <th>Name</td>
+      <th>Type</th>
+      <th>Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>rel</td>
+      <td>string</td>
+      <td>capabilities</td>
+      <td>The link type</td>
+    </tr>
+    <tr>
+      <td>href</td>
+      <td>string</td>
+      <td>/v2/servers/[ALIAS]/[SERVER]/capabilities</td>
+      <td>Address of the capabilities resource</td>
+    </tr>
+  </tbody>
 </table>
 
+### Credentials Link Definition
 
-<table style="border: 1px solid gray; border-collapse: collapse;">
-<tbody>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="100"><strong>&nbsp;</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="100"><strong>Name</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="75"><strong>Type</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="250"><strong>Value</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="300"><strong>Description</strong></td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" rowspan="2">Credentials Link</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">rel</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">credentials</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">The link type</td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">href</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;"><span data-mce-mark="1">/v2/servers/[ALIAS]/[SERVER] /credentials</span><span data-mce-mark="1"><br></span></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">Address of the credentials resource</td>
-</tr>
-</tbody>
+<table>
+  <thead>
+    <tr>
+      <th>Name</td>
+      <th>Type</th>
+      <th>Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>rel</td>
+      <td>string</td>
+      <td>credentials</td>
+      <td>The link type</td>
+    </tr>
+    <tr>
+      <td>href</td>
+      <td>string</td>
+      <td>/v2/servers/[ALIAS]/[SERVER]/credentials</td>
+      <td>Address of the credentials resource</td>
+    </tr>
+  </tbody>
 </table>
 
+### IP Address Link Definition
 
-<table style="border: 1px solid gray; border-collapse: collapse;">
-<tbody>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="100"><strong>&nbsp;</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="100"><strong>Name</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="75"><strong>Type</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="250"><strong>Value</strong></td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" width="300"><strong>Description</strong></td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;" rowspan="4">IP Address Link</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">rel</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">publicIPAddress</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">The link type</td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">href</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">/v2/servers/[ALIAS]/[SERVER] /publicIPAddresses /[IP ADDRESS]</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">Address of the resource itself</td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">id</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">string</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">[IP ADDRESS]</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">Individual IP address</td>
-</tr>
-<tr>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">verbs</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">array</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;">GET | PUT | DELETE</td>
-<td style="padding: 5px 5px 5px 5px; border: 1px solid gray;"><span>Valid HTTP verbs that can act on this resource</span></td>
-</tr>
-</tbody>
+<table>
+  <thead>
+    <tr>
+      <th>Name</td>
+      <th>Type</th>
+      <th>Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>rel</td>
+      <td>string</td>
+      <td>publicIPAddress</td>
+      <td>The link type</td>
+    </tr>
+    <tr>
+      <td>href</td>
+      <td>string</td>
+      <td>/v2/servers/[ALIAS]/[SERVER]/publicIPAddresses/[IP ADDRESS]</td>
+      <td>Address of the resource itself</td>
+    </tr>
+    <tr>
+      <td>id</td>
+      <td>string</td>
+      <td>[IP ADDRESS]</td>
+      <td>Individual IP address</td>
+    </tr>
+    <tr>
+      <td>verbs</td>
+      <td>array</td>
+      <td>GET | PUT | DELETE</td>
+      <td>Valid HTTP verbs that can act on this resource</td>
+    </tr>
+  </tbody>
 </table>
 
 
@@ -888,382 +901,192 @@ Requests to this endpoint are done via HTTP GET.
 
 #### JSON
 
-```
-{
-
-  "id": "WA1ALIASWB01",
-
-  "name": "WA1ALIASWB01",
-
-  "description": "My web server",
-
-  "groupId": "wa1-1002",
-
-  "isTemplate": false,
-
-  "locationId": "WA1",
-
-  "osType": "Windows 2008 64-bit",
-
-  "status": "active",
-
-  "details": {
-
-    "ipAddresses": [
-
-      {
-
-        "internal": "10.82.131.44"
-
-      },
-
-      {
-
-        "public": "91.14.111.101",
-
-        "internal": "10.82.131.45"
-
-      }
-
-    ],
-
-    "alertPolicies": [
-
-      {
-
-        "id": "15836e6219e84ac736d01d4e571bb950",
-
-        "name": "Production Web Servers - RAM",
-
-        "links": [
-
-          {
-
-            "rel": "self",
-
-            "href": "/v2/alertPolicies/alias/15836e6219e84ac736d01d4e571bb950"
-
-          },
-
-          {
-
-            "rel": "alertPolicyMap",
-
-            "href": "/v2/servers/alias/WA1ALIASWB01/alertPolicies/15836e6219e84ac736d01d4e571bb950"
-
-",
-
-            "verbs": [
-
-              "DELETE"
-
-            ]
-
-          }
-
-        ]
-
-      },
-
-      {
-
-        "id": "2bec81dd90aa4217887548c3c20d7421"
-
-        "name": "Production Web Servers - Disk",
-
-        "links": [
-
-          {
-
-            "rel": "self",
-
-            "href": "/v2/alertPolicies/alias/2bec81dd90aa4217887548c3c20d7421"
-
-          },
-
-          {
-
-            "rel": "alertPolicyMap",
-
-            "href": "/v2/servers/alias/WA1ALIASWB01/alertPolicies/2bec81dd90aa4217887548c3c20d7421"
-
-",
-
-            "verbs": [
-
-              "DELETE"
-
-            ]
-
-          }
-
-        ]
-
-      }
-
-    ],
-
-    "cpu": 2,
-
-    "diskCount": 1,
-
-    "hostName": "WA1ALIASWB01.customdomain.com",
-
-    "inMaintenanceMode": false,
-
-    "memoryMB": 4096,
-
-    "powerState": "started",
-
-    "storageGB": 24,
-
-    "snapshots": [
-
-      {
-
-        "name": "2014-05-16.23:45:52",
-
-        "links": [
-
-          {
-
-            "rel": "self",
-
-            "href": "/v2/servers/alias/WA1ALIASWB01/snapshots/40"
-
-          },
-
-          {
-
-            "rel": "delete",
-
-            "href": "/v2/servers/alias/WA1ALIASWB01/snapshots/40"
-
-          },
-
-          {
-
-            "rel": "restore",
-
-            "href": "/v2/servers/alias/WA1ALIASWB01/snapshots/40/restore"
-
-          }
-
-        ]
-
-      }
-
-    ],
-
-    "customFields": [
-
-      {
-
-        "id": 22,
-
-        "name": "Cost Center",
-
-        "value": "IT-DEV",
-
-        "displayValue": "IT-DEV"
-
-      },
-
-      {
-
-        "id": 237,
-
-        "name": "CMDB ID",
-
-        "value": "1100003",
-
-        "displayValue": "1100003"
-
-      }
-
-    ]
-
-  },
-
-  "type": "standard",
-
-  "storageType": "standard",
-
-  "changeInfo": {
-
-    "createdDate": "2012-12-17T01:17:17Z",
-
-    "createdBy": "user@domain.com",
-
-    "modifiedDate": "2014-05-16T23:49:25Z",
-
-    "modifiedBy": "user@domain.com"
-
-  },
-
-  "links": [
-
     {
-
-      "rel": "self",
-
-      "href": "/v2/servers/alias/WA1ALIASWB01",
-
       "id": "WA1ALIASWB01",
-
-      "verbs": [
-
-        "GET",
-
-        "PATCH",
-
-        "DELETE"
-
+      "name": "WA1ALIASWB01",
+      "description": "My web server",
+      "groupId": "wa1-1002",
+      "isTemplate": false,
+      "locationId": "WA1",
+      "osType": "Windows 2008 64-bit",
+      "status": "active",
+      "details": {
+        "ipAddresses": [
+          {
+            "internal": "10.82.131.44"
+          },
+          {
+            "public": "91.14.111.101",
+            "internal": "10.82.131.45"
+          }
+        ],
+        "alertPolicies": [
+          {
+            "id": "15836e6219e84ac736d01d4e571bb950",
+            "name": "Production Web Servers - RAM",
+            "links": [
+              {
+                "rel": "self",
+                "href": "/v2/alertPolicies/alias/15836e6219e84ac736d01d4e571bb950"
+              },
+              {
+                "rel": "alertPolicyMap",
+                "href": "/v2/servers/alias/WA1ALIASWB01/alertPolicies/15836e6219e84ac736d01d4e571bb950"
+    ",
+                "verbs": [
+                  "DELETE"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "2bec81dd90aa4217887548c3c20d7421"
+            "name": "Production Web Servers - Disk",
+            "links": [
+              {
+                "rel": "self",
+                "href": "/v2/alertPolicies/alias/2bec81dd90aa4217887548c3c20d7421"
+              },
+              {
+                "rel": "alertPolicyMap",
+                "href": "/v2/servers/alias/WA1ALIASWB01/alertPolicies/2bec81dd90aa4217887548c3c20d7421"
+    ",
+                "verbs": [
+                  "DELETE"
+                ]
+              }
+            ]
+          }
+        ],
+        "cpu": 2,
+        "diskCount": 1,
+        "hostName": "WA1ALIASWB01.customdomain.com",
+        "inMaintenanceMode": false,
+        "memoryMB": 4096,
+        "powerState": "started",
+        "storageGB": 24,
+        "snapshots": [
+          {
+            "name": "2014-05-16.23:45:52",
+            "links": [
+              {
+                "rel": "self",
+                "href": "/v2/servers/alias/WA1ALIASWB01/snapshots/40"
+              },
+              {
+                "rel": "delete",
+                "href": "/v2/servers/alias/WA1ALIASWB01/snapshots/40"
+              },
+              {
+                "rel": "restore",
+                "href": "/v2/servers/alias/WA1ALIASWB01/snapshots/40/restore"
+              }
+            ]
+          }
+        ],
+        "customFields": [
+          {
+            "id": 22,
+            "name": "Cost Center",
+            "value": "IT-DEV",
+            "displayValue": "IT-DEV"
+          },
+          {
+            "id": 237,
+            "name": "CMDB ID",
+            "value": "1100003",
+            "displayValue": "1100003"
+          }
+        ]
+      },
+      "type": "standard",
+      "storageType": "standard",
+      "changeInfo": {
+        "createdDate": "2012-12-17T01:17:17Z",
+        "createdBy": "user@domain.com",
+        "modifiedDate": "2014-05-16T23:49:25Z",
+        "modifiedBy": "user@domain.com"
+      },
+      "links": [
+        {
+          "rel": "self",
+          "href": "/v2/servers/alias/WA1ALIASWB01",
+          "id": "WA1ALIASWB01",
+          "verbs": [
+            "GET",
+            "PATCH",
+            "DELETE"
+          ]
+        },
+        {
+          "rel": "group",
+          "href": "/v2/groups/alias/wa1-1002",
+          "id": "wa1-3728"
+        },
+        {
+          "rel": "account",
+          "href": "/v2/accounts/alias",
+          "id": "alias"
+        },
+        {
+          "rel": "billing",
+          "href": "/v2/billing/alias/estimate-server/WA1ALIASWB01"
+        },
+        {
+          "rel": "statistics",
+          "href": "/v2/servers/alias/WA1ALIASWB01/statistics"
+        },
+        {
+          "rel": "scheduledActivities",
+          "href": "/v2/servers/alias/WA1ALIASWB01/scheduledActivities"
+        },
+        {
+          "rel": "publicIPAddresses",
+          "href": "/v2/servers/alias/WA1ALIASWB01/publicIPAddresses",
+          "verbs": [
+            "POST"
+          ]
+        },
+        {
+          "rel": "alertPolicyMappings",
+          "href": "/v2/servers/alias/WA1ALIASWB01/alertPolicies",
+          "verbs": [
+            "POST"
+          ]
+        },
+        {
+          "rel": "antiAffinityPolicyMapping",
+          "href": "/v2/servers/alias/WA1ALIASWB01/antiAffinityPolicy",
+          "verbs": [
+            "DELETE",
+            "PUT"
+          ]
+        },
+        {
+          "rel": "cpuAutoscalePolicyMapping",
+          "href": "/v2/servers/alias/WA1ALIASWB01/cpuAutoscalePolicy",
+          "verbs": [
+            "DELETE",
+            "PUT"
+          ]
+        },
+        {
+          "rel": "capabilities",
+          "href": "/v2/servers/alias/WA1ALIASWB01/capabilities"
+        },
+        {
+          "rel": "credentials",
+          "href": "/v2/servers/alias/WA1ALIASWB01/credentials"
+        },
+        {
+          "rel": "publicIPAddress",
+          "href": "/v2/servers/alias/WA1ALIASWB01/publicIPAddresses/91.14.111.101",
+          "id": "91.14.111.101",
+          "verbs": [
+            "GET",
+            "PUT",
+            "DELETE"
+          ]
+        }
       ]
-
-    },
-
-    {
-
-      "rel": "group",
-
-      "href": "/v2/groups/alias/wa1-1002",
-
-      "id": "wa1-3728"
-
-    },
-
-    {
-
-      "rel": "account",
-
-      "href": "/v2/accounts/alias",
-
-      "id": "alias"
-
-    },
-
-    {
-
-      "rel": "billing",
-
-      "href": "/v2/billing/alias/estimate-server/WA1ALIASWB01"
-
-    },
-
-    {
-
-      "rel": "statistics",
-
-      "href": "/v2/servers/alias/WA1ALIASWB01/statistics"
-
-    },
-
-    {
-
-      "rel": "scheduledActivities",
-
-      "href": "/v2/servers/alias/WA1ALIASWB01/scheduledActivities"
-
-    },
-
-    {
-
-      "rel": "publicIPAddresses",
-
-      "href": "/v2/servers/alias/WA1ALIASWB01/publicIPAddresses",
-
-      "verbs": [
-
-        "POST"
-
-      ]
-
-    },
-
-    {
-
-      "rel": "alertPolicyMappings",
-
-      "href": "/v2/servers/alias/WA1ALIASWB01/alertPolicies",
-
-      "verbs": [
-
-        "POST"
-
-      ]
-
-    },
-
-    {
-
-      "rel": "antiAffinityPolicyMapping",
-
-      "href": "/v2/servers/alias/WA1ALIASWB01/antiAffinityPolicy",
-
-      "verbs": [
-
-        "DELETE",
-
-        "PUT"
-
-      ]
-
-    },
-
-    {
-
-      "rel": "cpuAutoscalePolicyMapping",
-
-      "href": "/v2/servers/alias/WA1ALIASWB01/cpuAutoscalePolicy",
-
-      "verbs": [
-
-        "DELETE",
-
-        "PUT"
-
-      ]
-
-    },
-
-    {
-
-      "rel": "capabilities",
-
-      "href": "/v2/servers/alias/WA1ALIASWB01/capabilities"
-
-    },
-
-    {
-
-      "rel": "credentials",
-
-      "href": "/v2/servers/alias/WA1ALIASWB01/credentials"
-
-    },
-
-    {
-
-      "rel": "publicIPAddress",
-
-      "href": "/v2/servers/alias/WA1ALIASWB01/publicIPAddresses/91.14.111.101",
-
-      "id": "91.14.111.101",
-
-      "verbs": [
-
-        "GET",
-
-        "PUT",
-
-        "DELETE"
-
-      ]
-
     }
-
-  ]
-
-}
-```
