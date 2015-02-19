@@ -9,6 +9,7 @@
     "Public IP",
     "Queue",
     "Servers",
+    "Server Actions",
     "Webhooks"
-  ] 
+  ]
 }}}
