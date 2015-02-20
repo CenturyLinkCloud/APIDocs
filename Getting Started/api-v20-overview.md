@@ -5,7 +5,7 @@
   "attachments": []
 }}}
 
-The CenturyLink Cloud has a new, improved API for performing the same actions programmatically as you can with the Control Portal. The API is RESTful and works with JSON messages over HTTP. It relies on the standard HTTP verbs including GET, POST, PUT, DELETE.
+The CenturyLink Cloud has a new, improved API for performing the same actions programmatically as you can with the Control Portal. The API is RESTful and works with JSON messages over HTTP. It relies on the standard HTTP verbs including GET, POST, PUT, DELETE, and PATCH.
 
 The URL format of the service is: `https://api.tier3.com/v2/{resource}/{account alias}`. As an example, to retrieve the top level Group for a given data center, you would issue a GET request to `https://api.tier3.com/v2/datacenters/ALIAS/WA1`. The HTTP request must include `Content-Type` and `Accepts` headers set to `application/json`.
 
