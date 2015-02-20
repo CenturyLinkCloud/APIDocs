@@ -48,7 +48,7 @@ Use this API operation before you call any other API operation. It shows a user'
 
 ### Examples
 
-#### JSON Request
+#### JSON
 
     {
        "username":"demouser1",

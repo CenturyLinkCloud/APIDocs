@@ -65,7 +65,7 @@ Use this API operation when you want to power on a single server or group of ser
 
 ### Examples
 
-### JSON
+#### JSON
 
     [
        "WA1ALIASWB01",
@@ -145,7 +145,7 @@ The response will be an array containing one&nbsp;entity for each server that th
 
 ### Examples
 
-#### JSON Response
+#### JSON
 
     [
       {

@@ -147,7 +147,7 @@ The response will be an array containing one entity for each server that the ope
 
 ### Examples
 
-### JSON
+#### JSON
 
     [
       {
