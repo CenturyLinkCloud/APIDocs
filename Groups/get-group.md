@@ -94,11 +94,6 @@ Use this API operation when you want to identify the servers in a particular gro
       <td>Number of servers this group contains</td>
     </tr>
     <tr>
-      <td>Limits</td>
-      <td>complex</td>
-      <td>Group-based resource limits</td>
-    </tr>
-    <tr>
       <td>Groups</td>
       <td>array</td>
       <td>Refers to this same entity type for each sub-group</td>
@@ -107,35 +102,6 @@ Use this API operation when you want to identify the servers in a particular gro
       <td>Links</td>
       <td>array</td>
       <td>Collection of entity links that point to resources related to this group</td>
-    </tr>
-  </tbody>
-</table>
-
-### Limits Definition
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>cpu</td>
-      <td>integer</td>
-      <td>How many CPUs can be deployed to servers in this group</td>
-    </tr>
-    <tr>
-      <td>memoryGB</td>
-      <td>integer</td>
-      <td>How much memory can be deployed to servers in this group</td>
-    </tr>
-    <tr>
-      <td>storageGB</td>
-      <td>integer</td>
-      <td>How much storage can be deployed to servers in this group</td>
     </tr>
   </tbody>
 </table>
@@ -352,11 +318,6 @@ Use this API operation when you want to identify the servers in a particular gro
       "type": "default",
       "status": "active",
       "serversCount": 2,
-      "limits": {
-        "cpu": 80,
-        "memoryGB": 160,
-        "storageGB": 4096
-      },
       "groups": [
         {
           "id": "wa1-0002",
@@ -365,11 +326,6 @@ Use this API operation when you want to identify the servers in a particular gro
           "type": "default",
           "status": "active",
           "serversCount": 0,
-          "limits": {
-            "cpu": 80,
-            "memoryGB": 160,
-            "storageGB": 4096
-          },
           "groups": [],
           "links": [
             {
