@@ -5,7 +5,7 @@
   "attachments": []
 }}}
 
-Gets the full hierarchy of groups that exist within a particular account and data center. Calls to this operation must include a token acquired from the authentication endpoint. See the <a href="/api-docs/v2#authentication-login">Login API</a> for information on acquiring this token.
+Gets the details of a specific data center the account has access to. Calls to this operation must include a token acquired from the authentication endpoint. See the <a href="/api-docs/v2#authentication-login">Login API</a> for information on acquiring this token.
 
 ### When to Use It
 
@@ -153,114 +153,6 @@ Use this API operation when you want to discover the name of the root hardware g
   </tbody>
 </table>
 
-### Billing Link Definition
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Value</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>rel</td>
-      <td>string</td>
-      <td>billing</td>
-      <td>The link type</td>
-    </tr>
-    <tr>
-      <td>href</td>
-      <td>string</td>
-      <td>/v2/datacenters/[ALIAS]/[GROUPID]/billing</td>
-      <td>Address of the billing information for the group</td>
-    </tr>
-  </tbody>
-</table>
-
-### Archive Link Definition
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Value</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>rel</td>
-      <td>string</td>
-      <td>archiveGroupAction</td>
-      <td>The link type</td>
-    </tr>
-    <tr>
-      <td>href</td>
-      <td>string</td>
-      <td>/v2/datacenters/[ALIAS]/[GROUPID]/archive</td>
-      <td>Address of the archive details for this group</td>
-    </tr>
-  </tbody>
-</table>
-
-### Statistics Link Definition
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Value</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>rel</td>
-      <td>string</td>
-      <td>statistics</td>
-      <td>The link type</td>
-    </tr>
-    <tr>
-      <td>href</td>
-      <td>string</td>
-      <td>/v2/datacenters/[ALIAS]/[GROUPID]/statistics</td>
-      <td>Address of usage statistics for this group</td>
-    </tr>
-  </tbody>
-</table>
-
-### Activities Link Definition
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Value</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>rel</td>
-      <td>string</td>
-      <td>scheduledActivities</td>
-      <td>The link type</td>
-    </tr>
-    <tr>
-      <td>href</td>
-      <td>string</td>
-      <td>/v2/datacenters/[ALIAS]/[GROUPID]/scheduledActivities</td>
-      <td>Address of the scheduled activities (e.g.restarts, pause) for this group</td>
-    </tr>
-  </tbody>
-</table>
-
 ### Examples
 
 #### JSON
@@ -276,24 +168,7 @@ Use this API operation when you want to discover the name of the root hardware g
         {
           "rel": "group",
           "href": "/v2/groups/ALIAS/GROUP123",
-          "id": "groupid",
-          "name": "DC1 Hardware"
-        },
-        {
-          "rel": "billing",
-          "href": "/v2/groups/ALIAS/GROUP123/billing"
-        },
-        {
-          "rel": "archiveGroupAction",
-          "href": "/v2/groups/ALIAS/GROUP123/archive"
-        },
-        {
-          "rel": "statistics",
-          "href": "/v2/groups/ALIAS/GROUP123/statistics"
-        },
-        {
-          "rel": "scheduledActivities",
-          "href": "/v2/groups/ALIAS/GROUP123/scheduledActivities"
+          "id": "GROUP123"
         }
       ]
     }
