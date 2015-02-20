@@ -571,17 +571,21 @@
 <p><strong>Q: How can listener services be sure that it was CenturyLink Cloud that sent the message and not someone spoofing you?</strong>
 </p>
 <p>A: While SSL ensures that the message cannot be read in transit, it doesn't protect you from rogue callers who target your public endpoint. Each Webhook notification includes a signature hash of the message payload. The "Tier3-RsaSha1" header is signed with our private key, leveraging the json payload as input. This signature can be verified with the following public key and the received json body. Customers can use this process to ensure that the message wasn't tampered with.</p>
-<p>Public Key:</p>
-<p>-----BEGIN PUBLIC KEY-----<br>
-MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnmwsVLJ22Y8lmnk+1fI/<br>
-JKkm4bM1GvggI7DN10KIoPDgBbNcePZqcFayDdmVuq/jL9MFBrqFSfVszgdq8OWF<br>
-G9lEB5vP29K/N+0kRg5V2NDXddI5AOzx6jDjkNM/jjb45UXeDcPzMMdMOl/ds6uT<br>
-p6mbfG3U8dWqM/if7mzjEbbhYkBM3OuacEFk38Tkm49IJ4jHnC0p9qWO2iaxJqRc<br>
-08M2cJ+yKcFudCVKX8ANE6g6YKK+5aSabxfHX83Vjr4I0kpqo0cfP4aSW/CPDUZ7<br>
-yR4bFiy5Wv2de2V+FOGVBQF+/viSzrtrwQjUOJViuxEnifc06xuDF0QFta9anz4d<br>
-LQIDAQAB<br>
------END PUBLIC KEY-----</p>
-<p>&nbsp;</p>
+
+Public Key:
+
+```
+-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnmwsVLJ22Y8lmnk+1fI/
+JKkm4bM1GvggI7DN10KIoPDgBbNcePZqcFayDdmVuq/jL9MFBrqFSfVszgdq8OWF
+G9lEB5vP29K/N+0kRg5V2NDXddI5AOzx6jDjkNM/jjb45UXeDcPzMMdMOl/ds6uT
+p6mbfG3U8dWqM/if7mzjEbbhYkBM3OuacEFk38Tkm49IJ4jHnC0p9qWO2iaxJqRc
+08M2cJ+yKcFudCVKX8ANE6g6YKK+5aSabxfHX83Vjr4I0kpqo0cfP4aSW/CPDUZ7
+yR4bFiy5Wv2de2V+FOGVBQF+/viSzrtrwQjUOJViuxEnifc06xuDF0QFta9anz4d
+LQIDAQAB
+-----END PUBLIC KEY-----
+```
+
 <p><strong>Q: How soon after an event occurs does a Webhook notification get sent?</strong>
 </p>
 <p>&nbsp;A: As soon as the event occurs in the CenturyLink Cloud platform, it is routed through our messaging infrastructure and sent to each Webhook endpoint. In reality, this means that messages are often received within 5 seconds of the event occurring.</p>
