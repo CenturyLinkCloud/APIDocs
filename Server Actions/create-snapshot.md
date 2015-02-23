@@ -58,7 +58,7 @@ Use this API operation when you want to create a snapshot of a single server or 
   <tbody>
     <tr>
       <td>snapshotExpirationDays</td>
-      <td>int</td>
+      <td>integer</td>
       <td>Number of days to keep the snapshot for (must be between 1 and 10).</td>
       <td>Yes</td>
     </tr>

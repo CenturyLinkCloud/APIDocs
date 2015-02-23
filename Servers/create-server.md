@@ -127,7 +127,7 @@ Use this API operation when you want to create a new server from a standard or c
     </tr>
     <tr>
       <td>cpu</td>
-      <td>int</td>
+      <td>integer</td>
       <td>Number of processors to configure the server with (1-16)</td>
       <td>Yes</td>
     </tr>
@@ -139,7 +139,7 @@ Use this API operation when you want to create a new server from a standard or c
     </tr>
     <tr>
       <td>memoryGB</td>
-      <td>int</td>
+      <td>integer</td>
       <td>Number of GB of memory to configure the server with (1-128)</td>
       <td>Yes</td>
     </tr>
@@ -230,7 +230,7 @@ Use this API operation when you want to create a new server from a standard or c
     </tr>
     <tr>
       <td>sizeGB</td>
-      <td>int</td>
+      <td>integer</td>
       <td>Amount in GB to allocate for disk, up to 1024 GB per.</td>
     </tr>
     <tr>

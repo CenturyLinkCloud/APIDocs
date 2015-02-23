@@ -101,12 +101,12 @@ Use this API operation when you want to add a public IP address to an existing s
     </tr>
     <tr>
       <td>port</td>
-      <td>int</td>
+      <td>integer</td>
       <td>The port to open for the given protocol. If defining a range of ports, this represents the first port in the range.</td>
     </tr>
     <tr>
       <td>portTo</td>
-      <td>int</td>
+      <td>integer</td>
       <td>If defining a range of ports, optionally provide the last number of the range.</td>
     </tr>
   </tbody>

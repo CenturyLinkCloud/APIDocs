@@ -143,7 +143,7 @@ Use this API operation when you want to discover the available capabilities of a
     </tr>
     <tr>
       <td>storageSizeGB</td>
-      <td>int</td>
+      <td>integer</td>
       <td>The amount of storage allocated for the primary OS root drive</td>
     </tr>
     <tr>
@@ -158,7 +158,7 @@ Use this API operation when you want to discover the available capabilities of a
     </tr>
     <tr>
       <td>drivePathLength</td>
-      <td>int</td>
+      <td>integer</td>
       <td>Length of the string for naming a drive path, if applicable</td>
     </tr>
   </tbody>
