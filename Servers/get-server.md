@@ -189,6 +189,16 @@ Use this API operation when you want to find out all the details for a server. I
       <td>How many total GB of storage are allocated to the server</td>
     </tr>
     <tr>
+      <td>disks</td>
+      <td>complex</td>
+      <td>The disks attached to the server</td>
+    </tr>
+    <tr>
+      <td>partitions</td>
+      <td>complex</td>
+      <td>The partitions defined for the server</td>
+    </tr>
+    <tr>
       <td>snapshots</td>
       <td>complex</td>
       <td>Details about any snapshot associated with the server</td>
@@ -313,6 +323,59 @@ Use this API operation when you want to find out all the details for a server. I
       <td>array</td>
       <td>DELETE</td>
       <td>Valid HTTP verbs that can act on this resource</td>
+    </tr>
+  </tbody>
+</table>
+
+### Disks Definition
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>id</td>
+      <td>string</td>
+      <td>Unique identifier of the disk</td>
+    </tr>
+    <tr>
+      <td>sizeGB</td>
+      <td>integer</td>
+      <td>Size of the disk in GB</td>
+    </tr>
+    <tr>
+      <td>partitionPaths</td>
+      <td>array</td>
+      <td>List of partition paths on the disk</td>
+    </tr>
+  </tbody>
+</table>
+
+### Partitions Definition
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>sizeGB</td>
+      <td>number</td>
+      <td>Size of the partition in GB</td>
+    </tr>
+    <tr>
+      <td>path</td>
+      <td>string</td>
+      <td>File system location path of the partition</td>
     </tr>
   </tbody>
 </table>
@@ -964,7 +1027,20 @@ Use this API operation when you want to find out all the details for a server. I
         "inMaintenanceMode": false,
         "memoryMB": 4096,
         "powerState": "started",
-        "storageGB": 24,
+        "storageGB": 60,
+        "disks":[
+          {
+            "id":"0:0",
+            "sizeGB":60,
+            "partitionPaths":[]
+          }
+        ],
+        "partitions":[
+          {
+            "sizeGB":59.654,
+            "path":"C:\\"
+          }
+        ],
         "snapshots": [
           {
             "name": "2014-05-16.23:45:52",
