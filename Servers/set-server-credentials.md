@@ -44,7 +44,7 @@ Use this API operation when you want to change the administrator/root password o
     <tr>
       <td>ServerId</td>
       <td>string</td>
-      <td>ID of the server with the public IP to update. Retrieved from query to containing group, or by looking at the URL when viewing a server in the Control Portal.</td>
+      <td>ID of the server with the credentials to update. Retrieved from query to containing group, or by looking at the URL when viewing a server in the Control Portal.</td>
       <td>Yes</td>
     </tr>
   </tbody>
