@@ -50,505 +50,263 @@
 <p>A: Some push notification systems only send a bare minimum of information and ask the user to call-back for the full data payload. CenturyLink Cloud Webhooks send a full JSON-encoded payload AND include a URL to the referenced resource.&nbsp;<strong>Note that since Webhooks are in beta, not all URLs resolve to resources yet.</strong>
 </p>
 <p>The Account event payload:</p>
-<pre>{ 
-
-    "addressLine1": "112 112th Ave NE", 
-
-    "addressLine2": "Ste 300", 
-
-    "city": "Bellevue", 
-
-    "stateProvince": "WA", 
-
-    "country": "USA", 
-
-    "postalCode": "98004", 
-
-    "telephone": "800-buy-cloud", 
-
-    "status": "Active", 
-
-    "isManaged": true, 
-
-    "links": [ 
-
-        { 
-
-         "rel": "self", 
-
-         "href": "/v2/accounts/DEMO" 
-
-        }, 
-
-        { 
-
-         "rel": "parentAccount", 
-
-         "href": "/v2/accounts/T3N" 
-
+<pre>{
+    "addressLine1": "112 112th Ave NE",
+    "addressLine2": "Ste 300",
+    "city": "Bellevue",
+    "stateProvince": "WA",
+    "country": "USA",
+    "postalCode": "98004",
+    "telephone": "800-buy-cloud",
+    "status": "Active",
+    "isManaged": true,
+    "links": [
+        {
+         "rel": "self",
+         "href": "/v2/accounts/DEMO"
+        },
+        {
+         "rel": "parentAccount",
+         "href": "/v2/accounts/T3N"
          } ],
-
-     "accountAlias": "DEMO", 
-
-     "businessName": "Seroter Industries", 
-
-     "parentAlias": "T3N", 
-
-     "primaryDataCenter": "WA1" 
-
+     "accountAlias": "DEMO",
+     "businessName": "Seroter Industries",
+     "parentAlias": "T3N",
+     "primaryDataCenter": "WA1"
 }
-
 </pre>
 <p>&nbsp;</p>
 <p>The User event payload:</p>
-<pre>{ 
-
-     "uri": "/v2/users/demo@user.com", 
-
-     "accountUri": "/v2/accounts/DEMO", 
-
-     "accountAlias": "DEMO", 
-
-     "userName": "demo@user.com", 
-
-     "emailAddress": "demo@user.com", 
-
-     "firstName": "Richard", 
-
-     "lastName": "Seroter", 
-
-     "status": "Active" 
-
+<pre>{
+     "uri": "/v2/users/demo@user.com",
+     "accountUri": "/v2/accounts/DEMO",
+     "accountAlias": "DEMO",
+     "userName": "demo@user.com",
+     "emailAddress": "demo@user.com",
+     "firstName": "Richard",
+     "lastName": "Seroter",
+     "status": "Active"
 }
 
 </pre>
 <p>&nbsp;</p>
 <p>The Server event payload:&nbsp;</p>
 <pre>{
-
     "id": "WA1DEMOSERVER01",
-
     "name": "WA1DEMOSERVER01",
-
     "description": "My web server",
-
     "groupId": "wa1-0000",
-
     "isTemplate": false,
-
     "locationId": "WA1",
-
     "osType": "Windows 2008 64-bit",
-
     "status": "active",
-
     "details": {
-
         "ipAddresses": [
-
             {
-
                 "internal": "10.81.123.11"
-
             },
-
             {
-
                 "public": "74.41.155.112",
-
                 "internal": "10.81.123.14"
-
             }
-
         ],
-
         "alertPolicies": [
-
             {
-
                 "id": "45866e6219e84ab786d07d4f570ba960",
-
                 "name": "Production Web Servers - RAM",
-
                 "links": [
-
                     {
-
                         "rel": "self",
-
                         "href": "/v2/alertPolicies/DEMO/45866e6219e84ab786d07d4f570ba960"
-
                     },
-
                     {
-
                         "rel": "alertPolicyMap",
-
                         "href": "/v2/servers/DEMO/WA1DEMOSERVER01/alertPolicies/45866e6219e84ab786d07d4f570ba960",
-
                         "verbs": [
-
                             "DELETE"
-
                         ]
-
                     }
-
                 ]
-
             },
-
             {
-
                 "id": "1aec88dd90ad4757937548c8c25e7431",
-
                 "name": "Production Web Servers - Disk",
-
                 "links": [
-
                     {
-
                         "rel": "self",
-
                         "href": "/v2/alertPolicies/DEMO/1aec88dd90ad4757937548c8c25e7431"
-
                     },
-
                     {
-
                         "rel": "alertPolicyMap",
-
                         "href": "/v2/servers/DEMO/WA1DEMOSERVER01/alertPolicies/1aec88dd90ad4757937548c8c25e7431",
-
                         "verbs": [
-
                             "DELETE"
-
                         ]
-
                     }
-
                 ]
-
             },
-
             {
-
                 "id": "cdab476a61884af9ab4840827f9e4b6f",
-
                 "name": "Production Web Servers - CPU",
-
                 "links": [
-
                     {
-
                         "rel": "self",
-
                         "href": "/v2/alertPolicies/DEMO/cdab476a61884af9ab4840827f9e4b6f"
-
                     },
-
                     {
-
                         "rel": "alertPolicyMap",
-
                         "href": "/v2/servers/DEMO/WA1DEMOSERVER01/alertPolicies/cdab476a61884af9ab4840827f9e4b6f",
-
                         "verbs": [
-
                             "DELETE"
-
                         ]
-
                     }
-
                 ]
-
             }
-
         ],
-
         "cpu": 1,
-
         "diskCount": 1,
-
         "inMaintenanceMode": false,
-
         "memoryMB": 4096,
-
         "powerState": "started",
-
         "storageGB": 50,
-
         "disks": [
-
             {
-
                 "id": "0:0",
-
                 "sizeGB": 50,
-
                 "partitionPaths": []
-
             }
-
         ],
-
         "partitions": [],
-
         "snapshots": [],
-
         "customFields": [
-
             {
-
                 "id": 22,
-
                 "name": "Cost Center",
-
                 "value": "IT-DEV",
-
                 "displayValue": "IT-DEV"
-
             },
-
             {
-
                 "id": 237,
-
                 "name": "CMDB ID",
-
                 "value": "1100003",
-
                 "displayValue": "1100003"
-
             }
-
         ]
-
     },
-
     "type": "standard",
-
     "storageType": "standard",
-
     "changeInfo": {
-
         "createdBy": "demo@user.com",
-
         "createdDate": "2012-12-17T01:17:17Z",
-
         "modifiedBy": "demo@user.com",
-
         "modifiedDate": "2014-06-18T18:28:54Z"
-
     },
-
     "links": [
-
         {
-
             "rel": "self",
-
             "href": "/v2/servers/DEMO/WA1DEMOSERVER01",
-
             "id": "WA1DEMOSERVER01",
-
             "verbs": [
-
                 "GET",
-
                 "PATCH",
-
                 "DELETE"
-
             ]
-
         },
-
         {
-
             "rel": "group",
-
             "href": "/v2/groups/DEMO/wa1-0000",
-
             "id": "wa1-3728"
-
         },
-
         {
-
             "rel": "account",
-
             "href": "/v2/accounts/DEMO",
-
             "id": "btdi"
-
         },
-
         {
-
             "rel": "billing",
-
             "href": "/v2/billing/DEMO/serverPricing/WA1DEMOSERVER01"
-
         },
-
         {
-
             "rel": "statistics",
-
             "href": "/v2/servers/DEMO/WA1DEMOSERVER01/statistics"
-
         },
-
         {
-
             "rel": "scheduledActivities",
-
             "href": "/v2/servers/DEMO/WA1DEMOSERVER01/scheduledActivities"
-
         },
-
         {
-
             "rel": "publicIPAddresses",
-
             "href": "/v2/servers/DEMO/WA1DEMOSERVER01/publicIPAddresses",
-
             "verbs": [
-
                 "POST"
-
             ]
-
         },
-
         {
-
             "rel": "alertPolicyMappings",
-
             "href": "/v2/servers/DEMO/WA1DEMOSERVER01/alertPolicies",
-
             "verbs": [
-
                 "POST"
-
             ]
-
         },
-
         {
-
             "rel": "antiAffinityPolicyMapping",
-
             "href": "/v2/servers/DEMO/WA1DEMOSERVER01/antiAffinityPolicy",
-
             "verbs": [
-
                 "DELETE",
-
                 "PUT"
-
             ]
-
         },
-
         {
-
             "rel": "cpuAutoscalePolicyMapping",
-
             "href": "/v2/servers/DEMO/WA1DEMOSERVER01/cpuAutoscalePolicy",
-
             "verbs": [
-
                 "DELETE",
-
                 "PUT"
-
             ]
-
         },
-
         {
-
             "rel": "capabilities",
-
             "href": "/v2/servers/DEMO/WA1DEMOSERVER01/capabilities"
-
         },
-
         {
-
             "rel": "credentials",
-
             "href": "/v2/servers/DEMO/WA1DEMOSERVER01/credentials"
-
         },
-
         {
-
             "rel": "publicIPAddress",
-
             "href": "/v2/servers/DEMO/WA1DEMOSERVER01/publicIPAddresses/74.41.155.112",
-
             "id": "74.41.155.112",
-
             "verbs": [
-
                 "GET",
-
                 "PUT",
-
                 "DELETE"
-
             ]
-
         }
-
     ]
-
 }
-
 </pre>
 <p>&nbsp;* note that server delete events will only contain the accountAlias and name fields as the server has been deleted and any other information is no longer available.</p>
 <p>The Alert event payload:&nbsp;</p>
 <pre>{
 
     "accountAlias": "DEMO",
-
     "serverName": "WA1DEMOSERVER01",
-
     "triggers": [
-
         {
-
             "data": {
-
                 "cpu": 2,
-
                 "cpuPercent": 39.34
-
             },
-
             "duration": "00:05:00",
-
             "metric": "cpu",
-
             "stateEndTime": "2014-06-18T18:23:46Z",
-
             "stateStartTime": "2014-06-18T18:20:00Z",
-
             "state": "notTriggered"
-
         }
-
     ]
-
 }
 
 </pre>
-<p>&nbsp;</p>
 <p><strong>Q: Where do I go to set a Webhook?</strong>
 </p>
 <p>A: Webhooks are available at the Account-level under the&nbsp;<strong>API&nbsp;</strong>menu. There is now a sub-menu called "Webhooks." Customers can set a target URL for each Webhook event listed.</p>
