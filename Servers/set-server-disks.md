@@ -1,5 +1,5 @@
 {{{
-  "title": "Set Server CPU/Memory",
+  "title": "Set Server Disks",
   "date": "02-11-2015",
   "author": "Bryan Friedman",
   "attachments": []
