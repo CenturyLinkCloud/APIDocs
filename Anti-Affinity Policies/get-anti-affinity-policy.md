@@ -110,6 +110,12 @@ Use this API operation when you want to get the details of a specific anti-affin
       <td>/v2/antiAffinityPolicies/[ALIAS]/[POLICYID]</td>
       <td>Address of the resource itself</td>
     </tr>
+    <tr>
+      <td>verbs</td>
+      <td>array</td>
+      <td>GET | DELETE | PUT</td>
+      <td>Valid HTTP verbs that can act on this resource</td>
+    </tr>
   </tbody>
 </table>
 
@@ -163,7 +169,12 @@ Use this API operation when you want to get the details of a specific anti-affin
       "links":[
         {
           "rel":"self",
-          "href":"/v2/antiAffinityPolicies/alias/80a7bf90b199454b859399bff54f4173"
+          "href":"/v2/antiAffinityPolicies/alias/80a7bf90b199454b859399bff54f4173",
+          "verbs":[
+            "GET",
+            "DELETE",
+            "PUT"
+          ]
         },
         {
           "rel":"server",

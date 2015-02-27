@@ -106,6 +106,12 @@ The response will be an array containing one entity for each anti-affinity polic
       <td>/v2/antiAffinityPolicies/[ALIAS]/[POLICYID]</td>
       <td>Address of the resource itself</td>
     </tr>
+    <tr>
+      <td>verbs</td>
+      <td>array</td>
+      <td>GET | DELETE | PUT</td>
+      <td>Valid HTTP verbs that can act on this resource</td>
+    </tr>
   </tbody>
 </table>
 
@@ -152,33 +158,55 @@ The response will be an array containing one entity for each anti-affinity polic
 
 #### JSON
 
-    [
-      {
-        "id":"80a7bf90b199454b859399bff54f4173",
-        "name":"My Anti-Affinity Policy",
-        "location":"VA1",
-        "links":[
-          {
-            "rel":"self",
-            "href":"/v2/antiAffinityPolicies/alias/80a7bf90b199454b859399bff54f4173"
-          },
-          {
-            "rel":"server",
-            "href":"/v2/servers/alias/va1aliashypsc01",
-            "id":"va1aliashypsc01",
-            "name":"VA1ALIASHYPSC01"
-          }
-        ]
-      },
-      {
-        "id":"ca8b07035cf844f3b4f953074c2630eb",
-        "name":"My Other Anti-Affinity Policy",
-        "location":"WA1",
-        "links":[
-          {
-            "rel":"self",
-            "href":"/v2/antiAffinityPolicies/alias/ca8b07035cf844f3b4f953074c2630eb"
-          }
-        ]
-      }
-    ]
+    {
+      "items":[
+        {
+          "id":"80a7bf90b199454b859399bff54f4173",
+          "name":"My Anti-Affinity Policy",
+          "location":"VA1",
+          "links":[
+            {
+              "rel":"self",
+              "href":"/v2/antiAffinityPolicies/alias/80a7bf90b199454b859399bff54f4173",
+              "verbs":[
+                "GET",
+                "DELETE",
+                "PUT"
+              ]
+            },
+            {
+              "rel":"server",
+              "href":"/v2/servers/alias/va1aliashypsc01",
+              "id":"va1aliashypsc01",
+              "name":"VA1ALIASHYPSC01"
+            }
+          ]
+        },
+        {
+          "id":"ca8b07035cf844f3b4f953074c2630eb",
+          "name":"My Other Anti-Affinity Policy",
+          "location":"WA1",
+          "links":[
+            {
+              "rel":"self",
+              "href":"/v2/antiAffinityPolicies/alias/ca8b07035cf844f3b4f953074c2630eb",
+              "verbs":[
+                "GET",
+                "DELETE",
+                "PUT"
+              ]
+            }
+          ]
+        }
+      ],
+      "links":[
+        {
+          "rel":"self",
+          "href":"/v2/antiAffinityPolicies/alias",
+          "verbs":[
+            "GET",
+            "POST"
+          ]
+        }
+      ]
+    }
