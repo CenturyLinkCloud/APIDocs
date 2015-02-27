@@ -3,6 +3,7 @@
     "Getting Started",
     "Anti-Affinity Policies",
     "Authentication",
+    "Custom Fields",
     "Data Centers",
     "Groups",
     "Power Operations",
