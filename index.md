@@ -6,6 +6,7 @@
     "Custom Fields",
     "Data Centers",
     "Groups",
+    "Group Actions"
     "Power Operations",
     "Public IP",
     "Queue",
