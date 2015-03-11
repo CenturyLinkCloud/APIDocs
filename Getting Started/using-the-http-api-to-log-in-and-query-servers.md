@@ -7,9 +7,9 @@
 
 ### Description
 
-The Tier 3 API offers SOAP and HTTP web service endpoints. Users of the API must first authenticate themselves and acquire a session cookie before interacting with the servers and services in the Tier 3 cloud.
+The  API offers SOAP and HTTP web service endpoints. Users of the API must first authenticate themselves and acquire a session cookie before interacting with the servers and services in the  cloud.
 
-In this article, we'll walk through the steps necessary to authenticate a user account and use the session cookie to invoke a subsequent service in the Tier 3 API. This demonstration is done via the C# programming language, but the principles remain the same in any language.
+In this article, we'll walk through the steps necessary to authenticate a user account and use the session cookie to invoke a subsequent service in the  API. This demonstration is done via the C# programming language, but the principles remain the same in any language.
 
 ### Audience
 
@@ -17,11 +17,11 @@ In this article, we'll walk through the steps necessary to authenticate a user a
 
 ### Prerequisites
 
-- Must have an API user created in the Tier 3 account.
+- Must have an API user created in the  account.
 
 ### Detailed Steps
 
-1. Create variables to hold the API credentials used to call the Tier 3 API.
+1. Create variables to hold the API credentials used to call the  API.
 
     ```
     //set API credentials
@@ -41,7 +41,7 @@ In this article, we'll walk through the steps necessary to authenticate a user a
     req.Method = "POST";
     ```
 
-3. Users of the Tier 3 HTTP API can use either XML or JSON to interact with the service endpoints. The next step is to create the payload for the Login service. In the example below, both an XML and JSON payload are shown. Notice that the "content type" of the HTTP request must match the data format being sent to the service.
+3. Users of the  HTTP API can use either XML or JSON to interact with the service endpoints. The next step is to create the payload for the Login service. In the example below, both an XML and JSON payload are shown. Notice that the "content type" of the HTTP request must match the data format being sent to the service.
 
     ```
     //build up payload message (XML)
@@ -95,7 +95,7 @@ In this article, we'll walk through the steps necessary to authenticate a user a
     }
     ```
 
-6. With an authentication cookie handy, you can now invoke an API operation such as GetServers, which returns the servers within a particular Tier 3 group. First, create a reference to the HTTP URL of the operation. Notice that the method is set to POST and the authentication cookie is added to the HTTP header of the request.
+6. With an authentication cookie handy, you can now invoke an API operation such as GetServers, which returns the servers within a particular  group. First, create a reference to the HTTP URL of the operation. Notice that the method is set to POST and the authentication cookie is added to the HTTP header of the request.
 
     ```
     //create new web request

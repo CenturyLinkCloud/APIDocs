@@ -7,7 +7,7 @@
 
 Gets a list of Blueprint Packages that are pending publication.
 
-This list contains all Packages that were uploaded to Tier 3 via FTP or that were uploaded in the UI via HTTP.
+This list contains all Packages that were uploaded to  via FTP or that were uploaded in the UI via HTTP.
 
 ## URL
 

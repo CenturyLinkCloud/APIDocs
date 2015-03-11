@@ -164,7 +164,7 @@ Gets the full details of the specified Blueprint.
 
         "Status":1
 
-        "Author":"Tier 3",
+        "Author":"",
 
         "Capabilities":["Web Applications","CDN"],
 
@@ -188,7 +188,7 @@ Gets the full details of the specified Blueprint.
 
             <Name>Blueprint 01</Name>
 
-            <Author>Tier 3</Author>
+            <Author></Author>
 
             <Description>This is the first Blueprint</Description>
 

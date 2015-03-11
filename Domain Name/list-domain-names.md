@@ -7,7 +7,7 @@
 
 <p><strong><em>This API is no longer supported and will no longer be available beginning November 15th, 2012</em></strong></p>
 
-This method retrieves the list of Domain Names that your account has registered with Tier 3.
+This method retrieves the list of Domain Names that your account has registered with .
 
 ## URL
 
@@ -98,7 +98,7 @@ This method retrieves the list of Domain Names that your account has registered 
     <tr>
       <td>AutoRenew</td>
       <td>Boolean</td>
-      <td>True if the domain is set up for Tier 3 to automatically renew it when it is set to expire.</td>
+      <td>True if the domain is set up for  to automatically renew it when it is set to expire.</td>
     </tr>
     <tr>
       <td>ExpirationDate</td>

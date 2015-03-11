@@ -6,7 +6,7 @@
 }}}
 
 
-Create a brand new (sub) account in the Tier 3 system. Calls to this operation must include an authorization cookie acquired from the <a href="/api-docs#authentication-logon">Logon operation.</a>
+Create a brand new (sub) account in the  system. Calls to this operation must include an authorization cookie acquired from the <a href="/api-docs#authentication-logon">Logon operation.</a>
 
 ## URL
 
