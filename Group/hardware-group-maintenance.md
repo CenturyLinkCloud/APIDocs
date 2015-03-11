@@ -106,7 +106,7 @@ Enables or disables Maintenance Mode on a&nbsp;Hardware Group.
       <td>Int</td>
       <td>
         <p>The ID of the Queued request.</p>
-        <p>Status of the request can be obtained by calling the&nbsp;[GetDeploymentStatus](../Blueprint/get-deployment-status.md)&nbsp;method.</p>
+        <p>Status of the request can be obtained by calling the&nbsp;<a href="../Blueprint/get-deployment-status.md">Get Deployment Status</a>&nbsp;method.</p>
       </td>
     </tr>
   </tbody>

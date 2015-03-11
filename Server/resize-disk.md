@@ -134,7 +134,7 @@ Resizes a disk on a Server.
     <tr>
       <td>RequestID</td>
       <td>Int</td>
-      <td>The ID of the Queued request.Status of the request can be obtained by calling the&nbsp;[GetDeploymentStatus](../Blueprint/get-deployment-status.md)&nbsp;method.</td>
+      <td>The ID of the Queued request.Status of the request can be obtained by calling the&nbsp;<a href="../Blueprint/get-deployment-status.md">Get Deployment Status</a>&nbsp;method.</td>
     </tr>
   </tbody>
 </table>

@@ -96,7 +96,7 @@ Deletes the Hardware Group along with all child groups and servers.
       <td>Int</td>
       <td>
         <p>The ID of the Queued request to delete the Group.</p>
-        <p>Status of the request can be obtained by calling the&nbsp;[GetDeploymentStatus](../Blueprint/get-deployment-status.md)&nbsp;method.</p>
+        <p>Status of the request can be obtained by calling the&nbsp;<a href="../Blueprint/get-deployment-status.md">Get Deployment Status</a>&nbsp;method.</p>
       </td>
     </tr>
   </tbody>
