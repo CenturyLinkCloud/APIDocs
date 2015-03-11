@@ -49,7 +49,7 @@ Gets estimated costs for a group of servers. Calls to this operation must includ
 
     {
 
-      AccountAlias": "1000",
+      "AccountAlias": "1000",
 
       "HardwareGroupID":"5000"
 

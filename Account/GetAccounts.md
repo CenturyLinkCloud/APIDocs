@@ -1,7 +1,7 @@
 {{{
   "title": "GetAccounts",
-  "date": "11-16-2012",
-  "author": "Richard Seroter",
+  "date": "03-11-2015",
+  "author": "Scott Densmore",
   "attachments": []
 }}}
 
@@ -108,6 +108,16 @@ None.
       <td>Boolean</td>
       <td>True/False indicator of whether the account is active or not.</td>
     </tr>
+    <tr>
+      <td>SupportLevel</td>
+      <td>String</td>
+      <td>Indicator of support level for the account.
+        <p>developer,
+          <br />legacy,
+          <br />professional,
+          <br />enterprise</p>
+      </td>
+    </tr>
   </tbody>
 </table>
 
@@ -129,7 +139,9 @@ None.
 
           "BusinessName":"Example Business Name",
 
-          "IsActive":true
+          "IsActive":true,
+
+          "SupportLevel":"developer"
 
         },
 
@@ -143,7 +155,11 @@ None.
 
           "BusinessName":"Example Department",
 
-          "IsActive":true}
+          "IsActive":true,
+
+          "SupportLevel":"developer"
+
+      }
 
       ],
 
@@ -160,9 +176,9 @@ None.
     <AccountsResponse Success="true" Message="Accounts successfully queried." StatusCode="0">
 
       <Accounts>
-        <Account AccountAlias="1001" ParentAlias="1000" Location="WA1" BusinessName="Example Business Name" IsActive="true"/>
+        <Account AccountAlias="1001" ParentAlias="1000" Location="WA1" BusinessName="Example Business Name" IsActive="true" SupportLevel="developer" />
 
-        <Account AccountAlias="1002" ParentAlias="1001" Location="WA1" BusinessName="Example Department" IsActive="true" />
+        <Account AccountAlias="1002" ParentAlias="1001" Location="WA1" BusinessName="Example Department" IsActive="true" SupportLevel="developer" />
 
       </Accounts>
 
@@ -180,9 +196,9 @@ None.
 
             <Accounts>
 
-              <Account AccountAlias="1001" ParentAlias="1000" Location="WA1" BusinessName="Example Business Name" IsActive="true" />
+              <Account AccountAlias="1001" ParentAlias="1000" Location="WA1" BusinessName="Example Business Name" IsActive="true" SupportLevel="developer" />
 
-              <Account AccountAlias="1002" ParentAlias="1001" Location="WA1" BusinessName="Example Department" IsActive="true" />
+              <Account AccountAlias="1002" ParentAlias="1001" Location="WA1" BusinessName="Example Department" IsActive="true" SupportLevel="developer" />
 
             </Accounts>
 

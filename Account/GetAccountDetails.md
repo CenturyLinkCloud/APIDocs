@@ -1,7 +1,7 @@
 {{{
   "title": "GetAccountDetails",
-  "date": "7-9-2014",
-  "author": "Richard Seroter",
+  "date": "03-11-2015",
+  "author": "Scott Densmore",
   "attachments": []
 }}}
 
@@ -204,6 +204,17 @@ Gets all of the contact information and settings for a given account. Calls to t
       <td>Boolean</td>
       <td>True/false flag indicating whether this account shares the networks of its parent.</td>
     </tr>
+    <tr>
+      <td>SupportLevel</td>
+      <td>String</td>
+      <td>Indicator of support level for the account.
+        <p>developer,
+          <br />legacy,
+          <br />professional,
+          <br />enterprise</p>
+      </td>
+    </tr>
+    <tr>
   </tbody>
 </table>
 
@@ -242,7 +253,9 @@ Gets all of the contact information and settings for a given account. Calls to t
 
         "Status":2,
 
-        "ShareParentNetworks":true
+        "ShareParentNetworks":true,
+
+        "SupportLevel":"developer"
 
       },
 
@@ -258,7 +271,7 @@ Gets all of the contact information and settings for a given account. Calls to t
 
     <AccountDetailsResponse Success="true" Message="Account details successfully queried." StatusCode="0">
 
-            <AccountDetails AccountAlias="1001" ParentAlias="1000" Location="WA1" TimeZone="Pacific Standard Time" Status="2" ShareParentNetworks="true">
+            <AccountDetails AccountAlias="1001" ParentAlias="1000" Location="WA1" TimeZone="Pacific Standard Time" Status="2" ShareParentNetworks="true" SupportLevel="developer">
 
                 <BusinessName>Example Business Name</BusinessName>
 
@@ -293,7 +306,7 @@ Gets all of the contact information and settings for a given account. Calls to t
 
                 <GetAccountDetailsResult Success="true" Message="Account details successfully queried." StatusCode="0">
 
-                    <AccountDetails AccountAlias="1001" ParentAlias="1000" Location="WA1" TimeZone="Pacific Standard Time" Status="2" ShareParentNetworks="true">
+                    <AccountDetails AccountAlias="1001" ParentAlias="1000" Location="WA1" TimeZone="Pacific Standard Time" Status="2" ShareParentNetworks="true" SupportLevel="developer">
 
                         <BusinessName>Example Business Name</BusinessName>
 

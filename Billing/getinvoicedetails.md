@@ -1,7 +1,7 @@
 {{{
   "title": "GetInvoiceDetails",
-  "date": "11-19-2013",
-  "author": "Richard Seroter",
+  "date": "03-11-2015",
+  "author": "Scott Densmore",
   "attachments": []
 }}}
 
@@ -142,6 +142,16 @@ Gets the details for a given invoice within an account. Calls to this operation 
       <td>Invoice</td>
       <td>Complex (see below)</td>
       <td>Invoice details and line items.</td>
+    </tr>
+    <tr>
+      <td>SupportLevel</td>
+      <td>String</td>
+      <td>Indicator of support level for the account.
+        <p>developer,
+          <br />legacy,
+          <br />professional,
+          <br />enterprise</p>
+      </td>
     </tr>
   </tbody>
 </table>
@@ -416,6 +426,8 @@ Gets the details for a given invoice within an account. Calls to this operation 
 
              ]},
 
+             "SupportLevel":"developer",
+
              "Success":true,
 
              "Message":"Ok",
@@ -442,7 +454,9 @@ Gets the details for a given invoice within an account. Calls to this operation 
 
       EndingBalance="1722.4500" 
 
-      CurrentOutstandingBalance="1722.4500">
+      CurrentOutstandingBalance="1722.4500"
+
+      SupportLevel="developer">
 
       <Invoice 
 
@@ -532,7 +546,9 @@ Gets the details for a given invoice within an account. Calls to this operation 
 
                   EndingBalance="1722.4500" 
 
-                  CurrentOutstandingBalance="1722.4500">
+                  CurrentOutstandingBalance="1722.4500"
+
+                  SupportLevel="developer">
 
                   <Invoice ID="RSDA9278D23F" 
 
