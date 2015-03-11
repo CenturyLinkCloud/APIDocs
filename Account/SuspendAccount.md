@@ -108,7 +108,7 @@ Disable an existing account in the Tier 3 system. Calls to this operation must i
     <tr>
       <td>RequestID</td>
       <td>Int</td>
-      <td>The ID of the Queued request.Status of the request can be obtained by calling the&nbsp;<a href="http://help.tier3.com/entries/20561586-get-deployment-status">GetDeploymentStatus</a>&nbsp;method.</td>
+      <td>The ID of the Queued request.Status of the request can be obtained by calling the&nbsp;[GetDeploymentStatus](../Blueprint/get-deployment-status.md)&nbsp;method.</td>
     </tr>
   </tbody>
 </table>

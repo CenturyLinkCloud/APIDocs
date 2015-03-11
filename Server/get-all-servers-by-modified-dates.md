@@ -63,7 +63,7 @@ Gets a deep list of all modified Servers for a given Hardware Group and its sub 
 
 #### JSON
 
-    { 
+    {
 
     "AccountAlias": "ACCT",
 
@@ -120,7 +120,7 @@ Gets a deep list of all modified Servers for a given Hardware Group and its sub 
     <tr>
       <td>Servers</td>
       <td>Complex</td>
-      <td>A list of&nbsp;<a href="/entries/23105126-Server-Object" target="_blank">Server Objects</a>
+      <td>A list of&nbsp;[Server Objects](server-object.md)
       </td>
     </tr>
   </tbody>
@@ -160,9 +160,9 @@ Gets a deep list of all modified Servers for a given Hardware Group and its sub 
 
     <GetServersResponse Success="true" Message="Successfully retrieved servers" StatusCode="0">
         <Servers>
-            <Server ID="1001" HardwareGroupID="1" Name="WA1T3NWEB01" Description="WA1T3NWEB01" 
-                    DnsName="WA1T3NWEB01" IsTemplate="false" Cpu="2" MemoryGB="4" DiskCount="3" 
-                    TotalDiskSpaceGB="116" Status="Active" ServerType="1" ServiceLevel="2" 
+            <Server ID="1001" HardwareGroupID="1" Name="WA1T3NWEB01" Description="WA1T3NWEB01"
+                    DnsName="WA1T3NWEB01" IsTemplate="false" Cpu="2" MemoryGB="4" DiskCount="3"
+                    TotalDiskSpaceGB="116" Status="Active" ServerType="1" ServiceLevel="2"
                     OperatingSystem="2" PowerState="Started" Location="WA1" IPAddress="172.0.0.1">
                 <IPAddresses>
                     <IPAddress Address="172.0.0.1" AddressType="RIP" />
@@ -171,16 +171,16 @@ Gets a deep list of all modified Servers for a given Hardware Group and its sub 
                 <CustomFields CustomFieldID="101" Name="My 2nd Field" Type="Option" Value="Value 3" />
                 <CustomFields CustomFieldID="102" Name="My 3rd Field" Type="Checkbox" Value="true" />
             </Server>
-            <Server ID="1002" HardwareGroupID="1" Name="WA1T3NWEB02" Description="WA1T3NWEB02" 
-                    DnsName="WA1T3NWEB02" IsTemplate="false" Cpu="2" MemoryGB="4" DiskCount="3" 
-                    TotalDiskSpaceGB="116" Status="Active" ServerType="2" ServiceLevel="1" 
+            <Server ID="1002" HardwareGroupID="1" Name="WA1T3NWEB02" Description="WA1T3NWEB02"
+                    DnsName="WA1T3NWEB02" IsTemplate="false" Cpu="2" MemoryGB="4" DiskCount="3"
+                    TotalDiskSpaceGB="116" Status="Active" ServerType="2" ServiceLevel="1"
                     OperatingSystem="6" PowerState="Started" Location="WA1" IPAddress="172.0.0.2"
                 <IPAddresses>
                     <IPAddress Address="172.0.0.2" AddressType="RIP"/>
                 </IPAddresses>
                 <CustomFields />
            </Server>
-        </Servers> 
+        </Servers>
     </GetServersResponse>
 
 ### Status Codes

@@ -43,7 +43,7 @@ Gets the list of Templates available to the account.
     <tr>
       <td>Templates</td>
       <td>Complex</td>
-      <td>A list of <a href="/entries/23104781-Server-Template-Object" target="_blank">Server Template Objects</a>
+      <td>A list of [Server Template Objects](server-template-object.md)
       </td>
     </tr>
   </tbody>
@@ -76,7 +76,7 @@ Gets the list of Templates available to the account.
         <Templates>
             <Template ID="1001" Name="CENTOS-6-32" Description="CentOS 6 | 32-bit" Cpu="1"
             MemoryGB="2" DiskCount="1" TotalDiskSpaceGB="8" OperatingSystem="6" />
-            <Template ID="1001" Name="WIN2008R2STD-64" Description="Windows 2008 R2 Standard | 64-bit" 
+            <Template ID="1001" Name="WIN2008R2STD-64" Description="Windows 2008 R2 Standard | 64-bit"
             Cpu="1" MemoryGB="4" DiskCount="1" TotalDiskSpaceGB="16" OperatingSystem="18" />
         </Templates>
     </GetTemplatesResponse>

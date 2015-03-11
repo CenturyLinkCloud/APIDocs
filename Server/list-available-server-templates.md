@@ -85,7 +85,7 @@ Gets the list of Templates available to the account and location.
       <td>Templates</td>
       <td>Complex</td>
       <td>
-        <p>A list of <a href="/entries/23104781-Server-Template-Object" target="_blank">Server Template Objects</a>
+        <p>A list of [Server Template Objects](server-template-object.md)
         </p>
       </td>
     </tr>

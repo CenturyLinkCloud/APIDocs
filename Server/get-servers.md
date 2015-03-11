@@ -94,7 +94,7 @@ Gets the list of Servers for a given Hardware Group.
     <tr>
       <td>Servers</td>
       <td>Complex</td>
-      <td>A list of <a href="/entries/23105126-Server-Object" target="_blank">Server Objects</a>
+      <td>A list of [Server Objects](server-object.md)
       </td>
     </tr>
   </tbody>

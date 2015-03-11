@@ -93,7 +93,7 @@ Powers on the server (or resumes from a paused state).
       <td>Int</td>
       <td>
         <p>The ID of the Queued request.</p>
-        <p>Status of the request can be obtained by calling the&nbsp;<a href="http://help.tier3.com/entries/20561586-get-deployment-status">GetDeploymentStatus</a>&nbsp;method.</p>
+        <p>Status of the request can be obtained by calling the&nbsp;[GetDeploymentStatus](../Blueprint/get-deployment-status.md)&nbsp;method.</p>
       </td>
     </tr>
   </tbody>

@@ -116,7 +116,7 @@ Gets a deep list of all modified servers for a given account hierarchy within a 
     <tr>
       <td>Servers</td>
       <td>Complex</td>
-      <td>A list of AccountServerGroups, each containing&nbsp;<a href="/entries/23105126-Server-Object" target="_blank">Server Objects</a>
+      <td>A list of AccountServerGroups, each containing&nbsp;[Server Objects](server-object.md)
       </td>
     </tr>
   </tbody>
