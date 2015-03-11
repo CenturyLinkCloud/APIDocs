@@ -214,7 +214,6 @@ Gets all of the contact information and settings for a given account. Calls to t
           <br />enterprise</p>
       </td>
     </tr>
-    <tr>
   </tbody>
 </table>
 
