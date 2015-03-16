@@ -5,7 +5,7 @@
   "attachments": []
 }}}
 
-Restores a given archived server to a specified group. Calls to this operation must include a token acquired from the authentication endpoint. See the <a href="/api-docs/v2#authentication-login">Login API</a> for information on acquiring this token.
+Restores a given archived server to a specified group. Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](..Authentication/login.md) for information on acquiring this token.
 
 ### When to Use It
 
@@ -82,7 +82,7 @@ Use this API operation when you want to restore a server that has been archived.
 
 ## Response
 
-The response is a link to the <a href="/api-docs/v2#queue-get-status">Get Status</a> operation so the asynchronous job can be tracked. Once successfully completed, the server will be restored as specified.
+The response is a link to the [Get Status](../Queue/get-status.md) operation so the asynchronous job can be tracked. Once successfully completed, the server will be restored as specified.
 
 ### Entity Definition
 
@@ -112,7 +112,7 @@ The response is a link to the <a href="/api-docs/v2#queue-get-status">Get Status
       <td>id</td>
       <td>string</td>
       <td>[ID]</td>
-      <td>The identifier of the job in queue. Can be passed to <a href="/api-docs/v2#queue-get-status">Get Status</a> call to retrieve status of job.</td>
+      <td>The identifier of the job in queue. Can be passed to [Get Status](../Queue/get-status.md) call to retrieve status of job.</td>
     </tr>
   </tbody>
 </table>

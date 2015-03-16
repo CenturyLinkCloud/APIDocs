@@ -5,7 +5,7 @@
   "attachments": []
 }}}
 
-Gets the resource consumption details for whatever window specified in the request. Data can be retrieve for a variety of time windows and intervals. Calls to this operation must include a token acquired from the authentication endpoint. See the <a href="/api-docs/v2#authentication-login">Login API</a> for information on acquiring this token.
+Gets the resource consumption details for whatever window specified in the request. Data can be retrieve for a variety of time windows and intervals. Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](..Authentication/login.md) for information on acquiring this token.
 
 ### When to Use It
 

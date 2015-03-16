@@ -5,7 +5,7 @@
   "attachments": []
 }}}
 
-Changes the custom field values for an existing group. Calls to this operation must include a token acquired from the authentication endpoint. See the <a href="/api-docs/v2#authentication-login">Login API</a> for information on acquiring this token.
+Changes the custom field values for an existing group. Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](..Authentication/login.md) for information on acquiring this token.
 
 ### When to Use It
 
@@ -96,7 +96,7 @@ Use this API operation when you want to change the custom field values for a giv
     <tr>
       <td>value</td>
       <td>array</td>
-      <td>A list of id-value pairs for _all custom fields_ including all required values and other custom field values that you wish to set.<br/><br/>_Note: You must specify the complete list of custom field values to set on the group. If you want to change only one value, specify all existing field values along with the new value for the field you wish to change. To unset the value for an unrequired field, you may leave the field id-value pairing out, however all required fields must be included. (You can get existing custom field value info by using the <a href="/api-docs/v2#groups-get-group">Get Group</a> call to see all the details of the group or the <a href="/api-docs/v2#custom-fields-get-custom-fields">Get Custom Fields</a> call to see available custom fields for a given account.)_</td>
+      <td>A list of id-value pairs for _all custom fields_ including all required values and other custom field values that you wish to set.<br/><br/>_Note: You must specify the complete list of custom field values to set on the group. If you want to change only one value, specify all existing field values along with the new value for the field you wish to change. To unset the value for an unrequired field, you may leave the field id-value pairing out, however all required fields must be included. (You can get existing custom field value info by using the [Get Group](get-group.md) call to see all the details of the group or the [Get Custom Fields](../Custom Fields/get-custom-fields.md) call to see available custom fields for a given account.)_</td>
     </tr>
   </tbody>
 </table>

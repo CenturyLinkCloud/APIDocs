@@ -10,7 +10,7 @@ The CenturyLink Cloud has a new, improved API for performing the same actions pr
 
 The URL format of the service is: `https://api.ctl.io/v2/{resource}/{account alias}`. As an example, to retrieve the top level Group for a given data center, you would issue a GET request to `https://api.ctl.io/v2/datacenters/ALIAS/WA1`. The HTTP request must include `Content-Type` and `Accepts` headers set to `application/json`.
 
-Service authentication is done via bearer tokens and is outlined in the <a href="/api-docs/v2#authentication-login">Login API</a> description.
+Service authentication is done via bearer tokens and is outlined in the [Login API](..Authentication/login.md) description.
 
 The service responds to requests using <a href="http://en.wikipedia.org/wiki/List_of_HTTP_status_codes" target="_blank">standard HTTP codes</a>, and if applicable, a JSON payload.
 

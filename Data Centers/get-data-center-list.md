@@ -5,11 +5,11 @@
   "attachments": []
 }}}
 
-Gets the list of data centers that a given account has access to. Calls to this operation must include a token acquired from the authentication endpoint. See the <a href="/api-docs/v2#authentication-login">Login API</a> for information on acquiring this token.
+Gets the list of data centers that a given account has access to. Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](..Authentication/login.md) for information on acquiring this token.
 
 ### When to Use It
 
-Use this API operation when you need the list of data center names and codes that you have access to. Using that list of data centers, you can then query for the <a href="/api-docs/v2#datacenters-get-data-center-group">root group</a>, and all the child groups in an entire data center.
+Use this API operation when you need the list of data center names and codes that you have access to. Using that list of data centers, you can then query for the [root group](get-data-center.md), and all the child groups in an entire data center.
 
 ## URL
 

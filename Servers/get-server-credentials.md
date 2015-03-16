@@ -5,7 +5,7 @@
   "attachments": []
 }}}
 
-Retrieves the administrator/root password on an existing server. Calls to this operation must include a token acquired from the authentication endpoint. See the <a href="/api-docs/v2#authentication-login">Login API</a> for information on acquiring this token.
+Retrieves the administrator/root password on an existing server. Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](..Authentication/login.md) for information on acquiring this token.
 
 ### When to Use It
 

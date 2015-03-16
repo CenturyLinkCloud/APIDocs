@@ -5,11 +5,11 @@
   "attachments": []
 }}}
 
-Sends a specified setting for maintenance mode per server to a list of servers and adds operation to queue. Calls to this operation must include a token acquired from the authentication endpoint. See the <a href="/api-docs/v2#authentication-login">Login API</a> for information on acquiring this token.
+Sends a specified setting for maintenance mode per server to a list of servers and adds operation to queue. Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](..Authentication/login.md) for information on acquiring this token.
 
 ### When to Use It
 
-Use this API operation when you want to explicitly turn on or off maintenance mode on multiple servers. Specifically, this call can be used if you want set some servers to have maintenance mode on and others to have it off. If you want to set maintenance mode for servers to all on or all off, you can use the respective methods for <a href="/api-docs/v2#servers-start-maintenance-mode">starting maintenance mode</a> or <a href="/api-docs/v2#servers-stop-maintenance-mode">stopping maintenance mode</a> for multiple servers.
+Use this API operation when you want to explicitly turn on or off maintenance mode on multiple servers. Specifically, this call can be used if you want set some servers to have maintenance mode on and others to have it off. If you want to set maintenance mode for servers to all on or all off, you can use the respective methods for [starting maintenance mode](start-maintenance-mode.md) or [stopping maintenance mode](stop-maintenance-mode.md) for multiple servers.
 
 ## URL
 
@@ -174,7 +174,7 @@ The response will be an array containing one entity for each server that the ope
       <td>id</td>
       <td>string</td>
       <td>[ID]</td>
-      <td>The identifier of the job in queue. Can be passed to <a href="/api-docs/v2#queue-get-status">Get Status</a> call to retrieve status of job.</td>
+      <td>The identifier of the job in queue. Can be passed to [Get Status](../Queue/get-status.md) call to retrieve status of job.</td>
     </tr>
   </tbody>
 </table>

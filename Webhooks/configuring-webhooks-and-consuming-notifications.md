@@ -7,7 +7,7 @@
 
 ### Description
 
-Webhooks make it possible to subscribe to key events that occur in the CenturyLink Cloud. In this article, we will walk through how to create a Webhook listener, configure a Webhook, and receive a notification. For general details on Webhooks, read the <a href="/api-docs/v2#webhooks-faq">Webhook FAQs</a>.
+Webhooks make it possible to subscribe to key events that occur in the CenturyLink Cloud. In this article, we will walk through how to create a Webhook listener, configure a Webhook, and receive a notification. For general details on Webhooks, read the [Webhook FAQs](webhooks-faq.md).
 
 ### Prerequisites
 
@@ -123,7 +123,7 @@ A Webhook listener is simply a web application that can receive a JSON message v
 
 #### Test the Webhook
 
-1. Trigger an event in the platform that the Webhook will respond to. View the <a href="/api-docs/v2#webhooks-faq">Webhook FAQs</a> for a list of what platform events will trigger a Webhook notification. To get the **Account.Updated** Webhook configured above to fire, change an account setting such as the mailing address.
+1. Trigger an event in the platform that the Webhook will respond to. View the [Webhook FAQs](webhooks-faq.md) for a list of what platform events will trigger a Webhook notification. To get the **Account.Updated** Webhook configured above to fire, change an account setting such as the mailing address.
 <img src="https://t3n.zendesk.com/attachments/token/b8ydsawn5xsdanf/?name=webhookwalkthrough04.png" alt="webhookwalkthrough04.png" />
 
 2. Save the account change. Within seconds, the Webhook listener service should receive the notification message. In <a href="https://github.com/Tier3/Examples/tree/master/Tier3.WebHookListener">the sample application</a>, this information is pushed to the browser. Clicking on the updated account's name reveals both the full payload and a portion of the hashed signature value.

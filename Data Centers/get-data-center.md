@@ -1,11 +1,11 @@
 {{{
-  "title": "Get Data Center Group",
+  "title": "Get Data Center",
   "date": "5-16-2014",
   "author": "Richard Seroter",
   "attachments": []
 }}}
 
-Gets the details of a specific data center the account has access to. Calls to this operation must include a token acquired from the authentication endpoint. See the <a href="/api-docs/v2#authentication-login">Login API</a> for information on acquiring this token.
+Gets the details of a specific data center the account has access to. Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](..Authentication/login.md) for information on acquiring this token.
 
 ### When to Use It
 

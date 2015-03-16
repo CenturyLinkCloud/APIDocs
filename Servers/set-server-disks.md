@@ -5,7 +5,7 @@
   "attachments": []
 }}}
 
-Changes (adds or removes) disks on an existing server. Calls to this operation must include a token acquired from the authentication endpoint. See the <a href="/api-docs/v2#authentication-login">Login API</a> for information on acquiring this token.
+Changes (adds or removes) disks on an existing server. Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](..Authentication/login.md) for information on acquiring this token.
 
 ### When to Use It
 
@@ -97,7 +97,7 @@ Use this API operation when you want to change the disks on an existing server.
     <tr>
       <td>value</td>
       <td>array</td>
-      <td>A list of information for _all disks_ to be on the server including type (raw or partition), size, and path.<br/><br/>_Note: You must specify the complete list of disks to be on the server. If you want to add or resize a disk, specify all existing disks/sizes along with a new entry for the disk to add or the new size of an existing disk. To delete a disk, just specify all the disks that should remain. (You can get existing disk info by using the <a href="/api-docs/v2#servers-get-server">Get Server</a> call to see all the details of the server.)_</td>
+      <td>A list of information for _all disks_ to be on the server including type (raw or partition), size, and path.<br/><br/>_Note: You must specify the complete list of disks to be on the server. If you want to add or resize a disk, specify all existing disks/sizes along with a new entry for the disk to add or the new size of an existing disk. To delete a disk, just specify all the disks that should remain. (You can get existing disk info by using the [Get Server](get-server.md) call to see all the details of the server.)_</td>
     </tr>
   </tbody>
 </table>
@@ -135,7 +135,7 @@ Use this API operation when you want to change the disks on an existing server.
 
 ## Response
 
-The response is a link to the <a href="/api-docs/v2#queue-get-status">Get Status</a> operation so the asynchronous job can be tracked. Once successfully completed, the server configuration will be changed as specified.
+The response is a link to the [Get Status](../Queue/get-status.md) operation so the asynchronous job can be tracked. Once successfully completed, the server configuration will be changed as specified.
 
 ### Entity Definition
 
@@ -165,7 +165,7 @@ The response is a link to the <a href="/api-docs/v2#queue-get-status">Get Status
       <td>id</td>
       <td>string</td>
       <td>[ID]</td>
-      <td>The identifier of the job in queue. Can be passed to <a href="/api-docs/v2#queue-get-status">Get Status</a> call to retrieve status of job.</td>
+      <td>The identifier of the job in queue. Can be passed to [Get Status](../Queue/get-status.md) call to retrieve status of job.</td>
     </tr>
   </tbody>
 </table>

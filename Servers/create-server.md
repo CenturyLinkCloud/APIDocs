@@ -6,7 +6,7 @@
 }}}
 
 
-Creates a new server. Calls to this operation must include a token acquired from the authentication endpoint. See the <a href="/api-docs/v2#authentication-login">Login API</a> for information on acquiring this token.
+Creates a new server. Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](..Authentication/login.md) for information on acquiring this token.
 
 ### When to Use It
 
@@ -79,7 +79,7 @@ Use this API operation when you want to create a new server from a standard or c
     <tr>
       <td>sourceServerId</td>
       <td>string</td>
-      <td>ID of the server to use a source. May be the ID of a template, or when cloning, an existing server ID. The list of available templates for a given account in a data center can be retrieved from the <a href="/api-docs/v2#data-centers-get-data-center-deployment-capabilities">Get Data Center Deployment Capabilities</a> API operation.</td>
+      <td>ID of the server to use a source. May be the ID of a template, or when cloning, an existing server ID. The list of available templates for a given account in a data center can be retrieved from the [Get Data Center Deployment Capabilities](../Data Centers/get-data-center-deployment-capabilities.md) API operation.</td>
       <td>Yes</td>
     </tr>
     <tr>
@@ -104,7 +104,7 @@ Use this API operation when you want to create a new server from a standard or c
       <td>networkId</td>
       <td>string</td>
       <td>ID of the network to which to deploy the server. If not provided, a network will be chosen automatically. If your account has not yet been assigned a network, leave this blank and one will be assigned automatically. The list of available
-        networks for a given account in a data center can be retrieved from the <a href="/api-docs/v2#data-centers-get-data-center-deployment-capabilities">Get Data Center Deployment Capabilities</a> API operation. </td>
+        networks for a given account in a data center can be retrieved from the [Get Data Center Deployment Capabilities](../Data Centers/get-data-center-deployment-capabilities.md) API operation. </td>
       <td>No</td>
     </tr>
     <tr>
@@ -158,8 +158,8 @@ Use this API operation when you want to create a new server from a standard or c
     <tr>
       <td>antiAffinityPolicyId</td>
       <td>string</td>
-      <td>ID of the Anti-Affinity policy to associate the server with. Only valid for hyperscale servers. Available IDs can be retrieved from the <a href="/api-docs/v2#anti-affinity-policies-get-antiaffinity-policies">Get Anti-Affinity Policies</a>API operation.</td>
-      <td>No</td>
+      <td>ID of the Anti-Affinity policy to associate the server with. Only valid for hyperscale servers. Available IDs can be retrieved from the [Get Anti-Affinity Policies](../Anti-Affinity Policies/get-anti-affinity-policies.md"> API operation.</td>
+      <td>No</td>Â
     </tr>
     <tr>
       <td>customFields</td>
@@ -364,7 +364,7 @@ Use this API operation when you want to create a new server from a standard or c
       <td>id</td>
       <td>string</td>
       <td>[ID]</td>
-      <td>The identifier of the job in queue. Can be passed to <a href="/api-docs/v2#queue-get-status">Get Status</a> call to retrieve status of job.</td>
+      <td>The identifier of the job in queue. Can be passed to [Get Status](../Queue/get-status.md) call to retrieve status of job.</td>
     </tr>
   </tbody>
 </table>

@@ -5,11 +5,11 @@
   "attachments": []
 }}}
 
-Gets the details for the public IP address of a server, including the specific set of protocols and ports allowed and any source IP restrictions. Calls to this operation must include a token acquired from the authentication endpoint. See the <a href="/api-docs/v2#authentication-login">Login API</a> for information on acquiring this token.
+Gets the details for the public IP address of a server, including the specific set of protocols and ports allowed and any source IP restrictions. Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](..Authentication/login.md) for information on acquiring this token.
 
 ### When to Use It
 
-Use this API operation when you want to find out information about a specific public IP address for an existing server. This operation is linked to from the <a href="/api-docs/v2#servers-get-server">Get Servers</a> response that lists all public IPs assigned to a server.
+Use this API operation when you want to find out information about a specific public IP address for an existing server. This operation is linked to from the [Get Server](../Servers/get-server.md) response that lists all public IPs assigned to a server.
 
 ## URL
 
@@ -50,7 +50,7 @@ Use this API operation when you want to find out information about a specific pu
     <tr>
       <td>PublicIP</td>
       <td>string</td>
-      <td>The specific public IP to return details about. A server may have more than one public IP, and the list of available ones can be retrieved from the call to <a href="/api-docs/v2#servers-get-server">Get Server</a>.</td>
+      <td>The specific public IP to return details about. A server may have more than one public IP, and the list of available ones can be retrieved from the call to [Get Server](../Servers/get-server.md).</td>
       <td>Yes</td>
     </tr>
   </tbody>

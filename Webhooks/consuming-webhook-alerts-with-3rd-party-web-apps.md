@@ -5,7 +5,7 @@
   "attachments": []
 }}}
 
-Customers may wish to leverage the alert notification webhook services built into CenturyLink Cloud with 3rd party web apps or services. While clients could <a href="/api-docs/v2#webhooks-configuring-webhooks-and-consuming-notifications">build their own webhook listener platform</a>, there are various services on the market that make consuming webhooks and sending them into other web app or services point and click. In this example we are going to leverage <a href="http://zapier.com">Zapier</a>in conjunction with <a href="http://slack.com/">Slack</a>.
+Customers may wish to leverage the alert notification webhook services built into CenturyLink Cloud with 3rd party web apps or services. While clients could [build their own webhook listener platform](configuring-webhooks-and-consuming-notifications.md), there are various services on the market that make consuming webhooks and sending them into other web app or services point and click. In this example we are going to leverage <a href="http://zapier.com">Zapier</a>in conjunction with <a href="http://slack.com/">Slack</a>.
 
 ### Sample Use Case
 

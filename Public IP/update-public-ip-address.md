@@ -5,7 +5,7 @@
   "attachments": []
 }}}
 
-Updates a public IP address on an existing server, allowing access to it on a given set of protocols and ports as well as restricting access based on a source IP range. Calls to this operation must include a token acquired from the authentication endpoint. See the <a href="/api-docs/v2#authentication-login">Login API</a> for information on acquiring this token.
+Updates a public IP address on an existing server, allowing access to it on a given set of protocols and ports as well as restricting access based on a source IP range. Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](..Authentication/login.md) for information on acquiring this token.
 
 ### When to Use It
 
@@ -50,7 +50,7 @@ Use this API operation when you want to update the ports and protocols or source
     <tr>
       <td>PublicIP</td>
       <td>string</td>
-      <td>The specific public IP to update. A server may have more than one public IP, and the list of available ones can be retrieved from the call to <a href="/api-docs/v2#servers-get-server">Get Server</a>.</td>
+      <td>The specific public IP to update. A server may have more than one public IP, and the list of available ones can be retrieved from the call to [Get Server](../Servers/get-server.md).</td>
       <td>Yes</td>
     </tr>
   </tbody>
@@ -167,7 +167,7 @@ Use this API operation when you want to update the ports and protocols or source
 
 ## Response
 
-The response is a link to the <a href="/api-docs/v2#queue-get-status">Get Status</a> operation so the asynchronous job can be tracked. Once successfully completed, the public IP address will be available for use as specified.
+The response is a link to the [Get Status](../Queue/get-status.md) operation so the asynchronous job can be tracked. Once successfully completed, the public IP address will be available for use as specified.
 
 ### Entity Definition
 
@@ -198,7 +198,7 @@ The response is a link to the <a href="/api-docs/v2#queue-get-status">Get Status
       <td>id</td>
       <td>string</td>
       <td>[ID]</td>
-      <td>The identifier of the job in queue. Can be passed to&nbsp;<a href="/api-docs/v2#queue-get-status">Get Status</a>&nbsp;call to retrieve status of job.</td>
+      <td>The identifier of the job in queue. Can be passed to&nbsp;[Get Status](../Queue/get-status.md)&nbsp;call to retrieve status of job.</td>
     </tr>
   </tbody>
 </table>
