@@ -9,8 +9,8 @@ Reboots the server (OS reboot).
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Server/RebootServer/<format>
-    SOAP: https://api.tier3.com/SOAP/Server.asmx?op=RebootServer
+    REST: https://api.ctl.io/REST/Server/RebootServer/<format>
+    SOAP: https://api.ctl.io/SOAP/Server.asmx?op=RebootServer
 
 ## Request
 

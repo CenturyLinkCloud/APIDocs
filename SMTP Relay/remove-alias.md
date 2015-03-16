@@ -9,7 +9,7 @@ This method will delete an existing SMTP Relay alias.
 
 ## URL
 
-    REST: https://api.tier3.com/REST/SMTPRelay/RemoveAlias/<format>
+    REST: https://api.ctl.io/REST/SMTPRelay/RemoveAlias/<format>
 
 ## Request
 

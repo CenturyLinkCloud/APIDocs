@@ -9,8 +9,8 @@ Deletes the Template with the specified name.
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Server/DeleteTemplate/<format>
-    SOAP: https://api.tier3.com/SOAP/Server.asmx?op=DeleteTemplate
+    REST: https://api.ctl.io/REST/Server/DeleteTemplate/<format>
+    SOAP: https://api.ctl.io/SOAP/Server.asmx?op=DeleteTemplate
 
 ## Request
 

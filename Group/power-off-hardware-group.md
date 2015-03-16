@@ -9,8 +9,8 @@ Powers off the Hardware Group along with all child groups and servers.
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Group/PowerOffHardwareGroup/<format>
-    SOAP: https://api.tier3.com/SOAP/Group.asmx?op=PowerOffHardwareGroup
+    REST: https://api.ctl.io/REST/Group/PowerOffHardwareGroup/<format>
+    SOAP: https://api.ctl.io/SOAP/Group.asmx?op=PowerOffHardwareGroup
 
 ## Request
 

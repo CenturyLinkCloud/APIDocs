@@ -9,8 +9,8 @@ Resets the server (forced power cycle).
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Server/ResetServer/<format>
-    SOAP: https://api.tier3.com/SOAP/Server.asmx?op=ResetServer
+    REST: https://api.ctl.io/REST/Server/ResetServer/<format>
+    SOAP: https://api.ctl.io/SOAP/Server.asmx?op=ResetServer
 
 ## Request
 ### Attributes

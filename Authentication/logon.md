@@ -9,7 +9,7 @@ This method is required to be called prior to calling any other method exposed b
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Auth/Logon/
+    REST: https://api.ctl.io/REST/Auth/Logon/
 
 ## Request
 

@@ -9,8 +9,8 @@ Create a new user within a given account. Calls to this operation must include a
 
 ## URL
 
-    REST: https://api.tier3.com/REST/User/CreateUser/<format>
-    SOAP: https://api.tier3.com/SOAP/User.asmx?op=CreateUser
+    REST: https://api.ctl.io/REST/User/CreateUser/<format>
+    SOAP: https://api.ctl.io/SOAP/User.asmx?op=CreateUser
 
 ## Request
 

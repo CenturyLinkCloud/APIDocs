@@ -11,7 +11,7 @@ This method can be used to check the status of any of the long running requests 
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Queue/GetRequestStatus/<format>
+    REST: https://api.ctl.io/REST/Queue/GetRequestStatus/<format>
 
 ## Request
 

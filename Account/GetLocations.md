@@ -9,8 +9,8 @@ Gets list of all valid data center location codes that are used in subsequent Ac
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Account/GetLocations/<format> (format = XML | JSON)
-    SOAP: https://api.tier3.com/SOAP/Account.asmx?op=LocationsResponseMsg
+    REST: https://api.ctl.io/REST/Account/GetLocations/<format> (format = XML | JSON)
+    SOAP: https://api.ctl.io/SOAP/Account.asmx?op=LocationsResponseMsg
 
 ## Request
 

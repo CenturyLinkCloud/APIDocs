@@ -9,8 +9,8 @@ Deploys a Blueprint with the given set of parameter values.
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Blueprint/DeployBlueprint/<format>
-    SOAP: https://api.tier3.com/SOAP/Blueprints.asmx?op=DeployBlueprint
+    REST: https://api.ctl.io/REST/Blueprint/DeployBlueprint/<format>
+    SOAP: https://api.ctl.io/SOAP/Blueprints.asmx?op=DeployBlueprint
 
 ## Request
 

@@ -9,8 +9,8 @@ Deactivate a user associated with a given account. Calls to this operation must 
 
 ## URL
 
-    REST: https://api.tier3.com/REST/User/SuspendUser/<format>
-    SOAP: https://api.tier3.com/SOAP/User.asmx?op=SuspendUser
+    REST: https://api.ctl.io/REST/User/SuspendUser/<format>
+    SOAP: https://api.ctl.io/SOAP/User.asmx?op=SuspendUser
 
 ## Request
 

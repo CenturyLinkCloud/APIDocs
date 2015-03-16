@@ -9,8 +9,8 @@ Archives all Servers in the Group and then archives the Group.
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Group/ArchiveHardwareGroup/<format>
-    SOAP: https://api.tier3.com/SOAP/Group.asmx?op=ArchiveHardwareGroup
+    REST: https://api.ctl.io/REST/Group/ArchiveHardwareGroup/<format>
+    SOAP: https://api.ctl.io/SOAP/Group.asmx?op=ArchiveHardwareGroup
 
 ## Request
 

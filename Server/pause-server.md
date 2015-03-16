@@ -9,8 +9,8 @@ Pauses the server.
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Server/PauseServer/<format>
-    SOAP: https://api.tier3.com/SOAP/Server.asmx?op=PauseServer
+    REST: https://api.ctl.io/REST/Server/PauseServer/<format>
+    SOAP: https://api.ctl.io/SOAP/Server.asmx?op=PauseServer
 
 ## Request
 

@@ -9,8 +9,8 @@ Gets the server-based hourly cost for any time period. Calls to this operation m
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Billing/GetServerHourlyCharges/<format> (format = XML | JSON)
-    SOAP: https://api.tier3.com/SOAP/Billing.asmx?op=GetServerHourlyCharges
+    REST: https://api.ctl.io/REST/Billing/GetServerHourlyCharges/<format> (format = XML | JSON)
+    SOAP: https://api.ctl.io/SOAP/Billing.asmx?op=GetServerHourlyCharges
 
 ## Request
 

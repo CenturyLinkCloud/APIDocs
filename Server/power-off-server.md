@@ -9,8 +9,8 @@ Powers off the server.
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Server/PowerOffServer/<format>
-    SOAP: https://api.tier3.com/SOAP/Server.asmx?op=PowerOffServer
+    REST: https://api.ctl.io/REST/Server/PowerOffServer/<format>
+    SOAP: https://api.ctl.io/SOAP/Server.asmx?op=PowerOffServer
 
 ## Request
 

@@ -9,8 +9,8 @@ Gets the details for a Network and its IP Addresses.
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Network/GetNetworkDetails/<format>
-    SOAP: https://api.tier3.com/SOAP/Network.asmx?op=GetNetworkDetailsResponseMsg
+    REST: https://api.ctl.io/REST/Network/GetNetworkDetails/<format>
+    SOAP: https://api.ctl.io/SOAP/Network.asmx?op=GetNetworkDetailsResponseMsg
 
 ## Request
 

@@ -9,7 +9,7 @@ This method will retrieve the list of invalid address responses that have been s
 
 ## URL
 
-    REST: https://api.tier3.com/REST/SMTPRelay/GetInvalidAddresses/<format>
+    REST: https://api.ctl.io/REST/SMTPRelay/GetInvalidAddresses/<format>
 
 ## Request
 

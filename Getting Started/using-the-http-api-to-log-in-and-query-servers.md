@@ -36,7 +36,7 @@ In this article, we'll walk through the steps necessary to authenticate a user a
     ```
     //set URL for login operation
 
-    HttpWebRequest req = WebRequest.Create("https://api.tier3.com/REST/Auth/Logon/") as HttpWebRequest;
+    HttpWebRequest req = WebRequest.Create("https://api.ctl.io/REST/Auth/Logon/") as HttpWebRequest;
 
     req.Method = "POST";
     ```
@@ -100,7 +100,7 @@ In this article, we'll walk through the steps necessary to authenticate a user a
     ```
     //create new web request
 
-    HttpWebRequest reqQuery = WebRequest.Create("https://api.tier3.com/REST/Server/GetServers/") as HttpWebRequest;
+    HttpWebRequest reqQuery = WebRequest.Create("https://api.ctl.io/REST/Server/GetServers/") as HttpWebRequest;
 
     reqQuery.Method = "POST";
 

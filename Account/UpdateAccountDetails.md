@@ -9,8 +9,8 @@ Make changes to an existing account in the  system. Calls to this operation must
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Account/UpdateAccountDetails/<format> (format = XML | JSON)
-    SOAP: https://api.tier3.com/SOAP/Account.asmx?op=UpdateAccountDetails
+    REST: https://api.ctl.io/REST/Account/UpdateAccountDetails/<format> (format = XML | JSON)
+    SOAP: https://api.ctl.io/SOAP/Account.asmx?op=UpdateAccountDetails
 
 ## Request
 

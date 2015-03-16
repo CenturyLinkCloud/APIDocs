@@ -9,8 +9,8 @@ Shuts down the operating system and then powers off server.
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Server/ShutdownServer/&lt;format&gt;
-    SOAP: https://api.tier3.com/SOAP/Server.asmx?op=ShutdownServer
+    REST: https://api.ctl.io/REST/Server/ShutdownServer/&lt;format&gt;
+    SOAP: https://api.ctl.io/SOAP/Server.asmx?op=ShutdownServer
 
 ## Request
 

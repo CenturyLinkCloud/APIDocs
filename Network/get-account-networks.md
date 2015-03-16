@@ -9,8 +9,8 @@ Gets the list of Networks mapped to an account in any Data Center.
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Network/GetAccountNetworks/<format>
-    SOAP: https://api.tier3.com/SOAP/Network.asmx?op=GetAccountNetworks
+    REST: https://api.ctl.io/REST/Network/GetAccountNetworks/<format>
+    SOAP: https://api.ctl.io/SOAP/Network.asmx?op=GetAccountNetworks
 
 ## Request
 

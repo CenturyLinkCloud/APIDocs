@@ -9,8 +9,8 @@ Archives the server.
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Server/ArchiveServer/<format>
-    SOAP: https://api.tier3.com/SOAP/Server.asmx?op=ArchiveServer
+    REST: https://api.ctl.io/REST/Server/ArchiveServer/<format>
+    SOAP: https://api.ctl.io/SOAP/Server.asmx?op=ArchiveServer
 
 ## Request
 

@@ -9,8 +9,8 @@ Lists archived servers.
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Server/ListArchivedServers/<format>
-    SOAP: https://api.tier3.com/SOAP/Server.asmx?op=ListArchivedServers
+    REST: https://api.ctl.io/REST/Server/ListArchivedServers/<format>
+    SOAP: https://api.ctl.io/SOAP/Server.asmx?op=ListArchivedServers
 
 ## Request
 ### Attributes

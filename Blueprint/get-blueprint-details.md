@@ -9,8 +9,8 @@ Gets the full details of the specified Blueprint.
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Blueprint/GetBlueprintDetails/<format>
-    SOAP: https://api.tier3.com/SOAP/Blueprints.asmx?op=GetBlueprintDetailsResponseMsg
+    REST: https://api.ctl.io/REST/Blueprint/GetBlueprintDetails/<format>
+    SOAP: https://api.ctl.io/SOAP/Blueprints.asmx?op=GetBlueprintDetailsResponseMsg
 
 ## Request
 

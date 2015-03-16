@@ -9,8 +9,8 @@ Deletes a disk on a Server.
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Server/DeleteDisk/<format>
-    SOAP: https://api.tier3.com/SOAP/Server.asmx?op=DeleteDisk
+    REST: https://api.ctl.io/REST/Server/DeleteDisk/<format>
+    SOAP: https://api.ctl.io/SOAP/Server.asmx?op=DeleteDisk
 
 ## Request
 

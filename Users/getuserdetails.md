@@ -9,8 +9,8 @@ Gets the details of a specific user associated with a given account. Calls to th
 
 ## URL
 
-    REST: https://api.tier3.com/REST/User/GetUserDetails/<format> 
-    SOAP: https://api.tier3.com/SOAP/User.asmx?op=GetUserDetails
+    REST: https://api.ctl.io/REST/User/GetUserDetails/<format> 
+    SOAP: https://api.ctl.io/SOAP/User.asmx?op=GetUserDetails
 
 ## Request
 

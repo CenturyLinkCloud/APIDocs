@@ -10,8 +10,8 @@ Publishes a Blueprint Package for use within the Blueprint Designer.
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Blueprint/PublishPackage/<format>
-    SOAP: https://api.tier3.com/SOAP/Blueprints.asmx?op=PublishPackage
+    REST: https://api.ctl.io/REST/Blueprint/PublishPackage/<format>
+    SOAP: https://api.ctl.io/SOAP/Blueprints.asmx?op=PublishPackage
 
 ## Request
 

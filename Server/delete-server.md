@@ -9,8 +9,8 @@ Deletes the machine and releases all associated resources.
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Server/DeleteServer/<format>
-    SOAP: https://api.tier3.com/SOAP/Server.asmx?op=DeleteServer
+    REST: https://api.ctl.io/REST/Server/DeleteServer/<format>
+    SOAP: https://api.ctl.io/SOAP/Server.asmx?op=DeleteServer
 
 ## Request
 ### Attributes

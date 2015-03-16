@@ -9,8 +9,8 @@ Gets a deep list of all Servers for a given Hardware Group and its sub groups, o
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Server/GetAllServers/<format>
-    SOAP: https://api.tier3.com/SOAP/Server.asmx?op=GetAllServersResponseMsg
+    REST: https://api.ctl.io/REST/Server/GetAllServers/<format>
+    SOAP: https://api.ctl.io/SOAP/Server.asmx?op=GetAllServersResponseMsg
 
 ## Request
 

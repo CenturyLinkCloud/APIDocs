@@ -10,8 +10,8 @@ Gets the charges for groups and servers within a given account, and for any date
 
 ##URL
 
-    REST: https://api.tier3.com/REST/Billing/GetGroupSummaries/<format> (format = XML | JSON)
-    SOAP: https://api.tier3.com/SOAP/Billing.asmx?op=GetGroupSummaries
+    REST: https://api.ctl.io/REST/Billing/GetGroupSummaries/<format> (format = XML | JSON)
+    SOAP: https://api.ctl.io/SOAP/Billing.asmx?op=GetGroupSummaries
 
 ## Request
 

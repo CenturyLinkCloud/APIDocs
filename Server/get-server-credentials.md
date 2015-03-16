@@ -9,8 +9,8 @@ Gets the credentials for the specified server.
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Server/GetServerCredentials/<format>
-    SOAP: https://api.tier3.com/SOAP/Server.asmx?op=GetServerCredentials
+    REST: https://api.ctl.io/REST/Server/GetServerCredentials/<format>
+    SOAP: https://api.ctl.io/SOAP/Server.asmx?op=GetServerCredentials
 
 ## Request
 

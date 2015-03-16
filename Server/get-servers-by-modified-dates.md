@@ -9,8 +9,8 @@ Gets the list of Servers for a given Hardware Group and only those that have bee
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Server/GetServersByModifiedDates/<format>
-    SOAP: https://api.tier3.com/SOAP/Server.asmx?op=GetServersByModifiedDatesResponseMsg
+    REST: https://api.ctl.io/REST/Server/GetServersByModifiedDates/<format>
+    SOAP: https://api.ctl.io/SOAP/Server.asmx?op=GetServersByModifiedDatesResponseMsg
 
 ## Request
 ### Attributes

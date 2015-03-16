@@ -9,8 +9,8 @@ Resizes a disk on a Server.
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Server/ResizeDisk/<format>
-    SOAP: https://api.tier3.com/SOAP/Server.asmx?op=ResizeDisk
+    REST: https://api.ctl.io/REST/Server/ResizeDisk/<format>
+    SOAP: https://api.ctl.io/SOAP/Server.asmx?op=ResizeDisk
 
 ## Request
 

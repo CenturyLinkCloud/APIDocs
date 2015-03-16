@@ -11,7 +11,7 @@ This method retrieves the list of Domain Names that your account has registered 
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Domain/ListDomainNames<format>
+    REST: https://api.ctl.io/REST/Domain/ListDomainNames<format>
 
 ## Request
 

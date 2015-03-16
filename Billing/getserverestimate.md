@@ -10,8 +10,8 @@ Gets the estimated monthly cost for a given server. Calls to this operation must
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Billing/GetServerEstimate/<format> (format = XML | JSON)
-    SOAP: https://api.tier3.com/SOAP/Billing.asmx?op=GetServerEstimate
+    REST: https://api.ctl.io/REST/Billing/GetServerEstimate/<format> (format = XML | JSON)
+    SOAP: https://api.ctl.io/SOAP/Billing.asmx?op=GetServerEstimate
 
 ## Request
 

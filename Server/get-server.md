@@ -9,8 +9,8 @@ Gets the detail for one server.
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Server/GetServer/<format>
-    SOAP: https://api.tier3.com/SOAP/Server.asmx?op=ServerResponseMsg
+    REST: https://api.ctl.io/REST/Server/GetServer/<format>
+    SOAP: https://api.ctl.io/SOAP/Server.asmx?op=ServerResponseMsg
 
 ## Request
 ### Attributes

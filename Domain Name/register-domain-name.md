@@ -11,7 +11,7 @@ This method registers a new Domain Name with the Tier3 DNS service.
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Domain/RegisterDomainName/<format>
+    REST: https://api.ctl.io/REST/Domain/RegisterDomainName/<format>
 
 ## Request
 

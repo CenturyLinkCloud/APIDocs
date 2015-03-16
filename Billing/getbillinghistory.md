@@ -10,8 +10,8 @@ Gets the entire billing history for a given account or collection of accounts. C
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Billing/GetBillingHistory/<format> (format = XML | JSON)
-    SOAP: https://api.tier3.com/SOAP/Billing.asmx?op=GetBillingHistory
+    REST: https://api.ctl.io/REST/Billing/GetBillingHistory/<format> (format = XML | JSON)
+    SOAP: https://api.ctl.io/SOAP/Billing.asmx?op=GetBillingHistory
 
 ## Request
 

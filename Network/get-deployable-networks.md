@@ -9,8 +9,8 @@ Gets the list of Networks mapped to an account in any Data Center that are deplo
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Network/GetDeployableNetworks/<format>
-    SOAP: https://api.tier3.com/SOAP/Network.asmx?op=GetDeployableNetworks
+    REST: https://api.ctl.io/REST/Network/GetDeployableNetworks/<format>
+    SOAP: https://api.ctl.io/SOAP/Network.asmx?op=GetDeployableNetworks
 
 ## Request
 

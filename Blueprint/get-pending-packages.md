@@ -11,8 +11,8 @@ This list contains all Packages that were uploaded to  via FTP or that were uplo
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Blueprint/GetPendingPackages/<format>
-    SOAP: https://api.tier3.com/SOAP/Blueprints.asmx?op=GetPendingPackages
+    REST: https://api.ctl.io/REST/Blueprint/GetPendingPackages/<format>
+    SOAP: https://api.ctl.io/SOAP/Blueprints.asmx?op=GetPendingPackages
 
 ## Request
 

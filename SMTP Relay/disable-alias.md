@@ -9,7 +9,7 @@ This method will disable an existing SMTP Relay alias.
 
 ## URL
 
-    https://api.tier3.com/REST/SMTPRelay/DisableAlias/<format>
+    https://api.ctl.io/REST/SMTPRelay/DisableAlias/<format>
 
 ## Request
 

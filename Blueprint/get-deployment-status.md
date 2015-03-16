@@ -9,8 +9,8 @@ Gets the status of the specified Blueprint deployment.
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Blueprint/GetBlueprintStatus/<format>
-    SOAP: https://api.tier3.com/SOAP/Blueprints.asmx?op=GetDeploymentStatusMsg
+    REST: https://api.ctl.io/REST/Blueprint/GetBlueprintStatus/<format>
+    SOAP: https://api.ctl.io/SOAP/Blueprints.asmx?op=GetDeploymentStatusMsg
 
 ## Request
 

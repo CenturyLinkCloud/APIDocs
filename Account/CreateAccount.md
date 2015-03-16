@@ -11,13 +11,13 @@ Create a brand new (sub) account in the  system. Calls to this operation must in
 ## URL
 
 ```
-REST: https://api.tier3.com/REST/Account/CreateAccount/<format> (format = XML | JSON)
+REST: https://api.ctl.io/REST/Account/CreateAccount/<format> (format = XML | JSON)
 ```
 ```
-SOAP: https://api.tier3.com/SOAP/Account.asmx?op=CreateAccount
+SOAP: https://api.ctl.io/SOAP/Account.asmx?op=CreateAccount
 ```
 
-    
+
 ## Request
 
 ### Attributes
@@ -152,7 +152,7 @@ SOAP: https://api.tier3.com/SOAP/Account.asmx?op=CreateAccount
 
       "PostalCode":"98004",
 
-      "Country":"USA",    
+      "Country":"USA",
 
       "Telephone":"877-388-4373",
 
@@ -168,46 +168,46 @@ SOAP: https://api.tier3.com/SOAP/Account.asmx?op=CreateAccount
 
 #### XML (REST)
 
-    <CreateAccountRequest> 
+    <CreateAccountRequest>
 
-        <ParentAlias>1000</ParentAlias> 
+        <ParentAlias>1000</ParentAlias>
 
         <AccountAlias>1001</AccountAlias>
 
-        <Location>QA1</Location> 
+        <Location>QA1</Location>
 
-        <BusinessName>Demo Biz</BusinessName> 
+        <BusinessName>Demo Biz</BusinessName>
 
-        <Address1>110 110th Avenue</Address1> 
+        <Address1>110 110th Avenue</Address1>
 
-        <Address2>Suite 520</Address2> 
+        <Address2>Suite 520</Address2>
 
-        <City>Bellevue</City> 
+        <City>Bellevue</City>
 
-        <StateProvince>WA</StateProvince> 
+        <StateProvince>WA</StateProvince>
 
-        <PostalCode>98004</PostalCode> 
+        <PostalCode>98004</PostalCode>
 
-        <Country>USA</Country> 
+        <Country>USA</Country>
 
-        <Telephone>877-388-4373</Telephone> 
+        <Telephone>877-388-4373</Telephone>
 
-        <Fax></Fax> 
+        <Fax></Fax>
 
-        <TimeZone>Pacific Standard Time</TimeZone> 
+        <TimeZone>Pacific Standard Time</TimeZone>
 
-        <ShareParentNetworks>true</ShareParentNetworks> 
+        <ShareParentNetworks>true</ShareParentNetworks>
 
-        <BillingResponsibilityID>2</BillingResponsibilityID> 
+        <BillingResponsibilityID>2</BillingResponsibilityID>
 
     </CreateAccountRequest>
 
-   
+
 #### XML (SOAP)
 
     <soap12:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 
-                    xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+                    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 
                     xmlns:soap12="http://www.w3.org/2003/05/soap-envelope">
 
@@ -251,7 +251,7 @@ SOAP: https://api.tier3.com/SOAP/Account.asmx?op=CreateAccount
 
             </CreateAccount>
 
-        </soap12:Body> 
+        </soap12:Body>
 
     </soap12:Envelope>  
 
@@ -461,7 +461,7 @@ SOAP: https://api.tier3.com/SOAP/Account.asmx?op=CreateAccount
 
 #### XML (SOAP)
 
-    <soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" 
+    <soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
 
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 

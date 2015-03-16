@@ -9,8 +9,8 @@ Reset the Hardware Group along with all child groups and servers.
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Group/ResetHardwareGroup/<format>
-    SOAP: https://api.tier3.com/SOAP/Group.asmx?op=ResetHardwareGroup
+    REST: https://api.ctl.io/REST/Group/ResetHardwareGroup/<format>
+    SOAP: https://api.ctl.io/SOAP/Group.asmx?op=ResetHardwareGroup
 
 ## Request
 

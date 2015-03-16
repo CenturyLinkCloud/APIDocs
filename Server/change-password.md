@@ -9,9 +9,9 @@ Updates the Admin/Root password for a Server.
 
 ### URL
 
-    REST: https://api.tier3.com/REST/Server/ChangePassword/<format>
+    REST: https://api.ctl.io/REST/Server/ChangePassword/<format>
     
-    SOAP: https://api.tier3.com/SOAP/Server.asmx?op=ChangePassword
+    SOAP: https://api.ctl.io/SOAP/Server.asmx?op=ChangePassword
 
 ## Request
 

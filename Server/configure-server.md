@@ -9,8 +9,8 @@ Configures the CPU, Memory, Group and additional storage for a Server.
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Server/ConfigureServer/<format>
-    SOAP: https://api.tier3.com/SOAP/Server.asmx?op=ConfigureServer
+    REST: https://api.ctl.io/REST/Server/ConfigureServer/<format>
+    SOAP: https://api.ctl.io/SOAP/Server.asmx?op=ConfigureServer
 
 ## Request
 

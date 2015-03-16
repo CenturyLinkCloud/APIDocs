@@ -9,8 +9,8 @@ Gets the account custom field definitions.
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Account/GetCustomFields/<format>
-    SOAP: https://api.tier3.com/SOAP/Account.asmx?op=GetCustomFields
+    REST: https://api.ctl.io/REST/Account/GetCustomFields/<format>
+    SOAP: https://api.ctl.io/SOAP/Account.asmx?op=GetCustomFields
 
 ## Request
 

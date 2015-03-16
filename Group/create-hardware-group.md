@@ -9,8 +9,8 @@ Creates a new Hardware Group.
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Group/CreateHardwareGroup/<format>
-    SOAP: https://api.tier3.com/SOAP/Group.asmx?op=CreateHardwareGroup
+    REST: https://api.ctl.io/REST/Group/CreateHardwareGroup/<format>
+    SOAP: https://api.ctl.io/SOAP/Group.asmx?op=CreateHardwareGroup
 
 ## Request
 

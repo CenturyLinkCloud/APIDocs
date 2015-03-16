@@ -9,8 +9,8 @@ Converts the server to a template.
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Server/ConvertServerToTemplate/<format>
-    SOAP: https://api.tier3.com/SOAP/Server.asmx?op=ConvertServerToTemplate 
+    REST: https://api.ctl.io/REST/Server/ConvertServerToTemplate/<format>
+    SOAP: https://api.ctl.io/SOAP/Server.asmx?op=ConvertServerToTemplate 
 
 ## Request
 

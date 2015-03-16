@@ -9,8 +9,8 @@ Gets the list of Archive Servers.
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Server/GetArchiveServers/<format>
-    SOAP: https://api.tier3.com/SOAP/Server.asmx?op=GetArchiveServers
+    REST: https://api.ctl.io/REST/Server/GetArchiveServers/<format>
+    SOAP: https://api.ctl.io/SOAP/Server.asmx?op=GetArchiveServers
 
 ## Request
 

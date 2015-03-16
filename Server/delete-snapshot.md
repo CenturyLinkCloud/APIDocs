@@ -9,8 +9,8 @@ Deletes a named snapshot for a specified server.
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Server/DeleteSnapshot/<format>
-    SOAP: https://api.tier3.com/SOAP/Server.asmx?op=DeleteSnapshot
+    REST: https://api.ctl.io/REST/Server/DeleteSnapshot/<format>
+    SOAP: https://api.ctl.io/SOAP/Server.asmx?op=DeleteSnapshot
 
 ## Request
 

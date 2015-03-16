@@ -9,8 +9,8 @@ Gets the list of Snapshots associated with the server.
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Server/GetSnapshots/<format>
-    SOAP: https://api.tier3.com/SOAP/Server.asmx?op=GetSnapshots
+    REST: https://api.ctl.io/REST/Server/GetSnapshots/<format>
+    SOAP: https://api.ctl.io/SOAP/Server.asmx?op=GetSnapshots
 
 ## Request
 

@@ -9,8 +9,8 @@ Restores an archived Hardware Group.
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Group/RestoreHardwareGroup/<format>
-    SOAP: https://api.tier3.com/SOAP/Group.asmx?op=RestoreHardwareGroup
+    REST: https://api.ctl.io/REST/Group/RestoreHardwareGroup/<format>
+    SOAP: https://api.ctl.io/SOAP/Group.asmx?op=RestoreHardwareGroup
 
 ## Request
 

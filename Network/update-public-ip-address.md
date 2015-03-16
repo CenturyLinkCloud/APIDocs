@@ -9,8 +9,8 @@ Configures firewall settings on a public IP Address.
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Network/UpdatePublicIPAddress/<format>
-    SOAP: https://api.tier3.com/SOAP/Network.asmx?op=UpdatePublicIPAddress
+    REST: https://api.ctl.io/REST/Network/UpdatePublicIPAddress/<format>
+    SOAP: https://api.ctl.io/SOAP/Network.asmx?op=UpdatePublicIPAddress
 
 ## Request
 

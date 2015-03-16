@@ -9,8 +9,8 @@ Enables or disables maintenance mode on a Server.
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Server/ServerMaintenance/<format>
-    SOAP: https://api.tier3.com/SOAP/Server.asmx?op=ServerMaintenance
+    REST: https://api.ctl.io/REST/Server/ServerMaintenance/<format>
+    SOAP: https://api.ctl.io/SOAP/Server.asmx?op=ServerMaintenance
 
 ## Request
 

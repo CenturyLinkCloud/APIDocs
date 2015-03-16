@@ -9,8 +9,8 @@ Creates a new Server.
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Server/CreateServer/<format>
-    SOAP: https://api.tier3.com/SOAP/Server.asmx?op=CreateServer
+    REST: https://api.ctl.io/REST/Server/CreateServer/<format>
+    SOAP: https://api.ctl.io/SOAP/Server.asmx?op=CreateServer
 
 ## Request
 

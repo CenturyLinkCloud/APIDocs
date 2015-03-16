@@ -9,7 +9,7 @@ This method can be used to get a list of Queued requests and their current statu
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Queue/ListQueueRequests/<format>
+    REST: https://api.ctl.io/REST/Queue/ListQueueRequests/<format>
 
 ## Request
 

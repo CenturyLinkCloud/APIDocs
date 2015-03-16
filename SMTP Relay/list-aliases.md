@@ -10,7 +10,7 @@ This method will s list of all SMTP Relay aliases for your account.
 
 ## URL
 
-    https://api.tier3.com/REST/SMTPRelay/ListAliases/<format>
+    https://api.ctl.io/REST/SMTPRelay/ListAliases/<format>
 
 ## Request
 

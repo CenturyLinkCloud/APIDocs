@@ -9,8 +9,8 @@ Gets a list of all Blueprints with the specified search criteria.
 
 ## URL
 
-    REST:https://api.tier3.com/REST/Blueprint/GetBlueprints/<format>
-    SOAP: https://api.tier3.com/SOAP/Blueprints.asmx?op=GetBlueprintsResponseMsg
+    REST:https://api.ctl.io/REST/Blueprint/GetBlueprints/<format>
+    SOAP: https://api.ctl.io/SOAP/Blueprints.asmx?op=GetBlueprintsResponseMsg
 
 ## Request
 

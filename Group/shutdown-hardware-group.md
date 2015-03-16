@@ -9,8 +9,8 @@ Shutdown the Hardware Group along with all child groups and servers.
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Group/ShutdownHardwareGroup/<format>
-    SOAP: https://api.tier3.com/SOAP/Group.asmx?op=ShutdownHardwareGroup
+    REST: https://api.ctl.io/REST/Group/ShutdownHardwareGroup/<format>
+    SOAP: https://api.ctl.io/SOAP/Group.asmx?op=ShutdownHardwareGroup
 
 ## Request
 

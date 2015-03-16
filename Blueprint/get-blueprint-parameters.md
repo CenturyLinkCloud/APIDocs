@@ -9,8 +9,8 @@ Gets a the full list of parameters that are required to deploy a Blueprint.
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Blueprint/GetBlueprintParameters/<format>
-    SOAP: https://api.tier3.com/SOAP/Blueprints.asmx?op=GetBlueprintParamatersResponseMsg
+    REST: https://api.ctl.io/REST/Blueprint/GetBlueprintParameters/<format>
+    SOAP: https://api.ctl.io/SOAP/Blueprints.asmx?op=GetBlueprintParamatersResponseMsg
 
 ## Request
 

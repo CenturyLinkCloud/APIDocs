@@ -9,8 +9,8 @@ Gets the details for a given invoice within an account. Calls to this operation 
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Billing/GetInvoiceDetails/<format> (format = XML | JSON)
-    SOAP: https://api.tier3.com/SOAP/Billing.asmx?op=GetInvoiceDetails
+    REST: https://api.ctl.io/REST/Billing/GetInvoiceDetails/<format> (format = XML | JSON)
+    SOAP: https://api.ctl.io/SOAP/Billing.asmx?op=GetInvoiceDetails
 
 ## Request
 

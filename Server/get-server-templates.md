@@ -9,8 +9,8 @@ Gets the list of Templates available to the account.
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Server/GetServerTemplates/<format>
-    SOAP: https://api.tier3.com/SOAP/Server.asmx?op=GetServerTemplates
+    REST: https://api.ctl.io/REST/Server/GetServerTemplates/<format>
+    SOAP: https://api.ctl.io/SOAP/Server.asmx?op=GetServerTemplates
 
 ## Request
 

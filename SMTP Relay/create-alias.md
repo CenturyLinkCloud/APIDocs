@@ -9,7 +9,7 @@ This method will create a new SMTP Relay alias.
 
 ## URL
 
-    REST: https://api.tier3.com/REST/SMTPRelay/CreateAlias/<format>
+    REST: https://api.ctl.io/REST/SMTPRelay/CreateAlias/<format>
 
 ## Request
 

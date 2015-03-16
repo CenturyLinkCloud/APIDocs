@@ -9,8 +9,8 @@ Gets details of the API user's account and any sub-accounts. Calls to this opera
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Account/GetAccounts/<format> (format = XML | JSON)
-    SOAP: https://api.tier3.com/SOAP/Account.asmx?op=AccountsResponseMsg
+    REST: https://api.ctl.io/REST/Account/GetAccounts/<format> (format = XML | JSON)
+    SOAP: https://api.ctl.io/SOAP/Account.asmx?op=AccountsResponseMsg
 
 ## Request
 

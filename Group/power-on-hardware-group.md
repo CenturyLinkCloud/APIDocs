@@ -9,8 +9,8 @@ Power on the Hardware Group along with all child groups and servers.
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Group/PowerOnHardwareGroup/<format>
-    SOAP: https://api.tier3.com/SOAP/Group.asmx?op=PowerOnHardwareGroup
+    REST: https://api.ctl.io/REST/Group/PowerOnHardwareGroup/<format>
+    SOAP: https://api.ctl.io/SOAP/Group.asmx?op=PowerOnHardwareGroup
 
 ## Request
 

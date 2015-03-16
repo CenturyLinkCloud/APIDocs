@@ -9,8 +9,8 @@ Restores an archived server.
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Server/RestoreServer/<format>
-    SOAP: https://api.tier3.com/SOAP/Server.asmx?op=RestoreServer
+    REST: https://api.ctl.io/REST/Server/RestoreServer/<format>
+    SOAP: https://api.ctl.io/SOAP/Server.asmx?op=RestoreServer
 
 ## Request
 

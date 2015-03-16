@@ -9,8 +9,8 @@ Delete a user associated with a given account. Calls to this operation must incl
 
 ## URL
 
-    REST: https://api.tier3.com/REST/User/DeleteUser/<format>
-    SOAP: https://api.tier3.com/SOAP/User.asmx?op=DeleteUser
+    REST: https://api.ctl.io/REST/User/DeleteUser/<format>
+    SOAP: https://api.ctl.io/SOAP/User.asmx?op=DeleteUser
 
 ## Request
 

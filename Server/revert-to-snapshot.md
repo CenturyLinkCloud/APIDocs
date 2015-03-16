@@ -9,8 +9,8 @@ Reverts to a named snapshot for a specified server.
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Server/RevertToSnapshot/<format>
-    SOAP: https://api.tier3.com/SOAP/Server.asmx?op=RevertToSnapshot
+    REST: https://api.ctl.io/REST/Server/RevertToSnapshot/<format>
+    SOAP: https://api.ctl.io/SOAP/Server.asmx?op=RevertToSnapshot
 
 ## Request
 

@@ -9,8 +9,8 @@ Takes a server snapshot.
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Server/SnapshotServer/<format>
-    SOAP: https://api.tier3.com/SOAP/Server.asmx?op=SnapshotServer
+    REST: https://api.ctl.io/REST/Server/SnapshotServer/<format>
+    SOAP: https://api.ctl.io/SOAP/Server.asmx?op=SnapshotServer
 
 ## Request
 

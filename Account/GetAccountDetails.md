@@ -9,8 +9,8 @@ Gets all of the contact information and settings for a given account. Calls to t
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Account/GetAccountDetails/<format> (format = XML | JSON)
-    SOAP: https://api.tier3.com/SOAP/Account.asmx?op=GetAccountDetails
+    REST: https://api.ctl.io/REST/Account/GetAccountDetails/<format> (format = XML | JSON)
+    SOAP: https://api.ctl.io/SOAP/Account.asmx?op=GetAccountDetails
 
 ## Request
 

@@ -9,7 +9,7 @@
 
 The Domain api provides methods for managing Domain Names.
 
-The URL to the SOAP version of the Domain Name API can be found at <code>https://api.tier3.com/SOAP/Domain.asmx</code>.
+The URL to the SOAP version of the Domain Name API can be found at <code>https://api.ctl.io/SOAP/Domain.asmx</code>.
 
 <ul>
   <li><a href="http://help.tier3.com/entries/20350106-list-domain-names">ListDomainNames</a>

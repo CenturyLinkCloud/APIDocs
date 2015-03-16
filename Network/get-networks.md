@@ -9,8 +9,8 @@ Gets the list of Networks mapped to the account in its Primary Data Center.
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Network/GetNetworks/<format>
-    SOAP: https://api.tier3.com/SOAP/Network.asmx?op=GetNetworks
+    REST: https://api.ctl.io/REST/Network/GetNetworks/<format>
+    SOAP: https://api.ctl.io/SOAP/Network.asmx?op=GetNetworks
 
 ## Request
 

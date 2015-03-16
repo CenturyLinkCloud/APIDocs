@@ -11,7 +11,7 @@ This method provides the ability to update the AutoRenew attribute of your Domai
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Domain/UpdateNameServers<format>
+    REST: https://api.ctl.io/REST/Domain/UpdateNameServers<format>
 
 ## Request
 

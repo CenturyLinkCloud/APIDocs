@@ -9,8 +9,8 @@ Gets all of users assigned to a given account. Calls to this operation must incl
 
 ## URL
 
-    REST: https://api.tier3.com/REST/User/GetUsers/<format>
-    SOAP: https://api.tier3.com/SOAP/User.asmx?op=GetUsers
+    REST: https://api.ctl.io/REST/User/GetUsers/<format>
+    SOAP: https://api.ctl.io/SOAP/User.asmx?op=GetUsers
 
 ## Request
 

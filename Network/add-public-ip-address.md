@@ -9,8 +9,8 @@ Maps a public IP Address to a Server.
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Network/AddPublicIPAddress/<format>
-    SOAP: https://api.tier3.com/SOAP/Network.asmx?op=AddPublicIPAddress
+    REST: https://api.ctl.io/REST/Network/AddPublicIPAddress/<format>
+    SOAP: https://api.ctl.io/SOAP/Network.asmx?op=AddPublicIPAddress
 
 ## Request
 

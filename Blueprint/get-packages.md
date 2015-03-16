@@ -9,8 +9,8 @@ Gets a list of Blueprint Packages.
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Blueprint/GetPackages/<format>
-    SOAP: https://api.tier3.com/SOAP/Blueprints.asmx?op=GetPackagesResponseMsg
+    REST: https://api.ctl.io/REST/Blueprint/GetPackages/<format>
+    SOAP: https://api.ctl.io/SOAP/Blueprints.asmx?op=GetPackagesResponseMsg
 
 ## Request
 

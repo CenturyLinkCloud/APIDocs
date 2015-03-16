@@ -9,8 +9,8 @@ Gets a deep list of all servers for a given account hierarchy within a given dat
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Server/GetAllServersForAccountHierarchy/<format>
-    SOAP: https://api.tier3.com/SOAP/Server.asmx?op=GetAllServersForAccountHierarchyMsg
+    REST: https://api.ctl.io/REST/Server/GetAllServersForAccountHierarchy/<format>
+    SOAP: https://api.ctl.io/SOAP/Server.asmx?op=GetAllServersForAccountHierarchyMsg
 
 ## Request
 

@@ -10,8 +10,8 @@ Enable a suspended account in the  system. Calls to this operation must include 
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Account/EnableAccount/<format> (format = XML | JSON)
-    SOAP: https://api.tier3.com/SOAP/Account.asmx?op=EnableAccount
+    REST: https://api.ctl.io/REST/Account/EnableAccount/<format> (format = XML | JSON)
+    SOAP: https://api.ctl.io/SOAP/Account.asmx?op=EnableAccount
 
 ## Request
 

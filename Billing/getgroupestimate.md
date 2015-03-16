@@ -11,8 +11,8 @@ Gets estimated costs for a group of servers. Calls to this operation must includ
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Billing/GetGroupEstimate/<format> (format = XML | JSON) 
-    SOAP: https://api.tier3.com/SOAP/Billing.asmx?op=GetGroupEstimate 
+    REST: https://api.ctl.io/REST/Billing/GetGroupEstimate/<format> (format = XML | JSON) 
+    SOAP: https://api.ctl.io/SOAP/Billing.asmx?op=GetGroupEstimate 
 
 ##Request
 

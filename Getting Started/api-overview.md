@@ -9,7 +9,7 @@
 
 Tier3 has developed an API exposing most of the same functionality as its Control system (https://control.tier3.com). The API supports REST based HTTP requests using either XML or JSON, as well as SOAP based web services.
 
-The calling conventions for the REST API is to send a POST request to the URL of the given method (e.g. <code>https://api.tier3.com/rest/VirtualServer/CreateServer/<strong>FORMAT</strong></code>, where&nbsp;<strong>FORMAT</strong>&nbsp;is either XML or JSON). In addition, the content type of the HTTP request must be set as well to either "text/xml" for XML requests, or "application/json; charset=utf-8" for JSON requests. The combination of the format node and the Content Type will determine how the request is interpreted as well as control what format the responses are returned.
+The calling conventions for the REST API is to send a POST request to the URL of the given method (e.g. <code>https://api.ctl.io/rest/VirtualServer/CreateServer/<strong>FORMAT</strong></code>, where&nbsp;<strong>FORMAT</strong>&nbsp;is either XML or JSON). In addition, the content type of the HTTP request must be set as well to either "text/xml" for XML requests, or "application/json; charset=utf-8" for JSON requests. The combination of the format node and the Content Type will determine how the request is interpreted as well as control what format the responses are returned.
 
 The SOAP based API supports the same features as the REST API, and while the request and response messages are essentially identical to those of the REST API, you will want to pull down the WSDL for each API to verify the details. URL's to each API's SOAP WSDL can be found on the individual API pages.
 

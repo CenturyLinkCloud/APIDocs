@@ -9,8 +9,8 @@ Pauses the Hardware Group along with all child groups and servers.
 
 ### URL
 
-    REST: https://api.tier3.com/REST/Group/PauseHardwareGroup/<format>
-    SOAP: https://api.tier3.com/SOAP/Group.asmx?op=PauseHardwareGroup
+    REST: https://api.ctl.io/REST/Group/PauseHardwareGroup/<format>
+    SOAP: https://api.ctl.io/SOAP/Group.asmx?op=PauseHardwareGroup
 
 ## Request
 

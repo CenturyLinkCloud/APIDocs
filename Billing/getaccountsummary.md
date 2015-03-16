@@ -9,8 +9,8 @@ Gets monthly and hourly charges and estimates for a given account or collection 
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Billing/GetAccountSummary/<format> (format = XML | JSON)
-    SOAP: https://api.tier3.com/SOAP/Billing.asmx?op=GetAccountSummary
+    REST: https://api.ctl.io/REST/Billing/GetAccountSummary/<format> (format = XML | JSON)
+    SOAP: https://api.ctl.io/SOAP/Billing.asmx?op=GetAccountSummary
 
 ## Request
 

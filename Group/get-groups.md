@@ -9,8 +9,8 @@ Gets a list of all groups with the specified search criteria.
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Group/GetGroups/<format>
-    SOAP: https://api.tier3.com/SOAP/Group.asmx?op=GetGroups
+    REST: https://api.ctl.io/REST/Group/GetGroups/<format>
+    SOAP: https://api.ctl.io/SOAP/Group.asmx?op=GetGroups
 
 ## Request
 

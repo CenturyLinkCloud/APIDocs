@@ -9,8 +9,8 @@ Enables or disables Maintenance Mode on a&nbsp;Hardware Group.
 
 ## URL
 
-    REST: https://api.tier3.com/REST/Group/HardwareGroupMaintenance/<format>
-    SOAP: https://api.tier3.com/SOAP/Group.asmx?op=HardwareGroupMaintenance
+    REST: https://api.ctl.io/REST/Group/HardwareGroupMaintenance/<format>
+    SOAP: https://api.ctl.io/SOAP/Group.asmx?op=HardwareGroupMaintenance
 
 ## Request
 
