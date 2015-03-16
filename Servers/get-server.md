@@ -16,11 +16,11 @@ Use this API operation when you want to find out all the details for a server. I
 
 ### Structure
 
-    GET https://api.tier3.com/v2/servers/{accountAlias}/{serverId}
+    GET https://api.ctl.io/v2/servers/{accountAlias}/{serverId}
 
 ### Example
 
-    GET https://api.tier3.com/v2/servers/ALIAS/WA1ACCTSERV0101
+    GET https://api.ctl.io/v2/servers/ALIAS/WA1ACCTSERV0101
 
 ## Request
 
@@ -263,9 +263,6 @@ Use this API operation when you want to find out all the details for a server. I
     </tr>
   </tbody>
 </table>
-
-
-
 
 ### AlertPolicies Self Link Definition
 
@@ -1062,13 +1059,13 @@ Use this API operation when you want to find out all the details for a server. I
         ],
         "customFields": [
           {
-            "id": 22,
+            "id": "22f002123e3b46d9a8b38ecd4c6df7f9",
             "name": "Cost Center",
             "value": "IT-DEV",
             "displayValue": "IT-DEV"
           },
           {
-            "id": 237,
+            "id": "58f83af6123846769ee6cb091ce3561e",
             "name": "CMDB ID",
             "value": "1100003",
             "displayValue": "1100003"

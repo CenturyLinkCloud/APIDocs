@@ -1,25 +1,25 @@
 {{{
-  "title": "Shut Down Server",
-  "date": "11-19-2014",
+  "title": "Archive Server",
+  "date": "02-27-2015",
   "author": "Bryan Friedman",
   "attachments": []
 }}}
 
-Sends the shut down operation to a list of servers and adds operation to queue. (See <a href="/knowledge-base/servers/descriptions-of-servergroup-power-commands/">Description of Server Group Power Commands</a> for details on how the shut down operation is used.) Calls to this operation must include a token acquired from the authentication endpoint. See the <a href="/api-docs/v2#authentication-login">Login API</a> for information on acquiring this token.
+Sends the archive operation to a list of servers and adds operation to queue. (See <a href="/knowledge-base/servers/understanding-vm-deployment-options-and-power-states/#archive">Understanding VM Deployment Options and Power States</a> for details on the archive operation.) Calls to this operation must include a token acquired from the authentication endpoint. See the <a href="/api-docs/v2#authentication-login">Login API</a> for information on acquiring this token.
 
 ### When to Use It
 
-Use this API operation when you want to shut down a single server or group of servers. It should be used in conjunction with the <a href="/api-docs/v2#queue-get-status">Get Status</a> operation to check the result of the shut down command.
+Use this API operation when you want to archive a single server or group of servers. It should be used in conjunction with the <a href="/api-docs/v2#queue-get-status">Get Status</a> operation to check the result of the archive command.
 
 ## URL
 
 ### Structure
 
-    POST https://api.ctl.io/v2/operations/{accountAlias}/servers/shutDown
+    POST https://api.ctl.io/v2/operations/{accountAlias}/servers/archive
 
 ### Example
 
-    POST https://api.ctl.io/v2/operations/ALIAS/servers/shutDown
+    POST https://api.ctl.io/v2/operations/ALIAS/servers/archive
 
 ## Request
 
@@ -45,7 +45,6 @@ Use this API operation when you want to shut down a single server or group of se
 </table>
 
 ### Content Properties
-
 <table>
   <thead>
     <tr>
@@ -59,7 +58,7 @@ Use this API operation when you want to shut down a single server or group of se
     <tr>
       <td>serverIds</td>
       <td>array</td>
-      <td>List of server IDs to perform shut down operation on.</td>
+      <td>List of server IDs to perform archive operation on.</td>
       <td>Yes</td>
     </tr>
   </tbody>

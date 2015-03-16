@@ -15,11 +15,11 @@ Use this API operation when you want to delete a specific anti-affinity policy w
 
 ### Structure
 
-    DELETE https://api.tier3.com/v2/antiAffinityPolicies/{accountAlias}/{policyId}
+    DELETE https://api.ctl.io/v2/antiAffinityPolicies/{accountAlias}/{policyId}
 
 ### Example
 
-    DELETE https://api.tier3.com/v2/antiAffinityPolicies/ALIAS/80a7bf90b199454b859399bff54f4173
+    DELETE https://api.ctl.io/v2/antiAffinityPolicies/ALIAS/80a7bf90b199454b859399bff54f4173
 
 ## Request
 

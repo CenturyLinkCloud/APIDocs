@@ -15,11 +15,11 @@ Use this API operation when you want to stop using a specific public IP address 
 
 ### Structure
 
-    DELETE https://api.tier3.com/v2/servers/{accountAlias}/{serverId}/publicIPAddresses/{publicIP}
+    DELETE https://api.ctl.io/v2/servers/{accountAlias}/{serverId}/publicIPAddresses/{publicIP}
 
 ### Example
 
-    DELETE https://api.tier3.com/v2/servers/ACCT/WA1ACCTSERV0101/publicIPAddresses/12.34.56.789
+    DELETE https://api.ctl.io/v2/servers/ACCT/WA1ACCTSERV0101/publicIPAddresses/12.34.56.789
 
 ## Request
 

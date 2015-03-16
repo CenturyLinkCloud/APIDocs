@@ -15,7 +15,7 @@ Use this API operation before you call any other API operation. It shows a user'
 
 ### Structure
 
-    POST https://api.tier3.com/v2/authentication/login
+    POST https://api.ctl.io/v2/authentication/login
 
 ## Request
 

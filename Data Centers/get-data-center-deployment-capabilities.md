@@ -15,11 +15,11 @@ Use this API operation when you want to discover the available capabilities of a
 
 ### Structure
 
-    GET https://api.tier3.com/v2/datacenters/{accountAlias}/{dataCenter}/deploymentCapabilities
+    GET https://api.ctl.io/v2/datacenters/{accountAlias}/{dataCenter}/deploymentCapabilities
 
 ### Example
 
-    GET https://api.tier3.com/v2/datacenters/ALIAS/UC1/deploymentCapabilities
+    GET https://api.ctl.io/v2/datacenters/ALIAS/UC1/deploymentCapabilities
 
 ## Request
 

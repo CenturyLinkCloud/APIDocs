@@ -15,11 +15,11 @@ Use this API operation when you want to discover the name of the root hardware g
 
 ### Structure
 
-    GET https://api.tier3.com/v2/datacenters/{accountAlias}/{dataCenter}?groupLinks=true|false
+    GET https://api.ctl.io/v2/datacenters/{accountAlias}/{dataCenter}?groupLinks=true|false
 
 ### Example
 
-    GET https://api.tier3.com/v2/datacenters/ALIAS/UC1?groupLinks=true
+    GET https://api.ctl.io/v2/datacenters/ALIAS/UC1?groupLinks=true
 
 ## Request
 

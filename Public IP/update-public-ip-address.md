@@ -15,11 +15,11 @@ Use this API operation when you want to update the ports and protocols or source
 
 ### Structure
 
-    PUT https://api.tier3.com/v2/servers/{accountAlias}/{serverId}/publicIPAddresses/{publicIP}
+    PUT https://api.ctl.io/v2/servers/{accountAlias}/{serverId}/publicIPAddresses/{publicIP}
 
 ### Example
 
-    PUT https://api.tier3.com/v2/servers/ACCT/WA1ACCTSERV0101/publicIPAddresses/12.34.56.789
+    PUT https://api.ctl.io/v2/servers/ACCT/WA1ACCTSERV0101/publicIPAddresses/12.34.56.789
 
 ## Request
 

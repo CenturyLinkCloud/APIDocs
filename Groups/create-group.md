@@ -1,25 +1,25 @@
 {{{
-  "title": "Get Group",
-  "date": "10-15-2014",
-  "author": "Richard Seroter",
+  "title": "Create Group",
+  "date": "02-27-2015",
+  "author": "Bryan Friedman",
   "attachments": []
 }}}
 
-Gets the details for a individual server group and any sub-groups and servers that it contains. Calls to this operation must include a token acquired from the authentication endpoint. See the <a href="/api-docs/v2#authentication-login">Login API</a> for information on acquiring this token.
+Creates a new group. Calls to this operation must include a token acquired from the authentication endpoint. See the <a href="/api-docs/v2#authentication-login">Login API</a> for information on acquiring this token.
 
 ### When to Use It
 
-Use this API operation when you want to identify the servers in a particular group, retrieve a group hierarchy, or get links to information (e.g. billing, monitoring, scheduled activities) about a group.
+Use this API operation when you want to create a new group.
 
 ## URL
 
 ### Structure
 
-    GET https://api.ctl.io/v2/groups/{accountAlias}/{groupId}
+    POST https://api.ctl.io/v2/groups/{accountAlias}
 
 ### Example
 
-    GET https://api.ctl.io/v2/groups/ALIAS/wa1-0001
+    POST https://api.ctl.io/v2/groups/ALIAS/
 
 ## Request
 
@@ -38,17 +38,90 @@ Use this API operation when you want to identify the servers in a particular gro
     <tr>
       <td>AccountAlias</td>
       <td>string</td>
-      <td>Short code for a particular account.</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>GroupID</td>
-      <td>string</td>
-      <td>ID of the group being queried. Retrieved from query to parent group, or by looking at the URL on the new UI pages in the Control Portal.</td>
+      <td>Short code for a particular account</td>
       <td>Yes</td>
     </tr>
   </tbody>
 </table>
+
+### Content Properties
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Req.</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>name</td>
+      <td>string</td>
+      <td>Name of the group to create.</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>description</td>
+      <td>string</td>
+      <td>User-defined description of this group</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>parentGroupId</td>
+      <td>string</td>
+      <td>ID of the parent group. Retrieved from query to parent group, or by looking at the URL on the UI pages in the Control Portal.</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>customFields</td>
+      <td>complex</td>
+      <td>Collection of custom field ID-value pairs to set for the server.</td>
+      <td>No</td>
+    </tr>
+  </tbody>
+</table>
+
+### CustomFields Definition
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>id</td>
+      <td>string</td>
+      <td>ID of the custom field to set. Available custom field IDs can be retrieved from the <strong>Get Custom Fields</strong> API operation.</td>
+    </tr>
+    <tr>
+      <td>value</td>
+      <td>string</td>
+      <td>Value to set the custom field to for this server.</td>
+    </tr>
+  </tbody>
+</table>
+
+### Examples
+
+#### JSON
+
+    {
+      "name": "New Group",
+      "description": "A new group.",
+      "parentGroupId": "wa1-1002",
+      "customFields": [
+        {
+          "id": "58f83af6123846769ee6cb091ce3561e",
+          "value": "1100003"
+        }
+      ]
+    }
 
 ## Response
 
@@ -534,18 +607,17 @@ Use this API operation when you want to identify the servers in a particular gro
 #### JSON
 
     {
-      "id": "wa1-0001",
-      "name": "Web Applications",
-      "description": "public facing web apps",
+      "id": "wa1-1006",
+      "name": "New Group",
+      "description": "A new group.",
       "locationId": "WA1",
       "type": "default",
       "status": "active",
-      "serversCount": 2,
       "groups": [
         {
-          "id": "wa1-0002",
-          "name": "Training Environment",
-          "description": "Temporary servers",
+          "id": "wa1-1002",
+          "name": "Parent Group Name",
+          "description": "The parent group.",
           "locationId": "WA1",
           "type": "default",
           "status": "active",
@@ -649,16 +721,6 @@ Use this API operation when you want to identify the servers in a particular gro
         {
           "rel": "scheduledActivities",
           "href": "/v2/groups/acct/wa1-0001/scheduledActivities"
-        },
-        {
-          "rel": "server",
-          "href": "/v2/servers/acct/wa1acctpre7101",
-          "id": "WA1ACCTPRE7101"
-        },
-        {
-          "rel": "server",
-          "href": "/v2/servers/btdi/wa1acctpre7202",
-          "id": "WA1ACCTPRE7202"
         }
       ],
       "changeInfo": {
