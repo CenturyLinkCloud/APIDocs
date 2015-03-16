@@ -1,7 +1,7 @@
 CenturyLink Cloud API Documentation
 ========
 
-  ### Links (API doc to API doc)
+### Links (API doc to API doc)
 
   Links to articles in the **same** API category should follow this format:
 
