@@ -77,7 +77,7 @@ Use this API operation when you want to restore a server that has been archived.
 #### JSON
 
     {
-      "targetGroupId": "wa1-1003"
+      "targetGroupId": "2a5c0b9662cf4fc8bf6180f139facdc0"
     }
 
 ## Response

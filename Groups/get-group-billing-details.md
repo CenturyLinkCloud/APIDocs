@@ -19,7 +19,7 @@ Use this API operation when you want to find out the charges associated with a s
 
 ### Example
 
-    GET https://api.ctl.io/v2/groups/ALIAS/wa1-5030/billing
+    GET https://api.ctl.io/v2/groups/ALIAS/2a5c0b9662cf4fc8bf6180f139facdc0/billing
 
 ## Request
 
@@ -145,10 +145,11 @@ Use this API operation when you want to find out the charges associated with a s
 
 #### JSON
 
+
     {
       "date": "2014-04-07T21:33:51.9743015Z",
       "groups": {
-        "wa1-0003": {
+        "8c95fbaf74b7497fb671235aa318b44c": {
           "name": "Web Applications",
           "servers": {
             "wa1acctserv7101": {
@@ -167,7 +168,7 @@ Use this API operation when you want to find out the charges associated with a s
             }
           }
         },
-        "wa1-0004": {
+        "4bca7bf6ead14cd59053e1eb1cd2d01f": {
           "name": "Training Environment",
           "servers": {}
         }

@@ -965,7 +965,7 @@ Use this API operation when you want to find out all the details for a server. I
       "id": "WA1ALIASWB01",
       "name": "WA1ALIASWB01",
       "description": "My web server",
-      "groupId": "wa1-1002",
+      "groupId": "2a5c0b9662cf4fc8bf6180f139facdc0",
       "isTemplate": false,
       "locationId": "WA1",
       "osType": "Windows 2008 64-bit",
@@ -1093,8 +1093,8 @@ Use this API operation when you want to find out all the details for a server. I
         },
         {
           "rel": "group",
-          "href": "/v2/groups/alias/wa1-1002",
-          "id": "wa1-3728"
+          "href": "/v2/groups/alias/2a5c0b9662cf4fc8bf6180f139facdc0",
+          "id": "2a5c0b9662cf4fc8bf6180f139facdc0"
         },
         {
           "rel": "account",

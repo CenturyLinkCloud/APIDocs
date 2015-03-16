@@ -95,7 +95,7 @@
     "id": "WA1DEMOSERVER01",
     "name": "WA1DEMOSERVER01",
     "description": "My web server",
-    "groupId": "wa1-0000",
+    "groupId": "2a5c0b9662cf4fc8bf6180f139facdc0",
     "isTemplate": false,
     "locationId": "WA1",
     "osType": "Windows 2008 64-bit",
@@ -214,8 +214,8 @@
         },
         {
             "rel": "group",
-            "href": "/v2/groups/DEMO/wa1-0000",
-            "id": "wa1-3728"
+            "href": "/v2/groups/DEMO/2a5c0b9662cf4fc8bf6180f139facdc0",
+            "id": "2a5c0b9662cf4fc8bf6180f139facdc0"
         },
         {
             "rel": "account",

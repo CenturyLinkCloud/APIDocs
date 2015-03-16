@@ -19,7 +19,7 @@ Use this API operation when you want to delete a group and all objects underneat
 
 ### Example
 
-    DELETE https://api.ctl.io/v2/servers/ALIAS/wa1-0001
+    DELETE https://api.ctl.io/v2/servers/ALIAS/2a5c0b9662cf4fc8bf6180f139facdc0
 
 ## Request
 

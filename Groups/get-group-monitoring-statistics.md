@@ -19,7 +19,7 @@ Use this API operation when you want to track the resource usage of servers with
 
 ### Example
 
-    GET https://api.ctl.io/v2/groups/ALIAS/wa1-5003/statistics?start=2014-04-05&sampleInterval=01:00:00
+    GET https://api.ctl.io/v2/groups/ALIAS/2a5c0b9662cf4fc8bf6180f139facdc0/statistics?start=2014-04-05&sampleInterval=01:00:00
 
 ## Request
 

@@ -114,7 +114,7 @@ Use this API operation when you want to create a new group.
     {
       "name": "New Group",
       "description": "A new group.",
-      "parentGroupId": "wa1-1002",
+      "parentGroupId": "2a5c0b9662cf4fc8bf6180f139facdc0",
       "customFields": [
         {
           "id": "58f83af6123846769ee6cb091ce3561e",
@@ -607,7 +607,7 @@ Use this API operation when you want to create a new group.
 #### JSON
 
     {
-      "id": "wa1-1006",
+      "id": "56b789a2a72f43a98ae2227061e8f8f8",
       "name": "New Group",
       "description": "A new group.",
       "locationId": "WA1",
@@ -615,7 +615,7 @@ Use this API operation when you want to create a new group.
       "status": "active",
       "groups": [
         {
-          "id": "wa1-1002",
+          "id": "2a5c0b9662cf4fc8bf6180f139facdc0",
           "name": "Parent Group Name",
           "description": "The parent group.",
           "locationId": "WA1",
@@ -640,7 +640,7 @@ Use this API operation when you want to create a new group.
             },
             {
               "rel": "self",
-              "href": "/v2/groups/acct/wa1-0002",
+              "href": "/v2/groups/acct/2a5c0b9662cf4fc8bf6180f139facdc0",
               "verbs":[
                 "GET",
                 "PATCH",
@@ -649,12 +649,12 @@ Use this API operation when you want to create a new group.
             },
             {
               "rel": "parentGroup",
-              "href": "/v2/groups/acct/wa1-0002",
-              "id": "wa1-0002"
+              "href": "/v2/groups/acct/2a5c0b9662cf4fc8bf6180f139facdc0",
+              "id": "2a5c0b9662cf4fc8bf6180f139facdc0"
             },
             {
               "rel": "defaults",
-              "href": "/v2/groups/acct/wa1-0002/defaults",
+              "href": "/v2/groups/acct/2a5c0b9662cf4fc8bf6180f139facdc0/defaults",
               "verbs":[
                 "GET",
                 "POST"
@@ -662,23 +662,23 @@ Use this API operation when you want to create a new group.
             },  
             {
               "rel": "billing",
-              "href": "/v2/groups/acct/wa1-0002/billing"
+              "href": "/v2/groups/acct/2a5c0b9662cf4fc8bf6180f139facdc0/billing"
             },
             {
               "rel": "archiveGroupAction",
-              "href": "/v2/groups/acct/wa1-0002/archive"
+              "href": "/v2/groups/acct/2a5c0b9662cf4fc8bf6180f139facdc0/archive"
             },
             {
               "rel": "statistics",
-              "href": "/v2/groups/acct/wa1-0002/statistics"
+              "href": "/v2/groups/acct/2a5c0b9662cf4fc8bf6180f139facdc0/statistics"
             },
             {
               "rel":"upcomingScheduledActivities",
-              "href":"/v2/groups/acct/8a03fcae8dd65411b05f00505682315a/upcomingScheduledActivities"
+              "href":"/v2/groups/acct/2a5c0b9662cf4fc8bf6180f139facdc0/upcomingScheduledActivities"
             },
             {
               "rel":"horizontalAutoscalePolicyMapping",
-              "href":"/v2/groups/acct/wa1-0002/horizontalAutoscalePolicy",
+              "href":"/v2/groups/acct/2a5c0b9662cf4fc8bf6180f139facdc0/horizontalAutoscalePolicy",
               "verbs":[
                 "GET",
                 "PUT",
@@ -687,7 +687,7 @@ Use this API operation when you want to create a new group.
             },
             {
               "rel": "scheduledActivities",
-              "href": "/v2/groups/acct/8a03fcae8dd65411b05f00505682315a/scheduledActivities"
+              "href": "/v2/groups/acct/2a5c0b9662cf4fc8bf6180f139facdc0/scheduledActivities"
               "verbs":[
                 "GET",
                 "POST"
@@ -699,28 +699,28 @@ Use this API operation when you want to create a new group.
       "links":[
         {
           "rel": "self",
-          "href": "/v2/groups/acct/wa1-0001"
+          "href": "/v2/groups/acct/56b789a2a72f43a98ae2227061e8f8f8"
         },
         {
           "rel": "parentGroup",
-          "href": "/v2/groups/acct/wa1-0000",
-          "id": "wa1-0000"
+          "href": "/v2/groups/acct/2a5c0b9662cf4fc8bf6180f139facdc0",
+          "id": "2a5c0b9662cf4fc8bf6180f139facdc0"
         },
         {
           "rel": "billing",
-          "href": "/v2/groups/acct/wa1-0001/billing"
+          "href": "/v2/groups/acct/56b789a2a72f43a98ae2227061e8f8f8/billing"
         },
         {
           "rel": "archiveGroupAction",
-          "href": "/v2/groups/acct/wa1-0001/archive"
+          "href": "/v2/groups/acct/56b789a2a72f43a98ae2227061e8f8f8/archive"
         },
         {
           "rel": "statistics",
-          "href": "/v2/groups/acct/wa1-0001/statistics"
+          "href": "/v2/groups/acct/56b789a2a72f43a98ae2227061e8f8f8/statistics"
         },
         {
           "rel": "scheduledActivities",
-          "href": "/v2/groups/acct/wa1-0001/scheduledActivities"
+          "href": "/v2/groups/acct/56b789a2a72f43a98ae2227061e8f8f8/scheduledActivities"
         }
       ],
       "changeInfo": {

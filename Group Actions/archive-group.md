@@ -20,7 +20,7 @@ Use this API operation when you want to archive an entire group and its groups a
 
 ### Example
 
-    POST https://api.ctl.io/v2/groups/ALIAS/wa1-0001/archive
+    POST https://api.ctl.io/v2/groups/ALIAS/2a5c0b9662cf4fc8bf6180f139facdc0/archive
 
 ## Request
 

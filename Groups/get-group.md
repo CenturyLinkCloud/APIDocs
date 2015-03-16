@@ -19,7 +19,7 @@ Use this API operation when you want to identify the servers in a particular gro
 
 ### Example
 
-    GET https://api.ctl.io/v2/groups/ALIAS/wa1-0001
+    GET https://api.ctl.io/v2/groups/ALIAS/2a5c0b9662cf4fc8bf6180f139facdc0
 
 ## Request
 
@@ -534,7 +534,7 @@ Use this API operation when you want to identify the servers in a particular gro
 #### JSON
 
     {
-      "id": "wa1-0001",
+      "id": "2a5c0b9662cf4fc8bf6180f139facdc0",
       "name": "Web Applications",
       "description": "public facing web apps",
       "locationId": "WA1",
@@ -543,7 +543,7 @@ Use this API operation when you want to identify the servers in a particular gro
       "serversCount": 2,
       "groups": [
         {
-          "id": "wa1-0002",
+          "id": "31d13f501459411ba59304f3d47486eb",
           "name": "Training Environment",
           "description": "Temporary servers",
           "locationId": "WA1",
@@ -568,7 +568,7 @@ Use this API operation when you want to identify the servers in a particular gro
             },
             {
               "rel": "self",
-              "href": "/v2/groups/acct/wa1-0002",
+              "href": "/v2/groups/acct/31d13f501459411ba59304f3d47486eb",
               "verbs":[
                 "GET",
                 "PATCH",
@@ -577,12 +577,12 @@ Use this API operation when you want to identify the servers in a particular gro
             },
             {
               "rel": "parentGroup",
-              "href": "/v2/groups/acct/wa1-0002",
-              "id": "wa1-0002"
+              "href": "/v2/groups/acct/231c3f3fec0e46499290b351199d555f",
+              "id": "231c3f3fec0e46499290b351199d555f"
             },
             {
               "rel": "defaults",
-              "href": "/v2/groups/acct/wa1-0002/defaults",
+              "href": "/v2/groups/acct/31d13f501459411ba59304f3d47486eb/defaults",
               "verbs":[
                 "GET",
                 "POST"
@@ -590,15 +590,15 @@ Use this API operation when you want to identify the servers in a particular gro
             },  
             {
               "rel": "billing",
-              "href": "/v2/groups/acct/wa1-0002/billing"
+              "href": "/v2/groups/acct/31d13f501459411ba59304f3d47486eb/billing"
             },
             {
               "rel": "archiveGroupAction",
-              "href": "/v2/groups/acct/wa1-0002/archive"
+              "href": "/v2/groups/acct/31d13f501459411ba59304f3d47486eb/archive"
             },
             {
               "rel": "statistics",
-              "href": "/v2/groups/acct/wa1-0002/statistics"
+              "href": "/v2/groups/acct/31d13f501459411ba59304f3d47486eb/statistics"
             },
             {
               "rel":"upcomingScheduledActivities",
@@ -606,7 +606,7 @@ Use this API operation when you want to identify the servers in a particular gro
             },
             {
               "rel":"horizontalAutoscalePolicyMapping",
-              "href":"/v2/groups/acct/wa1-0002/horizontalAutoscalePolicy",
+              "href":"/v2/groups/acct/31d13f501459411ba59304f3d47486eb/horizontalAutoscalePolicy",
               "verbs":[
                 "GET",
                 "PUT",
@@ -615,7 +615,7 @@ Use this API operation when you want to identify the servers in a particular gro
             },
             {
               "rel": "scheduledActivities",
-              "href": "/v2/groups/acct/8a03fcae8dd65411b05f00505682315a/scheduledActivities"
+              "href": "/v2/groups/acct/31d13f501459411ba59304f3d47486eb/scheduledActivities"
               "verbs":[
                 "GET",
                 "POST"
@@ -627,28 +627,28 @@ Use this API operation when you want to identify the servers in a particular gro
       "links":[
         {
           "rel": "self",
-          "href": "/v2/groups/acct/wa1-0001"
+          "href": "/v2/groups/acct/2a5c0b9662cf4fc8bf6180f139facdc0"
         },
         {
           "rel": "parentGroup",
-          "href": "/v2/groups/acct/wa1-0000",
-          "id": "wa1-0000"
+          "href": "/v2/groups/acct/540494152d0c4a9ab61869562b4c1471",
+          "id": "540494152d0c4a9ab61869562b4c1471"
         },
         {
           "rel": "billing",
-          "href": "/v2/groups/acct/wa1-0001/billing"
+          "href": "/v2/groups/acct/2a5c0b9662cf4fc8bf6180f139facdc0/billing"
         },
         {
           "rel": "archiveGroupAction",
-          "href": "/v2/groups/acct/wa1-0001/archive"
+          "href": "/v2/groups/acct/2a5c0b9662cf4fc8bf6180f139facdc0/archive"
         },
         {
           "rel": "statistics",
-          "href": "/v2/groups/acct/wa1-0001/statistics"
+          "href": "/v2/groups/acct/2a5c0b9662cf4fc8bf6180f139facdc0/statistics"
         },
         {
           "rel": "scheduledActivities",
-          "href": "/v2/groups/acct/wa1-0001/scheduledActivities"
+          "href": "/v2/groups/acct/2a5c0b9662cf4fc8bf6180f139facdc0/scheduledActivities"
         },
         {
           "rel": "server",

@@ -116,7 +116,7 @@ Use this API operation when you want to change the description or the parent gro
        {
           "op":"set",
           "member":"groupId",
-          "value":"wa1-1002"
+          "value":"2a5c0b9662cf4fc8bf6180f139facdc0"
        }
     ]
 

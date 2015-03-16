@@ -166,9 +166,10 @@ Use this API operation when you want to discover the name of the root hardware g
           "href": "/v2/datacenters/ALIAS/DC1"
         },
         {
-          "rel": "group",
-          "href": "/v2/groups/ALIAS/GROUP123",
-          "id": "GROUP123"
+          "rel":"group",
+          "href":"/v2/groups/ALIAS/54faef9c2bfd41d6b30f787567f9b0d4",
+          "id":"54faef9c2bfd41d6b30f787567f9b0d4",
+          "name":"DC1 Hardware"
         }
       ]
     }

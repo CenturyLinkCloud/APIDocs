@@ -20,7 +20,7 @@ Use this API operation when you want to restore an archived group and its groups
 
 ### Example
 
-    POST https://api.ctl.io/v2/groups/ALIAS/wa1-0001/restore
+    POST https://api.ctl.io/v2/groups/ALIAS/2a5c0b9662cf4fc8bf6180f139facdc0/restore
 
 ## Request
 
@@ -172,7 +172,7 @@ Use this API operation when you want to restore an archived group and its groups
       "links":[
         {
           "rel":"self",
-          "href":"/v2/groups/bryf/wa1-0001?AccountAlias=ALIAS&identifier=wa1-0001"
+          "href":"/v2/groups/bryf/2a5c0b9662cf4fc8bf6180f139facdc0?AccountAlias=ALIAS&identifier=2a5c0b9662cf4fc8bf6180f139facdc0"
         },
         {
           "rel":"status",

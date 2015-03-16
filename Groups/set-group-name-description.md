@@ -19,7 +19,7 @@ Use this API operation when you want to change the name or description of a give
 
 ### Example
 
-    PATCH https://api.ctl.io/v2/groups/ACCT/wa1-5030
+    PATCH https://api.ctl.io/v2/groups/ACCT/2a5c0b9662cf4fc8bf6180f139facdc0
 
 ## Request
 

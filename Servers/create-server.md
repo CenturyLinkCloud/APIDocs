@@ -272,7 +272,7 @@ Use this API operation when you want to create a new server from a standard or c
     {
       "name": "web",
       "description": "My web server",
-      "groupId": "wa1-1002",
+      "groupId": "2a5c0b9662cf4fc8bf6180f139facdc0",
       "sourceServerId": "RHEL-6-64-TEMPLATE",
       "isManagedOS": false,
       "primaryDns": "172.17.1.26",
