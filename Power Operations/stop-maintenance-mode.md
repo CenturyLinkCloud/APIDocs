@@ -15,11 +15,11 @@ Use this API operation when you want to explicitly stop maintenance mode on mult
 
 ### Structure
 
-    POST https://api.tier3.com/v2/operations/{accountAlias}/servers/stopMaintenance
+    POST https://api.ctl.io/v2/operations/{accountAlias}/servers/stopMaintenance
 
 ### Example
 
-    POST https://api.tier3.com/v2/operations/ALIAS/servers/stopMaintenance
+    POST https://api.ctl.io/v2/operations/ALIAS/servers/stopMaintenance
 
 ##Request
 

@@ -15,11 +15,11 @@ Use this API operation when you want to reset a single server or group of server
 
 ### Structure
 
-    POST https://api.tier3.com/v2/operations/{accountAlias}/servers/reset
+    POST https://api.ctl.io/v2/operations/{accountAlias}/servers/reset
 
 ### Example
 
-    POST https://api.tier3.com/v2/operations/ALIAS/servers/reset
+    POST https://api.ctl.io/v2/operations/ALIAS/servers/reset
 
 ## Request
 

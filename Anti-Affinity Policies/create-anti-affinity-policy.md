@@ -15,11 +15,11 @@ Use this API operation when you want to create a new anti-affinity policy within
 
 ### Structure
 
-    POST https://api.tier3.com/v2/antiAffinityPolicies/{accountAlias}
+    POST https://api.ctl.io/v2/antiAffinityPolicies/{accountAlias}
 
 ### Example
 
-    POST https://api.tier3.com/v2/antiAffinityPolicies/ALIAS
+    POST https://api.ctl.io/v2/antiAffinityPolicies/ALIAS
 
 ## Request
 

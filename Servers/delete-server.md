@@ -15,11 +15,11 @@ Use this API operation when you want to delete a server that is no longer being 
 
 ### Structure
 
-    DELETE https://api.tier3.com/v2/servers/{accountAlias}/{serverId}
+    DELETE https://api.ctl.io/v2/servers/{accountAlias}/{serverId}
 
 ### Example
 
-    DELETE https://api.tier3.com/v2/servers/ACCT/WA1ACCTWB01
+    DELETE https://api.ctl.io/v2/servers/ACCT/WA1ACCTWB01
 
 ## Request
 

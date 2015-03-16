@@ -15,11 +15,11 @@ Use this API operation when you want to change the custom field values for a giv
 
 ### Structure
 
-    PATCH https://api.tier3.com/v2/groups/{accountAlias}/{groupId}
+    PATCH https://api.ctl.io/v2/groups/{accountAlias}/{groupId}
 
 ### Example
 
-    PATCH https://api.tier3.com/v2/groups/ACCT/wa1-5030
+    PATCH https://api.ctl.io/v2/groups/ACCT/wa1-5030
 
 ## Request
 

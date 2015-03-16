@@ -43,7 +43,7 @@ Below is a brief demonstration of using the .NET framework to retrieve a valid t
 
     ```
     HttpResponseMessage message = 
-        await authClient.PostAsync("https://api.tier3.com/v2/authentication/login", content);
+        await authClient.PostAsync("https://api.ctl.io/v2/authentication/login", content);
     ```
 
 6. Load the response into a string for parsing.
@@ -81,7 +81,7 @@ The following .NET code demonstrates how a user can make a secure API request to
     // Add bearer token to the header
     authClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", "[LONG TOKEN VALUE]");
 
-    HttpResponseMessage message = await authClient.GetAsync("https://api.tier3.com/v2/datacenters/DEMO/CA1");
+    HttpResponseMessage message = await authClient.GetAsync("https://api.ctl.io/v2/datacenters/DEMO/CA1");
     
     string responseString = await message.Content.ReadAsStringAsync();
 

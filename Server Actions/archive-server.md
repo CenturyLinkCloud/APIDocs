@@ -15,11 +15,11 @@ Use this API operation when you want to archive a single server or group of serv
 
 ### Structure
 
-    POST https://api.tier3.com/v2/operations/{accountAlias}/servers/archive
+    POST https://api.ctl.io/v2/operations/{accountAlias}/servers/archive
 
 ### Example
 
-    POST https://api.tier3.com/v2/operations/ALIAS/servers/archive
+    POST https://api.ctl.io/v2/operations/ALIAS/servers/archive
 
 ## Request
 

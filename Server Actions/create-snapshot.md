@@ -15,11 +15,11 @@ Use this API operation when you want to create a snapshot of a single server or 
 
 ### Structure
 
-    POST https://api.tier3.com/v2/operations/{accountAlias}/servers/createSnapshot
+    POST https://api.ctl.io/v2/operations/{accountAlias}/servers/createSnapshot
 
 ### Example
 
-    POST https://api.tier3.com/v2/operations/ALIAS/servers/createSnapshot
+    POST https://api.ctl.io/v2/operations/ALIAS/servers/createSnapshot
 
 ## Request
 

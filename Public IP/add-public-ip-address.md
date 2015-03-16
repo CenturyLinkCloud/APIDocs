@@ -15,11 +15,11 @@ Use this API operation when you want to add a public IP address to an existing s
 
 ### Structure
 
-    POST https://api.tier3.com/v2/servers/{accountAlias}/{serverId}/publicIPAddresses
+    POST https://api.ctl.io/v2/servers/{accountAlias}/{serverId}/publicIPAddresses
 
 ### Example
 
-    POST https://api.tier3.com/v2/servers/ACCT/WA1ACCTSERV0101/publicIPAddresses
+    POST https://api.ctl.io/v2/servers/ACCT/WA1ACCTSERV0101/publicIPAddresses
 
 ## Request
 

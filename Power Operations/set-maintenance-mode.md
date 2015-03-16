@@ -15,11 +15,11 @@ Use this API operation when you want to explicitly turn on or off maintenance mo
 
 ### Structure
 
-    POST https://api.tier3.com/v2/operations/{accountAlias}/servers/setMaintenance
+    POST https://api.ctl.io/v2/operations/{accountAlias}/servers/setMaintenance
 
 ### Example
 
-    POST https://api.tier3.com/v2/operations/ALIAS/servers/setMaintenance
+    POST https://api.ctl.io/v2/operations/ALIAS/servers/setMaintenance
 
 ## Request
 

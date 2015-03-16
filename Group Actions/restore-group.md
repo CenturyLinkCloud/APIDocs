@@ -16,11 +16,11 @@ Use this API operation when you want to restore an archived group and its groups
 
 ### Structure
 
-    POST https://api.tier3.com/v2/groups/{accountAlias}/{groupId}/restore
+    POST https://api.ctl.io/v2/groups/{accountAlias}/{groupId}/restore
 
 ### Example
 
-    POST https://api.tier3.com/v2/groups/ALIAS/wa1-0001/restore
+    POST https://api.ctl.io/v2/groups/ALIAS/wa1-0001/restore
 
 ## Request
 

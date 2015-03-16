@@ -15,11 +15,11 @@ Use this API operation to find out the details of what custom fields are defined
 
 ### Structure
 
-    GET https://api.tier3.com/v2/accounts/{accountAlias}/customFields
+    GET https://api.ctl.io/v2/accounts/{accountAlias}/customFields
 
 ### Example
 
-    GET https://api.tier3.com/v2/accounts/ACCT/customFields
+    GET https://api.ctl.io/v2/accounts/ACCT/customFields
 
 ## Request
 

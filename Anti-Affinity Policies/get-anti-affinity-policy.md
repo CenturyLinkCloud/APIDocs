@@ -15,11 +15,11 @@ Use this API operation when you want to get the details of a specific anti-affin
 
 ### Structure
 
-    GET https://api.tier3.com/v2/antiAffinityPolicies/{accountAlias}/{policyId}
+    GET https://api.ctl.io/v2/antiAffinityPolicies/{accountAlias}/{policyId}
 
 ### Example
 
-    GET https://api.tier3.com/v2/antiAffinityPolicies/ALIAS/80a7bf90b199454b859399bff54f4173
+    GET https://api.ctl.io/v2/antiAffinityPolicies/ALIAS/80a7bf90b199454b859399bff54f4173
 
 ## Request
 

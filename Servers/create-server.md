@@ -16,11 +16,11 @@ Use this API operation when you want to create a new server from a standard or c
 
 ### Structure
 
-    POST https://api.tier3.com/v2/servers/{accountAlias}
+    POST https://api.ctl.io/v2/servers/{accountAlias}
 
 ### Example
 
-    POST https://api.tier3.com/v2/servers/ALIAS/
+    POST https://api.ctl.io/v2/servers/ALIAS/
 
 ## Request
 

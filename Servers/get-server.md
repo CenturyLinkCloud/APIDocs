@@ -16,11 +16,11 @@ Use this API operation when you want to find out all the details for a server. I
 
 ### Structure
 
-    GET https://api.tier3.com/v2/servers/{accountAlias}/{serverId}
+    GET https://api.ctl.io/v2/servers/{accountAlias}/{serverId}
 
 ### Example
 
-    GET https://api.tier3.com/v2/servers/ALIAS/WA1ACCTSERV0101
+    GET https://api.ctl.io/v2/servers/ALIAS/WA1ACCTSERV0101
 
 ## Request
 

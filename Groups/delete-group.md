@@ -15,11 +15,11 @@ Use this API operation when you want to delete a group and all objects underneat
 
 ### Structure
 
-    DELETE https://api.tier3.com/v2/groups/{accountAlias}/{groupId}
+    DELETE https://api.ctl.io/v2/groups/{accountAlias}/{groupId}
 
 ### Example
 
-    DELETE https://api.tier3.com/v2/servers/ALIAS/wa1-0001
+    DELETE https://api.ctl.io/v2/servers/ALIAS/wa1-0001
 
 ## Request
 

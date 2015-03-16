@@ -16,11 +16,11 @@ Use this API operation when you want to archive an entire group and its groups a
 
 ### Structure
 
-    POST https://api.tier3.com/v2/groups/{accountAlias}/{groupId}/archive
+    POST https://api.ctl.io/v2/groups/{accountAlias}/{groupId}/archive
 
 ### Example
 
-    POST https://api.tier3.com/v2/groups/ALIAS/wa1-0001/archive
+    POST https://api.ctl.io/v2/groups/ALIAS/wa1-0001/archive
 
 ## Request
 

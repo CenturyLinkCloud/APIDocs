@@ -15,11 +15,11 @@ Use this API operation when you want to find out information about a specific pu
 
 ### Structure
 
-    GET https://api.tier3.com/v2/servers/{accountAlias}/{serverId}/publicIPAddresses/{publicIP}
+    GET https://api.ctl.io/v2/servers/{accountAlias}/{serverId}/publicIPAddresses/{publicIP}
 
 ### Example
 
-    GET https://api.tier3.com/v2/servers/ACCT/WA1ACCTSERV0101/publicIPAddresses/12.34.56.789
+    GET https://api.ctl.io/v2/servers/ACCT/WA1ACCTSERV0101/publicIPAddresses/12.34.56.789
 
 ## Request
 

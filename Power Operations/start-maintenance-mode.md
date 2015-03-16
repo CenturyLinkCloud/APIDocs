@@ -15,11 +15,11 @@ Use this API operation when you want to explicitly start maintenance mode on mul
 
 ### Structure
 
-    POST https://api.tier3.com/v2/operations/{accountAlias}/servers/startMaintenance
+    POST https://api.ctl.io/v2/operations/{accountAlias}/servers/startMaintenance
 
 ### Example
 
-    POST https://api.tier3.com/v2/operations/ALIAS/servers/startMaintenance
+    POST https://api.ctl.io/v2/operations/ALIAS/servers/startMaintenance
 
 ## Request
 

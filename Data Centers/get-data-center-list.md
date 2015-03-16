@@ -15,11 +15,11 @@ Use this API operation when you need the list of data center names and codes tha
 
 ### Structure
 
-    GET https://api.tier3.com/v2/datacenters/{accountAlias}
+    GET https://api.ctl.io/v2/datacenters/{accountAlias}
 
 ### Example
 
-    GET https://api.tier3.com/v2/datacenters/ALIAS
+    GET https://api.ctl.io/v2/datacenters/ALIAS
 
 ## Request
 

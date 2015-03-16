@@ -15,11 +15,11 @@ Use this API operation when you want to get the administrator/root password for 
 
 ### Structure
 
-    GET https://api.tier3.com/v2/servers/{accountAlias}/{serverId}/credentials
+    GET https://api.ctl.io/v2/servers/{accountAlias}/{serverId}/credentials
 
 ### Example
 
-    GET https://api.tier3.com/v2/servers/ACCT/WA1ACCTSERV0101/credentials
+    GET https://api.ctl.io/v2/servers/ACCT/WA1ACCTSERV0101/credentials
 
 ## Request
 

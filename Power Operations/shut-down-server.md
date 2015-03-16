@@ -15,11 +15,11 @@ Use this API operation when you want to shut down a single server or group of se
 
 ### Structure
 
-    POST https://api.tier3.com/v2/operations/{accountAlias}/servers/shutDown
+    POST https://api.ctl.io/v2/operations/{accountAlias}/servers/shutDown
 
 ### Example
 
-    POST https://api.tier3.com/v2/operations/ALIAS/servers/shutDown
+    POST https://api.ctl.io/v2/operations/ALIAS/servers/shutDown
 
 ## Request
 

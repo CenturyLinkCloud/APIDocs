@@ -15,11 +15,11 @@ Use this API operation when you want to restore a server that has been archived.
 
 ### Structure
 
-    POST https://api.tier3.com/v2/servers/{accountAlias}/{serverId}/restore
+    POST https://api.ctl.io/v2/servers/{accountAlias}/{serverId}/restore
 
 ### Example
 
-    POST https://api.tier3.com/v2/servers/ACCT/WA1ACCTSERV0101/restore
+    POST https://api.ctl.io/v2/servers/ACCT/WA1ACCTSERV0101/restore
 
 ## Request
 

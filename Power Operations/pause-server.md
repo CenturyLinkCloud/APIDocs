@@ -15,11 +15,11 @@ Use this API operation when you want to pause a single server or group of server
 
 ### Structure
 
-    POST https://api.tier3.com/v2/operations/{accountAlias}/servers/pause
+    POST https://api.ctl.io/v2/operations/{accountAlias}/servers/pause
 
 ### Example
 
-    POST https://api.tier3.com/v2/operations/ALIAS/servers/pause
+    POST https://api.ctl.io/v2/operations/ALIAS/servers/pause
 
 ## Request
 

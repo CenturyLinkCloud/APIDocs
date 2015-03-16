@@ -15,11 +15,11 @@ Use this API operation when you want to find out the charges associated with a s
 
 ### Structure
 
-    GET https://api.tier3.com/v2/groups/{accountAlias}/{groupId}/billing
+    GET https://api.ctl.io/v2/groups/{accountAlias}/{groupId}/billing
 
 ### Example
 
-    GET https://api.tier3.com/v2/groups/ALIAS/wa1-5030/billing
+    GET https://api.ctl.io/v2/groups/ALIAS/wa1-5030/billing
 
 ## Request
 

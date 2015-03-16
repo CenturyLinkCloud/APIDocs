@@ -15,11 +15,11 @@ Use this API operation when you want to execute a Blueprint package that is avai
 
 ### Structure
 
-    POST https://api.tier3.com/v2/operations/{accountAlias}/servers/executePackage
+    POST https://api.ctl.io/v2/operations/{accountAlias}/servers/executePackage
 
 ### Example
 
-    POST https://api.tier3.com/v2/operations/ALIAS/servers/executePackage
+    POST https://api.ctl.io/v2/operations/ALIAS/servers/executePackage
 
 ## Request
 

@@ -15,11 +15,11 @@ Use this API operation when you want to check the status of a specific job in th
 
 ### Structure
 
-    GET https://api.tier3.com/v2/operations/{acctAlias}/status/{statusId}
+    GET https://api.ctl.io/v2/operations/{acctAlias}/status/{statusId}
 
 ### Example
 
-    GET https://api.tier3.com/v2/operations/ALIAS/status/wa1-12345
+    GET https://api.ctl.io/v2/operations/ALIAS/status/wa1-12345
 
 ## Request
 

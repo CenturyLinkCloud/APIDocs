@@ -15,11 +15,11 @@ Use this API operation when you want to power on a single server or group of ser
 
 ### Structure
 
-    POST https://api.tier3.com/v2/operations/{accountAlias}/servers/powerOn
+    POST https://api.ctl.io/v2/operations/{accountAlias}/servers/powerOn
 
 ### Example
 
-    POST https://api.tier3.com/v2/operations/ALIAS/servers/powerOn
+    POST https://api.ctl.io/v2/operations/ALIAS/servers/powerOn
 
 ## Request
 

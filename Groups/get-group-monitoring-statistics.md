@@ -15,11 +15,11 @@ Use this API operation when you want to track the resource usage of servers with
 
 ### Structure
 
-    GET https://api.tier3.com/v2/groups/{accountAlias}/{groupId}/statistics?start={datetime}&sampleInterval=dd:hh:mm:ss
+    GET https://api.ctl.io/v2/groups/{accountAlias}/{groupId}/statistics?start={datetime}&sampleInterval=dd:hh:mm:ss
 
 ### Example
 
-    GET https://api.tier3.com/v2/groups/ALIAS/wa1-5003/statistics?start=2014-04-05&sampleInterval=01:00:00
+    GET https://api.ctl.io/v2/groups/ALIAS/wa1-5003/statistics?start=2014-04-05&sampleInterval=01:00:00
 
 ## Request
 

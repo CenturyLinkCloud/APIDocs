@@ -15,11 +15,11 @@ Use this API operation when you want to power off a single server or group of se
 
 ### Structure
 
-    POST https://api.tier3.com/v2/operations/{accountAlias}/servers/powerOff
+    POST https://api.ctl.io/v2/operations/{accountAlias}/servers/powerOff
 
 ### Example
 
-    POST https://api.tier3.com/v2/operations/ALIAS/servers/powerOff
+    POST https://api.ctl.io/v2/operations/ALIAS/servers/powerOff
 
 ## Request
 

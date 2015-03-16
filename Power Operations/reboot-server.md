@@ -15,11 +15,11 @@ Use this API operation when you want to reboot a single server or group of serve
 
 ### Structure
 
-    POST https://api.tier3.com/v2/operations/{accountAlias}/servers/reboot
+    POST https://api.ctl.io/v2/operations/{accountAlias}/servers/reboot
 
 ### Example
 
-    POST https://api.tier3.com/v2/operations/ALIAS/servers/reboot
+    POST https://api.ctl.io/v2/operations/ALIAS/servers/reboot
 
 ## Request
 

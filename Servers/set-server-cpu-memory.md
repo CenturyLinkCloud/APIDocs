@@ -15,11 +15,11 @@ Use this API operation when you want to change the number of CPU cores or the am
 
 ### Structure
 
-    PATCH https://api.tier3.com/v2/servers/{accountAlias}/{serverId}
+    PATCH https://api.ctl.io/v2/servers/{accountAlias}/{serverId}
 
 ### Example
 
-    PATCH https://api.tier3.com/v2/servers/ACCT/WA1ACCTSERV0101
+    PATCH https://api.ctl.io/v2/servers/ACCT/WA1ACCTSERV0101
 
 ## Request
 

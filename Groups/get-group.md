@@ -15,11 +15,11 @@ Use this API operation when you want to identify the servers in a particular gro
 
 ### Structure
 
-    GET https://api.tier3.com/v2/groups/{accountAlias}/{groupId}
+    GET https://api.ctl.io/v2/groups/{accountAlias}/{groupId}
 
 ### Example
 
-    GET https://api.tier3.com/v2/groups/ALIAS/wa1-0001
+    GET https://api.ctl.io/v2/groups/ALIAS/wa1-0001
 
 ## Request
 

@@ -15,11 +15,11 @@ Use this API operation when you want to change the name of an existing anti-affi
 
 ### Structure
 
-    PUT https://api.tier3.com/v2/antiAffinityPolicies/{accountAlias}/{policyId}
+    PUT https://api.ctl.io/v2/antiAffinityPolicies/{accountAlias}/{policyId}
 
 ### Example
 
-    PUT https://api.tier3.com/v2/antiAffinityPolicies/ALIAS/80a7bf90b199454b859399bff54f4173
+    PUT https://api.ctl.io/v2/antiAffinityPolicies/ALIAS/80a7bf90b199454b859399bff54f4173
 
 ## Request
 
