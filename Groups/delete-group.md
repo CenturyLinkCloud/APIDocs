@@ -5,7 +5,7 @@
   "attachments": []
 }}}
 
-Sends the delete operation to a given group and adds operation to queue. This operation will delete the group and all servers and groups underneath it. Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](..Authentication/login.md) for information on acquiring this token.
+Sends the delete operation to a given group and adds operation to queue. This operation will delete the group and all servers and groups underneath it. Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](../Authentication/login.md) for information on acquiring this token.
 
 ### When to Use It
 

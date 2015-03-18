@@ -5,7 +5,7 @@
   "attachments": []
 }}}
 
-Updates a public IP address on an existing server, allowing access to it on a given set of protocols and ports as well as restricting access based on a source IP range. Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](..Authentication/login.md) for information on acquiring this token.
+Updates a public IP address on an existing server, allowing access to it on a given set of protocols and ports as well as restricting access based on a source IP range. Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](../Authentication/login.md) for information on acquiring this token.
 
 ### When to Use It
 

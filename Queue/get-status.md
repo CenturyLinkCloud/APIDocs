@@ -5,7 +5,7 @@
   "attachments": []
 }}}
 
-Gets the status of a particular job in the queue, which keeps track of any long-running asynchronous requests (such as server power operations or provisioning tasks). Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](..Authentication/login.md) for information on acquiring this token.
+Gets the status of a particular job in the queue, which keeps track of any long-running asynchronous requests (such as server power operations or provisioning tasks). Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](../Authentication/login.md) for information on acquiring this token.
 
 ### When to Use It
 

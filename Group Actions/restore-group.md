@@ -5,7 +5,7 @@
   "attachments": []
 }}}
 
-Sends the restore operation to an archived group. (See <a href="/knowledge-base/servers/understanding-vm-deployment-options-and-power-states/#archive">Understanding VM Deployment Options and Power States</a> for details on the archive operation.) Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](..Authentication/login.md) for information on acquiring this token.
+Sends the restore operation to an archived group. (See <a href="/knowledge-base/servers/understanding-vm-deployment-options-and-power-states/#archive">Understanding VM Deployment Options and Power States</a> for details on the archive operation.) Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](../Authentication/login.md) for information on acquiring this token.
 
 
 ### When to Use It

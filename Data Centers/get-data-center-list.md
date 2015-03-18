@@ -5,7 +5,7 @@
   "attachments": []
 }}}
 
-Gets the list of data centers that a given account has access to. Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](..Authentication/login.md) for information on acquiring this token.
+Gets the list of data centers that a given account has access to. Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](../Authentication/login.md) for information on acquiring this token.
 
 ### When to Use It
 

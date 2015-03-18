@@ -5,7 +5,7 @@
   "attachments": []
 }}}
 
-Changes the administrator/root password on an existing server given the current administrator/root password. Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](..Authentication/login.md) for information on acquiring this token.
+Changes the administrator/root password on an existing server given the current administrator/root password. Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](../Authentication/login.md) for information on acquiring this token.
 
 ### When to Use It
 

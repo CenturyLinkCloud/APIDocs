@@ -5,7 +5,7 @@
   "attachments": []
 }}}
 
-Sends a specified setting for maintenance mode per server to a list of servers and adds operation to queue. Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](..Authentication/login.md) for information on acquiring this token.
+Sends a specified setting for maintenance mode per server to a list of servers and adds operation to queue. Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](../Authentication/login.md) for information on acquiring this token.
 
 ### When to Use It
 

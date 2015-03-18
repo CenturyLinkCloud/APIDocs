@@ -5,7 +5,7 @@
   "attachments": []
 }}}
 
-Sends the create snapshot operation to a list of servers (along with the number of days to keep the snapshot for) and adds operation to queue. Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](..Authentication/login.md) for information on acquiring this token.
+Sends the create snapshot operation to a list of servers (along with the number of days to keep the snapshot for) and adds operation to queue. Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](../Authentication/login.md) for information on acquiring this token.
 
 ### When to Use It
 

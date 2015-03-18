@@ -5,7 +5,7 @@
   "attachments": []
 }}}
 
-Sends the power on operation to a list of servers and adds operation to queue. (See <a href="/knowledge-base/servers/descriptions-of-servergroup-power-commands/">Description of Server Group Power Commands</a> for details on how the power on operation is used.) Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](..Authentication/login.md) for information on acquiring this token.
+Sends the power on operation to a list of servers and adds operation to queue. (See <a href="/knowledge-base/servers/descriptions-of-servergroup-power-commands/">Description of Server Group Power Commands</a> for details on how the power on operation is used.) Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](../Authentication/login.md) for information on acquiring this token.
 
 ### When to Use It
 

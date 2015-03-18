@@ -5,7 +5,7 @@
   "attachments": []
 }}}
 
-Claims a public IP address and associates it with a server, allowing access to it on a given set of protocols and ports. It may also be set to restrict access based on a source IP range. Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](..Authentication/login.md) for information on acquiring this token.
+Claims a public IP address and associates it with a server, allowing access to it on a given set of protocols and ports. It may also be set to restrict access based on a source IP range. Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](../Authentication/login.md) for information on acquiring this token.
 
 ### When to Use It
 
