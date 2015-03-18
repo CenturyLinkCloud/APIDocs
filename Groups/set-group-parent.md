@@ -1,15 +1,15 @@
 {{{
-  "title": "Set Group Name/Description",
+  "title": "Set Group Parent",
   "date": "02-25-2015",
   "author": "Bryan Friedman",
   "attachments": []
 }}}
 
-Changes the name and description of an existing group. Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](../Authentication/login.md) for information on acquiring this token.
+Changes the parent group of an existing group. Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](../Authentication/login.md) for information on acquiring this token.
 
 ### When to Use It
 
-Use this API operation when you want to change the name or description of a given group.
+Use this API operation when you want to change the parent of a given group.
 
 ## URL
 

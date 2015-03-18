@@ -1,5 +1,5 @@
 {{{
-  "title": "Archive Group",
+  "title": "Restore Group",
   "date": "02-27-2015",
   "author": "Bryan Friedman",
   "attachments": []
