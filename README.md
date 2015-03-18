@@ -4,7 +4,7 @@ CenturyLink Cloud API Documentation
 ### Links (API doc to API doc)
 
 
-Links to should follow this format:
+Links to other articles should follow this format:
 
 ```
 [Link Text](../category/api-doc-name.md)
