@@ -151,36 +151,12 @@ The response will be an array containing one entity for each server that the ope
 
 ### Status Link Definition
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Value</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>rel</td>
-      <td>string</td>
-      <td>status</td>
-      <td>The link type</td>
-    </tr>
-    <tr>
-      <td>href</td>
-      <td>string</td>
-      <td>/v2/operations/[ALIAS]/status/[ID]</td>
-      <td>Address of the server creation job in the queue</td>
-    </tr>
-    <tr>
-      <td>id</td>
-      <td>string</td>
-      <td>[ID]</td>
-      <td>The identifier of the job in queue. Can be passed to [Get Status](../Queue/get-status.md) call to retrieve status of job.</td>
-    </tr>
-  </tbody>
-</table>
+|Name|Type|Value|Description|
+|---|---|---|---|
+|rel|string|status|The link type|
+|href|string|/v2/operations/[ALIAS]/status/[ID]|Address of the job in the queue|
+|id|string|[ID]|The identifier of the job in queue. Can be passed to [Get Status](../Queue/get-status.md) call to retrieve status of job.|
+
 
 ### Examples
 

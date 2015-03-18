@@ -73,33 +73,11 @@ Use this API operation when you want to change the custom field values for a giv
 
 ### PatchOperation Definition
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>op</td>
-      <td>string</td>
-      <td>The operation to perform on a given property of the group. In this case, the value must be "set" for setting the custom field values.
-</td>
-    </tr>
-    <tr>
-      <td>member</td>
-      <td>string</td>
-      <td>The property of the group to perform the operation on. In this case, the value will be "customFields".</td>
-    </tr>
-    <tr>
-      <td>value</td>
-      <td>array</td>
-      <td>A list of id-value pairs for _all custom fields_ including all required values and other custom field values that you wish to set.<br/><br/>_Note: You must specify the complete list of custom field values to set on the group. If you want to change only one value, specify all existing field values along with the new value for the field you wish to change. To unset the value for an unrequired field, you may leave the field id-value pairing out, however all required fields must be included. (You can get existing custom field value info by using the [Get Group](get-group.md) call to see all the details of the group or the [Get Custom Fields](../Custom Fields/get-custom-fields.md) call to see available custom fields for a given account.)_</td>
-    </tr>
-  </tbody>
-</table>
+|Name|Type|Description|
+|---|---|---|
+|op|string|The operation to perform on a given property of the group. In this case, the value must be "set" for setting the custom field values.|
+|member|string|The property of the group to perform the operation on. In this case, the value will be "customFields".|
+|value|array|A list of id-value pairs for _all custom fields_ including all required values and other custom field values that you wish to set.<br/><br/>_Note: You must specify the complete list of custom field values to set on the group. If you want to change only one value, specify all existing field values along with the new value for the field you wish to change. To unset the value for an unrequired field, you may leave the field id-value pairing out, however all required fields must be included. (You can get existing custom field value info by using the [Get Group](get-group.md) call to see all the details of the group or the [Get Custom Fields](../Custom Fields/get-custom-fields.md) call to see available custom fields for a given account.)_|
 
 
 ### Examples

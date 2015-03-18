@@ -25,36 +25,11 @@ Use this API operation when you want to discover the name of the root hardware g
 
 ### URI and Querystring Parameters
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Req.</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>AccountAlias</td>
-      <td>string</td>
-      <td>Short code for a particular account</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>DataCenter</td>
-      <td>string</td>
-      <td>Short string representing the data center you are querying. Valid codes can be retrieved from the&nbsp;<strong>List Data Centers</strong> API operation.</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>GroupLinks</td>
-      <td>boolean</td>
-      <td>Determine whether link collections are returned for each group</td>
-      <td>No</td>
-    </tr>
-  </tbody>
-</table>
+|Name|Type|Description|Req.|
+|---|---|---|---|
+|AccountAlias|string|Short code for a particular account|Yes|
+|DataCenter|string|Short string representing the data center you are querying. Valid codes can be retrieved from the [Get Data Center List](get-data-center.md) API operation.|Yes|
+|GroupLinks|boolean|Determine whether link collections are returned for each group|No|
 
 ## Response
 

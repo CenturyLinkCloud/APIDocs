@@ -25,36 +25,11 @@ Use this API operation when you want to find out information about a specific pu
 
 ### URI Parameters
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Req.</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>AccountAlias</td>
-      <td>string</td>
-      <td>Short code for a particular account</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>ServerId</td>
-      <td>string</td>
-      <td>ID of the server being queried. Retrieved from query to containing group, or by looking at the URL when viewing a server in the Control Portal.</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>PublicIP</td>
-      <td>string</td>
-      <td>The specific public IP to return details about. A server may have more than one public IP, and the list of available ones can be retrieved from the call to [Get Server](../Servers/get-server.md).</td>
-      <td>Yes</td>
-    </tr>
-  </tbody>
-</table>
+|Name|Type|Description|Req.|
+|---|---|---|---|
+|AccountAlias|string|Short code for a particular account|Yes|
+|ServerId|string|ID of the server being queried. Retrieved from query to containing group, or by looking at the URL when viewing a server in the Control Portal.|Yes|
+|PublicIP|string|The specific public IP to return details about. A server may have more than one public IP, and the list of available ones can be retrieved from the call to [Get Server](../Servers/get-server.md).|Yes|
 
 ## Response
 

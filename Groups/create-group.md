@@ -85,27 +85,10 @@ Use this API operation when you want to create a new group.
 
 ### CustomFields Definition
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>id</td>
-      <td>string</td>
-      <td>ID of the custom field to set. Available custom field IDs can be retrieved from the <strong>Get Custom Fields</strong> API operation.</td>
-    </tr>
-    <tr>
-      <td>value</td>
-      <td>string</td>
-      <td>Value to set the custom field to for this server.</td>
-    </tr>
-  </tbody>
-</table>
+|Name|Type|Description|
+|---|---|---|
+|id|string|ID of the custom field to set. Available custom field IDs can be retrieved from the [Get Custom Fields](../Custom Fields/get-custom-fields.md) API operation.|
+|value|string|Value to set the custom field to for this server.|
 
 ### Examples
 

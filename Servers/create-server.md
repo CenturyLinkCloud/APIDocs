@@ -47,170 +47,36 @@ Use this API operation when you want to create a new server from a standard or c
 
 ### Content Properties
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Req.</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>name</td>
-      <td>string</td>
-      <td>Name of the server to create. Alphanumeric characters and dashes only. Must be between 1-7 characters depending on the length of the account alias. (This name will be appended with a two digit number and prepended with the datacenter code and
-        account alias to make up the final server name.)</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>description</td>
-      <td>string</td>
-      <td>User-defined description of this server</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <td>groupId</td>
-      <td>string</td>
-      <td>ID of the parent group. Retrieved from query to parent group, or by looking at the URL on the UI pages in the Control Portal.</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>sourceServerId</td>
-      <td>string</td>
-      <td>ID of the server to use a source. May be the ID of a template, or when cloning, an existing server ID. The list of available templates for a given account in a data center can be retrieved from the [Get Data Center Deployment Capabilities](../Data Centers/get-data-center-deployment-capabilities.md) API operation.</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>isManagedOS</td>
-      <td>bool</td>
-      <td>Whether to create the server as managed or not. Default is false.</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <td>primaryDns</td>
-      <td>string</td>
-      <td>Primary DNS to set on the server. If not supplied the default value set on the account will be used.</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <td>secondaryDns</td>
-      <td>string</td>
-      <td>Secondary DNS to set on the server. If not supplied the default value set on the account will be used.</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <td>networkId</td>
-      <td>string</td>
-      <td>ID of the network to which to deploy the server. If not provided, a network will be chosen automatically. If your account has not yet been assigned a network, leave this blank and one will be assigned automatically. The list of available
-        networks for a given account in a data center can be retrieved from the [Get Data Center Deployment Capabilities](../Data Centers/get-data-center-deployment-capabilities.md) API operation. </td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <td>ipAddress</td>
-      <td>string</td>
-      <td>IP address to assign to the server. If not provided, one will be assigned automatically.</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <td>password</td>
-      <td>string</td>
-      <td>Password of administrator or root user on server. If not provided, one will be generated automatically.</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <td>sourceServerPassword</td>
-      <td>string</td>
-      <td>Password of the source server, used only when creating a clone from an existing server.</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <td>cpu</td>
-      <td>integer</td>
-      <td>Number of processors to configure the server with (1-16)</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>cpuAutoscalePolicyId</td>
-      <td>string</td>
-      <td>ID of the vertical CPU Autoscale policy to associate the server with. Available IDs can be retrieved from the <strong>Get Autoscale Policies</strong> API operation.</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <td>memoryGB</td>
-      <td>integer</td>
-      <td>Number of GB of memory to configure the server with (1-128)</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>type</td>
-      <td>string</td>
-      <td>Whether to create standard or hyperscale server</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>storageType</td>
-      <td>string</td>
-      <td>For standard servers, whether to use standard or premium storage. If not provided, will default to premium storage. For hyperscale servers, storage type must be hyperscale.</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <td>antiAffinityPolicyId</td>
-      <td>string</td>
-      <td>ID of the Anti-Affinity policy to associate the server with. Only valid for hyperscale servers. Available IDs can be retrieved from the [Get Anti-Affinity Policies](../Anti-Affinity Policies/get-anti-affinity-policies.md"> API operation.</td>
-      <td>No</td>Â
-    </tr>
-    <tr>
-      <td>customFields</td>
-      <td>complex</td>
-      <td>Collection of custom field ID-value pairs to set for the server.</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <td>additionalDisks</td>
-      <td>complex</td>
-      <td>Collection of disk parameters</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <td>ttl</td>
-      <td>dateTime</td>
-      <td>Date/time that the server should be deleted</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <td>packages</td>
-      <td>complex</td>
-      <td>Collection of packages to run on the server after it has been built</td>
-      <td>No</td>
-    </tr>
-  </tbody>
-</table>
+|Name|Type|Description|Req.|
+|---|---|---|---|
+|name|string|Name of the server to create. Alphanumeric characters and dashes only. Must be between 1-7 characters depending on the length of the account alias. (This name will be appended with a two digit number and prepended with the datacenter code and account alias to make up the final server name.)|Yes|
+|description|string|User-defined description of this server|No|
+|groupId|string|ID of the parent group. Retrieved from query to parent group, or by looking at the URL on the UI pages in the Control Portal.|Yes|
+|sourceServerId|string|ID of the server to use a source. May be the ID of a template, or when cloning, an existing server ID. The list of available templates for a given account in a data center can be retrieved from the [Get Data Center Deployment Capabilities](../Data Centers/get-data-center-deployment-capabilities.md) API operation.|Yes|
+|isManagedOS|bool|Whether to create the server as managed or not. Default is false.|No|
+|primaryDns|string|Primary DNS to set on the server. If not supplied the default value set on the account will be used.|No|
+|secondaryDns|string|Secondary DNS to set on the server. If not supplied the default value set on the account will be used.|No|
+|networkId|string|ID of the network to which to deploy the server. If not provided, a network will be chosen automatically. If your account has not yet been assigned a network, leave this blank and one will be assigned automatically. The list of available networks for a given account in a data center can be retrieved from the [Get Data Center Deployment Capabilities](../Data Centers/get-data-center-deployment-capabilities.md) API operation. |No|
+|ipAddress|string|IP address to assign to the server. If not provided, one will be assigned automatically.|No|
+|password|string|Password of administrator or root user on server. If not provided, one will be generated automatically.|No|
+|sourceServerPassword|string|Password of the source server, used only when creating a clone from an existing server.|No|
+|cpu|integer|Number of processors to configure the server with (1-16)|Yes|
+|cpuAutoscalePolicyId|string|ID of the vertical CPU Autoscale policy to associate the server with. Available IDs can be retrieved from the <strong>Get Autoscale Policies</strong> API operation.|No|
+|memoryGB|integer|Number of GB of memory to configure the server with (1-128)|Yes|
+|type|string|Whether to create standard or hyperscale server|Yes|
+|storageType|string|For standard servers, whether to use standard or premium storage. If not provided, will default to premium storage. For hyperscale servers, storage type must be hyperscale.|No|
+|antiAffinityPolicyId|string|ID of the Anti-Affinity policy to associate the server with. Only valid for hyperscale servers. Available IDs can be retrieved from the [Get Anti-Affinity Policies](../Anti-Affinity Policies/get-anti-affinity-policies.md) API operation.|No|
+|customFields|complex|Collection of custom field ID-value pairs to set for the server.|No|
+|additionalDisks|complex|Collection of disk parameters|No|
+|ttl|dateTime|Date/time that the server should be deleted|No|
+|packages|complex|Collection of packages to run on the server after it has been built|No|
 
 ### CustomFields Definition
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>id</td>
-      <td>string</td>
-      <td>ID of the custom field to set. Available custom field IDs can be retrieved from the <strong>Get Custom Fields</strong> API operation.</td>
-    </tr>
-    <tr>
-      <td>value</td>
-      <td>string</td>
-      <td>Value to set the custom field to for this server.</td>
-    </tr>
-  </tbody>
-</table>
+|Name|Type|Description|
+|---|---|---|
+|id|string|ID of the custom field to set. Available custom field IDs can be retrieved from the [Get Custom Fields](../Custom Fields/get-custom-fields.md) API operation.|
+|value|string|Value to set the custom field to for this server.|
 
 ### AdditionalDisks Definition
 
@@ -338,36 +204,11 @@ Use this API operation when you want to create a new server from a standard or c
 
 ### Status Link Definition
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Value</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>rel</td>
-      <td>string</td>
-      <td>status</td>
-      <td>The link type</td>
-    </tr>
-    <tr>
-      <td>href</td>
-      <td>string</td>
-      <td>/v2/operations/[ALIAS]/status/[ID]</td>
-      <td>Address of the server creation job in the queue</td>
-    </tr>
-    <tr>
-      <td>id</td>
-      <td>string</td>
-      <td>[ID]</td>
-      <td>The identifier of the job in queue. Can be passed to [Get Status](../Queue/get-status.md) call to retrieve status of job.</td>
-    </tr>
-  </tbody>
-</table>
+|Name|Type|Value|Description|
+|---|---|---|---|
+|rel|string|status|The link type|
+|href|string|/v2/operations/[ALIAS]/status/[ID]|Address of the job in the queue|
+|id|string|[ID]|The identifier of the job in queue. Can be passed to [Get Status](../Queue/get-status.md) call to retrieve status of job.|
 
 ### Self Link Definition
 
