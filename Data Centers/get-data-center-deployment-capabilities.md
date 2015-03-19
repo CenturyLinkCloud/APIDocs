@@ -25,124 +25,41 @@ Use this API operation when you want to discover the available capabilities of a
 
 ### URI Parameters
 
-|Name|Type|Description|Req.|
-|---|---|---|---|
-|AccountAlias|string|Short code for a particular account|Yes|
-|DataCenter|string|Short string representing the data center you are querying. Valid codes can be retrieved from the [Get Data Center List](get-data-center.md) API operation.|Yes|
+| Name | Type | Description | Req. |
+| --- | --- | --- | --- |
+| AccountAlias | string | Short code for a particular account | Yes |
+| DataCenter | string | Short string representing the data center you are querying. Valid codes can be retrieved from the [Get Data Center List](get-data-center.md) API operation. | Yes |
 
 ## Response
 
 ### Entity Definition
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>supportsPremiumStorage</td>
-      <td>boolean</td>
-      <td>Whether or not this data center provides support for servers with premium storage</td>
-    </tr>
-    <tr>
-      <td>supportsSharedLoadBalancer</td>
-      <td>boolean</td>
-      <td>Whether or not this data center provides support for shared load balancer configuration</td>
-    </tr>
-    <tr>
-      <td>deployableNetworks</td>
-      <td>array</td>
-      <td>Collection of networks that can be used for deploying servers</td>
-    </tr>
-    <tr>
-      <td>templates</td>
-      <td>array</td>
-      <td>Collection of available templates in the data center that can be used to create servers</td>
-    </tr>
-  </tbody>
-</table>
+| Name | Type | Description |
+| --- | --- | --- |
+| supportsPremiumStorage | boolean | Whether or not this data center provides support for servers with premium storage |
+| supportsSharedLoadBalancer | boolean | Whether or not this data center provides support for shared load balancer configuration |
+| deployableNetworks | array | Collection of networks that can be used for deploying servers |
+| templates | array | Collection of available templates in the data center that can be used to create servers |
 
 ### DeployableNetworks Definition
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>name</td>
-      <td>string</td>
-      <td>User-defined name of the network</td>
-    </tr>
-    <tr>
-      <td>networkId</td>
-      <td>string</td>
-      <td>Unique identifier of the network</td>
-    </tr>
-    <tr>
-      <td>type</td>
-      <td>string</td>
-      <td>Network type, usually "private" for networks created by the user</td>
-    </tr>
-    <tr>
-      <td>accountID</td>
-      <td>string</td>
-      <td>Account alias for the account in which the network exists</td>
-    </tr>
-  </tbody>
-</table>
+| Name | Type | Description |
+| --- | --- | --- |
+| name | string | User-defined name of the network |
+| networkId | string | Unique identifier of the network |
+| type | string | Network type, usually "private" for networks created by the user |
+| accountID | string | Account alias for the account in which the network exists |
 
 ### Templates Definition
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>name</td>
-      <td>string</td>
-      <td>Underlying unique name for the template</td>
-    </tr>
-    <tr>
-      <td>description</td>
-      <td>string</td>
-      <td>Description of the template at it appears in the Control Portal UI</td>
-    </tr>
-    <tr>
-      <td>storageSizeGB</td>
-      <td>integer</td>
-      <td>The amount of storage allocated for the primary OS root drive</td>
-    </tr>
-    <tr>
-      <td>capabilities</td>
-      <td>array</td>
-      <td>List of capabilities supported by this specific OS template (example: whether adding CPU or memory requires a reboot or not)</td>
-    </tr>
-    <tr>
-      <td>reservedDrivePaths</td>
-      <td>array</td>
-      <td>List of drive path names reserved by the OS that can't be used to name user-defined drives</td>
-    </tr>
-    <tr>
-      <td>drivePathLength</td>
-      <td>integer</td>
-      <td>Length of the string for naming a drive path, if applicable</td>
-    </tr>
-  </tbody>
-</table>
+| Name | Type | Description |
+| --- | --- | --- |
+| name | string | Underlying unique name for the template |
+| description | string | Description of the template at it appears in the Control Portal UI |
+| storageSizeGB | integer | The amount of storage allocated for the primary OS root drive |
+| capabilities | array | List of capabilities supported by this specific OS template (example: whether adding CPU or memory requires a reboot or not) |
+| reservedDrivePaths | array | List of drive path names reserved by the OS that can't be used to name user-defined drives |
+| drivePathLength | integer | Length of the string for naming a drive path, if applicable |
 
 ### Examples
 

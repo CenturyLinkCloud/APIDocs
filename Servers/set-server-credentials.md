@@ -25,105 +25,32 @@ Use this API operation when you want to change the administrator/root password o
 
 ### URI Parameters
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Req.</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>AccountAlias</td>
-      <td>string</td>
-      <td>Short code for a particular account</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>ServerId</td>
-      <td>string</td>
-      <td>ID of the server with the credentials to update. Retrieved from query to containing group, or by looking at the URL when viewing a server in the Control Portal.</td>
-      <td>Yes</td>
-    </tr>
-  </tbody>
-</table>
+| Name | Type | Description | Req. |
+| --- | --- | --- | --- |
+| AccountAlias | string | Short code for a particular account | Yes |
+| ServerId | string | ID of the server with the credentials to update. Retrieved from query to containing group, or by looking at the URL when viewing a server in the Control Portal. | Yes |
 
 
 ### Content Properties
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Req.</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>patchOperation</td>
-      <td>array</td>
-      <td>A list of properties, values, and the operations to perform with them for the server.</td>
-      <td>Yes</td>
-    </tr>
-  </tbody>
-</table>
+| Name | Type | Description | Req. |
+| --- | --- | --- | --- |
+| patchOperation | array | A list of properties, values, and the operations to perform with them for the server. | Yes |
 
 ### PatchOperation Definition
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>op</td>
-      <td>string</td>
-      <td>The operation to perform on a given property of the server. In this case, the value must be "set" for setting the credentials.</td>
-    </tr>
-    <tr>
-      <td>member</td>
-      <td>string</td>
-      <td>The property of the server to perform the operation on. In this case, the value must be "password" for setting the credentials.</td>
-    </tr>
-    <tr>
-      <td>value</td>
-      <td>complex</td>
-      <td>The current and new administrator/root password values.</td>
-    </tr>
-  </tbody>
-</table>
+| Name | Type | Description |
+| --- | --- | --- |
+| op | string | The operation to perform on a given property of the server. In this case, the value must be "set" for setting the credentials. |
+| member | string | The property of the server to perform the operation on. In this case, the value must be "password" for setting the credentials. |
+| value | complex | The current and new administrator/root password values. |
 
 ### Value Definition
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>current</td>
-      <td>string</td>
-      <td>The current administrator/root password used to login.</td>
-    </tr>
-    <tr>
-      <td>password</td>
-      <td>string</td>
-      <td>The new administrator/root password to change to.</td>
-    </tr>
-  </tbody>
-</table>
+| Name | Type | Description |
+| --- | --- | --- |
+| current | string | The current administrator/root password used to login. |
+| password | string | The new administrator/root password to change to. |
 
 
 ### Examples
@@ -148,11 +75,11 @@ The response is a link to the [Get Status](../Queue/get-status.md) operation so 
 
 ### Entity Definition
 
-|Name|Type|Value|Description|
-|---|---|---|---|
-|rel|string|status|The link type|
-|href|string|/v2/operations/[ALIAS]/status/[ID]|Address of the job in the queue|
-|id|string|[ID]|The identifier of the job in queue. Can be passed to [Get Status](../Queue/get-status.md) call to retrieve status of job.|
+| Name |Type | Value | Description |
+| --- | --- | --- | --- |
+| rel | string | status | The link type |
+| href | string | /v2/operations/[ALIAS]/status/[ID] | Address of the job in the queue |
+| id | string | [ID] | The identifier of the job in queue. Can be passed to [Get Status](../Queue/get-status.md) call to retrieve status of job. |
 
 ### Examples
 

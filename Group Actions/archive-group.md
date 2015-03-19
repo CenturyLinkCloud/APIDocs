@@ -5,7 +5,7 @@
   "attachments": []
 }}}
 
-Sends the archive operation to a group. (See <a href="/knowledge-base/servers/understanding-vm-deployment-options-and-power-states/#archive">Understanding VM Deployment Options and Power States</a> for details on the archive operation.) Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](../Authentication/login.md) for information on acquiring this token.
+Sends the archive operation to a group. (See [Understanding VM Deployment Options and Power States](http://www.centurylinkcloud.com/knowledge-base/servers/understanding-vm-deployment-options-and-power-states/#archive) for details on the archive operation.) Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](../Authentication/login.md) for information on acquiring this token.
 
 
 ### When to Use It
@@ -26,30 +26,10 @@ Use this API operation when you want to archive an entire group and its groups a
 
 ### URI Parameters
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Req.</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>AccountAlias</td>
-      <td>string</td>
-      <td>Short code for a particular account.</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>GroupID</td>
-      <td>string</td>
-      <td>ID of the group to archive. Retrieved from query to parent group, or by looking at the URL on the new UI pages in the Control Portal.</td>
-      <td>Yes</td>
-    </tr>
-  </tbody>
-</table>
+| Name | Type | Description | Req. |
+| --- | --- | --- | --- |
+| AccountAlias | string | Short code for a particular account. | Yes |
+| GroupID | string | ID of the group to archive. Retrieved from query to parent group, or by looking at the URL on the new UI pages in the Control Portal. | Yes |
 
 ## Response
 
@@ -57,11 +37,11 @@ The response is a link to the [Get Status](../Queue/get-status.md) operation so 
 
 ### Entity Definition
 
-|Name|Type|Value|Description|
-|---|---|---|---|
-|rel|string|status|The link type|
-|href|string|/v2/operations/[ALIAS]/status/[ID]|Address of the job in the queue|
-|id|string|[ID]|The identifier of the job in queue. Can be passed to [Get Status](../Queue/get-status.md) call to retrieve status of job.|
+| Name | Type | Value | Description |
+| --- | --- | --- | --- |
+| rel | string | status | The link type |
+| href | string | /v2/operations/[ALIAS]/status/[ID]|Address of the job in the queue |
+| id | string | [ID]|The identifier of the job in queue. Can be passed to [Get Status](../Queue/get-status.md) call to retrieve status of job. |
 
 ### Examples
 

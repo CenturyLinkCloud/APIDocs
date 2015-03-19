@@ -21,30 +21,10 @@ Use this API operation before you call any other API operation. It shows a user'
 
 ### Content Properties
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Req.</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>username</td>
-      <td>string</td>
-      <td>Control Portal user name value</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>password</td>
-      <td>string</td>
-      <td>Control Portal password value.</td>
-      <td>Yes</td>
-    </tr>
-  </tbody>
-</table>
+| Name | Type | Description | Req. |
+| --- | --- | --- | --- |
+| username | string | Control Portal user name value | Yes |
+| password | string | Control Portal password value. | Yes |
 
 ### Examples
 
@@ -59,42 +39,13 @@ Use this API operation before you call any other API operation. It shows a user'
 
 ### Entity Definition
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>userName</td>
-      <td>string</td>
-      <td>Control Portal user name value</td>
-    </tr>
-    <tr>
-      <td>accountAlias</td>
-      <td>string</td>
-      <td>Account that contains this user record</td>
-    </tr>
-    <tr>
-      <td>locationAlias</td>
-      <td>string</td>
-      <td>Default data center of the user</td>
-    </tr>
-    <tr>
-      <td>roles</td>
-      <td>array</td>
-      <td>Permission roles associated with this user</td>
-    </tr>
-    <tr>
-      <td>bearerToken</td>
-      <td>string</td>
-      <td>Security token for this user that is included in all other API requests</td>
-    </tr>
-  </tbody>
-</table>
+| Name | Type | Description |
+| --- | --- | --- |
+| userName | string | Control Portal user name value |
+| accountAlias | string | Account that contains this user record |
+| locationAlias | string | Default data center of the user |
+| roles | array | Permission roles associated with this user |
+| bearerToken | string | Security token for this user that is included in all other API requests |
 
 ### Examples
 

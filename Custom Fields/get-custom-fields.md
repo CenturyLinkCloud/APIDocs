@@ -25,24 +25,9 @@ Use this API operation to find out the details of what custom fields are defined
 
 ### URI Parameters
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Req.</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>AccountAlias</td>
-      <td>string</td>
-      <td>Short code for a particular account</td>
-      <td>Yes</td>
-    </tr>
-  </tbody>
-</table>
+| Name | Type | Description | Req. |
+| --- | --- | --- | --- |
+| AccountAlias | string | Short code for a particular account | Yes |
 
 ## Response
 
@@ -50,42 +35,13 @@ The response will be an array containing one entity for each custom field define
 
 ### Entity Definition
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>id</td>
-      <td>string</td>
-      <td>Unique identifier of the custom field.</td>
-    </tr>
-    <tr>
-      <td>name</td>
-      <td>string</td>
-      <td>Friendly name of the custom field as it appears in the UI.</td>
-    </tr>
-    <tr>
-      <td>isRequired</td>
-      <td>boolean</td>
-      <td>Boolean value representing whether or not a value is required for this custom field.</td>
-    </tr>
-    <tr>
-      <td>type</td>
-      <td>string</td>
-      <td>The type of custom field defined. Will be either "text" (free-form text field), "checkbox" (boolean value), or "option" (dropdown list).</td>
-    </tr>
-    <tr>
-      <td>options</td>
-      <td>array</td>
-      <td>Array of name-value pairs corresponding to the options defined for this field. (Empty for "text" or "checkbox" field types.)</td>
-    </tr>
-  </tbody>
-</table>
+| Name | Type | Description |
+| --- | --- | --- |
+| id | string | Unique identifier of the custom field. |
+| name | string | Friendly name of the custom field as it appears in the UI. |
+| isRequired | boolean | Boolean value representing whether or not a value is required for this custom field. |
+| type | string | The type of custom field defined. Will be either "text" (free-form text field), "checkbox" (boolean value), or "option" (dropdown list). |
+| options | array | Array of name-value pairs corresponding to the options defined for this field. (Empty for "text" or "checkbox" field types.) |
 
 ### Examples
 

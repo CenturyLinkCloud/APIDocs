@@ -25,83 +25,25 @@ Use this API operation when you want to change the parent of a given group.
 
 ### URI Parameters
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Req.</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>AccountAlias</td>
-      <td>string</td>
-      <td>Short code for a particular account</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>GroupId</td>
-      <td>string</td>
-      <td>ID of the group to update. Retrieved from query to containing group, or by looking at the URL when viewing a group in the Control Portal.</td>
-      <td>Yes</td>
-    </tr>
-  </tbody>
-</table>
+| Name | Type | Description | Req. |
+| --- | --- | --- | --- |
+| AccountAlias | string | Short code for a particular account | Yes |
+| GroupId | string | ID of the group to update. Retrieved from query to containing group, or by looking at the URL when viewing a group in the Control Portal. | Yes |
 
 
 ### Content Properties
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Req.</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>patchOperation</td>
-      <td>array</td>
-      <td>A list of properties, values, and the operations to perform with them for the group.</td>
-      <td>Yes</td>
-    </tr>
-  </tbody>
-</table>
+| Name | Type | Description | Req. |
+| --- | --- | --- | --- |
+| patchOperation | array | A list of properties, values, and the operations to perform with them for the group. | Yes |
 
 ### PatchOperation Definition
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>op</td>
-      <td>string</td>
-      <td>The operation to perform on a given property of the group. In this case, the value must be "set" for setting the parent group.
-</td>
-    </tr>
-    <tr>
-      <td>member</td>
-      <td>string</td>
-      <td>The property of the group to perform the operation on. In this case, the value will be "parentGroupId".</td>
-    </tr>
-    <tr>
-      <td>value</td>
-      <td>string</td>
-      <td>The value to set for the given member. This is the group identifier for the new parent group.</td>
-    </tr>
-  </tbody>
-</table>
-
+| Name | Type | Description |
+| --- | --- | --- |
+| op | string| The operation to perform on a given property of the group. In this case, the value must be "set" for setting the parent group. |
+| member | string | The property of the group to perform the operation on. In this case, the value will be "parentGroupId". |
+| value | string | The value to set for the given member. This is the group identifier for the new parent group. |
 
 ### Examples
 

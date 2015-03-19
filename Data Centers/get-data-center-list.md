@@ -25,82 +25,19 @@ Use this API operation when you need the list of data center names and codes tha
 
 ### URI Parameters
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Req.</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>AccountAlias</td>
-      <td>string</td>
-      <td>Short code for a particular account</td>
-      <td>Yes</td>
-    </tr>
-  </tbody>
-</table>
+| Name | Type | Description | Req. |
+| --- | --- | --- | --- |
+| AccountAlias | string | Short code for a particular account | Yes |
 
 ## Response
 
 ### Entity Definition
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>id</td>
-      <td>string</td>
-      <td>Short value representing the data center code</td>
-    </tr>
-    <tr>
-      <td>Name</td>
-      <td>string</td>
-      <td>Full, friendly name of the data center</td>
-    </tr>
-    <tr>
-      <td>Links</td>
-      <td>array</td>
-      <td>Collection of entity links that point to resources related to this data center</td>
-    </tr>
-  </tbody>
-</table>
-
-### Self Link Definition
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Value</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>rel</td>
-      <td>string</td>
-      <td>self</td>
-      <td>The link type</td>
-    </tr>
-    <tr>
-      <td>href</td>
-      <td>string</td>
-      <td>/v2/datacenters/[ALIAS]/[DC]</td>
-      <td>Address of the resource itself</td>
-    </tr>
-  </tbody>
-</table>
+| Name | Type | Description |
+| --- | --- | --- |
+| id | string | Short value representing the data center code |
+| name | string | Full, friendly name of the data center |
+| links | array | Collection of [entity links](../Getting Started/api-v20-links-framework.md) that point to resources related to this data center |
 
 ### Examples
 

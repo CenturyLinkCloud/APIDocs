@@ -25,90 +25,35 @@ Use this API operation when you want to find out information about a specific pu
 
 ### URI Parameters
 
-|Name|Type|Description|Req.|
-|---|---|---|---|
-|AccountAlias|string|Short code for a particular account|Yes|
-|ServerId|string|ID of the server being queried. Retrieved from query to containing group, or by looking at the URL when viewing a server in the Control Portal.|Yes|
-|PublicIP|string|The specific public IP to return details about. A server may have more than one public IP, and the list of available ones can be retrieved from the call to [Get Server](../Servers/get-server.md).|Yes|
+| Name | Type | Description | Req. |
+| --- | --- | --- | --- |
+| AccountAlias | string | Short code for a particular account | Yes |
+| ServerId | string | ID of the server being queried. Retrieved from query to containing group, or by looking at the URL when viewing a server in the Control Portal. | Yes |
+| PublicIP | string | The specific public IP to return details about. A server may have more than one public IP, and the list of available ones can be retrieved from the call to [Get Server](../Servers/get-server.md). | Yes |
 
 ## Response
 
 ### Entity Definition
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>internalIPAddress</td>
-      <td>string</td>
-      <td>The internal (private) IP address mapped to the public IP address.</td>
-    </tr>
-    <tr>
-      <td>ports</td>
-      <td>array</td>
-      <td>The set of accessible ports and protocols for the public IP address.</td>
-    </tr>
-    <tr>
-      <td>sourceRestrictions</td>
-      <td>array</td>
-      <td>The source IP address range allowed to access the new public IP address. Only traffic from this range will have access to the public IP on the specified ports.</td>
-    </tr>
-  </tbody>
-</table>
+| Name | Type | Description |
+| --- | --- | --- |
+| internalIPAddress | string | The internal (private) IP address mapped to the public IP address. |
+| ports | array | The set of accessible ports and protocols for the public IP address. |
+| sourceRestrictions | array | The source IP address range allowed to access the new public IP address. Only traffic from this range will have access to the public IP on the specified ports. |
 
 ### Ports Definition
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>protocol</td>
-      <td>string</td>
-      <td>The specific protocol to support for the given port(s). Should be either "tcp", "udp", or "icmp" (which is enabled by default).</td>
-    </tr>
-    <tr>
-      <td>port</td>
-      <td>integer</td>
-      <td>The port to open for the given protocol. If defining a range of ports, this represents the first port in the range.</td>
-    </tr>
-    <tr>
-      <td>portTo</td>
-      <td>integer</td>
-      <td>If defining a range of ports, optionally provide the last number of the range.</td>
-    </tr>
-  </tbody>
-</table>
+| Name | Type | Description |
+| --- | --- | --- |
+| protocol | string | The specific protocol to support for the given port(s). Should be either "tcp", "udp", or "icmp" (which is enabled by default). |
+| port | integer | The port to open for the given protocol. If defining a range of ports, this represents the first port in the range. |
+| portTo | integer | If defining a range of ports, optionally provide the last number of the range. |
 
 ### SourceRestrictions Definition
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>cidr</td>
-      <td>string</td>
-      <td>The IP range allowed to access the public IP, specified using <a href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing" target="_blank">CIDR notation</a>.</td>
-    </tr>
-  </tbody>
-</table>
+| Name | Type | Description |
+| --- | --- | --- |
+| cidr | string | The IP range allowed to access the public IP, specified using [CIDR notation](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing). |
 
 ### Examples
 

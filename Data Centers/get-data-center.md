@@ -25,108 +25,21 @@ Use this API operation when you want to discover the name of the root hardware g
 
 ### URI and Querystring Parameters
 
-|Name|Type|Description|Req.|
-|---|---|---|---|
-|AccountAlias|string|Short code for a particular account|Yes|
-|DataCenter|string|Short string representing the data center you are querying. Valid codes can be retrieved from the [Get Data Center List](get-data-center.md) API operation.|Yes|
-|GroupLinks|boolean|Determine whether link collections are returned for each group|No|
+| Name | Type | Description | Req. |
+| --- | --- | --- | --- |
+| AccountAlias | string | Short code for a particular account | Yes |
+| DataCenter | string | Short string representing the data center you are querying. Valid codes can be retrieved from the [Get Data Center List](get-data-center.md) API operation. | Yes |
+| GroupLinks | boolean | Determine whether link collections are returned for each group | No |
 
 ## Response
 
 ### Entity Definition
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>id</td>
-      <td>string</td>
-      <td>Short value representing the data center code</td>
-    </tr>
-    <tr>
-      <td>Name</td>
-      <td>string</td>
-      <td>Full, friendly name of the data center</td>
-    </tr>
-    <tr>
-      <td>Links</td>
-      <td>array</td>
-      <td>Collection of entity links that point to resources related to this data center</td>
-    </tr>
-  </tbody>
-</table>
-
-### Self Link Definition
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Value</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>rel</td>
-      <td>string</td>
-      <td>self</td>
-      <td>The link type</td>
-    </tr>
-    <tr>
-      <td>href</td>
-      <td>string</td>
-      <td>/v2/datacenters/[ALIAS]/[DC]</td>
-      <td>Address of the resource itself</td>
-    </tr>
-  </tbody>
-</table>
-
-### Group Link Definition
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Value</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>rel</td>
-      <td>string</td>
-      <td>group</td>
-      <td>The link type</td>
-    </tr>
-    <tr>
-      <td>href</td>
-      <td>string</td>
-      <td>/v2/datacenters/[ALIAS]/[DC]</td>
-      <td>Address of the root hardware group</td>
-      </tr>
-    <tr>
-      <td>id</td>
-      <td>string</td>
-      <td>[GROUPID]</td>
-      <td>Identifier of the root hardware group</td>
-    </tr>
-    <tr>
-      <td>name</td>
-      <td>string</td>
-      <td>[GROUP NAME]</td>
-      <td>Friendly name of the group</td>
-    </tr>
-  </tbody>
-</table>
+| Name | Type | Description |
+| --- | --- | --- |
+| id | string | Short value representing the data center code |
+| name | string | Full, friendly name of the data center |
+| links | array | Collection of [entity links](../Getting Started/api-v20-links-framework.md) that point to resources related to this data center |
 
 ### Examples
 

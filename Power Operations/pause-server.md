@@ -5,7 +5,7 @@
   "attachments": []
 }}}
 
-Sends the pause operation to a list of servers and adds operation to queue. (See <a href="http://www.centurylinkcloud.com/knowledge-base/servers/descriptions-of-servergroup-power-commands/">Description of Server Group Power Commands</a> for details on how the pause operation is used.) Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](../Authentication/login.md) for information on acquiring this token.
+Sends the pause operation to a list of servers and adds operation to queue. (See [Description of Server Group Power Commands](http://www.centurylinkcloud.com/knowledge-base/servers/descriptions-of-servergroup-power-commands/) for details on how the power off operation is used.) Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](../Authentication/login.md) for information on acquiring this token.
 
 ### When to Use It
 
@@ -25,43 +25,15 @@ Use this API operation when you want to pause a single server or group of server
 
 ### URI Parameters
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Req.</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>AccountAlias</td>
-      <td>string</td>
-      <td>Short code for a particular account</td>
-      <td>Yes</td>
-    </tr>
-  </tbody>
-</table>
-<h3>Content Properties</h3>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Req.</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>serverIds</td>
-      <td>array</td>
-      <td>List of server IDs to perform pause operation on.</td>
-      <td>Yes</td>
-    </tr>
-  </tbody>
-</table>
+| Name | Type | Description | Req. |
+| --- | --- | --- | --- |
+| AccountAlias | string | Short code for a particular account | Yes |
+
+###Content Properties
+
+| Name | Type | Description | Req. |
+| --- | --- | --- | --- |
+| serverIds | array | List of server IDs to perform pause operation on. | Yes |
 
 ### Examples
 
@@ -78,45 +50,12 @@ The response will be an array containing one entity for each server that the ope
 
 ### Entity Definition
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>server</td>
-      <td>string</td>
-      <td>ID of the server that the operation was performed on.</td>
-    </tr>
-    <tr>
-      <td>isQueued</td>
-      <td>boolean</td>
-      <td>Boolean indicating whether the operation was successfully added to the queue.</td>
-    </tr>
-    <tr>
-      <td>links</td>
-      <td>complex</td>
-      <td>Collection of entity links that point to resources related to this server operation.</td>
-    </tr>
-    <tr>
-      <td>errorMessage</td>
-      <td>string</td>
-      <td>If something goes wrong or the request is not queued, this is the message that contains the details about what happened.</td>
-    </tr>
-  </tbody>
-</table>
-
-### Status Link Definition
-
-|Name|Type|Value|Description|
-|---|---|---|---|
-|rel|string|status|The link type|
-|href|string|/v2/operations/[ALIAS]/status/[ID]|Address of the job in the queue|
-|id|string|[ID]|The identifier of the job in queue. Can be passed to [Get Status](../Queue/get-status.md) call to retrieve status of job.|
+| Name | Type | Description |
+| --- | --- | --- |
+| server | string | ID of the server that the operation was performed on. |
+| isQueued | boolean | Boolean indicating whether the operation was successfully added to the queue. |
+| links | array | Collection of [entity links](../Getting Started/api-v20-links-framework.md) that point to resources related to this server operation. |
+| errorMessage | string | If something goes wrong or the request is not queued, this is the message that contains the details about what happened. |
 
 ### Examples
 

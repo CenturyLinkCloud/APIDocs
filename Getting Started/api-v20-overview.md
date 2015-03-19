@@ -10,49 +10,25 @@ The CenturyLink Cloud has a new, improved API for performing the same actions pr
 
 The URL format of the service is: `https://api.ctl.io/v2/{resource}/{account alias}`. As an example, to retrieve the top level Group for a given data center, you would issue a GET request to `https://api.ctl.io/v2/datacenters/ALIAS/WA1`. The HTTP request must include `Content-Type` and `Accepts` headers set to `application/json`.
 
-Service authentication is done via bearer tokens and is outlined in the [Login API](../Authentication/login.md) description.
+### Authentication
 
-The service responds to requests using <a href="http://en.wikipedia.org/wiki/List_of_HTTP_status_codes" target="_blank">standard HTTP codes</a>, and if applicable, a JSON payload.
+Service authentication is done via bearer tokens and is outlined in the [Authentication Overview](api-v20-authentication-overview.md) and also the [Login API](../Authentication/login.md) description.
 
-<table>
-  <thead>
-    <tr>
-      <th>HTTP Code</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>200</td>
-      <td>OK. Sent when requests are immediately successful and did NOT create a new URL-addressable resource.</td>
-    </tr>
-    <tr>
-      <td>201</td>
-      <td>CREATED. Sent when requests are immediately successful and DID create a new URL-addressable resource.</td>
-    </tr>
-    <tr>
-      <td>202</td>
-      <td>ACCEPTED. Sent when requests result in a scheduled activity. Response body will include a URL for them to get the status of the activity.</td>
-    </tr>
-    <tr>
-      <td>400</td>
-      <td>BAD REQUEST. Sent when something is wrong with the query string or message body.</td>
-    </tr>
-    <tr>
-      <td>401</td>
-      <td>UNAUTHORIZED. Sent when a bearer token is not provided.</td>
-    </tr>
-    <tr>
-      <td>403</td>
-      <td>FORBIDDEN. Sent if the request violates the security demands of the service.</td>
-    </tr>
-    <tr>
-      <td>404</td>
-      <td>NOT FOUND. Sent if the URL points to a non-existent resource.</td>
-    </tr>
-    <tr>
-      <td>500</td>
-      <td>INTERNAL SERVER ERROR. Sent if the service experiences an error through no fault of the user.</td>
-    </tr>
-  </tbody>
-</table>
+### Links Framework
+
+The CenturyLink Cloud v2 REST API utilizes the concept of "linking" to reference other related entities from within JSON response payloads. See more information in our overview of the [Links Framework](api-v20-links-framework.md).
+
+### HTTP Response Codes
+
+The service responds to requests using [standard HTTP codes](http://en.wikipedia.org/wiki/List_of_HTTP_status_codes), and if applicable, a JSON payload.
+
+|HTTP Code|Description|
+|---|---|
+|200|OK. Sent when requests are immediately successful and did NOT create a new URL-addressable resource.|
+|201|CREATED. Sent when requests are immediately successful and DID create a new URL-addressable resource.|
+|202|ACCEPTED. Sent when requests result in a scheduled activity. Response body will include a URL for them to get the status of the activity.|
+|400|BAD REQUEST. Sent when something is wrong with the query string or message body.|
+|401|UNAUTHORIZED. Sent when a bearer token is not provided.|
+|403|FORBIDDEN. Sent if the request violates the security demands of the service.|
+|404|NOT FOUND. Sent if the URL points to a non-existent resource.|
+|500|INTERNAL SERVER ERROR. Sent if the service experiences an error through no fault of the user.|
