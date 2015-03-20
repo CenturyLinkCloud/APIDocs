@@ -25,71 +25,22 @@ Use this API operation when you want to explicitly turn on or off maintenance mo
 
 ### URI Parameters
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Req.</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>AccountAlias</td>
-      <td>string</td>
-      <td>Short code for a particular account</td>
-      <td>Yes</td>
-    </tr>
-  </tbody>
-</table>
+| Name | Type | Description | Req. |
+| --- | --- | --- | --- |
+| AccountAlias | string | Short code for a particular account | Yes |
 
 ### Content Properties
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Req.</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>servers</td>
-      <td>array</td>
-      <td>List of server ID and maintenance mode pairs to set.</td>
-      <td>Yes</td>
-    </tr>
-  </tbody>
-</table>
+| Name | Type | Description | Req. |
+| --- | --- | --- | --- |
+| servers | array | List of server ID and maintenance mode pairs to set. | Yes |
 
 ### Servers Definition
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>id</td>
-      <td>string</td>
-      <td>ID of server to set maintenance mode on or off</td>
-    </tr>
-    <tr>
-      <td>inMaintenanceMode</td>
-      <td>boolean</td>
-      <td>Indicator of whether to place server in maintenance mode or not
-        <br />
-      </td>
-    </tr>
-  </tbody>
-</table>
+| Name | Type | Description |
+| --- | --- | --- |
+| id | string | ID of server to set maintenance mode on or off |
+| inMaintenanceMode | boolean | Indicator of whether to place server in maintenance mode or not |
 
 ### Examples
 
@@ -114,45 +65,12 @@ The response will be an array containing one entity for each server that the ope
 
 ### Entity Definition
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>server</td>
-      <td>string</td>
-      <td>ID of the server that the operation was performed on.</td>
-    </tr>
-    <tr>
-      <td>isQueued</td>
-      <td>boolean</td>
-      <td>Boolean indicating whether the operation was successfully added to the queue.</td>
-    </tr>
-    <tr>
-      <td>links</td>
-      <td>complex</td>
-      <td>Collection of entity links that point to resources related to this server operation.</td>
-    </tr>
-    <tr>
-      <td>errorMessage</td>
-      <td>string</td>
-      <td>If something goes wrong or the request is not queued, this is the message that contains the details about what happened.</td>
-    </tr>
-  </tbody>
-</table>
-
-### Status Link Definition
-
-|Name|Type|Value|Description|
-|---|---|---|---|
-|rel|string|status|The link type|
-|href|string|/v2/operations/[ALIAS]/status/[ID]|Address of the job in the queue|
-|id|string|[ID]|The identifier of the job in queue. Can be passed to [Get Status](../Queue/get-status.md) call to retrieve status of job.|
+| Name | Type | Description |
+| --- | --- | --- |
+| server | string | ID of the server that the operation was performed on. |
+| isQueued | boolean | Boolean indicating whether the operation was successfully added to the queue. |
+| links | array | Collection of [entity links](../Getting Started/api-v20-links-framework.md) that point to resources related to this server operation. |
+| errorMessage | string | If something goes wrong or the request is not queued, this is the message that contains the details about what happened. |
 
 ### Examples
 

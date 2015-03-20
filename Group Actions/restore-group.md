@@ -5,7 +5,7 @@
   "attachments": []
 }}}
 
-Sends the restore operation to an archived group. (See <a href="/knowledge-base/servers/understanding-vm-deployment-options-and-power-states/#archive">Understanding VM Deployment Options and Power States</a> for details on the archive operation.) Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](../Authentication/login.md) for information on acquiring this token.
+Sends the restore operation to an archived group. (See [Understanding VM Deployment Options and Power States](http://www.centurylinkcloud.com/knowledge-base/servers/understanding-vm-deployment-options-and-power-states/#archive) for details on the archive operation.) Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](../Authentication/login.md) for information on acquiring this token.
 
 
 ### When to Use It
@@ -26,117 +26,26 @@ Use this API operation when you want to restore an archived group and its groups
 
 ### URI Parameters
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Req.</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>AccountAlias</td>
-      <td>string</td>
-      <td>Short code for a particular account.</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>GroupID</td>
-      <td>string</td>
-      <td>ID of the group to restore. Retrieved from query to parent group, or by looking at the URL on the new UI pages in the Control Portal.</td>
-      <td>Yes</td>
-    </tr>
-  </tbody>
-</table>
+| Name | Type | Description | Req. |
+| --- | --- | --- | --- |
+| AccountAlias | string | Short code for a particular account. | Yes |
+| GroupID | string | ID of the group to restore. Retrieved from query to parent group, or by looking at the URL on the new UI pages in the Control Portal. | Yes |
 
 ### Content Properties
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Req.</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>targetGroupId</td>
-      <td>string</td>
-      <td>The unique identifier of the target group to restore the group to.</td>
-      <td>Yes</td>
-    </tr>
-  </tbody>
-</table>
+| Name | Type | Description | Req. |
+| --- | --- | --- | --- |
+| targetGroupId | string | The unique identifier of the target group to restore the group to. | Yes |
 
 ## Response
 
 ### Entity Definition
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>isQueued</td>
-      <td>boolean</td>
-      <td>Boolean indicating whether the operation was successfully added to the queue.</td>
-    </tr>
-    <tr>
-      <td>links</td>
-      <td>complex</td>
-      <td>Collection of entity links that point to resources related to this group operation.</td>
-    </tr>
-    <tr>
-      <td>errorMessage</td>
-      <td>string</td>
-      <td>If something goes wrong or the request is not queued, this is the message that contains the details about what happened.</td>
-    </tr>
-  </tbody>
-</table>
-
-### Self Link Definition
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Value</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>rel</td>
-      <td>string</td>
-      <td>self</td>
-      <td>The link type</td>
-    </tr>
-    <tr>
-      <td>href</td>
-      <td>string</td>
-      <td>/v2/groups/[ALIAS]/[UUID]?AccountAlias=[ALIAS]&identifier=[UUID]</td>
-      <td>Address of the group being restored</td>
-    </tr>
-  </tbody>
-</table>
-
-### Status Link Definition
-
-|Name|Type|Value|Description|
-|---|---|---|---|
-|rel|string|status|The link type|
-|href|string|/v2/operations/[ALIAS]/status/[ID]|Address of the job in the queue|
-|id|string|[ID]|The identifier of the job in queue. Can be passed to [Get Status](../Queue/get-status.md) call to retrieve status of job.|
+| Name | Type | Description |
+| --- | --- | --- |
+| isQueued | boolean | Boolean indicating whether the operation was successfully added to the queue. |
+| links | array | Collection of [entity links](../Getting Started/api-v20-links-framework.md) that point to resources related to this group operation. |
+| errorMessage | string | If something goes wrong or the request is not queued, this is the message that contains the details about what happened. |
 
 ### Examples
 

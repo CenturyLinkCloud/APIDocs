@@ -25,40 +25,20 @@ Use this API operation when you want to delete a group and all objects underneat
 
 ### URI Parameters
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Req.</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>AccountAlias</td>
-      <td>string</td>
-      <td>Short code for a particular account</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>GroupId</td>
-      <td>string</td>
-      <td>ID of the group to be deleted. Retrieved from query to parent group, or by looking at the URL on the new UI pages in the Control Portal.</td>
-      <td>Yes</td>
-    </tr>
-  </tbody>
-</table>
+| Name | Type | Description | Req. |
+| --- | --- | --- | --- |
+| AccountAlias | string | Short code for a particular account | Yes |
+| GroupId | string | ID of the group to be deleted. Retrieved from query to parent group, or by looking at the URL on the new UI pages in the Control Portal. | Yes |
 
 ## Response
 
 ### Entity Definition
 
-|Name|Type|Value|Description|
-|---|---|---|---|
-|rel|string|status|The link type|
-|href|string|/v2/operations/[ALIAS]/status/[ID]|Address of the job in the queue|
-|id|string|[ID]|The identifier of the job in queue. Can be passed to [Get Status](../Queue/get-status.md) call to retrieve status of job.|
+| Name | Type | Value | Description |
+| --- | --- | --- | --- |
+| rel | string | status | The link type |
+| href | string | /v2/operations/[ALIAS]/status/[ID]|Address of the job in the queue |
+| id | string | [ID]|The identifier of the job in queue. Can be passed to [Get Status](../Queue/get-status.md) call to retrieve status of job. |
 
 ### Examples
 

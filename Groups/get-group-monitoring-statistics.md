@@ -25,200 +25,53 @@ Use this API operation when you want to track the resource usage of servers with
 
 ### URI and Querystring Parameters
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Req.</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>AccountAlias</td>
-      <td>string</td>
-      <td>Short code for a particular account</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>GroupID</td>
-      <td>string</td>
-      <td>ID of the group being queried. Retrieved from query to parent group, or by looking at the URL on the new UI pages in the Control Portal.</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>start</td>
-      <td>datetime</td>
-      <td>DateTime (UTC) of the query window. Note that statistics are only held for 14 days. Start date (and optional end date) must be within the past 14 days. Value is not required if choosing the "Latest" query type.</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <td>end</td>
-      <td>datetime</td>
-      <td>DateTime (UTC) of the query window. End date (and start date) must be within the past 14 days. Not a required value if results should be up to the current time.</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <td>sampleInterval</td>
-      <td>timespan</td>
-      <td>Result interval. For the default "hourly" type, the minimum value is 1 hour (01:00:00) and maximum is the full window size of 14 days. Note that interval must fit within start/end window, or you will get an exception that states: "The 'end'
-        parameter must represent a time that occurs at least one 'sampleInterval' before 'start." If "realtime" type specified, interval can be as small as 5 minutes (05:00).</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <td>type</td>
-      <td>string</td>
-      <td>Default is "Hourly" which returns hourly data (possibly in a different interval if a sampleInterval is specified) for the past 14 days (or whatever window is specified). Value "Realtime" means that data from the last 4 hours is available in smaller
-        increments. To use "Realtime" type, start parameter must be within the last 4 hours. Final valid type is "Latest" which returns a single data point that reflects the last monitoring data collected. No start, end, or sampleInterval values are needed
-        for this type.</td>
-      <td>No</td>
-    </tr>
-  </tbody>
-</table>
+| Name | Type | Description | Req. |
+| --- | --- | --- | --- |
+| AccountAlias | string | Short code for a particular account | Yes |
+| GroupID | string | ID of the group being queried. Retrieved from query to parent group, or by looking at the URL on the new UI pages in the Control Portal. | Yes |
+| start | datetime | DateTime (UTC) of the query window. Note that statistics are only held for 14 days. Start date (and optional end date) must be within the past 14 days. Value is not required if choosing the "Latest" query type. | No |
+| end | datetime | DateTime (UTC) of the query window. End date (and start date) must be within the past 14 days. Not a required value if results should be up to the current time. | No |
+| sampleInterval | timespan | Result interval. For the default "hourly" type, the minimum value is 1 hour (01:00:00) and maximum is the full window size of 14 days. Note that interval must fit within start/end window, or you will get an exception that states: "The 'end' parameter must represent a time that occurs at least one 'sampleInterval' before 'start." If "realtime" type specified, interval can be as small as 5 minutes (05:00). | No |
+| type | string| Default is "Hourly" which returns hourly data (possibly in a different interval if a sampleInterval is specified) for the past 14 days (or whatever window is specified). Value "Realtime" means that data from the last 4 hours is available in smaller increments. To use "Realtime" type, start parameter must be within the last 4 hours. Final valid type is "Latest" which returns a single data point that reflects the last monitoring data collected. No start, end, or sampleInterval values are needed for this type. | No |
 
 ## Response
 
 ### Entity Definition
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>name</td>
-      <td>string</td>
-      <td>User-defined name of the group</td>
-    </tr>
-    <tr>
-      <td>stats</td>
-      <td>array</td>
-      <td>Collection of stats for the server for the interval chosen</td>
-    </tr>
-  </tbody>
-</table>
+| Name | Type | Description |
+| --- | --- | --- |
+| name | string | User-defined name of the group |
+| stats | array | Collection of stats for the server for the interval chosen |
 
 ### Stats Definition
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>timestamp</td>
-      <td>datetime</td>
-      <td>Timestamp of the monitoring results</td>
-    </tr>
-    <tr>
-      <td>cpu</td>
-      <td>float</td>
-      <td>CPU allocation during the interval</td>
-    </tr>
-    <tr>
-      <td>cpuPercent</td>
-      <td>float</td>
-      <td>CPU consumption (out of 100%) during the interval</td>
-    </tr>
-    <tr>
-      <td>memoryMB</td>
-      <td>float</td>
-      <td>Memory allocation during the interval</td>
-    </tr>
-    <tr>
-      <td>memoryPercent</td>
-      <td>float</td>
-      <td>Memory consumption (out of 100%) during the interval</td>
-    </tr>
-    <tr>
-      <td>networkReceivedKbps</td>
-      <td>float</td>
-      <td>Public network consumption in during the interval</td>
-    </tr>
-    <tr>
-      <td>networkTransmittedKbps</td>
-      <td>float</td>
-      <td>Public network consumption out during the interval</td>
-    </tr>
-    <tr>
-      <td>diskUsageTotalCapacityMB</td>
-      <td>float</td>
-      <td>Total disk allocation during the interval</td>
-    </tr>
-    <tr>
-      <td>diskUsage</td>
-      <td>array</td>
-      <td>List of physical disks attached to the virtual machine</td>
-    </tr>
-    <tr>
-      <td>guestDiskUsage</td>
-      <td>array</td>
-      <td>List of partitions used inside the guest OS</td>
-    </tr>
-  </tbody>
-</table>
+| Name | Type | Description |
+| --- | --- | --- |
+| timestamp | datetime | Timestamp of the monitoring results |
+| cpu | float | CPU allocation during the interval |
+| cpuPercent | float | CPU consumption (out of 100%) during the interval |
+| memoryMB | float | Memory allocation during the interval |
+| memoryPercent | float | Memory consumption (out of 100%) during the interval |
+| networkReceivedKbps | float | Public network consumption in during the interval |
+| networkTransmittedKbps | float | Public network consumption out during the interval |
+| diskUsageTotalCapacityMB | float | Total disk allocation during the interval |
+| diskUsage | array | List of physical disks attached to the virtual machine |
+| guestDiskUsage | array | List of partitions used inside the guest OS |
 
 ### Disk Usage Definition
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>id</td>
-      <td>string</td>
-      <td>Disk identifier</td>
-    </tr>
-    <tr>
-      <td>capacityMB</td>
-      <td>integer</td>
-      <td>Capacity (in MB) allocated for this disk</td>
-    </tr>
-  </tbody>
-</table>
+| Name | Type | Description |
+| --- | --- | --- |
+| id | string | Disk identifier |
+| capacityMB | integer | Capacity (in MB) allocated for this disk |
 
 ### Guest Usage Definition
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>path</td>
-      <td>string</td>
-      <td>Path of this partition</td>
-    </tr>
-    <tr>
-      <td>capacityMB</td>
-      <td>integer</td>
-      <td>Total capacity available to this partition</td>
-    </tr>
-    <tr>
-      <td>consumedMB</td>
-      <td>integer</td>
-      <td>Amount of capacity in use by this partition</td>
-    </tr>
-  </tbody>
-</table>
+| Name | Type | Description |
+| --- | --- | --- |
+| path | string | Path of this partition |
+| capacityMB | integer | Total capacity available to this partition |
+| consumedMB | integer | Amount of capacity in use by this partition |
 
 ### Examples
 

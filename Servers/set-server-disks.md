@@ -25,82 +25,25 @@ Use this API operation when you want to change the disks on an existing server.
 
 ### URI Parameters
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Req.</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>AccountAlias</td>
-      <td>string</td>
-      <td>Short code for a particular account</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>ServerId</td>
-      <td>string</td>
-      <td>ID of the server with the disk configuration to update. Retrieved from query to containing group, or by looking at the URL when viewing a server in the Control Portal.</td>
-      <td>Yes</td>
-    </tr>
-  </tbody>
-</table>
+| Name | Type | Description | Req. |
+| --- | --- | --- | --- |
+| AccountAlias | string | Short code for a particular account | Yes |
+| ServerId | string | ID of the server with the disk configuration to update. Retrieved from query to containing group, or by looking at the URL when viewing a server in the Control Portal. | Yes |
 
 
 ### Content Properties
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Req.</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>patchOperation</td>
-      <td>array</td>
-      <td>A list of properties, values, and the operations to perform with them for the server.</td>
-      <td>Yes</td>
-    </tr>
-  </tbody>
-</table>
+| Name | Type | Description | Req. |
+| --- | --- | --- | --- |
+| patchOperation | array | A list of properties, values, and the operations to perform with them for the server. | Yes |
 
 ### PatchOperation Definition
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>op</td>
-      <td>string</td>
-      <td>The operation to perform on a given property of the server. In this case, the value must be "set" for setting the disk configuration.
-</td>
-    </tr>
-    <tr>
-      <td>member</td>
-      <td>string</td>
-      <td>The property of the server to perform the operation on. In this case, the value must be "disks" for setting the disks.</td>
-    </tr>
-    <tr>
-      <td>value</td>
-      <td>array</td>
-      <td>A list of information for _all disks_ to be on the server including type (raw or partition), size, and path.<br/><br/>_Note: You must specify the complete list of disks to be on the server. If you want to add or resize a disk, specify all existing disks/sizes along with a new entry for the disk to add or the new size of an existing disk. To delete a disk, just specify all the disks that should remain. (You can get existing disk info by using the [Get Server](get-server.md) call to see all the details of the server.)_</td>
-    </tr>
-  </tbody>
-</table>
+| Name | Type | Description |
+| --- | --- | --- |
+| op | string | The operation to perform on a given property of the server. In this case, the value must be "set" for setting the disk configuration. |
+| member | string | The property of the server to perform the operation on. In this case, the value must be "disks" for setting the disks. |
+| value | array | A list of information for _all disks_ to be on the server including type (raw or partition), size, and path.<br/><br/>_Note: You must specify the complete list of disks to be on the server. If you want to add or resize a disk, specify all existing disks/sizes along with a new entry for the disk to add or the new size of an existing disk. To delete a disk, just specify all the disks that should remain. (You can get existing disk info by using the [Get Server](get-server.md) call to see all the details of the server.)_ |
 
 
 ### Examples

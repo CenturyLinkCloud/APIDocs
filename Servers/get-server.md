@@ -26,936 +26,103 @@ Use this API operation when you want to find out all the details for a server. I
 
 ### URI Parameters
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Req.</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>AccountAlias</td>
-      <td>string</td>
-      <td>Short code for a particular account</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>ServerId</td>
-      <td>string</td>
-      <td>ID of the server being queried. Retrieved from query to containing group, or by looking at the URL when viewing a server in the Control Portal.</td>
-      <td>Yes</td>
-    </tr>
-  </tbody>
-</table>
+| Name | Type | Description | Req. |
+| --- | --- | --- | --- |
+| AccountAlias | string | Short code for a particular account | Yes |
+| ServerId | string | ID of the server being queried. Retrieved from query to containing group, or by looking at the URL when viewing a server in the Control Portal. | Yes |
 
 ## Response
 
 ### Server Entity Definition
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>id</td>
-      <td>string</td>
-      <td>ID of the server being queried</td>
-    </tr>
-    <tr>
-      <td>name</td>
-      <td>string</td>
-      <td>Name of the server</td>
-    </tr>
-    <tr>
-      <td>description</td>
-      <td>string</td>
-      <td>User-defined description of this server</td>
-    </tr>
-    <tr>
-      <td>groupId</td>
-      <td>string</td>
-      <td>ID of the parent group</td>
-    </tr>
-    <tr>
-      <td>isTemplate</td>
-      <td>boolean</td>
-      <td>Boolean indicating whether this is a custom template or running server</td>
-    </tr>
-    <tr>
-      <td>locationId</td>
-      <td>string</td>
-      <td>Data center that this server resides in</td>
-    </tr>
-    <tr>
-      <td>osType</td>
-      <td>string</td>
-      <td>Friendly name of the Operating System the server is running</td>
-    </tr>
-    <tr>
-      <td>status</td>
-      <td>string</td>
-      <td>Describes whether the server is active or not</td>
-    </tr>
-    <tr>
-      <td>details</td>
-      <td>complex</td>
-      <td>Resource allocations, alert policies, snapshots, and more.</td>
-    </tr>
-    <tr>
-      <td>type</td>
-      <td>string</td>
-      <td>Whether a standard or premium server</td>
-    </tr>
-    <tr>
-      <td>storageType</td>
-      <td>string</td>
-      <td>Whether it uses standard or premium storage</td>
-    </tr>
-    <tr>
-      <td>changeInfo</td>
-      <td>complex</td>
-      <td>Describes "created" and "modified" details</td>
-    </tr>
-    <tr>
-      <td>links</td>
-      <td>complex</td>
-      <td>Collection of entity links that point to resources related to this server</td>
-    </tr>
-  </tbody>
-</table>
+| Name | Type | Description |
+| --- | --- | --- |
+| id | string | ID of the server being queried |
+| name | string | Name of the server |
+| description | string | User-defined description of this server |
+| groupId | string | ID of the parent group |
+| isTemplate | boolean | Boolean indicating whether this is a custom template or running server |
+| locationId | string | Data center that this server resides in |
+| osType | string | Friendly name of the Operating System the server is running |
+| status | string | Describes whether the server is active or not |
+| details | complex | Resource allocations, alert policies, snapshots, and more. |
+| type | string | Whether a standard or premium server |
+| storageType | string | Whether it uses standard or premium storage |
+| changeInfo | complex | Describes "created" and "modified" details |
+| links | array | Collection of [entity links](../Getting Started/api-v20-links-framework.md) that point to resources related to this server |
 
 ### Details Definition
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>ipAddresses</td>
-      <td>complex</td>
-      <td>Details about IP addresses associated with the server</td>
-    </tr>
-    <tr>
-      <td>alertPolicies</td>
-      <td>complex</td>
-      <td>Describe each alert policy applied to the server</td>
-    </tr>
-    <tr>
-      <td>cpu</td>
-      <td>integer</td>
-      <td>How many vCPUs are allocated to the server</td>
-    </tr>
-    <tr>
-      <td>diskCount</td>
-      <td>integer</td>
-      <td>How many disks are attached to the server</td>
-    </tr>
-    <tr>
-      <td>hostName</td>
-      <td>string</td>
-      <td>Fully qualified name of the server</td>
-    </tr>
-    <tr>
-      <td>inMaintenanceMode</td>
-      <td>boolean</td>
-      <td>Indicator of whether server has been placed in maintenance mode</td>
-    </tr>
-    <tr>
-      <td>memoryMB</td>
-      <td>integer</td>
-      <td>How many MB of memory are allocated to the server</td>
-    </tr>
-    <tr>
-      <td>powerState</td>
-      <td>string</td>
-      <td>Whether the server is running or not</td>
-    </tr>
-    <tr>
-      <td>storageGB</td>
-      <td>integer</td>
-      <td>How many total GB of storage are allocated to the server</td>
-    </tr>
-    <tr>
-      <td>disks</td>
-      <td>complex</td>
-      <td>The disks attached to the server</td>
-    </tr>
-    <tr>
-      <td>partitions</td>
-      <td>complex</td>
-      <td>The partitions defined for the server</td>
-    </tr>
-    <tr>
-      <td>snapshots</td>
-      <td>complex</td>
-      <td>Details about any snapshot associated with the server</td>
-    </tr>
-    <tr>
-      <td>customFields</td>
-      <td>complex</td>
-      <td>Details about any custom fields and their values</td>
-    </tr>
-  </tbody>
-</table>
+| Name | Type | Description |
+| --- | --- | --- |
+| ipAddresses | complex | Details about IP addresses associated with the server |
+| alertPolicies | complex | Describe each alert policy applied to the server |
+| cpu | integer | How many vCPUs are allocated to the server |
+| diskCount | integer | How many disks are attached to the server |
+| hostName | string | Fully qualified name of the server |
+| inMaintenanceMode | boolean | Indicator of whether server has been placed in maintenance mode |
+| memoryMB | integer | How many MB of memory are allocated to the server |
+| powerState | string | Whether the server is running or not |
+| storageGB | integer | How many total GB of storage are allocated to the server |
+| disks | complex | The disks attached to the server |
+| partitions | complex | The partitions defined for the server |
+| snapshots | complex | Details about any snapshot associated with the server |
+| customFields | complex | Details about any custom fields and their values |
 
 ### IPAddresses Definition
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>public</td>
-      <td>string</td>
-      <td>If applicable, the public IP</td>
-    </tr>
-    <tr>
-      <td>internal</td>
-      <td>string</td>
-      <td>Private IP address. If associated with a public IP address, then the "public" value is populated</td>
-    </tr>
-  </tbody>
-</table>
+| Name | Type | Description |
+| --- | --- | --- |
+| public | string | If applicable, the public IP |
+| internal | string | Private IP address. If associated with a public IP address, then the "public" value is populated |
 
 ### AlertPolicies Definition
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>id</td>
-      <td>string</td>
-      <td>Unique identifier of the policy</td>
-    </tr>
-    <tr>
-      <td>name</td>
-      <td>string</td>
-      <td>User-defined name of the alert policy</td>
-    </tr>
-    <tr>
-      <td>links</td>
-      <td>complex</td>
-      <td>Collection of entity links that point to resources related to this policy</td>
-    </tr>
-  </tbody>
-</table>
-
-### AlertPolicies Self Link Definition
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</td>
-      <th>Type</th>
-      <th>Value</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>rel</td>
-      <td>string</td>
-      <td>self</td>
-      <td>The link type</td>
-    </tr>
-    <tr>
-      <td>href</td>
-      <td>string</td>
-      <td>/v2/policies/alerts/ID?account=[ALIAS]&amp;<br>location=WA1&amp;name=[SERVER]</td>
-      <td>Address of the resource itself</td>
-    </tr>
-  </tbody>
-</table>
-
-### AlertPolicies Policy Map Link Definition
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</td>
-      <th>Type</th>
-      <th>Value</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>rel</td>
-      <td>string</td>
-      <td>alertPolicyMap</td>
-      <td>The link type</td>
-    </tr>
-    <tr>
-      <td>href</td>
-      <td>string</td>
-      <td>/v2/servers/[ALIAS]/[SERVER]/alertPolicies/[ID]</td>
-      <td>Address of the mapping to this server</td>
-    </tr>
-    <tr>
-      <td>verbs</td>
-      <td>array</td>
-      <td>DELETE</td>
-      <td>Valid HTTP verbs that can act on this resource</td>
-    </tr>
-  </tbody>
-</table>
+| Name | Type | Description |
+| --- | --- | --- |
+| id | string | Unique identifier of the policy |
+| name | string | User-defined name of the alert policy |
+| links | array | Collection of [entity links](../Getting Started/api-v20-links-framework.md) that point to resources related to this policy |
 
 ### Disks Definition
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>id</td>
-      <td>string</td>
-      <td>Unique identifier of the disk</td>
-    </tr>
-    <tr>
-      <td>sizeGB</td>
-      <td>integer</td>
-      <td>Size of the disk in GB</td>
-    </tr>
-    <tr>
-      <td>partitionPaths</td>
-      <td>array</td>
-      <td>List of partition paths on the disk</td>
-    </tr>
-  </tbody>
-</table>
+| Name | Type | Description |
+| --- | --- | --- |
+| id | string | Unique identifier of the disk |
+| sizeGB | integer | Size of the disk in GB |
+| partitionPaths | array | List of partition paths on the disk |
 
 ### Partitions Definition
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>sizeGB</td>
-      <td>number</td>
-      <td>Size of the partition in GB</td>
-    </tr>
-    <tr>
-      <td>path</td>
-      <td>string</td>
-      <td>File system location path of the partition</td>
-    </tr>
-  </tbody>
-</table>
+| Name | Type | Description |
+| --- | --- | --- |
+| sizeGB | number | Size of the partition in GB |
+| path | string | File system location path of the partition |
 
 ### Snapshots Definition
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>name</td>
-      <td>string</td>
-      <td>Timestamp of the snapshot</td>
-    </tr>
-    <tr>
-      <td>links</td>
-      <td>complex</td>
-      <td>Collection of entity links that point to resources related to this snapshot</td>
-    </tr>
-  </tbody>
-</table>
-
-### Snapshot Self Link Definition
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</td>
-      <th>Type</th>
-      <th>Value</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>rel</td>
-      <td>string</td>
-      <td>self</td>
-      <td>The link type</td>
-    </tr>
-    <tr>
-      <td>href</td>
-      <td>string</td>
-      <td>/v2/servers/[ALIAS]/[SERVER]/snapshots/[ID]</td>
-      <td>Address of the resource itself</td>
-    </tr>
-  </tbody>
-</table>
-
-### Snapshot Delete Link Definition
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</td>
-      <th>Type</th>
-      <th>Value</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>rel</td>
-      <td>string</td>
-      <td>delete</td>
-      <td>The link type</td>
-    </tr>
-    <tr>
-      <td>href</td>
-      <td>string</td>
-      <td>/v2/servers/[ALIAS]/[SERVER]/snapshots/[ID]</td>
-      <td>Address of the snapshot for deletion</td>
-    </tr>
-  </tbody>
-</table>
-
-### Snapshot Restore Link Definition
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</td>
-      <th>Type</th>
-      <th>Value</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>rel</td>
-      <td>string</td>
-      <td>restore</td>
-      <td>The link type</td>
-    </tr>
-    <tr>
-      <td>href</td>
-      <td>string</td>
-      <td>/v2/servers/[ALIAS]/[SERVER]/snapshots/[ID]/restore</td>
-      <td>Address of the snapshot for restoration</td>
-    </tr>
-  </tbody>
-</table>
-
+| Name | Type | Description |
+| --- | --- | --- |
+| name | string | Timestamp of the snapshot |
+| links | array | Collection of [entity links](../Getting Started/api-v20-links-framework.md) that point to resources related to this snapshot |
 
 ### CustomFields Definition
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>id</td>
-      <td>string</td>
-      <td>Unique ID of the custom field</td>
-    </tr>
-    <tr>
-      <td>name</td>
-      <td>string</td>
-      <td>Friendly name of the custom field</td>
-    </tr>
-    <tr>
-      <td>value</td>
-      <td>string</td>
-      <td>Underlying value of the field</td>
-    </tr>
-    <tr>
-      <td>displayValue</td>
-      <td>string</td>
-      <td>Shown value of the field</td>
-    </tr>
-  </tbody>
-</table>
+| Name | Type | Description |
+| --- | --- | --- |
+| id | string | Unique ID of the custom field |
+| name | string | Friendly name of the custom field |
+| value | string | Underlying value of the field |
+| displayValue | string | Shown value of the field |
 
 ### ChangeInfo Definition
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>createdDate</td>
-      <td>dateTime</td>
-      <td>Date/time that the server was created</td>
-    </tr>
-    <tr>
-      <td>createdBy</td>
-      <td>string</td>
-      <td>Who created the server</td>
-    </tr>
-    <tr>
-      <td>modifiedDate</td>
-      <td>dateTime</td>
-      <td>Date/time that the server was last updated</td>
-    </tr>
-    <tr>
-      <td>modifiedBy</td>
-      <td>string</td>
-      <td>Who modified the server last</td>
-    </tr>
-  </tbody>
-</table>
-
-### Self Link Definition
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</td>
-      <th>Type</th>
-      <th>Value</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>rel</td>
-      <td>string</td>
-      <td>self</td>
-      <td>The link type</td>
-    </tr>
-    <tr>
-      <td>href</td>
-      <td>string</td>
-      <td>/v2/servers/[ALIAS]/[SERVER]</td>
-      <td>Address of the resource itself</td>
-    </tr>
-    <tr>
-      <td>verbs</td>
-      <td>array</td>
-      <td>GET | PATCH | DELETE</td>
-      <td>Valid HTTP verbs that can act on this resource</td>
-    </tr>
-  </tbody>
-</table>
-
-### Group Link Definition
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</td>
-      <th>Type</th>
-      <th>Value</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>rel</td>
-      <td>string</td>
-      <td>group</td>
-      <td>The link type</td>
-    </tr>
-    <tr>
-      <td>href</td>
-      <td>string</td>
-      <td>/v2/groups/[ALIAS]/[GROUP]</td>
-      <td>Address of the group</td>
-    </tr>
-    <tr>
-      <td>id</td>
-      <td>string</td>
-      <td>[GROUP]</td>
-      <td>Unique ID of the group</td>
-    </tr>
-  </tbody>
-</table>
-
-### Account Link Definition
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</td>
-      <th>Type</th>
-      <th>Value</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>rel</td>
-      <td>string</td>
-      <td>account</td>
-      <td>The link type</td>
-    </tr>
-    <tr>
-      <td>href</td>
-      <td>string</td>
-      <td>/v2/accounts/[ALIAS]</td>
-      <td>Address of the account</td>
-    </tr>
-    <tr>
-      <td>id</td>
-      <td>string</td>
-      <td>[ALIAS]</td>
-      <td>Unique ID of the account</td>
-    </tr>
-  </tbody>
-</table>
-
-### Billing Link Definition
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</td>
-      <th>Type</th>
-      <th>Value</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>rel</td>
-      <td>string</td>
-      <td>billing</td>
-      <td>The link type</td>
-    </tr>
-    <tr>
-      <td>href</td>
-      <td>string</td>
-      <td>/v2/servers/[ALIAS]/estimate-server/[SERVER]</td>
-      <td>Address of billing details for this server</td>
-    </tr>
-  </tbody>
-</table>
-
-### Statistics Link Definition
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</td>
-      <th>Type</th>
-      <th>Value</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>rel</td>
-      <td>string</td>
-      <td>statistics</td>
-      <td>The link type</td>
-    </tr>
-    <tr>
-      <td>href</td>
-      <td>string</td>
-      <td>/v2/servers/[ALIAS]/[SERVER]/statistics</td>
-      <td>Address of usage statistics for this server</td>
-    </tr>
-  </tbody>
-</table>
-
-### Activities Link Definition
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</td>
-      <th>Type</th>
-      <th>Value</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>rel</td>
-      <td>string</td>
-      <td>scheduledActivities</td>
-      <td>The link type</td>
-    </tr>
-    <tr>
-      <td>href</td>
-      <td>string</td>
-      <td>/v2/servers/[ALIAS]/[SERVER]/scheduledActivities</td>
-      <td>Address of the scheduled activities (e.g. restarts, pause) for this server</td>
-    </tr>
-  </tbody>
-</table>
-
-### Public IPs Link Definition
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</td>
-      <th>Type</th>
-      <th>Value</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>rel</td>
-      <td>string</td>
-      <td>publicIPAddresses</td>
-      <td>The link type</td>
-    </tr>
-    <tr>
-      <td>href</td>
-      <td>string</td>
-      <td>/v2/servers/[ALIAS]/[SERVER]/publicIPAddresses</td>
-      <td>Address of the resource itself</td>
-    </tr>
-    <tr>
-      <td>verbs</td>
-      <td>array</td>
-      <td>POST</td>
-      <td>Valid HTTP verbs that can act on this resource</td>
-    </tr>
-  </tbody>
-</table>
-
-### Alert Policy Link Definition
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</td>
-      <th>Type</th>
-      <th>Value</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>rel</td>
-      <td>string</td>
-      <td>alertPolicyMappings</td>
-      <td>The link type</td>
-    </tr>
-    <tr>
-      <td>href</td>
-      <td>string</td>
-      <td>/v2/servers/[ALIAS]/[SERVER]/alertPolicies</td>
-      <td>Address of the resource itself</td>
-    </tr>
-    <tr>
-      <td>verbs</td>
-      <td>array</td>
-      <td>POST</td>
-      <td>Valid HTTP verbs that can act on this resource</td>
-    </tr>
-  </tbody>
-</table>
-
-### Anti-Affinity Policy Link Definition
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</td>
-      <th>Type</th>
-      <th>Value</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>rel</td>
-      <td>string</td>
-      <td>antiAffinityPolicyMapping</td>
-      <td>The link type</td>
-    </tr>
-    <tr>
-      <td>href</td>
-      <td>string</td>
-      <td>/v2/servers/[ALIAS]/[SERVER]/antiAffinityPolicy</td>
-      <td>Address of the resource itself</td>
-    </tr>
-    <tr>
-      <td>verbs</td>
-      <td>array</td>
-      <td>PUT | DELETE</td>
-      <td>Valid HTTP verbs that can act on this resource</td>
-    </tr>
-  </tbody>
-</table>
-
-### Autoscale Policy Link Definition
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</td>
-      <th>Type</th>
-      <th>Value</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>rel</td>
-      <td>string</td>
-      <td>cpuAutoscalePolicyMapping</td>
-      <td>The link type</td>
-    </tr>
-    <tr>
-      <td>href</td>
-      <td>string</td>
-      <td>/v2/servers/[ALIAS]/[SERVER]/cpuAutoscalePolicy</td>
-      <td>Address of the resource itself</td>
-    </tr>
-    <tr>
-      <td>verbs</td>
-      <td>array</td>
-      <td>PUT | DELETE</td>
-      <td>Valid HTTP verbs that can act on this resource</td>
-    </tr>
-  </tbody>
-</table>
-
-### Capabilities Link Definition
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</td>
-      <th>Type</th>
-      <th>Value</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>rel</td>
-      <td>string</td>
-      <td>capabilities</td>
-      <td>The link type</td>
-    </tr>
-    <tr>
-      <td>href</td>
-      <td>string</td>
-      <td>/v2/servers/[ALIAS]/[SERVER]/capabilities</td>
-      <td>Address of the capabilities resource</td>
-    </tr>
-  </tbody>
-</table>
-
-### Credentials Link Definition
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</td>
-      <th>Type</th>
-      <th>Value</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>rel</td>
-      <td>string</td>
-      <td>credentials</td>
-      <td>The link type</td>
-    </tr>
-    <tr>
-      <td>href</td>
-      <td>string</td>
-      <td>/v2/servers/[ALIAS]/[SERVER]/credentials</td>
-      <td>Address of the credentials resource</td>
-    </tr>
-  </tbody>
-</table>
-
-### IP Address Link Definition
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</td>
-      <th>Type</th>
-      <th>Value</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>rel</td>
-      <td>string</td>
-      <td>publicIPAddress</td>
-      <td>The link type</td>
-    </tr>
-    <tr>
-      <td>href</td>
-      <td>string</td>
-      <td>/v2/servers/[ALIAS]/[SERVER]/publicIPAddresses/[IP ADDRESS]</td>
-      <td>Address of the resource itself</td>
-    </tr>
-    <tr>
-      <td>id</td>
-      <td>string</td>
-      <td>[IP ADDRESS]</td>
-      <td>Individual IP address</td>
-    </tr>
-    <tr>
-      <td>verbs</td>
-      <td>array</td>
-      <td>GET | PUT | DELETE</td>
-      <td>Valid HTTP verbs that can act on this resource</td>
-    </tr>
-  </tbody>
-</table>
-
+| Name | Type | Description |
+| --- | --- | --- |
+| createdDate | dateTime | Date/time that the server was created |
+| createdBy | string | Who created the server |
+| modifiedDate | dateTime | Date/time that the server was last updated |
+| modifiedBy | string | Who modified the server last |
 
 ### Examples
 

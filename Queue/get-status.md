@@ -25,51 +25,18 @@ Use this API operation when you want to check the status of a specific job in th
 
 ### URI Parameters
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Req.</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>AccountAlias</td>
-      <td>string</td>
-      <td>Short code for a particular account.</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>Status ID</td>
-      <td>string</td>
-      <td>ID of the job to query. Retrieved from the status link in the response to a batch job request.</td>
-      <td>Yes</td>
-    </tr>
-  </tbody>
-</table>
+| Name | Type | Description | Req. |
+| --- | --- | --- | --- |
+| AccountAlias | string | Short code for a particular account. | Yes |
+| Status ID | string | ID of the job to query. Retrieved from the status link in the response to a batch job request. | Yes |
 
 ## Response
 
 ### Entity Definition
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Status</td>
-      <td>string</td>
-      <td>The status of the operation. Will be one of the following: "notStarted", "executing", "succeeded", "failed", "resumed" or "unknown".</td>
-    </tr>
-  </tbody>
-</table>
+| Name | Type | Description |
+| --- | --- | --- |
+| Status | string | The status of the operation. Will be one of the following: "notStarted", "executing", "succeeded", "failed", "resumed" or "unknown". |
 
 ### Examples
 

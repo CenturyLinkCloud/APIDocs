@@ -25,51 +25,16 @@ Use this API operation when you want to create a new anti-affinity policy within
 
 ### URI Parameters
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Req.</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>AccountAlias</td>
-      <td>string</td>
-      <td>Short code for a particular account</td>
-      <td>Yes</td>
-    </tr>
-  </tbody>
-</table>
+| Name | Type | Description | Req. |
+| --- | --- | --- | --- |
+| AccountAlias | string | Short code for a particular account | Yes |
 
 ### Content Properties
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Req.</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>name</td>
-      <td>string</td>
-      <td>Name of the anti-affinity policy.</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>location</td>
-      <td>string</td>
-      <td>Data center location of the anti-affinity policy.</td>
-      <td>Yes</td>
-    </tr>
-  </tbody>
-</table>
+| Name | Type | Description | Req. |
+| --- | --- | --- | --- |
+| name | string | Name of the anti-affinity policy. | Yes |
+| location | string | Data center location of the anti-affinity policy. | Yes |
 
 ### Examples
 
@@ -84,62 +49,12 @@ Use this API operation when you want to create a new anti-affinity policy within
 
 ### Entity Definition
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>id</td>
-      <td>string</td>
-      <td>ID of the anti-affinity policy.</td>
-    </tr>
-    <tr>
-      <td>name</td>
-      <td>string</td>
-      <td>Name of the anti-affinity policy.</td>
-    </tr>
-    <tr>
-      <td>location</td>
-      <td>string</td>
-      <td>Data center location of the anti-affinity policy.</td>
-    </tr>
-    <tr>
-      <td>links</td>
-      <td>complex</td>
-      <td>Collection of entity links that point to resources related to this policy.</td>
-    </tr>
-  </tbody>
-</table>
-
-### Self Link Definition
-
-<table>
-  <tbody>
-    <tr>
-      <td width="100"><strong>Name</strong></td>
-      <td width="75"><strong>Type</strong></td>
-      <td width="250"><strong>Value</strong></td>
-      <td width="300"><strong>Description</strong></td>
-    </tr>
-    <tr>
-      <td>rel</td>
-      <td>string</td>
-      <td>self</td>
-      <td>The link type</td>
-    </tr>
-    <tr>
-      <td>href</td>
-      <td>string</td>
-      <td>/v2/antiAffinityPolicies/[ALIAS]/[POLICYID]</td>
-      <td>Address of the resource itself</td>
-    </tr>
-  </tbody>
-</table>
+| Name | Type | Description |
+| --- | --- | --- |
+| id | string | ID of the anti-affinity policy. |
+| name | string | Name of the anti-affinity policy. |
+| location | string | Data center location of the anti-affinity policy. |
+| links | array | Collection of [entity links](../Getting Started/api-v20-links-framework.md) that point to resources related to this policy. |
 
 ### Examples
 

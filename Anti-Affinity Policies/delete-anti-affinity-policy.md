@@ -25,30 +25,10 @@ Use this API operation when you want to delete a specific anti-affinity policy w
 
 ### URI Parameters
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Req.</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>AccountAlias</td>
-      <td>string</td>
-      <td>Short code for a particular account</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>PolicyId</td>
-      <td>string</td>
-      <td>ID of the anti-affinity policy being queried.</td>
-      <td>Yes</td>
-    </tr>
-  </tbody>
-</table>
+| Name | Type | Description | Req. |
+| --- | --- | --- | --- |
+| AccountAlias | string | Short code for a particular account | Yes |
+| PolicyId | string | ID of the anti-affinity policy being queried. | Yes |
 
 ## Response
 

@@ -25,56 +25,19 @@ Use this API operation when you want to get the administrator/root password for 
 
 ### URI Parameters
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Req.</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>AccountAlias</td>
-      <td>string</td>
-      <td>Short code for a particular account</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>ServerId</td>
-      <td>string</td>
-      <td>ID of the server with the credentials to return. Retrieved from query to containing group, or by looking at the URL when viewing a server in the Control Portal.</td>
-      <td>Yes</td>
-    </tr>
-  </tbody>
-</table>
+| Name | Type | Description | Req. |
+| --- | --- | --- | --- |
+| AccountAlias | string | Short code for a particular account | Yes |
+| ServerId | string | ID of the server with the credentials to return. Retrieved from query to containing group, or by looking at the URL when viewing a server in the Control Portal. | Yes |
 
 ## Response
 
 ### Entity Definition
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>userName</td>
-      <td>string</td>
-      <td>The username of root/administrator on the server. Typically "root" for Linux machines and "Administrator" for Windows.</td>
-    </tr>
-    <tr>
-      <td>password</td>
-      <td>string</td>
-      <td>The administrator/root password used to login.</td>
-    </tr>
-  </tbody>
-</table>
+| Name | Type | Description |
+| --- | --- | --- |
+| userName | string | The username of root/administrator on the server. Typically "root" for Linux machines and "Administrator" for Windows. |
+| password | string | The administrator/root password used to login. |
 
 ### Examples
 
