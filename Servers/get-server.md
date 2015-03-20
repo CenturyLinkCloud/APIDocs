@@ -158,8 +158,7 @@ Use this API operation when you want to find out all the details for a server. I
               },
               {
                 "rel": "alertPolicyMap",
-                "href": "/v2/servers/alias/WA1ALIASWB01/alertPolicies/15836e6219e84ac736d01d4e571bb950"
-    ",
+                "href": "/v2/servers/alias/WA1ALIASWB01/alertPolicies/15836e6219e84ac736d01d4e571bb950",
                 "verbs": [
                   "DELETE"
                 ]
@@ -176,8 +175,7 @@ Use this API operation when you want to find out all the details for a server. I
               },
               {
                 "rel": "alertPolicyMap",
-                "href": "/v2/servers/alias/WA1ALIASWB01/alertPolicies/2bec81dd90aa4217887548c3c20d7421"
-    ",
+                "href": "/v2/servers/alias/WA1ALIASWB01/alertPolicies/2bec81dd90aa4217887548c3c20d7421",
                 "verbs": [
                   "DELETE"
                 ]
