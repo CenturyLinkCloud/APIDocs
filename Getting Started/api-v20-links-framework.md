@@ -70,11 +70,3 @@ This link model helps with both discoverability as well as use-case scalability.
 | --- | --- | --- |
 | delete | Delete the snapshot for the given server. | DELETE |
 | restore | Restore the snapshot for the given server. | POST |
-
-### Use Case Examples
-
-
-#### Creating a Group and a Server
-
-
-#### Removing all Public IP Addresses from a Server
