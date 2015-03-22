@@ -5,12 +5,11 @@
     "Account",
     "Billing",
     "Blueprint",
-    "Domain Name",
     "Group",
     "Network",
     "Queue",
     "Server",
     "SMTP Relay",
     "Users"
-  ] 
+  ]
 }}}

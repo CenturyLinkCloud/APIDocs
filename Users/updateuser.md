@@ -5,230 +5,95 @@
   "attachments": []
 }}}
 
-Update a specific user within a given account. Calls to this operation must include an authorization cookie acquired from the <a href="/api-docs#authentication-logon">Logon operation.</a>
+Update a specific user within a given account. Calls to this operation must include an authorization cookie acquired from the [Logon operation](../Authentication/logon.md).
 
 ## URL
 
-    REST: https://api.ctl.io/REST/User/UpdateUser/<format>
+    REST: https://api.ctl.io/REST/User/UpdateUser/<format> (format = XML | JSON)
     SOAP: https://api.ctl.io/SOAP/User.asmx?op=UpdateUser
 
 ## Request
 
 ### Attributes
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Req.</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>UserName</td>
-      <td>String</td>
-      <td>User name, which is typically the email address.</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>EmailAddress</td>
-      <td>String</td>
-      <td>Email address of the new user.</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>FirstName</td>
-      <td>String</td>
-      <td>First name of the new user.</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>Last Name</td>
-      <td>String</td>
-      <td>Last name of the new user.</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>AlternateEmailAddress</td>
-      <td>String</td>
-      <td>Additional email address for the user.</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <td>Title</td>
-      <td>String</td>
-      <td>Job title of the user.</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <td>OfficeNumber</td>
-      <td>String</td>
-      <td>Office phone number of the user.</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <td>MobileNumber</td>
-      <td>String</td>
-      <td>Mobile phone number of the user.</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <td>AllowSMSAlerts</td>
-      <td>Boolean</td>
-      <td>Flag determining whether this user can receive SMS messages.</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <td>FaxNumber</td>
-      <td>String</td>
-      <td>Fax number of the user.</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <td>SAMLUserName</td>
-      <td>String</td>
-      <td>String holding the value used during single-sign-on processes.</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <td>TimeZoneID</td>
-      <td>String</td>
-      <td>Time zone of the user. Timezone must be one of the values in <a href="#tz">the table below</a>, otherwise the value is set to the account's Timezone.</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <td>Roles</td>
-      <td>Integer[]</td>
-      <td>List of values indicating the roles assigned to this user.
-        <br />
-        <p>2 = Server Administrator
-          <br />3 = Billing Manager
-          <br />8 = DNS Manager
-          <br />9 = Account Administrator
-          <br />10 = Account Viewer
-          <br />12 = Network Manager
-          <br />13 = Security Manager
-          <br />14 = Server Operator</p>
-      </td>
-      <td>No</td>
-    </tr>
-  </tbody>
-</table>
+| Name | Type | Description | Req. |
+| --- | --- | --- | --- |
+| UserName | String | User name, which is typically the email address. | Yes |
+| EmailAddress | String | Email address of the new user. | Yes |
+| FirstName | String | First name of the new user. | Yes |
+| Last Name | String | Last name of the new user. | Yes |
+| AlternateEmailAddress | String | Additional email address for the user. | No |
+| Title | String | Job title of the user. | No |
+| OfficeNumber | String | Office phone number of the user. | No |
+| MobileNumber | String | Mobile phone number of the user. | No |
+| AllowSMSAlerts | Boolean | Flag determining whether this user can receive SMS messages. | No |
+| FaxNumber | String | Fax number of the user. | No |
+| SAMLUserName | String | String holding the value used during single-sign-on processes. | No |
+| TimeZoneID | String | Time zone of the user. Timezone must be one of the values in the list below, otherwise the value is set to the account's Timezone. | No |
+| Roles | Integer[] | List of values indicating the roles assigned to this user.<br/>2 = Server Administrator<br/>3 = Billing Manager<br/>8 = DNS Manager<br/>9 = Account Administrator<br/>10 = Account Viewer<br/>12 = Network Manager<br/>13 = Security Manager<br/>14 = Server Operator | No |
 
 ### Examples
 
 #### JSON
 
-    { 
-
-            'UserName':'user3@company.com', 
-
-            'EmailAddress':'user3@company.com', 
-
-            'FirstName':'Watson', 
-
-            'LastName':'User', 
-
-            'AlternateEmailAddress':null, 
-
-            'Title':'President', 
-
-            'OfficeNumber':null, 
-
-            'MobileNumber':null,
-
-             'AllowSMSAlerts':false, 
-
-            'FaxNumber':null, 
-
-            'SAMLUserName':null, 
-
-            'Roles':[8], 
-
-            'TimeZoneID':null 
-
+    {
+      "UserName":"user3@company.com",
+      "EmailAddress":"user3@company.com",
+      "FirstName":"Watson",
+      "LastName":"User",
+      "AlternateEmailAddress":null,
+      "Title":"President",
+      "OfficeNumber":null,
+      "MobileNumber":null,
+      "AllowSMSAlerts":false,
+      "FaxNumber":null,
+      "SAMLUserName":null,
+      "Roles":[8],
+      "TimeZoneID":null
     }
 
 #### XML (REST)
 
-    <UpdateUserRequest> 
-
-        <UserName>user3@company.com</UserName> 
-
-        <EmailAddress>user3@company.com</EmailAddress> 
-
-        <FirstName>Watson</FirstName> 
-
-        <LastName>User</LastName> 
-
-        <AlternateEmailAddress></AlternateEmailAddress> 
-
-        <Title>President</Title> 
-
-        <OfficeNumber></OfficeNumber> 
-
-        <MobileNumber></MobileNumber> 
-
+    <UpdateUserRequest>
+        <UserName>user3@company.com</UserName>
+        <EmailAddress>user3@company.com</EmailAddress>
+        <FirstName>Watson</FirstName>
+        <LastName>User</LastName>
+        <AlternateEmailAddress></AlternateEmailAddress>
+        <Title>President</Title>
+        <OfficeNumber></OfficeNumber>
+        <MobileNumber></MobileNumber>
         <AllowSMSAlerts>false</AllowSMSAlerts>
-
-        <FaxNumber></FaxNumber> 
-
-        <SAMLUserName></SAMLUserName> 
-
-        <Roles><int>8</int></Roles> 
-
-        <TimeZoneID></TimeZoneID> 
-
+        <FaxNumber></FaxNumber>
+        <SAMLUserName></SAMLUserName>
+        <Roles><int>8</int></Roles>
+        <TimeZoneID></TimeZoneID>
     </UpdateUserRequest>
 
 #### XML (SOAP)
 
-    <soap12:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-
-        xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
-
-        xmlns:soap12="http://www.w3.org/2003/05/soap-envelope">
-
-      <soap12:Body>
-
-        <UpdateUser xmlns="http://www.tier3.com/">
-
-          <request>
-
-            <UserName>user3@company.com</UserName> 
-
-            <EmailAddress>user3@company.com</EmailAddress> 
-
-            <FirstName>Watson</FirstName> 
-
-            <LastName>User</LastName> 
-
-            <AlternateEmailAddress></AlternateEmailAddress> 
-
-            <Title>President</Title> 
-
-            <OfficeNumber></OfficeNumber> 
-
-            <MobileNumber></MobileNumber> 
-
-            <AllowSMSAlerts>false</AllowSMSAlerts>
-
-            <FaxNumber></FaxNumber> 
-
-            <SAMLUserName></SAMLUserName> 
-
-            <Roles><int>8</int></Roles> 
-
-            <TimeZoneID></TimeZoneID> 
-
-          </request>
-
-        </UpdateUser>
-
-      </soap12:Body>
-
+    <soap12:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:soap12="http://www.w3.org/2003/05/soap-envelope">
+        <soap12:Body>
+            <UpdateUser xmlns="http://www.tier3.com/">
+                <request>
+                    <UserName>user3@company.com</UserName>
+                    <EmailAddress>user3@company.com</EmailAddress>
+                    <FirstName>Watson</FirstName>
+                    <LastName>User</LastName>
+                    <AlternateEmailAddress></AlternateEmailAddress>
+                    <Title>President</Title>
+                    <OfficeNumber></OfficeNumber>
+                    <MobileNumber></MobileNumber>
+                    <AllowSMSAlerts>false</AllowSMSAlerts>
+                    <FaxNumber></FaxNumber>
+                    <SAMLUserName></SAMLUserName>
+                    <Roles><int>8</int></Roles>
+                    <TimeZoneID></TimeZoneID>
+                </request>
+            </UpdateUser>
+        </soap12:Body>
     </soap12:Envelope>  
 
 
@@ -236,420 +101,220 @@ Update a specific user within a given account. Calls to this operation must incl
 
 ### Attributes
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Success</td>
-      <td>Boolean</td>
-      <td>True if the request was successful, otherwise False.</td>
-    </tr>
-    <tr>
-      <td>Message</td>
-      <td>String</td>
-      <td>A description of the result. The contents of this field does not contain any actionable information, it is purely intended to provide a human readable description of the result.</td>
-    </tr>
-    <tr>
-      <td>StatusCode</td>
-      <td>Int</td>
-      <td>This value will help to identify any errors which were encountered while processing the request. The value of '0' indicates success, all non-zero StatusCodes indicate an error state.</td>
-    </tr>
-    <tr>
-      <td>UserDetails</td>
-      <td>Complex</td>
-      <td>The details of the updated user.</td>
-    </tr>
-  </tbody>
-</table>
+| Name | Type | Description |
+| --- | --- | --- |
+| Success | Boolean | True if the request was successful, otherwise False. |
+| Message | String | A description of the result. The contents of this field does not contain any actionable information, it is purely intended to provide a human readable description of the result. |
+| StatusCode | Int | This value will help to identify any errors which were encountered while processing the request. The value of '0' indicates success, all non-zero StatusCodes indicate an error state. |
+| UserDetails | Complex | The details of the updated user. |
 
 ### UserDetails Attributes
 
-<table>
-  <thead>
-  <tr>
-    <th>Name</th>
-    <th>Type</th>
-    <th>Description</th>
-  </tr>
-</thead>
-<tbody>
-    <tr>
-      <td>AccountAlias</td>
-      <td>String</td>
-      <td>Short code for a particular account.</td>
-    </tr>
-    <tr>
-      <td>UserName</td>
-      <td>String</td>
-      <td>User name, which is typically the email address.</td>
-    </tr>
-    <tr>
-      <td>EmailAddress</td>
-      <td>String</td>
-      <td>Email address for the user.</td>
-    </tr>
-    <tr>
-      <td>FirstName</td>
-      <td>String</td>
-      <td>First name of the user.</td>
-    </tr>
-    <tr>
-      <td>LastName</td>
-      <td>String</td>
-      <td>Last name of the user.</td>
-    </tr>
-    <tr>
-      <td>AlternateEmailAddress</td>
-      <td>String</td>
-      <td>Additional email address for the user.</td>
-    </tr>
-    <tr>
-      <td>Title</td>
-      <td>String</td>
-      <td>Job title of the user.</td>
-    </tr>
-    <tr>
-      <td>OfficeNumber</td>
-      <td>String</td>
-      <td>Office phone number of the user.</td>
-    </tr>
-    <tr>
-      <td>MobileNumber</td>
-      <td>String</td>
-      <td>Mobile phone number of the user.</td>
-    </tr>
-    <tr>
-      <td>AllowSMS</td>
-      <td>Boolean</td>
-      <td>Flag indicating whether this user can receive SMS messages.</td>
-    </tr>
-    <tr>
-      <td>FaxNumber</td>
-      <td>String</td>
-      <td>Fax number for the user.</td>
-    </tr>
-    <tr>
-      <td>SAMLUserName</td>
-      <td>String</td>
-      <td>Name used for single-sign-on process.</td>
-    </tr>
-    <tr>
-      <td>TimeZoneID</td>
-      <td>String</td>
-      <td>Time zone that the user resides in.</td>
-    </tr>
-    <tr>
-      <td>Roles</td>
-      <td>Integer[]</td>
-      <td>List of values indicating the roles assigned to this user.
-        <br />
-        <p>2 = Server Admin
-          <br />8 = Domain Admin
-          <br />9 = Account Admin</p>
-      </td>
-    </tr>
-  </tbody>
-</table>
+| Name | Type | Description |
+| --- | --- | --- |
+| AccountAlias | String | Short code for a particular account. |
+| UserName | String | User name, which is typically the email address. |
+| EmailAddress | String | Email address for the user. |
+| FirstName | String | First name of the user. |
+| LastName | String | Last name of the user. |
+| AlternateEmailAddress | String | Additional email address for the user. |
+| Title | String | Job title of the user. |
+| OfficeNumber | String | Office phone number of the user. |
+| MobileNumber | String | Mobile phone number of the user. |
+| AllowSMS | Boolean | Flag indicating whether this user can receive SMS messages. |
+| FaxNumber | String | Fax number for the user. |
+| SAMLUserName | String | Name used for single-sign-on process. |
+| TimeZoneID | String | Time zone that the user resides in. |
+| Roles | Integer[] | List of values indicating the roles assigned to this user.<br/>2 = Server Admin<br/>8 = Domain Admin<br/>9 = Account Admin |
 
 ### Examples
 
 #### JSON
 
     {
-
-            "UserDetails":
-
-            {
-
-                "AccountAlias":"1000",
-
-                "UserName":"user3@company.com",
-
-                "EmailAddress":"user3@company.com",
-
-                "FirstName":"Watson",
-
-                "LastName":"Demo",
-
-                "AlternateEmailAddress":null,
-
-                "Title":'President',
-
-                "OfficeNumber":null,
-
-                "MobileNumber":null,
-
-                "AllowSMS":false,
-
-                "FaxNumber":null,
-
-                "SAMLUserName":null,
-
-                "TimeZoneID":"Pacific Standard Time",
-
-                "Roles":[8]
-
-             },
-
-            "Success":true,
-
-            "Message":"User successfully updated.",
-
-            "StatusCode":0
-
+      "UserDetails":
+        {
+          "AccountAlias":"1000",
+          "UserName":"user3@company.com",
+          "EmailAddress":"user3@company.com",
+          "FirstName":"Watson",
+          "LastName":"Demo",
+          "AlternateEmailAddress":null,
+          "Title":'President',
+          "OfficeNumber":null,
+          "MobileNumber":null,
+          "AllowSMS":false,
+          "FaxNumber":null,
+          "SAMLUserName":null,
+          "TimeZoneID":"Pacific Standard Time",
+          "Roles":[8]
+         },
+      "Success":true,
+      "Message":"User successfully updated.",
+      "StatusCode":0
     }
 
 #### XML (REST)
 
     <UserDetailsResponse Success="true" Message="User successfully updated." StatusCode="0">
-
-        <UserDetails AccountAlias="1000" 
-
-            UserName="user3@company.com" 
-
-            EmailAddress="user3@company.com" 
-
-            FirstName="Watson" 
-
-            LastName="Demo" 
-
-            AlternateEmailAddress="" 
-
-            Title="President"
-
-            OfficeNumber="" 
-
-            MobileNumber="" 
-
-            AllowSMS="false"
-
-            FaxNumber="" 
-
-            TimeZoneID="Pacific Standard Time">
-
+        <UserDetails AccountAlias="1000"
+          UserName="user3@company.com"
+          EmailAddress="user3@company.com"
+          FirstName="Watson"
+          LastName="Demo"
+          AlternateEmailAddress=""
+          Title="President"
+          OfficeNumber=""
+          MobileNumber=""
+          AllowSMS="false"
+          FaxNumber=""
+          TimeZoneID="Pacific Standard Time">
             <Roles><int>8</int></Roles>
-
         </UserDetails>
-
     </UserDetailsResponse>
 
 
 #### XML (SOAP)
 
-    <soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" 
-
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-
-        xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-
+    <soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema">
         <soap:Body>
-
             <UpdateUserResponse xmlns="http://www.tier3.com/">
-
                 <UpdateUserResult Success="true" Message="User successfully updated." StatusCode="0">
-
-                    <UserDetails AccountAlias="1000" 
-
-                        UserName="user3@company.com" 
-
-                        EmailAddress="user3@company.com" 
-
-                        FirstName="Watson" 
-
-                        LastName="Demo" 
-
-                        AlternateEmailAddress="" 
-
-                        Title="President"
-
-                        OfficeNumber="" 
-
-                        MobileNumber="" 
-
-                        AllowSMS="false"
-
-                        FaxNumber="" 
-
-                        TimeZoneID="Pacific Standard Time">
-
+                    <UserDetails AccountAlias="1000"
+                      UserName="user3@company.com"
+                      EmailAddress="user3@company.com"
+                      FirstName="Watson"
+                      LastName="Demo"
+                      AlternateEmailAddress=""
+                      Title="President"
+                      OfficeNumber=""
+                      MobileNumber=""
+                      AllowSMS="false"
+                      FaxNumber=""
+                      TimeZoneID="Pacific Standard Time">
                         <Roles><int>8</int></Roles>
-
                     </UserDetails>
-
                 </UpdateUserResult>
-
             </UpdateUserResponse>
-
         </soap:Body>
-
     </soap:Envelope>
 
 ### Status Codes
 
-<table>
-  <thead>
-    <tr>
-      <th>Status Code</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>0</td>
-      <td>Request was successfully processed</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>Unknown Error. &nbsp;An application error occurred processing your request, contact Tier3 support to resolve the issue.</td>
-    </tr>
-    <tr>
-      <td>100</td>
-      <td>Authentication Failed. &nbsp;You must logon to the API prior to calling this method.</td>
-    </tr>
-    <tr>
-      <td>1700</td>
-      <td>Email Address Required. &nbsp;You must provide an email address when calling this method.</td>
-    </tr>
-    <tr>
-      <td>1702</td>
-      <td>First Name Required. &nbsp;You must provide user's first name when calling this method.</td>
-    </tr>
-    <tr>
-      <td>1703</td>
-      <td>Last Name Required. &nbsp;You must provide a user's last name when calling this method.</td>
-    </tr>
-    <tr>
-      <td>1704</td>
-      <td>Username Required. &nbsp;You must provide a valid username when calling this method.</td>
-    </tr>
-    <tr>
-      <td>1705</td>
-      <td>User Not Found. &nbsp;This user was not found in the system.</td>
-    </tr>
-    <tr>
-      <td>1706</td>
-      <td>Invalid User Roles. &nbsp;You must provide a valid user role (2, 8, and 9) when calling this method.</td>
-    </tr>
-  </tbody>
-</table>
-<p>
-  <a name="tz"></a>
-</p>
-<h3>Valid Timezone Entries</h3>
-<table>
-  <tbody>
-    <tr>
-      <td><strong>Timezone Value</strong>
-      </td>
-    </tr>
-    <tr>
-      <td>Dateline Standard Time
-        <br /> UTC-11
-        <br /> Hawaiian Standard Time
-        <br /> Alaskan Standard Time
-        <br /> Pacific Standard Time (Mexico)
-        <br /> Pacific Standard Time
-        <br /> US Mountain Standard Time
-        <br /> Mountain Standard Time (Mexico)
-        <br /> Mountain Standard Time
-        <br /> Central America Standard Time
-        <br /> Central Standard Time
-        <br /> Central Standard Time(Mexico)
-        <br /> Canada Central Standard Time
-        <br /> SA Pacific Standard Time
-        <br /> Eastern Standard Time
-        <br /> US Eastern Standard Time
-        <br /> Venezuela Standard Time
-        <br /> Paraguay Standard Time
-        <br /> Atlantic Standard Time
-        <br /> Central Brazilian Standard Time
-        <br /> SA Western Standard Time
-        <br /> Pacific SA Standard Time
-        <br /> Newfoundland Standard Time
-        <br /> E. South America Standard Time
-        <br /> Argentina Standard Time
-        <br /> SA Eastern Standard Time
-        <br /> Greenland Standard Time
-        <br /> Montevideo Standard Time
-        <br /> Bahia Standard Time
-        <br /> UTC-02
-        <br /> Mid-Atlantic Standard Time
-        <br /> Azores Standard Time
-        <br /> Cape Verde Standard Time
-        <br /> Morocco Standard Time
-        <br /> UTC
-        <br /> GMT Standard Time
-        <br /> Greenwich Standard Time
-        <br /> W. Europe Standard Time
-        <br /> Central Europe Standard Time
-        <br /> Romance Standard Time
-        <br /> Central European Standard Time
-        <br /> W. Central Africa Standard Time
-        <br /> Namibia Standard Time
-        <br /> Jordan Standard Time
-        <br /> GTB Standard Time
-        <br /> Middle East Standard Time
-        <br /> Egypt Standard Time
-        <br /> Syria Standard Time
-        <br /> South Africa Standard Time
-        <br /> FLE Standard Time
-        <br /> Turkey Standard Time
-        <br /> Israel Standard Time
-        <br /> E. Europe Standard Time
-        <br /> Arabic Standard Time
-        <br /> Kaliningrad Standard Time
-        <br /> Arab Standard Time
-        <br /> E. Africa Standard Time
-        <br /> Iran Standard Time
-        <br /> Arabian Standard Time
-        <br /> Azerbaijan Standard Time
-        <br /> Russian Standard Time
-        <br /> Mauritius Standard Time
-        <br /> Georgian Standard Time
-        <br /> Caucasus Standard Time
-        <br /> Afghanistan Standard Time
-        <br /> Pakistan Standard Time
-        <br /> West Asia Standard Time
-        <br /> India Standard Time
-        <br /> Sri Lanka Standard Time
-        <br /> Nepal Standard Time
-        <br /> Central Asia Standard Time
-        <br /> Bangladesh Standard Time
-        <br /> Ekaterinburg Standard Time
-        <br /> Myanmar Standard Time
-        <br /> SE Asia Standard Time
-        <br /> N. Central Asia Standard Time
-        <br /> China Standard Time
-        <br /> North Asia Standard Time
-        <br /> Singapore Standard Time
-        <br /> W. Australia Standard Time
-        <br /> Taipei Standard Time
-        <br /> Ulaanbaatar Standard Time
-        <br /> North Asia East Standard Time
-        <br /> Tokyo Standard Time
-        <br /> Korea Standard Time
-        <br /> Cen. Australia Standard Time
-        <br /> AUS Central Standard Time
-        <br /> E. Australia Standard Time
-        <br /> AUS Eastern Standard Time
-        <br /> West Pacific Standard Time
-        <br /> Tasmania Standard Time
-        <br /> Yakutsk Standard Time
-        <br /> Central Pacific Standard Time
-        <br /> Vladivostok Standard Time
-        <br /> New Zealand Standard Time
-        <br /> UTC+12
-        <br /> Fiji Standard Time
-        <br /> Magadan Standard Time
-        <br /> Kamchatka Standard Time
-        <br /> Tonga Standard Time
-        <br /> Samoa Standard Time</td>
-    </tr>
-  </tbody>
-</table>
+| Status Code | Description |
+| --- | --- |
+| 0 | Request was successfully processed |
+| 2 | Unknown Error.  An application error occurred processing your request, contact support to resolve the issue. |
+| 100 | Authentication Failed.  You must logon to the API prior to calling this method. |
+| 1700 | Email Address Required.  You must provide an email address when calling this method. |
+| 1702 | First Name Required.  You must provide user's first name when calling this method. |
+| 1703 | Last Name Required.  You must provide a user's last name when calling this method. |
+| 1704 | Username Required.  You must provide a valid username when calling this method. |
+| 1705 | User Not Found.  This user was not found in the system. |
+| 1706 | Invalid User Roles.  You must provide a valid user role (2, 8, and 9) when calling this method. |
+
+### Valid Timezone Entries
+
+- Dateline Standard Time
+- UTC-11
+- Hawaiian Standard Time
+- Alaskan Standard Time
+- Pacific Standard Time (Mexico)
+- Pacific Standard Time
+- US Mountain Standard Time
+- Mountain Standard Time (Mexico)
+- Mountain Standard Time
+- Central America Standard Time
+- Central Standard Time
+- Central Standard Time(Mexico)
+- Canada Central Standard Time
+- SA Pacific Standard Time
+- Eastern Standard Time
+- US Eastern Standard Time
+- Venezuela Standard Time
+- Paraguay Standard Time
+- Atlantic Standard Time
+- Central Brazilian Standard Time
+- SA Western Standard Time
+- Pacific SA Standard Time
+- Newfoundland Standard Time
+- E. South America Standard Time
+- Argentina Standard Time
+- SA Eastern Standard Time
+- Greenland Standard Time
+- Montevideo Standard Time
+- Bahia Standard Time
+- UTC-02
+- Mid-Atlantic Standard Time
+- Azores Standard Time
+- Cape Verde Standard Time
+- Morocco Standard Time
+- UTC
+- GMT Standard Time
+- Greenwich Standard Time
+- W. Europe Standard Time
+- Central Europe Standard Time
+- Romance Standard Time
+- Central European Standard Time
+- W. Central Africa Standard Time
+- Namibia Standard Time
+- Jordan Standard Time
+- GTB Standard Time
+- Middle East Standard Time
+- Egypt Standard Time
+- Syria Standard Time
+- South Africa Standard Time
+- FLE Standard Time
+- Turkey Standard Time
+- Israel Standard Time
+- E. Europe Standard Time
+- Arabic Standard Time
+- Kaliningrad Standard Time
+- Arab Standard Time
+- E. Africa Standard Time
+- Iran Standard Time
+- Arabian Standard Time
+- Azerbaijan Standard Time
+- Russian Standard Time
+- Mauritius Standard Time
+- Georgian Standard Time
+- Caucasus Standard Time
+- Afghanistan Standard Time
+- Pakistan Standard Time
+- West Asia Standard Time
+- India Standard Time
+- Sri Lanka Standard Time
+- Nepal Standard Time
+- Central Asia Standard Time
+- Bangladesh Standard Time
+- Ekaterinburg Standard Time
+- Myanmar Standard Time
+- SE Asia Standard Time
+- N. Central Asia Standard Time
+- China Standard Time
+- North Asia Standard Time
+- Singapore Standard Time
+- W. Australia Standard Time
+- Taipei Standard Time
+- Ulaanbaatar Standard Time
+- North Asia East Standard Time
+- Tokyo Standard Time
+- Korea Standard Time
+- Cen. Australia Standard Time
+- AUS Central Standard Time
+- E. Australia Standard Time
+- AUS Eastern Standard Time
+- West Pacific Standard Time
+- Tasmania Standard Time
+- Yakutsk Standard Time
+- Central Pacific Standard Time
+- Vladivostok Standard Time
+- New Zealand Standard Time
+- UTC+12
+- Fiji Standard Time
+- Magadan Standard Time
+- Kamchatka Standard Time
+- Tonga Standard Time
+- Samoa Standard Time

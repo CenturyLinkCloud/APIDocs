@@ -19,17 +19,6 @@ None Required.
 
 ### Status Codes
 
-<table>
-  <thead>
-    <tr>
-      <th>Status Code</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>0</td>
-      <td>Logout was successful</td>
-    </tr>
-  </tbody>
-</table>
+| Status Code | Description |
+| --- | --- |
+| 0 | Logout was successful |

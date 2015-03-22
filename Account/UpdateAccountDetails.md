@@ -5,7 +5,7 @@
   "attachments": []
 }}}
 
-Make changes to an existing account in the  system. Calls to this operation must include an authorization cookie acquired from the <a href="/api-docs#authentication-logon">Logon operation.</a>
+Make changes to an existing account in the  system. Calls to this operation must include an authorization cookie acquired from the [Logon operation](../Authentication/logon.md).
 
 ## URL
 
@@ -16,637 +16,301 @@ Make changes to an existing account in the  system. Calls to this operation must
 
 ### Attributes
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Req.</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>AccountAlias</td>
-      <td>String</td>
-      <td>Four character account alias.</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>BusinessName</td>
-      <td>String</td>
-      <td>Long form business name associated with the account.</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>Address1</td>
-      <td>String</td>
-      <td>Street address associated with the account.</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>Address2</td>
-      <td>String</td>
-      <td>Secondary street address associated with the account.</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <td>City</td>
-      <td>String</td>
-      <td>City associated with the account.</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>StateProvince</td>
-      <td>String</td>
-      <td>State or province associated with the account.</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>PostalCode</td>
-      <td>String</td>
-      <td>Postal code associated with the account.</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>Country</td>
-      <td>String</td>
-      <td>Country associated with the account.</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>Telephone</td>
-      <td>String</td>
-      <td>Telephone number associated with the account.</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>Fax</td>
-      <td>String</td>
-      <td>Fax number associated with the account.</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <td>TimeZone</td>
-      <td>String</td>
-      <td>Timezone of the account holder. Timezone must be one of the values in <a href="#tz">the table below</a>, otherwise the value is set to the parent account's Timezone.</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>ShareParentNetworks</td>
-      <td>Boolean</td>
-      <td>Determines whether this account shares the networks of the parent account.</td>
-      <td>Yes</td>
-    </tr>
-  </tbody>
-</table>
+| Name | Type | Description | Req. |
+| --- | --- | --- | --- |
+| AccountAlias | String | Four character account alias. | Yes |
+| BusinessName | String | Long form business name associated with the account. | Yes |
+| Address1 | String | Street address associated with the account. | Yes |
+| Address2 | String | Secondary street address associated with the account. | No |
+| City | String | City associated with the account. | Yes |
+| StateProvince | String | State or province associated with the account. | Yes |
+| PostalCode | String | Postal code associated with the account. | Yes |
+| Country | String | Country associated with the account. | Yes |
+| Telephone | String | Telephone number associated with the account. | Yes |
+| Fax | String | Fax number associated with the account. | No |
+| TimeZone | String | Timezone of the account holder. Timezone must be one of the values in the list below, otherwise the value is set to the parent account's Timezone. | Yes |
+| ShareParentNetworks | Boolean | Determines whether this account shares the networks of the parent account. | Yes |
 
 ### Examples
 
 #### JSON (REST)
 
     {
-
       "AccountAlias":"1001",
-
       "BusinessName":"Demo Biz",
-
       "Address1":"110 110th Avenue",
-
       "Address2":null,
-
       "City":"Bellevue",
-
       "StateProvince":"WA",
-
       "PostalCode":"98004",
-
       "Country":"USA",
-
       "Telephone":"877-388-4373",
-
       "Fax":null,
-
       "TimeZone":"Pacific Standard Time",
-
       "ShareParentNetworks":"true"
-
     }
 
 #### XML (REST)
 
-    <UpdateAccountDetailsRequest> 
-
-      <AccountAlias>1001</AccountAlias>
-
-      <BusinessName>Demo Biz</BusinessName> 
-
-      <Address1>110 110th Avenue</Address1> 
-
-      <Address2>Suite 520</Address2> 
-
-      <City>Bellevue</City> 
-
-      <StateProvince>WA</StateProvince> 
-
-      <PostalCode>98004</PostalCode> 
-
-      <Country>USA</Country> 
-
-      <Telephone>877-388-4373</Telephone> 
-
-      <Fax></Fax> 
-
-      <TimeZone>Pacific Standard Time</TimeZone> 
-
-      <ShareParentNetworks>true</ShareParentNetworks> 
-
+    <UpdateAccountDetailsRequest>
+        <AccountAlias>1001</AccountAlias>
+        <BusinessName>Demo Biz</BusinessName>
+        <Address1>110 110th Avenue</Address1>
+        <Address2>Suite 520</Address2>
+        <City>Bellevue</City>
+        <StateProvince>WA</StateProvince>
+        <PostalCode>98004</PostalCode>
+        <Country>USA</Country>
+        <Telephone>877-388-4373</Telephone>
+        <Fax></Fax>
+        <TimeZone>Pacific Standard Time</TimeZone>
+        <ShareParentNetworks>true</ShareParentNetworks>
     </UpdateAccountDetailsRequest>
 
 #### XML (SOAP)
 
     <soap12:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-
-                  xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
-
-                  xmlns:soap12="http://www.w3.org/2003/05/soap-envelope">
-
-      <soap12:Body>
-
-          <UpdateAccountDetails xmlns="http://www.tier3.com/">
-
-              <request>
-
-              <AccountAlias>1001</AccountAlias>
-
-              <BusinessName>Demo Biz</BusinessName>
-
-              <Address1>110 110th Avenue</Address1>
-
-              <Address2>Suite 520</Address2>
-
-              <City>Bellevue</City>
-
-              <StateProvince>WA</StateProvince>
-
-              <PostalCode>98004</PostalCode>
-
-              <Country>USA</Country>
-
-              <Telephone>877-388-4373</Telephone>
-
-              <Fax></Fax>
-
-              <TimeZone>Pacific Standard Time</TimeZone>
-
-              <ShareParentNetworks>true</ShareParentNetworks>
-
-              </request>
-
-          </UpdateAccountDetails>
-
-      </soap12:Body> 
-
-    </soap12:Envelope>  
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:soap12="http://www.w3.org/2003/05/soap-envelope">
+        <soap12:Body>
+            <UpdateAccountDetails xmlns="http://www.tier3.com/">
+                <request>
+                    <AccountAlias>1001</AccountAlias>
+                    <BusinessName>Demo Biz</BusinessName>
+                    <Address1>110 110th Avenue</Address1>
+                    <Address2>Suite 520</Address2>
+                    <City>Bellevue</City>
+                    <StateProvince>WA</StateProvince>
+                    <PostalCode>98004</PostalCode>
+                    <Country>USA</Country>
+                    <Telephone>877-388-4373</Telephone>
+                    <Fax></Fax>
+                    <TimeZone>Pacific Standard Time</TimeZone>
+                    <ShareParentNetworks>true</ShareParentNetworks>
+                </request>
+            </UpdateAccountDetails>
+        </soap12:Body>
+    </soap12:Envelope>
 
 ## Response
 
 ### Attributes
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Success</td>
-      <td>Boolean</td>
-      <td>True if the request was successful, otherwise False.</td>
-    </tr>
-    <tr>
-      <td>Message</td>
-      <td>String</td>
-      <td>A description of the result. The contents of this field does not contain any actionable information, it is purely intended to provide a human readable description of the result.</td>
-    </tr>
-    <tr>
-      <td>StatusCode</td>
-      <td>Int</td>
-      <td>This value will help to identify any errors which were encountered while processing the request. The value of '0' indicates success, all non-zero StatusCodes indicate an error state.</td>
-    </tr>
-    <tr>
-      <td>AccountDetails</td>
-      <td>Complex</td>
-      <td>The account details</td>
-    </tr>
-  </tbody>
-</table>
+| Name | Type | Description |
+| --- | --- | --- |
+| Success | Boolean | True if the request was successful, otherwise False. |
+| Message | String | A description of the result. The contents of this field does not contain any actionable information, it is purely intended to provide a human readable description of the result. |
+| StatusCode | Int | This value will help to identify any errors which were encountered while processing the request. The value of '0' indicates success, all non-zero StatusCodes indicate an error state. |
+| AccountDetails | Complex | The account details |
 
 ### AccountDetails Attributes
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>AccountAlias</td>
-      <td>String</td>
-      <td>Short name associated with the account.</td>
-    </tr>
-    <tr>
-      <td>ParentAlias</td>
-      <td>String</td>
-      <td>Short name associated with parent account of the queried account.</td>
-    </tr>
-    <tr>
-      <td>Location</td>
-      <td>String</td>
-      <td>Data center location alias associated with this account.</td>
-    </tr>
-    <tr>
-      <td>BusinessName</td>
-      <td>String</td>
-      <td>Full name of the business that the account is registered under.</td>
-    </tr>
-    <tr>
-      <td>Address1</td>
-      <td>String</td>
-      <td>Street address of the business associated with this account.</td>
-    </tr>
-    <tr>
-      <td>Address2</td>
-      <td>String</td>
-      <td>Secondary street address (if any) of the business associated with this account.</td>
-    </tr>
-    <tr>
-      <td>City</td>
-      <td>String</td>
-      <td>City of the business associated with this account.</td>
-    </tr>
-    <tr>
-      <td>StateProvince</td>
-      <td>String</td>
-      <td>State or province of the business associated with this account.</td>
-    </tr>
-    <tr>
-      <td>PostalCode</td>
-      <td>String</td>
-      <td>Postal code of the business associated with this account.</td>
-    </tr>
-    <tr>
-      <td>Country</td>
-      <td>String</td>
-      <td>Country of the business associated with this account.</td>
-    </tr>
-    <tr>
-      <td>Telephone</td>
-      <td>String</td>
-      <td>Telephone number of the business associated with this account.</td>
-    </tr>
-    <tr>
-      <td>Fax</td>
-      <td>String</td>
-      <td>Fax number (if any) of the business associated with this account.</td>
-    </tr>
-    <tr>
-      <td>TimeZone</td>
-      <td>String</td>
-      <td>Time zone of the business associated with this account.</td>
-    </tr>
-    <tr>
-      <td>Status</td>
-      <td>Int</td>
-      <td>Indicator of whether the account is active or not.
-        <p>Active = 1
-          <br /> Inactive = 0</p>
-      </td>
-    </tr>
-    <tr>
-      <td>ShareParentNetworks</td>
-      <td>Boolean</td>
-      <td>True/false flag indicating whether this account shares the networks of its parent.</td>
-    </tr>
-  </tbody>
-</table>
+| Name | Type | Description |
+| --- | --- | --- |
+| AccountAlias | String | Short name associated with the account. |
+| ParentAlias | String | Short name associated with parent account of the queried account. |
+| Location | String | Data center location alias associated with this account. |
+| BusinessName | String | Full name of the business that the account is registered under. |
+| Address1 | String | Street address of the business associated with this account. |
+| Address2 | String | Secondary street address (if any) of the business associated with this account. |
+| City | String | City of the business associated with this account. |
+| StateProvince | String | State or province of the business associated with this account. |
+| PostalCode | String | Postal code of the business associated with this account. |
+| Country | String | Country of the business associated with this account. |
+| Telephone | String | Telephone number of the business associated with this account. |
+| Fax | String | Fax number (if any) of the business associated with this account. |
+| TimeZone | String | Time zone of the business associated with this account. |
+| Status | Int | Indicator of whether the account is active or not.<br/>Active = 1<br/> Inactive = 0 |
+| ShareParentNetworks | Boolean | True/false flag indicating whether this account shares the networks of its parent. |
 
 ### Examples
 
 #### JSON (REST)
 
     {
-
       "AccountDetails":{
-
         "AccountAlias":"1001",
-
         "ParentAlias":"1000",
-
         "Location":"WA1",
-
         "BusinessName":"Demo Biz"
-
         "Address1":"110 110th Avenue",
-
         "Address2":null,
-
         "City":"Bellevue",
-
         "StateProvince":"WA",
-
         "PostalCode":"98004",
-
         "Country":"USA",
-
         "Telephone":"877-388-4373",
-
         "Fax":null,
-
         "TimeZone":"Pacific Standard Time",
-
         "Status":1,
-
         "ShareParentNetworks":true
-
       },
-
       "Success":true,
-
       "Message":"Account details successfully updated.",
-
       "StatusCode":0
-
     }
 
 #### XML (REST)
 
     <AccountDetailsResponse Success="true" Message="Account details successfully updated." StatusCode="0">
-
          <AccountDetails AccountAlias="1001" ParentAlias="1000" Location="WA1" TimeZone="Pacific Standard Time" Status="1" ShareParentNetworks="true">
-
              <BusinessName>Demo Biz</BusinessName>
-
              <Address1>110 110th Avenue</Address1>
-
              <Address2>Suite 520</Address2>
-
              <City>Bellevue</City>
-
              <StateProvince>WA</StateProvince>
-
              <PostalCode>98004</PostalCode>
-
              <Country>USA</Country>
-
              <Telephone>877-388-4373</Telephone>
-
              <Fax />
-
          </AccountDetails>
-
     </AccountDetailsResponse>
-
 
 #### XML (SOAP)
 
-    <soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" 
-
+    <soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-
       xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-
-      <soap:Body>
-
-          <UpdateAccountDetailsResponse xmlns="http://www.tier3.com/">
-
-              <UpdateAccountDetailsResult Success="true" Message="Account details successfully updated." StatusCode="0">
-
-                  <AccountDetails AccountAlias="1001" ParentAlias="1000" Location="WA1" TimeZone="Pacific Standard Time" Status="1" ShareParentNetworks="true">
-
-                      <BusinessName>Demo Biz</BusinessName>
-
-                      <Address1>110 110th Avenue</Address1>
-
-                      <Address2>Suite 520</Address2>
-
-                      <City>Bellevue</City>
-
-                      <StateProvince>WA</StateProvince>
-
-                      <PostalCode>98004</PostalCode>
-
-                      <Country>USA</Country>
-
-                      <Telephone>877-388-4373</Telephone>
-
-                      <Fax />
-
-                  </AccountDetails>
-
-              </UpdateAccountDetailsResult>
-
-          </UpdateAccountDetailsResponse>
-
-      </soap:Body>
-
+        <soap:Body>
+            <UpdateAccountDetailsResponse xmlns="http://www.tier3.com/">
+                <UpdateAccountDetailsResult Success="true" Message="Account details successfully updated." StatusCode="0">
+                    <AccountDetails AccountAlias="1001" ParentAlias="1000" Location="WA1" TimeZone="Pacific Standard Time" Status="1" ShareParentNetworks="true">
+                        <BusinessName>Demo Biz</BusinessName>
+                        <Address1>110 110th Avenue</Address1>
+                        <Address2>Suite 520</Address2>
+                        <City>Bellevue</City>
+                        <StateProvince>WA</StateProvince>
+                        <PostalCode>98004</PostalCode>
+                        <Country>USA</Country>
+                        <Telephone>877-388-4373</Telephone>
+                        <Fax />
+                    </AccountDetails>
+                </UpdateAccountDetailsResult>
+            </UpdateAccountDetailsResponse>
+        </soap:Body>
     </soap:Envelope>
 
 ### Status Codes
 
-<table>
-  <thead>
-    <tr>
-      <th>Status Code</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>0</td>
-      <td>Request was successfully processed</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>Unknown Error. &nbsp;An application error occurred processing your request, contact Tier3 support to resolve the issue.</td>
-    </tr>
-    <tr>
-      <td>5</td>
-      <td>Resource Not Found. &nbsp;Provided account alias does not exist.</td>
-    </tr>
-    <tr>
-      <td>100</td>
-      <td>Authentication Failed. &nbsp;You must logon to the API prior to calling this method.</td>
-    </tr>
-    <tr>
-      <td>1600</td>
-      <td>Account Alias Required. &nbsp;You must provide an account alias when calling this method.</td>
-    </tr>
-    <tr>
-      <td>1601</td>
-      <td>Address Required. &nbsp;You must provide a primary address when calling this method.</td>
-    </tr>
-    <tr>
-      <td>1602</td>
-      <td>Business Name Required. &nbsp;You must provide a business name when calling this method.</td>
-    </tr>
-    <tr>
-      <td>1603</td>
-      <td>City Required. &nbsp;You must provide a city name when calling this method.</td>
-    </tr>
-    <tr>
-      <td>1604</td>
-      <td>Country Required. &nbsp;You must provide a country name when calling this method.</td>
-    </tr>
-    <tr>
-      <td>1605</td>
-      <td>Postal Code Required. &nbsp;You must provide a postal code when calling this method.</td>
-    </tr>
-    <tr>
-      <td>1606</td>
-      <td>State Province Required. &nbsp;You must provide a state or province name when calling this method.</td>
-    </tr>
-    <tr>
-      <td>1607</td>
-      <td>Telephone Required. &nbsp;You must provide a telephone number when calling this method.</td>
-    </tr>
-    <tr>
-      <td>1608</td>
-      <td>TimeZone Required. &nbsp;You must provide a timezone value when calling this method.</td>
-    </tr>
-    <tr>
-      <td>1610</td>
-      <td>Postal Code Required. &nbsp;You must provide a primary location when calling this method.</td>
-    </tr>
-    <tr>
-      <td>1613</td>
-      <td>Email Address Required. &nbsp;You must provide an email address when calling this method.</td>
-    </tr>
-    <tr>
-      <td>1610</td>
-      <td>Postal Code Required. &nbsp;You must provide a primary location when calling this method.</td>
-    </tr>
-  </tbody>
-</table>
+| Status Code | Description |
+| --- | --- |
+| 0 | Request was successfully processed |
+| 2 | Unknown Error.  An application error occurred processing your request, contact support to resolve the issue. |
+| 5 | Resource Not Found.  Provided account alias does not exist. |
+| 100 | Authentication Failed.  You must logon to the API prior to calling this method. |
+| 1600 | Account Alias Required.  You must provide an account alias when calling this method. |
+| 1601 | Address Required.  You must provide a primary address when calling this method. |
+| 1602 | Business Name Required.  You must provide a business name when calling this method. |
+| 1603 | City Required.  You must provide a city name when calling this method. |
+| 1604 | Country Required.  You must provide a country name when calling this method. |
+| 1605 | Postal Code Required.  You must provide a postal code when calling this method. |
+| 1606 | State Province Required.  You must provide a state or province name when calling this method. |
+| 1607 | Telephone Required.  You must provide a telephone number when calling this method. |
+| 1608 | TimeZone Required.  You must provide a timezone value when calling this method. |
+| 1610 | Postal Code Required.  You must provide a primary location when calling this method. |
+| 1613 | Email Address Required.  You must provide an email address when calling this method. |
+| 1610 | Postal Code Required.  You must provide a primary location when calling this method. |
 
 ### Valid Timezone Entries
 
-<table>
-  <thead>
-    <tr>
-      <th>Timezone Value</th>
-    </tr>
-  </thead>
-  <tbody>
-    
-    <tr>
-      <td>Dateline Standard Time
-        <br /> UTC-11
-        <br /> Hawaiian Standard Time
-        <br /> Alaskan Standard Time
-        <br /> Pacific Standard Time (Mexico)
-        <br /> Pacific Standard Time
-        <br /> US Mountain Standard Time
-        <br /> Mountain Standard Time (Mexico)
-        <br /> Mountain Standard Time
-        <br /> Central America Standard Time
-        <br /> Central Standard Time
-        <br /> Central Standard Time(Mexico)
-        <br /> Canada Central Standard Time
-        <br /> SA Pacific Standard Time
-        <br /> Eastern Standard Time
-        <br /> US Eastern Standard Time
-        <br /> Venezuela Standard Time
-        <br /> Paraguay Standard Time
-        <br /> Atlantic Standard Time
-        <br /> Central Brazilian Standard Time
-        <br /> SA Western Standard Time
-        <br /> Pacific SA Standard Time
-        <br /> Newfoundland Standard Time
-        <br /> E. South America Standard Time
-        <br /> Argentina Standard Time
-        <br /> SA Eastern Standard Time
-        <br /> Greenland Standard Time
-        <br /> Montevideo Standard Time
-        <br /> Bahia Standard Time
-        <br /> UTC-02
-        <br /> Mid-Atlantic Standard Time
-        <br /> Azores Standard Time
-        <br /> Cape Verde Standard Time
-        <br /> Morocco Standard Time
-        <br /> UTC
-        <br /> GMT Standard Time
-        <br /> Greenwich Standard Time
-        <br /> W. Europe Standard Time
-        <br /> Central Europe Standard Time
-        <br /> Romance Standard Time
-        <br /> Central European Standard Time
-        <br /> W. Central Africa Standard Time
-        <br /> Namibia Standard Time
-        <br /> Jordan Standard Time
-        <br /> GTB Standard Time
-        <br /> Middle East Standard Time
-        <br /> Egypt Standard Time
-        <br /> Syria Standard Time
-        <br /> South Africa Standard Time
-        <br /> FLE Standard Time
-        <br /> Turkey Standard Time
-        <br /> Israel Standard Time
-        <br /> E. Europe Standard Time
-        <br /> Arabic Standard Time
-        <br /> Kaliningrad Standard Time
-        <br /> Arab Standard Time
-        <br /> E. Africa Standard Time
-        <br /> Iran Standard Time
-        <br /> Arabian Standard Time
-        <br /> Azerbaijan Standard Time
-        <br /> Russian Standard Time
-        <br /> Mauritius Standard Time
-        <br /> Georgian Standard Time
-        <br /> Caucasus Standard Time
-        <br /> Afghanistan Standard Time
-        <br /> Pakistan Standard Time
-        <br /> West Asia Standard Time
-        <br /> India Standard Time
-        <br /> Sri Lanka Standard Time
-        <br /> Nepal Standard Time
-        <br /> Central Asia Standard Time
-        <br /> Bangladesh Standard Time
-        <br /> Ekaterinburg Standard Time
-        <br /> Myanmar Standard Time
-        <br /> SE Asia Standard Time
-        <br /> N. Central Asia Standard Time
-        <br /> China Standard Time
-        <br /> North Asia Standard Time
-        <br /> Singapore Standard Time
-        <br /> W. Australia Standard Time
-        <br /> Taipei Standard Time
-        <br /> Ulaanbaatar Standard Time
-        <br /> North Asia East Standard Time
-        <br /> Tokyo Standard Time
-        <br /> Korea Standard Time
-        <br /> Cen. Australia Standard Time
-        <br /> AUS Central Standard Time
-        <br /> E. Australia Standard Time
-        <br /> AUS Eastern Standard Time
-        <br /> West Pacific Standard Time
-        <br /> Tasmania Standard Time
-        <br /> Yakutsk Standard Time
-        <br /> Central Pacific Standard Time
-        <br /> Vladivostok Standard Time
-        <br /> New Zealand Standard Time
-        <br /> UTC+12
-        <br /> Fiji Standard Time
-        <br /> Magadan Standard Time
-        <br /> Kamchatka Standard Time
-        <br /> Tonga Standard Time
-        <br /> Samoa Standard Time</td>
-    </tr>
-  </tbody>
-</table>
+- Dateline Standard Time
+- UTC-11
+- Hawaiian Standard Time
+- Alaskan Standard Time
+- Pacific Standard Time (Mexico)
+- Pacific Standard Time
+- US Mountain Standard Time
+- Mountain Standard Time (Mexico)
+- Mountain Standard Time
+- Central America Standard Time
+- Central Standard Time
+- Central Standard Time(Mexico)
+- Canada Central Standard Time
+- SA Pacific Standard Time
+- Eastern Standard Time
+- US Eastern Standard Time
+- Venezuela Standard Time
+- Paraguay Standard Time
+- Atlantic Standard Time
+- Central Brazilian Standard Time
+- SA Western Standard Time
+- Pacific SA Standard Time
+- Newfoundland Standard Time
+- E. South America Standard Time
+- Argentina Standard Time
+- SA Eastern Standard Time
+- Greenland Standard Time
+- Montevideo Standard Time
+- Bahia Standard Time
+- UTC-02
+- Mid-Atlantic Standard Time
+- Azores Standard Time
+- Cape Verde Standard Time
+- Morocco Standard Time
+- UTC
+- GMT Standard Time
+- Greenwich Standard Time
+- W. Europe Standard Time
+- Central Europe Standard Time
+- Romance Standard Time
+- Central European Standard Time
+- W. Central Africa Standard Time
+- Namibia Standard Time
+- Jordan Standard Time
+- GTB Standard Time
+- Middle East Standard Time
+- Egypt Standard Time
+- Syria Standard Time
+- South Africa Standard Time
+- FLE Standard Time
+- Turkey Standard Time
+- Israel Standard Time
+- E. Europe Standard Time
+- Arabic Standard Time
+- Kaliningrad Standard Time
+- Arab Standard Time
+- E. Africa Standard Time
+- Iran Standard Time
+- Arabian Standard Time
+- Azerbaijan Standard Time
+- Russian Standard Time
+- Mauritius Standard Time
+- Georgian Standard Time
+- Caucasus Standard Time
+- Afghanistan Standard Time
+- Pakistan Standard Time
+- West Asia Standard Time
+- India Standard Time
+- Sri Lanka Standard Time
+- Nepal Standard Time
+- Central Asia Standard Time
+- Bangladesh Standard Time
+- Ekaterinburg Standard Time
+- Myanmar Standard Time
+- SE Asia Standard Time
+- N. Central Asia Standard Time
+- China Standard Time
+- North Asia Standard Time
+- Singapore Standard Time
+- W. Australia Standard Time
+- Taipei Standard Time
+- Ulaanbaatar Standard Time
+- North Asia East Standard Time
+- Tokyo Standard Time
+- Korea Standard Time
+- Cen. Australia Standard Time
+- AUS Central Standard Time
+- E. Australia Standard Time
+- AUS Eastern Standard Time
+- West Pacific Standard Time
+- Tasmania Standard Time
+- Yakutsk Standard Time
+- Central Pacific Standard Time
+- Vladivostok Standard Time
+- New Zealand Standard Time
+- UTC+12
+- Fiji Standard Time
+- Magadan Standard Time
+- Kamchatka Standard Time
+- Tonga Standard Time
+- Samoa Standard Time
