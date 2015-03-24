@@ -31,7 +31,7 @@ Gets the detail for one server.
 
     <ServerRequest>
         <AccountAlias>ACCT</AccountAlias>
-        <Name>SERVER1</Name>
+        <Name>WA1T3NWEB01</Name>
     </ServerRequest>
 
 ## Response
@@ -53,50 +53,57 @@ Gets the detail for one server.
       "Success":true,
       "Message":"Success",
       "StatusCode":0,
-      "Server":
+      "Servers": [
         {
-          "ID":1001,
+          "ID":-1,
           "HardwareGroupID":1,
+          "HardwareGroupUUID":"8a03fbae8ddfe311b05f00505682315a",
           "Name":"WA1T3NWEB01",
           "Description":"WA1T3NWEB01",
           "DnsName":"WA1T3NWEB01",
+          "IsHyperscale":false,
           "IsTemplate":false,
           "Cpu":2,
           "MemoryGB":4,
           "DiskCount":3,
           "TotalDiskSpaceGB":116,
           "Status":"Active",
-          "ServerType":2,
-          "ServiceLevel":1,
+          "ServerType":"2",
+          "ServiceLevel":"1",
           "OperatingSystem":4,
           "PowerState":"Started",
           "Location":"WA1",
-          "IPAddress":"172.0.0.1",
+          "IPAddress":"172.0.0.1"
           "IPAddresses:[
-            {"Address":"172.0.01", "AddressType":1}],
+            {"Address":"172.0.0.1", "AddressType":1}
+          ],
           "CustomFields":[
-            { "CustomFieldID": 100,"Name": "My Field", "Type": "Text", "Value": "A test"},
-            { "CustomFieldID": 101,"Name": "My Field 2","Type": "Option","Value": "2"},
-            { "CustomFieldID": 102,"Name": "My Field 3","Type": "Checkbox","Value": "true"}
+            { "ID":"9f4150b68d4340cca652a209a4b32c34", "CustomFieldID": -1, "Name": "My Field", "Type": "Text", "Value": "A test"},
+            { "ID":"393a0aafd15d47118d57dde0a3d556e3", "CustomFieldID": -1, "Name": "My Field 2", "Type": "Option", "Value": "2"},
+            { "ID":"7997a9c0181644c99e490c5c465cf297", "CustomFieldID": -1, "Name": "My Field 3", "Type": "Checkbox", "Value": "true"}
           ]
         }
+      ]
     }
 
 #### XML
 
-    <ServerResponse Success="true" Message="Successfully retrieved servers" StatusCode="0">
-        <Server ID="1001" HardwareGroupID="1" Name="WA1T3NWEB01" Description="WA1T3NWEB01"
-          DnsName="WA1T3NWEB01" IsTemplate="false" Cpu="2" MemoryGB="4" DiskCount="3"
-          TotalDiskSpaceGB="116" Status="Active" ServerType="1" ServiceLevel="2"
-          OperatingSystem="2" PowerState="Started" Location="WA1" IPAddress="172.0.0.1">
-            <IPAddresses>
-                <IPAddress Address="172.0.0.1" AddressType="RIP" />
-            </IPAddresses>
-            <CustomFields CustomFieldID="100" Name="My Field" Type="Text" Value="Test Value" />
-            <CustomFields CustomFieldID="101" Name="My 2nd Field" Type="Option" Value="Value 3" />
-            <CustomFields CustomFieldID="102" Name="My 3rd Field" Type="Checkbox" Value="true" />
-       </Server>
-    </ServerResponse>
+    <GetServersResponse Success="true" Message="Successfully retrieved servers" StatusCode="0">
+        <Servers>
+            <Server ID="-1" HardwareGroupID="1" HardwareGroupUUID="8a03fbae8ddfe311b05f00505682315a"
+              Name="WA1T3NWEB01" Description="WA1T3NWEB01" DnsName="WA1T3NWEB01"
+              IsHyperscale="false" IsTemplate="false" Cpu="2" MemoryGB="4" DiskCount="3"
+              TotalDiskSpaceGB="116" Status="Active" ServerType="1" ServiceLevel="2"
+              OperatingSystem="2" PowerState="Started" Location="WA1" IPAddress="172.0.0.1">
+                <IPAddresses>
+                    <IPAddress Address="172.0.0.1" AddressType="RIP" />
+                </IPAddresses>
+                <CustomFields ID="9f4150b68d4340cca652a209a4b32c34" CustomFieldID="-1" Name="My Field" Type="Text" Value="Test Value" />
+                <CustomFields ID="393a0aafd15d47118d57dde0a3d556e3" CustomFieldID="-1" Name="My 2nd Field" Type="Option" Value="Value 3" />
+                <CustomFields ID="7997a9c0181644c99e490c5c465cf297" CustomFieldID="-1" Name="My 3rd Field" Type="Checkbox" Value="true" />
+            </Server>
+        </Servers>
+    </GetServersResponse>
 
 ### Status Codes
 

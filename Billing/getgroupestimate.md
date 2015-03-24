@@ -19,7 +19,7 @@ Gets estimated costs for a group of servers. Calls to this operation must includ
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
 | AccountAlias | String | Short code for a particular account. If not provided, then the API user's account is used. | No |
-| HardwareGroupID | Integer | Unique identifier of the group that can be acquired via Groups API, or by retrieving this value from the URL when viewing the group in the Control Portal. | Yes |
+| HardwareGroupUUID | String | Unique identifier of the group that can be acquired via Groups API, or by retrieving this value from the URL when viewing the group in the Control Portal. | Yes |
 
 ### Examples
 
@@ -27,14 +27,14 @@ Gets estimated costs for a group of servers. Calls to this operation must includ
 
     {
       "AccountAlias": "1000",
-      "HardwareGroupID":"5000"
+      "HardwareGroupUUID":"8a03fbae8ddfe311b05f00505682315a"
     }
 
 #### XML (REST)
 
     <GroupEstimateRequest>
       <AccountAlias>1000</AccountAlias>
-      <HardwareGroupID>5000</HardwareGroupID>
+      <HardwareGroupUUID>8a03fbae8ddfe311b05f00505682315a</HardwareGroupUUID>
     </GroupEstimateRequest>
 
 #### XML (SOAP)
@@ -44,7 +44,7 @@ Gets estimated costs for a group of servers. Calls to this operation must includ
       xmlns:soap12="http://www.w3.org/2003/05/soap-envelope">
         <soap12:Body>
             <GetGroupEstimate xmlns="http://www.tier3.com/">
-                <groupId>5000</groupId>
+                <groupUuid>8a03fbae8ddfe311b05f00505682315a</groupUuid>
             </GetGroupEstimate>
         </soap12:Body>
     </soap12:Envelope>
@@ -98,7 +98,7 @@ Gets estimated costs for a group of servers. Calls to this operation must includ
                     Message="OK"
                     StatusCode="0"
                     MonthlyEstimate="0"
-                    MonthToDate="0" 
+                    MonthToDate="0"
                     CurrentHour="0"
                     PreviousHour="0" />
             </GetGroupEstimateResponse>

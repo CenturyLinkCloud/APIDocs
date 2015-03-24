@@ -19,7 +19,7 @@ Creates a new Hardware Group.
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
 | AccountAlias | String | The alias of the account to owns the group. Can be the parent alias or a sub-account alias. | Yes |
-| ParentID | Int | The ID of the parent group. | Yes |
+| ParentUUID | String | The unique identifier of the parent group. | Yes |
 | Name | String | The name of the Hardware Group | Yes |
 | Description | String | A description of the Hardware Group.If none is supplied, the Name will be used. | No |
 
@@ -29,7 +29,7 @@ Creates a new Hardware Group.
 
     {
       "AccountAlias": "UNK",
-      "ParentID": "2",
+      "ParentUUID": "b7e44f0391824d408732f215a91a0578",
       "Name": "Group 01",
       "Description": "My new group"
     }
@@ -38,7 +38,7 @@ Creates a new Hardware Group.
 
     <CreateHardwareGroupRequest>
         <AccountAlias>ACCT</AccountAlias>
-        <ParentID>2</ParentID>
+        <ParentUUID>b7e44f0391824d408732f215a91a0578</ParentUUID>
         <Name>Group 01</Name>
         <Description>My new group</Description>
     </CreateHardwareGroupRequest>
@@ -58,9 +58,12 @@ Creates a new Hardware Group.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| ID | Int | The ID of the Group. |
+| ID | Int | The legacy ID of the Group.<br/>_Deprecated. Not available after May 6, 2015. Use UUID instead._ |
+| UUID | String | The unique identifier of the Group. |
+| ParentID | Int | The legacy ID of the parent Group.<br/>_Deprecated. Not available after May 6, 2015. Use ParentUUID instead._ |
+| ParentUUID | String | The unique identifier of the Parent Group. |
 | Name | String | The name of the Group. |
-| ParentID | Int | The ID of the Parent Group. |
+| IsSystemGroup | Bool | Denotes a required system Group. |
 
 ### Examples
 
@@ -70,18 +73,24 @@ Creates a new Hardware Group.
       "Group":
         {
           "ID":5,
+          "UUID":"3d30a6ab6c1243388b7bc966d073e353",
+          "ParentID":2,
+          "ParentUUID":"b7e44f0391824d408732f215a91a0578"
           "Name":"Group 01",
-          "ParentID":2
+          "IsSystemGroup":false
         },
       "Success":true,
       "Message":"Success",
       "StatusCode":0
     }
 
+
 #### XML
 
     <CreateHardwareGroupResponse Success="true" Message="Success" StatusCode="0">
-      <Group ID="5" Name="Group 01" ParentID="2"/>
+      <Group ID="5" UUID="3d30a6ab6c1243388b7bc966d073e353"
+        ParentID="2" ParentUUID="b7e44f0391824d408732f215a91a0578"
+        Name="Group 01" IsSystemGroup="false" />
     </CreateHardwareGroupResponse>
 
 ### Status Codes

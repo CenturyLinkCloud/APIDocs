@@ -43,6 +43,7 @@ Gets a list of all groups with the specified search criteria.
 
 | Name | Type | Description |
 | --- | --- | --- |
+| AccountAlias | String | The alias of the account that owns the groups. |
 | Success | Boolean | True if the request was successful, otherwise False. |
 | Message | String | A description of the result. The contents of this field does not contain any actionable information, it is purely intended to provide a human readable description of the result. |
 | StatusCode | Int | This value will help to identify any errors which were encountered while processing the request. The value of '0' indicates success, all non-zero StatusCodes indicate an error state. |
@@ -52,9 +53,11 @@ Gets a list of all groups with the specified search criteria.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| ID | Int | The ID of the Group. |
-| Name | String | The name of the Blueprint. |
-| ParentID | Int | The ID of the parent Group. |
+| ID | Int | The legacy ID of the Group.<br/>_Deprecated. Not available after May 6, 2015. Use UUID instead._ |
+| UUID | String | The unique identifier of the Group. |
+| ParentID | Int | The legacy ID of the parent Group.<br/>_Deprecated. Not available after May 6, 2015. Use ParentUUID instead._ |
+| ParentUUID | String | The unique identifier of the Parent Group. |
+| Name | String | The name of the Group. |
 | IsSystemGroup | Bool | Denotes a required system Group. |
 
 ### Examples
@@ -62,19 +65,24 @@ Gets a list of all groups with the specified search criteria.
 #### JSON
 
     {
-      "Groups": [
+      "AccountAlias":"UNK",
+      "HardwareGroups": [
         {
-          "ID":1,
+          "ID":5,
+          "UUID":"3d30a6ab6c1243388b7bc966d073e353",
+          "ParentID":2,
+          "ParentUUID":"b7e44f0391824d408732f215a91a0578"
           "Name":"Group 01",
-          "ParentID":0,
-          "IsSystemGroup":true
+          "IsSystemGroup":false
         },
         {
           "ID":2,
-          "Name":"Group 02",
+          "UUID":"b7e44f0391824d408732f215a91a0578",
           "ParentID":1,
+          "ParentUUID":"8a03fcae8ddfe321b05f00505682315a",
+          "Name":"Group 02",
           "IsSystemGroup":false
-        },
+        }
       ],
       "Success":true,
       "Message":"Success",
@@ -83,10 +91,14 @@ Gets a list of all groups with the specified search criteria.
 
 #### XML
 
-    <GetGroupsResponse Success="true" Message="Success" StatusCode="0">
+    <GetGroupsResponse AccountAlias="UNK" Success="true" Message="Success" StatusCode="0">
       <HardwareGroups>
-        <HardwareGroup ID="1" Name="Group 01" ParentID="0" IsSystemGroup="true" />
-        <HardwareGroup ID="2" Name="Group 02" ParentID="1" IsSystemGroup="false"/>
+        <HardwareGroup ID="5" UUID="3d30a6ab6c1243388b7bc966d073e353"
+          ParentID="2" ParentUUID="b7e44f0391824d408732f215a91a0578"
+          Name="Group 01" IsSystemGroup="false" />
+        <HardwareGroup ID="2" UUID="b7e44f0391824d408732f215a91a0578"
+          ParentID="1" ParentUUID="8a03fcae8ddfe321b05f00505682315a"
+          Name="Group 02" IsSystemGroup="false" />
       </HardwareGroups>
     </GetGroupsResponse>
 

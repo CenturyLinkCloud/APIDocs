@@ -34,8 +34,8 @@ Deploys a Blueprint with the given set of parameter values.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| CustomFieldID | Int | Identifier that is associated with the Account Custom Field (Call Account/GetCustomFields for a list of all custom fields set at the account level) |
-| Value | String | For Text: Any value; For Option values, call Account/GetCustomFields to see possible values to pass in. Checkbox values should be "true" or "false". |
+| ID | String | Unique identifier that is associated with the Account Custom Field. Call [Account/GetCustomFields](../Account/GetCustomFields.md) for a list of all custom fields set at the account level. |
+| Value | String | For Text: Any value; For Option values, call [Account/GetCustomFields](../Account/GetCustomFields.md) to see possible values to pass in. Checkbox values should be "true" or "false". |
 
 ### Examples
 
@@ -50,9 +50,9 @@ Deploys a Blueprint with the given set of parameter values.
         { "Name":"T3.BuildServerTask.SecondaryDNS","Value":"192.168.64.20" }
       ],
       "CustomFields": [
-        { "CustomFieldID": 100,"Value": "A test"},
-        { "CustomFieldID": 101,"Value": "2"},
-        { "CustomFieldID": 102,"Value": "true"}
+        { "ID": "ea97c6e09f604eb689dcdc080114b04d","Value": "A test"},
+        { "ID": "b9f454f2ae664998acc3302b24330c5b","Value": "2"},
+        { "ID": "d1f12de4ce4b4685b72ba632db0685c6","Value": "true"}
       ]
     }
 
@@ -67,9 +67,9 @@ Deploys a Blueprint with the given set of parameter values.
             <Parameter Name="T3.BuildServerTask.PrimaryDNS" Value="192.168.64.19" />
             <Parameter Name="T3.BuildServerTask.SecondaryDNS" Value="192.168.64.20" />
         </Parameters>
-        <CustomFields CustomFieldID="100" Value="Test text" />
-        <CustomFields CustomFieldID="104" Value="2" />
-        <CustomFields CustomFieldID="108" Value="true" />
+        <CustomFields ID="ea97c6e09f604eb689dcdc080114b04d" Value="Test text" />
+        <CustomFields ID="b9f454f2ae664998acc3302b24330c5b" Value="2" />
+        <CustomFields ID="d1f12de4ce4b4685b72ba632db0685c6" Value="true" />
     </DeployBlueprintRequest>
 
 ## Response

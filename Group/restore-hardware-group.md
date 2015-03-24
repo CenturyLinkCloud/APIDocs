@@ -19,8 +19,8 @@ Restores an archived Hardware Group.
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
 | AccountAlias | String | The alias of the account that owns the group. If not provided it will assume the account to which the API user is mapped. Providing this value gives you the ability to access groups in your sub accounts. | No |
-| ID | Int | The ID of the hardware group to restore. | Yes |
-| ParentID | Int | The ID of the hardware group to become the restored group's parent. | Yes |
+| UUID | String | The unique identifier of the hardware group to restore. | Yes |
+| ParentUUID | String | The unique identifier of the hardware group to become the restored group's parent. | Yes |
 
 ### Examples
 
@@ -28,16 +28,16 @@ Restores an archived Hardware Group.
 
     {
       "AccountAlias": "UNK",
-      "ID": 1007,
-      "ParentID": 1234
+      "UUID": "b7e44f0391824d408732f215a91a0578",
+      "ParentUUID": "8a03fcae8ddfe321b05f00505682315a"
     }
 
 #### XML
 
     <RestoreGroupRequest>
         <AccountAlias>ACCT</AccountAlias>
-        <ID>1004</ID>
-        <ParentID>1234</ParentID>
+        <UUID>b7e44f0391824d408732f215a91a0578</UUID>
+        <ParentUUID>8a03fcae8ddfe321b05f00505682315a</ParentUUID>
     </RestoreGroupRequest>
 
 ## Response

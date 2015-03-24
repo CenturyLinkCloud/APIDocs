@@ -8,8 +8,9 @@
  ### Server Attributes
 | Name | Type | Description |
 | --- | --- | --- |
-| ID | Int | The ID of the Server. |
-| HardwareGroupID | Int | The ID of the containing Group. |
+| ID | Int | The ID of the Server.<br/>_Deprecated. Value is -1._ |
+| HardwareGroupID | Int | The legacy ID of the containing Group.<br/>_Deprecated. Not available after May 6, 2015. Use UUID instead._ |
+| HardwareGroupUUID | String | The unique identifier of the containing Group. |
 | Name | String | The full name of the Server. |
 | Description | String | The description of the Server as provided on creation. |
 | DnsName | String | The DNS name of the Server.  |
@@ -18,6 +19,7 @@
 | DiskCount | Int  | Total number of disks configured on the Server.  |
 | TotalDiskSpaceGB | Int  | Total space across all disk configured on the Server. |
 | IsTemplate  | Bool  | True if the Server is a template, else False. |
+| IsHyperscale  | Bool  | True if the Server is a Hyperscale instance, else False. |
 | Status  | Json:Int / Xml:String | `Active`, `Archived`, `Deleted`, `UnderConstruction`, `QueuedForArchive`, `QueuedForDelete`, or `QueuedForRestore` |
 | ServerType | Int | The type of server. `Standard` or `Premium` |
 | ServiceLevel | Int | The service level/performance for the underlying data store.  `Standard` or `Premium` |
@@ -79,7 +81,8 @@
 
 | Name | Type | Description |
 | --- | --- | --- |
-| CustomFieldID | Int | Identifier that is associated with the Account Custom Field (Call Account/GetCustomFields for a list of all custom fields set at the account level) |
+| ID | String | Unique identifier that is associated with the Account Custom Field. Call [Account/GetCustomFields](../Account/GetCustomFields.md) for a list of all custom fields set at the account level. |
+| CustomFieldID | Int | _Deprecated. Value is -1. Use CustomFieldType instead._ |
 | Name | String | Name for the Custom Field. |
 | Type | String | Type of custom field: `Text`, `Option` or `Checkbox`.  |
 | Value | String | For Text: Any value; For Option values, call [Account/GetCustomFields](../Account/GetCustomFields.md) to see possible values to pass in. Checkbox values should be "true" or "false". |
@@ -91,8 +94,9 @@
     {
       "Servers": [
         {
-          "ID": 105421,
+          "ID": -1,
           "HardwareGroupID": 2158,
+          "HardwareGroupUUID": "4c20467154cb4de99a381cc011a20b96"
           "Location": "WA1",
           "Name": "WA1MDAS-STD01",
           "Description": "foo",
@@ -115,8 +119,9 @@
           "CustomFields": []
         },
         {
-          "ID": 105191,
+          "ID": -1,
           "HardwareGroupID": 5199,
+          "HardwareGroupUUID": "ea97c6e09f604eb689dcdc080114b04d"
           "Location": "WA1",
           "Name": "WA1MDA2K1202",
           "Description": "2k12",

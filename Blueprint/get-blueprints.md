@@ -21,7 +21,7 @@ Gets a list of all Blueprints with the specified search criteria.
 | CompanySize | Int | The target company size the of the Blueprint<br/>1 = 1 - 100<br/>2 = 101 - 1,000<br/>3 = 1,001 - 5,000<br/>4 =  5,000+ | No |
 | OperatingSystems | Int[] | A list of the operating systems that a Blueprint contains<br/>Cent OS - 32 bit = 6<br/>Cent OS - 64 bit = 7<br/>Debian - 64 bit = 21<br/>Free BSD - 32 bit = 13<br/>Free BSD - 64 bit = 14<br/>Ubuntu - 32 bit = 19<br/>Ubuntu - 64 bit = 20<br/>Windows 2003 Enterprise - 32 bit = 15<br/>Windows2003 Enterprise - 64 bit = 16<br/>Windows 2003 - 32 bit = 2<br/>Windows 2003 - 64 bit = 3<br/>Windows 2008 - 32 bit = 4<br/>Windows 2008 - 64 bit = 5<br/>Windows 2008 Enterprise - 32 bit = 17<br/>Windows 2008 Enterprise - 64 bit = 18 |  No |
 | Search | String | A keyword search within the Name and Description of the Blueprint | No |
-| Visibility | Int | The visibility level of the Blueprint.<br/>1 = Public<br/>2 = Private<br/>3 = Private Shared | No |
+| Visibility | Int | The visibility level of the Blueprint.<br/>1 = Public<br/>2 = Private<br/>3 = Private Shared | Yes |
 
 ### Examples
 

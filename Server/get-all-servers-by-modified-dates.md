@@ -19,7 +19,7 @@ Gets a deep list of all modified Servers for a given Hardware Group and its sub 
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
 | AccountAlias | String | The alias of the account that owns the servers. If not provided it will assume the account to which the API user is mapped. Providing this value gives you the ability to query a particular sub-account. | No |
-| HardwareGroupID | Int | The ID of the Hardware Group, or 0 if providing Location. | No |
+| HardwareGroupUUID | String | The unique identifier of the Hardware Group, or empty string if providing Location. | No |
 | Location | String | The data center location.  Otherwise leave blank and provide HardwareGroupID or let it default to account's primary data center. | No |
 | BeginDate | DateTime | Beginning of date range for querying modified servers. Can be a partial DateTime (e.g. 2013-05-10) or a full DateTime (e.g. 2013:05-10T14:30:12). If date is missing, then the value equals today minus one day. | No |
 | EndDate | DateTime | End of date range for querying modified servers. Can be a partial DateTime (e.g. 2013-05-10) or a full DateTime (e.g. 2013:05-10T14:30:12). If date is missing, then the value is set to the current date time.  | No |
@@ -63,13 +63,15 @@ Gets a deep list of all modified Servers for a given Hardware Group and its sub 
       "Success":true,
       "Message":"Success",
       "StatusCode":0,
-      "Servers":[
+      "Servers": [
         {
-          "ID":1001,
+          "ID":-1,
           "HardwareGroupID":1,
+          "HardwareGroupUUID":"8a03fbae8ddfe311b05f00505682315a",
           "Name":"WA1T3NWEB01",
           "Description":"WA1T3NWEB01",
           "DnsName":"WA1T3NWEB01",
+          "IsHyperscale":false,
           "IsTemplate":false,
           "Cpu":2,
           "MemoryGB":4,
@@ -82,13 +84,13 @@ Gets a deep list of all modified Servers for a given Hardware Group and its sub 
           "PowerState":"Started",
           "Location":"WA1",
           "IPAddress":"172.0.0.1"
-          "IPAddresses: [
+          "IPAddresses:[
             {"Address":"172.0.0.1", "AddressType":1}
           ],
           "CustomFields":[
-            { "CustomFieldID": 100, "Name": "My Field", "Type": "Text", "Value": "A test"},
-            { "CustomFieldID": 101, "Name": "My Field 2", "Type": "Option","Value": "2"},
-            { "CustomFieldID": 102, "Name": "My Field 3", "Type": "Checkbox","Value": "true"}
+            { "ID":"9f4150b68d4340cca652a209a4b32c34", "CustomFieldID": -1, "Name": "My Field", "Type": "Text", "Value": "A test"},
+            { "ID":"393a0aafd15d47118d57dde0a3d556e3", "CustomFieldID": -1, "Name": "My Field 2", "Type": "Option", "Value": "2"},
+            { "ID":"7997a9c0181644c99e490c5c465cf297", "CustomFieldID": -1, "Name": "My Field 3", "Type": "Checkbox", "Value": "true"}
           ]
         }
       ]
@@ -98,16 +100,17 @@ Gets a deep list of all modified Servers for a given Hardware Group and its sub 
 
     <GetServersResponse Success="true" Message="Successfully retrieved servers" StatusCode="0">
         <Servers>
-            <Server ID="1001" HardwareGroupID="1" Name="WA1T3NWEB01" Description="WA1T3NWEB01"
-              DnsName="WA1T3NWEB01" IsTemplate="false" Cpu="2" MemoryGB="4" DiskCount="3"
+            <Server ID="-1" HardwareGroupID="1" HardwareGroupUUID="8a03fbae8ddfe311b05f00505682315a"
+              Name="WA1T3NWEB01" Description="WA1T3NWEB01" DnsName="WA1T3NWEB01"
+              IsHyperscale="false" IsTemplate="false" Cpu="2" MemoryGB="4" DiskCount="3"
               TotalDiskSpaceGB="116" Status="Active" ServerType="1" ServiceLevel="2"
               OperatingSystem="2" PowerState="Started" Location="WA1" IPAddress="172.0.0.1">
                 <IPAddresses>
                     <IPAddress Address="172.0.0.1" AddressType="RIP" />
-                </IPAddresse>
-                <CustomFields CustomFieldID="100" Name="My Field" Type="Text" Value="Test Value" />
-                <CustomFields CustomFieldID="101" Name="My 2nd Field" Type="Option" Value="Value 3" />
-                <CustomFields CustomFieldID="102" Name="My 3rd Field" Type="Checkbox" Value="true" />
+                </IPAddresses>
+                <CustomFields ID="9f4150b68d4340cca652a209a4b32c34" CustomFieldID="-1" Name="My Field" Type="Text" Value="Test Value" />
+                <CustomFields ID="393a0aafd15d47118d57dde0a3d556e3" CustomFieldID="-1" Name="My 2nd Field" Type="Option" Value="Value 3" />
+                <CustomFields ID="7997a9c0181644c99e490c5c465cf297" CustomFieldID="-1" Name="My 3rd Field" Type="Checkbox" Value="true" />
             </Server>
         </Servers>
     </GetServersResponse>

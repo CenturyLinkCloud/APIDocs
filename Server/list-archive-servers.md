@@ -13,7 +13,9 @@ Lists archived servers.
     SOAP: https://api.ctl.io/SOAP/Server.asmx?op=ListArchivedServers
 
 ## Request
+
 ### Attributes
+
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
 | AccountAlias | String | The alias of the account that owns the server. If not provided it will assume the account to which the API user is mapped. Providing this value gives you the ability to access servers in your sub accounts. | No |
@@ -50,7 +52,7 @@ Lists archived servers.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| ID | Int | The ID of the Server. |
+| ID | Int | The ID of the Server.<br/>_Deprecated. Value is -1._ |
 | Name | String | The full name of the Server. |
 | Description | String | The description of the Server as provided on creation. |
 
@@ -63,8 +65,8 @@ Lists archived servers.
       "Message":"Success",
       "StatusCode":0,
       "Servers":[
-        {"ID":1001,"Name":"WA1T3NWEB01","Description":"WA1T3NWEB01"},
-        {"ID":1002,"Name":"WA1T3NWEB02","Description":"WA1T3NWEB02"}
+        {"ID":-1,"Name":"WA1T3NWEB01","Description":"WA1T3NWEB01"},
+        {"ID":-1,"Name":"WA1T3NWEB02","Description":"WA1T3NWEB02"}
       ]
     }
 
@@ -72,8 +74,8 @@ Lists archived servers.
 
     <GetArchiveServersResponse Success="true" Message="Successfully retrieved servers" StatusCode="0">
         <Servers>
-            <ArchiveServer ID="1001" Name="WA1T3NWEB01" Description="WA1T3NWEB01"/>
-            <ArchiveServer ID="1002" Name="WA1T3NWEB02" Description="WA1T3NWEB02"/>
+            <ArchiveServer ID="-1" Name="WA1T3NWEB01" Description="WA1T3NWEB01"/>
+            <ArchiveServer ID="-1" Name="WA1T3NWEB02" Description="WA1T3NWEB02"/>
         </Servers>
     </GetArchiveServersResponse>
 

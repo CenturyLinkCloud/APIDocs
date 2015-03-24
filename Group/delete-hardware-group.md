@@ -19,7 +19,7 @@ Deletes the Hardware Group along with all child groups and servers.
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
 | AccountAlias | String | The alias of the account that owns the group. If not provided it will assume the account to which the API user is mapped. Providing this value gives you the ability to access groups in your sub accounts. | No |
-| ID | Int | The ID of the Hardware Group to delete. | Yes |
+| UUID | String | The unique identifier of the Hardware Group to delete. | Yes |
 
 ### Examples
 
@@ -27,14 +27,14 @@ Deletes the Hardware Group along with all child groups and servers.
 
     {
       "AccountAlias": "UNK",
-      "ID": "2"
+      "UUID": "b7e44f0391824d408732f215a91a0578"
     }
 
 #### XML
 
     <DeleteGroupRequest>
       <AccountAlias>ACCT</AccountAlias>
-      <ID>1</ID>
+      <UUID>b7e44f0391824d408732f215a91a0578</UUID>
     </DeleteGroupRequest>
 
 ## Response
@@ -67,7 +67,8 @@ Deletes the Hardware Group along with all child groups and servers.
 
 ### Status Codes
 
-
+| Status Code | Description |
+| --- | --- |
 | 0 | Request was successfully processed |
 | 2 | Unknown Error.  An application error occurred processing your request, contact support to resolve the issue. |
 | 3 | Invalid Request Format. This value indicates that the XML or JSON requests do not match the expected format. |

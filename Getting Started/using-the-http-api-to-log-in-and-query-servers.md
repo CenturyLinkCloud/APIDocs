@@ -73,13 +73,13 @@ In this article, we'll walk through the steps necessary to authenticate a user a
 7. As with above, requests to the service can be done with JSON or XML payloads. Both examples are shown below.
 
         //set query variables
-        string groupId = "[group ID]";
+        string groupUUID = "[group UUID]";
         string acctAlias = "[alias]";
         //build up payload message (XML)
-        //string queryPayload = string.Format("<GetServersRequest><AccountAlias>{0}</AccountAlias><HardwareGroupID>{1}</HardwareGroupID></GetServersRequest>", acctAlias, groupId);
+        //string queryPayload = string.Format("<GetServersRequest><AccountAlias>{0}</AccountAlias><HardwareGroupUUID>{1}</HardwareGroupUUID></GetServersRequest>", acctAlias, groupId);
         //reqQuery.ContentType = "text/xml";
         //build up payload message (JSON)
-        string queryPayload = string.Format("{'AccountAlias':'{0}', 'HardwareGroupID':'{1}'}", acctAlias, groupId);
+        string queryPayload = string.Format("{'AccountAlias':'{0}', 'HardwareGroupUUID':'{1}'}", acctAlias, groupId);
         reqQuery.ContentType = "application/json";
 
 8. Send the request message to the endpoint and retrieve the response payload.

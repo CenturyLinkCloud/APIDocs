@@ -19,7 +19,6 @@ Gets a deep list of all modified servers for a given account hierarchy within a 
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
 | AccountAlias | String | The alias of the account that owns the servers. If not provided it will assume the account to which the API user is mapped. Providing this value gives you the ability to query a particular sub-account. | No |
-| HardwareGroupID | Int | Ignored | No |
 | Location | String | The data center location.  Otherwise leave blank and provide HardwareGroupID or let it default to account's primary data center. | No |
 | BeginDate | DateTime | Beginning of date range for querying modified servers. Can be a partial DateTime (e.g. 2013-05-10) or a full DateTime (e.g. 2013:05-10T14:30:12). If date is missing, then the value equals today minus one day. | No |
 | EndDate | DateTime | End of date range for querying modified servers. Can be a partial DateTime (e.g. 2013-05-10) or a full DateTime (e.g. 2013:05-10T14:30:12). If date is missing, then the value is set to the current date time.  | No |
@@ -65,13 +64,15 @@ Gets a deep list of all modified servers for a given account hierarchy within a 
           "AccountAlias":"ACT1",
           "Servers":[
             {
-              "ID":2646,
+              "ID":-1,
               "HardwareGroupID":1197,
+              "HardwareGroupUUID":"8a03fbae8ddfe311b05f00505682315a",
               "Location":"WA1",
               "Name":"SERVERDEMO01",
               "Description":"Demo server",
               "DnsName":"",
               "IsTemplate":false,
+              "IsHyperscale":false,
               "Cpu":1,
               "MemoryGB":2,
               "DiskCount":1,
@@ -96,13 +97,15 @@ Gets a deep list of all modified servers for a given account hierarchy within a 
           "AccountAlias":"ACT2",
           "Servers":[
             {
-              "ID":4316,
+              "ID":-1,
               "HardwareGroupID":1595,
+              "HardwareGroupUUID":"b9f454f2ae664998acc3302b24330c5b",
               "Location":"WA1",
               "Name":"SERVERDEMO03",
               "Description":"demo server",
               "DnsName":"QA1SSUBSERO9401",
               "IsTemplate":false,
+              "IsHyperscale":false,
               "Cpu":1,
               "MemoryGB":1,
               "DiskCount":3,
@@ -111,7 +114,7 @@ Gets a deep list of all modified servers for a given account hierarchy within a 
               "PowerState":"Started",
               "InMaintenanceMode":false,
               "IPAddress":"173.25.114.15","ServerType":1,"ServiceLevel":2,"OperatingSystem":20,
-              "DateModified":"\/Date(1372476852953)\/","ModifiedBy":"user@tier3.com",
+              "DateModified":"\/Date(1372476852953)\/","ModifiedBy":"user@company.com",
               "IPAddresses":[
                 {"Address":"173.25.114.15", "AddressType":"RIP"}
               ],
@@ -132,8 +135,9 @@ Gets a deep list of all modified servers for a given account hierarchy within a 
         <AccountServerGroup AccountAlias="ACT1">
           <Servers>
             <Server
-              ID="1000"
+              ID="-1"
               HardwareGroupID="1197"
+              HardwareGroupUUID="8a03fbae8ddfe311b05f00505682315a"
               Location="WA1"
               Name="SERVERDEMO01"
               Description="Server1"
@@ -159,8 +163,9 @@ Gets a deep list of all modified servers for a given account hierarchy within a 
         <AccountServerGroup AccountAlias="ACT2">
           <Servers>
             <Server
-              ID="1003"
+              ID="-1"
               HardwareGroupID="1595"
+              HardwareGroupUUID="b9f454f2ae664998acc3302b24330c5b"
               Location="WA1"
               Name="SERVERDEMO03"
               Description="Server 3"
@@ -178,7 +183,7 @@ Gets a deep list of all modified servers for a given account hierarchy within a 
               ServiceLevel="2"
               OperatingSystem="20"
               DateModified="2013-06-28T20:34:12.953"
-              ModifiedBy="user@tier3.com">
+              ModifiedBy="user@company.com">
             </Server>
           </Servers>
         </AccountServerGroup>

@@ -19,15 +19,16 @@ Gets a deep list of all Servers for a given Hardware Group and its sub groups, o
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
 | AccountAlias | String | The alias of the account that owns the servers. If not provided it will assume the account to which the API user is mapped. Providing this value gives you the ability to access servers in your sub accounts. | No |
-| HardwareGroupID | Int | The ID of the Hardware Group, or 0 if providing Location. | No |
-| Location | String | The data center location.  Otherwise leave blank and provide HardwareGroupID. | No |
+| HardwareGroupUUID | String | The unique identifier of the Hardware Group, or empty string if providing Location. | No |
+| Location | String | The data center location.  Otherwise leave blank and provide HardwareGroupUUID. | No |
 
 ### Examples
 
 #### JSON
 
     {
-      "HardwareGroupID": "0",
+      "AccountAlias":"ACCT",
+      "HardwareGroupUUID": "8a03fbae8ddfe311b05f00505682315a",
       "Location": "WA1"
     }
 
@@ -35,7 +36,7 @@ Gets a deep list of all Servers for a given Hardware Group and its sub groups, o
 
     <GetAllServersRequest>
         <AccountAlias>ACCT</AccountAlias>
-        <HardwareGroupID>0</HardwareGroupID>
+        <HardwareGroupUUID>8a03fbae8ddfe311b05f00505682315a</HardwareGroupUUID>
         <Location>WA1</Location>
     </GetAllServersRequest>
 
@@ -60,11 +61,13 @@ Gets a deep list of all Servers for a given Hardware Group and its sub groups, o
       "StatusCode":0,
       "Servers": [
         {
-          "ID":1001,
+          "ID":-1,
           "HardwareGroupID":1,
+          "HardwareGroupUUID":"8a03fbae8ddfe311b05f00505682315a",
           "Name":"WA1T3NWEB01",
           "Description":"WA1T3NWEB01",
           "DnsName":"WA1T3NWEB01",
+          "IsHyperscale":false,
           "IsTemplate":false,
           "Cpu":2,
           "MemoryGB":4,
@@ -78,20 +81,22 @@ Gets a deep list of all Servers for a given Hardware Group and its sub groups, o
           "Location":"WA1",
           "IPAddress":"172.0.0.1"
           "IPAddresses:[
-            {"Address":"172.0.01", "AddressType":1}
+            {"Address":"172.0.0.1", "AddressType":1}
           ],
           "CustomFields":[
-            { "CustomFieldID": 100, "Name": "My Field", "Type": "Text", "Value": "A test"},
-            { "CustomFieldID": 101, "Name": "My Field 2", "Type": "Option", "Value": "2"},
-            { "CustomFieldID": 102, "Name": "My Field 3", "Type": "Checkbox", "Value": "true"}
+            { "ID":"9f4150b68d4340cca652a209a4b32c34", "CustomFieldID": -1, "Name": "My Field", "Type": "Text", "Value": "A test"},
+            { "ID":"393a0aafd15d47118d57dde0a3d556e3", "CustomFieldID": -1, "Name": "My Field 2", "Type": "Option", "Value": "2"},
+            { "ID":"7997a9c0181644c99e490c5c465cf297", "CustomFieldID": -1, "Name": "My Field 3", "Type": "Checkbox", "Value": "true"}
           ]
         },
         {
-          "ID":1002,
+          "ID":-1,
           "HardwareGroupID":1,
+          "HardwareGroupUUID":"8a03fbae8ddfe311b05f00505682315a",
           "Name":"WA1T3NWEB02",
           "Description":"WA1T3NWEB02",
           "DnsName":"WA1T3NWEB02",
+          "IsHyperscale":false,
           "IsTemplate":false,
           "Cpu":2,
           "MemoryGB":4,
@@ -105,7 +110,7 @@ Gets a deep list of all Servers for a given Hardware Group and its sub groups, o
           "Location":"WA1",
           "IPAddress":"172.0.0.2",
           "IPAddresses: [
-            {"Address":"172.0.02", "AddressType":1}
+            {"Address":"172.0.0.2", "AddressType":1}
           ],
           "CustomFields": []
         }
@@ -116,21 +121,23 @@ Gets a deep list of all Servers for a given Hardware Group and its sub groups, o
 
     <GetServersResponse Success="true" Message="Successfully retrieved servers" StatusCode="0">
         <Servers>
-            <Server ID="1001" HardwareGroupID="1" Name="WA1T3NWEB01" Description="WA1T3NWEB01"
-              DnsName="WA1T3NWEB01" IsTemplate="false" Cpu="2" MemoryGB="4" DiskCount="3"
+            <Server ID="-1" HardwareGroupID="1" HardwareGroupUUID="8a03fbae8ddfe311b05f00505682315a"
+              Name="WA1T3NWEB01" Description="WA1T3NWEB01" DnsName="WA1T3NWEB01"
+              IsHyperscale="false" IsTemplate="false" Cpu="2" MemoryGB="4" DiskCount="3"
               TotalDiskSpaceGB="116" Status="Active" ServerType="1" ServiceLevel="2"
               OperatingSystem="2" PowerState="Started" Location="WA1" IPAddress="172.0.0.1">
                 <IPAddresses>
                     <IPAddress Address="172.0.0.1" AddressType="RIP" />
-                </IPAddresse>
-                <CustomFields CustomFieldID="100" Name="My Field" Type="Text" Value="Test Value" />
-                <CustomFields CustomFieldID="101" Name="My 2nd Field" Type="Option" Value="Value 3" />
-                <CustomFields CustomFieldID="102" Name="My 3rd Field" Type="Checkbox" Value="true" />
+                </IPAddresses>
+                <CustomFields ID="9f4150b68d4340cca652a209a4b32c34" CustomFieldID="-1" Name="My Field" Type="Text" Value="Test Value" />
+                <CustomFields ID="393a0aafd15d47118d57dde0a3d556e3" CustomFieldID="-1" Name="My 2nd Field" Type="Option" Value="Value 3" />
+                <CustomFields ID="7997a9c0181644c99e490c5c465cf297" CustomFieldID="-1" Name="My 3rd Field" Type="Checkbox" Value="true" />
             </Server>
-            <Server ID="1002" HardwareGroupID="1" Name="WA1T3NWEB02" Description="WA1T3NWEB02"
-              DnsName="WA1T3NWEB02" IsTemplate="false" Cpu="2" MemoryGB="4" DiskCount="3"
-              TotalDiskSpaceGB="116" Status="Active" ServerType="2" ServiceLevel="1"
-              OperatingSystem="6" PowerState="Started" Location="WA1" IPAddress="172.0.0.2">
+            <Server ID="-1" HardwareGroupID="1" HardwareGroupUUID="8a03fbae8ddfe311b05f00505682315a"
+              Name="WA1T3NWEB02" Description="WA1T3NWEB02" DnsName="WA1T3NWEB02"
+              IsHyperscale="false" IsTemplate="false" Cpu="2" MemoryGB="4" DiskCount="3"
+              TotalDiskSpaceGB="116" Status="Active" ServerType="1" ServiceLevel="2"
+              OperatingSystem="2" PowerState="Started" Location="WA1" IPAddress="172.0.0.2">
                 <IPAddresses>
                     <IPAddress Address="172.0.0.2" AddressType="RIP"/>
                 </IPAddresses>

@@ -12,9 +12,9 @@ Gets the list of Archive Servers.
     REST: https://api.ctl.io/REST/Server/GetArchiveServers/<format> (format = XML | JSON)
     SOAP: https://api.ctl.io/SOAP/Server.asmx?op=GetArchiveServers
 
-## Request
+## Response
 
-### Attribute
+### Attributes
 
 | Name | Type | Description |
 | --- | --- | --- |
@@ -27,7 +27,7 @@ Gets the list of Archive Servers.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| ID | Int | The ID of the Server. |
+| ID | Int | The ID of the Server.<br/>_Deprecated. Value is -1._ |
 | Name | String | The full name of the Server. |
 | Description | String | The description of the Server as provided on creation. |
 
@@ -40,8 +40,8 @@ Gets the list of Archive Servers.
       "Message":"Success",
       "StatusCode":0,
       "Servers": [
-        {"ID":1001, "Name":"WA1T3NWEB01", "Description":"WA1T3NWEB01"},
-        {"ID":1002, "Name":"WA1T3NWEB02", "Description":"WA1T3NWEB02"}
+        {"ID":-1, "Name":"WA1T3NWEB01", "Description":"WA1T3NWEB01"},
+        {"ID":-1, "Name":"WA1T3NWEB02", "Description":"WA1T3NWEB02"}
        ]
     }
 
@@ -49,8 +49,8 @@ Gets the list of Archive Servers.
 
     <GetServersResponse Success="true" Message="Successfully retrieved servers" StatusCode="0">
         <Servers>
-            <Server ID="1001" Name="WA1T3NWEB01" Description="WA1T3NWEB01"/>
-            <Server ID="1002" Name="WA1T3NWEB02" Description="WA1T3NWEB02"/>
+            <Server ID="-1" Name="WA1T3NWEB01" Description="WA1T3NWEB01"/>
+            <Server ID="-1" Name="WA1T3NWEB02" Description="WA1T3NWEB02"/>
         </Servers>
     </GetServersResponse>
 

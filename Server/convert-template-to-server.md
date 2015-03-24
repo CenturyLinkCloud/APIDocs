@@ -21,7 +21,7 @@ Converts the Template to a Server.
 | AccountAlias | String | The alias of the account that owns the server. If not provided it will assume the account to which the API user is mapped. Providing this value gives you the ability to access servers in your sub accounts. | No |
 | Name | String | The name of the Template.   | Yes |
 | Password | String | The new administrator/root password for the converted server. | Yes |
-| HardwareGroupID | Int | The ID of the hardware group to add the converted server to. | Yes |
+| HardwareGroupUUID | String | The unique identifier of the hardware group to add the converted server to. | Yes |
 | Network | String | The name of the network to add the converted server to. | Yes |
 
 ### Examples
@@ -32,7 +32,7 @@ Converts the Template to a Server.
       "AccountAlias": "UNK",
       "Name": "WA1T3NWEB01",
       "Password": "password",
-      "HardwareGroupID": 1,
+      "HardwareGroupUUID": "b7e44f0391824d408732f215a91a0578",
       "Network": "VLAN113_172.21.113"
 
     }
@@ -43,7 +43,7 @@ Converts the Template to a Server.
         <AccountAlias>ACCT</AccountAlias>
         <Name>WEB</Name>
         <Password>password</Password>
-        <HardwareGroupID>1</HardwareGroupID>
+        <HardwareGroupUUID>b7e44f0391824d408732f215a91a0578</HardwareGroupUUID>
         <Network>VLAN113_172.21.113</Network>
     </ConvertTemplateToServerRequest>
 

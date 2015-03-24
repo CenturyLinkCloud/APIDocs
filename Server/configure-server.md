@@ -19,7 +19,7 @@ Configures the CPU, Memory, Group and additional storage for a Server.
 | --- | --- | --- | --- |
 | AccountAlias | String | The alias of the account that owns the server. If not provided it will assume the Account the API user is mapped to. Providing this value gives you the ability to manage servers in your sub accounts. | No |
 | Name | String | The name of the server. | Yes |
-| HardwareGroupID | Int | The ID of the Hardware Group to add this server to. | Yes |
+| HardwareGroupUUID | String | The unique identifier of the Hardware Group to add this server to. | Yes |
 | Cpu | Int | The number of processors to configure the server with.Valid values are 1, 2 and 4 | Yes |
 | MemoryGB | Int | The number of GB of memory to configure the server with.Valid values are between 1 and 16. | Yes |
 | AdditionalStorageGB | Int | If greater than 0, the size a new disk to add to the server. | No |
@@ -29,8 +29,8 @@ Configures the CPU, Memory, Group and additional storage for a Server.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| CustomFieldID | Int | Identifier that is associated with the Account Custom Field (Call Account/GetCustomFields for a list of all custom fields set at the account level) |
-| Value | String | For Text: Any value; For Option values, call Account/GetCustomFields to see possible values to pass in. Checkbox values should be "true" or "false". |
+| ID | String | Unique identifier that is associated with the Account Custom Field. Call [Account/GetCustomFields](../Account/GetCustomFields.md) for a list of all custom fields set at the account level. |
+| Value | String | For Text: Any value; For Option values, call [Account/GetCustomFields](../Account/GetCustomFields.md) to see possible values to pass in. Checkbox values should be "true" or "false". |tring | For Text: Any value; For Option values, call Account/GetCustomFields to see possible values to pass in. Checkbox values should be "true" or "false". |
 
 ### Examples
 
@@ -39,14 +39,14 @@ Configures the CPU, Memory, Group and additional storage for a Server.
     {
       "AccountAlias": "UNK",
       "Name": "WA1T3NWEB01",
-      "HardwareGroupID": 1,
+      "HardwareGroupUUID": "8a03fbae8ddfe311b05f00505682315a",
       "Cpu": 2,
       "MemoryGB": 4,
       "AdditionalStorageGB": 50,
-      "CustomFields":[
-        { "CustomFieldID": 100,"Value": "A test"},
-        { "CustomFieldID": 101,"Value": "2"},
-        { "CustomFieldID": 102,"Value": "true"}
+      "CustomFields": [
+        { "ID": "ea97c6e09f604eb689dcdc080114b04d","Value": "A test"},
+        { "ID": "b9f454f2ae664998acc3302b24330c5b","Value": "2"},
+        { "ID": "d1f12de4ce4b4685b72ba632db0685c6","Value": "true"}
       ]
     }
 
@@ -55,13 +55,13 @@ Configures the CPU, Memory, Group and additional storage for a Server.
     <ConfigureServerRequest>
         <AccountAlias>UNK</AccountAlias>
         <Name>WEB</Name>
-        <HardwareGroupID>1</HardwareGroupID>
+        <HardwareGroupUUID>8a03fbae8ddfe311b05f00505682315a</HardwareGroupUUID>
         <Cpu>2</Cpu>
         <MemoryGB>4</MemoryGB>
         <AdditionalStorageGB>50</AdditionalStorageGB>
-        <CustomFields CustomFieldID="100" Value="Test text" />
-        <CustomFields CustomFieldID="104" Value="2" />
-        <CustomFields CustomFieldID="108" Value="true" />
+        <CustomFields ID="ea97c6e09f604eb689dcdc080114b04d" Value="Test text" />
+        <CustomFields ID="b9f454f2ae664998acc3302b24330c5b" Value="2" />
+        <CustomFields ID="d1f12de4ce4b4685b72ba632db0685c6" Value="true" />
     </ConfigureServerRequest>
 
 ## Response

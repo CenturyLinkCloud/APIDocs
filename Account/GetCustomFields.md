@@ -45,6 +45,18 @@ Gets the account custom field definitions.
 | StatusCode | Int | This value will help to identify any errors which were encountered while processing the request. The value of '0' indicates success, all non-zero StatusCodes indicate an error state. |
 | AccountCustomField | Complex | Account Custom Field complex object |
 
+### AccountCustomField Attributes
+
+| Name | Type | Description |
+| --- | --- | --- |
+| ID | Int | _Deprecated. Value is -1. Use UUID instead._ |
+| UUID | String | Unique identifier of the Account Custom Field. |
+| CustomFieldTypeID | Int | _Deprecated. Value is -1. Use CustomFieldType instead._ |
+| CustomFieldType | String | The type of field: "Text", "Option", or "Checkbox". |
+| Name | String | Friendly name of the Custom Field. |
+| IsRequired | Boolean | Whether or not the Custom Field is required. |
+| AccountCustomFieldOptions | Complex | Options for the Account Custom Field, specific to the field type. |
+
 ### Examples
 
 #### JSON
@@ -52,47 +64,40 @@ Gets the account custom field definitions.
     {
       "AccountCustomFields": [
         {
-          "ID": 100,
-          "CustomFieldTypeID": 1,
+          "ID": -1,
+          "CustomFieldTypeID": -1,
           "CustomFieldType": "Text",
           "Name": "Name",
           "IsRequired": true,
+          "UUID":"dba67b15-6e77-4e1f-b413-ddfa3dc4ac1d"
           "AccountCustomFieldOptions": null
         },
         {
-          "ID": 104,
-          "CustomFieldTypeID": 2,
+          "ID": -1,
+          "CustomFieldTypeID": -1,
           "CustomFieldType": "Option",
           "Name": "Type",
           "IsRequired": true,
+          "UUID":"d61daab2-e99f-40c2-a4b5-820c3d97eea4"
           "AccountCustomFieldOptions": [
             {
-              "ID": 48,
               "Name": "My Type",
               "Value": "1"
             },
             {
-              "ID": 49,
               "Name": "Your Type",
               "Value": "2"
             }
           ]
         },
         {
-          "ID": 108,
-          "CustomFieldTypeID": 3,
+          "ID": -1,
+          "CustomFieldTypeID": -1,
           "CustomFieldType": "Checkbox",
           "Name": "Enabled",
           "IsRequired": true,
+          "UUID": "de775088-8b94-4e9f-b64b-416623477cf8"
           "AccountCustomFieldOptions": []
-        },
-        {
-          "ID": 116,
-          "CustomFieldTypeID": 1,
-          "CustomFieldType": "Text",
-          "Name": "Not required",
-          "IsRequired": false,
-          "AccountCustomFieldOptions": null
         }
       ],
       "Success": true,
@@ -108,13 +113,12 @@ Gets the account custom field definitions.
       Message="Custom Fields retrieved successfully."
       StatusCode="0">
         <AccountCustomFields>
-            <AccountCustomField ID="100" CustomFieldTypeID="1" CustomFieldType="Text" Name="Name" IsRequired="true" />
-            <AccountCustomField ID="104" CustomFieldTypeID="2" CustomFieldType="Option" Name="Type" IsRequired="true">
-                <AccountCustomFieldOptions ID="48" Name="My Type" Value="1" />
-                <AccountCustomFieldOptions ID="49" Name="Your Type" Value="2" />
+            <AccountCustomField ID="-1" CustomFieldTypeID="-1" CustomFieldType="Text" Name="Name" UUID="dba67b15-6e77-4e1f-b413-ddfa3dc4ac1d" IsRequired="true" />
+            <AccountCustomField ID="-1" CustomFieldTypeID="-1" CustomFieldType="Option" Name="Type" UUID="d61daab2-e99f-40c2-a4b5-820c3d97eea4" IsRequired="true">
+                <AccountCustomFieldOptions Name="My Type" Value="1" />
+                <AccountCustomFieldOptions Name="Your Type" Value="2" />
             </AccountCustomField>
-            <AccountCustomField ID="108" CustomFieldTypeID="3" CustomFieldType="Checkbox" Name="Enabled" IsRequired="true" />
-            <AccountCustomField ID="116" CustomFieldTypeID="1" CustomFieldType="Text" Name="Not required" IsRequired="false" />
+            <AccountCustomField ID="-1" CustomFieldTypeID="-1" CustomFieldType="Checkbox" Name="Enabled" UUID="de775088-8b94-4e9f-b64b-416623477cf8" IsRequired="true" />
         </AccountCustomFields>
     </AccountCustomFieldsResponse>
 

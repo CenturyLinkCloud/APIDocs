@@ -19,7 +19,7 @@ Enables or disables Maintenance Mode on a Hardware Group.
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
 | AccountAlias | String | The alias of the account that owns the group. If not provided it will assume the account to which the API user is mapped. Providing this value gives you the ability to access groups in your sub accounts. | No |
-| ID | Int | The ID of the Hardware Group. | Yes |
+| UUID | String | The unique identifier of the Hardware Group. | Yes |
 | Enable | Boolean | Turn Maintenance Mode on or off. | Yes |
 
 ### Examples
@@ -28,7 +28,7 @@ Enables or disables Maintenance Mode on a Hardware Group.
 
     {
       "AccountAlias": "UNK",
-      "ID": 1007,
+      "UUID": "b7e44f0391824d408732f215a91a0578",
       "Enable": true
     }
 
@@ -36,7 +36,7 @@ Enables or disables Maintenance Mode on a Hardware Group.
 
     <GroupMaintenanceRequest>
         <AccountAlias>ACCT</AccountAlias>
-        <ID>1</ID>
+        <UUID>b7e44f0391824d408732f215a91a0578</UUID>
         <Enable>true</Enable>
     </GroupMaintenanceRequest>
 

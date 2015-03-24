@@ -23,7 +23,7 @@ Creates a new Server.
 | Template | String | The name of the template to create the server from | Yes |
 | Alias | String | The alias for the server.  Limit 6 charcters | Yes |
 | Description | String | An optional description for the server.  If none is supplied the server name will be used.  | No |
-| HardwareGroupID | Int | The ID of the Hardware Group to add this server to. | Yes |
+| HardwareGroupUUID | String | The unique identifier of the Hardware Group to add this server to. | Yes |
 | ServerType | Int | The type of server to create1 = Standard<br/>2 = Enterprise | Yes |
 | ServiceLevel | Int | The service level/performance for the underlying data store1 = Premium<br/>2 = Standard  | Yes |
 | Cpu | Int | The number of processors to configure the server with. | Yes |
@@ -39,8 +39,8 @@ Creates a new Server.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| CustomFieldID | Int | Identifier that is associated with the Account Custom Field (Call Account/GetCustomFields for a list of all custom fields set at the account level) |
-| Value | String | For Text: Any value; For Option values, call Account/GetCustomFields to see possible values to pass in. Checkbox values should be "true" or "false". |
+| ID | String | Unique identifier that is associated with the Account Custom Field. Call [Account/GetCustomFields](../Account/GetCustomFields.md) for a list of all custom fields set at the account level. |
+| Value | String | For Text: Any value; For Option values, call [Account/GetCustomFields](../Account/GetCustomFields.md) to see possible values to pass in. Checkbox values should be "true" or "false". |
 
 ### Examples
 
@@ -52,7 +52,7 @@ Creates a new Server.
       "Template": "WIN2K8R2",
       "Alias": "WEB",
       "Description": "Web server",
-      "HardwareGroupID": 1,
+      "HardwareGroupUUID": "8a03fbae8ddfe311b05f00505682315a",
       "ServerType": 1,
       "ServiceLevel": 2,
       "Cpu": 2,
@@ -62,9 +62,9 @@ Creates a new Server.
       "SecondaryDns": "4.2.2.3",
       "Network": "VLAN113_172.21.113",
       "CustomFields": [
-        { "CustomFieldID": 100,"Value": "A test"},
-        { "CustomFieldID": 101,"Value": "2"},
-        { "CustomFieldID": 102,"Value": "true"}
+        { "ID": "ea97c6e09f604eb689dcdc080114b04d","Value": "A test"},
+        { "ID": "b9f454f2ae664998acc3302b24330c5b","Value": "2"},
+        { "ID": "d1f12de4ce4b4685b72ba632db0685c6","Value": "true"}
       ]
     }
 
@@ -76,7 +76,7 @@ Creates a new Server.
         <Template>UBUNTU-10-32-TEMPLATE</Template>
         <MemoryGB>1</MemoryGB>
         <Cpu>1</Cpu>
-        <HardwareGroupID>1234</HardwareGroupID>
+        <HardwareGroupUUID>8a03fbae8ddfe311b05f00505682315a</HardwareGroupUUID>
         <Alias>WHEE</Alias>
         <Description>Web server</Description>
         <ExtraDriveGB>0</ExtraDriveGB>
@@ -86,9 +86,9 @@ Creates a new Server.
         <Password>Pass@word1</Password>
         <ServerType>1</ServerType>
         <ServiceLevel>2</ServiceLevel>
-        <CustomFields CustomFieldID="100" Value="Test text" />
-        <CustomFields CustomFieldID="104" Value="2" />
-        <CustomFields CustomFieldID="108" Value="true" />
+        <CustomFields ID="ea97c6e09f604eb689dcdc080114b04d" Value="Test text" />
+        <CustomFields ID="b9f454f2ae664998acc3302b24330c5b" Value="2" />
+        <CustomFields ID="d1f12de4ce4b4685b72ba632db0685c6" Value="true" />
     </CreateServerRequest>
 
 ## Response

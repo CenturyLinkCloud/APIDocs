@@ -20,7 +20,7 @@ Restores an archived server.
 | --- | --- | --- | --- |
 | AccountAlias | String | The alias of the account that owns the server. If not provided it will assume the account to which the API user is mapped. Providing this value gives you the ability to access servers in your sub accounts. | No |
 | Name | String | The name of the archived Server. | Yes |
-| HardwareGroupID | Int | The ID of the hardware group to the restore the server to. | Yes |
+| HardwareGroupUUID | String | The unique identifier of the hardware group to the restore the server to. | Yes |
 
 ### Examples
 
@@ -29,7 +29,7 @@ Restores an archived server.
     {
       "AccountAlias": "UNK",
       "Name": "SERVER01",
-      "HardwareGroupID": 1
+      "HardwareGroupUUID": "8a03fbae8ddfe311b05f00505682315a"
     }
 
 #### XML
@@ -37,7 +37,7 @@ Restores an archived server.
     <RestoreServerRequest>
         <AccountAlias>ACCT</AccountAlias>
         <Name>SERVER01</Name>
-        <HardwareGroupID>1</HardwareGroupID>
+        <HardwareGroupUUID>8a03fbae8ddfe311b05f00505682315a</HardwareGroupUUID>
     </RestoreServerRequest>
 
 ## Response

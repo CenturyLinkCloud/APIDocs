@@ -19,7 +19,7 @@ Archives all Servers in the Group and then archives the Group.
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
 | AccountAlias | String | The alias of the account that owns the group. If not provided it will assume the account to which the API user is mapped. Providing this value gives you the ability to access groups in your sub accounts. | No |
-| ID | Int | The ID of the Hardware Group to archive. | Yes |
+| UUID | String | The unique identifier of the Hardware Group to archive. | Yes |
 
 #### Examples
 
@@ -27,14 +27,14 @@ Archives all Servers in the Group and then archives the Group.
 
     {
       "AccountAlias": "UNK",
-      "ID": 1
+      "UUID": "b7e44f0391824d408732f215a91a0578"
     }
 
 #### XML
 
     <GroupRequest>
         <AccountAlias>ACCT</AccountAlias>
-        <ID>1</ID>
+        <UUID>b7e44f0391824d408732f215a91a0578</UUID>
     </GroupRequest>
 
 ## Response
