@@ -7,7 +7,7 @@
 
 ### Description
 
-Webhooks make it possible to subscribe to key events that occur in the CenturyLink Cloud. In this article, we will walk through how to create a Webhook listener, configure a Webhook, and receive a notification. For general details on Webhooks, read the [Webhook FAQs](webhooks-faq.md).
+Webhooks make it possible to subscribe to key events that occur in the CenturyLink Cloud. In this article, we will walk through how to create a Webhook listener, configure a Webhook, and receive a notification. For general details on Webhooks, read the [Webhook FAQ](webhooks-faq.md).
 
 ### Prerequisites
 
@@ -18,87 +18,27 @@ Webhooks make it possible to subscribe to key events that occur in the CenturyLi
 
 #### Build the Webhook Listener
 
-A Webhook listener is simply a web application that can receive a JSON message via `HTTP POST`. A working example application written in Node.js can be <a href="https://github.com/Tier3/Examples/tree/master/Tier3.WebHookListener">downloaded from GitHub</a>. When designing a Webhook listener, consider the following activities:
+A Webhook listener is simply a web application that can receive a JSON message via `HTTP POST`. A working example application written in Node.js can be [downloaded from GitHub](https://github.com/Tier3/Examples/tree/master/CLC.WebHookListener). When designing a Webhook listener, consider the following activities:
 
-1. Decide what events to subscribe to. Webhooks support Account, User, and Server events.
-2. Process HTTP POST requests. In the example Node.js application, <a href="https://github.com/Tier3/Examples/blob/master/Tier3.WebHookListener/app.js">this is done in the app.js file</a>.
+1. Decide what events to subscribe to. Webhooks support Account, Alert, User, and Server events.
+2. Process HTTP POST requests. In the example Node.js application, [this is done in the app.js file](https://github.com/Tier3/Examples/blob/master/CLC.WebHookListener/app.js).
 
-  ```
-  app.post('/webhook/account', function(req, res){
 
-    //extract the signature header
-    var signatureHeader = req.get('Tier3-RsaSha1');
+    app.post('/webhook/account', function(req, res){
 
-    //call function to send webhook data to client browser
-    BroadcastAccountWebhook(req.body, signatureHeader);
+      //extract the signature header
+      var signatureHeader = req.get('Tier3-RsaSha1');
 
-    //send OK response to CenturyLink Cloud
-    res.send("ok");
+      //call function to send webhook data to client browser
+      BroadcastAccountWebhook(req.body, signatureHeader);
 
-  })
-  ```
+      //send OK response to CenturyLink Cloud
+      res.send("ok");
 
-3. Handle the payload for each message type. In the example project, this is done in <a href="https://github.com/Tier3/Examples/blob/master/Tier3.WebHookListener/public/javascripts/sockethandler.js">a client-side JavaScript file</a> and the entire payload is shown to the user. A listener application that uses typed object definitions must be able to deserialize the following structures:
+    })
 
-  **Account**
 
-  ```
-  {
-     "uri": "/v2/accounts/RLS1",
-     "alias": "RLS1",
-     "businessName": "Seroter Toys, Inc",
-     "addressLine1": "110 110th Ave NE",
-     "addressLine2": "Suite 520",
-     "city": "Bellevue",
-     "stateProvince": "WA",
-     "country": "USA",
-     "postalCode": "98004",
-     "telephone": "800-BUY-TOYS",
-     "fax": null,
-     "status": "Active"
-  }
-  ```
-
-  **User**
-  ```
-  {
-    "uri": "/v2/users/rseroter100",
-    "accountUri": "/v2/accounts/RLS1",
-    "accountAlias": "RLS1",
-    "userName": "rseroter100",
-    "emailAddress": "richard@serotertoys.com",
-    "firstName": "Richard",
-    "lastName": "Seroter",
-    "status": "Active"
-  }
-  ```
-
-  **Server**
-  ```
-  {
-    "accountAlias": "RLS1",
-    "accountUri": "/v2/accounts/RLS1",
-    "cpu": 2,
-    "description": "Production web server for dotcom site",
-    "diskCount": 1,
-    "groupUri": "/v2/serverGroups/WA1/4491",
-    "id": "109945",
-    "ipAddresses": [
-      { "address": "50.10.160.127" },
-      { "address": "10.56.118.16" },
-      { "address": "10.56.118.17" }
-    ],
-    "isTemplate": false,
-    "locationAlias": "WA1",
-    "memoryMB": 4096,
-    "name": "WA1RLS1PWEB0101",
-    "osType": "Windows 2008 64-bit",
-    "powerState": "Started",
-    "status": "Active",
-    "storageGB": 24,
-    "uri": "/v2/servers/WA1/WA1RLS1PWEB0101"
-  }
-  ```
+3. Handle the payload for each message type. In the example project, this is done in [a client-side JavaScript file](https://github.com/Tier3/Examples/blob/master/CLC.WebHookListener/public/javascripts/sockethandler.js) and the entire payload is shown to the user. A listener application that uses typed object definitions must be able to deserialize the JSON structures. Examples of each payload type can be found in the [Webhooks FAQ](webhooks-faq.md).
 
 #### Deploy the Webhook Listener
 
@@ -107,14 +47,15 @@ A Webhook listener is simply a web application that can receive a JSON message v
 2. Identify a host (public cloud IaaS, public cloud PaaS, or on-premises data center) with a valid (not self-signed) SSL certificate.
 
 3. Deploy the application and ensure that it's reachable. For this demonstration, the listener was deployed to a non-CenturyLink Cloud public Cloud Foundry environment hosted by Pivotal.
-<img src="https://t3n.zendesk.com/attachments/token/ihqs1tit2aqepwu/?name=webhookwalkthrough01.png" alt="webhookwalkthrough01.png" />
+![Webhooks Example Application](../images/webhooks-walkthrough-01.png)
 
-#### Configure a Webhook in the CenturyLink Cloud</h4>
+#### Configure a Webhook in the CenturyLink Cloud
+
 1. Go to the CenturyLink Control Portal, log in, and select the **API** option from the navigation menu.
-<img src="https://t3n.zendesk.com/attachments/token/bdupexlk7hslkje/?name=webhookwalkthrough02.png" alt="webhookwalkthrough02.png" />
+![Control Portal Menu - API](../images/webhooks-walkthrough-02.png)
 
 2. Switch to the **Webhooks** sub-tab and review the list of available Webhooks. You can configure unique endpoints for each individual Webhook. In the image below, notice that the **Account.Updated** Webhook was set with the URL to the listener web application. A Webhook will respond to events that occur in sub-accounts if the "include sub-accounts" checkbox is selected.
-<img src="https://t3n.zendesk.com/attachments/token/nlc8kanegvoepjq/?name=webhookwalkthrough03.png" alt="webhookwalkthrough03.png" />
+![Webhooks Configuration](../images/webhooks-walkthrough-03.png)
 
 3. Click **Save** when the configuration is complete.
 
@@ -123,8 +64,31 @@ A Webhook listener is simply a web application that can receive a JSON message v
 
 #### Test the Webhook
 
-1. Trigger an event in the platform that the Webhook will respond to. View the [Webhook FAQs](webhooks-faq.md) for a list of what platform events will trigger a Webhook notification. To get the **Account.Updated** Webhook configured above to fire, change an account setting such as the mailing address.
-<img src="https://t3n.zendesk.com/attachments/token/b8ydsawn5xsdanf/?name=webhookwalkthrough04.png" alt="webhookwalkthrough04.png" />
+1. Trigger an event in the platform that the Webhook will respond to. View the [Webhook FAQ](webhooks-faq.md) for a list of what platform events will trigger a Webhook notification. To get the **Account.Updated** Webhook configured above to fire, change an account setting such as the mailing address.
+![Update Account Info](../images/webhooks-walkthrough-04.png)
 
-2. Save the account change. Within seconds, the Webhook listener service should receive the notification message. In <a href="https://github.com/Tier3/Examples/tree/master/Tier3.WebHookListener">the sample application</a>, this information is pushed to the browser. Clicking on the updated account's name reveals both the full payload and a portion of the hashed signature value.
-<img src="https://t3n.zendesk.com/attachments/token/84velqvuq9k0cjl/?name=webhookwalkthrough05.png" alt="webhookwalkthrough05.png" />
+2. Save the account change. Within seconds, the Webhook listener service should receive the notification message. In [the sample application](https://github.com/Tier3/Examples/tree/master/CLC.WebHookListener), this information is pushed to the browser. Clicking on the updated account's name reveals both the full payload and the hashed signature value.
+![Update Account Info](../images/webhooks-walkthrough-05.png)
+
+
+#### Verifying the Webhook Signature
+
+Each Webhook notification includes a signature attached in the `Tier3-RsaSha1` header. This signature is generated by creating a SHA-1 hash from the JSON payload and encrypting it with an RSA private key. It can be verified by following these steps:
+
+- Generate a SHA-1 hash from the message body
+- Decrypt the signature using CenturyLink Cloud's public key (which can be found in the [Webhook FAQ](webhooks-faq.md))
+- Compare these two values and confirm they are equal. If they're not, the message did not come from CenturyLink Cloud.
+
+Though someone trying to be malicious may change the JSON message, they will not be able to get the correct signature to match up without the use of the private key. This confirms that the message indeed came from CenturyLink Cloud and not someone spoofing or tampering with the message in-flight.
+
+Notice in the screenshot above that under the hashed signature value, there is a **VERIFIED** message in green. This is because the example application performs this verification and outputs the results. In the code above for the account Webhook handler, we retrieve the signature from the `Tier3-RsaSha1` header. Later [in the code](https://github.com/Tier3/Examples/blob/master/CLC.WebHookListener/app.js), we verify the signature
+
+    function VerifySignature(data, signatureHeader) {
+      var publicKey = fs.readFileSync(path.resolve(__dirname, 'public.pem')).toString();
+      var key = new rsa(publicKey, 'pkcs8-public-pem', {"signingScheme":"sha1"});
+      return key.verify(data, signatureHeader, 'utf8', 'base64');
+    }
+
+If this verification failed because the message was tampered with or came from someone else, the following message would appear. Notice the message matches the one above, but signature does not.
+
+![Update Account Info](../images/webhooks-walkthrough-06.png)
