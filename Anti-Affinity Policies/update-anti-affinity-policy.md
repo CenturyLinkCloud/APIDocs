@@ -5,7 +5,7 @@
   "attachments": []
 }}}
 
-Updates the name of an anti-affinity policy&nbsp;in a given account. Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](../Authentication/login.md) for information on acquiring this token.
+Updates the name of an anti-affinity policy in a given account. Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](../Authentication/login.md) for information on acquiring this token.
 
 ### When to Use It
 
@@ -28,7 +28,7 @@ Use this API operation when you want to change the name of an existing anti-affi
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
 | AccountAlias | string | Short code for a particular account | Yes |
-| PolicyId | string | ID of the anti-affinity policy being queried. | Yes |
+| PolicyId | string | ID of the anti-affinity policy being updated. | Yes |
 
 ### Content Properties
 

@@ -31,7 +31,7 @@ Use this API operation when you want to get a list of anti-affinity policies wit
 
 ## Response
 
-The response will be an array containing one entity for each anti-affinity policy in the given account.
+The response will be an `items` objects referencing an array containing one entity for each anti-affinity policy in the given account.
 
 ### Entity Definition
 
