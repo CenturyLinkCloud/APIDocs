@@ -139,7 +139,7 @@ If you provide invalid credentials, you will get an HTTP 400 (Bad Request) and t
 
 The following raw HTTP request message shows how a user can make a secure API request to retrieve the root Group in a particular data center. Note that the bearerToken is added to the header of the request.
 
-    GET https://api.ctl.io/v2/datacenters/BRYF/WA1 HTTP/1.1
+    GET https://api.ctl.io/v2/datacenters/RLS1/WA1 HTTP/1.1
     Host: api.ctl.io
     Content-Type: application/json
     Content-Length: 0
