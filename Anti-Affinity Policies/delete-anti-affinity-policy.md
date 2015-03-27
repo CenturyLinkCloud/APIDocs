@@ -32,4 +32,4 @@ Use this API operation when you want to delete a specific anti-affinity policy w
 
 ## Response
 
-The response will not contain JSON content, but should return a standard HTTP `200 OK` response upon deletion of the policy.
+The response will not contain JSON content, but should return the HTTP `204 No Content` response upon deletion of the policy.

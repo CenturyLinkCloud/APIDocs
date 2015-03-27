@@ -72,4 +72,4 @@ Use this API operation when you want to change the custom field values for a giv
 
 ## Response
 
-The response will not contain JSON content, but should return a standard HTTP `200 OK` response upon making the changes successfully.
+The response will not contain JSON content, but should return the HTTP `204 No Content` response upon making the changes successfully.
