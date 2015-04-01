@@ -38,7 +38,6 @@ The body of the request is an array of node entities.
 
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
-| name | string | Name of the node (generally the IP address) | Yes |
 | status | string | Status of the node: `enabled`, `disabled` or `deleted`. | No |
 | ipAddress | string | The internal (private) IP address of the node server | Yes |
 | privatePort | integer | The internal (private) port of the node server. Must be a value between 1 and 65535. | Yes |
@@ -50,13 +49,11 @@ The body of the request is an array of node entities.
     [
       {
         "ipAddress" : "10.11.12.18",
-        "privatePort" : 8080,
-        "name" : "10.11.12.18"
+        "privatePort" : 8080
       },
       {
         "ipAddress" : "10.11.12.19",
-        "privatePort" : 8080,
-        "name" : "10.11.12.19"
+        "privatePort" : 8080
       }
     ]
 

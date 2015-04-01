@@ -40,7 +40,6 @@ The response will be an array containing one entity for each node configured.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| name | string | Name of the node (generally the IP address) |
 | status | string | Status of the node: `enabled`, `disabled` or `deleted`. |
 | ipAddress | string | The internal (private) IP address of the node server |
 | privatePort | integer | The internal (private) port of the node server |
@@ -54,13 +53,11 @@ The response will be an array containing one entity for each node configured.
       {
         "status" : "enabled",
         "ipAddress" : "10.11.12.13",
-        "privatePort" : 80,
-        "name" : "10.11.12.13"
+        "privatePort" : 80
       },
       {
         "status" : "enabled",
         "ipAddress" : "10.11.12.14",
-        "privatePort" : 80,
-        "name" : "10.11.12.14"
+        "privatePort" : 80
       }
     ]

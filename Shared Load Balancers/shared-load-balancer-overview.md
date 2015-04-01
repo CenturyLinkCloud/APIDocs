@@ -23,3 +23,5 @@ If you choose round robin or least connection along with standard persistence, t
 ### Load Balancer Node
 
 For each pool, one or more **nodes** are configured corresponding to a server that is included in the load balancing pool. The node definition includes the server's private IP address and the port that is serving the content.
+
+### Example

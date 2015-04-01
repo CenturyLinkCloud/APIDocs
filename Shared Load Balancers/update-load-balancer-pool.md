@@ -36,7 +36,6 @@ Use this API operation to update the port, method, or persistence options for a 
 
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
-| port | integer | Port to configure on the public-facing side of the load balancer pool. Must be either `80` (HTTP) or `443` (HTTPS). | No |
 | method | string | The balancing method for this load balancer, either `leastConnection` or `roundRobin`. See [Shared Load Balancer Overview](shared-load-balancer-overview.md) for more information about these options. | No |
 | persistence | string | The persistence method for this load balancer, either `standard` or `sticky`. See [Shared Load Balancer Overview](shared-load-balancer-overview.md) for more information about these options. | No |
 
