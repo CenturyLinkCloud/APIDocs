@@ -2,6 +2,7 @@
   "category_order": [
     "Getting Started",
     "Link Definitions",
+    "Alert Policies",
     "Anti-Affinity Policies",
     "Authentication",
     "Custom Fields",
