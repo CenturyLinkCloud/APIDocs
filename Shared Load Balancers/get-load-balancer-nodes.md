@@ -28,7 +28,7 @@ GET https://api.ctl.io/v2/sharedLoadBalancers/ALIAS/WA1/ae3bbac5d9694c70ad7de062
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
 | AccountAlias | string | Short code for a particular account | Yes |
-| DataCenter | string | Short string representing the data center where the load balancer is. Valid codes can be retrieved from the [Get Data Center List](get-data-center.md) API operation. | Yes |
+| DataCenter | string | Short string representing the data center where the load balancer is. Valid codes can be retrieved from the [Get Data Center List](../Data Centers/get-data-center.md) API operation. | Yes |
 | LoadBalancerId | string | ID of the load balancer | Yes |
 | PoolId | string | ID of the pool containing the nodes | Yes |
 

@@ -28,7 +28,7 @@ Use this API operation when you want to delete a specific load balancer within a
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
 | AccountAlias | string | Short code for a particular account | Yes |
-| DataCenter | string | Short string representing the data center where the load balancer is located. Valid codes can be retrieved from the [Get Data Center List](get-data-center.md) API operation. | Yes |
+| DataCenter | string | Short string representing the data center where the load balancer is located. Valid codes can be retrieved from the [Get Data Center List](../Data Centers/get-data-center.md) API operation. | Yes |
 | LoadBalancerId | string | ID of the load balancer to delete. | Yes |
 
 ## Response

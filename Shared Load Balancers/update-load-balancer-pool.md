@@ -36,8 +36,8 @@ Use this API operation to update the port, method, or persistence options for a 
 
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
-| method | string | The balancing method for this load balancer, either `leastConnection` or `roundRobin`. See [Shared Load Balancer Overview](shared-load-balancer-overview.md) for more information about these options. | No |
-| persistence | string | The persistence method for this load balancer, either `standard` or `sticky`. See [Shared Load Balancer Overview](shared-load-balancer-overview.md) for more information about these options. | No |
+| method | string | The balancing method for this load balancer, either `leastConnection` or `roundRobin`. See [Shared Load Balancer Overview](../Shared Load Balancers/shared-load-balancer-overview.md) for more information about these options. | No |
+| persistence | string | The persistence method for this load balancer, either `standard` or `sticky`. See [Shared Load Balancer Overview](../Shared Load Balancers/shared-load-balancer-overview.md) for more information about these options. | No |
 
 ### Examples
 

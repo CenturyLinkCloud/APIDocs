@@ -28,7 +28,7 @@ Use this API operation to create a new shared load balancers in a given account 
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
 | AccountAlias | string | Short code for a particular account | Yes |
-| DataCenter | string | Short string representing the data center where the load balancer is. Valid codes can be retrieved from the [Get Data Center List](get-data-center.md) API operation. | Yes |
+| DataCenter | string | Short string representing the data center where the load balancer is. Valid codes can be retrieved from the [Get Data Center List](../Data Centers/get-data-center.md) API operation. | Yes |
 | LoadBalancerId | string | ID of the load balancer | Yes |
 
 ### Content Properties
@@ -36,8 +36,8 @@ Use this API operation to create a new shared load balancers in a given account 
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
 | port | integer | Port to configure on the public-facing side of the load balancer pool. Must be either `80` (HTTP) or `443` (HTTPS). | Yes |
-| method | string | The balancing method for this load balancer, either `leastConnection` or `roundRobin`. Default is `roundRobin`. See [Shared Load Balancer Overview](shared-load-balancer-overview.md) for more information about these options. | No |
-| persistence | string | The persistence method for this load balancer, either `standard` or `sticky`. Default is `standard`. See [Shared Load Balancer Overview](shared-load-balancer-overview.md) for more information about these options. | No |
+| method | string | The balancing method for this load balancer, either `leastConnection` or `roundRobin`. Default is `roundRobin`. See [Shared Load Balancer Overview](../Shared Load Balancers/shared-load-balancer-overview.md) for more information about these options. | No |
+| persistence | string | The persistence method for this load balancer, either `standard` or `sticky`. Default is `standard`. See [Shared Load Balancer Overview](../Shared Load Balancers/shared-load-balancer-overview.md) for more information about these options. | No |
 
 ### Examples
 
@@ -59,8 +59,8 @@ The response will be an entity representing the new load balancer pool that was 
 | --- | --- | --- |
 | id | string | ID of the load balancer pool |
 | port | integer | Port configured on the public-facing side of the load balancer pool. |
-| method | string | The balancing method for this load balancer, either `leastConnection` or `roundRobin`. See [Shared Load Balancer Overview](shared-load-balancer-overview.md) for more information about these options. |
-| persistence | string | The persistence method for this load balancer, either `standard` or `sticky`. See [Shared Load Balancer Overview](shared-load-balancer-overview.md) for more information about these options. |
+| method | string | The balancing method for this load balancer, either `leastConnection` or `roundRobin`. See [Shared Load Balancer Overview](../Shared Load Balancers/shared-load-balancer-overview.md) for more information about these options. |
+| persistence | string | The persistence method for this load balancer, either `standard` or `sticky`. See [Shared Load Balancer Overview](../Shared Load Balancers/shared-load-balancer-overview.md) for more information about these options. |
 | nodes | array | Empty array since no nodes will be configured yet for the new pool |
 | links | array | Collection of [entity links](../Getting Started/api-v20-links-framework.md) that point to resources related to this load balancer pool |
 

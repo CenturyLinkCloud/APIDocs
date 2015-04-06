@@ -28,7 +28,7 @@ Use this API operation to get the list of shared load balancers configured for a
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
 | AccountAlias | string | Short code for a particular account | Yes |
-| DataCenter | string | Short string representing the data center where the load balancer is. Valid codes can be retrieved from the [Get Data Center List](get-data-center.md) API operation. | Yes |
+| DataCenter | string | Short string representing the data center where the load balancer is. Valid codes can be retrieved from the [Get Data Center List](../Data Centers/get-data-center.md) API operation. | Yes |
 
 ## Response
 
@@ -53,8 +53,8 @@ The response will be an array containing one entity for each load balancer in th
 | --- | --- | --- |
 | id | string | ID of the load balancer pool |
 | port | integer | Port configured on the public-facing side of the load balancer pool. |
-| method | string | The balancing method for this load balancer, either `leastConnection` or `roundRobin`. See [Shared Load Balancer Overview](shared-load-balancer-overview.md) for more information about these options. |
-| persistence | string | The persistence method for this load balancer, either `standard` or `sticky`. See [Shared Load Balancer Overview](shared-load-balancer-overview.md) for more information about these options. |
+| method | string | The balancing method for this load balancer, either `leastConnection` or `roundRobin`. See [Shared Load Balancer Overview](../Shared Load Balancers/shared-load-balancer-overview.md) for more information about these options. |
+| persistence | string | The persistence method for this load balancer, either `standard` or `sticky`. See [Shared Load Balancer Overview](../Shared Load Balancers/shared-load-balancer-overview.md) for more information about these options. |
 | nodes | array | Collection of nodes configured behind this shared load balancer |
 | links | array | Collection of [entity links](../Getting Started/api-v20-links-framework.md) that point to resources related to this load balancer pool |
 
