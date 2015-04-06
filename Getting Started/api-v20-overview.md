@@ -27,6 +27,7 @@ The service responds to requests using [standard HTTP codes](http://en.wikipedia
 |200|OK. Sent when requests are immediately successful and did NOT create a new URL-addressable resource.|
 |201|CREATED. Sent when requests are immediately successful and DID create a new URL-addressable resource.|
 |202|ACCEPTED. Sent when requests result in a scheduled activity. Response body will include a URL for them to get the status of the activity.|
+|204|NO CONTENT. Sent when requests are immediately successful but return no additional information about the resource.|
 |400|BAD REQUEST. Sent when something is wrong with the query string or message body.|
 |401|UNAUTHORIZED. Sent when a bearer token is not provided.|
 |403|FORBIDDEN. Sent if the request violates the security demands of the service.|

@@ -19,7 +19,7 @@ Use this API operation when you want to find out information about a specific pu
 
 ### Example
 
-    GET https://api.ctl.io/v2/servers/ACCT/WA1ACCTSERV0101/publicIPAddresses/12.34.56.789
+    GET https://api.ctl.io/v2/servers/ACCT/WA1ACCTSERV0101/publicIPAddresses/12.34.56.78
 
 ## Request
 

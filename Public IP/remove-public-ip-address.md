@@ -19,7 +19,7 @@ Use this API operation when you want to stop using a specific public IP address 
 
 ### Example
 
-    DELETE https://api.ctl.io/v2/servers/ACCT/WA1ACCTSERV0101/publicIPAddresses/12.34.56.789
+    DELETE https://api.ctl.io/v2/servers/ACCT/WA1ACCTSERV0101/publicIPAddresses/12.34.56.78
 
 ## Request
 
