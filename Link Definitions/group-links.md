@@ -20,5 +20,4 @@ The following link definitions are related to the groups resource. They may be r
 | defaults | Retrieve or modify the default values of the given group. | GET / POST |
 | parentGroup | Retrieve the parent group of the given group. | [GET](../Groups/get-group.md) |
 | scheduledActivities | Retrieve the list of scheduled activities for the given group. | GET |
-| statistics | Retrieve resource consumption information for servers within the given group hierarchy. | [GET](../Group/get-group-monitoring-statistics.md) |
 | upcomingScheduledActivities | Retrieve the list of upcoming scheduled activities for the given group. | GET |

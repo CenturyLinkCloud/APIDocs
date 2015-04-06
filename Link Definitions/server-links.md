@@ -25,7 +25,6 @@ The following link definitions are related to the servers resource. They may be 
 | publicIPAddress | Retrieve or modify a public IP address of the specific server. | [GET](../Public IP/get-public-ip-address.md) / [DELETE](../Public IP/remove-public-ip-address.md) / [PUT](../Public IP/update-public-ip-address.md) |
 | publicIPAddresses | Add a public IP address for the given server. | [POST](../Public IP/add-public-ip-address.md) |
 | scheduledActivities | Retrieve the list of scheduled activities for the given server. | GET |
-| statistics | Retrieve resource consumption information for the given server. | GET |
 
 ### Server Snapshot Definitions
 
