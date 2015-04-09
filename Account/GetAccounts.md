@@ -1,6 +1,6 @@
 {{{
   "title": "GetAccounts",
-  "date": "11-16-2012",
+  "date": "4-9-2015",
   "author": "Richard Seroter",
   "attachments": []
 }}}
@@ -50,6 +50,7 @@ None.
 | Location | String | Data center alias (3 letters). List of data center alias is retrieved from <a>GetLocations</a> operation. |
 | BusinessName | String | Full business name associated with the account. |
 | IsActive | Boolean | True/False indicator of whether the account is active or not. |
+| SupportLevel | String | Indicator of support level for the account.<br/>developer,<br/>legacy,<br/>professional,<br/>enterprise |
 
 ### Examples
 

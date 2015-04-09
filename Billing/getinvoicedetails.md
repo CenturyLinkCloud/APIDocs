@@ -65,6 +65,7 @@ Gets the details for a given invoice within an account. Calls to this operation 
 | EndingBalance | Decimal | Total billed amount for this invoice. |
 | CurrentOutstandingBalance | Decimal | Total amount owed by this account. |
 | Invoice | Complex (see below) | Invoice details and line items. |
+| SupportLevel | String | Indicator of support level for the account.<br/>developer,<br/>legacy,<br/>professional,<br/>enterprise |
 
 ### Invoice Attributes
 

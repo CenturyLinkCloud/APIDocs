@@ -1,7 +1,7 @@
 {{{
   "title": "GetAccountDetails",
-  "date": "7-9-2014",
-  "author": "Richard Seroter",
+  "date": "4-9-2015",
+  "author": "Scott Densmore",
   "attachments": []
 }}}
 
@@ -80,6 +80,7 @@ Gets all of the contact information and settings for a given account. Calls to t
 | TimeZone | String | Time zone of the business associated with this account. |
 | Status | Int | Indicator of whether the account is active or not.<br/>Active = 1,<br/>Disabled = 2,<br/>Deleted = 3,<br/>Demo = 4 |
 | ShareParentNetworks | Boolean | True/false flag indicating whether this account shares the networks of its parent. |
+| SupportLevel | String | Indicator of support level for the account.<br/>developer,<br/>legacy,<br/>professional,<br/>enterprise |
 
 ### Examples
 
