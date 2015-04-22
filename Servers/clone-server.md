@@ -23,7 +23,7 @@ Use this API operation when you want to create a new server from a standard or c
 
 ## Request
 
-The request parameters are the same as defined for [Create Server](create-server.md) with the addition of the `sourceServerPassword` parameter being required when cloning a server. Also, note that the `sourceServerId` paramater should be the name of the server that is being cloned rather than a template name.
+The request parameters are the same as defined for [Create Server](../Servers/create-server.md) with the addition of the `sourceServerPassword` parameter being required when cloning a server. Also, note that the `sourceServerId` parameter should be the name of the server that is being cloned rather than a template name.
 
 ### Examples
 
@@ -41,4 +41,4 @@ The request parameters are the same as defined for [Create Server](create-server
 
 ## Response
 
-The response will be the same as specified in [Create Server](create-server.md).
+The response will be the same as specified in [Create Server](../Servers/create-server.md).
