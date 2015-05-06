@@ -30,7 +30,7 @@ Update a specific user within a given account. Calls to this operation must incl
 | FaxNumber | String | Fax number of the user. | No |
 | SAMLUserName | String | String holding the value used during single-sign-on processes. | No |
 | TimeZoneID | String | Time zone of the user. Timezone must be one of the values in the list below, otherwise the value is set to the account's Timezone. | No |
-| Roles | Integer[] | List of values indicating the roles assigned to this user.<br/>2 = Server Administrator<br/>3 = Billing Manager<br/>8 = DNS Manager<br/>9 = Account Administrator<br/>10 = Account Viewer<br/>12 = Network Manager<br/>13 = Security Manager<br/>14 = Server Operator | No |
+| Roles | Integer[] | List of values indicating the roles assigned to this user.<br/>2 = Server Administrator<br/>3 = Billing Manager<br/>8 = DNS Manager<br/>9 = Account Administrator<br/>10 = Account Viewer<br/>12 = Network Manager<br/>13 = Security Manager<br/>14 = Server Operator<br/>15 = Server Scheduler | No |
 
 ### Examples
 
