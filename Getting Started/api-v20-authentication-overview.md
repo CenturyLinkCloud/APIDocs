@@ -86,6 +86,52 @@ The following .NET code demonstrates how a user can make a secure API request to
 
     string responseString = await message.Content.ReadAsStringAsync();
 
+#### PowerShell Example
+
+Below is a brief demonstration of how PowerShell can be used to retrieve a valid token from the API authentication service. Users will need to start PowerShell v4+ as an administrator.
+
+
+1. Log into the API.
+
+  ```
+  $body = @{
+    username = 'ControlUsername'
+    password = 'ControlPassword'
+  }
+  $body = $body | ConvertTo-Json
+
+  $headers = New-Object "System.Collections.Generic.Dictionary[[String],[String]]"
+  ```
+
+2. Log in to the Platform and get back a `bearerToken`.
+
+  ```
+  $logonUrl = "https://api.ctl.io/v2/authentication/login"
+  $logonResponse = Invoke-RestMethod -Method Post -Headers $headers -Uri $logonUrl -Body $body -ContentType "application/json" -SessionVariable "theSession"
+  ```
+
+3. Pull the BearerToken out of the response and format it correctly.
+
+  ```
+  $bearer = $logonResponse.bearerToken
+  $bearer = " Bearer " + $bearer
+  ```
+
+4. Add the Token to the Headers to be used on future requests.
+
+  ```
+  $headers.Add("Authorization",$bearer)
+  ```
+
+You can now use the session variable for authenticating further API calls. Example:
+
+Here's an example of pulling server credentials:
+
+```
+$servercredsURL = "https://api.ctl.io/v2/servers/$AccountName/$servername/credentials"
+$serverCreds = Invoke-RestMethod -Method GET -Headers $Headers -Uri $servercredsURL -ContentType "application/json" -SessionVariable "theSession"
+```
+
 #### Raw HTTP Example
 
 Below is an example of the raw HTTP request and response messages when retrieving a valid token from the API authentication service.
