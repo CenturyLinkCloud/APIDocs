@@ -1,7 +1,7 @@
 {{{
-  "title": "Get IP Adress List",
-  "date": "5-16-2015",
-  "author": "Richard Seroter",
+  "title": "Get IP Address List",
+  "date": "5-15-2015",
+  "author": "Jared Ruckle",
   "attachments": []
 }}}
 
@@ -72,4 +72,3 @@ Use this API operation when you need the list of IP Addresses associated with a 
           "server": "WA1ALIASAPI01",
           "type": "publicMapped"
       }
-    
