@@ -17,7 +17,7 @@ Use this API operation when you want to discover properties of a network in a da
 
 ### Structure
 
-    GET https://api.ctl.io/v2-experimental/networks/{AccountAlias}/{DataCenter}/{Network}?IPAddresses=none|claimed|free|all
+    GET https://api.ctl.io/v2-experimental/networks/{accountAlias}/{dataCenter}/{Network}?ipAddresses=none|claimed|free|all
 
 ### Example
 
@@ -29,10 +29,10 @@ Use this API operation when you want to discover properties of a network in a da
 
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
-| AccountAlias | string | Short code for a particular account | Yes |
-| DataCenter | string | Short string representing the data center you are querying. Valid codes can be retrieved from the [Get Data Center List](get-data-center.md) API operation. | Yes |
-| Network | string | ID of the Network. These can be retrieved from the [Get Network List](get-network-list.md) API operation | Yes |
-| ipAddresses | string | Optional component of the query to request details of IP Addresses in a certain state. Should be one of the following: "none" (no filter, the default value, which will just return details of the network), "claimed" (returns details of the network as well as information about claimed IP addresses), "free" (returns networks with available IP addresses) or "all" (networks will no available IP addresses) | No |
+| accountAlias | string | Short code for a particular account | Yes |
+| dataCenter | string | Short string representing the data center you are querying. Valid codes can be retrieved from the [Get Data Center List](../Data Centers/get-data-center.md) API operation. | Yes |
+| Network | string | ID of the Network. This can be retrieved from the [Get Network List](../Networks/get-network-list.md) API operation. | Yes |
+| ipAddresses | string | Optional component of the query to request details of IP Addresses in a certain state. Should be one of the following: "none" (no filter, the default value, which will just return details of the network), "claimed" (returns details of the network as well as information about claimed IP addresses), "free" (returns networks with available IP addresses) or "all" (networks with no available IP addresses) | No |
 
 ## Response
 
@@ -46,8 +46,8 @@ Use this API operation when you want to discover properties of a network in a da
 | gateway | string | Gateway IP address of the network |
 | name | string | User-defined name of the network; the default is the VLAN number combined with the network address |
 | netmask | string | A screen of numbers used for routing traffic within a subnet |
-| type | boolean | Network type, usually "private" for networks created by the user |
-| vlan | string | Full, friendly name of the VLAN |
+| type | boolean | Network type, usually `private` for networks created by the user |
+| vlan | integer| Unique number assigned to the VLAN |
 | links | array | Collection of [entity links](../Getting Started/api-v20-links-framework.md) that point to resources related to this list of networks |
 
 ### Examples

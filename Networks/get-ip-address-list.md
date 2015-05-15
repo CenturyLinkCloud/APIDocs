@@ -17,7 +17,7 @@ Use this API operation when you need the list of IP Addresses associated with a 
 
 ### Structure
 
-    GET https://api.ctl.io/v2-experimental/networks/{AccountAlias}/{DataCenter}/{Network}/ipAddresses
+    GET https://api.ctl.io/v2-experimental/networks/{accountAlias}/{dataCenter}/{Network}/ipAddresses
 
 ### Example
 
@@ -29,9 +29,9 @@ Use this API operation when you need the list of IP Addresses associated with a 
 
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
-| AccountAlias | string | Short code for a particular account | Yes |
-| DataCenter | string | Short string representing the data center you are querying. Valid codes can be retrieved from the [Get Data Center List](get-data-center.md) API operation. | Yes |
-| Network | string | ID of the Network. These can be retrieved from the [Get Network List](get-network-list.md) API operation | Yes |
+| accountAlias | string | Short code for a particular account | Yes |
+| dataCenter | string | Short string representing the data center you are querying. Valid codes can be retrieved from the [Get Data Center List](../Data Centers/get-data-center.md) API operation. | Yes |
+| Network | string | ID of the Network. These can be retrieved from the [Get Network List](../Networks/get-network-list.md) API operation | Yes |
 
 ## Response
 
@@ -40,9 +40,9 @@ Use this API operation when you need the list of IP Addresses associated with a 
 | Name | Type | Description |
 | --- | --- | --- |
 | address | string | An IP Address on the Network |
-| claimed | boolean | Indicates claimed status of the address, either "true" or "false" |
-| server | string | ID of the server associated with the IP address, if it's claimed |
-| type | string | Indicates if the IP address is private, public, or publicMapped |
+| claimed | boolean | Indicates claimed status of the address, either `true` or `false` |
+| server | string | ID of the server associated with the IP address, if claimed |
+| type | string | Indicates if the IP address is `private`, `public`, or `publicMapped` |
 
 ### Examples
 
@@ -52,13 +52,13 @@ Use this API operation when you need the list of IP Addresses associated with a 
       {
           "address": "11.22.33.12",
           "claimed": true,
-          "server": "CA1RUCKJRAPI01",
+          "server": "WA1ALIASAPI01",
           "type": "private"
       },
       {
           "address": "11.22.33.13",
           "claimed": true,
-          "server": "CA1RUCKJRAPI01",
+          "server": "WA1ALIASAPI01",
           "type": "private"
       },
       {

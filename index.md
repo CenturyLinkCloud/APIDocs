@@ -9,7 +9,7 @@
     "Data Centers",
     "Groups",
     "Group Actions",
-    "Networks"
+    "Networks",
     "Power Operations",
     "Public IP",
     "Queue",
