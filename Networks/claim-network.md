@@ -11,7 +11,7 @@ Claims a network for a given account in a given data center. Calls to this opera
 
 Use this API operation when you need to claim a network in a given data center you are able to access. Once you have a network, you can then perform various actions like [getting IP addresses](../Networks/get-ip-address-list.md) and [updating its name](../Networks/update-network.md).
 
-  NOTE: This API operation is experimental only, and not supported for production usage.
+  NOTE: This API operation is experimental only, and subject to change with no notice. Please plan accordingly.
 
 ## URL
 

@@ -11,7 +11,7 @@ Releases a network from a given account in a given data center to a pool for ano
 
 Use this API operation when you no longer need a network, and wish to to release it back a given data center.
 
-  NOTE: This API operation is experimental only, and not supported for production usage.
+  NOTE: This API operation is experimental only, and subject to change with no notice. Please plan accordingly.
 
 ## URL
 

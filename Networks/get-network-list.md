@@ -11,7 +11,7 @@ Gets the list of networks available for a given account in a given data center. 
 
 Use this API operation when you need the list of available networks in a given data center you are able to access. Using that list of networks, you can then query for a [specific network](../Networks/get-network.md) in a given data center.
 
-  NOTE: This API operation is experimental only, and not supported for production usage.
+  NOTE: This API operation is experimental only, and subject to change with no notice. Please plan accordingly.
 
 ## URL
 

@@ -11,7 +11,7 @@ Gets the details of a specific network in a given data center for a given accoun
 
 Use this API operation when you want to discover properties of a network in a data center. You may optionally query details of IP Addresses on this network.
 
-  NOTE: This API operation is experimental only, and not supported for production usage.
+  NOTE: This API operation is experimental only, and subject to change with no notice. Please plan accordingly.
 
 ## URL
 

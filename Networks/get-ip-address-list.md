@@ -11,7 +11,7 @@ Gets the list of IP addresses for a network in a given data center for a given a
 
 Use this API operation when you need the list of IP Addresses associated with a given network.
 
-  NOTE: This API operation is experimental only, and not supported for production usage.
+  NOTE: This API operation is experimental only, and subject to change with no notice. Please plan accordingly.
 
 ## URL
 

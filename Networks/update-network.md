@@ -11,7 +11,7 @@ Updates the attributes of a given Network via PUT. Calls to this operation must 
 
 Use this API operation to update the name of a network. Users have the option to update the networks' description as well.
 
-  NOTE: This API operation is experimental only, and not supported for production usage.
+  NOTE: This API operation is experimental only, and subject to change with no notice. Please plan accordingly.
 
 ## URL
 
