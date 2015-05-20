@@ -7,6 +7,8 @@
 
 This method can be used to check the status of any of the long running requests which must be performed asynchronously.
 
+**NOTE: [This Queue](../Queue/overview.md) is not the same as the Blueprint Queue. For operations related to the Blueprint Queue, please reference [Blueprint/GetDeploymentStatus](../Blueprint/GetDeploymentStatus).**
+
 ## URL
 
     REST: https://api.ctl.io/REST/Queue/GetRequestStatus/<format> (format = XML | JSON)

@@ -7,6 +7,8 @@
 
 This method can be used to get a list of Queued requests and their current status details.
 
+**NOTE: [This Queue](../Queue/overview.md) is not the same as the Blueprint Queue. For operations related to the Blueprint Queue, please reference [Blueprint/GetDeploymentStatus](../Blueprint/GetDeploymentStatus).**
+
 ## URL
 
     REST: https://api.ctl.io/REST/Queue/ListQueueRequests/<format> (format = XML | JSON)

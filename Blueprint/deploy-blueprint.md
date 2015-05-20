@@ -81,7 +81,7 @@ Deploys a Blueprint with the given set of parameter values.
 | Success | Boolean | True if the request was successful, otherwise False. |
 | Message | String | A description of the result. The contents of this field does not contain any actionable information, it is purely intended to provide a human readable description of the result. |
 | StatusCode | Int | This value will help to identify any errors which were encountered while processing the request. The value of '0' indicates success, all non-zero StatusCodes indicate an error state. |
-| RequestID | Int | The ID of the Queued request to deploy the Blueprint. Status of the request can be obtained by calling the [GetDeploymentStatus](../Blueprints/get-deployment-status.md) method. |
+| RequestID | Int | The ID of the Queued request to deploy the Blueprint. Status of the request can be obtained by calling the [GetDeploymentStatus](../Blueprint/get-deployment-status.md) method. |
 
 ### Examples
 
