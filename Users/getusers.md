@@ -74,7 +74,6 @@ Gets all of users assigned to a given account. Calls to this operation must incl
 | MobileNumber | String | Mobile phone number of the user. |
 | AllowSMS | Boolean | Flag indicating whether this user can receive SMS messages. |
 | FaxNumber | String | Fax number for the user. |
-| SAMLUserName | String | Name used for single-sign-on process. |
 | TimeZoneID | String | Time zone that the user resides in. |
 | Roles | Integer[] | List of values indicating the roles assigned to this user.<br/>2 = Server Administrator<br/>3 = Billing Manager<br/>8 = DNS Manager<br/>9 = Account Administrator<br/>10 = Account Viewer<br/>12 = Network Manager<br/>13 = Security Manager<br/>14 = Server Operator<br/>15 = Server Scheduler |
 
@@ -96,7 +95,6 @@ Gets all of users assigned to a given account. Calls to this operation must incl
           "MobileNumber":"",
           "AllowSMS":false,
           "FaxNumber":null,
-          "SAMLUserName":null,
           "TimeZoneID":null,
           "Roles":[8]
         },
@@ -112,7 +110,6 @@ Gets all of users assigned to a given account. Calls to this operation must incl
           "MobileNumber":null,
           "AllowSMS":false,
           "FaxNumber":null,
-          "SAMLUserName":null,
           "TimeZoneID":null,
           "Roles":[9]
         }
