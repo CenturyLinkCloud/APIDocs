@@ -1,5 +1,5 @@
 {{{
-  "title": "ServerObject",
+  "title": "Server Object",
   "date": "10-28-2014",
   "author": "Luke Bakken",
   "attachments": []
@@ -69,6 +69,10 @@
 | 39 | CoreOS |
 | 40 | PXE Boot |
 | 41 | Ubuntu 14 64-Bit |
+| 42 | RedHat 7 64-Bit |
+| 43 | Windows 2008 R2 Standard 64-Bit |
+| 44 | Windows 2008 R2 Enterprise 64-Bit |
+| 45 | Windows 2008 R2 Datacenter 64-Bit |
 
 ### IPAddress Attributes
 
