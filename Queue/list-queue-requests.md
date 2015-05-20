@@ -7,7 +7,7 @@
 
 This method can be used to get a list of Queued requests and their current status details.
 
-**NOTE: [This Queue](../Queue/overview.md) is not the same as the Blueprint Queue. For operations related to the Blueprint Queue, please reference [Blueprint/GetDeploymentStatus](../Blueprint/GetDeploymentStatus).**
+**NOTE: [This Queue](../Queue/overview.md) is not the same as the Blueprint Queue. For operations related to the Blueprint Queue, please reference [Blueprint/GetDeploymentStatus](../Blueprint/get-deployment-status.md).**
 
 ## URL
 
