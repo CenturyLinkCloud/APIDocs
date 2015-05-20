@@ -19,8 +19,8 @@ Publishes a Blueprint Package for use within the Blueprint Designer.
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
 | Classification | Int | The type of Packages that should be returned<br/>1 = System (reserved)<br/>2 = Script<br/>3 = Software | Yes |
-| Name | String | The name of the Package file to publish.<br/>Obtained via the [GetPendingPackages](get-pending-packages.md) method. | Yes |
-| OperatingSystems | Int[] | A list of operating systems that this Package can be deployed to (see table below).<br/>* The most recent list is always available from the [ListAvailableServerTemplates](..Server/list-available-server-templates.md) API call. | Yes |
+| Name | String | The name of the Package file to publish.<br/>Obtained via the [GetPendingPackages](../Blueprints/get-pending-packages.md) method. | Yes |
+| OperatingSystems | Int[] | A list of operating systems that this Package can be deployed to (see table below).<br/>* The most recent list is always available from the [ListAvailableServerTemplates](../Server/list-available-server-templates.md) API call. | Yes |
 | Visibility | Int | The visibility of Packages that should be returned<br/>1 = Public<br/>2 = Private<br/>3 = Shared | Yes |
 
 ### Operating Systems

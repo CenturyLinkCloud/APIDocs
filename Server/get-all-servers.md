@@ -49,7 +49,7 @@ Gets a deep list of all Servers for a given Hardware Group and its sub groups, o
 | Success | Boolean | True if the request was successful, otherwise False. |
 | Message | String | A description of the result. The contents of this field does not contain any actionable information, it is purely intended to provide a human readable description of the result. |
 | StatusCode | Int | This value will help to identify any errors which were encountered while processing the request. The value of '0' indicates success, all non-zero StatusCodes indicate an error state. |
-| Servers | Complex | A list of [Server Objects](server-object.md) |
+| Servers | Complex | A list of [Server Objects](../Server/server-object.md) |
 
 ### Examples
 
