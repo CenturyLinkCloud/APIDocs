@@ -9,7 +9,7 @@ Updates the attributes of a given Network via PUT. Calls to this operation must 
 
 ### When to Use It
 
-Use this API operation to update the name of a network. Users have the option to update the networks' description as well.
+Use this API operation to update the name and description of a network.
 
   NOTE: This API operation is experimental only, and subject to change with no notice. Please plan accordingly.
 
@@ -43,15 +43,15 @@ Use this API operation to update the name of a network. Users have the option to
 ## Examples
 
 ### JSON
-
-
-    {
-        "name": "VLAN for Development Servers",
-        "description": "Development Servers on 11.22.33.0/24"
-    }  
+```json
+{
+    "name": "VLAN for Development Servers",
+    "description": "Development Servers on 11.22.33.0/24"
+}
+```
 
 ## Response
 
 ### Entity Definition
 
-The response will not contain JSON content, but should return the HTTP `200 OK` response upon the successful update of network attributes.
+The response will not contain JSON content, but should return the HTTP `204 No Content` response upon the successful update of network attributes.
