@@ -9,7 +9,7 @@ Releases a network from a given account in a given data center to a pool for ano
 
 ### When to Use It
 
-Use this API operation when you no longer need a network, and wish to to release it back a given data center.
+Use this API operation when you no longer need a network, and wish to to release it back a given data center. Before you can release a network, there must be no IP addresses claimed by servers.
 
   NOTE: This API operation is experimental only, and subject to change with no notice. Please plan accordingly.
 

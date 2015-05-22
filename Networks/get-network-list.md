@@ -51,72 +51,75 @@ Use this API operation when you need the list of available networks in a given d
 ### Examples
 
 #### JSON
-
-      {
-          "id": "711725920a1f4002ac49e634e1789206",
-          "cidr": "12.34.0.0/24",
-          "description": "vlan_9998_12.34.0",
-          "gateway": "12.34.0.1",
-          "name": "vlan_9998_12.34.0",
-          "netmask": "255.255.255.0",
-          "type": "private",
-          "vlan": 9998,
-          "links": [
-              {
-                  "rel": "self",
-                  "href": "http://api.ctl.io/v2-experimental/networks/ALIAS/WA1/711725920a1f4002ac49e634e1789206",
-                  "verbs": [
-                      "GET",
-                      "PUT"
-                  ]
-              },
-              {
-                  "rel": "ipAddresses",
-                  "href": "http://api.ctl.io/v2-experimental/networks/ALIAS/WA1/711725920a1f4002ac49e634e1789206/ipAddresses",
-                  "verbs": [
-                      "GET"
-                  ]
-              },
-              {
-                  "rel": "release",
-                  "href": "http://api.ctl.io/v2-experimental/networks/ALIAS/WA1/711725920a1f4002ac49e634e1789206/release",
-                  "verbs": [
-                      "POST"
-                  ]
-              }
-          ]
-      },
-      {
-          "id": "ec6ff75a0ffd4504840dab343fe41077",
-          "cidr": "11.22.33.0/24",
-          "description": "vlan_9999_11.22.33",
-          "gateway": "11.22.33.1",
-          "name": "vlan_9999_11.22.33",
-          "netmask": "255.255.255.0",
-          "type": "private",
-          "vlan": 9999,
-          "links": [
-              {
-                  "rel": "self",
-                  "href": "http://api.ctl.io/v2-experimental/networks/ALIAS/WA1/ec6ff75a0ffd4504840dab343fe41077",
-                  "verbs": [
-                      "GET",
-                      "PUT"
-                  ]
-              },
-              {
-                  "rel": "ipAddresses",
-                  "href": "http://api.ctl.io/v2-experimental/networks/ALIAS/WA1/ec6ff75a0ffd4504840dab343fe41077/ipAddresses",
-                  "verbs": [
-                      "GET"
-                  ]
-              },
-              {
-                  "rel": "release",
-                  "href": "http://api.ctl.io/v2-experimental/networks/ALIAS/WA1/ec6ff75a0ffd4504840dab343fe41077/release",
-                  "verbs": [
-                      "POST"
-                  ]
-              }
-          ]
-      }
+```json
+[
+    {
+        "id": "711725920a1f4002ac49e634e1789206",
+        "cidr": "12.34.0.0/24",
+        "description": "vlan_9998_12.34.0",
+        "gateway": "12.34.0.1",
+        "name": "vlan_9998_12.34.0",
+        "netmask": "255.255.255.0",
+        "type": "private",
+        "vlan": 9998,
+        "links": [
+            {
+                "rel": "self",
+                "href": "http://api.ctl.io/v2-experimental/networks/ALIAS/WA1/711725920a1f4002ac49e634e1789206",
+                "verbs": [
+                    "GET",
+                    "PUT"
+                ]
+            },
+            {
+                "rel": "ipAddresses",
+                "href": "http://api.ctl.io/v2-experimental/networks/ALIAS/WA1/711725920a1f4002ac49e634e1789206/ipAddresses",
+                "verbs": [
+                    "GET"
+                ]
+            },
+            {
+                "rel": "release",
+                "href": "http://api.ctl.io/v2-experimental/networks/ALIAS/WA1/711725920a1f4002ac49e634e1789206/release",
+                "verbs": [
+                    "POST"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "ec6ff75a0ffd4504840dab343fe41077",
+        "cidr": "11.22.33.0/24",
+        "description": "vlan_9999_11.22.33",
+        "gateway": "11.22.33.1",
+        "name": "vlan_9999_11.22.33",
+        "netmask": "255.255.255.0",
+        "type": "private",
+        "vlan": 9999,
+        "links": [
+            {
+                "rel": "self",
+                "href": "http://api.ctl.io/v2-experimental/networks/ALIAS/WA1/ec6ff75a0ffd4504840dab343fe41077",
+                "verbs": [
+                    "GET",
+                    "PUT"
+                ]
+            },
+            {
+                "rel": "ipAddresses",
+                "href": "http://api.ctl.io/v2-experimental/networks/ALIAS/WA1/ec6ff75a0ffd4504840dab343fe41077/ipAddresses",
+                "verbs": [
+                    "GET"
+                ]
+            },
+            {
+                "rel": "release",
+                "href": "http://api.ctl.io/v2-experimental/networks/ALIAS/WA1/ec6ff75a0ffd4504840dab343fe41077/release",
+                "verbs": [
+                    "POST"
+                ]
+            }
+        ]
+    }
+]
+```

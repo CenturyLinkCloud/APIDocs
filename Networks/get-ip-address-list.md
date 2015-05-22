@@ -17,11 +17,11 @@ Use this API operation when you need the list of IP Addresses associated with a 
 
 ### Structure
 
-    GET https://api.ctl.io/v2-experimental/networks/{accountAlias}/{dataCenter}/{Network}/ipAddresses
+    GET https://api.ctl.io/v2-experimental/networks/{accountAlias}/{dataCenter}/{Network}/ipAddresses?type=claimed|free|all
 
 ### Example
 
-    GET https://api.ctl.io/v2-experimental/networks/ALIAS/WA1/ec6ff75a0ffd4504840dab343fe41077/ipAddresses
+    GET https://api.ctl.io/v2-experimental/networks/ALIAS/WA1/ec6ff75a0ffd4504840dab343fe41077/ipAddresses?type=claimed
 
 ## Request
 
@@ -32,6 +32,7 @@ Use this API operation when you need the list of IP Addresses associated with a 
 | accountAlias | string | Short code for a particular account | Yes |
 | dataCenter | string | Short string representing the data center you are querying. Valid codes can be retrieved from the [Get Data Center List](../Data Centers/get-data-center.md) API operation. | Yes |
 | Network | string | ID of the Network. These can be retrieved from the [Get Network List](../Networks/get-network-list.md) API operation | Yes |
+| type | string | Optional component of the query to request details of IP Addresses in a certain state. Should be one of the following: "claimed" (returns details of the network as well as information about claimed IP addresses), "free" (returns details of the network as well as information about free IP addresses) or "all" (returns details of the network as well as information about all IP addresses) | No |
 
 ## Response
 
@@ -42,33 +43,35 @@ Use this API operation when you need the list of IP Addresses associated with a 
 | address | string | An IP Address on the Network |
 | claimed | boolean | Indicates claimed status of the address, either `true` or `false` |
 | server | string | ID of the server associated with the IP address, if claimed |
-| type | string | Indicates if the IP address is `private`, `public`, or `publicMapped` |
+| type | string | Indicates if the IP address is `private`, `publicMapped`, or `virtual` |
 
 ### Examples
 
 #### JSON (Truncated for Readability)
-
-
-      {
-          "address": "11.22.33.12",
-          "claimed": true,
-          "server": "WA1ALIASAPI01",
-          "type": "private"
-      },
-      {
-          "address": "11.22.33.13",
-          "claimed": true,
-          "server": "WA1ALIASAPI01",
-          "type": "private"
-      },
-      {
-          "address": "11.22.33.14",
-          "claimed": false,
-          "type": "private"
-      },
-      {
-          "address": "65.43.210.123",
-          "claimed": true,
-          "server": "WA1ALIASAPI01",
-          "type": "publicMapped"
-      }
+```json
+[
+    {
+        "address": "11.22.33.12",
+        "claimed": true,
+        "server": "WA1ALIASAPI01",
+        "type": "private"
+    },
+    {
+        "address": "11.22.33.13",
+        "claimed": true,
+        "server": "WA1ALIASAPI01",
+        "type": "private"
+    },
+    {
+        "address": "11.22.33.14",
+        "claimed": false,
+        "type": "private"
+    },
+    {
+        "address": "65.43.210.123",
+        "claimed": true,
+        "server": "WA1ALIASAPI01",
+        "type": "publicMapped"
+    }
+]
+```

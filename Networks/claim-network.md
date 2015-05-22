@@ -51,38 +51,39 @@ Use this API operation when you need to claim a network in a given data center y
 ### Examples
 
 #### JSON
-
-    {
-      "id": "e1c1ab9ba070486bbbf114d7bbf556c4",
-      "cidr": "11.22.33.0/24",
-      "description": "vlan_9999_11.22.33",
-      "gateway": "11.22.33.1",
-      "name": "vlan_9999_11.22.33",
-      "netmask": "255.255.255.0",
-      "type": "private",
-      "vlan": 9999,
-      "links": [
-          {
-              "rel": "self",
-              "href": "http://api.ctl.io/v2-experimental/networks/ALIAS/WA1/e1c1ab9ba070486bbbf114d7bbf556c4",
-              "verbs": [
-                  "GET",
-                  "PUT"
-              ]
-          },
-          {
-              "rel": "ipAddresses",
-              "href": "http://api.ctl.io/v2-experimental/networks/ALIAS/WA1/e1c1ab9ba070486bbbf114d7bbf556c4/ipAddresses",
-              "verbs": [
-                  "GET"
-              ]
-          },
-          {
-              "rel": "release",
-              "href": "http://api.ctl.io/v2-experimental/networks/ALIAS/WA1/e1c1ab9ba070486bbbf114d7bbf556c4/release",
-              "verbs": [
-                  "POST"
-              ]
-          }
-      ]
-    }
+```json
+{
+    "id": "e1c1ab9ba070486bbbf114d7bbf556c4",
+    "cidr": "11.22.33.0/24",
+    "description": "vlan_9999_11.22.33",
+    "gateway": "11.22.33.1",
+    "name": "vlan_9999_11.22.33",
+    "netmask": "255.255.255.0",
+    "type": "private",
+    "vlan": 9999,
+    "links": [
+        {
+            "rel": "self",
+            "href": "http://api.ctl.io/v2-experimental/networks/ALIAS/WA1/e1c1ab9ba070486bbbf114d7bbf556c4",
+            "verbs": [
+                "GET",
+                "PUT"
+            ]
+        },
+        {
+            "rel": "ipAddresses",
+            "href": "http://api.ctl.io/v2-experimental/networks/ALIAS/WA1/e1c1ab9ba070486bbbf114d7bbf556c4/ipAddresses",
+            "verbs": [
+                "GET"
+            ]
+        },
+        {
+            "rel": "release",
+            "href": "http://api.ctl.io/v2-experimental/networks/ALIAS/WA1/e1c1ab9ba070486bbbf114d7bbf556c4/release",
+            "verbs": [
+                "POST"
+            ]
+        }
+    ]
+}
+```

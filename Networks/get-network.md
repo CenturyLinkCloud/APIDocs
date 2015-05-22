@@ -32,7 +32,7 @@ Use this API operation when you want to discover properties of a network in a da
 | accountAlias | string | Short code for a particular account | Yes |
 | dataCenter | string | Short string representing the data center you are querying. Valid codes can be retrieved from the [Get Data Center List](../Data Centers/get-data-center.md) API operation. | Yes |
 | Network | string | ID of the Network. This can be retrieved from the [Get Network List](../Networks/get-network-list.md) API operation. | Yes |
-| ipAddresses | string | Optional component of the query to request details of IP Addresses in a certain state. Should be one of the following: "none" (no filter, the default value, which will just return details of the network), "claimed" (returns details of the network as well as information about claimed IP addresses), "free" (returns networks with available IP addresses) or "all" (networks with no available IP addresses) | No |
+| ipAddresses | string | Optional component of the query to request details of IP Addresses in a certain state. Should be one of the following: "none" (returns defailts on the network only), "claimed" (returns details of the network as well as information about claimed IP addresses), "free" (returns details of the network as well as information about free IP addresses) or "all" (returns details of the network as well as information about all IP addresses) | No |
 
 ## Response
 
@@ -53,58 +53,59 @@ Use this API operation when you want to discover properties of a network in a da
 ### Examples
 
 #### JSON
-
-    {
-      "id": "ec6ff75a0ffd4504840dab343fe41077",
-      "cidr": "11.22.33.0/24",
-      "description": "vlan_9999_11.22.33",
-      "gateway": "11.22.33.1",
-      "name": "vlan_9999_11.22.33",
-      "netmask": "255.255.255.0",
-      "type": "private",
-      "vlan": 9999,
-      "ipAddresses": [
-          {
-              "address": "11.22.33.12",
-              "claimed": true,
-              "server": "WA1ALIASAPI01",
-              "type": "private"
-          },
-          {
-              "address": "11.22.33.13",
-              "claimed": true,
-              "server": "WA1ALIASAPI01",
-              "type": "private"
-          },
-          {
-              "address": "65.43.210.123",
-              "claimed": true,
-              "server": "WA1ALIASAPI01",
-              "type": "publicMapped"
-          }
-      ],
-      "links": [
-          {
-              "rel": "self",
-              "href": "http://api.ctl.io/v2-experimental/networks/ALIAS/WA1/ec6ff75a0ffd4504840dab343fe41077",
-              "verbs": [
-                  "GET",
-                  "PUT"
-              ]
-          },
-          {
-              "rel": "ipAddresses",
-              "href": "http://api.ctl.io/v2-experimental/networks/ALIAS/WA1/ec6ff75a0ffd4504840dab343fe41077/ipAddresses",
-              "verbs": [
-                  "GET"
-              ]
-          },
-          {
-              "rel": "release",
-              "href": "http://api.ctl.io/v2-experimental/networks/ALIAS/WA1/ec6ff75a0ffd4504840dab343fe41077/release",
-              "verbs": [
-                  "POST"
-              ]
-          }
-      ]
-    }
+```json
+{
+    "id": "ec6ff75a0ffd4504840dab343fe41077",
+    "cidr": "11.22.33.0/24",
+    "description": "vlan_9999_11.22.33",
+    "gateway": "11.22.33.1",
+    "name": "vlan_9999_11.22.33",
+    "netmask": "255.255.255.0",
+    "type": "private",
+    "vlan": 9999,
+    "ipAddresses": [
+        {
+            "address": "11.22.33.12",
+            "claimed": true,
+            "server": "WA1ALIASAPI01",
+            "type": "private"
+        },
+        {
+            "address": "11.22.33.13",
+            "claimed": true,
+            "server": "WA1ALIASAPI01",
+            "type": "private"
+        },
+        {
+            "address": "65.43.210.123",
+            "claimed": true,
+            "server": "WA1ALIASAPI01",
+            "type": "publicMapped"
+        }
+    ],
+    "links": [
+        {
+            "rel": "self",
+            "href": "http://api.ctl.io/v2-experimental/networks/ALIAS/WA1/ec6ff75a0ffd4504840dab343fe41077",
+            "verbs": [
+                "GET",
+                "PUT"
+            ]
+        },
+        {
+            "rel": "ipAddresses",
+            "href": "http://api.ctl.io/v2-experimental/networks/ALIAS/WA1/ec6ff75a0ffd4504840dab343fe41077/ipAddresses",
+            "verbs": [
+                "GET"
+            ]
+        },
+        {
+            "rel": "release",
+            "href": "http://api.ctl.io/v2-experimental/networks/ALIAS/WA1/ec6ff75a0ffd4504840dab343fe41077/release",
+            "verbs": [
+                "POST"
+            ]
+        }
+    ]
+}
+```
