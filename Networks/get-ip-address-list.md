@@ -47,7 +47,7 @@ Use this API operation when you need the list of IP Addresses associated with a 
 
 ### Examples
 
-#### JSON (Truncated for Readability)
+#### JSON
 ```json
 [
     {

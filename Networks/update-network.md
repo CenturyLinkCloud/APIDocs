@@ -40,9 +40,9 @@ Use this API operation to update the name and description of a network.
 | name | string | User-defined name of the network; the default is the VLAN number combined with the network address | Yes |
 | description | string | Description of VLAN, a free text field that defaults to the VLAN number combined with the network address | No |
 
-## Examples
+### Examples
 
-### JSON
+#### JSON
 ```json
 {
     "name": "VLAN for Development Servers",

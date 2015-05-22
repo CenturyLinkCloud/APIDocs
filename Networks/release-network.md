@@ -21,7 +21,7 @@ Use this API operation when you no longer need a network, and wish to to release
 
 ### Example
 
-    GET https://api.ctl.io/v2-experimental/networks/ALIAS/WA1/ec6ff75a0ffd4504840dab343fe41077/release
+    POST https://api.ctl.io/v2-experimental/networks/ALIAS/WA1/ec6ff75a0ffd4504840dab343fe41077/release
 
 ## Request
 

@@ -32,7 +32,7 @@ Use this API operation when you want to discover properties of a network in a da
 | accountAlias | string | Short code for a particular account | Yes |
 | dataCenter | string | Short string representing the data center you are querying. Valid codes can be retrieved from the [Get Data Center List](../Data Centers/get-data-center.md) API operation. | Yes |
 | Network | string | ID of the Network. This can be retrieved from the [Get Network List](../Networks/get-network-list.md) API operation. | Yes |
-| ipAddresses | string | Optional component of the query to request details of IP Addresses in a certain state. Should be one of the following: "none" (returns defaults on the network only), "claimed" (returns details of the network as well as information about claimed IP addresses), "free" (returns details of the network as well as information about free IP addresses) or "all" (returns details of the network as well as information about all IP addresses). Refer to [Get IP Address List](../Networks/get-ip-address-list.md) for the data shape of returned IP addresses. | No |
+| ipAddresses | string | Optional component of the query to request details of IP Addresses in a certain state. Should be one of the following: "none" (returns details of the network only), "claimed" (returns details of the network as well as information about claimed IP addresses), "free" (returns details of the network as well as information about free IP addresses) or "all" (returns details of the network as well as information about all IP addresses). Refer to [Get IP Address List](../Networks/get-ip-address-list.md) for the data shape of returned IP addresses. | No |
 
 ## Response
 
