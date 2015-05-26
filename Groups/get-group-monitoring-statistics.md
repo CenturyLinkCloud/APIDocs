@@ -40,7 +40,7 @@ Use this API operation when you want to track the resource usage of servers with
 
 | Name | Type | Description |
 | --- | --- | --- |
-| name | string | User-defined name of the group |
+| name | string | Name of the server |
 | stats | array | Collection of stats for the server for the interval chosen |
 
 ### Stats Definition
