@@ -22,7 +22,7 @@ Create a new user within a given account. Calls to this operation must include a
 | AccountAlias | String | Short code for a particular account. | Yes |
 | EmailAddress | String | Email address of the new user. | Yes |
 | FirstName | String | First name of the new user. | Yes |
-| Last Name | String | Last name of the new user. | Yes |
+| LastName | String | Last name of the new user. | Yes |
 | AlternateEmailAddress | String | Additional email address for the user. | No |
 | Title | String | Job title of the user. | No |
 | OfficeNumber | String | Office phone number of the user. | No |
