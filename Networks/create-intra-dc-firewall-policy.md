@@ -61,40 +61,17 @@ The response will be an entity representing the new firewall policy that was cre
 
 | Name | Type | Description |
 | --- | --- | --- |
-| id | string | ID of the firewall policy  |
-| status | string | The state of the policy; either "active" (policy is available and working as expected), "error" (policy creation did not complete as expected) or "pending" (the policy is in the process of being created) |
-| enabled | boolean | Indicates if the policy is enabled ("true") or disabled ("false") |
-| source | string | Source addresses for traffic on the originating firewall, specified using [CIDR notation](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) |
-| destination | string | Destination addresses for traffic on the terminating firewall, specified using [CIDR notation](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) |
-| destinationAccount | string | Short code for a particular account |
-| ports | string | Type of ports associated with the policy (i.e. FTP, HTTP, HTTPS, RDP, SSH/SFTP, etc.) and associated ranges if customized by the user |
-| links | array | Collection of [entity links](../Getting Started/api-v20-links-framework.md) that point to resources related to this list of networks |
+| links | array | Collection of [entity links](../Getting Started/api-v20-links-framework.md) that point to resources related to this firewall policy |
 
 ### Examples
 
 #### JSON <JR still needs to scrub the id / source/destination data here>
 ```json
 {
-    "id": "de534c89464c4d648b350d994c0bc37c",
-    "status": "active",
-    "enabled": true,
-    "source": [
-        "172.21.223.1/32",
-        "172.21.223.2/32",
-        "172.21.223.3/32"
-    ],
-    "destination": [
-        "172.21.223.1/32",
-        "172.21.223.2/32"
-    ],
-    "destinationAccount": "DEST_ALIAS",
-    "ports": [
-        "any"
-    ],
     "links": [
         {
             "rel": "self",
-            "href": "http://api.ctlqa.io/v2-experimental/firewallPolicies/lyw/qa1/de534c89464c4d648b350d994c0bc37c",
+            "href": "http://api.ctlqa.io/v2-experimental/firewallPolicies/lyw/qa1/87e5400f73a94ae6a343a14e7628ce08",
             "verbs": [
                 "GET",
                 "PUT",
