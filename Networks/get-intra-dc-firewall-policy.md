@@ -21,7 +21,7 @@ Use this API operation when you need the details of a specific firewall policy i
 
 ### Example
 
-    GET https://api.ctl.io/v2-experimental/firewallPolicies/SRC_ALIAS/WA1/de534c89464c4d648b350d994c0bc37c
+    GET https://api.ctl.io/v2-experimental/firewallPolicies/SRC_ALIAS/WA1/1ac853b00e1011e5b9390800200c9a66
 
 ## Request
 
@@ -40,30 +40,30 @@ Use this API operation when you need the details of a specific firewall policy i
 | Name | Type | Description |
 | --- | --- | --- |
 | id | string | ID of the firewall policy  |
-| status | string | The state of the policy; either "active" (policy is available and working as expected), "error" (policy creation did not complete as expected) or "pending" (the policy is in the process of being created) |
-| enabled | boolean | Indicates if the policy is enabled ("true") or disabled ("false") |
+| status | string | The state of the policy; either `active` (policy is available and working as expected), `error` (policy creation did not complete as expected) or `pending` (the policy is in the process of being created) |
+| enabled | boolean | Indicates if the policy is enabled (`true`) or disabled (`false`) |
 | source | string | Source addresses for traffic on the originating firewall, specified using [CIDR notation](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) |
 | destination | string | Destination addresses for traffic on the terminating firewall, specified using [CIDR notation](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) |
 | destinationAccount | string | Short code for a particular account |
-| ports | string | Type of ports associated with the policy (i.e. FTP, HTTP, HTTPS, RDP, SSH/SFTP, etc.) and associated ranges if customized by the user |
+| ports | string | Type of ports associated with the policy: `any` (all ports)`tcp/21` (for FTP), `tcp/990` (FTPS), `tcp/80` (HTTP 80), `tcp/8080` (HTTP 8080), `tcp/443` (HTTPS 443), `icmp` (PING), `tcp/3389` (RDP), and `tcp/22` (SSH/SFTP). Custom ports `udp/8000` and custom port ranges `tcp/1-600` are also supported. |
 | links | array | Collection of [entity links](../Getting Started/api-v20-links-framework.md) that point to resources related to this list of networks |
 
 ### Examples
 
-#### JSON <JR still needs to scrub the id / source/destination data here>
+#### JSON
 ```json
 {
-    "id": "de534c89464c4d648b350d994c0bc37c",
+    "id": "1ac853b00e1011e5b9390800200c9a6",
     "status": "active",
     "enabled": true,
     "source": [
-        "172.21.223.1/32",
-        "172.21.223.2/32",
-        "172.21.223.3/32"
+        "123.45.678.1/32",
+        "123.45.678.2/32",
+        "123.45.678.3/32"
     ],
     "destination": [
-        "172.21.223.1/32",
-        "172.21.223.2/32"
+        "245.21.223.1/32",
+        "245.21.223.2/32"
     ],
     "destinationAccount": "DEST_ALIAS",
     "ports": [
@@ -72,7 +72,7 @@ Use this API operation when you need the details of a specific firewall policy i
     "links": [
         {
             "rel": "self",
-            "href": "http://api.ctlqa.io/v2-experimental/firewallPolicies/lyw/qa1/de534c89464c4d648b350d994c0bc37c",
+            "href": "http://api.ctl.io/v2-experimental/firewallPolicies/SRC_ALIAS/WA1/1ac853b00e1011e5b9390800200c9a6",
             "verbs": [
                 "GET",
                 "PUT",
