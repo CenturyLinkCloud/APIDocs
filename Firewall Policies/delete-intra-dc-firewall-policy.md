@@ -37,4 +37,4 @@ Use this API operation when you need to delete a firewall policy in a given data
 
 ### Entity Definition
 
-The response will not contain JSON content, but should return the HTTP `204 No Content` response upon the successful release of the network.
+The response will not contain JSON content, but should return the HTTP `204 No Content` response upon the successful removal of the firewall policy.

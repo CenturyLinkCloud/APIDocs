@@ -53,7 +53,7 @@ Use this API operation when you need to create a firewall policy in a given data
 }
 ```
 
-## Response (need to verify)
+## Response
 
 The response will be an entity representing the new firewall policy that was created.
 

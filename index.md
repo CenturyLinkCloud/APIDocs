@@ -7,7 +7,7 @@
     "Authentication",
     "Custom Fields",
     "Data Centers",
-    "Firewalls",
+    "Firewall Policies",
     "Groups",
     "Group Actions",
     "Networks",

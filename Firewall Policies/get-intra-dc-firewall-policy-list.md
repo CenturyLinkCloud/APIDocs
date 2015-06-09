@@ -9,7 +9,7 @@ Gets the list of firewall policies associated with a given account in a given da
 
 ### When to Use It
 
-Use this API operation when you need the list of available firewall policies in a given data center for a given account. Using that list of firewall policies, you can then query for a [specific policy](../Networks/get-firewall-policy.md) in a given data center.
+Use this API operation when you need the list of available firewall policies in a given data center for a given account. Using that list of firewall policies, you can then query for a [specific policy](../Firewall Policy/get-firewall-policy.md) in a given data center.
 
   NOTE: This API operation is experimental only, and subject to change with no notice. Please plan accordingly.
 
@@ -47,7 +47,7 @@ Use this API operation when you need the list of available firewall policies in 
 | destination | string | Destination addresses for traffic on the terminating firewall, specified using [CIDR notation](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) |
 | destinationAccount | string | Short code for a particular account |
 | ports | string | Type of ports associated with the policy. Supported ports include: `any`, `icmp`, TCP and UDP with single ports (`tcp/123`, `udp/123`) and port ranges (`tcp/123-456`, `udp/123-456`). Some common ports include: `tcp/21` (for FTP), `tcp/990` (FTPS), `tcp/80` (HTTP 80), `tcp/8080` (HTTP 8080), `tcp/443` (HTTPS 443), `icmp` (PING), `tcp/3389` (RDP), and `tcp/22` (SSH/SFTP). |
-| links | array | Collection of [entity links](../Getting Started/api-v20-links-framework.md) that point to resources related to this list of networks |
+| links | array | Collection of [entity links](../Getting Started/api-v20-links-framework.md) that point to resources related to this list of firewall policies |
 
 ### Examples
 
