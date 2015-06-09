@@ -15,4 +15,4 @@ The following link definitions are related to the network resource. They may be 
 | Relation (rel) | Description | Verbs |
 | --- | --- | --- |
 | ipAddresses | Retrieves the list of IP Addresses associated with a network | [GET](../Networks/get-ip-address-list.md) |
-| release | Releases a given network in a given data center; the network may then be claimed | [POST] |
+| release | Releases a given network in a given data center; the network may then be claimed | [POST](../Networks/release-network.md) |
