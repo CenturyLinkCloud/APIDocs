@@ -73,7 +73,7 @@ Below is a brief demonstration of using the .NET framework to retrieve a valid t
 
   If you provide invalid credentials, you will get an HTTP 400 (Bad Request) and the following response message:
 
-    {"message":"We didn't recognize the username or password you entered. Please try again."}
+    `{"message":"We didn't recognize the username or password you entered. Please try again."}`
 
 7. Submit a request: the following .NET code demonstrates how a user can make a secure API request to retrieve the root Group in a particular data center. Note that the __bearerToken__ is added to the header of the request, with a prefix of "Bearer ".
 
