@@ -45,7 +45,7 @@ Use this API operation before you call any other API operation. It shows a user'
 | accountAlias | string | Account that contains this user record |
 | locationAlias | string | Default data center of the user |
 | roles | array | Permission roles associated with this user |
-| bearerToken | string | Security token for this user that is included in all other API requests |
+| bearerToken | string | Security token for this user that is included in the Authorization header for all other API requests as "Bearer [LONG TOKEN VALUE]". |
 
 ### Examples
 
@@ -59,5 +59,5 @@ Use this API operation before you call any other API operation. It shows a user'
             "AccountAdmin",
             "ServerAdmin"
         ],
-        "bearerToken": "ABCDEF"
+        "bearerToken": "[LONG TOKEN VALUE]"
     }
