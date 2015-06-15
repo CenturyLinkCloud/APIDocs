@@ -54,8 +54,9 @@ Below is a brief demonstration of using the .NET framework to retrieve a valid t
   string responseString = await message.Content.ReadAsStringAsync();
   ```
 
-If valid credentials are provided, an HTTP 200 status is returned along with the following JSON payload:
+  If valid credentials are provided, an HTTP 200 status is returned along with the following JSON payload:
 
+  ```
     {
        "userName":"user@company.com",
        "accountAlias":"RLS1",
@@ -66,15 +67,17 @@ If valid credentials are provided, an HTTP 200 status is returned along with the
        ],
        "bearerToken":"[LONG TOKEN VALUE]"
     }
+  ```
 
-These results show the user's parent account, default data center location, and assigned platform roles. The __bearerToken__ is the value that must be added to the HTTP `Authorization` header when calling any other API service. This token identifies who the user is and what they are allowed to do in the API.
+  These results show the user's parent account, default data center location, and assigned platform roles. The __bearerToken__ is the value that must be added to the HTTP `Authorization` header when calling any other API service. This token identifies who the user is and what they are allowed to do in the API.
 
-If you provide invalid credentials, you will get an HTTP 400 (Bad Request) and the following response message:
+  If you provide invalid credentials, you will get an HTTP 400 (Bad Request) and the following response message:
 
     {"message":"We didn't recognize the username or password you entered. Please try again."}
 
 7. Submit a request: the following .NET code demonstrates how a user can make a secure API request to retrieve the root Group in a particular data center. Note that the __bearerToken__ is added to the header of the request, with a prefix of "Bearer ".
 
+  ```
     HttpClient authClient = new HttpClient();
 
     authClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
@@ -85,6 +88,7 @@ If you provide invalid credentials, you will get an HTTP 400 (Bad Request) and t
     HttpResponseMessage message = await authClient.GetAsync("https://api.ctl.io/v2/datacenters/DEMO/CA1");
 
     string responseString = await message.Content.ReadAsStringAsync();
+  ```
 
 #### PowerShell Example
 
