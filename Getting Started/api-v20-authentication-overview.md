@@ -73,14 +73,14 @@ If you provide invalid credentials, you will get an HTTP 400 (Bad Request) and t
 
     {"message":"We didn't recognize the username or password you entered. Please try again."}
 
-The following .NET code demonstrates how a user can make a secure API request to retrieve the root Group in a particular data center. Note that the __bearerToken__ is added to the header of the request.
+7. Submit a request: the following .NET code demonstrates how a user can make a secure API request to retrieve the root Group in a particular data center. Note that the __bearerToken__ is added to the header of the request, with a prefix of "Bearer ".
 
     HttpClient authClient = new HttpClient();
 
     authClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
     // Add bearer token to the header
-    authClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", "[LONG TOKEN VALUE]");
+    authClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", "Bearer [LONG TOKEN VALUE]");
 
     HttpResponseMessage message = await authClient.GetAsync("https://api.ctl.io/v2/datacenters/DEMO/CA1");
 
@@ -110,7 +110,7 @@ Below is a brief demonstration of how PowerShell can be used to retrieve a valid
   $logonResponse = Invoke-RestMethod -Method Post -Headers $headers -Uri $logonUrl -Body $body -ContentType "application/json" -SessionVariable "theSession"
   ```
 
-3. Pull the BearerToken out of the response and format it correctly.
+3. Pull the BearerToken out of the response and format it correctly. Note that a prefix of "Bearer " is required.
 
   ```
   $bearer = $logonResponse.bearerToken
@@ -183,7 +183,7 @@ If you provide invalid credentials, you will get an HTTP 400 (Bad Request) and t
 
     {"message":"We didn't recognize the username or password you entered. Please try again."}
 
-The following raw HTTP request message shows how a user can make a secure API request to retrieve the root Group in a particular data center. Note that the bearerToken is added to the header of the request.
+The following raw HTTP request message shows how a user can make a secure API request to retrieve the root Group in a particular data center. Note that the bearerToken is added to the header of the request, with a prefix of "Bearer ".
 
     GET https://api.ctl.io/v2/datacenters/RLS1/WA1 HTTP/1.1
     Host: api.ctl.io
