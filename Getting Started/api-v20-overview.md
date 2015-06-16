@@ -12,11 +12,11 @@ The URL format of the service is: `https://api.ctl.io/v2/{resource}/{account ali
 
 ### Authentication
 
-Service authentication is done via bearer tokens and is outlined in the [Authentication Overview](api-v20-authentication-overview.md) and also the [Login API](../Authentication/login.md) description.
+Service authentication is done via bearer tokens and is outlined in the [Authentication Overview](../Getting Started/api-v20-authentication-overview.md) and also the [Login API](../Authentication/login.md) description.
 
 ### Links Framework
 
-The CenturyLink Cloud v2 REST API utilizes the concept of "linking" to reference other related entities from within JSON response payloads. See more information in our overview of the [Links Framework](api-v20-links-framework.md).
+The CenturyLink Cloud v2 REST API utilizes the concept of "linking" to reference other related entities from within JSON response payloads. See more information in our overview of the [Links Framework](../Getting Started/api-v20-links-framework.md).
 
 ### HTTP Response Codes
 
