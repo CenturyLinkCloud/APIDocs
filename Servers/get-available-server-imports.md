@@ -15,11 +15,11 @@ Use this API operation when you want to get the list of available OVFs that can 
 
 ### Structure
 
-    GET https://api.ctl.io/v2/vmImport/{accountAlias}/available
+    GET https://api.ctl.io/v2/vmImport/{accountAlias}/{locationId}/available
 
 ### Example
 
-    GET https://api.ctl.io/v2/vmImport/ALIAS/available
+    GET https://api.ctl.io/v2/vmImport/ALIAS/WA1/available
 
 ## Request
 
@@ -28,6 +28,7 @@ Use this API operation when you want to get the list of available OVFs that can 
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
 | AccountAlias | string | Short code for a particular account | Yes |
+| LocationId | string | Data center location identifier | Yes |
 
 ## Response
 
