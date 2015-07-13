@@ -9,7 +9,7 @@ Gets the list of available servers that can be imported. Calls to this operation
 
 ### When to Use It
 
-Use this API operation when you want to get the list of available OVFs that can be imported with the [Import Server](import-server.md) API. These OVFs are ones that have been uploaded to your FTP server as described in [Using Self-Service VM Import](http://www.centurylinkcloud.com/knowledge-base/servers/using-self-service-vm-import/).
+Use this API operation when you want to get the list of available OVFs that can be imported with the [Import Server](import-server.md) API. These OVFs are ones that have been uploaded to your FTP server as described in [Using Self-Service VM Import](http://www.ctl.io/knowledge-base/servers/using-self-service-vm-import/).
 
 ## URL
 
@@ -32,7 +32,7 @@ Use this API operation when you want to get the list of available OVFs that can 
 
 ## Response
 
-The response is an array of available servers for import. The list of available servers is dependent upon what OVFs have been uploaded to your FTP server as described in [Using Self-Service VM Import](http://www.centurylinkcloud.com/knowledge-base/servers/using-self-service-vm-import/).
+The response is an array of available servers for import. The list of available servers is dependent upon what OVFs have been uploaded to your FTP server as described in [Using Self-Service VM Import](http://www.ctl.io/knowledge-base/servers/using-self-service-vm-import/).
 
 ### Entity Definition
 
