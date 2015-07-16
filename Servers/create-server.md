@@ -36,24 +36,27 @@ Use this API operation when you want to create a new server from a standard or c
 | name | string | Name of the server to create. Alphanumeric characters and dashes only. Must be between 1-8 characters depending on the length of the account alias. The combination of account alias and server name here must be no more than 10 characters in length. (This name will be appended with a two digit number and prepended with the datacenter code and account alias to make up the final server name.) | Yes |
 | description | string | User-defined description of this server | No |
 | groupId | string | ID of the parent group. Retrieved from query to parent group, or by looking at the URL on the UI pages in the Control Portal. | Yes |
-| sourceServerId | string | ID of the server to use a source. May be the ID of a template, or when cloning, an existing server ID. The list of available templates for a given account in a data center can be retrieved from the [Get Data Center Deployment Capabilities](../Data Centers/get-data-center-deployment-capabilities.md) API operation. | Yes |
-| isManagedOS | bool | Whether to create the server as managed or not. Default is false. | No |
+| sourceServerId | string | ID of the server to use a source. May be the ID of a template, or when cloning, an existing server ID. The list of available templates for a given account in a data center can be retrieved from the [Get Data Center Deployment Capabilities](../Data Centers/get-data-center-deployment-capabilities.md) API operation. (Ignored for bare metal servers.) | Yes |
+| isManagedOS | bool | Whether to create the server as managed or not. Default is false. (Ignored for bare metal servers.) | No |
+| isManagedBackup | bool | Whether to add managed backup to the server. Must be a managed OS server. (Ignored for bare metal servers.) | No |
 | primaryDns | string | Primary DNS to set on the server. If not supplied the default value set on the account will be used. | No |
 | secondaryDns | string | Secondary DNS to set on the server. If not supplied the default value set on the account will be used. | No |
 | networkId | string | ID of the network to which to deploy the server. If not provided, a network will be chosen automatically. If your account has not yet been assigned a network, leave this blank and one will be assigned automatically. The list of available networks for a given account in a data center can be retrieved from the [Get Data Center Deployment Capabilities](../Data Centers/get-data-center-deployment-capabilities.md) API operation.  | No |
-| ipAddress | string | IP address to assign to the server. If not provided, one will be assigned automatically. | No |
+| ipAddress | string | IP address to assign to the server. If not provided, one will be assigned automatically. (Ignored for bare metal servers.) | No |
 | password | string | Password of administrator or root user on server. If not provided, one will be generated automatically. | No |
-| sourceServerPassword | string | Password of the source server, used only when creating a clone from an existing server. | No |
-| cpu | integer | Number of processors to configure the server with (1-16) | Yes |
-| cpuAutoscalePolicyId | string | ID of the vertical CPU Autoscale policy to associate the server with. Available IDs can be retrieved from the **Get Autoscale Policies** API operation. | No |
-| memoryGB | integer | Number of GB of memory to configure the server with (1-128) | Yes |
-| type | string | Whether to create standard or hyperscale server | Yes |
-| storageType | string | For standard servers, whether to use standard or premium storage. If not provided, will default to premium storage. For hyperscale servers, storage type must be hyperscale. | No |
+| sourceServerPassword | string | Password of the source server, used only when creating a clone from an existing server. (Ignored for bare metal servers.) | No |
+| cpu | integer | Number of processors to configure the server with (1-16) (ignored for bare metal servers) | Yes |
+| cpuAutoscalePolicyId | string | ID of the vertical CPU Autoscale policy to associate the server with. Available IDs can be retrieved from the **Get Autoscale Policies** API operation. (Ignored for bare metal servers.) | No |
+| memoryGB | integer | Number of GB of memory to configure the server with (1-128) (ignored for bare metal servers) | Yes |
+| type | string | Whether to create a `standard`, `hyperscale`, or `bareMetal` server | Yes |
+| storageType | string | For standard servers, whether to use standard or premium storage. If not provided, will default to premium storage. For hyperscale servers, storage type must be hyperscale. (Ignored for bare metal servers.) | No |
 | antiAffinityPolicyId | string | ID of the Anti-Affinity policy to associate the server with. Only valid for hyperscale servers. Available IDs can be retrieved from the [Get Anti-Affinity Policies](../Anti-Affinity Policies/get-anti-affinity-policies.md) API operation. | No |
 | customFields | complex | Collection of custom field ID-value pairs to set for the server. | No |
-| additionalDisks | complex | Collection of disk parameters | No |
-| ttl | dateTime | Date/time that the server should be deleted | No |
-| packages | complex | Collection of packages to run on the server after it has been built | No |
+| additionalDisks | complex | Collection of disk parameters (ignored for bare metal servers) | No |
+| ttl | dateTime | Date/time that the server should be deleted (ignored for bare metal servers) | No |
+| packages | complex | Collection of packages to run on the server after it has been built (ignored for bare metal servers) | No |
+| configurationId | string | Only required for bare metal servers. Specifies the identifier for the specific configuration type of bare metal server to deploy. A list of possible configs can be retrieved from the [Get Data Center Bare Metal Capabilities](../Data Centers/get-data-center-bare-metal-capabilities.md) API operation. (Ignored for standard and hyperscale servers.) | Yes |
+| osType | string | Only required for bare metal servers. Specifies the OS to provision with the bare metal server. Currently, the only supported OS types are `redHat6_64Bit`, `centOS6_64Bit`, `windows2012R2Standard_64Bit`. A list of importable OS types for a given data center can be retrieved from the [Get Data Center Bare Metal Capabilities](../Data Centers/get-data-center-bare-metal-capabilities.md) API operation. (Ignored for standard and hyperscale servers.) | Yes |
 
 ### CustomFields Definition
 

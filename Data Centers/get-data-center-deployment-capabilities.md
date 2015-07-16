@@ -38,8 +38,10 @@ Use this API operation when you want to discover the available capabilities of a
 | --- | --- | --- |
 | supportsPremiumStorage | boolean | Whether or not this data center provides support for servers with premium storage |
 | supportsSharedLoadBalancer | boolean | Whether or not this data center provides support for shared load balancer configuration |
+| supportsBareMetalServers | boolean | Whether or not this data center provides support for provisioning bare metal servers |
 | deployableNetworks | array | Collection of networks that can be used for deploying servers |
 | templates | array | Collection of available templates in the data center that can be used to create servers |
+| importableOSTypes | array | Collection of available OS types that can be imported as virtual machines. |
 
 ### DeployableNetworks Definition
 
@@ -67,6 +69,7 @@ Use this API operation when you want to discover the available capabilities of a
 
     {
       "supportsPremiumStorage":true,
+      "supportsBareMetalServers":false,
       "supportsSharedLoadBalancer":true,
       "deployableNetworks":[
         {
