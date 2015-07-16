@@ -68,8 +68,8 @@ Use this API operation when you want to find out all the details for a server. I
 | partitions | complex | The partitions defined for the server |
 | snapshots | complex | Details about any snapshot associated with the server |
 | customFields | complex | Details about any custom fields and their values |
-| processorDescription | Processor configuration description (for bare metal servers only) |
-| storageDescription | Storage configuration description (for bare metal servers only) |
+| processorDescription | string | Processor configuration description (for bare metal servers only) |
+| storageDescription | string | Storage configuration description (for bare metal servers only) |
 
 ### IPAddresses Definition
 
