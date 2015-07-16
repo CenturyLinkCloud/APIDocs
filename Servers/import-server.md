@@ -45,8 +45,8 @@ Use this API operation when you want to import a new server from an OVF that has
 | type | string | Whether to create standard or hyperscale server | Yes |
 | storageType | string | For standard servers, whether to use standard or premium storage. If not provided, will default to premium storage. For hyperscale servers, storage type must be hyperscale. | No |
 | customFields | complex | Collection of custom field ID-value pairs to set for the server. | No |
-| ovfId | string | The identifier of the OVF that defines the server to import. This can be retrieved from the [Get Available Server Imports](get-available-server-imports.md) API operation. |
-| ovfOsType | string | The OS type of the server being imported. Currently, the only supported OS types are `redHat6_64Bit`, `windows2008R2DataCenter_64bit`, and `windows2012R2DataCenter_64Bit`. |
+| ovfId | string | The identifier of the OVF that defines the server to import. This can be retrieved from the [Get Available Server Imports](../Servers/get-available-server-imports.md) API operation. |
+| ovfOsType | string | The OS type of the server being imported. Currently, the only supported OS types are `redHat6_64Bit`, `windows2008R2DataCenter_64bit`, and `windows2012R2DataCenter_64Bit`. A list of importable OS types for a given data center can be retrieved from the [Get Data Center Deployment Capabilities](../Data Centers/get-data-center-deployment-capabilities.md) API operation. |
 
 ### CustomFields Definition
 
