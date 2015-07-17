@@ -9,7 +9,7 @@ Imports a new server from an uploaded OVF. Calls to this operation must include 
 
 ### When to Use It
 
-Use this API operation when you want to import a new server from an OVF that has been uploaded to your FTP server. For more information about uploading an OVF for import, see [Using Self-Service VM Import](http://www.centurylinkcloud.com/knowledge-base/servers/using-self-service-vm-import/) and make sure the OVF meets [these requirements](http://www.centurylinkcloud.com/knowledge-base/servers/self-service-vm-import-ovf-requirements/) before attempting to import it.
+Use this API operation when you want to import a new server from an OVF that has been uploaded to your FTP server. For more information about uploading an OVF for import, see [Using Self-Service VM Import](http://www.ctl.io/knowledge-base/servers/using-self-service-vm-import/) and make sure the OVF meets [these requirements](http://www.ctl.io/knowledge-base/servers/self-service-vm-import-ovf-requirements/) before attempting to import it.
 
 ## URL
 

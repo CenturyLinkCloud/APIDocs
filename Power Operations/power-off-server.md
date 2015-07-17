@@ -5,7 +5,7 @@
   "attachments": []
 }}}
 
-Sends the power off operation to a list of servers and adds operation to queue. (See [Description of Server Group Power Commands](http://www.centurylinkcloud.com/knowledge-base/servers/descriptions-of-servergroup-power-commands/) for details on how the power off operation is used.) Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](../Authentication/login.md) for information on acquiring this token.
+Sends the power off operation to a list of servers and adds operation to queue. (See [Description of Server Group Power Commands](http://www.ctl.io/knowledge-base/servers/descriptions-of-servergroup-power-commands/) for details on how the power off operation is used.) Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](../Authentication/login.md) for information on acquiring this token.
 
 ### When to Use It
 
