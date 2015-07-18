@@ -182,7 +182,7 @@ Use this API operation when you want to create a new group.
             },
             {
               "rel": "scheduledActivities",
-              "href": "/v2/groups/acct/2a5c0b9662cf4fc8bf6180f139facdc0/scheduledActivities"
+              "href": "/v2/groups/acct/2a5c0b9662cf4fc8bf6180f139facdc0/scheduledActivities",
               "verbs":[
                 "GET",
                 "POST"
