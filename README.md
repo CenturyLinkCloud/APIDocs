@@ -31,4 +31,6 @@ To run this check locally, `cd` into the root of this project and run:
 node lib/index.js
 ```
 
+_Note that the first time you wish to run the commit analyzer, you'll have to run `npm install` from the `lib` directory. This assumes you have [Node.js](http://nodejs.org) installed._
+
 The output will tell you if any file fails parsing. This script is also run as part of continuous integration with [travis-ci](http://travis-ci.org).
