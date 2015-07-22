@@ -9,7 +9,7 @@ Gets the list of firewall policies associated with a given account in a given da
 
 ### When to Use It
 
-Use this API operation when you need the list of available firewall policies in a given data center for a given account. Using that list of firewall policies, you can then query for a [specific policy](../Firewall Policy/get-intra-dc-firewall-policy.md) in a given data center.
+Use this API operation when you need the list of available firewall policies in a given data center for a given account. Using that list of firewall policies, you can then query for a [specific policy](get-intra-dc-firewall-policy.md) in a given data center.
 
   NOTE: This API operation is experimental only, and subject to change with no notice. Please plan accordingly.
 

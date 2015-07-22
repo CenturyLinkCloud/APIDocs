@@ -43,7 +43,7 @@ Use this API operation when you want to discover the available capabilities of r
 
 | Name | Type | Description |
 | --- | --- | --- |
-| id | string | The configurationId to pass to the [Create Server](../Server/create-server.md) API operation when creating a bare metal server. |
+| id | string | The configurationId to pass to the [Create Server](../Servers/create-server.md) API operation when creating a bare metal server. |
 | hourlyRate | number | Price per hour for the given configuration. |
 | availability | string | The level of availability for the given configuration: either `high`, `low`, or `none `. |
 | memory | complex | Information about the memory on the server. |
