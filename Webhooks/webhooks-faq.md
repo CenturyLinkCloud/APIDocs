@@ -303,4 +303,4 @@ A: There is no guaranteed delivery with CenturyLink Cloud Webhooks. We make a si
 
 A: Yes! We have ideas for additional Webhooks to add to the platform, but would like to hear from you. If you have suggestions for other Webhooks, send an email to [features@ctl.io](mailto:features@ctl.io).
 
-Testing a [bad link](/Server/badlink.md)
+test a [bad link](/Server/badlink.md)
