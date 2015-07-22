@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/CenturyLinkCloud/APIDocs.svg)](https://travis-ci.org/CenturyLinkCloud/APIDocs)
+
 CenturyLink Cloud API Documentation
 ========
 
@@ -9,7 +11,7 @@ Links to other articles should follow this format:
 ```
 [Link Text](../category/api-doc-name.md)
 ```
- 
+
 so like this (folder names are case-sensitive):
 
 ```
