@@ -19,7 +19,7 @@ Use this API operation when you want to track the resource usage of servers with
 
 ### Example
 
-    GET https://api.ctl.io/v2/groups/ALIAS/2a5c0b9662cf4fc8bf6180f139facdc0/statistics?start=2014-04-05&sampleInterval=01:00:00
+    GET https://api.ctl.io/v2/groups/ALIAS/2a5c0b9662cf4fc8bf6180f139facdc0/statistics?start=2014-04-05T07:52:47.302Z&sampleInterval=01:00:00
 
 ## Request
 
@@ -29,10 +29,10 @@ Use this API operation when you want to track the resource usage of servers with
 | --- | --- | --- | --- |
 | AccountAlias | string | Short code for a particular account | Yes |
 | GroupID | string | ID of the group being queried. Retrieved from query to parent group, or by looking at the URL on the new UI pages in the Control Portal. | Yes |
-| start | datetime | DateTime (UTC) of the query window. Note that statistics are only held for 14 days. Start date (and optional end date) must be within the past 14 days. Value is not required if choosing the "Latest" query type. | No |
+| start | datetime | DateTime (UTC) of the query window. Note that statistics are only held for 14 days. Start date (and optional end date) must be within the past 14 days. Value is not required if choosing the `latest` query type. | No |
 | end | datetime | DateTime (UTC) of the query window. End date (and start date) must be within the past 14 days. Not a required value if results should be up to the current time. | No |
-| sampleInterval | timespan | Result interval. For the default "hourly" type, the minimum value is 1 hour (01:00:00) and maximum is the full window size of 14 days. Note that interval must fit within start/end window, or you will get an exception that states: "The 'end' parameter must represent a time that occurs at least one 'sampleInterval' before 'start." If "realtime" type specified, interval can be as small as 5 minutes (05:00). | No |
-| type | string| Default is "Hourly" which returns hourly data (possibly in a different interval if a sampleInterval is specified) for the past 14 days (or whatever window is specified). Value "Realtime" means that data from the last 4 hours is available in smaller increments. To use "Realtime" type, start parameter must be within the last 4 hours. Final valid type is "Latest" which returns a single data point that reflects the last monitoring data collected. No start, end, or sampleInterval values are needed for this type. | No |
+| sampleInterval | timespan | Result interval. For the default `hourly` type, the minimum value is 1 hour (01:00:00) and maximum is the full window size of 14 days. Note that interval must fit within start/end window, or you will get an exception that states: "The 'end' parameter must represent a time that occurs at least one 'sampleInterval' before 'start.'" If `realtime` type is specified, interval can be as small as 5 minutes (05:00). | No |
+| type | string| Default is `hourly` which returns hourly data (possibly in a different interval if a sampleInterval is specified) for the past 14 days (or whatever window is specified). Value `realtime` means that data from the last 4 hours is available in smaller increments. To use `realtime` type, start parameter must be within the last 4 hours. Final valid type is `latest` which returns a single data point that reflects the last monitoring data collected. No start, end, or sampleInterval values are needed for this type. | No |
 
 ## Response
 
