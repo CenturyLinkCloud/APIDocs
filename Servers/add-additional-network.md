@@ -23,12 +23,16 @@ Use this API operation when you need to add a secondary network adapter to a ser
 
 ## Request
 
-### Content Properties
-
+### URI Parameters
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
 | accountAlias | string | Short code for a particular account | Yes |
 | serverId | string | ID of the server | Yes |
+
+### Content Properties
+
+| Name | Type | Description | Req. |
+| --- | --- | --- | --- |
 | networkId | string | ID of the network. These can be retrieved from the [Get Network List](../Networks/get-network-list.md) API operation | Yes |
 | ipAddress | string | Optional IP address for the networkId | No |
 
