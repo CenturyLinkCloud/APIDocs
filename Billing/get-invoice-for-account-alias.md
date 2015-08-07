@@ -56,7 +56,7 @@ The response includes a JSON object containing an array with invoicing data.
 | totalAmount | decimal | Invoice amount in dollars |
 | invoiceDate | string | Date the invoice is finalized |
 | poNumber | string | Purchase Order associated with the Invoice |
-| lineItems | array | Usage details of resources |
+| lineItems | array | Usage details of a resource or collection of similar resources |
 
 ### Line Items Definition
 
