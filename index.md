@@ -5,6 +5,7 @@
     "Alert Policies",
     "Anti-Affinity Policies",
     "Authentication",
+    "Autoscale Policies",
     "Custom Fields",
     "Data Centers",
     "Firewall Policies",
