@@ -7,6 +7,8 @@
 
 Gets a list of invoicing data for a given account alias for a given month. Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](../Authentication/login.md) for information on acquiring this token.
 
+**NOTE: THE DATA RETURNED IN THIS API ARE USAGE ESTIMATES ONLY, AND DOES NOT REPRESENT AN ACTUAL BILL.**
+
 ### When to Use It
 
 Use this API operation when you want to get invoicing data for a given account for a given month.
