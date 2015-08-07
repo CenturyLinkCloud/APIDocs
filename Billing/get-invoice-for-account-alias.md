@@ -19,7 +19,7 @@ Use this API operation when you want to get invoicing data for a given account f
 
 ### Example
 
-    GET https://api.ctl.io/v2/invoice/ALIAS/2015/7
+    GET https://api.ctl.io/v2/invoice/ALIAS/2015/7/?pricingAccount=PALIAS
 
 ## Request
 
@@ -30,11 +30,11 @@ Use this API operation when you want to get invoicing data for a given account f
 | accountAlias | string | Short code for a particular account | Yes |
 | year | integer | Year of usage, in YYYY format. | Yes |
 | month | integer | Monthly period of usage, in M format. | Yes |
-| pricingAccount | string | Short code of the account that sends the invoice for the accountAlias | No |
+| pricingAccountAlias | string | Short code of the account that sends the invoice for the accountAlias | No |
 
 ## Response
 
-The response includes a header with information related to the `accountAlias` and its billing settings. An array of invoicing data follows.
+The response includes a JSON object containing an array with invoicing data.
 
 ### Entity Definition
 
@@ -53,11 +53,21 @@ The response includes a header with information related to the `accountAlias` an
 | postalCode | string | Postal code associated with the accountAlias |
 | billingContactEmail | string | Billing email address associated with the accountAlias |
 | invoiceCCEmail | string | Additional billing email address associated with the accountAlias |
-| totalAmount | string | Invoice amount in dollars |
+| totalAmount | decimal | Invoice amount in dollars |
 | invoiceDate | string | Date the invoice is finalized |
 | poNumber | string | Purchase Order associated with the Invoice |
 | lineItems | array | Usage details of resources |
 
+### Line Items Definition
+
+| Name | Type | Description |
+| --- | --- | --- |
+| quantity | integer | Quantity of the line item |
+| description | string | Text description of the line item |
+| unitCost | decimal | Unit cost of the line item |
+| itemTotal | decimal | Total cost of the line item |
+| serviceLocation | string | Location of the line item |
+| itemDetails | complex | Details about the line item |
 
 ### Examples
 
