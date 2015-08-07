@@ -68,7 +68,7 @@ The response will be an array containing one entity for each autoscale policy in
 #### JSON
 ```json
       {
-        "id": "80a7bf90b199464b859399bff54f4173",
+        "id": "3b6f26003c224596bc7e748a0adc97d5",
         "name": "Production Database Scale Policy",
         "resourceType": "cpu",
         "thresholdPeriodMinutes": 5,
@@ -86,12 +86,12 @@ The response will be an array containing one entity for each autoscale policy in
         "links": [
           {
             "rel": "self",
-            "href": "/v2/autoscalePolicies/ALIAS/80a7bf90b199464b859399bff54f4173"
+            "href": "/v2/autoscalePolicies/ALIAS/3b6f26003c224596bc7e748a0adc97d5"
           }
         ]
       },
       {
-        "id": "b92b76c8b8ee49a18c488c240ef0d2d8",
+        "id": "23a68b22e35b4983abd1051fae10ee7b",
         "name": "Another CPU Autoscale Policy",
         "resourceType": "cpu",
         "thresholdPeriodMinutes": 5,
@@ -109,7 +109,7 @@ The response will be an array containing one entity for each autoscale policy in
         "links": [
           {
             "rel": "self",
-            "href": "/v2/autoscalePolicies/ALIAS/b92b76c8b8ee49a18c488c240ef0d2d8"
+            "href": "/v2/autoscalePolicies/ALIAS/23a68b22e35b4983abd1051fae10ee7b"
           }
         ]
       }

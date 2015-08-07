@@ -67,7 +67,7 @@ Use this API operation when you want to get the details of a vertical autoscale 
 #### JSON
 ```json
     {
-      "id": "80a7bf90b199464b859399bff54f4173",
+      "id": "9d14822c1e8541cea11703cf2b078c9d",
       "name": "Production Database Scale Policy",
       "resourceType": "cpu",
       "thresholdPeriodMinutes": 5,
@@ -85,7 +85,7 @@ Use this API operation when you want to get the details of a vertical autoscale 
       "links": [
         {
           "rel": "self",
-          "href": "/v2/autoscalePolicies/ALIAS/80a7bf90b199464b859399bff54f4173"
+          "href": "/v2/autoscalePolicies/ALIAS/9d14822c1e8541cea11703cf2b078c9d"
         }
       ]
     }

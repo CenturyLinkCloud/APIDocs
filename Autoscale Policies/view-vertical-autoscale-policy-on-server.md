@@ -44,7 +44,7 @@ Use this API operation when you want to get the autoscale policy of a given serv
 #### JSON
 ```json
   {
-    "id": "21fa6f1239887d8fa33eca7105d5b807",
+    "id": "6c8d7b5349054fe6a532539ff066b53b",
     "links": [
       {
         "rel": "self",

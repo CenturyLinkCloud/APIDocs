@@ -41,7 +41,7 @@ Use this API operation when you want to set the autoscale policy of a server.
 #### JSON
 ```json
     {
-      "id": "21fa6f1239887d8fa33eca7105d5b807"
+      "id": "3440b69f139c435b8f9462b0661014fc"
     }
 ```
 ## Response
@@ -59,7 +59,7 @@ Use this API operation when you want to set the autoscale policy of a server.
 ```json
 
   {
-    "id": "21fa6f1239887d8fa33eca7105d5b807",
+    "id": "3440b69f139c435b8f9462b0661014fc",
     "links": [
       {
         "rel": "self",
