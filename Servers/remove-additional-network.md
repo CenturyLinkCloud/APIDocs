@@ -9,7 +9,7 @@ Removes a secondary network adapter from a given server in a given account. Call
 
 ### When to Use It
 
-Use this API operation when you need to remove a secondary network adapter from a server. You will need a [NetworkId](../Networks/networks-get-network-list) to de-associate with the server.
+Use this API operation when you need to remove a secondary network adapter from a server. You will need a [NetworkId](../Networks/networks-get-network-list.md) to de-associate with the server.
 
 ## URL
 
@@ -19,7 +19,7 @@ Use this API operation when you need to remove a secondary network adapter from 
 
 ### Example
 
-    DELETE https://api.ctl.io/v2/servers/ALIAS/WA1ALIASSERV0101/networks/478ac773cac24aa7b5e97bac7897fa5a
+    DELETE https://api.ctl.io/v2/servers/ALIAS/WA1ALIASSERV0101/networks/f49875b17cee4b8c99bf1ab75aa286d6
 
 ## Request
 
@@ -47,7 +47,7 @@ The response is a link to the [Get Status](../Queue/get-status.md) operation so 
 #### JSON
 ```json
   {
-    "operationId": "f0fa5be0ca8e4b3ea182899576fa2c77",
-    "uri": "http://api.ctl.io/v2-experimental/operations/ALIAS/status/f0fa5be0ca8e4b3ea182899576fa2c77"
+    "operationId": "6c8d7b5349054fe6a532539ff066b53b",
+    "uri": "http://api.ctl.io/v2-experimental/operations/ALIAS/status/6c8d7b5349054fe6a532539ff066b53b"
   }
 ```

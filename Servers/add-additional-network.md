@@ -9,7 +9,7 @@ Adds a secondary network adapter to a given server in a given account. Calls to 
 
 ### When to Use It
 
-Use this API operation when you need to add a secondary network adapter to a server. You will need a [NetworkId](../Networks/networks-get-network-list) to associate with the server. Users have the option to specify an IP address to assign to the server; otherwise the first available IP address in the network will be assigned. Up to four total network adapters can be attached to a server (i.e. a total of 3 secondary adapters). In addition, only one IP address per secondary network can be associated with a server.
+Use this API operation when you need to add a secondary network adapter to a server. You will need a [NetworkId](../Networks/networks-get-network-list.md) to associate with the server. Users have the option to specify an IP address to assign to the server; otherwise the first available IP address in the network will be assigned. Up to four total network adapters can be attached to a server (i.e. a total of 3 secondary adapters). In addition, only one IP address per secondary network can be associated with a server.
 
 ## URL
 
@@ -41,8 +41,8 @@ Use this API operation when you need to add a secondary network adapter to a ser
 ####JSON
 ```json
 {
-      "networkId": "478ac773cac24aa7b5e97bac7897fa5a",
-      "ipAddress": "192.168.1.1"
+      "networkId": "61a7e67908ce4bedabfdaf694a1360fe",
+      "ipAddress": "123.456.1.1"
 }
 ```
 
@@ -62,7 +62,7 @@ The response is a link to the [Get Status](../Queue/get-status.md) operation so 
 #### JSON
 ```json
   {
-    "operationId": "fae0a955636248838f957d98d44631b3",
-    "uri": "http://api.ctl.io/v2-experimental/operations/RSDA/status/fae0a955636248838f957d98d44631b3"
+    "operationId": "2b70710dba4142dcaf3ab2de68e4f40c",
+    "uri": "http://api.ctl.io/v2-experimental/operations/RSDA/status/2b70710dba4142dcaf3ab2de68e4f40c"
   }
 ```
