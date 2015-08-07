@@ -6,6 +6,7 @@
     "Anti-Affinity Policies",
     "Authentication",
     "Autoscale Policies",
+    "Billing",
     "Custom Fields",
     "Data Centers",
     "Firewall Policies",
