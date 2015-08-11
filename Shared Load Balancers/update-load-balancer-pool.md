@@ -28,7 +28,7 @@ Use this API operation to update the port, method, or persistence options for a 
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
 | AccountAlias | string | Short code for a particular account | Yes |
-| DataCenter | string | Short string representing the data center where the load balancer is. Valid codes can be retrieved from the [Get Data Center List](get-data-center.md) API operation. | Yes |
+| DataCenter | string | Short string representing the data center where the load balancer is. Valid codes can be retrieved from the [Get Data Center List](../Data Centers/get-data-center.md) API operation. | Yes |
 | LoadBalancerId | string | ID of the load balancer | Yes |
 | PoolId | string | ID of the pool to update | Yes |
 
@@ -44,7 +44,7 @@ Use this API operation to update the port, method, or persistence options for a 
 #### JSON
 
     {
-    	"method": "roundRobin",
+        "method": "roundRobin",
       "persistence": "standard"
     }
 

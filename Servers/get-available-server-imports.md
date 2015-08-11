@@ -9,17 +9,17 @@ Gets the list of available servers that can be imported. Calls to this operation
 
 ### When to Use It
 
-Use this API operation when you want to get the list of available OVFs that can be imported with the [Import Server](import-server.md) API. These OVFs are ones that have been uploaded to your FTP server as described in [Using Self-Service VM Import](http://www.centurylinkcloud.com/knowledge-base/servers/using-self-service-vm-import/).
+Use this API operation when you want to get the list of available OVFs that can be imported with the [Import Server](import-server.md) API. These OVFs are ones that have been uploaded to your FTP server as described in [Using Self-Service VM Import](http://www.ctl.io/knowledge-base/servers/using-self-service-vm-import/).
 
 ## URL
 
 ### Structure
 
-    GET https://api.ctl.io/v2/vmImport/{accountAlias}/available
+    GET https://api.ctl.io/v2/vmImport/{accountAlias}/{locationId}/available
 
 ### Example
 
-    GET https://api.ctl.io/v2/vmImport/ALIAS/available
+    GET https://api.ctl.io/v2/vmImport/ALIAS/WA1/available
 
 ## Request
 
@@ -28,10 +28,11 @@ Use this API operation when you want to get the list of available OVFs that can 
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
 | AccountAlias | string | Short code for a particular account | Yes |
+| LocationId | string | Data center location identifier | Yes |
 
 ## Response
 
-The response is an array of available servers for import. The list of available servers is dependent upon what OVFs have been uploaded to your FTP server as described in [Using Self-Service VM Import](http://www.centurylinkcloud.com/knowledge-base/servers/using-self-service-vm-import/).
+The response is an array of available servers for import. The list of available servers is dependent upon what OVFs have been uploaded to your FTP server as described in [Using Self-Service VM Import](http://www.ctl.io/knowledge-base/servers/using-self-service-vm-import/).
 
 ### Entity Definition
 

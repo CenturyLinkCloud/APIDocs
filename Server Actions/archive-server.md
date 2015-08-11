@@ -5,7 +5,7 @@
   "attachments": []
 }}}
 
-Sends the archive operation to a list of servers and adds operation to queue. (See [Understanding VM Deployment Options and Power States](http://www.centurylinkcloud.com/knowledge-base/servers/understanding-vm-deployment-options-and-power-states/#archive) for details on the archive operation.) Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](../Authentication/login.md) for information on acquiring this token.
+Sends the archive operation to a list of servers and adds operation to queue. (See [Understanding VM Deployment Options and Power States](http://www.ctl.io/knowledge-base/servers/understanding-vm-deployment-options-and-power-states/#archive) for details on the archive operation.) Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](../Authentication/login.md) for information on acquiring this token.
 
 ### When to Use It
 
