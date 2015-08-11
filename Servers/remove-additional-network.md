@@ -9,7 +9,7 @@ Removes a secondary network adapter from a given server in a given account. Call
 
 ### When to Use It
 
-Use this API operation when you need to remove a secondary network adapter from a server. You will need a [NetworkId](../Networks/networks-get-network-list.md) to de-associate with the server.
+Use this API operation when you need to remove a secondary network adapter from a server. You will need a [NetworkId](../Networks/get-network-list.md) to de-associate with the server.
 
 ## URL
 
