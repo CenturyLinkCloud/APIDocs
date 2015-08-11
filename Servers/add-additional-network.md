@@ -9,7 +9,7 @@ Adds a secondary network adapter to a given server in a given account. Calls to 
 
 ### When to Use It
 
-Use this API operation when you need to add a secondary network adapter to a server. You will need a [NetworkId](../Networks/networks-get-network-list.md) to associate with the server. Users have the option to specify an IP address to assign to the server; otherwise the first available IP address in the network will be assigned. Up to four total network adapters can be attached to a server (i.e. a total of 3 secondary adapters). In addition, only one IP address per secondary network can be associated with a server.
+Use this API operation when you need to add a secondary network adapter to a server. You will need a [NetworkId](../Networks/get-network-list.md) to associate with the server. Users have the option to specify an IP address to assign to the server; otherwise the first available IP address in the network will be assigned. Up to four total network adapters can be attached to a server (i.e. a total of 3 secondary adapters). In addition, only one IP address per secondary network can be associated with a server.
 
 ## URL
 
