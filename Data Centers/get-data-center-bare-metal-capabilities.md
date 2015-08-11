@@ -160,6 +160,11 @@ Use this API operation when you want to discover the available capabilities of r
           "hourlyRatePerSocket": 0.075
         },
         {
+          "type": "ubuntu14_64Bit",
+          "description": "Ubuntu 14 64-bit",
+          "hourlyRatePerSocket": 0
+        },
+        {
           "type": "windows2012R2Standard_64bit",
           "description": "Windows 2012 R2 Standard 64-bit",
           "hourlyRatePerSocket": 0.04
