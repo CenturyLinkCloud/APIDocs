@@ -9,7 +9,7 @@ Gets the status of the specified Blueprint deployment.
 
 ## URL
 
-    REST: https://api.ctl.io/REST/Blueprint/GetBlueprintStatus/<format> (format = XML | JSON)
+    REST: https://api.ctl.io/REST/Blueprint/GetDeploymentStatus/<format> (format = XML | JSON)
     SOAP: https://api.ctl.io/SOAP/Blueprints.asmx?op=GetDeploymentStatusMsg
 
 ## Request
