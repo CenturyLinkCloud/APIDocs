@@ -8,7 +8,7 @@
 
 Gets the charges for groups and servers within a given account, and for any date range. Calls to this operation must include an authorization cookie acquired from the [Logon operation](../Authentication/logon.md).
 
-##URL
+## URL
 
     REST: https://api.ctl.io/REST/Billing/GetGroupSummaries/<format> (format = XML | JSON)
     SOAP: https://api.ctl.io/SOAP/Billing.asmx?op=GetGroupSummaries
