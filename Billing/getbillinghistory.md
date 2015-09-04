@@ -21,7 +21,9 @@ Gets the entire billing history for a given account or collection of accounts. C
 | --- | --- | --- | --- |
 | AccountAlias | String | Short code for a particular account. | Yes |
 
+
 ### Examples
+
 
 #### JSON (REST)
 
@@ -74,7 +76,7 @@ Gets the entire billing history for a given account or collection of accounts. C
 | Credit | Decimal | Credits applied to the account during this invoice period. |
 | OutstandingBalance | Decimal | Total balance due for this invoice. |
 
-###Examples
+### Examples
 
 #### JSON (REST)
 
