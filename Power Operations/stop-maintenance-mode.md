@@ -21,7 +21,7 @@ Use this API operation when you want to explicitly stop maintenance mode on mult
 
     POST https://api.ctl.io/v2/operations/ALIAS/servers/stopMaintenance
 
-##Request
+## Request
 
 ### URI Parameters
 

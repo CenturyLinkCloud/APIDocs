@@ -29,7 +29,7 @@ Use this API operation when you want to pause a single server or group of server
 | --- | --- | --- | --- |
 | AccountAlias | string | Short code for a particular account | Yes |
 
-###Content Properties
+### Content Properties
 
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
