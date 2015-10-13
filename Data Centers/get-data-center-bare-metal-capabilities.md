@@ -168,6 +168,11 @@ Use this API operation when you want to discover the available capabilities of r
           "type": "windows2012R2Standard_64bit",
           "description": "Windows 2012 R2 Standard 64-bit",
           "hourlyRatePerSocket": 0.04
+        },
+        {
+          "type": "windows2012R2Datacenter_64bit",
+          "description": "Windows 2012 R2 Datacenter 64-bit",
+          "hourlyRatePerSocket": 0.279
         }
       ]
     }
