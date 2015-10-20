@@ -1,15 +1,15 @@
 {{{
   "title": "Group Scheduled Activities",
-  "date": "02-27-2015",
-  "author": "Bryan Friedman",
+  "date": "10-20-2015",
+  "author": "Johann Tang",
   "attachments": []
 }}}
 
-Get group scheduled activities. Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](../Authentication/login.md) for information on acquiring this token.
+Gets the scheduled activities associated with a group. Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](../Authentication/login.md) for information on acquiring this token.
 
 ### When to Use It
 
-Use this API operation when you want to get group scheduled activities.
+Use this API operation when you want to get the scheduled activities for a group.
 
 ## URL
 
@@ -28,7 +28,7 @@ Use this API operation when you want to get group scheduled activities.
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
 | AccountAlias | string | Short code for a particular account | Yes |
-| GroupID | string | ID of the group being queried. Retrieved from query to parent group, or by looking at the URL on the new UI pages in the Control Portal | Yes |
+| GroupID | string | ID of the group being queried. Retrieved from query to parent group, or by looking at the URL of the Group in the Control Portal UI. | Yes |
 
 ## Response
 

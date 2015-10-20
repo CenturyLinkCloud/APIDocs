@@ -1,15 +1,15 @@
 {{{
   "title": "Group Defaults",
-  "date": "02-27-2015",
-  "author": "Bryan Friedman",
+  "date": "10-20-2015",
+  "author": "Johann Tang",
   "attachments": []
 }}}
 
-Set group defaults. Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](../Authentication/login.md) for information on acquiring this token.
+Sets the defaults for a group. Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](../Authentication/login.md) for information on acquiring this token.
 
 ### When to Use It
 
-Use this API operation when you want to set group defaults.
+Use this API operation when you want to set defaults for a group.
 
 ## URL
 
@@ -28,7 +28,7 @@ Use this API operation when you want to set group defaults.
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
 | AccountAlias | string | Short code for a particular account | Yes |
-| GroupID | string | ID of the group being queried. Retrieved from query to parent group, or by looking at the URL on the new UI pages in the Control Portal | Yes |
+| GroupID | string | ID of the group being queried. Retrieved from query to parent group, or by looking at the URL of the Group in the Control Portal UI. | Yes |
 
 ### Content Properties
 

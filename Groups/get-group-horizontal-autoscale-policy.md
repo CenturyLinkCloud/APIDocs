@@ -1,11 +1,11 @@
 {{{
   "title": "Group Horizontal Autoscale Policy",
-  "date": "02-27-2015",
-  "author": "Bryan Friedman",
+  "date": "10-20-2015",
+  "author": "Johann Tang",
   "attachments": []
 }}}
 
-Retrieves the details of a horizontal autoscale policy associated to a Group. Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](../Authentication/login.md) for information on acquiring this token.
+Retrieves the details of a horizontal autoscale policy associated with a group. Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](../Authentication/login.md) for information on acquiring this token.
 
 ### When to Use It
 
@@ -42,7 +42,7 @@ Use this API operation when you want to get a horizontal autoscale policy associ
 | targetSize | int | Number of servers to scale to |
 | scaleDirection | string | Direction to Scale (In or Out ) |
 | scaleResourceReason | string | Reason for scaling, either: CPU, Memory, MinimumResourceCount, or None |
-| loadBalancer | complex | <usually we have some explainer here?> |
+| loadBalancer | complex | Information about the load balancer associated with the policy |
 | links | array | Collection of [entity links](../Getting Started/api-v20-links-framework.md) that point to resources related to this data center |
 
 ### Load Balancer Definition
