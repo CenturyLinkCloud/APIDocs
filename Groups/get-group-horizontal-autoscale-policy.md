@@ -5,11 +5,11 @@
   "attachments": []
 }}}
 
-Get group horizontal autoscale policy. Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](../Authentication/login.md) for information on acquiring this token.
+Retrieves the details of a horizontal autoscale policy associated to a Group. Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](../Authentication/login.md) for information on acquiring this token.
 
 ### When to Use It
 
-Use this API operation when you want to get group horizontal autoscale policy.
+Use this API operation when you want to get a horizontal autoscale policy associated to a Group.
 
 ## URL
 
@@ -28,21 +28,21 @@ Use this API operation when you want to get group horizontal autoscale policy.
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
 | AccountAlias | string | Short code for a particular account | Yes |
-| GroupID | string | ID of the group being queried. Retrieved from query to parent group, or by looking at the URL on the new UI pages in the Control Portal | Yes |
+| GroupID | string | ID of the group being queried. Retrieved from query to parent group, or by looking at the URL of the Group in the Control Portal UI. | Yes |
 
 ## Response
 
 | Name | Type | Description |
 | --- | --- | --- |
 | groupId | string | ID of the group |
-| policyId | string | The unique identifier of the autoscale policy. |
+| policyId | string | The unique identifier of the autoscale policy |
 | locationId | string | Data center location identifier |
 | name | string | Name of the Policy |
 | availableServers | int | The number of servers available for scaling |
 | targetSize | int | Number of servers to scale to |
 | scaleDirection | string | Direction to Scale (In or Out ) |
 | scaleResourceReason | string | Reason for scaling, either: CPU, Memory, MinimumResourceCount, or None |
-| loadBalancer | complex | |
+| loadBalancer | complex | <usually we have some explainer here?> |
 | links | array | Collection of [entity links](../Getting Started/api-v20-links-framework.md) that point to resources related to this data center |
 
 ### Load Balancer Definition
