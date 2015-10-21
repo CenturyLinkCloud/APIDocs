@@ -73,6 +73,7 @@
 | 43 | Windows 2008 R2 Standard 64-Bit |
 | 44 | Windows 2008 R2 Enterprise 64-Bit |
 | 45 | Windows 2008 R2 Datacenter 64-Bit |
+| 46 | Windows 2012 R2 Standard 64-bit |
 
 ### IPAddress Attributes
 
