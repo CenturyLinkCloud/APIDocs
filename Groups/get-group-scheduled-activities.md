@@ -1,5 +1,5 @@
 {{{
-  "title": "Group Scheduled Activities",
+  "title": "Get Group Scheduled Activities",
   "date": "10-20-2015",
   "author": "Johann Tang",
   "attachments": []
