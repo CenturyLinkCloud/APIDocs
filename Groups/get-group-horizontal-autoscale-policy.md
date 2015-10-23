@@ -1,5 +1,5 @@
 {{{
-  "title": "Group Horizontal Autoscale Policy",
+  "title": "Get Group Horizontal Autoscale Policy",
   "date": "10-20-2015",
   "author": "Johann Tang",
   "attachments": []

@@ -1,5 +1,5 @@
 {{{
-  "title": "Group Defaults",
+  "title": "Set Group Defaults",
   "date": "10-20-2015",
   "author": "Johann Tang",
   "attachments": []
