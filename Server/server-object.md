@@ -35,33 +35,15 @@
 
 | Operating System | Description |
 | --- | --- |
-| 2 | Windows 2003 32-bit |
-| 3 | Windows 2003 64-bit |
-| 4 | Windows 2008 32-bit |
-| 5 | Windows 2008 64-bit |
-| 6 | CentOS 32-bit |
 | 7 | CentOS 64-bit |
-| 13 | FreeBSD 32-bit |
-| 14 | FreeBSD 64-bit |
-| 15 | Windows 2003 Enterprise 32-bit |
-| 16 | Windows 2003 Enterprise 64-bit |
-| 17 | Windows 2008 Enterprise 32-bit |
-| 18 | Windows 2008 Enterprise 64-bit |
-| 19 | Ubuntu 32-bit |
 | 20 | Ubuntu 64-bit |
 | 21 | Debian 64-bit |
 | 22 | RedHat Enterprise Linux 64-bit |
-| 24 | Windows 2012 64-bit |
 | 25 | RedHat Enterprise Linux 5 64-bit |
-| 26 | Windows 2008 Datacenter 64-bit |
 | 27 | Windows 2012 Datacenter 64-bit |
 | 28 | Windows 2012 R2 Datacenter 64-Bit |
-| 29 | Ubuntu 10 32-Bit |
-| 30 | Ubuntu 10 64-Bit |
 | 31 | Ubuntu 12 64-Bit |
-| 32 | CentOS 5 32-Bit |
 | 33 | CentOS 5 64-Bit |
-| 34 | CentOS 6 32-Bit |
 | 35 | CentOS 6 64-Bit |
 | 36 | Debian 6 64-Bit |
 | 37 | Debian 7 64-Bit |
@@ -116,7 +98,7 @@
           "IPAddress": null,
           "ServerType": 1,
           "ServiceLevel": 2,
-          "OperatingSystem": 20,
+          "OperatingSystem": 41,
           "DateModified": "\/Date(1358410186310)\/",
           "ModifiedBy": "CenturyLink Cloud System",
           "IPAddresses": [],
@@ -141,7 +123,7 @@
           "IPAddress": "10.81.14.18",
           "ServerType": 1,
           "ServiceLevel": 2,
-          "OperatingSystem": 24,
+          "OperatingSystem": 28,
           "DateModified": "\/Date(1358793254250)\/",
           "ModifiedBy": "bob@company.com",
           "IPAddresses": [],
