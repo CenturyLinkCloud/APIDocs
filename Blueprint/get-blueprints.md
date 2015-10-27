@@ -19,7 +19,7 @@ Gets a list of all Blueprints with the specified search criteria.
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
 | CompanySize | Int | The target company size the of the Blueprint<br/>1 = 1 - 100<br/>2 = 101 - 1,000<br/>3 = 1,001 - 5,000<br/>4 =  5,000+ | No |
-| OperatingSystems | Int[] | A list of the operating systems that a Blueprint contains<br/>Cent OS - 32 bit = 6<br/>Cent OS - 64 bit = 7<br/>Debian - 64 bit = 21<br/>Free BSD - 32 bit = 13<br/>Free BSD - 64 bit = 14<br/>Ubuntu - 32 bit = 19<br/>Ubuntu - 64 bit = 20<br/>Windows 2003 Enterprise - 32 bit = 15<br/>Windows2003 Enterprise - 64 bit = 16<br/>Windows 2003 - 32 bit = 2<br/>Windows 2003 - 64 bit = 3<br/>Windows 2008 - 32 bit = 4<br/>Windows 2008 - 64 bit = 5<br/>Windows 2008 Enterprise - 32 bit = 17<br/>Windows 2008 Enterprise - 64 bit = 18 |  No |
+| OperatingSystems | Int [] | A list of the operating systems that a Blueprint contains<br/>Cent OS - 64 bit = 7<br/>Ubuntu - 64 bit = 20<br/>Debian 64-bit = 21<br />RedHat Enterprise Linux 64-bit = 22 <br/> RedHat Enterprise Linux 5 64-bit = 25<br/>Windows 2012 Datacenter 64-bit = 27<br/>Windows 2012 R2 Datacenter 64-bit = 28<br/>Ubuntu 12 64-Bit = 31<br/>CentOS 5 64-Bit = 33<br/> CentOS 6 64-Bit = 35<br/> Debian 6 64-Bit = 36 <br/>Debian 7 64-Bit = 37<br/>RedHat 6  64-Bit = 38<br/>CoreOS = 39<br/>PXE Boot = 40<br/>Ubuntu 14 64-Bit = 41<br/>RedHat 7 64-Bit = 42<br/>Windows 2008 R2 Standard 64-Bit = 43<br/>Windows 2008 R2 Enterprise 64-Bit = 44<br/>Windows 2008 R2 Datacenter 64-Bit = 45 |  No |
 | Search | String | A keyword search within the Name and Description of the Blueprint | No |
 | Visibility | Int | The visibility level of the Blueprint.<br/>1 = Public<br/>2 = Private<br/>3 = Private Shared | Yes |
 
@@ -29,7 +29,7 @@ Gets a list of all Blueprints with the specified search criteria.
 
     {
       "CompanySize": "2",
-      "OperatingSystems": [ 4, 5, 17, 18],
+      "OperatingSystems": [ 7, 20, 22, 28],
       "Search": "High Performance",
       "Visibility": 1
     }
@@ -39,10 +39,10 @@ Gets a list of all Blueprints with the specified search criteria.
     <GetBlueprintsRequest>
           <CompanySize>2</CompanySize>
           <OperatingSystems>
-              <OS>4</OS>
-              <OS>5</OS>
-              <OS>17</OS>
-              <OS>18</OS>
+              <OS>7</OS>
+              <OS>20</OS>
+              <OS>22</OS>
+              <OS>28</OS>
           </OperatingSystems>
           <Search>High Performance</Search>
           <Visibility>1</Visibility>
