@@ -15,11 +15,11 @@ Use this API operation when you want to set defaults for a group.
 
 ### Structure
 
-    POST https://api.ctl.io/v2/groups/{accountAlias}/{groupId}
+    POST https://api.ctl.io/v2/groups/{accountAlias}/{groupId}/defaults
 
 ### Example
 
-    POST https://api.ctl.io/v2/groups/ALIAS/2a5c0b9662cf4fc8bf6180f139facdc0
+    POST https://api.ctl.io/v2/groups/ALIAS/2a5c0b9662cf4fc8bf6180f139facdc0/defaults
 
 ## Request
 
