@@ -1,7 +1,7 @@
 {{{
   "title": "Archive Server",
-  "date": "2-6-2013",
-  "author": "Troy Schneringer",
+  "date": "10-29-2013",
+  "author": "Anthony Hakim",
   "attachments": []
 }}}
 
@@ -25,7 +25,10 @@ Archives the server.
 
 #### JSON
 
-    { "Name": "SERVER01" }
+    {
+      "AccountAlias":"UNK",
+      "Name": "SERVER01"
+    }
 
 #### XML
 
