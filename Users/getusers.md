@@ -64,8 +64,9 @@ Gets all of users assigned to a given account. Calls to this operation must incl
 
 | Name | Type | Description |
 | --- | --- | --- |
+| AccountAlias | String | Short code for a particular account. |
 | UserName | String | User name, which is typically the email address. |
-| EmailAddress | String | Email address of the user. |
+| EmailAddress | String | Email address for the user. |
 | FirstName | String | First name of the user. |
 | LastName | String | Last name of the user. |
 | AlternateEmailAddress | String | Additional email address for the user. |
@@ -74,8 +75,11 @@ Gets all of users assigned to a given account. Calls to this operation must incl
 | MobileNumber | String | Mobile phone number of the user. |
 | AllowSMS | Boolean | Flag indicating whether this user can receive SMS messages. |
 | FaxNumber | String | Fax number for the user. |
+| SAMLUserName | String | Name used for single-sign-on process. |
 | TimeZoneID | String | Time zone that the user resides in. |
+| Status | String | Status of the user. May be 'Active', 'Disabled' or 'Deleted'. |
 | Roles | Integer[] | List of values indicating the roles assigned to this user.<br/>2 = Server Administrator<br/>3 = Billing Manager<br/>8 = DNS Manager<br/>9 = Account Administrator<br/>10 = Account Viewer<br/>12 = Network Manager<br/>13 = Security Manager<br/>14 = Server Operator<br/>15 = Server Scheduler |
+
 
 ### Examples
 
