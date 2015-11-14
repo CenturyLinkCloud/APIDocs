@@ -15,7 +15,7 @@ Use this API operation when you want to check the status of a specific job in th
 
 ### Structure
 
-    GET https://api.ctl.io/v2/operations/{acctAlias}/status/{statusId}
+    GET https://api.ctl.io/v2/operations/{accountAlias}/status/{statusId}
 
 ### Example
 
