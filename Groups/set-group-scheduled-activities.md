@@ -15,11 +15,11 @@ Use this API operation when you want to set scheduled activities for a group.
 
 ### Structure
 
-    PUT https://api.ctl.io/v2/groups/{accountAlias}/{groupId}/ScheduledActivities/
+    POST https://api.ctl.io/v2/groups/{accountAlias}/{groupId}/ScheduledActivities/
 
 ### Example
 
-    PUT https://api.ctl.io/v2/groups/ALIAS/2a5c0b9662cf4fc8bf6180f139facdc0/ScheduledActivities
+    POST https://api.ctl.io/v2/groups/ALIAS/2a5c0b9662cf4fc8bf6180f139facdc0/ScheduledActivities
 
 ## Request
 
