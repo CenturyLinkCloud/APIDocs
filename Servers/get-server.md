@@ -39,6 +39,7 @@ Use this API operation when you want to find out all the details for a server. I
 | --- | --- | --- |
 | id | string | ID of the server being queried |
 | name | string | Name of the server |
+| displayName | string | Friendly display name for the server (can be the same as the name) |
 | description | string | User-defined description of this server |
 | groupId | string | ID of the parent group |
 | isTemplate | boolean | Boolean indicating whether this is a custom template or running server |
