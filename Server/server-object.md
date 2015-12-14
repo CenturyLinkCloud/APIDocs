@@ -21,8 +21,8 @@
 | IsTemplate  | Bool  | True if the Server is a template, else False. |
 | IsHyperscale  | Bool  | True if the Server is a Hyperscale instance, else False. |
 | Status  | Json:Int / Xml:String | `Active`, `Archived`, `Deleted`, `UnderConstruction`, `QueuedForArchive`, `QueuedForDelete`, or `QueuedForRestore` |
-| ServerType | Int | The type of server. `Standard` or `Premium` |
-| ServiceLevel | Int | The service level/performance for the underlying data store.  `Standard` or `Premium` |
+| ServerType | String | The type of server. `Standard` or `Premium` |
+| ServiceLevel | String | The service level/performance for the underlying data store.  `Standard` or `Premium` |
 | OperatingSystem | Int | Operating System of the server (see below). |
 | PowerState | Json:Int / Xml:String | The current power state of the Server.<br/>0 = Stopped<br/>1 = Started<br/>2 = Paused |
 | InMaintenanceMode | Boolean | Indicates if the Server is in Maintenance Mode. |
