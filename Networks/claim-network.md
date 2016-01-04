@@ -54,8 +54,8 @@ Use this API operation when you need to claim a network in a given data center y
   }
 ```
 
-NOTE: To get the status of the "claim network" operation, query the `href` in the response. To do this, follow these steps:
+NOTE: To get the status of the "claim network" operation, query the `href` in the response. This will provide status, but no details about the network itself. For more details about the claim network operation, follow these steps:
 
 1. Login to the Control Portal.
-2. Split the location (characters before the `-` in the id), and the numbers after the `-`), and enter them into the address bar of your browser in the following format: `https://control.ctl.io/Blueprints/Queue/RequestDetails/91567?location=wa1`
-3. The response at this URL will then provide status details, but no information about the network itself.
+2. Split the location (characters before the `-` in the id), and the job number (the string after the `-`), and enter them into the address bar of your browser in the following format: `https://control.ctl.io/Blueprints/Queue/RequestDetails/91567?location=wa1`
+3. The response at this URL will then provide more details about the network being claimed.
