@@ -1,6 +1,6 @@
 {{{
   "title": "Claim Network",
-  "date": "5-22-2015",
+  "date": "1-5-2016",
   "author": "Jared Ruckle",
   "attachments": []
 }}}
@@ -32,58 +32,30 @@ Use this API operation when you need to claim a network in a given data center y
 | accountAlias | string | Short code for a particular account | Yes |
 | dataCenter | string | Short string representing the data center you are querying. Valid codes can be retrieved from the [Get Data Center List](../Data Centers/get-data-center.md) API operation. | Yes |
 
-## Response
+## Response [UPDATED JANUARY 6 2016]
 
 ### Entity Definition
 
 | Name | Type | Description |
 | --- | --- | --- |
-| id | string | ID of the network  |
-| cidr | string | The network address, specified using [CIDR notation](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) |
-| description | string | Description of VLAN, a free text field that defaults to the VLAN number combined with the network address |
-| gateway | string | Gateway IP address of the network |
-| name | string | User-defined name of the network; the default is the VLAN number combined with the network address |
-| netmask | string | A screen of numbers used for routing traffic within a subnet |
-| type | string | Network type, usually `private` for networks created by the user |
-| vlan | integer | Unique number assigned to the VLAN |
-| links | array | Collection of [entity links](../Getting Started/api-v20-links-framework.md) that point to resources related to networks |
+| links | array | Collection of [entity links](../Getting Started/api-v20-links-framework.md) that point to resources related to networks. |
 
 ### Examples
 
 #### JSON
-```json
-{
-    "id": "e1c1ab9ba070486bbbf114d7bbf556c4",
-    "cidr": "11.22.33.0/24",
-    "description": "vlan_9999_11.22.33",
-    "gateway": "11.22.33.1",
-    "name": "vlan_9999_11.22.33",
-    "netmask": "255.255.255.0",
-    "type": "private",
-    "vlan": 9999,
-    "links": [
-        {
-            "rel": "self",
-            "href": "http://api.ctl.io/v2-experimental/networks/ALIAS/WA1/e1c1ab9ba070486bbbf114d7bbf556c4",
-            "verbs": [
-                "GET",
-                "PUT"
-            ]
-        },
-        {
-            "rel": "ipAddresses",
-            "href": "http://api.ctl.io/v2-experimental/networks/ALIAS/WA1/e1c1ab9ba070486bbbf114d7bbf556c4/ipAddresses",
-            "verbs": [
-                "GET"
-            ]
-        },
-        {
-            "rel": "release",
-            "href": "http://api.ctl.io/v2-experimental/networks/ALIAS/WA1/e1c1ab9ba070486bbbf114d7bbf556c4/release",
-            "verbs": [
-                "POST"
-            ]
-        }
-    ]
-}
 ```
+  {
+    "rel": "status",
+
+    "href": "/v2/operations/qcp/status/wa1-91567",
+
+    "id": "wa1-91567"
+
+  }
+```
+
+NOTE: To get the status of the "claim network" operation, query the `href` in the response. To do this, follow these steps:
+
+1. Login to the Control Portal.
+2. Split the location (characters before the `-` in the id), and the numbers after the `-`), and enter them into the address bar of your browser in the following format: `https://control.ctl.io/Blueprints/Queue/RequestDetails/91567?location=wa1`
+3. The response at this URL will then provide status details, but no information about the network itself.
