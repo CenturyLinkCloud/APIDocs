@@ -80,6 +80,7 @@ Gets the details of a specific user associated with a given account. Calls to th
 | FaxNumber | String | Fax number for the user. |
 | SAMLUserName | String | Name used for single-sign-on process. |
 | TimeZoneID | String | Time zone that the user resides in. |
+| Status | String | Status of the user. May be 'Active', 'Disabled' or 'Deleted'. |
 | Roles | Integer[] | List of values indicating the roles assigned to this user.<br/>2 = Server Administrator<br/>3 = Billing Manager<br/>8 = DNS Manager<br/>9 = Account Administrator<br/>10 = Account Viewer<br/>12 = Network Manager<br/>13 = Security Manager<br/>14 = Server Operator<br/>15 = Server Scheduler |
 
 ### Examples
