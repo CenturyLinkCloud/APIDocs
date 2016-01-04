@@ -32,7 +32,7 @@ Use this API operation when you need to claim a network in a given data center y
 | accountAlias | string | Short code for a particular account | Yes |
 | dataCenter | string | Short string representing the data center you are querying. Valid codes can be retrieved from the [Get Data Center List](../Data Centers/get-data-center.md) API operation. | Yes |
 
-## Response [UPDATED JANUARY 6 2016]
+## Response [UPDATED JANUARY 5 2016]
 
 ### Entity Definition
 
@@ -47,14 +47,14 @@ Use this API operation when you need to claim a network in a given data center y
   {
     "rel": "status",
 
-    "href": "/v2/operations/qcp/status/wa1-91567",
+    "href": "/v2/operations/ALIAS/status/wa1-91567",
 
     "id": "wa1-91567"
 
   }
 ```
 
-NOTE: To get the status of the "claim network" operation, query the `href` in the response. This will provide status, but no details about the network itself. For more details about the claim network operation, follow these steps:
+NOTE: To get the status of the "claim network" operation, query the `href` in the response, using the short code for your account alias in the string. This will provide status, but no details about the network itself. For more details about the claim network operation, follow these steps:
 
 1. Login to the Control Portal.
 2. Split the location (characters before the `-` in the id), and the job number (the string after the `-`), and enter them into the address bar of your browser in the following format: `https://control.ctl.io/Blueprints/Queue/RequestDetails/91567?location=wa1`
