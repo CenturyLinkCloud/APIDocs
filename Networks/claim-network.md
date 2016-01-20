@@ -32,30 +32,82 @@ Use this API operation when you need to claim a network in a given data center y
 | accountAlias | string | Short code for a particular account | Yes |
 | dataCenter | string | Short string representing the data center you are querying. Valid codes can be retrieved from the [Get Data Center List](../Data Centers/get-data-center.md) API operation. | Yes |
 
-## Response [UPDATED JANUARY 5 2016]
+## Response [UPDATED JANUARY 19 2016]
 
 ### Entity Definition
 
 | Name | Type | Description |
 | --- | --- | --- |
-| links | array | Collection of [entity links](../Getting Started/api-v20-links-framework.md) that point to resources related to networks. |
+| operationId | string | Unique identifier for network claim operation |
+| uri | string | URI to check status of operation |
 
 ### Examples
 
-#### JSON
+#### Initial Response Example
+
+The initial response from the Claim Network API provides the unique identifier for the asynchronous operation to claim the network and a URI to check the status of that operation.
+
 ```
-  {
-    "rel": "status",
+{
+  "operationId": "c387aa9873ab4f7399ea8964dd61510d",
+  "uri": "/v2-experimental/operations/{accountAlias}/status/{operationId}"
+}
+```
 
-    "href": "/v2/operations/ALIAS/status/wa1-91567",
+While the operation is executing, the response from the operation URI will provide a summary of the operation.
 
-    "id": "wa1-91567"
-
+```
+{
+  "requestType": "blueprintOperation",
+  "status": "running",
+  "summary": {
+    "blueprintId": 92121,
+    "locationId": "{locationAlias}"
+  },
+  "source": {
+    "userName": "{requestedUser}",
+    "requestedAt": "2016-01-11T18:39:07Z"
   }
+}
 ```
 
-NOTE: To get the status of the "claim network" operation, query the `href` in the response, using the short code for your account alias in the string. This will provide status, but no details about the network itself. For more details about the claim network operation, follow these steps:
+When the operation completes successfully the response will provide a status property as "succeeded" and a link to the claimed network.
 
-1. Login to the Control Portal.
-2. Split the location (characters before the `-` in the id), and the job number (the string after the `-`), and enter them into the address bar of your browser in the following format: `https://control.ctl.io/Blueprints/Queue/RequestDetails/91567?location=wa1`
-3. The response at this URL will then provide more details about the network being claimed.
+```
+{
+  "requestType": "blueprintOperation",
+  "status": "succeeded",
+  "summary": {
+    "blueprintId": 92121,
+    "locationId": "{locationAlias}",
+    "links": [
+      {
+        "rel": "network",
+        "href": "/v2-experimental/networks/{accountAlias}/{locationAlias}/{networkId}",
+        "id": "{networkId}"
+      }
+    ]
+  },
+  "source": {
+    "userName": "{requestedUser}",
+    "requestedAt": "2016-01-11T18:39:07Z"
+  }
+}
+```
+
+If the operation to claim a network were to fail, the response will come back with status "failed" along with the operation summary information.
+
+```
+{
+  "requestType": "blueprintOperation",
+  "status": "failed",
+  "summary": {
+    "blueprintId": 92123,
+    "locationId": "{locationId}"
+  },
+  "source": {
+    "userName": "{requestedUser}",
+    "requestedAt": "2016-01-11T18:43:42Z"
+  }
+}
+```
