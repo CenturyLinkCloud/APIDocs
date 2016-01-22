@@ -43,8 +43,6 @@ Use this API operation when you need to claim a network in a given data center y
 
 ### Examples
 
-#### Initial Response Example
-
 The initial response from the Claim Network API provides the unique identifier for the asynchronous operation to claim the network and a URI to check the status of that operation.
 
 ```
