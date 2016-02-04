@@ -19,7 +19,7 @@ Gets the list of Networks mapped to the account in its Primary Data Center.
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
 | AccountAlias | String | Short code for a particular account. If not provided, then the API user's account is used. | No |
-| Location | String | The alias of the data center in which to create the server. If not provided, will default to the API user's default data center. | No |
+| Location | String | The alias of the primary data center. | No |
 
 ### Examples
 
