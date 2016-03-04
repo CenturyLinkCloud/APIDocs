@@ -29,6 +29,11 @@ Use this API operation when you want to set scheduled activities for a group.
 | --- | --- | --- | --- |
 | accountAlias | string | Short code for a particular account | Yes |
 | GroupID | string | ID of the group being queried. Retrieved from query to parent group, or by looking at the URL of the Group in the Control Portal UI. | Yes |
+
+### Content Properties
+
+| Name | Type | Description | Req. |
+| --- | --- | --- | --- |
 | status | string | State of scheduled activity: on or off | Yes |
 | type | string| Type of activity: archive, createsnapshot, delete, deletesnapshot, pause, poweron, reboot, shutdown | Yes |
 | beginDateUTC | datetime | Time when scheduled activity should start | Yes |
