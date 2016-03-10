@@ -12,6 +12,7 @@
     "Firewall Policies",
     "Groups",
     "Group Actions",
+    "Intrusion Protection",
     "Networks",
     "Power Operations",
     "Public IP",
