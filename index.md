@@ -12,7 +12,7 @@
     "Firewall Policies",
     "Groups",
     "Group Actions",
-    "Intrusion Protection",
+    "Intrusion Prevention (IPS)“,
     "Networks",
     "Power Operations",
     "Public IP",
