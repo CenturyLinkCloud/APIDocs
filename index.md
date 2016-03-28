@@ -14,6 +14,7 @@
     "Group Actions",
     "Intrusion Protection",
     "Networks",
+    "Patching",
     "Power Operations",
     "Public IP",
     "Queue",
