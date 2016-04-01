@@ -6,11 +6,11 @@
   "sticky": "true"
 }}}
 
-DESCRIPTION. Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](../Authentication/login.md) for information on acquiring this token.
+Gets a list of Server Policies associated to an Account Policy. A server policy is unique record that ties a backup (account) policy to a specific server and storage region.  Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](../Authentication/login.md) for information on acquiring this token.
 
 ### When to Use It
 
-Use this API operation when you want to . It can be used to .
+Use this API operation when you want to . It can be used to . Test
 
 ## URL
 
