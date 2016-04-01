@@ -1,9 +1,9 @@
 {{{
-  "title": "Get Policies",
+  "title": "Get Datacenter List",
   "date": "04-01-2016",
   "author": "Ryan Brockman",
   "attachments": [],
-  "sticky": "true"
+  "sticky": "false"
 }}}
 
 DESCRIPTION. Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](../Authentication/login.md) for information on acquiring this token.
@@ -16,35 +16,20 @@ Use this API operation when you want to . It can be used to .
 
 ### Structure
 
-    GET https://api-va1.backup.ctl.io/clc-backup-api/
+    GET https://api-va1.backup.ctl.io/clc-backup-api/api/datacenters
 
 ### Example
 
-    GET https://api-va1.backup.ctl.io/clc-backup-api/
-
-## Request
-
-### URI Parameters
-
-| Name | Type | Description | Req. |
-| --- | --- | --- | --- |
-| AccountAlias | string | Short code for a particular account | Yes |
+    GET https://api-va1.backup.ctl.io/clc-backup-api/api/datacenters
 
 
 ## Response
 
-### Server Entity Definition
+### List Definition
 
 | Name | Type | Description |
 | --- | --- | --- |
-| id | string | ID of the server being queried |
-
-
-### Details Definition
-
-| Name | Type | Description |
-| --- | --- | --- |
-| ipAddresses | complex | Details about IP addresses associated with the server |
+| list | Array[string] | Array of string values corresponding to each datacenter |
 
 
 ### Examples
