@@ -10,7 +10,7 @@ Gets a list of Server Policies associated to an Account Policy. A server policy 
 
 ### When to Use It
 
-Use this API operation when you want to . It can be used to .
+Use this API operation when you want to . It can be used to . Test
 
 ## URL
 
