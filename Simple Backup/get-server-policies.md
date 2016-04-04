@@ -16,11 +16,11 @@ Use this API operation when you want to get a list of all Server Policies attach
 
 ### Structure
 
-    GET https://api-va1.backup.ctl.io/clc-backup-api/api/accountPolicies/{accountPolicyId}/serverPolicies
+    GET https://api.backup.ctl.io/clc-backup-api/api/accountPolicies/{accountPolicyId}/serverPolicies
 
 ### Example
 
-    GET https://api-va1.backup.ctl.io/clc-backup-api/api/accountPolicies/7796a750-db6a-4d6d-a9c0-93f729e9977e/serverPolicies
+    GET https://api.backup.ctl.io/clc-backup-api/api/accountPolicies/5fde14a2-fa9d-4376-9f01-59429d02a959/serverPolicies
 
 ## Request
 
@@ -28,7 +28,7 @@ Use this API operation when you want to get a list of all Server Policies attach
 
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
-| accountPolicyId | string | Unique ID of an existing account policy | Yes |
+| accountPolicyId | string | Unique ID of an account policy | Yes |
 | limit | integer | | No |
 | offset | string | | No |
 | withStatus | string |  | No |
