@@ -1,56 +1,42 @@
 {{{
-  "title": "Get Policies",
+  "title": "Get OS Types",
   "date": "04-01-2016",
   "author": "Ryan Brockman",
   "attachments": [],
   "sticky": "true"
 }}}
 
-DESCRIPTION. Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](../Authentication/login.md) for information on acquiring this token.
+Returns the list of valid OS types supported by Simple Backup Service. Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](../Authentication/login.md) for information on acquiring this token.
 
 ### When to Use It
 
-Use this API operation when you want to . It can be used to .
+Use this API operation when you want to retrieve the list of supported OS types.
 
 ## URL
 
 ### Structure
 
-    GET https://api-va1.backup.ctl.io/clc-backup-api/
+    GET https://api-va1.backup.ctl.io/clc-backup-api/api/osTypes
 
 ### Example
 
-    GET https://api-va1.backup.ctl.io/clc-backup-api/
-
-## Request
-
-### URI Parameters
-
-| Name | Type | Description | Req. |
-| --- | --- | --- | --- |
-| AccountAlias | string | Short code for a particular account | Yes |
+    GET https://api-va1.backup.ctl.io/clc-backup-api/api/osTypes
 
 
 ## Response
 
-### Server Entity Definition
+### List Definition
 
 | Name | Type | Description |
 | --- | --- | --- |
-| id | string | ID of the server being queried |
-
-
-### Details Definition
-
-| Name | Type | Description |
-| --- | --- | --- |
-| ipAddresses | complex | Details about IP addresses associated with the server |
+| list | Array[string] | Array of string values corresponding to each supported OS type |
 
 
 ### Examples
 
 #### JSON
 
-    {
-
-    }
+    [
+      "Linux",
+      "Windows]
+    ]

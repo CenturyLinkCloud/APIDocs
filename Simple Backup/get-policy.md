@@ -1,26 +1,26 @@
 {{{
-  "title": "Get Policies",
+  "title": "Get Policy",
   "date": "04-01-2016",
   "author": "Ryan Brockman",
   "attachments": [],
-  "sticky": "true"
+  "sticky": "false"
 }}}
 
-DESCRIPTION. Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](../Authentication/login.md) for information on acquiring this token.
+Gets the backup policy associated with the specified accountPolicyId. Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](../Authentication/login.md) for information on acquiring this token.
 
 ### When to Use It
 
-Use this API operation when you want to . It can be used to .
+Use this API operation when you want to retrieve the details of a specific backup policy.
 
 ## URL
 
 ### Structure
 
-    GET https://api-va1.backup.ctl.io/clc-backup-api/
+    GET https://api-va1.backup.ctl.io/clc-backup-api/api/accountPolicies/{accountPolicyId}
 
 ### Example
 
-    GET https://api-va1.backup.ctl.io/clc-backup-api/
+    GET https://api-va1.backup.ctl.io/clc-backup-api/api/accountPolicies/4ca70660-f08a-407b-830d-e8e9c6c1d59a
 
 ## Request
 
@@ -28,23 +28,24 @@ Use this API operation when you want to . It can be used to .
 
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
-| AccountAlias | string | Short code for a particular account | Yes |
+| accountPolicyId | string | The unique id associated with the backup policy to retrieve | Yes |
 
 
 ## Response
 
-### Server Entity Definition
+### Account Policy Definition
 
 | Name | Type | Description |
 | --- | --- | --- |
-| id | string | ID of the server being queried |
-
-
-### Details Definition
-
-| Name | Type | Description |
-| --- | --- | --- |
-| ipAddresses | complex | Details about IP addresses associated with the server |
+| backupIntervalHours | integer |  |
+| clcAccountAlias | string |  |
+| excludedDirectoryPaths | Array[string] |  |
+| name | string |  |
+| osType | string | 'Linux' or 'Windows' |
+| paths | Array[string] |  |
+| policyId | string |  |
+| retentionDays | integer |  |
+| status | string | 'ACTIVE' or 'INACTIVE' |
 
 
 ### Examples
@@ -52,5 +53,15 @@ Use this API operation when you want to . It can be used to .
 #### JSON
 
     {
-
+      "osType": "Linux",
+      "name": "Example Backup Policy",
+      "clcAccountAlias": "ACME",
+      "status": "ACTIVE",
+      "paths": [
+        "/var"
+      ],
+      "excludedDirectoryPaths": [],
+      "retentionDays": 5,
+      "backupIntervalHours": 36,
+      "policyId": "4ca70660-f08a-407b-830d-e8e9c6c1d59a"
     }

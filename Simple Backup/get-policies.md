@@ -44,11 +44,11 @@ Use this API operation when you want to . It can be used to .
 | limit | integer |  |
 | nextOffset | integer |  |
 | offset | integer |  |
-| results | Array[Policy] | An array of the Policies associated with the Account |
+| results | Array[Account Policy] | An array of the Policies associated with the Account |
 | totalCount | integer | The total number of policies associated with the Account |
 
 
-### Policy Definition
+### Results Definition
 
 | Name | Type | Description |
 | --- | --- | --- |
