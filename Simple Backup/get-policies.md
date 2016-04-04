@@ -16,11 +16,11 @@ Use this API operation when you want to retrieve a list of all policies associat
 
 ### Structure
 
-    GET https://api-va1.backup.ctl.io/clc-backup-api/api/accountPolicies
+    GET https://api.backup.ctl.io/clc-backup-api/api/accountPolicies
 
 ### Example
 
-    GET https://api-va1.backup.ctl.io/clc-backup-api/api/accountPolicies?limit=20&offset=0&withStatus=ACTIVE&sortBy=name&ascendingSort=true
+    GET https://api.backup.ctl.io/clc-backup-api/api/accountPolicies?limit=20&offset=0&withStatus=ACTIVE&sortBy=name&ascendingSort=true
 
 ## Request
 

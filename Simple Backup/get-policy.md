@@ -16,11 +16,11 @@ Use this API operation when you want to retrieve the details of a specific backu
 
 ### Structure
 
-    GET https://api-va1.backup.ctl.io/clc-backup-api/api/accountPolicies/{accountPolicyId}
+    GET https://api.backup.ctl.io/clc-backup-api/api/accountPolicies/{accountPolicyId}
 
 ### Example
 
-    GET https://api-va1.backup.ctl.io/clc-backup-api/api/accountPolicies/4ca70660-f08a-407b-830d-e8e9c6c1d59a
+    GET https://api.backup.ctl.io/clc-backup-api/api/accountPolicies/4ca70660-f08a-407b-830d-e8e9c6c1d59a
 
 ## Request
 
@@ -37,15 +37,15 @@ Use this API operation when you want to retrieve the details of a specific backu
 
 | Name | Type | Description |
 | --- | --- | --- |
-| backupIntervalHours | integer |  |
-| clcAccountAlias | string |  |
-| excludedDirectoryPaths | Array[string] |  |
-| name | string |  |
+| backupIntervalHours | integer | The backup frequency of the Policy |
+| clcAccountAlias | string | The account alias that the Policy belongs to |
+| excludedDirectoryPaths | Array[string] | A list of the directories that the Policy excludes from backup |
+| name | string | The name of the Policy |
 | osType | string | 'Linux' or 'Windows' |
-| paths | Array[string] |  |
-| policyId | string |  |
-| retentionDays | integer |  |
-| status | string | 'ACTIVE' or 'INACTIVE' |
+| paths | Array[string] | A list of the directories that the Policy includes in each backup |
+| policyId | string | The unique Id associated with the Policy |
+| retentionDays | integer | The number of days backup data will be retained |
+| status | string | The status of the backup Policy.  Either 'ACTIVE' or 'INACTIVE'. |
 
 
 ### Examples
@@ -60,7 +60,9 @@ Use this API operation when you want to retrieve the details of a specific backu
       "paths": [
         "/var"
       ],
-      "excludedDirectoryPaths": [],
+      "excludedDirectoryPaths": [
+        "/var/run"
+      ],
       "retentionDays": 5,
       "backupIntervalHours": 36,
       "policyId": "4ca70660-f08a-407b-830d-e8e9c6c1d59a"
