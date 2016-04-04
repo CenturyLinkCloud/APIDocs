@@ -6,21 +6,21 @@
   "sticky": "true"
 }}}
 
-DESCRIPTION. Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](../Authentication/login.md) for information on acquiring this token.
+Create a Server Policy under an Account Policy. Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](../Authentication/login.md) for information on acquiring this token.
 
 ### When to Use It
 
-Use this API operation when you want to . It can be used to .
+Use this API operation when you want to create a new Server Policy.
 
 ## URL
 
 ### Structure
 
-    GET https://api-va1.backup.ctl.io/clc-backup-api/
+    PUT https://api.backup.ctl.io/clc-backup-api/api/accountPolicies/{accountPolicyId}/serverPolicies
 
 ### Example
 
-    GET https://api-va1.backup.ctl.io/clc-backup-api/
+    PUT https://api.backup.ctl.io/clc-backup-api/api/accountPolicies/5fde14a2-fa9d-4376-9f01-59429d02a959/serverPolicies
 
 ## Request
 
@@ -28,23 +28,16 @@ Use this API operation when you want to . It can be used to .
 
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
-| AccountAlias | string | Short code for a particular account | Yes |
+| accountPolicyId | string | Unique ID of an account policy | Yes |
 
 
-## Response
+## Content Properties
 
-### Server Entity Definition
-
-| Name | Type | Description |
-| --- | --- | --- |
-| id | string | ID of the server being queried |
-
-
-### Details Definition
-
-| Name | Type | Description |
-| --- | --- | --- |
-| ipAddresses | complex | Details about IP addresses associated with the server |
+| Name | Type | Description | Req. |
+| --- | --- | --- | --- |
+| clcAccountAlias | string | The account alias that the Policy belongs to | Yes |
+| serverId | string | Name of the server to apply the policy to | Yes|
+| storageRegion | string | "US EAST", "US WEST", "CANADA", "GREAT BRITAIN", "GERMANY", "APAC" | Yes|
 
 
 ### Examples
@@ -52,5 +45,41 @@ Use this API operation when you want to . It can be used to .
 #### JSON
 
     {
+      "clcAccountAlias": "BAAD",
+      "serverId": "VA1BAADTEST01",
+      "storageRegion": "USEAST",
+    }
 
+
+## Response
+
+### Server Policy Definition
+
+| Name | Type | Description |
+| --- | --- | --- |
+| serverPolicyId | string | ID of the server policy being created |
+| accountPolicyId | string | |
+| serverId | string | |
+| storageRegion | string | |
+| clcAccountAlias | string | |
+| status | string | |
+| expirationDate | integer | |
+| unsubscribedDate | integer | |
+| storageAccountId | null | |
+
+
+### Examples
+
+#### JSON
+
+    {
+    "serverPolicyId": "085384ce-200e-4205-8a13-ae1d0bdc71cd"
+    "accountPolicyId": "5fde14a2-fa9d-4376-9f01-59429d02a959"
+    "serverId": "VA1BAADTEST01"
+    "storageRegion": "US EAST"
+    "clcAccountAlias": "BAAD"
+    "status": "PROVISIONING"
+    "expirationDate": 0
+    "unsubscribedDate": 0
+    "storageAccountId": null
     }
