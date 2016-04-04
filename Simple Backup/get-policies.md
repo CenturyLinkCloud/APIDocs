@@ -28,10 +28,10 @@ Use this API operation when you want to . It can be used to .
 
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
-| limit | integer | Returns only this many results | No |
-| offset | string | Returns results starting at this position in the list | No |
-| withStatus | string | Filters results for either 'ACTIVE' or 'INACTIVE' Policies | No |
-| sortBy | string | Sorts the results by the specified field | No |
+| limit | integer | Return up to this many results | No |
+| offset | string | Return results starting from this position in the list | No |
+| withStatus | string | Filter results for either 'ACTIVE' or 'INACTIVE' Policies | No |
+| sortBy | string | Sort the results by the specified field | No |
 | ascendingSort | boolean | Sort the sortBy field in ascending order | No |
 
 
@@ -41,9 +41,9 @@ Use this API operation when you want to . It can be used to .
 
 | Name | Type | Description |
 | --- | --- | --- |
-| limit | integer | The maximum number of results requested to be returned |
+| limit | integer | The maximum number of results requested |
 | nextOffset | integer | The next position in the list of results for a subsequent call |
-| offset | integer | The position in the list of results that this list begins at |
+| offset | integer | The starting position in the list of results |
 | results | Array[Account Policy] | An array of the Policies associated with the Account |
 | totalCount | integer | The total number of Policies associated with the Account |
 
