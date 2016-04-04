@@ -6,21 +6,21 @@
   "sticky": "true"
 }}}
 
-DESCRIPTION. Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](../Authentication/login.md) for information on acquiring this token.
+Gets a list of restore point details. Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](../Authentication/login.md) for information on acquiring this token.
 
 ### When to Use It
 
-Use this API operation when you want to . It can be used to .
+Use this API operation when you want to obtain restore point details for a specific serverPolicyId.
 
 ## URL
 
 ### Structure
 
-    GET https://api-va1.backup.ctl.io/clc-backup-api/
+    GET https://api.backup.ctl.io/clc-backup-api/api/accountPolicies/{accountPolicyId}/serverPolicies/{serverPolicyId}/restorePointDetails
 
 ### Example
 
-    GET https://api-va1.backup.ctl.io/clc-backup-api/
+    GET https://api.backup.ctl.io/clc-backup-api/api/accountPolicies/{accountPolicyId}/serverPolicies/ce0eefe2-25b8-4320-ba68-eeda76aef2dc/restorePointDetails?backupFinishedStartDate=2016-01-01&backupFinishedEndDate=2016-04-01
 
 ## Request
 
@@ -28,29 +28,110 @@ Use this API operation when you want to . It can be used to .
 
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
-| AccountAlias | string | Short code for a particular account | Yes |
+| limit | integer | Limit the number of records returned | No
+| offset | integer |  | No
+| inRetentionOnly | boolean |  | No
+| backupFinishedStartDate | string | Valid date format is 'YYYY-MM-DD' | Yes
+| backupFinishedEndDate | string | Valid date format is 'YYYY-MM-DD' | Yes
+| sortBy | string | Sort results by: [policyId, retentionDay, backupStartedDate, backupFinishedDate, retentionExpiredDate, backupStatus, filesTransferredToStorage, bytesTransferredToStorage, filesFailedTransferToStorage, bytesFailedToTransfer, unchangedFilesNotTransferred, unchangedBytesNotTransferred, filesRemovedFromDisk, bytesRemovedFromDisk] | No
+| ascendingSort | boolean |  | No
+| serverPolicyId | string | Unique server policy identifier | Yes
 
 
 ## Response
 
-### Server Entity Definition
+### Response Definition
 
 | Name | Type | Description |
 | --- | --- | --- |
-| id | string | ID of the server being queried |
+| restorePointId | string | Unique restore point identifier |
+| policyId | string | Unique policy identifier |
+| retentionDays | integer | Days of retention applied to the restore point |
+| backupFinishedDate | integer | Timestamp of backup completion |
+| retentionExpiredDate | integer | Timestamp or retention expiration |
+| restorePointCreationStatus | string | 'WAITING' or 'SUCCESS' |
+| filesTransferredToStorage | integer | Number of backup files transferred to storage |
+| bytesTransferredToStorage | integer | Total bytes of backup data sent to storage |
+| filesFailedTransferToStorage | integer | Number of backup files that failed transfer to storage |
+| bytesFailedToTransfer | integer | Total bytes of backup data that failed transfer to storage |
+| unchangedFilesNotTransferred | integer | Number of unchanged files not requiring retransfer to storage |
+| unchangedBytesInStorage | integer | Total bytes of unchanged data not requiring retransfer to storage |
+| filesRemovedFromDisk | integer | Number of files removed from local disk |
+| bytesInStorageForItemsRemoved | integer | Total bytes of data removed from local disk |
+| numberOfProtectedFiles | integer | Number of files currently in storage for the restore point |
+| backupStartedDate | integer | Timestamp of backup start |
 
+#### Examples
 
-### Details Definition
-
-| Name | Type | Description |
-| --- | --- | --- |
-| ipAddresses | complex | Details about IP addresses associated with the server |
-
-
-### Examples
+    {
+      "limit": 100
+      "offset": 0
+      "nextOffset": 0
+      "results": [2]
+        0:  {
+            "restorePointId": "ce0eefe2-25b8-4320-ba68-eeda76aef2dc20160401225505"
+            "policyId": "ce0eefe2-25b8-4320-ba68-eeda76aef2dc"
+            "retentionDays": 5
+            "backupFinishedDate": "2016-04-01T22:55:10.849Z"
+            "retentionExpiredDate": "2016-04-07T22:55:05.277Z"
+            "restorePointCreationStatus": "SUCCESS"
+            "filesTransferredToStorage": 0
+            "bytesTransferredToStorage": 0
+            "filesFailedTransferToStorage": 0
+            "bytesFailedToTransfer": 0
+            "unchangedFilesNotTransferred": 3
+            "unchangedBytesInStorage": 388403200
+            "filesRemovedFromDisk": 0
+            "bytesInStorageForItemsRemoved": 0
+            "numberOfProtectedFiles": 3
+            "backupStartedDate": "2016-04-01T22:55:05.277Z"
+      }
+      -1:   {
+            "restorePointId": "ce0eefe2-25b8-4320-ba68-eeda76aef2dc20160401214505"
+            "policyId": "ce0eefe2-25b8-4320-ba68-eeda76aef2dc"
+            "retentionDays": 5
+            "backupFinishedDate": "2016-04-01T21:45:10.802Z"
+            "retentionExpiredDate": "2016-04-07T21:45:05.261Z"
+            "restorePointCreationStatus": "SUCCESS"
+            "filesTransferredToStorage": 0
+            "bytesTransferredToStorage": 0
+            "filesFailedTransferToStorage": 0
+            "bytesFailedToTransfer": 0
+            "unchangedFilesNotTransferred": 3
+            "unchangedBytesInStorage": 388403200
+            "filesRemovedFromDisk": 0
+            "bytesInStorageForItemsRemoved": 0
+            "numberOfProtectedFiles": 3
+            "backupStartedDate": "2016-04-01T21:45:05.261Z"
+      }
+      "totalCount": 2
+    }
 
 #### JSON
 
     {
-
+      "limit": 0,
+      "nextOffset": 0,
+      "offset": 0,
+      "results": [
+        {
+          "backupFinishedDate": 0,
+          "backupStartedDate": 0,
+          "bytesFailedToTransfer": 0,
+          "bytesInStorageForItemsRemoved": 0,
+          "bytesTransferredToStorage": 0,
+          "filesFailedTransferToStorage": 0,
+          "filesRemovedFromDisk": 0,
+          "filesTransferredToStorage": 0,
+          "numberOfProtectedFiles": 0,
+          "policyId": "string",
+          "restorePointCreationStatus": "WAITING",
+          "restorePointId": "string",
+          "retentionDays": 0,
+          "retentionExpiredDate": 0,
+          "unchangedBytesInStorage": 0,
+          "unchangedFilesNotTransferred": 0
+        }
+      ],
+      "totalCount": 0
     }
