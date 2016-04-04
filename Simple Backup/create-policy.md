@@ -10,17 +10,17 @@ Creates a new backup policy associated with the account. Calls to this operation
 
 ### When to Use It
 
-Use this API operation when you want to create a new backup policy.
+Use this API operation when you want to create a brand new backup policy.
 
 ## URL
 
 ### Structure
 
-    POST https://api-va1.backup.ctl.io/clc-backup-api/api/accountPolicies
+    POST https://api.backup.ctl.io/clc-backup-api/api/accountPolicies
 
 ### Example
 
-    POST https://api-va1.backup.ctl.io/clc-backup-api/api/accountPolicies
+    POST https://api.backup.ctl.io/clc-backup-api/api/accountPolicies
 
 ## Request
 
@@ -28,15 +28,13 @@ Use this API operation when you want to create a new backup policy.
 
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
-| backupIntervalHours | integer |  | No |
-| clcAccountAlias | string |  | No |
-| excludedDirectoryPaths | Array[string] |  | No |
-| name | string |  | No |
-| osType | string | 'Linux' or 'Windows' | No |
-| paths | Array[string] |  | No |
-| policyId | string |  | No |
-| retentionDays | integer |  | No |
-| status | string | 'ACTIVE' or 'INACTIVE' | No |
+| backupIntervalHours | integer | The backup frequency of the Policy specified in hours | Yes |
+| clcAccountAlias | string | The account alias that the Policy belongs to | No |
+| excludedDirectoryPaths | Array[string] | A list of the directories that the Policy excludes from backup | No |
+| name | string | The name of the Policy | Yes |
+| osType | string | 'Linux' or 'Windows' | Yes |
+| paths | Array[string] | A list of the directories that the Policy includes in each backup | Yes |
+| retentionDays | integer | The number of days backup data will be retained | Yes |
 
 ### Examples
 
@@ -45,7 +43,6 @@ Use this API operation when you want to create a new backup policy.
     {
       "osType": "Linux",
       "name": "Example Backup Policy from API",
-      "status": "ACTIVE",
       "paths": [
         "/opt"
       ],
@@ -60,16 +57,15 @@ Use this API operation when you want to create a new backup policy.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| backupIntervalHours | integer |  |
-| clcAccountAlias | string |  |
-| excludedDirectoryPaths | Array[string] |  |
-| name | string |  |
+| backupIntervalHours | integer | The backup frequency of the Policy |
+| clcAccountAlias | string | The account alias that the Policy belongs to |
+| excludedDirectoryPaths | Array[string] | A list of the directories that the Policy excludes from backup |
+| name | string | The name of the Policy |
 | osType | string | 'Linux' or 'Windows' |
-| paths | Array[string] |  |
-| policyId | string |  |
-| retentionDays | integer |  |
-| status | string | 'ACTIVE' or 'INACTIVE' |
-
+| paths | Array[string] | A list of the directories that the Policy includes in each backup |
+| policyId | string | The unique Id associated with the Policy |
+| retentionDays | integer | The number of days backup data will be retained |
+| status | string | The status of the backup Policy.  Either 'ACTIVE' or 'INACTIVE'. |
 
 ### Examples
 
