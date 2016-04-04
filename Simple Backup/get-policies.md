@@ -3,7 +3,7 @@
   "date": "04-01-2016",
   "author": "Ryan Brockman",
   "attachments": [],
-  "sticky": "true"
+  "sticky": "false"
 }}}
 
 Gets a list of backup policies associated with an account. Calls to this operation must include a bearer token acquired from the authentication endpoint. See the [Login API](../Authentication/login.md) for information on acquiring this token.
@@ -28,10 +28,10 @@ Use this API operation when you want to . It can be used to .
 
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
-| limit | integer |  | No |
-| offset | string |  | No |
-| withStatus | string |  | No |
-| sortBy | string |  | No |
+| limit | integer | Returns only this many results | No |
+| offset | string | Returns results starting at this position in the list | No |
+| withStatus | string | Filters results for either 'ACTIVE' or 'INACTIVE' Policies | No |
+| sortBy | string | Sorts the results by the specified field | No |
 | ascendingSort | boolean | Sort the sortBy field in ascending order | No |
 
 
@@ -41,26 +41,26 @@ Use this API operation when you want to . It can be used to .
 
 | Name | Type | Description |
 | --- | --- | --- |
-| limit | integer |  |
-| nextOffset | integer |  |
-| offset | integer |  |
+| limit | integer | The maximum number of results requested to be returned |
+| nextOffset | integer | The next position in the list of results for a subsequent call |
+| offset | integer | The position in the list of results that this list begins at |
 | results | Array[Account Policy] | An array of the Policies associated with the Account |
-| totalCount | integer | The total number of policies associated with the Account |
+| totalCount | integer | The total number of Policies associated with the Account |
 
 
 ### Results Definition
 
 | Name | Type | Description |
 | --- | --- | --- |
-| backupIntervalHours | integer |  |
-| clcAccountAlias | string |  |
-| excludedDirectoryPaths | Array[string] |  |
-| name | string |  |
+| backupIntervalHours | integer | The backup frequency of the Policy |
+| clcAccountAlias | string | The account alias that the Policy belongs to |
+| excludedDirectoryPaths | Array[string] | A list of the directories that the Policy excludes from backup |
+| name | string | The name of the Policy |
 | osType | string | 'Linux' or 'Windows' |
-| paths | Array[string] |  |
-| policyId | string |  |
-| retentionDays | integer |  |
-| status | string | 'ACTIVE' or 'INACTIVE' |
+| paths | Array[string] | A list of the directories that the Policy includes in each backup |
+| policyId | string | The unique Id associated with the Policy |
+| retentionDays | integer | The number of days backup data will be retained |
+| status | string | The status of the backup Policy.  Either 'ACTIVE' or 'INACTIVE'. |
 
 
 ### Examples
