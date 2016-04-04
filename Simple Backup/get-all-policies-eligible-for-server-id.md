@@ -10,17 +10,17 @@ Returns a list of the backup policies that are eligible to be applied to the spe
 
 ### When to Use It
 
-Use this API operation when you want to . It can be used to .
+Use this API operation when you want to retrieve a list of policies that may be applied to a given server.
 
 ## URL
 
 ### Structure
 
-    GET https://api-va1.backup.ctl.io/clc-backup-api/servers/{serverId}
+    GET https://api.backup.ctl.io/clc-backup-api/servers/{serverId}
 
 ### Example
 
-    GET https://api-va1.backup.ctl.io/clc-backup-api/servers/VA1ACMEDEMO01
+    GET https://api.backup.ctl.io/clc-backup-api/servers/VA1ACMEDEMO01
 
 ## Request
 
@@ -46,19 +46,19 @@ Use this API operation when you want to . It can be used to .
 | totalCount | integer | The total number of policies associated with the Account |
 
 
-### Results Definition
+### Account Policy Definition
 
 | Name | Type | Description |
 | --- | --- | --- |
-| backupIntervalHours | integer |  |
-| clcAccountAlias | string |  |
-| excludedDirectoryPaths | Array[string] |  |
-| name | string |  |
+| backupIntervalHours | integer | The backup frequency of the Policy |
+| clcAccountAlias | string | The account alias that the Policy belongs to |
+| excludedDirectoryPaths | Array[string] | A list of the directories that the Policy excludes from backup |
+| name | string | The name of the Policy |
 | osType | string | 'Linux' or 'Windows' |
-| paths | Array[string] |  |
-| policyId | string |  |
-| retentionDays | integer |  |
-| status | string | 'ACTIVE' or 'INACTIVE' |
+| paths | Array[string] | A list of the directories that the Policy includes in each backup |
+| policyId | string | The unique Id associated with the Policy |
+| retentionDays | integer | The number of days backup data will be retained |
+| status | string | The status of the backup Policy.  Either 'ACTIVE' or 'INACTIVE'. |
 
 
 ### Examples
