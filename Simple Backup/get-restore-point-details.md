@@ -61,7 +61,9 @@ Use this API operation when you want to obtain restore point details for a speci
 | numberOfProtectedFiles | integer | Number of files currently in storage for the restore point |
 | backupStartedDate | integer | Timestamp of backup start |
 
-#### Examples
+### Examples
+
+#### JSON
 
     {
       "limit": 100
@@ -105,33 +107,4 @@ Use this API operation when you want to obtain restore point details for a speci
             "backupStartedDate": "2016-04-01T21:45:05.261Z"
       }
       "totalCount": 2
-    }
-
-#### JSON
-
-    {
-      "limit": 0,
-      "nextOffset": 0,
-      "offset": 0,
-      "results": [
-        {
-          "backupFinishedDate": 0,
-          "backupStartedDate": 0,
-          "bytesFailedToTransfer": 0,
-          "bytesInStorageForItemsRemoved": 0,
-          "bytesTransferredToStorage": 0,
-          "filesFailedTransferToStorage": 0,
-          "filesRemovedFromDisk": 0,
-          "filesTransferredToStorage": 0,
-          "numberOfProtectedFiles": 0,
-          "policyId": "string",
-          "restorePointCreationStatus": "WAITING",
-          "restorePointId": "string",
-          "retentionDays": 0,
-          "retentionExpiredDate": 0,
-          "unchangedBytesInStorage": 0,
-          "unchangedFilesNotTransferred": 0
-        }
-      ],
-      "totalCount": 0
     }
