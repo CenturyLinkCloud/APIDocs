@@ -31,7 +31,7 @@ Use this API operation when you want to create a brand new backup policy.
 | backupIntervalHours | integer | The backup frequency of the Policy specified in hours | Yes |
 | clcAccountAlias | string | The account alias that the Policy belongs to | No |
 | excludedDirectoryPaths | Array[string] | A list of the directories that the Policy excludes from backup | No |
-| name | string | The name of the Policy | No |
+| name | string | The name of the Policy | Yes |
 | osType | string | 'Linux' or 'Windows' | Yes |
 | paths | Array[string] | A list of the directories that the Policy includes in each backup | Yes |
 | retentionDays | integer | The number of days backup data will be retained | Yes |
@@ -43,7 +43,6 @@ Use this API operation when you want to create a brand new backup policy.
     {
       "osType": "Linux",
       "name": "Example Backup Policy from API",
-      "status": "ACTIVE",
       "paths": [
         "/opt"
       ],
