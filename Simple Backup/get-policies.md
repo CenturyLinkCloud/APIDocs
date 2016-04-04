@@ -10,7 +10,7 @@ Gets a list of backup policies associated with an account. Calls to this operati
 
 ### When to Use It
 
-Use this API operation when you want to . It can be used to .
+Use this API operation when you want to retrieve a list of all policies associated with a given account.
 
 ## URL
 
