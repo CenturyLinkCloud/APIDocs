@@ -28,9 +28,9 @@ Use this API operation when you want to retrieve a list of policies that may be 
 
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
-| limit | integer |  | No |
-| offset | string |  | No |
-| sortBy | string |  | No |
+| limit | integer | Return up to this many results | No |
+| offset | string | Return results starting from this position in the list | No |
+| sortBy | string | Sort the results by the specified field | No |
 | ascendingSort | boolean | Sort the sortBy field in ascending order | No |
 
 ## Response
@@ -39,12 +39,11 @@ Use this API operation when you want to retrieve a list of policies that may be 
 
 | Name | Type | Description |
 | --- | --- | --- |
-| limit | integer |  |
-| nextOffset | integer |  |
-| offset | integer |  |
-| results | Array[Account Policy] | An array of the Policies associated with the Account |
-| totalCount | integer | The total number of policies associated with the Account |
-
+| limit | integer | The maximum number of results requested |
+| nextOffset | integer | The next position in the list of results for a subsequent call |
+| offset | integer | The starting position in the list of results |
+| results | Array[Account Policy] | An array of the Policies eligible for the specified server |
+| totalCount | integer | The total number of Policies eligible for the specified server |
 
 ### Account Policy Definition
 
