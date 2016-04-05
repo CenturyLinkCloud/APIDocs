@@ -6,21 +6,21 @@
   "sticky": "true"
 }}}
 
-DESCRIPTION. Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](../Authentication/login.md) for information on acquiring this token.
+Delete a Server Policy under an Account Policy. Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](../Authentication/login.md) for information on acquiring this token.
 
 ### When to Use It
 
-Use this API operation when you want to . It can be used to .
+Use this API operation when you want to delete an existing Server Policy.
 
 ## URL
 
 ### Structure
 
-    GET https://api-va1.backup.ctl.io/clc-backup-api/
+    DELETE https://api.backup.ctl.io/clc-backup-api/api/accountPolicies/{accountPolicyId}/serverPolicies/{serverPolicyId}
 
 ### Example
 
-    GET https://api-va1.backup.ctl.io/clc-backup-api/
+    DELETE https://api.backup.ctl.io/clc-backup-api/api/accountPolicies/5fde14a2-fa9d-4376-9f01-59429d02a959/serverPolicies/085384ce-200e-4205-8a13-ae1d0bdc71cd
 
 ## Request
 
@@ -28,7 +28,8 @@ Use this API operation when you want to . It can be used to .
 
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
-| AccountAlias | string | Short code for a particular account | Yes |
+| serverPolicyId | string | Unique Id of the Server Policy | Yes |
+| accountPolicyId | string | Unique Id of the Account Policy | Yes |
 
 
 ## Response
@@ -37,20 +38,11 @@ Use this API operation when you want to . It can be used to .
 
 | Name | Type | Description |
 | --- | --- | --- |
-| id | string | ID of the server being queried |
-
-
-### Details Definition
-
-| Name | Type | Description |
-| --- | --- | --- |
-| ipAddresses | complex | Details about IP addresses associated with the server |
+| HTTP status code | string | HTTP status code |
 
 
 ### Examples
 
-#### JSON
+#### RESPONSE
 
-    {
-
-    }
+204: No Content

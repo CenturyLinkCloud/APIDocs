@@ -29,10 +29,10 @@ Use this API operation when you want to get a list of all Server Policies attach
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
 | accountPolicyId | string | Unique ID of an account policy | Yes |
-| limit | integer | | No |
-| offset | string | | No |
-| withStatus | string |  | No |
-| sortBy | string |  | No |
+| limit | integer | Return up to this many results | No |
+| offset | string | Return results starting from this position in the list | No |
+| withStatus | string | Filter results for either 'ACTIVE' or 'INACTIVE' Policies | No |
+| sortBy | string | Sort the results by the specified field | No |
 | ascendingSort | boolean | Sort the sortBy field in ascending order | No |
 
 
@@ -42,9 +42,9 @@ Use this API operation when you want to get a list of all Server Policies attach
 
 | Name | Type | Description |
 | --- | --- | --- |
-| limit | integer |  |
-| offset | integer |  |
-| nextOffset | integer |  |
+| limit | integer | The maximum number of results requested |
+| offset | integer | The starting position in the list of results |
+| nextOffset | integer | The next position in the list of results for a subsequent call |
 | results | Array[Server Policy] | An array of the Server Policies associated with the Account Policy |
 | totalCount | integer | The total number of Server Policies associated with the Account Policy |
 
@@ -53,15 +53,15 @@ Use this API operation when you want to get a list of all Server Policies attach
 
 | Name | Type | Description |
 | --- | --- | --- |
-| serverPolicyId | string | |
-| accountPolicyId | string | |
-| serverId | string | |
-| storageRegion | string | |
-| clcAccountAlias | string | |
-| status | string | |
-| expirationDate | integer | |
-| unsubscribedDate | integer | |
-| storageAccountId | string | |
+| serverPolicyId | string | The next position in the list of results for a subsequent call |
+| accountPolicyId | string | Unique Id of the Account Policy |
+| serverId | string | Unique server name |
+| storageRegion | string | Region where backups are stored |
+| clcAccountAlias | string | The account alias that the Policy belongs to |
+| status | string | The status of the backup Policy. 'ACTIVE', 'INACTIVE', 'PROVISIONING', 'ERROR', 'DELETED' |
+| expirationDate | integer | Date all data retention will elapse; unsubscribedDate+retentionDays |
+| unsubscribedDate | integer | Date policy was inactivated |
+| storageAccountId | string | Not currently used |
 
 
 
