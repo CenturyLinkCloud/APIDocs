@@ -1,9 +1,9 @@
 {{{
-  "title": "Get Policies",
+  "title": "Get Server Policy",
   "date": "04-01-2016",
-  "author": "Ryan Brockman",
+  "author": "Justin Withington",
   "attachments": [],
-  "sticky": "true"
+  "sticky": "false"
 }}}
 
 Get details of a specific server policy associated to an account policy. A server policy is unique record that ties a backup (account) policy to a specific server and storage region. Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](../Authentication/login.md) for information on acquiring this token.
