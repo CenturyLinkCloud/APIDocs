@@ -28,7 +28,7 @@ Use this API operation when you want to create a new Server Policy.
 
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
-| accountPolicyId | string | Unique ID of an account policy | Yes |
+| accountPolicyId | string | The unique Id of an account policy | Yes |
 
 
 ## Content Properties
