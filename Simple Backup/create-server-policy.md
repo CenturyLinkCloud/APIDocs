@@ -1,9 +1,9 @@
 {{{
-  "title": "Get Policies",
+  "title": "Create Server Policy",
   "date": "04-01-2016",
-  "author": "Ryan Brockman",
+  "author": "John Gerger",
   "attachments": [],
-  "sticky": "true"
+  "sticky": "false"
 }}}
 
 Create a Server Policy under an Account Policy. Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](../Authentication/login.md) for information on acquiring this token.
