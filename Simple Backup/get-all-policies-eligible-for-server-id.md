@@ -10,17 +10,17 @@ Returns a list of the backup policies that are eligible to be applied to the spe
 
 ### When to Use It
 
-Use this API operation when you want to . It can be used to .
+Use this API operation when you want to retrieve a list of policies that may be applied to a given server.
 
 ## URL
 
 ### Structure
 
-    GET https://api-va1.backup.ctl.io/clc-backup-api/servers/{serverId}
+    GET https://api.backup.ctl.io/clc-backup-api/servers/{serverId}
 
 ### Example
 
-    GET https://api-va1.backup.ctl.io/clc-backup-api/servers/VA1ACMEDEMO01
+    GET https://api.backup.ctl.io/clc-backup-api/servers/VA1ACMEDEMO01
 
 ## Request
 
@@ -28,9 +28,9 @@ Use this API operation when you want to . It can be used to .
 
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
-| limit | integer |  | No |
-| offset | string |  | No |
-| sortBy | string |  | No |
+| limit | integer | Return up to this many results | No |
+| offset | string | Return results starting from this position in the list | No |
+| sortBy | string | Sort the results by the specified field | No |
 | ascendingSort | boolean | Sort the sortBy field in ascending order | No |
 
 ## Response
@@ -39,26 +39,25 @@ Use this API operation when you want to . It can be used to .
 
 | Name | Type | Description |
 | --- | --- | --- |
-| limit | integer |  |
-| nextOffset | integer |  |
-| offset | integer |  |
-| results | Array[Account Policy] | An array of the Policies associated with the Account |
-| totalCount | integer | The total number of policies associated with the Account |
+| limit | integer | The maximum number of results requested |
+| nextOffset | integer | The next position in the list of results for a subsequent call |
+| offset | integer | The starting position in the list of results |
+| results | Array[Account Policy] | An array of the Policies eligible for the specified server |
+| totalCount | integer | The total number of Policies eligible for the specified server |
 
-
-### Results Definition
+### Account Policy Definition
 
 | Name | Type | Description |
 | --- | --- | --- |
-| backupIntervalHours | integer |  |
-| clcAccountAlias | string |  |
-| excludedDirectoryPaths | Array[string] |  |
-| name | string |  |
+| backupIntervalHours | integer | The backup frequency of the Policy |
+| clcAccountAlias | string | The account alias that the Policy belongs to |
+| excludedDirectoryPaths | Array[string] | A list of the directories that the Policy excludes from backup |
+| name | string | The name of the Policy |
 | osType | string | 'Linux' or 'Windows' |
-| paths | Array[string] |  |
-| policyId | string |  |
-| retentionDays | integer |  |
-| status | string | 'ACTIVE' or 'INACTIVE' |
+| paths | Array[string] | A list of the directories that the Policy includes in each backup |
+| policyId | string | The unique Id associated with the Policy |
+| retentionDays | integer | The number of days backup data will be retained |
+| status | string | The status of the backup Policy.  Either 'ACTIVE' or 'INACTIVE'. |
 
 
 ### Examples

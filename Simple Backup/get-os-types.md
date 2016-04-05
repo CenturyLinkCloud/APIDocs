@@ -16,20 +16,20 @@ Use this API operation when you want to retrieve the list of supported OS types.
 
 ### Structure
 
-    GET https://api-va1.backup.ctl.io/clc-backup-api/api/osTypes
+    GET https://api.backup.ctl.io/clc-backup-api/api/osTypes
 
 ### Example
 
-    GET https://api-va1.backup.ctl.io/clc-backup-api/api/osTypes
+    GET https://api.backup.ctl.io/clc-backup-api/api/osTypes
 
 
 ## Response
 
-### List Definition
+### osTypes Definition
 
 | Name | Type | Description |
 | --- | --- | --- |
-| list | Array[string] | Array of string values corresponding to each supported OS type |
+| osTypes | Array[string] | Array of string values corresponding to each supported OS type |
 
 
 ### Examples

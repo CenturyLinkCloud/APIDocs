@@ -16,16 +16,16 @@ Use this API operation when you want to retrieve the list of backup storage regi
 
 ### Structure
 
-    GET https://api-va1.backup.ctl.io/clc-backup-api/api/regions
+    GET https://api.backup.ctl.io/clc-backup-api/api/regions
 
 ### Example
 
-    GET https://api-va1.backup.ctl.io/clc-backup-api/api/regions
+    GET https://api.backup.ctl.io/clc-backup-api/api/regions
 
 
 ## Response
 
-### Storage Region Definition
+### Regions Definition
 
 | Name | Type | Description |
 | --- | --- | --- |
