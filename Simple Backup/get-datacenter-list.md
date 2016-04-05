@@ -25,11 +25,11 @@ Use this API operation when you want to get a list of CLC Data Centers.
 
 ## Response
 
-### List Definition
+### Datacenters Definition
 
 | Name | Type | Description |
 | --- | --- | --- |
-| list | Array[string] | Array of string values corresponding to each datacenter |
+| datacenters | Array[string] | Array of string values corresponding to each datacenter |
 
 
 ### Examples
