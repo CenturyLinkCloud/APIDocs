@@ -6,21 +6,21 @@
   "sticky": "false"
 }}}
 
-DESCRIPTION. Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](../Authentication/login.md) for information on acquiring this token.
+Updates a specific Server Policy. Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](../Authentication/login.md) for information on acquiring this token.
 
 ### When to Use It
 
-Use this API operation when you want to . It can be used to .
+Use this API operation when you want to update the parameters of a specific backup policy applied to a specific server.
 
 ## URL
 
 ### Structure
 
-    GET https://api-va1.backup.ctl.io/clc-backup-api/
+    PATCH https://api.backup.ctl.io/clc-backup-api/api/accountPolicies/{accountPolicyId}/serverPolicies/{serverPolicyId}
 
 ### Example
 
-    GET https://api-va1.backup.ctl.io/clc-backup-api/
+    PATCH https://api.backup.ctl.io/clc-backup-api/api/accountPolicies/c8cbf556-9ea1-4759-8d4e-c788198af26c/serverPolicies/ce0eefe2-25b8-4320-ba68-eeda76aef2dc
 
 ## Request
 
@@ -28,23 +28,34 @@ Use this API operation when you want to . It can be used to .
 
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
-| AccountAlias | string | Short code for a particular account | Yes |
+| accountPolicyId | string | Unique ID of an account policy | Yes |
+| serverPolicyId | string | Unique Id of the Server Policy | Yes |
+| patch | application/json |  | Yes |
+
+### Patch Operation Definition
+
+| Name | Type | Description | Req. |
+| --- | --- | --- | --- |
+| op | string | 'add', 'remove', 'replace' | No |
+| path | string |  | Yes |
+| value | string |  | Yes |
 
 
 ## Response
 
-### Server Entity Definition
+### Results Definition
 
 | Name | Type | Description |
 | --- | --- | --- |
-| id | string | ID of the server being queried |
-
-
-### Details Definition
-
-| Name | Type | Description |
-| --- | --- | --- |
-| ipAddresses | complex | Details about IP addresses associated with the server |
+| serverPolicyId | string | Unique Id of the Server Policy |
+| accountPolicyId | string | Unique Id of the Account Policy |
+| serverId | string | Unique server name |
+| storageRegion | string | Region where backups are stored |
+| clcAccountAlias | string | The account alias that the Policy belongs to |
+| status | string | The status of the backup Policy. 'ACTIVE', 'INACTIVE', 'PROVISIONING', 'ERROR', 'DELETED' |
+| expirationDate | integer | Date all data retention will elapse; unsubscribedDate+retentionDays |
+| unsubscribedDate | integer | Date policy was inactivated |
+| storageAccountId | string | Not currently used |
 
 
 ### Examples
@@ -52,5 +63,13 @@ Use this API operation when you want to . It can be used to .
 #### JSON
 
     {
-
+      "serverPolicyId": "ce0eefe2-25b8-4320-ba68-eeda76aef2dc"
+      "accountPolicyId": "c8cbf556-9ea1-4759-8d4e-c788198af26c"
+      "serverId": "IL1BAAPDEMO101"
+      "storageRegion": "US WEST"
+      "clcAccountAlias": "BAAP"
+      "status": "ACTIVE"
+      "expirationDate": 0
+      "unsubscribedDate": 0
+      "storageAccountId": null
     }
