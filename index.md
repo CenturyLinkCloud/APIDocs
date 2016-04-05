@@ -21,6 +21,7 @@
     "Servers",
     "Server Actions",
     "Shared Load Balancers",
+    "Simple Backup",
     "Webhooks"
   ]
 }}}
