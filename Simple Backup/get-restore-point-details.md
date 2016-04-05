@@ -1,9 +1,9 @@
 {{{
-  "title": "Get Policies",
+  "title": "Get Restore Point Details",
   "date": "04-01-2016",
-  "author": "Ryan Brockman",
+  "author": "Justin Withington",
   "attachments": [],
-  "sticky": "true"
+  "sticky": "false"
 }}}
 
 Gets a list of restore point details. Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](../Authentication/login.md) for information on acquiring this token.
