@@ -6,21 +6,21 @@
   "sticky": "true"
 }}}
 
-DESCRIPTION. Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](../Authentication/login.md) for information on acquiring this token.
+Get a list of servers based on CLC Data Center. Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](../Authentication/login.md) for information on acquiring this token.
 
 ### When to Use It
 
-Use this API operation when you want to . It can be used to .
+Use this API operation when you want to get a list of servers associated with a CLC Data Center.
 
 ## URL
 
 ### Structure
 
-    GET https://api-va1.backup.ctl.io/clc-backup-api/
+    GET https://api.backup.ctl.io/clc-backup-api//api/datacenters/{datacenter}/servers
 
 ### Example
 
-    GET https://api-va1.backup.ctl.io/clc-backup-api/
+    GET https://api.backup.ctl.io/clc-backup-api/api/datacenters/VA1%20-%20US%20East%20(Sterling)/servers
 
 ## Request
 
@@ -28,23 +28,16 @@ Use this API operation when you want to . It can be used to .
 
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
-| AccountAlias | string | Short code for a particular account | Yes |
+| datacenter | string | CLC Data Center | Yes |
 
 
 ## Response
 
-### Server Entity Definition
+### List Definition
 
 | Name | Type | Description |
 | --- | --- | --- |
-| id | string | ID of the server being queried |
-
-
-### Details Definition
-
-| Name | Type | Description |
-| --- | --- | --- |
-| ipAddresses | complex | Details about IP addresses associated with the server |
+| list | Array[string] | Array of string values corresponding to each server |
 
 
 ### Examples
@@ -52,5 +45,8 @@ Use this API operation when you want to . It can be used to .
 #### JSON
 
     {
-
+      [3]
+      0:  "VA1BAAPXAMPLE01"
+      1:  "VA1BAAPXAMPLE02"
+      2:  "VA1BAAPXAMPLE03"
     }
