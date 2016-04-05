@@ -1,9 +1,9 @@
 {{{
-  "title": "Get Policies",
+  "title": "Get Stored Data By Server Policy",
   "date": "04-01-2016",
-  "author": "Ryan Brockman",
+  "author": "Justin Withington",
   "attachments": [],
-  "sticky": "true"
+  "sticky": "false"
 }}}
 
 Gets the amount of stored data for a server policy on a specified date. Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](../Authentication/login.md) for information on acquiring this token.
