@@ -28,7 +28,7 @@ Use this API operation when you want to create a new Server Policy.
 
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
-| accountPolicyId | string | Unique ID of an account policy | Yes |
+| accountPolicyId | string | The unique Id of an account policy | Yes |
 
 
 ## Content Properties
@@ -36,8 +36,8 @@ Use this API operation when you want to create a new Server Policy.
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
 | clcAccountAlias | string | The account alias that the Policy belongs to | Yes |
-| serverId | string | Name of the server to apply the policy to | Yes|
-| storageRegion | string | "US EAST", "US WEST", "CANADA", "GREAT BRITAIN", "GERMANY", "APAC" | Yes|
+| serverId | string | Unique server name | Yes|
+| storageRegion | string | Region where backups are stored, can be "US EAST", "US WEST", "CANADA", "GREAT BRITAIN", "GERMANY", "APAC" | Yes|
 
 
 ### Examples
@@ -57,15 +57,15 @@ Use this API operation when you want to create a new Server Policy.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| serverPolicyId | string | ID of the server policy being created |
-| accountPolicyId | string | |
-| serverId | string | |
-| storageRegion | string | |
-| clcAccountAlias | string | |
-| status | string | |
-| expirationDate | integer | |
-| unsubscribedDate | integer | |
-| storageAccountId | null | |
+| serverPolicyId | string | Unique Id of the Server Policy |
+| accountPolicyId | string | Unique Id of the Account Policy |
+| serverId | string | Unique server name |
+| storageRegion | string | Region where backups are stored |
+| clcAccountAlias | string | The account alias that the Policy belongs to |
+| status | string | The status of the backup Policy. 'ACTIVE', 'INACTIVE', 'PROVISIONING', 'ERROR', 'DELETED' |
+| expirationDate | integer | Date all data retention will elapse; unsubscribedDate+retentionDays |
+| unsubscribedDate | integer | Date policy was inactivated|
+| storageAccountId | null | Not currently used |
 
 
 ### Examples
