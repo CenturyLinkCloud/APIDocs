@@ -47,8 +47,8 @@ Use this API operation when you want to obtain restore point details for a speci
 | restorePointId | string | Unique restore point identifier |
 | policyId | string | Unique policy identifier |
 | retentionDays | integer | Days of retention applied to the restore point |
-| backupFinishedDate | integer | Timestamp of backup completion |
-| retentionExpiredDate | integer | Timestamp or retention expiration |
+| backupFinishedDate | string | Timestamp of backup completion |
+| retentionExpiredDate | string | Timestamp or retention expiration |
 | restorePointCreationStatus | string | 'WAITING' or 'SUCCESS' |
 | filesTransferredToStorage | integer | Number of backup files transferred to storage |
 | bytesTransferredToStorage | integer | Total bytes of backup data sent to storage |
@@ -59,7 +59,7 @@ Use this API operation when you want to obtain restore point details for a speci
 | filesRemovedFromDisk | integer | Number of files removed from local disk |
 | bytesInStorageForItemsRemoved | integer | Total bytes of data removed from local disk |
 | numberOfProtectedFiles | integer | Number of files currently in storage for the restore point |
-| backupStartedDate | integer | Timestamp of backup start |
+| backupStartedDate | string | Timestamp of backup start |
 
 ### Examples
 
