@@ -28,6 +28,12 @@ Use this API operation when you want to retrieve a list of policies that may be 
 
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
+| serverId | string | Unique server name | Yes |
+
+### QueryString Parameters
+
+| Name | Type | Description | Req. |
+| --- | --- | --- | --- |
 | limit | integer | Return up to this many results | No |
 | offset | string | Return results starting from this position in the list | No |
 | sortBy | string | Sort the results by the specified field | No |
@@ -35,7 +41,7 @@ Use this API operation when you want to retrieve a list of policies that may be 
 
 ## Response
 
-### Account Policies Definition
+### Entity Definition
 
 | Name | Type | Description |
 | --- | --- | --- |

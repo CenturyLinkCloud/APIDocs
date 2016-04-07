@@ -34,15 +34,4 @@ Use this API operation when you want to delete an existing Server Policy.
 
 ## Response
 
-### Server Entity Definition
-
-| Name | Type | Description |
-| --- | --- | --- |
-| HTTP status code | string | HTTP status code |
-
-
-### Examples
-
-#### RESPONSE
-
-204: No Content
+The response will not contain JSON content, but will return the HTTP `204 No Content` response upon successful deletion of the server policy.  If an invalid account policy or server policy are passed in, a HTTP `404 Not Found` response will be returned. 

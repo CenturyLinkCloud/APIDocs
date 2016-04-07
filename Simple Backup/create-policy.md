@@ -53,7 +53,7 @@ Use this API operation when you want to create a brand new backup policy.
 
 ## Response
 
-### Account Policy Definition
+### Entity Definition
 
 | Name | Type | Description |
 | --- | --- | --- |

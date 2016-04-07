@@ -33,7 +33,7 @@ Use this API operation when you want to retrieve the details of a specific backu
 
 ## Response
 
-### Account Policy Definition
+### Entity Definition
 
 | Name | Type | Description |
 | --- | --- | --- |

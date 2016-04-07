@@ -28,6 +28,13 @@ Use this API operation when you want to obtain restore point details for a speci
 
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
+| serverPolicyId | string | Unique Id of the Server Policy | Yes |
+| accountPolicyId | string | Unique Id of the Account Policy | Yes |
+
+### QueryString Parameters
+
+| Name | Type | Description | Req. |
+| --- | --- | --- | --- |
 | limit | integer | Limit the number of records returned | No
 | offset | integer |  | No
 | inRetentionOnly | boolean |  | No
@@ -40,7 +47,7 @@ Use this API operation when you want to obtain restore point details for a speci
 
 ## Response
 
-### Response Definition
+### Entity Definition
 
 | Name | Type | Description |
 | --- | --- | --- |
@@ -49,7 +56,7 @@ Use this API operation when you want to obtain restore point details for a speci
 | retentionDays | integer | Days of retention applied to the restore point |
 | backupFinishedDate | string | Timestamp of backup completion |
 | retentionExpiredDate | string | Timestamp or retention expiration |
-| restorePointCreationStatus | string | 'WAITING' or 'SUCCESS' |
+| restorePointCreationStatus | string | 'SUCCESS', 'PARTIAL_SUCCESS', 'FAILED', or 'CANCELLED'  |
 | filesTransferredToStorage | integer | Number of backup files transferred to storage |
 | bytesTransferredToStorage | integer | Total bytes of backup data sent to storage |
 | filesFailedTransferToStorage | integer | Number of backup files that failed transfer to storage |

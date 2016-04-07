@@ -28,6 +28,12 @@ Use this API operation when you want to get a list of all Server Policies attach
 
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
+| accountPolicyId | string | Unique Id of the Account Policy | Yes |
+
+### QueryString Parameters
+
+| Name | Type | Description | Req. |
+| --- | --- | --- | --- |
 | accountPolicyId | string | Unique ID of an account policy | Yes |
 | limit | integer | Return up to this many results | No |
 | offset | string | Return results starting from this position in the list | No |
@@ -35,10 +41,9 @@ Use this API operation when you want to get a list of all Server Policies attach
 | sortBy | string | Sort the results by the specified field | No |
 | ascendingSort | boolean | Sort the sortBy field in ascending order | No |
 
-
 ## Response
 
-### Server Policies Definition
+### Entity Definition
 
 | Name | Type | Description |
 | --- | --- | --- |
@@ -48,8 +53,7 @@ Use this API operation when you want to get a list of all Server Policies attach
 | results | Array[Server Policy] | An array of the Server Policies associated with the Account Policy |
 | totalCount | integer | The total number of Server Policies associated with the Account Policy |
 
-
-### Results Definition
+### Server Policy Definition
 
 | Name | Type | Description |
 | --- | --- | --- |
@@ -62,8 +66,6 @@ Use this API operation when you want to get a list of all Server Policies attach
 | expirationDate | integer | Date all data retention will elapse; unsubscribedDate+retentionDays |
 | unsubscribedDate | integer | Date policy was inactivated |
 | storageAccountId | string | Not currently used |
-
-
 
 ### Examples
 

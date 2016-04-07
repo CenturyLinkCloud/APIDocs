@@ -24,6 +24,12 @@ Use this API operation when you want to change the settings of a backup policy. 
 
 ## Request
 
+### URI Parameters
+
+| Name | Type | Description | Req. |
+| --- | --- | --- | --- |
+| accountPolicyId | string | The unique id associated with the backup policy to update | Yes |
+
 ### Content Properties
 
 | Name | Type | Description | Req. |
@@ -66,7 +72,7 @@ Use this API operation when you want to change the settings of a backup policy. 
 
 ## Response
 
-### Account Policy Definition
+### Entity Definition
 
 | Name | Type | Description |
 | --- | --- | --- |

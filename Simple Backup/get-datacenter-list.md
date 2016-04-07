@@ -25,7 +25,7 @@ Use this API operation when you want to get a list of CLC Data Centers.
 
 ## Response
 
-### Datacenters Definition
+### Entity Definition
 
 | Name | Type | Description |
 | --- | --- | --- |

@@ -24,7 +24,7 @@ Use this API operation when you want to get a list of policies and policy detail
 
 ## Request
 
-### URI Parameters
+### QueryString Parameters
 
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
@@ -34,7 +34,7 @@ Use this API operation when you want to get a list of policies and policy detail
 
 ## Response
 
-### Response Definition
+### Entity Definition
 
 | Name | Type | Description |
 | --- | --- | --- |

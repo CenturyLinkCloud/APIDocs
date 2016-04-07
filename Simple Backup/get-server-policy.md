@@ -34,7 +34,7 @@ Use this API operation when you want to get details for a specific server policy
 
 ## Response
 
-### Results Definition
+### Entity Definition
 
 | Name | Type | Description |
 | --- | --- | --- |
@@ -43,7 +43,7 @@ Use this API operation when you want to get details for a specific server policy
 | serverId | string | Unique server name |
 | storageRegion | string | Region where backups are stored |
 | clcAccountAlias | string | The account alias that the Policy belongs to |
-| status | string | The status of the backup Policy. 'ACTIVE', 'INACTIVE', 'PROVISIONING', 'ERROR', 'DELETED' |
+| status | string | The status of the backup Policy. 'ACTIVE', 'INACTIVE', 'PROVISIONING', 'ERROR', 'DELETED', 'PENDING_INSTALL' |
 | expirationDate | integer | Date all data retention will elapse; unsubscribedDate+retentionDays |
 | unsubscribedDate | integer | Date policy was inactivated |
 | storageAccountId | string | Not currently used |

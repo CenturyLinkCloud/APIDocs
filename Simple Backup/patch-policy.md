@@ -6,11 +6,11 @@
   "sticky": "false"
 }}}
 
-Updates a specific Server Policy. Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](../Authentication/login.md) for information on acquiring this token.
+Updates specific values of a server policy. Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](../Authentication/login.md) for information on acquiring this token.
 
 ### When to Use It
 
-Use this API operation when you want to update the parameters of a specific backup policy applied to a specific server.
+Because of the business rules that apply to this product, there are limited scenarios when this operation is allowed.  Specifically, you may use this API operation when you want to change the status of a server policy from 'ERROR', 'PENDING_INSTALL', or 'PROVISIONING' to 'INACTIVE'.  Other attempts to modify the server policy will result in errors.
 
 ## URL
 
@@ -30,20 +30,30 @@ Use this API operation when you want to update the parameters of a specific back
 | --- | --- | --- | --- |
 | accountPolicyId | string | Unique ID of an account policy | Yes |
 | serverPolicyId | string | Unique Id of the Server Policy | Yes |
-| patch | application/json |  | Yes |
 
-### Patch Operation Definition
+### Content Properties
 
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
-| op | string | 'add', 'remove', 'replace' | No |
-| path | string |  | Yes |
-| value | string |  | Yes |
+| op | string | The patch operation to perform: 'add', 'remove', 'replace' | Yes |
+| path | string | The only change allowed currently is to the status.  Valid transitions are: ERROR to INACTIVE, PENDING_INSTALL to INACTIVE, and PROVISIONING to INACTIVE | Yes |
+| value | string | The new value to set path to. | Yes |
+
+### Examples
+
+#### JSON
+
+    {
+      "op": "replace",
+      "path": "/status",
+      "value": "INACTIVE"
+    }
+
 
 
 ## Response
 
-### Results Definition
+### Entity Definition
 
 | Name | Type | Description |
 | --- | --- | --- |

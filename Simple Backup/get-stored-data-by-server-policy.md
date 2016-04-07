@@ -31,11 +31,16 @@ Use this API operation when you want to determine the amount of backed up data i
 | --- | --- | --- | --- |
 | accountPolicyId | string | Unique account policy identifier | Yes |
 | serverPolicyId | string | Unique server policy identifier | Yes |
+
+### QueryString Parameters
+
+| Name | Type | Description | Req. |
+| --- | --- | --- | --- |
 | searchDate | string | Valid date format is 'YYYY-MM-DD' | Yes |
 
 ## Response
 
-### Response Definition
+### Entity Definition
 
 | Name | Type | Description |
 | --- | --- | --- |

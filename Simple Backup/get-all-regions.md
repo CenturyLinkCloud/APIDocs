@@ -25,7 +25,7 @@ Use this API operation when you want to retrieve the list of backup storage regi
 
 ## Response
 
-### Regions Definition
+### Entity Definition
 
 | Name | Type | Description |
 | --- | --- | --- |

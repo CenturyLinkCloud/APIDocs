@@ -33,7 +33,7 @@ Use this API operation when you want to get a list of servers associated with a 
 
 ## Response
 
-### List Definition
+### Entity Definition
 
 | Name | Type | Description |
 | --- | --- | --- |

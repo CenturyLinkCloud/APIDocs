@@ -25,7 +25,7 @@ Use this API operation when you want to retrieve the list of supported OS types.
 
 ## Response
 
-### osTypes Definition
+### Entity Definition
 
 | Name | Type | Description |
 | --- | --- | --- |

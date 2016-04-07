@@ -24,7 +24,7 @@ Use this API operation when you want to retrieve a list of all policies associat
 
 ## Request
 
-### URI Parameters
+### QueryString Parameters
 
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
@@ -37,7 +37,7 @@ Use this API operation when you want to retrieve a list of all policies associat
 
 ## Response
 
-### Account Policies Definition
+### Entity Definition
 
 | Name | Type | Description |
 | --- | --- | --- |
@@ -48,7 +48,7 @@ Use this API operation when you want to retrieve a list of all policies associat
 | totalCount | integer | The total number of Policies associated with the Account |
 
 
-### Results Definition
+### Account Policy Definition
 
 | Name | Type | Description |
 | --- | --- | --- |

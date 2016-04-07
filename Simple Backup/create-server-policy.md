@@ -53,7 +53,7 @@ Use this API operation when you want to create a new Server Policy.
 
 ## Response
 
-### Server Policy Definition
+### Entity Definition
 
 | Name | Type | Description |
 | --- | --- | --- |
