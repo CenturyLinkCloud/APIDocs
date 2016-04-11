@@ -1,5 +1,5 @@
 {{{
-  "title": "Get Policies",
+  "title": "Get Policy Details By Server",
   "date": "04-01-2016",
   "author": "Ryan Brockman",
   "attachments": [],
