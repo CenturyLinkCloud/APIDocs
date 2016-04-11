@@ -3,7 +3,7 @@
   "date": "04-01-2016",
   "author": "Ryan Brockman",
   "attachments": [],
-  "sticky": "true"
+  "sticky": "false"
 }}}
 
 Get a list of servers based on CLC Data Center. Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](../Authentication/login.md) for information on acquiring this token.
