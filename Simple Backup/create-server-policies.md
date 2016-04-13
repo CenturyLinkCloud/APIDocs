@@ -83,10 +83,10 @@ Use this API operation when you want to create multiple Server Policies.
 
 #### JSON
 
-{
-  "status": "PARTIAL",
-  "createServerPolicyResponseList": [
     {
+     "status": "PARTIAL",
+     "createServerPolicyResponseList": [
+      {
       "success": false,
       "error": "Failed to get server information for serverId=UC1BAADTEST01",
       "validationMessages": null,
@@ -101,8 +101,8 @@ Use this API operation when you want to create multiple Server Policies.
         "unsubscribedDate": 0,
         "storageAccountId": null
       }
-    },
-    {
+      },
+      {
       "success": true,
       "error": null,
       "validationMessages": null,
@@ -117,6 +117,6 @@ Use this API operation when you want to create multiple Server Policies.
         "unsubscribedDate": 0,
         "storageAccountId": null
       }
+      }
+     ]
     }
-  ]
-}
