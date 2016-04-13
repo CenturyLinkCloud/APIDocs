@@ -44,13 +44,13 @@ Use this API operation when you want to create multiple Server Policies.
 
 #### JSON
 
-  {
+    {
       "serverId": "UC1BAADTEST01",
       "storageRegion": "US WEST"
-  },{
+     },{
       "serverId": "IL1BAADTEST01",
       "storageRegion": "US WEST"
-  }
+    }
 
 
 ## Response
