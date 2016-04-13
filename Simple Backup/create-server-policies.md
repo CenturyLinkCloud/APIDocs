@@ -100,7 +100,7 @@ Use this API operation when you want to create multiple Server Policies.
         "expirationDate": 0,
         "unsubscribedDate": 0,
         "storageAccountId": null
-      }
+        }
       },
       {
       "success": true,
@@ -116,7 +116,7 @@ Use this API operation when you want to create multiple Server Policies.
         "expirationDate": 0,
         "unsubscribedDate": 0,
         "storageAccountId": null
-      }
+        }
       }
      ]
     }
