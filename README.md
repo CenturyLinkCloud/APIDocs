@@ -53,6 +53,12 @@ If you are new to Git and Github, we highly recommend spending 5 minutes reading
 
 #### Run the Commit Analyzer locally
 
+If your `APIDocs/lib` directory is empty, ensure that GitHub ssh is setup correctly, cd to the project root, and run:
+
+```shell
+git submodule update --init --recursive
+```
+
 To run this check locally, `cd` into the root of this project and run:
 
 ```shell
