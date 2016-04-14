@@ -48,7 +48,6 @@ Use this API operation when you want to find out all the details for a server. I
 | status | string | Describes whether the server is active or not |
 | details | complex | Resource allocations, alert policies, snapshots, and more. |
 | type | string | Whether a standard or premium server |
-| storageType | string | Whether it uses standard or premium storage |
 | changeInfo | complex | Describes "created" and "modified" details |
 | links | array | Collection of [entity links](../Getting Started/api-v20-links-framework.md) that point to resources related to this server |
 
@@ -241,7 +240,6 @@ Use this API operation when you want to find out all the details for a server. I
         ]
       },
       "type": "standard",
-      "storageType": "standard",
       "changeInfo": {
         "createdDate": "2012-12-17T01:17:17Z",
         "createdBy": "user@domain.com",
