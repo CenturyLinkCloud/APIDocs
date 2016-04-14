@@ -67,6 +67,8 @@ node lib/index.js
 
 _Note that the first time you wish to run the commit analyzer, you'll have to run `npm install` from the `lib` directory. This assumes you have [Node.js](http://nodejs.org) installed._
 
+_Note: ensure you do not commit any changes to, or auto-prune the `APIDocs/lib` directory._
+
 ### Links (API doc to API doc)
 
 
