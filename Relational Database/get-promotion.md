@@ -1,6 +1,6 @@
 {{{
   "title": "Get Promotions",
-  "date": "04-13-2015",
+  "date": "04-04-2015",
   "author": "Relational Database Services",
   "attachments": []
 }}}

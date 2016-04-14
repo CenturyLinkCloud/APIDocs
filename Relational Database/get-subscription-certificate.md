@@ -1,6 +1,6 @@
 {{{
   "title": "Get Subscription Certificate",
-  "date": "04-13-2015",
+  "date": "04-15-2015",
   "author": "Relational Database Services",
   "attachments": []
 }}}

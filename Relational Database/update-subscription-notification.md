@@ -1,6 +1,6 @@
 {{{
   "title": "Update Subscription Notification",
-  "date": "04-13-2015",
+  "date": "04-18-2015",
   "author": "Relational Database Services",
   "attachments": []
 }}}
