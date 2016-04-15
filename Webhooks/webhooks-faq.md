@@ -150,7 +150,6 @@ The Server event payload:
         ]
       },
       "type": "standard",
-      "storageType": "standard",
       "changeInfo": {
         "createdBy": "demo@user.com",
         "createdDate": "2012-12-17T01:17:17Z",
