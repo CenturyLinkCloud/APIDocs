@@ -1,9 +1,10 @@
-{{{ "title": "Getting Started",
-        "date": "04-06-2016",
-        "author": "Relational-Database-Services",
-        "attachments": [],
-        "contentIsHTML": false,
-        "sticky": true
+{{{ 
+    "title": "Getting Started",
+    "date": "04-06-2016",
+    "author": "Relational-Database-Services",
+    "attachments": [],
+    "contentIsHTML": false,
+    "sticky": true
 }}}
 
 The Relational DataBase Services (RDBS) API focuses on manipulating Subscriptions to the RDBS service. A Subscription includes the backing database server(s), certificates, database backups, and notifications.
