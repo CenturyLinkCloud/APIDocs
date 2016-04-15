@@ -49,6 +49,7 @@ Use this API operation when you want to create a new server from a standard or c
 | cpuAutoscalePolicyId | string | ID of the vertical CPU Autoscale policy to associate the server with. Available IDs can be retrieved from the **Get Autoscale Policies** API operation. (Ignored for bare metal servers.) | No |
 | memoryGB | integer | Number of GB of memory to configure the server with (1-128) (ignored for bare metal servers) | Yes |
 | type | string | Whether to create a `standard`, `hyperscale`, or `bareMetal` server | Yes |
+| storageType | string | For standard servers, whether to use standard or premium storage. If not provided, will default to premium storage. For hyperscale servers, storage type must be hyperscale. (Ignored for bare metal servers.) | No |
 | antiAffinityPolicyId | string | ID of the Anti-Affinity policy to associate the server with. Only valid for hyperscale servers. Available IDs can be retrieved from the [Get Anti-Affinity Policies](../Anti-Affinity Policies/get-anti-affinity-policies.md) API operation. | No |
 | customFields | complex | Collection of custom field ID-value pairs to set for the server. | No |
 | additionalDisks | complex | Collection of disk parameters (ignored for bare metal servers) | No |
@@ -97,6 +98,7 @@ Use this API operation when you want to create a new server from a standard or c
       "cpu": 2,
       "memoryGB": 4,
       "type": "standard",
+      "storageType": "standard",
       "customFields":[
         {
           "id": "90b3c5e28162456781d36ee42c5771a3",
