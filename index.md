@@ -18,7 +18,6 @@
     "Power Operations",
     "Public IP",
     "Queue",
-    "Relational Database (RDBS)",
     "Servers",
     "Server Actions",
     "Shared Load Balancers",
