@@ -16,11 +16,11 @@ Use this API operation when you want to retrieve a list of policies that may be 
 
 ### Structure
 
-    GET https://api.backup.ctl.io/clc-backup-api/api/servers/{serverId}
+    GET https://api.backup.ctl.io/clc-backup-api/api/accountPolicies/servers/{serverId}
 
 ### Example
 
-    GET https://api.backup.ctl.io/clc-backup-api/api/servers/VA1ACMEDEMO01
+    GET https://api.backup.ctl.io/clc-backup-api/api/accountPolicies/servers/VA1ACMEDEMO01
 
 ## Request
 
