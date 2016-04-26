@@ -59,12 +59,6 @@ Use this API operation when you want to create a new subscription.
 | location | string | Where to send notifications. For EMAIL, this is an email address. | Yes |
 | notifications | array | A list of notifications to receive. | Yes |
 
-### Notification Definition
-
-| Name | Type | Description | Req. |
-| --- | --- | --- | --- |
-| notificationType | string | One of CPU_UTILIZATION, MEMORY_UTILIZATION, STORAGE_UTILIZATION | Yes |
-
 ### User Definition
 
 | Name | Type | Description | Req. |
@@ -97,12 +91,8 @@ Use this API operation when you want to create a new subscription.
       "destinationType": "EMAIL",
       "location": "foo@bar.com",
       "notifications": [
-        {
-          "notificationType": "CPU_UTILIZATION"
-        },
-        {
-          "notificationType": "MEMORY_UTILIZATION"
-        }
+        "CPU_UTILIZATION",
+        "MEMORY_UTILIZATION"
       ]
     }
   ],
