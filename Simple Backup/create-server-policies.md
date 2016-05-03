@@ -8,6 +8,8 @@
 
 Create multiple Server Policies under an Account Policy. Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](../Authentication/login.md) for information on acquiring this token.
 
+Note that the endpoint for this operation is the same as the standard Create Server Policy API, but an additonal header (Bulk-Operation: true) is required, and both the request and response bodies will be different than the single policy create.
+
 ### When to Use It
 
 Use this API operation when you want to create multiple Server Policies.
@@ -30,12 +32,16 @@ Use this API operation when you want to create multiple Server Policies.
 | --- | --- | --- | --- |
 | accountPolicyId | string | The unique Id of an account policy | Yes |
 
+## Headers
+
+| Name | Type | Description | Req. |
+| --- | --- | --- | --- |
+| Bulk-Operation | boolean | Must be set to "true" for the multi-server-policy API | Yes |
 
 ## Content Properties
 
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
-| clcAccountAlias | string | The account alias that the Policy belongs to | Yes |
 | serverId | string | Unique server name | Yes|
 | storageRegion | string | Region where backups are stored, can be "US EAST", "US WEST", "CANADA", "GREAT BRITAIN", "GERMANY", "APAC" | Yes|
 
@@ -44,13 +50,13 @@ Use this API operation when you want to create multiple Server Policies.
 
 #### JSON
 
-    {
+    [{
       "serverId": "UC1BAADTEST01",
       "storageRegion": "US WEST"
      },{
       "serverId": "IL1BAADTEST01",
       "storageRegion": "US WEST"
-    }
+    }]
 
 
 ## Response
