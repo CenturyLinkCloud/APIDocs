@@ -30,7 +30,7 @@ Use this API operation when you want to create a brand new backup policy.
 | --- | --- | --- | --- |
 | backupIntervalHours | integer | The backup frequency of the Policy specified in hours | Yes |
 | clcAccountAlias | string | The account alias that the Policy belongs to | No |
-| excludedDirectoryPaths | Array[string] | A list of the directories that the Policy excludes from backup | No |
+| excludedDirectoryPaths | Array[string] | A list of the directories that the Policy excludes from backup | Yes (May be null) |
 | name | string | The name of the Policy | Yes |
 | osType | string | 'Linux' or 'Windows' | Yes |
 | paths | Array[string] | A list of the directories that the Policy includes in each backup | Yes |
