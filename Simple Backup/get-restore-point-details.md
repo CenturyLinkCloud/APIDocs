@@ -42,7 +42,6 @@ Use this API operation when you want to obtain restore point details for a speci
 | backupFinishedEndDate | string | Valid date format is 'YYYY-MM-DD' | Yes
 | sortBy | string | Sort results by: [policyId, retentionDay, backupStartedDate, backupFinishedDate, retentionExpiredDate, backupStatus, filesTransferredToStorage, bytesTransferredToStorage, filesFailedTransferToStorage, bytesFailedToTransfer, unchangedFilesNotTransferred, unchangedBytesNotTransferred, filesRemovedFromDisk, bytesRemovedFromDisk] | No
 | ascendingSort | boolean |  | No
-| serverPolicyId | string | Unique server policy identifier | Yes
 
 
 ## Response
