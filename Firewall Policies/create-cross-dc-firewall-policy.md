@@ -38,11 +38,11 @@ Use this API operation when you need to create a firewall policy between network
 | --- | --- | --- | --- |
 | destinationAccountId | string | Short code for a particular account | Yes |
 | destinationLocationId | string | Short code for a particular location | Yes |
-| destinationCidr | string | Source addresses for traffic on the originating firewall, specified using [CIDR notation](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing), on the originating firewall | Yes |
-| destination | string | Destination addresses for traffic on the terminating firewall, specified using [CIDR notation](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) | Yes |
-| ports | string | Type of ports associated with the policy. Supported ports include: `any`, `icmp`, TCP and UDP with single ports (`tcp/123`, `udp/123`) and port ranges (`tcp/123-456`, `udp/123-456`). Some common ports include: `tcp/21` (for FTP), `tcp/990` (FTPS), `tcp/80` (HTTP 80), `tcp/8080` (HTTP 8080), `tcp/443` (HTTPS 443), `icmp` (PING), `tcp/3389` (RDP), and `tcp/22` (SSH/SFTP). | No |
+| destinationCidr | string | Destination address for traffic on the terminating firewall, specified using [CIDR notation](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) | Yes |
+| enabled | string | Indicates if the policy is enabled (`true`) or disabled (`false`) | Yes |
+| sourceCidr | string | Source address for traffic on the originating firewall, specified using [CIDR notation](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing), on the originating firewall | Yes |
 
-### Examples
+### Example
 
 #### JSON
 ```json
