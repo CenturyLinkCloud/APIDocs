@@ -18,7 +18,7 @@ Use this API operation when you need to update a firewall policy between network
 
 ### Structure
 
-    PUT https://api.ctl.io/v2-experimental/crossDcFirewallPolicies/{accountId}/{locationId}/{policyId}?enabled=true/false
+    PUT https://api.ctl.io/v2-experimental/crossDcFirewallPolicies/{sourceAccountAlias}/{dataCenter}/{policyId}?enabled=true/false
 
 ### Example
 
@@ -30,8 +30,8 @@ Use this API operation when you need to update a firewall policy between network
 
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
-| accountId | string | Short code for a particular account | Yes |
-| locationId | string | Short string representing the data center associated with the policy of interest. Valid codes can be retrieved from the [Get Data Center List](https://www.ctl.io/api-docs/v2/#data-centers-get-data-center) API operation. | Yes |
+| sourceAccountAlias | string | Short code for a particular account | Yes |
+| dataCenter | string | Short string representing the data center associated with the policy of interest. Valid codes can be retrieved from the [Get Data Center List](https://www.ctl.io/api-docs/v2/#data-centers-get-data-center) API operation. | Yes |
 | enabled | string | true or false | Yes |
 
 ## Response

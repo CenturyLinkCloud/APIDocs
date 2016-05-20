@@ -18,7 +18,7 @@ Use this API operation when you need to delete a firewall policy between network
 
 ### Structure
 
-    DELETE https://api.ctl.io/v2-experimental/crossDcFirewallPolicies/{accountId}/{locationId}/{policyId}
+    DELETE https://api.ctl.io/v2-experimental/crossDcFirewallPolicies/{sourceAccountAlias}/{dataCenter}/{policyId}
 
 ### Example
 
@@ -30,8 +30,8 @@ Use this API operation when you need to delete a firewall policy between network
 
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
-| accountId | string | Short code for a particular account | Yes |
-| locationId | string | Short string representing the target data center for the new policy. Valid codes can be retrieved from the [Get Data Center List](https://www.ctl.io/api-docs/v2/#data-centers-get-data-center) API operation. | Yes |
+| sourceAccountAlias | string | Short code for a particular account | Yes |
+| dataCenter | string | Short string representing the target data center for the new policy. Valid codes can be retrieved from the [Get Data Center List](https://www.ctl.io/api-docs/v2/#data-centers-get-data-center) API operation. | Yes |
 | policyId | string | ID of the firewall policy  | Yes |
 
 ## Response

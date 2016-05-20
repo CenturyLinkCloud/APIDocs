@@ -18,11 +18,11 @@ Use this API operation when you need the list of available firewall policies bet
 
 ### Structure
 
-    GET https://api.ctl.io/v2-experimental/crossDcFirewallPolicies/{accountId}/{locationId}?destinationAccountId=<other account id>
+    GET https://api.ctl.io/v2-experimental/crossDcFirewallPolicies/{sourceAccountAlias}/{dataCenter}?destinationAccountId=<other account id>
 
 ### Example
 
-    GET https://api.ctl.io/v2-experimental/crossDcFirewallPolicies/SRC_ALIAS/VA1?destinationAccountId=DEST_ALIAS
+    GET https://api.ctl.io/v2-experimental/crossDcFirewallPolicies/SRC_ALIAS/VA1?destinationAccountAlias=DEST_ALIAS
 
 ## Request
 
@@ -30,9 +30,9 @@ Use this API operation when you need the list of available firewall policies bet
 
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
-| accountId | string | Short code for a particular account | Yes |
-| locationId | string | Short string representing the target data center for the new policy. Valid codes can be retrieved from the [Get Data Center List](https://www.ctl.io/api-docs/v2/#data-centers-get-data-center) API operation. | Yes |
-| destinationAccountId | string | Short string for another account | No |
+| sourceAccountAlias | string | Short code for a particular account | Yes |
+| dataCenter | string | Short string representing the target data center for the new policy. Valid codes can be retrieved from the [Get Data Center List](https://www.ctl.io/api-docs/v2/#data-centers-get-data-center) API operation. | Yes |
+| destinationAccountAlias | string | Short string for another account | No |
 
 ## Response
 
