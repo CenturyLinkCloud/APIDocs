@@ -50,7 +50,7 @@ Use this API operation when you need to create a firewall policy between network
 {
     "destinationAccountId" : "accountAlias",
     "destinationLocationId" : "UC1",
-    "destinationCidr" : "10.124.15.0/24"
+    "destinationCidr" : "10.124.15.0/24",
     "enabled" : true,
     "sourceCidr" : "10.81.10.0/24"
 }
