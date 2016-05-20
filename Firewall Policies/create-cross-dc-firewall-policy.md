@@ -50,9 +50,9 @@ Use this API operation when you need to create a firewall policy between network
 {
     "destinationAccountId" : "accountAlias",
     "destinationLocationId" : "UC1",
-    "destinationCidr" : "10.124.15.0/24",
+    "destinationCidr" : "10.1.1.0/24",
     "enabled" : true,
-    "sourceCidr" : "10.81.10.0/24"
+    "sourceCidr" : "10.2.2.0/24"
 }
 ```
 
@@ -60,23 +60,24 @@ Use this API operation when you need to create a firewall policy between network
 
 The response will be an entity representing the new firewall policy that was created.
 
-##Can I delete below this line???
-
-### Entity Definition
-
-| Name | Type | Description |
-| --- | --- | --- |
-| links | array | Collection of [entity links](https://www.ctl.io/api-docs/v2/#getting-started-api-v20-links-framework) that point to resources related to this firewall policy |
-
-### Examples
+### Example
 
 #### JSON
 ```json
-{
+{{
+    "id": "92167034-4d78-1378-a8df-6159c00bddea",
+    "status": "pending",
+    "enabled": true,
+    "sourceCidr": "10.2.2.0/24",
+    "sourceAccount": "src",
+    "sourceLocation": "VA1",
+    "destinationCidr": "10.1.1.0/24",
+    "destinationAccount": "dest",
+    "destinationLocation": "UC1",
     "links": [
         {
             "rel": "self",
-            "href": "https://api.ctl.io/v2-experimental/firewallPolicies/DEST_ALIAS/WA1/71f912d00e1c11e5b9390800200c9a66",
+            "href": "/v2-experimental/crossDcFirewallPolicies/src/va1/92167034-4d78-1378-a8df-6159c00bddea",
             "verbs": [
                 "GET",
                 "PUT",
