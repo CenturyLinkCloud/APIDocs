@@ -22,7 +22,7 @@ Use this API operation when you need to create a firewall policy between network
 
 ### Example
 
-    POST https://api.ctl.io/v2-experimental/crossDcFirewallPolicies/SRC_ALIAS/WA1
+    POST https://api.ctl.io/v2-experimental/crossDcFirewallPolicies/SRC_ALIAS/VA1
 
 ## Request
 
