@@ -2,10 +2,11 @@
   "title": "Get Cross Data Center Firewall Policy",
   "date": "5-24-2016",
   "author": "Anthony Hakim",
-  "attachments": []
+  "attachments": [],
+  "contentIsHTML": false
 }}}
 
-Gets the details of a specific firewall policy associated with a given account between networks in different data centers (an "cross data center firewall policy"). Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](../Authentication/login.md) for information on acquiring this token.
+Gets the details of a specific firewall policy associated with a given account between networks in different data centers (an "cross data center firewall policy"). Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](https://www.ctl.io/api-docs/v2/#authentication-login) for information on acquiring this token.
 
 ### When to Use It
 
@@ -30,7 +31,7 @@ Use this API operation when you need the details of a specific firewall policy i
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
 | sourceAccountAlias | string | Short code for a particular account | Yes |
-| dataCenter | string | Short string representing the data center you are querying. Valid codes can be retrieved from the [Get Data Center List](../Data Centers/get-data-center.md) API operation. | Yes |
+| dataCenter | string | Short string representing the data center you are querying. Valid codes can be retrieved from the [Get Data Center List](https://www.ctl.io/api-docs/v2/#data-centers-get-data-center) API operation. | Yes |
 | firewallPolicy | string | ID of the firewall policy  | Yes |
 
 ## Response
@@ -46,7 +47,7 @@ Use this API operation when you need the details of a specific firewall policy i
 | destination | string | Destination addresses for traffic on the terminating firewall, specified using [CIDR notation](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) |
 | destinationAccount | string | Short code for a particular account |
 | ports | string | Type of ports associated with the policy. Supported ports include: `any`, `icmp`, TCP and UDP with single ports (`tcp/123`, `udp/123`) and port ranges (`tcp/123-456`, `udp/123-456`). Some common ports include: `tcp/21` (for FTP), `tcp/990` (FTPS), `tcp/80` (HTTP 80), `tcp/8080` (HTTP 8080), `tcp/443` (HTTPS 443), `icmp` (PING), `tcp/3389` (RDP), and `tcp/22` (SSH/SFTP). |
-| links | array | Collection of [entity links](../Getting Started/api-v20-links-framework.md) that point to resources related to this list of firewall policies |
+| links | array | Collection of [entity links](https://www.ctl.io/api-docs/v2/#getting-started-api-v20-links-framework) that point to resources related to this list of firewall policies |
 
 ### Examples
 

@@ -2,10 +2,11 @@
   "title": "Create a Cross Data Center Firewall Policy",
   "date": "5-24-2016",
   "author": "Anthony Hakim",
-  "attachments": []
+  "attachments": [],
+  "contentIsHTML": false
 }}}
 
-Creates a firewall policy for a given account between networks in different data centers ("cross data center firewall policy"). Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](../Authentication/login.md) for information on acquiring this token.
+Creates a firewall policy for a given account between networks in different data centers ("cross data center firewall policy"). Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](https://www.ctl.io/api-docs/v2/#authentication-login) for information on acquiring this token.
 
 ### When to Use It
 
@@ -30,7 +31,7 @@ Use this API operation when you need to create a firewall policy between network
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
 | accountId | string | Short code for a particular account | Yes |
-| locationId | string | Short string representing the target data center for the new policy. Valid codes can be retrieved from the [Get Data Center List](../Data Centers/get-data-center.md) API operation. | Yes |
+| locationId | string | Short string representing the target data center for the new policy. Valid codes can be retrieved from the [Get Data Center List](https://www.ctl.io/api-docs/v2/#data-centers-get-data-center) API operation. | Yes |
 
 ### Content Properties
 
@@ -63,7 +64,7 @@ The response will be an entity representing the new firewall policy that was cre
 
 | Name | Type | Description |
 | --- | --- | --- |
-| links | array | Collection of [entity links](../Getting Started/api-v20-links-framework.md) that point to resources related to this firewall policy |
+| links | array | Collection of [entity links](https://www.ctl.io/api-docs/v2/#getting-started-api-v20-links-framework) that point to resources related to this firewall policy |
 
 ### Examples
 
