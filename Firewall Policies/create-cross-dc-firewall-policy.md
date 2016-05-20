@@ -48,7 +48,7 @@ Use this API operation when you need to create a firewall policy between network
 #### JSON
 ```json
 {
-    "destinationAccountId" : "accountAlias",
+    "destinationAccountId" : "dest",
     "destinationLocationId" : "UC1",
     "destinationCidr" : "10.1.1.0/24",
     "enabled" : true,
