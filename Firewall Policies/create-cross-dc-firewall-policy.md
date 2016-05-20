@@ -65,7 +65,7 @@ The response will be an entity representing the new firewall policy that was cre
 #### JSON
 ```json
 {
-    "id": "92167034-4d78-1378-a8df-6159c00bddea",
+    "id": "921670344d781378a8df6159c00bddea",
     "status": "pending",
     "enabled": true,
     "sourceCidr": "10.2.2.0/24",
@@ -77,7 +77,7 @@ The response will be an entity representing the new firewall policy that was cre
     "links": [
         {
             "rel": "self",
-            "href": "/v2-experimental/crossDcFirewallPolicies/src/va1/92167034-4d78-1378-a8df-6159c00bddea",
+            "href": "/v2-experimental/crossDcFirewallPolicies/src/va1/921670344d781378a8df6159c00bddea",
             "verbs": [
                 "GET",
                 "PUT",

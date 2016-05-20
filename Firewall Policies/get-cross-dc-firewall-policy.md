@@ -22,7 +22,7 @@ Use this API operation when you need the details of a specific firewall policy b
 
 ### Example
 
-    GET https://api.ctl.io/v2-experimental/firewallPolicies/SRC_ALIAS/VA1/92167034-4d78-1378-a8df-6159c00bddea
+    GET https://api.ctl.io/v2-experimental/firewallPolicies/SRC_ALIAS/VA1/921670344d781378a8df6159c00bddea
 
 ## Request
 
@@ -41,7 +41,7 @@ Use this API operation when you need the details of a specific firewall policy b
 #### JSON
 ```json
 {
-    "id": "92167034-4d78-1378-a8df-6159c00bddea",
+    "id": "921670344d781378a8df6159c00bddea",
     "status": "active",
     "enabled": true,
     "sourceCidr": "10.2.2.0/24",
@@ -53,7 +53,7 @@ Use this API operation when you need the details of a specific firewall policy b
     "links": [
         {
             "rel": "self",
-            "href": "/v2-experimental/crossDcFirewallPolicies/src/va1/92167034-4d78-1378-a8df-6159c00bddea",
+            "href": "/v2-experimental/crossDcFirewallPolicies/src/va1/921670344d781378a8df6159c00bddea",
             "verbs": [
                 "GET",
                 "PUT",

@@ -22,7 +22,7 @@ Use this API operation when you need to update a firewall policy between network
 
 ### Example
 
-    PUT https://api.ctl.io/v2-experimental/crossDcFirewallPolicies/SRC_ALIAS/VA1/92167034-4d78-1378-a8df-6159c00bddea?enabled=false
+    PUT https://api.ctl.io/v2-experimental/crossDcFirewallPolicies/SRC_ALIAS/VA1/921670344d781378a8df6159c00bddea?enabled=false
 
 ## Request
 

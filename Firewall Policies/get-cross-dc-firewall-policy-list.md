@@ -41,27 +41,71 @@ Use this API operation when you need the list of available firewall policies bet
 #### JSON
 ```json
 [
-    {
-        "id": "92167034-4d78-1378-a8df-6159c00bddea",
-        "status": "active",
-        "enabled": true,
-        "sourceCidr": "10.2.2.0/24",
-        "sourceAccount": "src",
-        "sourceLocation": "va1",
-        "destinationCidr": "10.1.1.0/24",
-        "destinationAccount": "dest",
-        "destinationLocation": "uc1",
-        "links": [
-            {
-                "rel": "self",
-                "href": "/v2-experimental/crossDcFirewallPolicies/src/va1/92167034-4d78-1378-a8df-6159c00bddea",
-                "verbs": [
-                    "GET",
-                    "PUT",
-                    "DELETE"
-                ]
-            }
-        ]
-    }
+ {
+   "id": "921670344d781378a8df6159c00bddea",
+   "status": "pending",
+   "enabled": true,
+   "sourceCidr": "10.2.2.0/24",
+   "sourceAccount": "src",
+   "sourceLocation": "va1",
+   "destinationCidr": "10.1.1.0/24",
+   "destinationAccount": "dest",
+   "destinationLocation": "uc1",
+   "links": [
+     {
+       "rel": "self",
+       "href": "/v2-experimental/crossDcFirewallPolicies/src/va1/921670344d781378a8df6159c00bddea",
+       "verbs": [
+         "GET",
+         "PUT",
+         "DELETE"
+       ]
+     }
+   ]
+ },
+ {
+   "id": "1a4b72963130e7a4d1a3343299f84edc",
+   "status": "active",
+   "enabled": true,
+   "sourceCidr": "10.5.5.0/24",
+   "sourceAccount": "src5",
+   "sourceLocation": "wa1",
+   "destinationCidr": "10.1.1.0/24",
+   "destinationAccount": "dest",
+   "destinationLocation": "uc1",
+   "links": [
+     {
+       "rel": "self",
+       "href": "/v2-experimental/crossDcFirewallPolicies/src5/wa1/1a4b72963130e7a4d1a3343299f84edc",
+       "verbs": [
+         "GET",
+         "PUT",
+         "DELETE"
+       ]
+     }
+   ]
+ },
+ {
+   "id": "372d37109487b0584db2c87b16f654b1",
+   "status": "active",
+   "enabled": true,
+   "sourceCidr": "10.7.7.0/24",
+   "sourceAccount": "src7",
+   "sourceLocation": "gb3",
+   "destinationCidr": "10.9.9.0/24",
+   "destinationAccount": "dest1",
+   "destinationLocation": "il1",
+   "links": [
+     {
+       "rel": "self",
+       "href": "/v2-experimental/crossDcFirewallPolicies/src7/gb3/372d37109487b0584db2c87b16f654b1",
+       "verbs": [
+         "GET",
+         "PUT",
+         "DELETE"
+       ]
+     }
+   ]
+ }
 ]
 ```
