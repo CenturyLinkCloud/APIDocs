@@ -6,23 +6,23 @@
   "contentIsHTML": false
 }}}
 
-Gets the details of a specific firewall policy associated with a given account between networks in different data centers (an "cross data center firewall policy"). Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](https://www.ctl.io/api-docs/v2/#authentication-login) for information on acquiring this token.
+Gets the details of a specific firewall policy associated with a given account, between networks in different data centers ("cross data center firewall policy"). Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](https://www.ctl.io/api-docs/v2/#authentication-login) for information on acquiring this token.
 
 ### When to Use It
 
-Use this API operation when you need the details of a specific firewall policy in a given data center for a given account.
+Use this API operation when you need the details of a specific firewall policy between networks in different data centers.
 
-  NOTE: This API operation is experimental only, and subject to change with no notice. Please plan accordingly.
+  NOTE: This API operation is experimental only, and subject to change without notice. Please plan accordingly.
 
 ## URL
 
 ### Structure
 
-    GET https://api.ctl.io/v2-experimental/firewallPolicies/{sourceAccountAlias}/{dataCenter}/{firewallPolicy}
+    GET https://api.ctl.io/v2-experimental/crossDcFirewallPolicies/{accountId}/{locationId}/{policyId}
 
 ### Example
 
-    GET https://api.ctl.io/v2-experimental/firewallPolicies/SRC_ALIAS/WA1/1ac853b00e1011e5b9390800200c9a66
+    GET https://api.ctl.io/v2-experimental/firewallPolicies/SRC_ALIAS/VA1/92167034-4d78-1378-a8df-6159c00bddea
 
 ## Request
 
@@ -30,50 +30,30 @@ Use this API operation when you need the details of a specific firewall policy i
 
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
-| sourceAccountAlias | string | Short code for a particular account | Yes |
-| dataCenter | string | Short string representing the data center you are querying. Valid codes can be retrieved from the [Get Data Center List](https://www.ctl.io/api-docs/v2/#data-centers-get-data-center) API operation. | Yes |
-| firewallPolicy | string | ID of the firewall policy  | Yes |
+| accountId | string | Short code for a particular account | Yes |
+| locationId | string | Short string representing the data center you are querying. Valid codes can be retrieved from the [Get Data Center List](https://www.ctl.io/api-docs/v2/#data-centers-get-data-center) API operation. | Yes |
+| policyId | string | ID of the firewall policy  | Yes |
 
 ## Response
 
-### Entity Definition
-
-| Name | Type | Description |
-| --- | --- | --- |
-| id | string | ID of the firewall policy  |
-| status | string | The state of the policy; either `active` (policy is available and working as expected), `error` (policy creation did not complete as expected) or `pending` (the policy is in the process of being created) |
-| enabled | boolean | Indicates if the policy is enabled (`true`) or disabled (`false`) |
-| source | string | Source addresses for traffic on the originating firewall, specified using [CIDR notation](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) |
-| destination | string | Destination addresses for traffic on the terminating firewall, specified using [CIDR notation](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) |
-| destinationAccount | string | Short code for a particular account |
-| ports | string | Type of ports associated with the policy. Supported ports include: `any`, `icmp`, TCP and UDP with single ports (`tcp/123`, `udp/123`) and port ranges (`tcp/123-456`, `udp/123-456`). Some common ports include: `tcp/21` (for FTP), `tcp/990` (FTPS), `tcp/80` (HTTP 80), `tcp/8080` (HTTP 8080), `tcp/443` (HTTPS 443), `icmp` (PING), `tcp/3389` (RDP), and `tcp/22` (SSH/SFTP). |
-| links | array | Collection of [entity links](https://www.ctl.io/api-docs/v2/#getting-started-api-v20-links-framework) that point to resources related to this list of firewall policies |
-
-### Examples
+### Example
 
 #### JSON
 ```json
 {
-    "id": "1ac853b00e1011e5b9390800200c9a6",
+    "id": "92167034-4d78-1378-a8df-6159c00bddea",
     "status": "active",
     "enabled": true,
-    "source": [
-        "123.45.678.1/32",
-        "123.45.678.2/32",
-        "123.45.678.3/32"
-    ],
-    "destination": [
-        "245.21.223.1/32",
-        "245.21.223.2/32"
-    ],
-    "destinationAccount": "DEST_ALIAS",
-    "ports": [
-        "any"
-    ],
+    "sourceCidr": "10.2.2.0/24",
+    "sourceAccount": "src",
+    "sourceLocation": "va1",
+    "destinationCidr": "10.1.1.0/24",
+    "destinationAccount": "dest",
+    "destinationLocation": "uc1",
     "links": [
         {
             "rel": "self",
-            "href": "https://api.ctl.io/v2-experimental/firewallPolicies/SRC_ALIAS/WA1/1ac853b00e1011e5b9390800200c9a6",
+            "href": "/v2-experimental/crossDcFirewallPolicies/src/va1/92167034-4d78-1378-a8df-6159c00bddea",
             "verbs": [
                 "GET",
                 "PUT",

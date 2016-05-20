@@ -64,16 +64,16 @@ The response will be an entity representing the new firewall policy that was cre
 
 #### JSON
 ```json
-{{
+{
     "id": "92167034-4d78-1378-a8df-6159c00bddea",
     "status": "pending",
     "enabled": true,
     "sourceCidr": "10.2.2.0/24",
     "sourceAccount": "src",
-    "sourceLocation": "VA1",
+    "sourceLocation": "va1",
     "destinationCidr": "10.1.1.0/24",
     "destinationAccount": "dest",
-    "destinationLocation": "UC1",
+    "destinationLocation": "uc1",
     "links": [
         {
             "rel": "self",
