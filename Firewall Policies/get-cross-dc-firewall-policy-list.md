@@ -71,7 +71,7 @@ Use this API operation when you need the list of available firewall policies bet
    "sourceAccount": "src",
    "sourceLocation": "va1",
    "destinationCidr": "10.1.1.0/24",
-   "destinationAccount": "dest",
+   "destinationAccount": "dest1",
    "destinationLocation": "uc1",
    "links": [
      {
@@ -93,7 +93,7 @@ Use this API operation when you need the list of available firewall policies bet
    "sourceAccount": "src",
    "sourceLocation": "va1",
    "destinationCidr": "10.9.9.0/24",
-   "destinationAccount": "dest1",
+   "destinationAccount": "dest2",
    "destinationLocation": "il1",
    "links": [
      {
