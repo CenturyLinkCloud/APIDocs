@@ -94,7 +94,7 @@ Below is a brief demonstration of using the .NET framework to retrieve a valid t
 
 #### PowerShell Example
 
-Below is a brief demonstration of how PowerShell can be used to retrieve a valid token from the API authentication service. Users will need to start PowerShell v4+ as an administrator.
+Below is a brief demonstration of how PowerShell can be used to retrieve a valid token from the API authentication service.
 
 
 1. Log into the API.
