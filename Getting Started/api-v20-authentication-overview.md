@@ -100,33 +100,30 @@ Below is a brief demonstration of how PowerShell can be used to retrieve a valid
 1. Log into the API.
 
   ```
-  $body = @{
-    username = 'ControlUsername'
-    password = 'ControlPassword'
-  }
-  $body = $body | ConvertTo-Json
-
-  $headers = New-Object "System.Collections.Generic.Dictionary[[String],[String]]"
+$Body = @{ 
+Username = 'CONTROL_USERNAME' 
+Password = 'CONTROL_PASSWORD' 
+}
   ```
 
 2. Log in to the Platform and get back a `bearerToken`.
 
   ```
-  $logonUrl = "https://api.ctl.io/v2/authentication/login"
-  $logonResponse = Invoke-RestMethod -Method Post -Headers $headers -Uri $logonUrl -Body $body -ContentType "application/json" -SessionVariable "theSession"
+  $LogonUri = 'https://api.ctl.io/v2/authentication/login' 
+  $LogonResponse = Invoke-RestMethod -Method Post -Uri $LogonUri -Body $Body -SessionVariable WebSession
   ```
 
 3. Pull the BearerToken out of the response and format it correctly. Note that a prefix of "Bearer " is required.
 
   ```
-  $bearer = $logonResponse.bearerToken
-  $bearer = " Bearer " + $bearer
+  $Bearer = 'Bearer ' + $LogonResponse.bearerToken
   ```
 
-4. Add the Token to the Headers to be used on future requests.
+4. Add Accept and Authorization headers to the session variable to be used on future requests.
 
   ```
-  $headers.Add("Authorization",$bearer)
+  $WebSession.Headers.Add('Accept', 'application/json') 
+  $WebSession.Headers.Add('Authorization', $Bearer)
   ```
 
 You can now use the session variable for authenticating further API calls. Example:
@@ -134,8 +131,11 @@ You can now use the session variable for authenticating further API calls. Examp
 Here's an example of pulling server credentials:
 
 ```
-$servercredsURL = "https://api.ctl.io/v2/servers/$AccountName/$servername/credentials"
-$serverCreds = Invoke-RestMethod -Method GET -Headers $Headers -Uri $servercredsURL -ContentType "application/json" -SessionVariable "theSession"
+  $AccountAlias = 'ACCOUNT_ALIAS' 
+  $ServerName = 'SERVER_NAME' 
+  $ServercredsURL = "https://api.ctl.io/v2/servers/$AccountAlias/$ServerName/credentials" 
+  $ServerCreds = Invoke-RestMethod -Uri $servercredsURL -WebSession $WebSession 
+  $ServerCreds
 ```
 
 #### Raw HTTP Example
