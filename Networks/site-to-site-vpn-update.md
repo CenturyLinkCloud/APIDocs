@@ -16,11 +16,11 @@ Use this API operation when you need to update a Site to Site VPN for a given ac
 
 ### Structure
 
-    POST https://api.ctl.io/v2/siteToSiteVpn/{vpnId}?account={accountId}
+    PUT https://api.ctl.io/v2/siteToSiteVpn/{vpnId}?account={accountId}
 
 ### Example
 
-    POST https://api.ctl.io/v2/siteToSiteVpn/9c00bddea921670344d781378a8df615?account=ACCT
+    PUT https://api.ctl.io/v2/siteToSiteVpn/9c00bddea921670344d781378a8df615?account=ACCT
 
 ## Request
 
