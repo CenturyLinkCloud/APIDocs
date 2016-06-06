@@ -6,13 +6,11 @@
   "contentIsHTML": false
 }}}
 
-Creates a firewall policy for a given account, between networks in different data centers ("cross data center firewall policy"). Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](https://www.ctl.io/api-docs/v2/#authentication-login) for information on acquiring this token.
+Creates a Site to Site VPN for a given account. Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](https://www.ctl.io/api-docs/v2/#authentication-login) for information on acquiring this token.
 
 ### When to Use It
 
-Use this API operation when you need to create a firewall policy between networks in different data centers for a given account.
-
-  NOTE: This API operation is experimental only, and subject to change without notice. Please plan accordingly.
+Use this API operation when you need to create a Site to Site VPN for a given account.
 
 ## URL
 
@@ -22,7 +20,7 @@ Use this API operation when you need to create a firewall policy between network
 
 ### Example
 
-    POST https://api.ctl.io/v2-experimental/crossDcFirewallPolicies/SRC_ALIAS/VA1
+    POST https://api.ctl.io/v2/siteToSiteVpn?account=ACCT
 
 ## Request
 
