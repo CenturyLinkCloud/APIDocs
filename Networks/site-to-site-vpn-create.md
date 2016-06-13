@@ -57,16 +57,16 @@ Use this API operation when you need to create a Site to Site VPN for a given ac
 
 ### IKE Entity
 
-| Name | Type | Description | Req. |
+| Name | Type | Description | Option | Req. |
 | --- | --- | --- | --- |
-| encryption | string |  | Yes |
-| hashing | string |  | Yes |
-| diffieHelmanGroup | string |  | Yes |
-| preSharedKey | string |  | Yes |
-| lifetime | string |  | Yes |
-| mode | string |  | Yes |
-| deadPeerDetection | string |  | Yes |
-| natTraversal | string |  | Yes |
+| encryption | string | Encryption Algorithm. | aes128, aes192, aes256, tripleDES | Yes |
+| hashing | string | Hashing Algorithm. | sha1_96, sha1_256, md5 | Yes |
+| diffieHelmanGroup | string | Group 1 (legacy), Group 2 or Group 5. If using AES with a cipher strength greater than 128-bit, or SHA2 for hashing, we recommend Group 5, otherwise Group 2 is sufficient. | group1, group2, group5 | Yes |
+| preSharedKey | string | The pre-shared key is a shared secret that secures the VPN tunnel. This value must be identical on both ends of the connection. |  | Yes |
+| lifetime | string | Lifetime is set to 8 hours for IKE. This is not required to match, as the negotiation will choose the shortest value supplied by either peer. |  | Yes |
+| mode | string | Protocol Mode. | main, aggressive | Yes |
+| deadPeerDetection | string | Dead-Peer Detection: Specify if you wish this enabled or disabled. Check your device defaults; for example, Cisco ASA defaults to 'on', while Netscreen/Juniper SSG or Juniper SRX default to 'off'. Our default is 'off'. | boolean | Yes |
+| natTraversal | string | NAT-Traversal: Allows connections to VPN end-points behind a NAT device. Defaults to 'off'. If you require NAT-T, you also need to provide the private IP address that your VPN endpoint will use to identify itself. | boolean | Yes |
 | remoteIdentity | string |  | Yes |
 
 ### IPSec Entity
