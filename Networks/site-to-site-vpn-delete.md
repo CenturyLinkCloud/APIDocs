@@ -1,6 +1,6 @@
 {{{
   "title": "Delete a Site to Site VPN",
-  "date": "6-8-2016",
+  "date": "6-14-2016",
   "author": "Anthony Hakim",
   "attachments": [],
   "contentIsHTML": false
@@ -20,7 +20,7 @@ Use this API operation when you need to delete a Site to Site VPN for a given ac
 
 ### Example
 
-    DELETE https://api.ctl.io/v2/siteToSiteVpn/9c00bddea921670344d781378a8df615?account=ACCT
+    DELETE https://api.ctl.io/v2/siteToSiteVpn/4FA8D6C83271CA53F9ABA815D7F4A0DD?account=ACCT
 
 ## Request
 
@@ -33,11 +33,11 @@ Use this API operation when you need to delete a Site to Site VPN for a given ac
 
 ## Response
 
-The response will be an entity representing the Site to Site VPN that was deleted.
+The response will be the job ID in the Queue, for the Site to Site VPN that is to be deleted.
 
 ### Example
 
 #### JSON
 ```json
-
+"54851"
 ```

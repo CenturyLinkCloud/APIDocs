@@ -144,8 +144,8 @@ The response will be an entity representing the new Site to Site VPN that was cr
    ]
  },
  "remote": {
-   "siteName": "API test",                
-   "deviceType": "SRX and stuff",        
+   "siteName": "Montreal Office",                
+   "deviceType": "Cisco ASA5520 v8.3",        
    "address": "1.2.3.4",
    "subnets": [                          
      "10.1.1.0/24"
