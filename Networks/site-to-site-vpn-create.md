@@ -63,11 +63,11 @@ Use this API operation when you need to create a Site to Site VPN for a given ac
 | hashing | string | Hashing algorithm | sha1_96, sha1_256, md5 | Yes |
 | diffieHelmanGroup | string | Group 1 (legacy), Group 2 or Group 5. If using AES with a cipher strength greater than 128-bit, or SHA2 for hashing, we recommend Group 5, otherwise Group 2 is sufficient | group1, group2, group5 | Yes |
 | preSharedKey | string | The pre-shared key is a shared secret that secures the VPN tunnel. This value must be identical on both ends of the connection |  | Yes |
-| lifetime | string | Lifetime is set to 8 hours for IKE. This is not required to match, as the negotiation will choose the shortest value supplied by either peer | number | Yes |
+| lifetime | string | Lifetime is set to 8 hours for IKE. This is not required to match, as the negotiation will choose the shortest value supplied by either peer | 3600, 28800, 86400 | Yes |
 | mode | string | Protocol mode | main, aggressive | Yes |
 | deadPeerDetection | boolean | Specify if you wish this enabled or disabled. Check your device defaults; for example, Cisco ASA defaults to 'on', while Netscreen/Juniper SSG or Juniper SRX default to 'off'. Our default is 'off'. | true/false | No |
 | natTraversal | boolean | NAT-Traversal: Allows connections to VPN end-points behind a NAT device. Defaults to 'off'. If you require NAT-T, you also need to provide the private IP address that your VPN endpoint will use to identify itself. | true/false | No |
-| remoteIdentity | string | I DON'T KNOW WHAT THIS IS ??? | OPTIONS??? | Yes |
+| remoteIdentity | string | The private IP address that your VPN endpoint will use to identify itself. Required only when NAT-T state is on | a valid IPv4 address | Yes |
 
 ### IPSec Entity
 
@@ -77,7 +77,7 @@ Use this API operation when you need to create a Site to Site VPN for a given ac
 | hashing | string | Hashing algorithm | sha1_96, sha1_256, md5 | Yes |
 | protocol | string | IPSec protocol | esp, ah | Yes |
 | pfs | string | PFS enabled or disabled (we suggest enabled, using Group 2, though Group 5 is recommended with SHA2 hashing or AES-192 or AES-256) | disabled, group1, group2, group5 | Yes |
-| lifetime | string | Lifetime is set to 1 hour (and unlimited KB). This setting is not required to match, as the negotiation process will choose the shortest value supplied by either peer. | number | Yes |
+| lifetime | string | Lifetime is set to 1 hour (and unlimited KB). This setting is not required to match, as the negotiation process will choose the shortest value supplied by either peer. | 3600, 28800, 86400 | Yes |
 
 ### Example
 
