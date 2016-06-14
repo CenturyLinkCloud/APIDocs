@@ -128,7 +128,7 @@ The response will be an entity representing the new Site to Site VPN that was cr
 #### JSON
 ```json
 {
-    "id": "3271CA53-D6C8-4FA8-A0DD-F9ABA815D7F4",
+    "id": "4FA8D6C83271CA53F9ABA815D7F4A0DD",
     "pendingTaskId": "",
     "accountAlias": "ACCT",
     "changeInfo": {
@@ -137,7 +137,7 @@ The response will be an entity representing the new Site to Site VPN that was cr
       "modifiedBy": "username",
       "modifiedDate": "2016-06-14T17:53:12Z"
     },
-    "local": {
+ "local": {
    "locationAlias": "WA1",               
    "subnets": [                          
      "10.10.10.0/24"

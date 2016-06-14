@@ -1,6 +1,6 @@
 {{{
   "title": "Get Details for a Site to Site VPN",
-  "date": "6-8-2016",
+  "date": "6-14-2016",
   "author": "Anthony Hakim",
   "attachments": [],
   "contentIsHTML": false
@@ -20,7 +20,7 @@ Use this API operation when you need to get details for a Site to Site VPN for a
 
 ### Example
 
-    GET https://api.ctl.io/v2/siteToSiteVpn/9c00bddea921670344d781378a8df615?account=ACCT
+    GET https://api.ctl.io/v2/siteToSiteVpn/4FA8D6C83271CA53F9ABA815D7F4A0DD?account=ACCT
 
 ## Request
 
@@ -39,5 +39,53 @@ The response will be an entity representing the details for a Site to Site VPN f
 
 #### JSON
 ```json
-
+{
+    "id": "4FA8D6C83271CA53F9ABA815D7F4A0DD",
+    "changeInfo": {
+      "createdBy": "username",
+      "createdDate": "2016-06-14T16:22:51Z",
+      "modifiedBy": "username",
+      "modifiedDate": "2016-06-14T17:53:12Z"
+    },
+    "accountAlias": "ACCT",
+    "local": {
+        "address": "4.3.2.1",
+        "locationAlias": "WA1",
+        "locationDescription": "WA1 - US West (Seattle)",
+        "subnets": [
+            "10.10.10.0/24"
+        ]
+    },
+    "remote": {
+        "siteName": "API test",
+        "deviceType": "SRX and stuff",
+        "address": "1.2.3.4",
+        "subnets": [
+            "10.1.1.0/24"
+        ]
+    },
+    "ike": {
+        "encryption": "aes128",
+        "hashing": "sha1_96",
+        "diffieHellmanGroup": "group2",
+        "lifetime": 28800,
+        "mode": "main",
+        "deadPeerDetection": false,
+        "natTraversal": false,
+        "remoteIdentity": null
+    },
+    "ipsec": {
+        "encryption": "aes128",
+        "hashing": "sha1_96",
+        "protocol": "esp",
+        "pfs": "group2",
+        "lifetime": 3600
+    },
+    "links": [
+        {
+            "rel": "self",
+            "href": "/v2/siteToSiteVpn/4FA8D6C83271CA53F9ABA815D7F4A0DD?account=ACCT"
+        }
+    ]
+}
 ```
