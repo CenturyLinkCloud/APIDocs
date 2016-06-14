@@ -35,49 +35,49 @@ Use this API operation when you need to update a Site to Site VPN for a given ac
 
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
-| local | string | Local site properties | Yes |
-| remote | string | Remote site properties | Yes |
-| ike | string | IKE properties | Yes |
-| ipsec | string | IPSec properties | Yes |
+| local | string | Local site properties | No |
+| remote | string | Remote site properties | No |
+| ike | string | IKE properties | No |
+| ipsec | string | IPSec properties | No |
 
 ### Local Entity
 
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
-| subnets | string | Local address for Site to Site VPN, specified using [CIDR notation](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) | Yes |
+| subnets | string | Local address for Site to Site VPN, specified using [CIDR notation](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) | No |
 
 ### Remote Entity
 
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
-| siteName | string | Friendly name of the site | Yes |
-| deviceType | string | Friendly name of the device type | Yes |
-| address | string | Remote address for Site to Site VPN, specified using [CIDR notation](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) | Yes |
-| subnets | string | Remote network address for Site to Site VPN, specified using [CIDR notation](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) | Yes |
+| siteName | string | Friendly name of the site | No |
+| deviceType | string | Friendly name of the device type | No |
+| address | string | Remote address for Site to Site VPN, specified using [CIDR notation](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) | No |
+| subnets | string | Remote network address for Site to Site VPN, specified using [CIDR notation](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) | No |
 
 ### IKE Entity
 
 | Name | Type | Description | Option | Req. |
 | --- | --- | --- | --- | --- |
-| encryption | string | Encryption algorithm | aes128, aes192, aes256, tripleDES | Yes |
-| hashing | string | Hashing algorithm | sha1_96, sha1_256, md5 | Yes |
-| diffieHelmanGroup | string | Group 1 (legacy), Group 2 or Group 5. If using AES with a cipher strength greater than 128-bit, or SHA2 for hashing, we recommend Group 5, otherwise Group 2 is sufficient | group1, group2, group5 | Yes |
-| preSharedKey | string | The pre-shared key is a shared secret that secures the VPN tunnel. This value must be identical on both ends of the connection |  | Yes |
-| lifetime | string | Lifetime is set to 8 hours for IKE. This is not required to match, as the negotiation will choose the shortest value supplied by either peer | 3600, 28800, 86400 | Yes |
-| mode | string | Protocol mode | main, aggressive | Yes |
+| encryption | string | Encryption algorithm | aes128, aes192, aes256, tripleDES | No |
+| hashing | string | Hashing algorithm | sha1_96, sha1_256, md5 | No |
+| diffieHelmanGroup | string | Group 1 (legacy), Group 2 or Group 5. If using AES with a cipher strength greater than 128-bit, or SHA2 for hashing, we recommend Group 5, otherwise Group 2 is sufficient | group1, group2, group5 | No |
+| preSharedKey | string | The pre-shared key is a shared secret that secures the VPN tunnel. This value must be identical on both ends of the connection |  | No |
+| lifetime | string | Lifetime is set to 8 hours for IKE. This is not required to match, as the negotiation will choose the shortest value supplied by either peer | 3600, 28800, 86400 | No |
+| mode | string | Protocol mode | main, aggressive | No |
 | deadPeerDetection | boolean | Specify if you wish this enabled or disabled. Check your device defaults; for example, Cisco ASA defaults to 'on', while Netscreen/Juniper SSG or Juniper SRX default to 'off'. Our default is 'off'. | true/false | No |
 | natTraversal | boolean | NAT-Traversal: Allows connections to VPN end-points behind a NAT device. Defaults to 'off'. If you require NAT-T, you also need to provide the private IP address that your VPN endpoint will use to identify itself. | true/false | No |
-| remoteIdentity | string | The private IP address that your VPN endpoint will use to identify itself. Required only when NAT-T state is on | a valid IPv4 address | Yes |
+| remoteIdentity | string | The private IP address that your VPN endpoint will use to identify itself. Required only when NAT-T state is on | a valid IPv4 address | No |
 
 ### IPSec Entity
 
 | Name | Type | Description | Option | Req. |
 | --- | --- | --- | --- | --- |
-| encryption | string | Encryption algorithm | aes128, aes192, aes256, tripleDES | Yes |
-| hashing | string | Hashing algorithm | sha1_96, sha1_256, md5 | Yes |
-| protocol | string | IPSec protocol | esp, ah | Yes |
-| pfs | string | PFS enabled or disabled (we suggest enabled, using Group 2, though Group 5 is recommended with SHA2 hashing or AES-192 or AES-256) | disabled, group1, group2, group5 | Yes |
-| lifetime | string | Lifetime is set to 1 hour (and unlimited KB). This setting is not required to match, as the negotiation process will choose the shortest value supplied by either peer. | 3600, 28800, 86400 | Yes |
+| encryption | string | Encryption algorithm | aes128, aes192, aes256, tripleDES | No |
+| hashing | string | Hashing algorithm | sha1_96, sha1_256, md5 | No |
+| protocol | string | IPSec protocol | esp, ah | No |
+| pfs | string | PFS enabled or disabled (we suggest enabled, using Group 2, though Group 5 is recommended with SHA2 hashing or AES-192 or AES-256) | disabled, group1, group2, group5 | No |
+| lifetime | string | Lifetime is set to 1 hour (and unlimited KB). This setting is not required to match, as the negotiation process will choose the shortest value supplied by either peer. | 3600, 28800, 86400 | No |
 
 ### Example
 
