@@ -65,14 +65,14 @@ Use this API operation when you need to create a Site to Site VPN for a given ac
 | preSharedKey | string | The pre-shared key is a shared secret that secures the VPN tunnel. This value must be identical on both ends of the connection |  | Yes |
 | lifetime | string | Lifetime is set to 8 hours for IKE. This is not required to match, as the negotiation will choose the shortest value supplied by either peer | number | Yes |
 | mode | string | Protocol mode | main, aggressive | Yes |
-| deadPeerDetection | boolean | Specify if you wish this enabled or disabled. Check your device defaults; for example, Cisco ASA defaults to 'on', while Netscreen/Juniper SSG or Juniper SRX default to 'off'. Our default is 'off'. | true/false | Yes |
-| natTraversal | boolean | NAT-Traversal: Allows connections to VPN end-points behind a NAT device. Defaults to 'off'. If you require NAT-T, you also need to provide the private IP address that your VPN endpoint will use to identify itself. | true/false | Yes |
-| remoteIdentity | string |  | Yes |
+| deadPeerDetection | boolean | Specify if you wish this enabled or disabled. Check your device defaults; for example, Cisco ASA defaults to 'on', while Netscreen/Juniper SSG or Juniper SRX default to 'off'. Our default is 'off'. | true/false | No |
+| natTraversal | boolean | NAT-Traversal: Allows connections to VPN end-points behind a NAT device. Defaults to 'off'. If you require NAT-T, you also need to provide the private IP address that your VPN endpoint will use to identify itself. | true/false | No |
+| remoteIdentity | string | I DON'T KNOW WHAT THIS IS ??? | OPTIONS??? | Yes |
 
 ### IPSec Entity
 
 | Name | Type | Description | Option | Req. |
-| --- | --- | --- | --- | --- | 
+| --- | --- | --- | --- | --- |
 | encryption | string | Encryption algorithm | aes128, aes192, aes256, tripleDES | Yes |
 | hashing | string | Hashing algorithm | sha1_96, sha1_256, md5 | Yes |
 | protocol | string | IPSec protocol | esp, ah | Yes |
