@@ -58,7 +58,7 @@ Use this API operation when you need to create a Site to Site VPN for a given ac
 ### IKE Entity
 
 | Name | Type | Description | Option | Req. |
-| --- | --- | --- | --- |
+| --- | --- | --- | --- | --- |
 | encryption | string | Encryption algorithm | aes128, aes192, aes256, tripleDES | Yes |
 | hashing | string | Hashing algorithm | sha1_96, sha1_256, md5 | Yes |
 | diffieHelmanGroup | string | Group 1 (legacy), Group 2 or Group 5. If using AES with a cipher strength greater than 128-bit, or SHA2 for hashing, we recommend Group 5, otherwise Group 2 is sufficient | group1, group2, group5 | Yes |
@@ -72,7 +72,7 @@ Use this API operation when you need to create a Site to Site VPN for a given ac
 ### IPSec Entity
 
 | Name | Type | Description | Option | Req. |
-| --- | --- | --- | --- |
+| --- | --- | --- | --- | --- | 
 | encryption | string | Encryption algorithm | aes128, aes192, aes256, tripleDES | Yes |
 | hashing | string | Hashing algorithm | sha1_96, sha1_256, md5 | Yes |
 | protocol | string | IPSec protocol | esp, ah | Yes |
