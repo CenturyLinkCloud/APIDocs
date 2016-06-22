@@ -45,6 +45,7 @@ Use this API operation when you want to find out all the details for a server. I
 | isTemplate | boolean | Boolean indicating whether this is a custom template or running server |
 | locationId | string | Data center that this server resides in |
 | osType | string | Friendly name of the Operating System the server is running |
+| isManagedOS | boolean | Describes whether the server is managed or not. Only appears when the server is managed. |
 | status | string | Describes whether the server is active or not |
 | details | complex | Resource allocations, alert policies, snapshots, and more. |
 | type | string | Whether a standard or premium server |
