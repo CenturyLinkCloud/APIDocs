@@ -1,7 +1,7 @@
 {{{
   "title": "Delete Group",
-  "date": "11-24-2014",
-  "author": "Bryan Friedman",
+  "date": "06-21-2016",
+  "author": "Anthony Hakim",
   "attachments": []
 }}}
 
@@ -19,7 +19,7 @@ Use this API operation when you want to delete a group and all objects underneat
 
 ### Example
 
-    DELETE https://api.ctl.io/v2/servers/ALIAS/2a5c0b9662cf4fc8bf6180f139facdc0
+    DELETE https://api.ctl.io/v2/groups/ALIAS/2a5c0b9662cf4fc8bf6180f139facdc0
 
 ## Request
 
