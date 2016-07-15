@@ -61,7 +61,7 @@ Use this API operation when you need to create a Site to Site VPN for a given ac
 | --- | --- | --- | --- | --- |
 | encryption | string | Encryption algorithm | aes128, aes192, aes256, tripleDES | Yes |
 | hashing | string | Hashing algorithm | sha1_96, sha1_256, md5 | Yes |
-| diffieHelmanGroup | string | Group 1 (legacy), Group 2 or Group 5. If using AES with a cipher strength greater than 128-bit, or SHA2 for hashing, we recommend Group 5, otherwise Group 2 is sufficient | group1, group2, group5 | Yes |
+| diffieHellmanGroup | string | Group 1 (legacy), Group 2 or Group 5. If using AES with a cipher strength greater than 128-bit, or SHA2 for hashing, we recommend Group 5, otherwise Group 2 is sufficient | group1, group2, group5 | Yes |
 | preSharedKey | string | The pre-shared key is a shared secret that secures the VPN tunnel. This value must be identical on both ends of the connection |  | Yes |
 | lifetime | string | Lifetime is set to 8 hours for IKE. This is not required to match, as the negotiation will choose the shortest value supplied by either peer | 3600, 28800, 86400 | Yes |
 | mode | string | Protocol mode | main, aggressive | Yes |
