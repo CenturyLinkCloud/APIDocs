@@ -5,6 +5,10 @@
   "attachments": []
 }}}
 
+## V2 API AVAILABLE
+
+Please note that there is an equivalent V2 API. Please use the V2 Billing | [Get Invoice Data for an Account Alias](../v2/#billing-get-invoice-data-for-an-account-alias) API.
+
 Gets the details for a given invoice within an account. Calls to this operation must include an authorization cookie acquired from the [Logon operation](../Authentication/logon.md).
 
 ## URL
