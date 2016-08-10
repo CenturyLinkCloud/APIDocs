@@ -7,9 +7,10 @@
 
 Gets the details for a given invoice within an account. Calls to this operation must include an authorization cookie acquired from the [Logon operation](../Authentication/logon.md).
 
-## V2 API Equivalent Available
-
-<div class="alert alert-warning">Please note that there is an equivalent V2 API. Please use the V2 Billing | <a href="../v2/#billing-get-invoice-data-for-an-account-alias">Get Invoice Data for an Account Alias</a> API.
+<div class="alert alert-warning">
+<h2>V2 API Available</h2>
+There is an equivalent V2 API that should be used instead. Please use the V2 Billing | <a href="../v2/#billing-get-invoice-data-for-an-account-alias">Get Invoice Data for an Account Alias</a> API.
+</div>
 
 ## URL
 
