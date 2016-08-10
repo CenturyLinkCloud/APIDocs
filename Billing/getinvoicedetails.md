@@ -9,7 +9,7 @@ Gets the details for a given invoice within an account. Calls to this operation 
 
 ## V2 API Equivalent Available
 
-<div class="alert alert-warning">Please note that there is an equivalent V2 API. Please use the V2 Billing | [Get Invoice Data for an Account Alias](../v2/#billing-get-invoice-data-for-an-account-alias) API.</div>
+<div class="alert alert-warning">Please note that there is an equivalent V2 API. Please use the V2 Billing | <a href="../v2/#billing-get-invoice-data-for-an-account-alias">Get Invoice Data for an Account Alias</a> API.
 
 ## URL
 
