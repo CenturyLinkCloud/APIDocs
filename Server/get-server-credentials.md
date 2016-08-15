@@ -7,6 +7,11 @@
 
 Gets the credentials for the specified server.
 
+<div class="alert alert-warning">
+<h2>V2 API Available</h2>
+There is an equivalent V2 API that should be used instead. Please use the Servers | <a href="../v2/#servers-get-server-credentials">Get Server Credentials</a> API.
+</div>
+
 ## URL
 
     REST: https://api.ctl.io/REST/Server/GetServerCredentials/<format> (format = XML | JSON)

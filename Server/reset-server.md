@@ -7,6 +7,11 @@
 
 Resets the server (forced power cycle).
 
+<div class="alert alert-warning">
+<h2>V2 API Available</h2>
+There is an equivalent V2 API that should be used instead. Please use the Servers | <a href="../v2/#servers-set-server-disks">Set Server Disks</a> API.
+</div>
+
 ## URL
 
     REST: https://api.ctl.io/REST/Server/ResetServer/<format> (format = XML | JSON)

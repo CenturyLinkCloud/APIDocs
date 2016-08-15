@@ -7,6 +7,11 @@
 
 Updates the Admin/Root password for a Server.
 
+<div class="alert alert-warning">
+<h2>V2 API Available</h2>
+There is an equivalent V2 API that should be used instead. Please use the Servers | <a href="../v2/#servers-set-server-credentials">Set Server Credentials</a> API.
+</div>
+
 ### URL
 
     REST: https://api.ctl.io/REST/Server/ChangePassword/<format> (format = XML | JSON)

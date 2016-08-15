@@ -7,6 +7,11 @@
 
 Lists the disks on a Server.
 
+<div class="alert alert-warning">
+<h2>V2 API Available</h2>
+There is an equivalent V2 API that should be used instead. Please use the Servers | <a href="../v2/#servers-get-server">Get Server</a> API.
+</div>
+
 ## URL
 
     REST: https://api.ctl.io/REST/Server/ListDisks/<format> (format = XML | JSON)
