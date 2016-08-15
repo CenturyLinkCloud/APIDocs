@@ -7,6 +7,11 @@
 
 Gets the details for a given invoice within an account. Calls to this operation must include an authorization cookie acquired from the [Logon operation](../Authentication/logon.md).
 
+<div class="alert alert-warning">
+<h2>V2 API Available</h2>
+There is an equivalent V2 API that should be used instead. Please use the V2 Billing | <a href="../v2/#billing-get-invoice-data-for-an-account-alias">Get Invoice Data for an Account Alias</a> API.
+</div>
+
 ## URL
 
     REST: https://api.ctl.io/REST/Billing/GetInvoiceDetails/<format> (format = XML | JSON)
