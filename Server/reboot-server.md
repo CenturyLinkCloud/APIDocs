@@ -7,6 +7,11 @@
 
 Reboots the server (OS reboot).
 
+<div class="alert alert-warning">
+<h2>V2 API Available</h2>
+There is an equivalent V2 API that should be used instead. Please use the Power Operations | <a href="../v2/#power-operations-reboot-server">Reboot Server</a> API.
+</div>
+
 ## URL
 
     REST: https://api.ctl.io/REST/Server/RebootServer/<format> (format = XML | JSON)

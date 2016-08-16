@@ -7,6 +7,11 @@
 
 Maps a public IP Address to a Server.
 
+<div class="alert alert-warning">
+<h2>V2 API Available</h2>
+There is an equivalent V2 API that should be used instead. Please use the Public IP | <a href="../v2/#public-ip-add-public-ip-address">Add Public IP Address</a> API.
+</div>
+
 ## URL
 
     REST: https://api.ctl.io/REST/Network/AddPublicIPAddress/<format> (format = XML | JSON)

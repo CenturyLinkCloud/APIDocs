@@ -7,6 +7,11 @@
 
 Gets the list of Servers for a given Hardware Group.
 
+<div class="alert alert-warning">
+<h2>V2 API Available</h2>
+There is an equivalent V2 API that should be used instead. Please use the Groups | <a href="../v2/#groups-get-group">Get Group</a> API.
+</div>
+
 ## URL
 
     REST: https://api.ctl.io/REST/Server/GetServers/<format> (format = XML | JSON)
