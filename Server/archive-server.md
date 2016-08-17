@@ -7,6 +7,11 @@
 
 Archives the server.
 
+<div class="alert alert-warning">
+<h2>V2 API Available</h2>
+There is an equivalent V2 API that should be used instead. Please use the Server Actions | <a href="../v2/#server-actions-archive-server">Archive Server</a> API.
+</div>
+
 ## URL
 
     REST: https://api.ctl.io/REST/Server/ArchiveServer/<format> (format = XML | JSON)

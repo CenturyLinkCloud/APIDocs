@@ -7,6 +7,11 @@
 
 Powers on the server (or resumes from a paused state).
 
+<div class="alert alert-warning">
+<h2>V2 API Available</h2>
+There is an equivalent V2 API that should be used instead. Please use the Power Operations | <a href="../v2/#power-operations-power-on-server">Power On Server</a> API.
+</div>
+
 ## URL
 
     REST: https://api.ctl.io/REST/Server/PowerOnServer/<format> (format = XML | JSON)

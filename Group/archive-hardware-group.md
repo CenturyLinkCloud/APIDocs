@@ -7,6 +7,11 @@
 
 Archives all Servers in the Group and then archives the Group.
 
+<div class="alert alert-warning">
+<h2>V2 API Available</h2>
+There is an equivalent V2 API that should be used instead. Please use the Group Actions | <a href="../v2/#group-actions-archive-group">Archive Group</a> API.
+</div>
+
 ## URL
 
     REST: https://api.ctl.io/REST/Group/ArchiveHardwareGroup/<format> (format = XML | JSON)

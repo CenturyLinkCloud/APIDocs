@@ -7,6 +7,11 @@
 
 Configures the CPU, Memory, Group and additional storage for a Server.
 
+<div class="alert alert-warning">
+<h2>V2 API Available</h2>
+There is an equivalent V2 API that should be used instead. Please use the Servers | <a href="../v2/#servers-set-server-cpumemory">Set Server CPU/Memory</a>, Servers | <a href"../v2/#servers-set-server-disks">Set Server Disks</a>, and Servers | <a href"../v2/#servers-set-server-descriptiongroup">Set Server Description/Group</a> APIs.
+</div>
+
 ## URL
 
     REST: https://api.ctl.io/REST/Server/ConfigureServer/<format> (format = XML | JSON)

@@ -7,6 +7,11 @@
 
 Reverts to a named snapshot for a specified server.
 
+<div class="alert alert-warning">
+<h2>V2 API Available</h2>
+There is an equivalent V2 API that should be used instead. Please use the Server Actions | <a href="../v2/#server-actions-revert-to-snapshot">Revert to Snapshot</a> API.
+</div>
+
 ## URL
 
     REST: https://api.ctl.io/REST/Server/RevertToSnapshot/<format> (format = XML | JSON)

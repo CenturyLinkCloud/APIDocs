@@ -7,6 +7,11 @@
 
 Deletes the Hardware Group along with all child groups and servers.
 
+<div class="alert alert-warning">
+<h2>V2 API Available</h2>
+There is an equivalent V2 API that should be used instead. Please use the Groups | <a href="../v2/#groups-delete-group">Delete Group</a> API.
+</div>
+
 ## URL
 
     REST: https://api.ctl.io/REST/Group/DeleteHardwareGroup/<format> (format = XML | JSON)

@@ -7,6 +7,11 @@
 
 Creates a new Server.
 
+<div class="alert alert-warning">
+<h2>V2 API Available</h2>
+There is an equivalent V2 API that should be used instead. Please use the Servers | <a href="../v2/#servers-create-server">Create Server</a> API.
+</div>
+
 ## URL
 
     REST: https://api.ctl.io/REST/Server/CreateServer/<format> (format = XML | JSON)

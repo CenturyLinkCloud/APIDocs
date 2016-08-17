@@ -7,6 +7,11 @@
 
 Restores an archived Hardware Group.
 
+<div class="alert alert-warning">
+<h2>V2 API Available</h2>
+There is an equivalent V2 API that should be used instead. Please use the Group Actions | <a href="../v2/#group-actions-restore-group">Restore Group</a> API.
+</div>
+
 ## URL
 
     REST: https://api.ctl.io/REST/Group/RestoreHardwareGroup/<format> (format = XML | JSON)

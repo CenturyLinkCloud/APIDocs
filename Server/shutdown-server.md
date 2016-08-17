@@ -7,6 +7,11 @@
 
 Shuts down the operating system and then powers off server.
 
+<div class="alert alert-warning">
+<h2>V2 API Available</h2>
+There is an equivalent V2 API that should be used instead. Please use the Power Operations | <a href="../v2/#power-operations-shut-down-server">Shut Down Server</a> API.
+</div>
+
 ## URL
 
     REST: https://api.ctl.io/REST/Server/ShutdownServer/&lt;format&gt;

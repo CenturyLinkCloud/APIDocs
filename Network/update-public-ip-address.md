@@ -7,6 +7,11 @@
 
 Configures firewall settings on a public IP Address.
 
+<div class="alert alert-warning">
+<h2>V2 API Available</h2>
+There is an equivalent V2 API that should be used instead. Please use the Public IP | <a href="../v2/#public-ip-update-public-ip-address">Update Public IP Address</a> API.
+</div>
+
 ## URL
 
     REST: https://api.ctl.io/REST/Network/UpdatePublicIPAddress/<format> (format = XML | JSON)

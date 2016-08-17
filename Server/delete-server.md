@@ -7,6 +7,11 @@
 
 Deletes the machine and releases all associated resources.
 
+<div class="alert alert-warning">
+<h2>V2 API Available</h2>
+There is an equivalent V2 API that should be used instead. Please use the Servers | <a href="../v2/#servers-delete-server">Delete Server</a> API.
+</div>
+
 ## URL
 
     REST: https://api.ctl.io/REST/Server/DeleteServer/<format> (format = XML | JSON)
