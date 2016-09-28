@@ -46,9 +46,9 @@ Use this API operation when you want to discover the available capabilities of r
 | id | string | The configurationId to pass to the [Create Server](../Servers/create-server.md) API operation when creating a bare metal server. |
 | hourlyRate | number | Price per hour for the given configuration. |
 | availability | string | The level of availability for the given configuration: either `high`, `low`, or `none `. |
-| memory | complex | Information about the memory on the server. |
+| memory | array | Information about the memory on the server. |
 | processor | complex | Information about the physical processors on the server. |
-| storage | complex | Collection of disk information, each item representing one physical disk on the server. |
+| storage | array | Collection of disk information, each item representing one physical disk on the server. |
 
 ### Memory Definition
 | Name | Type | Description |
@@ -65,17 +65,19 @@ Use this API operation when you want to discover the available capabilities of r
 ### Storage Definition
 | Name | Type | Description |
 | --- | --- | --- |
-| type | string | Drive capacity in gigabytes |
-| description | string | Friendly description for the OS type |
-| hourlyRatePerSocket | number | Price per hour per socket for the OS type.  |
+| capacityGB | number | Drive capacity in gigabytes |
+| speedRpm | number | RPM (revolutions per minutes) speed of the disk |
+| type | string | Disk type. Only `Hdd` currently supported. |
+
 
 ### OperatingSystems Definition
 
 | Name | Type | Description |
 | --- | --- | --- |
-| capacityGB | number | Underlying unique name for the OS type |
-| speedRpm | number | RPM (revolutions per minutes) speed of the disk |
-| type | string | Disk type. Only `Hdd` currently supported. |
+| type | string | Underlying unique name for the OS type |
+| description | string | Friendly description for the OS type |
+| hourlyRatePerSocket | number | Price per hour per socket for the OS type.  |
+
 
 ### Examples
 
