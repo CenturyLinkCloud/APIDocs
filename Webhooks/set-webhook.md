@@ -33,7 +33,7 @@ Use this API operation when you want to change the configuration of a webhook in
 
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
-| recursive | string | If true, the webhook is called when the event occurs in sub-accounts | Yes |
+| recursive | boolean | If true, the webhook will be called when the event occurs in a sub-accounts | Yes |
 | targetUris | TargetUri[] | The targets called when the event occurs | No |
 
 #### TargetUri Entity Definition
