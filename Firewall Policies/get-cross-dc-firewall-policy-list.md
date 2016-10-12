@@ -18,7 +18,7 @@ Use this API operation when you need the list of available firewall policies bet
 
 ### Structure
 
-    GET https://api.ctl.io/v2-experimental/crossDcFirewallPolicies/{sourceAccountId}/{dataCenter}?destinationAccountId=<other account id>
+    GET https://api.ctl.io/v2-experimental/crossDcFirewallPolicies/{sourceAccountId}/{dataCenter}?destinationAccountId={destinationAccountId}
 
 ### Example
 
