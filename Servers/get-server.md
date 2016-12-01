@@ -49,8 +49,6 @@ Use this API operation when you want to find out all the details for a server. I
 | isManagedBackup | boolean | Describes whether the server has Managed Backup or not. Only appears when the server has both Managed OS and Managed Backup. |
 | status | string | Describes whether the server is active or not |
 | details | complex | Resource allocations, alert policies, snapshots, and more. |
-| type | string | Whether a standard or premium server |
-| storageType | string | Whether it uses standard or premium storage |
 | changeInfo | complex | Describes "created" and "modified" details |
 | links | array | Collection of [entity links](../Getting Started/api-v20-links-framework.md) that point to resources related to this server |
 
@@ -241,14 +239,6 @@ Use this API operation when you want to find out all the details for a server. I
             "displayValue": "1100003"
           }
         ]
-      },
-      "type": "standard",
-      "storageType": "standard",
-      "changeInfo": {
-        "createdDate": "2012-12-17T01:17:17Z",
-        "createdBy": "user@domain.com",
-        "modifiedDate": "2014-05-16T23:49:25Z",
-        "modifiedBy": "user@domain.com"
       },
       "links": [
         {
