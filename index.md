@@ -9,7 +9,7 @@
     "Billing",
     "Custom Fields",
     "Data Centers",
-    "Firewall Policies",
+    "Firewall",
     "Groups",
     "Group Actions",
     "Intrusion Prevention (IPS)",
