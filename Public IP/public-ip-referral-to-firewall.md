@@ -1,5 +1,5 @@
 {{{
-  "title": "Public IP is located under Firewall",
+  "title": "Public IP: See Firewall",
   "date": "12-23-2016",
   "author": "Lyza Latham",
   "attachments": []
