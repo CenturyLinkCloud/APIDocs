@@ -5,4 +5,8 @@
   "attachments": []
 }}}
 
-APIs for Public IP are located within the [Firewall](../Firewall) section.
+APIs for Public IP are located within the [Firewall](../Firewall/add-public-ip-address.md) section.
+
+.
+
+.
