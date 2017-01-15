@@ -48,7 +48,7 @@ Use this API operation when you want to find out all the details for a server. I
 | isManagedOS | boolean | Describes whether the server is managed or not. Only appears when the server is managed. |
 | isManagedBackup | boolean | Describes whether the server has Managed Backup or not. Only appears when the server has both Managed OS and Managed Backup. |
 | status | string | Describes whether the server is active or not |
-| details | complex | Resource allocations, alert policies, snapshots, and more. |
+| details | complex | Managed applications, resource allocations, alert policies, snapshots and more. |
 | type | string | Whether a standard or premium server |
 | storageType | string | Whether it uses standard or premium storage |
 | changeInfo | complex | Describes "created" and "modified" details |
