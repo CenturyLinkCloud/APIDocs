@@ -53,6 +53,12 @@ If you are new to Git and Github, we highly recommend spending 5 minutes reading
 
 #### Run the Commit Analyzer locally
 
+If your `APIDocs/lib` directory is empty, ensure that GitHub ssh is setup correctly, cd to the project root, and run:
+
+```shell
+git submodule update --init --recursive
+```
+
 To run this check locally, `cd` into the root of this project and run:
 
 ```shell
@@ -60,6 +66,8 @@ node lib/index.js
 ```
 
 _Note that the first time you wish to run the commit analyzer, you'll have to run `npm install` from the `lib` directory. This assumes you have [Node.js](http://nodejs.org) installed._
+
+_Note: ensure you do not commit any changes to, or auto-prune the `APIDocs/lib` directory._
 
 ### Links (API doc to API doc)
 

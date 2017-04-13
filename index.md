@@ -9,7 +9,7 @@
     "Billing",
     "Custom Fields",
     "Data Centers",
-    "Firewall Policies",
+    "Firewall",
     "Groups",
     "Group Actions",
     "Intrusion Prevention (IPS)",
@@ -18,9 +18,11 @@
     "Power Operations",
     "Public IP",
     "Queue",
+    "Relational Database (RDBS)",
     "Servers",
     "Server Actions",
     "Shared Load Balancers",
+    "Simple Backup",
     "Webhooks"
   ]
 }}}

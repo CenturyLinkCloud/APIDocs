@@ -58,14 +58,17 @@ Use this API operation when you want to change the disks on an existing server.
              {
                "diskId":"0:0",
                "sizeGB":1
+			   "type":"raw"
              },
              {
                "diskId":"0:1",
                "sizeGB":2
+			   "type":"raw"
              },
              {
                "diskId":"0:2",
                "sizeGB":16
+			   "type":"raw"
              },
              {
                "path":"/extra",
