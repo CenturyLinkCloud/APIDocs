@@ -46,7 +46,8 @@ Use this API operation when you want to get a list of policies and policy detail
 | paths | Array[string] | A list of the directories that the Policy includes in each backup |
 | backupProvider | string | Not currently used |
 | retentionDays | integer | The number of days backup data will be retained |
-| backupIntervalHours | integer | The backup frequency of the Policy specified in hours  |
+| backupIntervalHours | integer | The backup frequency of the Policy specified in hours-- ignored if backupSchedule is defined |
+| backupSchedule | string | Quartz-flavored CRON string describing the execution schedule for the Policy |
 | serverPolicyId | string | Unique server policy identifier |
 | serverId | string | Unique server identifier |
 | storageRegion | string | Region where backups are stored. "US EAST", "US WEST", "CANADA", "GREAT BRITAIN", "GERMANY", "APAC" |
@@ -71,7 +72,7 @@ Use this API operation when you want to get a list of policies and policy detail
       -
       "backupProvider": null
       "retentionDays": 2
-      "backupIntervalHours": 22
+      "backupSchedule": "0 0 12 ? * SUN *"
       "serverPolicyId": "6d05d351-9cb8-4fed-bca6-064e3034caeb"
       "serverId": "VA1BAAPPRDTST01"
       "storageRegion": "CANADA"
