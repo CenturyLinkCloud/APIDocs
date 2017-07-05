@@ -51,29 +51,32 @@ Use this API operation when you want to change the disks on an existing server.
 #### JSON
 
     [
-       {
-          "op":"set",
-          "member":"disks",
-          "value":[
-             {
-               "diskId":"0:0",
-               "sizeGB":1
-             },
-             {
-               "diskId":"0:1",
-               "sizeGB":2
-             },
-             {
-               "diskId":"0:2",
-               "sizeGB":16
-             },
-             {
-               "path":"/extra",
-               "sizeGB":"20",
-               "type":"partitioned"
-             }
-          ]  
-       }
+      {
+        "op":"set",
+        "member":"disks",
+        "value":[
+          {
+            "diskId":"0:0",
+            "sizeGB":"1",
+            "type":"raw"
+          },
+          {
+            "diskId":"0:1",
+            "sizeGB":"2",
+            "type":"raw"
+          },
+          {
+            "diskId":"0:2",
+            "sizeGB":"16",
+            "type":"raw"
+          },
+          {
+            "path":"/extra",
+            "sizeGB":"20",
+            "type":"partitioned"
+          }
+        ]  
+      }
     ]
 
 ## Response

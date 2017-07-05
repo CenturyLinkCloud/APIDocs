@@ -5,7 +5,7 @@
   "attachments": []
 }}}
 
-Gets the list of capabilities that a specific data center supports for a given account, including the deployable networks, OS templates, and whether features like premium storage and shared load balancer configuration are available. Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](../Authentication/login.md) for information on acquiring this token.
+Gets the list of capabilities that a specific data center supports for a given account, including the deployable networks, OS templates, and whether features like shared load balancer configuration are available. Calls to this operation must include a token acquired from the authentication endpoint. See the [Login API](../Authentication/login.md) for information on acquiring this token.
 
 ### When to Use It
 
@@ -36,7 +36,6 @@ Use this API operation when you want to discover the available capabilities of a
 
 | Name | Type | Description |
 | --- | --- | --- |
-| supportsPremiumStorage | boolean | Whether or not this data center provides support for servers with premium storage |
 | supportsSharedLoadBalancer | boolean | Whether or not this data center provides support for shared load balancer configuration |
 | supportsBareMetalServers | boolean | Whether or not this data center provides support for provisioning bare metal servers |
 | deployableNetworks | array | Collection of networks that can be used for deploying servers |
@@ -68,7 +67,6 @@ Use this API operation when you want to discover the available capabilities of a
 #### JSON
 
     {
-      "supportsPremiumStorage":true,
       "supportsBareMetalServers":false,
       "supportsSharedLoadBalancer":true,
       "deployableNetworks":[

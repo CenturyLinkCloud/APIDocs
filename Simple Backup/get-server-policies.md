@@ -34,7 +34,7 @@ Use this API operation when you want to get a list of all Server Policies attach
 
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
-| accountPolicyId | string | Unique ID of an account policy | Yes |
+| accountPolicyId | string | Unique ID of an account policy | No |
 | limit | integer | Return up to this many results | No |
 | offset | string | Return results starting from this position in the list | No |
 | withStatus | string | Filter results for either 'ACTIVE' or 'INACTIVE' Policies | No |
