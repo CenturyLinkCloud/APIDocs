@@ -52,7 +52,8 @@ Use this API operation when you want to retrieve a list of all policies associat
 
 | Name | Type | Description |
 | --- | --- | --- |
-| backupIntervalHours | integer | The backup frequency of the Policy |
+| backupIntervalHours | integer | The backup frequency of the Policy-- ignored if backupSchedule is defined |
+| backupSchedule | string | Quartz-flavored CRON string describing the execution schedule for the Policy |
 | clcAccountAlias | string | The account alias that the Policy belongs to |
 | excludedDirectoryPaths | Array[string] | A list of the directories that the Policy excludes from backup |
 | name | string | The name of the Policy |
@@ -95,7 +96,7 @@ Use this API operation when you want to retrieve a list of all policies associat
           ],
           "excludedDirectoryPaths": [],
           "retentionDays": 1,
-          "backupIntervalHours": 24,
+          "backupSchedule": "0 0 12 ? * SUN *",
           "policyId": "18b4bdd3-cbdf-40c5-86bf-3c36b0a060f5"
         }
       ],
