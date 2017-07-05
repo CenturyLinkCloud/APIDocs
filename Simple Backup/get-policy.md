@@ -37,7 +37,8 @@ Use this API operation when you want to retrieve the details of a specific backu
 
 | Name | Type | Description |
 | --- | --- | --- |
-| backupIntervalHours | integer | The backup frequency of the Policy |
+| backupIntervalHours | integer | The backup frequency of the Policy-- ignored if backupSchedule is defined |
+| backupSchedule | string | Quartz-flavored CRON string describing the execution schedule for the Policy |
 | clcAccountAlias | string | The account alias that the Policy belongs to |
 | excludedDirectoryPaths | Array[string] | A list of the directories that the Policy excludes from backup |
 | name | string | The name of the Policy |
@@ -64,6 +65,6 @@ Use this API operation when you want to retrieve the details of a specific backu
         "/var/run"
       ],
       "retentionDays": 5,
-      "backupIntervalHours": 36,
+      "backupSchedule": "0 0 12 ? * SUN *",
       "policyId": "4ca70660-f08a-407b-830d-e8e9c6c1d59a"
     }
