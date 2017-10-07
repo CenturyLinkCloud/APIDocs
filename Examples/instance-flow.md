@@ -21,7 +21,7 @@ This guide shows all the steps you need to deploy a box using the Cloud Applicat
 Now let’s look at the script in sections to understand how you can make API calls from any code you like.
 
 ### Authenticate with Cloud Application Manager
-Before calling to the API you have to sig in into the Cloud Application Manager website and [getting an authentication token](../Administering Your Organization/admin-access.md). You use this token as an http header to perform every call to the Cloud Application Manager API.
+Before calling to the API you have to sig in into the Cloud Application Manager website and [getting an authentication token](https://www.ctl.io/knowledge-base/cloud-application-manager/administering-your-organization/admin-access/). You use this token as an http header to perform every call to the Cloud Application Manager API.
 
 **Declare Deployment Variables**
 
@@ -120,7 +120,7 @@ fi;
 
 ### Create a Custom Box in Order to Deploy It Using the Previous Deployment Policy Box
 
-In a POST request to the Box object, we send the features for our script box. Also we will use two already created blobs. You can take a look to the [blobs](./api-blobs.md), API doc if you need to know how you can create them.
+In a POST request to the Box object, we send the features for our script box. Also we will use two already created blobs. You can take a look to the [blobs](../Application Lifecycle Management/api-blobs.md), API doc if you need to know how you can create them.
 
 ```
 # We create a box to deploy with that policy box, in this case we are going to use a previously uploaded scripts.
@@ -242,7 +242,7 @@ echo "Undeployed box: $instance_id"
 
 ### Contacting Cloud Application Manager Support
 
-We’re sorry you’re having an issue in [Cloud Application Manager](https://www.ctl.io/cloud-application-manager/). Please review the [troubleshooting tips](../Troubleshooting/troubleshooting-tips.md), or contact [Cloud Application Manager support](mailto:incident@CenturyLink.com) with details and screenshots where possible.
+We’re sorry you’re having an issue in [Cloud Application Manager](https://www.ctl.io/cloud-application-manager/). Please review the [troubleshooting tips](https://www.ctl.io/knowledge-base/cloud-application-manager/troubleshooting/troubleshooting-tips/), or contact [Cloud Application Manager support](mailto:incident@CenturyLink.com) with details and screenshots where possible.
 
 For issues related to API calls, send the request body along with details related to the issue.
 

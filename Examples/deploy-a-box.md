@@ -8,7 +8,7 @@
 
 ### Sample: Deploy a MongoDB instance via the API
 
-Here you can see how to deploy a mongoDB instance using the Cloud Application Manager API. Typically you want to structure API calls to mirror your workflow in Cloud Application Manager. Most workflows involve tasks such as these: defining a [box](./api-boxes.md), for example a Jenkins box to automate continuous integration and delivery; registering a [provider](./api-providers.md) like AWS, Google Cloud, vSphere, OpenStack, or CloudStack to host your box application deployments; creating a [deployment profile](../Deploying Anywhere/deploying-managing-instances.md) to specify provider specific options for a deployment; deploying an instance to launch a box in the virtual environment; or performing lifecycle tasks like deploying, reconfiguring, and terminating an instance.
+Here you can see how to deploy a mongoDB instance using the Cloud Application Manager API. Typically you want to structure API calls to mirror your workflow in Cloud Application Manager. Most workflows involve tasks such as these: defining a [box](../Application Lifecycle Management/api-boxes.md), for example a Jenkins box to automate continuous integration and delivery; registering a [provider](../CAM Platform/api-providers.md) like AWS, Google Cloud, vSphere, OpenStack, or CloudStack to host your box application deployments; creating a [deployment profile](https://www.ctl.io/knowledge-base/cloud-application-manager/deploying-anywhere/deploying-managing-instances/) to specify provider specific options for a deployment; deploying an instance to launch a box in the virtual environment; or performing lifecycle tasks like deploying, reconfiguring, and terminating an instance.
 
 In this sample, we follow this workflow to deploy a MongoDB instance using the existing MongoDB public box:
 
@@ -40,7 +40,7 @@ password=$2
 
 ### Authenticate with Cloud Application Manager
 
-All API calls start with signing in to the Cloud Application Manager website and [getting an authentication token](./api-overview-and-access.md). You use this token to perform tasks in your Cloud Application Manager workflow. In this example, we pass the token in the format as shown to all of the API requests that relate to deploying MongoDB.
+All API calls start with signing in to the Cloud Application Manager website and [getting an authentication token](../Getting Started/api-overview-and-access.md). You use this token to perform tasks in your Cloud Application Manager workflow. In this example, we pass the token in the format as shown to all of the API requests that relate to deploying MongoDB.
 
 ```
 ElasticBox-Token:8ccc8203-2efd-44a9-8819-e95fd2277be2
@@ -254,7 +254,7 @@ fi
 
 ### Contacting Cloud Application Manager Support
 
-We’re sorry you’re having an issue in [Cloud Application Manager](https://www.ctl.io/cloud-application-manager/). Please review the [troubleshooting tips](../Troubleshooting/troubleshooting-tips.md), or contact [Cloud Application Manager support](mailto:incident@CenturyLink.com) with details and screenshots where possible.
+We’re sorry you’re having an issue in [Cloud Application Manager](https://www.ctl.io/cloud-application-manager/). Please review the [troubleshooting tips](https://www.ctl.io/knowledge-base/cloud-application-manager/troubleshooting/troubleshooting-tips/), or contact [Cloud Application Manager support](mailto:incident@CenturyLink.com) with details and screenshots where possible.
 
 For issues related to API calls, send the request body along with details related to the issue.
 

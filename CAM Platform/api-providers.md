@@ -82,7 +82,7 @@ ElasticBox-Release: 4.0
 
 |  Parameter  |      Type     |   Description   |
 |-------------|---------------|-----------------|
-| credentials | object | Required. Contains the credential object, which is either the [AWS role ARN name](../Deploying Anywhere/using-your-aws-account.md) if using Cloud Application Manager as a SaaS or the key and secret if using Cloud Application Manager as an appliance. |
+| credentials | object | Required. Contains the credential object, which is either the [AWS role ARN name](https://www.ctl.io/knowledge-base/cloud-application-manager/deploying-anywhere/using-your-aws-account/) if using Cloud Application Manager as a SaaS or the key and secret if using Cloud Application Manager as an appliance. |
 
 **Amazon Web Services Gov request body**
 
@@ -3561,7 +3561,7 @@ DELETE /services/providers/{provider_id}/images/{machine_image_id}?location=us-e
 
 ### Contacting Cloud Application Manager Support
 
-We’re sorry you’re having an issue in [Cloud Application Manager](https://www.ctl.io/cloud-application-manager/). Please review the [troubleshooting tips](../Troubleshooting/troubleshooting-tips.md), or contact [Cloud Application Manager support](mailto:incident@CenturyLink.com) with details and screenshots where possible.
+We’re sorry you’re having an issue in [Cloud Application Manager](https://www.ctl.io/cloud-application-manager/). Please review the [troubleshooting tips](https://www.ctl.io/knowledge-base/cloud-application-manager/troubleshooting/troubleshooting-tips/), or contact [Cloud Application Manager support](mailto:incident@CenturyLink.com) with details and screenshots where possible.
 
 For issues related to API calls, send the request body along with details related to the issue.
 
