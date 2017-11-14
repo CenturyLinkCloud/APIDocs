@@ -31,7 +31,7 @@ Gets the schema of a given organization.
 
 ```
 Content-Type: application/json
-Elasticbox-Token: your_authentication_token
+Authorization: your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
@@ -291,7 +291,7 @@ Updates an existing organization given its name. Only the organization administr
 
 ```
 Content-Type: application/json
-Elasticbox-Token: your_authentication_token
+Authorization: your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
@@ -799,7 +799,7 @@ Queues a request to sync LDAP groups. The sync request, depending on the amount 
 
 ```
 Content-Type: application/json
-Elasticbox-Token: your_authentication_token
+Authorization: your_json_web_token
 ElasticBox-Release: 4.0
 ```
 

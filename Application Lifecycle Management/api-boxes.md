@@ -53,7 +53,7 @@ Gets boxes that are accessible in the personal workspace of the authenticated us
 Headers:
 
 Content-Type: application/json
-Elasticbox-Token: your_authentication_token
+Authorization: your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
@@ -283,7 +283,7 @@ Creates a new box in the personal workspace and gets the created box.
 Headers:
 
 Content-Type: application/json
-Elasticbox-Token: your_authentication_token
+Authorization: your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
@@ -364,7 +364,7 @@ Fetches an existing box, requires the specified id box_id.
 Headers:
 
 Content-Type: application/json
-Elasticbox-Token: your_authentication_token
+Authorization: your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
@@ -428,7 +428,7 @@ Requires the box ID to update an existing box. The request body must contain the
 
 ```
 Content-Type: application/json
-Elasticbox-Token: your_authentication_token
+Authorization: your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
@@ -455,7 +455,7 @@ ElasticBox-Release: 4.0
 Headers:
 
 Content-Type: application/json
-Elasticbox-Token: your_authentication_token
+Authorization: your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
@@ -609,7 +609,7 @@ Deletes an existing box, requires the specified id box_id.
 Headers:
 
 Content-Type: application/json
-Elasticbox-Token: your_authentication_token
+Authorization: your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
@@ -629,7 +629,7 @@ Gets the box stack. The box stack is a list of boxes. All boxes that are a box v
 Headers:
 
 Content-Type: application/json
-Elasticbox-Token: your_authentication_token
+Authorization: your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
@@ -806,7 +806,7 @@ Gets a list of box objects that are bindings of the request box, requires the sp
 Headers:
 
 Content-Type: application/json
-Elasticbox-Token: your_authentication_token
+Authorization: your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
@@ -847,7 +847,7 @@ Gets a list of box versions, requires the specified id box_id. If the box is unv
 Headers:
 
 Content-Type: application/json
-Elasticbox-Token: your_authentication_token
+Authorization: your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
@@ -975,7 +975,7 @@ Compares a box to the submitted box, requires the specified id box_id.
 Headers:
 
 Content-Type: application/json
-Elasticbox-Token: your_authentication_token
+Authorization: your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
@@ -1180,7 +1180,7 @@ Creating a box of the CloudFormation service type.
 Headers:
 
 Content-Type: application/json
-Elasticbox-Token: your_authentication_token
+Authorization: your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
@@ -1229,7 +1229,7 @@ Fetches contents from a given URL. Once we have checked that the template is the
 Headers:
 
 Content-Type: application/json
-Elasticbox-Token: your_authentication_token
+Authorization: your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
@@ -1286,7 +1286,7 @@ Another option is to create the template from the data submitted through a URL.
 Headers:
 
 Content-Type: application/json
-Elasticbox-Token: your_authentication_token
+Authorization: your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
@@ -1354,7 +1354,7 @@ Finally we are going to update the CloudFormation box with one of the templates 
 Headers:
 
 Content-Type: application/json
-Elasticbox-Token: your_authentication_token
+Authorization: your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
@@ -1439,7 +1439,7 @@ Creates a blob from modified template data.
 Headers:
 
 Content-Type: application/json
-Elasticbox-Token: your_authentication_token
+Authorization: your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
@@ -1506,7 +1506,7 @@ Updates the CloudFormation box.
 Headers:
 
 Content-Type: application/json
-Elasticbox-Token: your_authentication_token
+Authorization: your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
@@ -1591,7 +1591,7 @@ Creates a new instance of the CloudFormation box.
 Headers:
 
 Content-Type: application/json
-Elasticbox-Token: your_authentication_token
+Authorization: your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
@@ -1762,7 +1762,7 @@ Uploads the modified template data.
 Headers:
 
 Content-Type: application/json
-Elasticbox-Token: your_authentication_token
+Authorization: your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
@@ -1800,7 +1800,7 @@ Updates the instance with the template changes.
 Headers:
 
 Content-Type: application/json
-Elasticbox-Token: your_authentication_token
+Authorization: your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
@@ -2052,7 +2052,7 @@ Reconfigures the stack based on the changes.
 Headers:
 
 Content-Type: application/json
-Elasticbox-Token: your_authentication_token
+Authorization: your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
