@@ -30,7 +30,7 @@ Uploads a file using multi-part form data when you give these parameters in the 
 Headers:
 
 Content-Type: application/json
-Authorization: your_json_web_token
+Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
@@ -80,7 +80,7 @@ Creates a blob from submitted data when you give the file name.
 Headers:
 
 Content-Type: application/json
-Authorization: your_json_web_token
+Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
@@ -120,7 +120,7 @@ Downloads a file uploaded previously when you give the file_id and the file_name
 Headers:
 
 Content-Type: application/json
-Authorization: your_json_web_token
+Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 

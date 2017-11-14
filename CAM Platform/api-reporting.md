@@ -37,7 +37,7 @@ Gets the report of the amount spent per instance and day of a period of time.
 **Request Headers**
 
 ```
-Authorization: your_json_web_token
+Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 **Response Parameters**
@@ -147,7 +147,7 @@ Gets the report of the amount spent per instance and day of a period of time in 
 **Request Headers**
 
 ```
-Authorization: your_json_web_token
+Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
