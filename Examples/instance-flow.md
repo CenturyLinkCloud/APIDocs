@@ -54,7 +54,7 @@ payload="{
 }"
 provider=$(curl -k -s \
     -X POST \
-    -H "Authorization:$json_web_token" \
+    -H "Authorization:Bearer $json_web_token" \
     -H "elasticbox-release:4.0" -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/534.30 (KHTML, like Gecko) Chrome/12.0.742.112 Safari/534.30" \
     -H "Accept: application/json, text/plain, */*" \
     -H "Accept-encoding: gzip, deflate" \
@@ -104,7 +104,7 @@ payload="{
 policy_box=$(curl -k -s \
     -X POST \
     -H "Content-Type:application/json" \
-    -H "Authorization:$json_web_token" \
+    -H "Authorization:Bearer $json_web_token" \
     -H "elasticbox-release:4.0" -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/534.30 (KHTML, like Gecko) Chrome/12.0.742.112 Safari/534.30" \
     -H "Accept: application/json, text/plain, */*" \
     -H "Accept-encoding: gzip, deflate" \
@@ -166,7 +166,7 @@ payload="{
 box=$(curl -k -s \
     -X POST \
     -H "Content-Type:application/json" \
-    -H "Authorization:$json_web_token" \
+    -H "Authorization:Bearer $json_web_token" \
     -H "elasticbox-release:4.0" -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/534.30 (KHTML, like Gecko) Chrome/12.0.742.112 Safari/534.30" \
     -H "Accept: application/json, text/plain, */*" \
     -H "Accept-encoding: gzip, deflate" \
@@ -209,7 +209,7 @@ payload="{
 instance=$(curl -k -s \
     -X POST \
     -H "Content-Type:application/json" \
-    -H "Authorization:$json_web_token" \
+    -H "Authorization:Bearer $json_web_token" \
     -H "elasticbox-release:4.0" -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/534.30 (KHTML, like Gecko) Chrome/12.0.742.112 Safari/534.30" \
     -H "Accept: application/json, text/plain, */*" \
     -H "Accept-encoding: gzip, deflate" \
@@ -230,7 +230,7 @@ To remove the instance from the virtual machine, we send a DELETE request to the
 ```
 curl -k -s \
 -X DELETE \
--H "Authorization:$json_web_token" \
+-H "Authorization:Bearer $json_web_token" \
 -H "elasticbox-release:4.0" \
 -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/534.30 (KHTML, like Gecko) Chrome/12.0.742.112 Safari/534.30" \
 -H "Accept: application/json, text/plain, */*" \

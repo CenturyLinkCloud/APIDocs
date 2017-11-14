@@ -44,7 +44,7 @@ Gets a list of all accessible workspaces. There are two types of workspaces: per
 
 ```
 Content-Type: application/json
-Authorization: your_json_web_token
+Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
@@ -128,7 +128,7 @@ Creates a new team workspace and gets the created workspace.
 
 ```
 Content-Type: application/json
-Authorization: your_json_web_token
+Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
@@ -214,7 +214,7 @@ Fetches an existing workspace for the specified workspace ID.
 
 ```
 Content-Type: application/json
-Authorization: your_json_web_token
+Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
@@ -277,7 +277,7 @@ Updates an existing workspace, requires the specified id workspace_id.
 
 ```
 Content-Type: application/json
-Authorization: your_json_web_token
+Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
@@ -390,7 +390,7 @@ Deletes an existing workspace, requires the specified id workspace_id.
 
 ```
 Content-Type: application/json
-Authorization: your_json_web_token
+Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
@@ -410,7 +410,7 @@ Gets a list of workspace providers, requires the specified id workspace_id.There
 
 ```
 Content-Type: application/json
-Authorization: your_json_web_token
+Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
@@ -481,7 +481,7 @@ Gets a list of workspace boxes, requires the specified id workspace_id.
 
 ```
 Content-Type: application/json
-Authorization: your_json_web_token
+Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
@@ -669,7 +669,7 @@ Gets a list of workspace instances, requires the specified id workspace_id.
 Headers:
 
         Content-Type: application/json
-        Authorization: your_json_web_token
+        Authorization: Bearer your_json_web_token
         ElasticBox-Release: 4.0
 ```
 
