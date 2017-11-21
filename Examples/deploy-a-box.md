@@ -31,7 +31,7 @@ aws_provider_key=$1
 aws_provider_secret=$2
 
 environment=$3
-elasticBox_token=$4
+json_web_token=$4
 owner=$5
 
 username=$1
@@ -43,7 +43,7 @@ password=$2
 All API calls start with signing in to the Cloud Application Manager website and [getting an authentication token](../Getting Started/api-overview-and-access.md). You use this token to perform tasks in your Cloud Application Manager workflow. In this example, we pass the token in the format as shown to all of the API requests that relate to deploying MongoDB.
 
 ```
-ElasticBox-Token:8ccc8203-2efd-44a9-8819-e95fd2277be2
+Authorization:Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJvcGVyYXRpb25zIiwianRpIjoiNjk0YTgzMTgtZjZlMy00MDA5LTgxNTItYzdlNTE0NzFlMzU3IiwiZXhwIjoxNTExMzY3ODYxLCJvcmdhbml6YXRpb24iOiJlbGFzdGljYm94IiwiaWF0IjoxNTEwMDcxODYxLCJ0eXBlIjoidXNlciIsIm5hbWUiOiJPcGVyYXRpb25zIEVsYXN0aWNCb3gifQ.hob7M5swTflmbsw_iGe94FPnFgBvWbVKscvKN8Ij_4AgRj7PFrYVIwW8Xyd-PIuDKWLe3cGGE0Hz8g6KdDUMzbfp-dXk4JjqyenejCA-UTF9dv1z-pWt69IevRNR5XdYR5iVff4-Yy33RMaeWHaLuYTbOQHjVI2MDB7shlOCx4sERDtd31OyD6ZjNgRMLLDR0AFLTj2KRDleoH8iG0yXodD0AVk0iAcBCaakgZR5ROAZDb3SoSpsKYPS4dC-eWd_s0VgdYaWOd1jI0ev66-oPgSul9kAuIjozyNZ3s4vW0i-8Y5sH4lTWgMqTmf3lmjA6e2sj5lV9-boE3k3ALJwPg
 ```
 
 ### Create a Deployment Policy Box
@@ -81,7 +81,7 @@ payload="{
 policy_box=$(curl -k -s \
         -X POST \
         -H "Content-Type:application/json" \
-        -H "elasticBox-token:$elasticBox_token" \
+        -H "Authorization:Bearer $json_web_token" \
         -H "elasticbox-release:4.0" \
         -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/534.30 (KHTML, like Gecko) Chrome/12.0.742.112 Safari/534.30" \
         -H "Accept: application/json" \
@@ -137,7 +137,7 @@ payload="{
 instance=$(curl -k -s \
     -X POST \
     -H "Content-Type:application/json" \
-    -H "elasticBox-token:$elasticBox_token" \
+    -H "Authorization:Bearer $json_web_token" \
     -H "elasticbox-release:4.0" \
     -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/534.30 (KHTML, like Gecko) Chrome/12.0.742.112 Safari/534.30" \
     -H "Accept: application/json" \
@@ -161,7 +161,7 @@ COUNTER=0
 while [ $COUNTER -lt $cycles_to_wait ]; do
   instance=$(curl -k -s \
     -X GET\
-    -H "elasticBox-token:$elasticBox_token" \
+    -H "Authorization:Bearer $json_web_token" \
     -H "elasticbox-release:4.0" \
     -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/534.30 (KHTML, like Gecko) Chrome/12.0.742.112 Safari/534.30" \
     -H "Accept: application/json" \
@@ -190,7 +190,7 @@ status=$(curl -s -k \
   -H "Accept: application/json" \
   -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/534.30 (KHTML, like Gecko) Chrome/12.0.742.112 Safari/534.30" \
   -H "Content-Type:application/json" \
-  -H "elasticBox-token:$elasticBox_token" \
+  -H "Authorization:Bearer $json_web_token" \
   -H "elasticbox-release:4.0" \
   -w '%{http_code}' \
   -o /dev/null \
@@ -214,7 +214,7 @@ while [[ $COUNTER -lt 30 ]]; do
     -H "Accept: application/json" \
     -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/534.30 (KHTML, like Gecko) Chrome/12.0.742.112 Safari/534.30" \
     -H "Content-Type:application/json" \
-    -H "elasticBox-token:$elasticBox_token" \
+    -H "Authorization:Bearer $json_web_token" \
     -H "elasticbox-release:4.0" \
     https://$environment/services/instances/${instance_id})
   instance_state=$(echo $instance | python -c 'import json,sys; print json.load(sys.stdin)["state"]')
@@ -239,7 +239,7 @@ status=$(curl -s -k \
   -H "Accept: application/json" \
   -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/534.30 (KHTML, like Gecko) Chrome/12.0.742.112 Safari/534.30" \
   -H "Content-Type:application/json" \
-  -H "elasticBox-token:$elasticBox_token" \
+  -H "Authorization:Bearer $json_web_token" \
   -H "elasticbox-release:4.0" \
   -w '%{http_code}' \
   -o /dev/null \

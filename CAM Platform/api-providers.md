@@ -42,7 +42,7 @@ Creates a new provider account in Cloud Application Manager and gets the status 
 
 ```
 content-type:application/json
-Elasticbox-Token: your_authentication_token
+Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 **Request parameters for all providers**
@@ -629,7 +629,7 @@ Gets available providers from the personal workspace of the authenticated user.
 Headers:
 
 Content-Type: application/json
-Elasticbox-Token: your_authentication_token
+Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
@@ -1019,7 +1019,7 @@ Fetches an existing provider when you give the provider ID.
 Headers:
 
 Content-Type: application/json
-Elasticbox-Token: your_authentication_token
+Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
@@ -2103,7 +2103,7 @@ For AWS, you can also update the key and secret. For VMware vShpere, you can als
 Headers:
 
 Content-Type: application/json
-Elasticbox-Token: your_authentication_token
+Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
@@ -3303,7 +3303,7 @@ Deletes an existing provider when you give the provider ID.
 Headers:
 
 Content-Type: application/json
-Elasticbox-Token: your_authentication_token
+Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
@@ -3330,7 +3330,7 @@ Syncs an existing provider when you give the provider ID.
 Headers:
 
 Content-Type: application/json
-Elasticbox-Token: your_authentication_token
+Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
@@ -3353,7 +3353,7 @@ Retrieves the logs of a provider when you give the provider ID.
 Headers:
 
 Content-Type: application/json
-Elasticbox-Token: your_authentication_token
+Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
@@ -3414,7 +3414,7 @@ Retrieves a list of unregistered instances found in a provider when you give the
 Headers:
 
 Content-Type: application/json
-Elasticbox-Token: your_authentication_token
+Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
@@ -3511,7 +3511,7 @@ Adds a new machine image to a provider when you give the provider ID.
 Headers:
 
 Content-Type: application/json
-Elasticbox-Token: your_authentication_token
+Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
@@ -3549,7 +3549,7 @@ Deletes an existing machine image when you give the provider ID and the machine 
 Headers:
 
 Content-Type: application/json
-Elasticbox-Token: your_authentication_token
+Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 

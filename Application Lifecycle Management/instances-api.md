@@ -55,7 +55,7 @@ Gets instances that are accessible in the personal workspace of the authenticate
 Headers:
 
 Content-Type: application/json
-Elasticbox-Token: your_authentication_token
+Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
@@ -337,7 +337,7 @@ Creates a new instance and gets the created instance.
 Headers:
 
 Content-Type: application/json
-Elasticbox-Token: your_authentication_token
+Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
@@ -406,7 +406,7 @@ Register an unregistered instance: notice that it's the same endpoint to create 
 Headers:
 
 Content-Type: application/json
-Elasticbox-Token: your_authentication_token
+Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
@@ -681,7 +681,7 @@ Fetches an existing instance given its ID.
 Headers:
 
 Content-Type: application/json
-Elasticbox-Token: your_authentication_token
+Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
@@ -969,7 +969,7 @@ Given the instance ID, updates only these fields of an existing instance: boxes,
 Headers:
 
 Content-Type: application/json
-Elasticbox-Token: your_authentication_token
+Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 ```
@@ -1338,7 +1338,7 @@ Terminates, force-terminates, or deletes an existing instance based on its insta
 Headers:
 
 Content-Type: application/json
-Elasticbox-Token: your_authentication_token
+Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 ```
@@ -1365,7 +1365,7 @@ Gets the service on the instance given its instance ID.
 Headers:
 
 Content-Type: application/json
-Elasticbox-Token: your_authentication_token
+Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
@@ -1475,7 +1475,7 @@ Gets all activity logs from operations run on an instance given its instance ID.
 Headers:
 
 Content-Type: application/json
-Elasticbox-Token: your_authentication_token
+Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
@@ -1569,7 +1569,7 @@ Gets the logs of one machine for a deployed instance given its instance ID.
 Headers:
 
 Content-Type: application/json
-Elasticbox-Token: your_authentication_token
+Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
@@ -1612,7 +1612,7 @@ Gets the binding of an instance when you give the instance ID.
 Headers:
 
 Content-Type: application/json
-Elasticbox-Token: your_authentication_token
+Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
@@ -1717,7 +1717,7 @@ Gets all operations run on an instance when you give the instance ID.
 Headers:
 
 Content-Type: application/json
-Elasticbox-Token: your_authentication_token
+Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 **Response Parameters**
@@ -1788,7 +1788,7 @@ Re-deploy an existing instance, requires the specified id instance_id.
 Headers:
 
 Content-Type: application/json
-Elasticbox-Token: your_authentication_token
+Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
@@ -1808,7 +1808,7 @@ Powers on an existing instance when you give the instance ID.
 Headers:
 
 Content-Type: application/json
-Elasticbox-Token: your_authentication_token
+Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
@@ -1830,7 +1830,7 @@ Shuts down an existing instance when you give the instance ID.
 Headers:
 
 Content-Type: application/json
-Elasticbox-Token: your_authentication_token
+Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
@@ -1852,7 +1852,7 @@ Reinstalls an existing instance when you give its ID.
 Headers:
 
 Content-Type: application/json
-Elasticbox-Token: your_authentication_token
+Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
@@ -1879,7 +1879,7 @@ Re-configures an existing instance when you give its ID.
 Headers:
 
 Content-Type: application/json
-Elasticbox-Token: your_authentication_token
+Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
@@ -1916,7 +1916,7 @@ Retry to import an unregistered instance. when you give its ID.
 Headers:
 
 Content-Type: application/json
-Elasticbox-Token: your_authentication_token
+Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
@@ -1953,7 +1953,7 @@ Cancel a failed import of an unregistered instance when you give its ID.
 Headers:
 
 Content-Type: application/json
-Elasticbox-Token: your_authentication_token
+Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 

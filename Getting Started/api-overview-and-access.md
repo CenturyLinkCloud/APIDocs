@@ -22,13 +22,13 @@ You can embed API requests within your existing Python, Ruby, Java, C, C++, Go, 
 
 ### Headers
 
-All request headers must have three elements: Content-Type, ElasticBox-Token, and ElasticBox-Release.
+All request headers must have three elements: Content-Type, Authorization, and ElasticBox-Release.
 
 ### Content-Type
 
 The REST API supports HTTP requests and responses in JSON format. All your request headers must identify the JSON content type.
 
-### ElasticBox-Token
+### Authorization
 
 The token based on a user’s account authorizes access to data in Cloud Application Manager. Typically, you want the user to have broad access to Cloud Application Manager data like a user with administrator privileges. API requests from external applications should be made as this user. API responses return data based on this user’s access level in Cloud Application Manager.
 Tokens assure a secure way to connect to Cloud Application Manager without compromising credentials while you make API requests over the web. Tokens work for any type of authentication whether that’s username, password, Google, GitHub, or LDAP. We authorize token access using basic authentication.
@@ -66,7 +66,7 @@ Headers for a sample request look like this.
 Headers:
 
 Content-Type: application/json
-ElasticBox-Token: 46-cbd2-4273-85b8-e2bba8ed265a
+Authorization:Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJvcGVyYXRpb25zIiwianRpIjoiNjk0YTgzMTgtZjZlMy00MDA5LTgxNTItYzdlNTE0NzFlMzU3IiwiZXhwIjoxNTExMzY3ODYxLCJvcmdhbml6YXRpb24iOiJlbGFzdGljYm94IiwiaWF0IjoxNTEwMDcxODYxLCJ0eXBlIjoidXNlciIsIm5hbWUiOiJPcGVyYXRpb25zIEVsYXN0aWNCb3gifQ.hob7M5swTflmbsw_iGe94FPnFgBvWbVKscvKN8Ij_4AgRj7PFrYVIwW8Xyd-PIuDKWLe3cGGE0Hz8g6KdDUMzbfp-dXk4JjqyenejCA-UTF9dv1z-pWt69IevRNR5XdYR5iVff4-Yy33RMaeWHaLuYTbOQHjVI2MDB7shlOCx4sERDtd31OyD6ZjNgRMLLDR0AFLTj2KRDleoH8iG0yXodD0AVk0iAcBCaakgZR5ROAZDb3SoSpsKYPS4dC-eWd_s0VgdYaWOd1jI0ev66-oPgSul9kAuIjozyNZ3s4vW0i-8Y5sH4lTWgMqTmf3lmjA6e2sj5lV9-boE3k3ALJwPg
 ElasticBox-Release: 4.0
 ```
 
