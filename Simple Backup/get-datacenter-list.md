@@ -42,7 +42,7 @@ Use this API operation when you want to get a list of CLC Data Centers.
       1:  "CA2 - Canada (Toronto)"
       2:  "CA3 - Canada (Toronto)"
       3:  "DE1 - Germany (Frankfurt)"
-      4:  "GB1 - Great Britain (Portsmouth)"
+      4:  "GB1 - Great Britain (Reading)"
       5:  "GB3 - Great Britain (Slough)"
       6:  "IL1 - US Central (Chicago)"
       7:  "NY1 - US East (New York)"
