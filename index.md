@@ -12,6 +12,7 @@
     "Firewall",
     "Groups",
     "Group Actions",
+    "Instances",
     "Intrusion Prevention (IPS)",
     "Networks",
     "Patching",
