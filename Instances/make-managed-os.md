@@ -10,7 +10,7 @@ This service allows the user to delegate the management of an existing Instance 
 
 ### When to Use It
 
-Use this API operation if you don't want CL to be able to manage your instance on your behalf.
+Use this API operation if you want CL to be able to manage your instance on your behalf.
 
 NOTE: The following requirements need to be met in order to be able to make an instance managed:
 
