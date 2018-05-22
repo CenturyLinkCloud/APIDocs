@@ -24,6 +24,7 @@ Gets the schema of a given organization.
 
 **Common Error Response Codes**
 
+* Unauthorized (401) - Invalid access token/cookie
 * User doesn’t belong to the organization (403)
 * Not Found (404)
 
@@ -284,8 +285,11 @@ Updates an existing organization given its name. Only the organization administr
 
 **Common Error Response Codes**
 
+* Bad Request (400) - Request missing, incomplete or includes invalid properties (details provided inside body)
+* Unauthorized (401) - Invalid access token/cookie
 * User doesn’t belong to the organization (403)
-* Not Found (404)
+* Not Found (404) - Organization not found
+* Conflict (409) - 'updated' property mismatch. (Make a GET call to API to fetch the current 'updated' property and use it in a new PUT request)
 
 **Request Headers**
 
@@ -789,11 +793,12 @@ Queues a request to sync LDAP groups. The sync request, depending on the amount 
 
 **Normal Response Codes**
 
-* 200
+* Accepted (202)
 
 **Error Response Codes**
 
-* Not Found (404)
+* Unauthorized (401) - Invalid access token/cookie
+* Not Found (404) - Organization not found
 
 **Request Headers**
 
