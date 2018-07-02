@@ -32,9 +32,9 @@ Use this API operation when you want to get a big-picture status report for all 
 
 ## Response
 
-### content-type: text/plain, content-disposition: attachment
+#### content-type: text/plain, content-disposition: attachment
 
-### Note for "Anywhere Servers" in this report: the "Server Id" column will contain the friendly name given to the server, next a colon delimiter, and finally the reference id for the anywhere server record
+#### Note for "Anywhere Servers" in this report: the "Server Id" column will contain the friendly name given to the server, next a colon delimiter, and finally the reference id for the anywhere server record
 
 ### Examples
 
