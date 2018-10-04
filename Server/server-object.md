@@ -19,7 +19,6 @@
 | DiskCount | Int  | Total number of disks configured on the Server.  |
 | TotalDiskSpaceGB | Int  | Total space across all disk configured on the Server. |
 | IsTemplate  | Bool  | True if the Server is a template, else False. |
-| IsHyperscale  | Bool  | True if the Server is a Hyperscale instance, else False. |
 | Status  | Json:Int / Xml:String | `Active`, `Archived`, `Deleted`, `UnderConstruction`, `QueuedForArchive`, `QueuedForDelete`, or `QueuedForRestore` |
 | ServerType | String | The type of server. `Standard` or `Premium` |
 | ServiceLevel | String | The service level/performance for the underlying data store.  `Standard` or `Premium` |
