@@ -53,7 +53,7 @@ Use this API operation when you want to create a new server from a standard or c
 | ttl | dateTime | Date/time that the server should be deleted (ignored for bare metal servers) | No |
 | packages | complex | Collection of packages to run on the server after it has been built (ignored for bare metal servers) | No |
 | configurationId | string | Only required for bare metal servers. Specifies the identifier for the specific configuration type of bare metal server to deploy. A list of possible configs can be retrieved from the [Get Data Center Bare Metal Capabilities](../Data Centers/get-data-center-bare-metal-capabilities.md) API operation. (Ignored for standard servers.) | Yes |
-| osType | string | Only required for bare metal servers. Specifies the OS to provision with the bare metal server. Currently, the only supported OS types are `redHat6_64Bit`, `centOS6_64Bit`, `windows2012R2Standard_64Bit`, `windows2012R2Datacenter_64Bit`, `ubuntu14_64Bit`. A list of importable OS types for a given data center can be retrieved from the [Get Data Center Bare Metal Capabilities](../Data Centers/get-data-center-bare-metal-capabilities.md) API operation. (Ignored for standard and hyperscale servers.) | Yes |
+| osType | string | Only required for bare metal servers. Specifies the OS to provision with the bare metal server. Currently, the only supported OS types are `redHat6_64Bit`, `centOS6_64Bit`, `windows2012R2Standard_64Bit`, `windows2012R2Datacenter_64Bit`, `ubuntu14_64Bit`. A list of importable OS types for a given data center can be retrieved from the [Get Data Center Bare Metal Capabilities](../Data Centers/get-data-center-bare-metal-capabilities.md) API operation. (Ignored for standard servers.) | Yes |
 
 ### CustomFields Definition
 
