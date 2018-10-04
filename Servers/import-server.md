@@ -42,7 +42,6 @@ Use this API operation when you want to import a new server from an OVF that has
 | password | string | Password of administrator or root user on server. _This password must match the one set on the server being imported or the import will fail._ | Yes |
 | cpu | integer | Number of processors to configure the server with (1-16). If this value is different from the one specified in the OVF, the import process will resize the server according to the value specified here. | Yes |
 | memoryGB | integer | Number of GB of memory to configure the server with (1-128). If this value is different from the one specified in the OVF, the import process will resize the server according to the value specified here.  | Yes |
-| type | string | Whether to create standard or hyperscale server | Yes |
 | customFields | complex | Collection of custom field ID-value pairs to set for the server. | No |
 | ovfId | string | The identifier of the OVF that defines the server to import. This can be retrieved from the [Get Available Server Imports](../Servers/get-available-server-imports.md) API operation. |
 | ovfOsType | string | The OS type of the server being imported. Currently, the only supported OS types are `redHat6_64Bit`, `windows2008R2DataCenter_64bit`, and `windows2012R2DataCenter_64Bit`. A list of importable OS types for a given data center can be retrieved from the [Get Data Center Deployment Capabilities](../Data Centers/get-data-center-deployment-capabilities.md) API operation. |
