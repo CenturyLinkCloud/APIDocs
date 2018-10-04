@@ -71,7 +71,6 @@ Gets a deep list of all modified Servers for a given Hardware Group and its sub 
           "Name":"WA1T3NWEB01",
           "Description":"WA1T3NWEB01",
           "DnsName":"WA1T3NWEB01",
-          "IsHyperscale":false,
           "IsTemplate":false,
           "Cpu":2,
           "MemoryGB":4,
