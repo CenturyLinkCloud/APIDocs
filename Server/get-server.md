@@ -61,7 +61,6 @@ Gets the detail for one server.
           "Name":"WA1T3NWEB01",
           "Description":"WA1T3NWEB01",
           "DnsName":"WA1T3NWEB01",
-          "IsHyperscale":false,
           "IsTemplate":false,
           "Cpu":2,
           "MemoryGB":4,
