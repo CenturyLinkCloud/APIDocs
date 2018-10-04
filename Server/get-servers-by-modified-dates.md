@@ -98,7 +98,6 @@ Gets the list of Servers for a given Hardware Group and only those that have bee
           "Name":"WA1T3NWEB02",
           "Description":"WA1T3NWEB02",
           "DnsName":"WA1T3NWEB02",
-          "IsHyperscale":false,
           "IsTemplate":false,
           "Cpu":2,
           "MemoryGB":4,
