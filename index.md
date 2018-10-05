@@ -14,6 +14,7 @@
     "Group Actions",
     "Instances",
     "Intrusion Prevention (IPS)",
+    "LBaaS",
     "Networks",
     "Patching",
     "Power Operations",
@@ -24,6 +25,7 @@
     "Server Actions",
     "Shared Load Balancers",
     "Simple Backup",
+    "Site-to-Site VPN",
     "Webhooks"
   ]
 }}}
