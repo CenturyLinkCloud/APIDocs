@@ -1,5 +1,5 @@
 {{{
-  "title": "Get Log Forwwarding Address",
+  "title": "Get Log Forwarding Address",
   "date": "9-7-2018",
   "author": "Matt Peterson",
   "attachments": []
