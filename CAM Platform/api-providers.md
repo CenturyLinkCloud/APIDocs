@@ -1,12 +1,19 @@
 {{{ "title": "Providers API",
 "date": "09-01-2016",
 "author": "",
+"keywords": ["api", "api providers", "providers", "manage api"], 
 "attachments": [],
 "contentIsHTML": false
 }}}
 
-Manage and perform provider actions.
+### Description
 
+The provider's Rest API services give the possibility to the user to manage the providers.
+
+### Prerequisites
+
+* The admin users or permitted users will be able to make a GET request to the API service but, only the admin users have the permission to make PUT, POST or DELETE request to the API services.
+* [API authentication](https://www.ctl.io/api-docs/cam/#getting-started-api-overview-and-access)
 ### Manage Providers
 
 |  Resource  |  Description |
