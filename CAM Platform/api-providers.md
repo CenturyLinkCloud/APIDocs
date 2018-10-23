@@ -39,6 +39,14 @@ The provider's Rest API services give the possibility to the user to manage the 
 
 Creates a new provider account in Cloud Application Manager and gets the status of the provider.
 
+#### Structure
+
+    [PUT] /services/providers
+
+#### Example
+
+    PUT https://cam.ctl.io/services/providers
+
 **Normal Code**
 
 * 202 accepted
@@ -622,7 +630,15 @@ To add an Azure subscription in Cloud Application Manager, you first have to upl
 
 Gets available providers from the personal workspace of the authenticated user.
 
-**GET /services/providers**
+#### Structure
+
+    [GET] /services/providers
+
+#### Example
+
+    GET https://cam.ctl.io/services/providers
+    
+**Normal Response Code**
 
 * 200
 
@@ -1011,6 +1027,14 @@ ElasticBox-Release: 4.0
 
 Fetches an existing provider when you give the provider ID.
 
+#### Structure
+
+    [GET] /services/providers/{provider_id}
+
+#### Example
+
+    GET https://cam.ctl.io/services/providers/338f38dc-e667-47e0-9026-b253138f109e
+    
 **Normal Response Codes**
 
 * 202
@@ -2080,6 +2104,14 @@ Updates an existing provider when you give the provider ID. Pass the provider ob
 
 For AWS, you can also update the key and secret. For VMware vShpere, you can also update the username, secret, and endpoint.
 
+#### Structure
+
+    [PUT] /services/providers/{provider_id}
+
+#### Example
+
+    PUT https://cam.ctl.io/services/providers/338f38dc-e667-47e0-9026-b253138f109e
+  
 **Normal Response Codes**
 
 * 200
@@ -3294,6 +3326,14 @@ Body:
 
 Deletes an existing provider when you give the provider ID.
 
+#### Structure
+
+    [DELETE] /services/providers/{provider_id}
+
+#### Example
+
+    DELETE https://cam.ctl.io/services/providers/338f38dc-e667-47e0-9026-b253138f109e
+  
 **Normal Response Codes**
 
 * 202
@@ -3322,6 +3362,14 @@ DELETE /services/providers/{provider_id}
 
 Syncs an existing provider when you give the provider ID.
 
+#### Structure
+
+    [PUT] /services/providers/{provider_id}/sync
+
+#### Example
+
+    PUT https://cam.ctl.io/services/providers/338f38dc-e667-47e0-9026-b253138f109e/sync
+  
 **Normal Response Codes**
 
 * 202
@@ -3345,6 +3393,14 @@ ElasticBox-Release: 4.0
 
 Retrieves the logs of a provider when you give the provider ID.
 
+#### Structure
+
+    [GET] /services/providers/{provider_id}/log
+
+#### Example
+
+    PUT https://cam.ctl.io/services/providers/338f38dc-e667-47e0-9026-b253138f109e/log
+  
 **Normal Response Codes**
 
 * 200
@@ -3406,6 +3462,14 @@ ElasticBox-Release: 4.0
 
 Retrieves a list of unregistered instances found in a provider when you give the provider ID.
 
+#### Structure
+
+    [GET] /services/providers/{provider_id}/unregisted-instances
+
+#### Example
+
+    GET https://cam.ctl.io/services/providers/338f38dc-e667-47e0-9026-b253138f109e/unregisted-instances
+  
 **Normal Response Codes**
 
 * 200
@@ -3496,6 +3560,14 @@ ElasticBox-Release: 4.0
 
 Adds a new machine image to a provider when you give the provider ID.
 
+#### Structure
+
+    [POST] /services/providers/{provider_id}/images
+
+#### Example
+
+    POST https://cam.ctl.io/services/providers/338f38dc-e667-47e0-9026-b253138f109e/images
+
 **Normal Response Codes**
 
 * 202
@@ -3535,6 +3607,14 @@ Body:
 **DELETE /services/providers/{provider_id}/images/{machine_image_id}**
 
 Deletes an existing machine image when you give the provider ID and the machine image ID.
+
+#### Structure
+
+    [DELETE] /services/providers/{provider_id}/images/{machine_image_id}
+
+#### Example
+
+    DELETE https://cam.ctl.io/services/providers/338f38dc-e667-47e0-9026-b253138f109e/images/9339ff77-f4b9-4a27-979b-977c472a729a
 
 **Normal Response Codes**
 
