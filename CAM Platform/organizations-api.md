@@ -22,25 +22,38 @@
 
 Gets the schema of a given organization.
 
-**Normal Response Codes**
+### URL
+#### Structure
 
-* 200
+    [GET] /services/organizations/{organization_name}
 
-**Common Error Response Codes**
+#### Example
 
-* Unauthorized (401) - Invalid access token/cookie
-* User doesn’t belong to the organization (403)
-* Not Found (404)
+    GET https://cam.ctl.io/services/organizations/centurylink
 
-**Request Headers**
-
+### Request
+#### Headers
 ```
 Content-Type: application/json
 Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
-**Response Parameters**
+#### URI Parameters
+| Parameter | Type | Description | Req. |
+| --- | --- | --- | --- |
+| Organization name | string | the name of the organization | Yes |
+
+### Response
+#### Normal Response Codes
+- **200** Accepted
+
+#### Common Error Response Codes
+- Unauthorized (401) - Invalid access token/cookie
+- User doesn’t belong to the organization (403)
+- Not Found (404)
+
+#### Response Parameters
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
@@ -60,8 +73,7 @@ ElasticBox-Release: 4.0
 | webhooks | array | List of webhooks that integrate with the organization. |
 | cost_centers | array | List of cost centers. Each cost center contains the following properties:<li>enforce: Boolean. If true, an instance cannot be deployed if it is over the quota.</li><li>name: String. Name of the cost center</li><li>workspaces: Array. List of the names that belongs to the cost center.</li><li>quotas: List of quotas. Each quota contains an object with the following properties:</li><ul><li>cost: Required. Boolean. By default it’s false. Specify as true to enable synchronizing with LDAP groups.</li><li>provider: Required. Boolean. By default it’s false. Specify as true to enable synchronizing with LDAP groups.</li><li>allocated: Array. List of instances which are contributing to the current quota. Each allocated instance has these properties:</li> <ul><li>instance_id: Required. String. Id of the instance.</li><li>instances: Required. Int. Number of instances.</li><li>started: Required. String. Date when this instance was deployed.</li><li>flavor: Required. String. Type of instance.</li><li>region: Required. String. Region where it was deployed.</li><li>service_type: Required. String. Type of the service.</li><li>terminated: String specifies the username of the LDAP service account to look up users who try to log in.</li></ul><li>resources: Object. Resources of the quota.</li><ul><li>cpu: Required. Int. Number of cpu units.</li><li>disk: Required. Object. A disk with these properties:</li><ul><li>quantity: Required. String. Amount of storage.</li><li>unit: Required. String. Mb, Gb or Tb.</li></ul><li>ram: Required. String. Ram of the quota.</li><ul><li>quantity: Required. String. Amount of storage.</li><li>unit: Required. String. Mb or Gb.</li> </ul>|
 
-### Response Body
-
+#### Response Body
 ```
 {
    {
@@ -283,18 +295,6 @@ ElasticBox-Release: 4.0
 
 Get the schema of boxes in the given organization.
 
-### Response
-
-#### Normal Code
-
-- **200** accepted
-
-#### Error Codes
-
-- Unauthorized (401) - Invalid access token/cookie
-- User doesn’t belong to the organization (403)
-- Not Found (404)
-
 ### URL
 
 #### Structure
@@ -306,9 +306,7 @@ Get the schema of boxes in the given organization.
     GET https://cam.ctl.io/services/organizations/CenturyLink/boxes
 
 ### Request
-
 #### Headers
-
 ```
 Content-Type: application/json
 Authorization: Bearer your_json_web_token
@@ -321,9 +319,16 @@ ElasticBox-Release: 4.0
 | --- | --- | --- | --- |
 | Organization name |  String  |  The name of the organization | Yes |
 
+### Response
+#### Normal Code
+- **200** accepted
 
-**Response Parameters**
+#### Error Codes
+- Unauthorized (401) - Invalid access token/cookie
+- User doesn’t belong to the organization (403)
+- Not Found (404)
 
+#### Response Parameters
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | schema |  string| Box schema URI: **//elasticbox.net/schemas/boxes** |
@@ -344,8 +349,7 @@ ElasticBox-Release: 4.0
 | variables | array | A list of the variables that defined in the box |
 | claims | array | A list of the claims that defined in the box |
 
-### Response Body
-
+#### Response Body
 ```
   {
     "profile": {
@@ -401,32 +405,15 @@ ElasticBox-Release: 4.0
 
 Get the schema of instances in the given organization.
 
-### Response
-
-#### Normal Code
-
-- **200** accepted
-
-#### Error Codes
-
-- Unauthorized (401) - Invalid access token/cookie
-- User doesn’t belong to the organization (403)
-- Not Found (404)
-
 ### URL
-
 #### Structure
-
     [GET] /services/organizations/{organization_name}/instances
 
 #### Example
-
     GET https://cam.ctl.io/services/organizations/CenturyLink/instances
 
 ### Request
-
 #### Headers
-
 ```
 Content-Type: application/json
 Authorization: Bearer your_json_web_token
@@ -434,14 +421,20 @@ ElasticBox-Release: 4.0
 ```
 
 #### URI Parameters
-
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
 | Organization name |  String  |  The name of the organization | Yes |
 
+### Response
+#### Normal Code
+- **200** accepted
 
-**Response Parameters**
+#### Error Codes
+- Unauthorized (401) - Invalid access token/cookie
+- User doesn’t belong to the organization (403)
+- Not Found (404)
 
+#### Response Parameters
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | schema |  string| Organization schema URI: **//elasticbox.net/schemas/instance** |
@@ -460,8 +453,7 @@ ElasticBox-Release: 4.0
 | service | object | An object that contains information about the instance's service |
 | policy_box | object | An object that includes the policy of the box that is defined for the instance. |
 
-### Response Body
-
+#### Response Body
 ```
   {
     "box": "c2be22d3-22bf-4694-8a6d-e2efe3dceebd",
@@ -891,20 +883,7 @@ ElasticBox-Release: 4.0
 
 Get the schema of providers in the given organization.
 
-### Response
-
-#### Normal Code
-
-- **200** accepted
-
-#### Error Codes
-
-- Unauthorized (401) - Invalid access token/cookie
-- User doesn’t belong to the organization (403)
-- Not Found (404)
-
 ### URL
-
 #### Structure
 
     [GET] /services/organizations/{organization_name}/providers
@@ -914,9 +893,7 @@ Get the schema of providers in the given organization.
     GET https://cam.ctl.io/services/organizations/CenturyLink/providers
 
 ### Request
-
 #### Headers
-
 ```
 Content-Type: application/json
 Authorization: Bearer your_json_web_token
@@ -924,14 +901,21 @@ ElasticBox-Release: 4.0
 ```
 
 #### URI Parameters
-
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
 | Organization name |  String  |  The name of the organization | Yes |
 
+### Response
+#### Normal Code
+- **200** accepted
 
-**Response Parameters**
+#### Error Codes
+- Unauthorized (401) - Invalid access token/cookie
+- User doesn’t belong to the organization (403)
+- Not Found (404)
 
+
+#### Response Parameters
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | schema |  string| Provider schema URI: **//elasticbox.net/schemas/providers** |
@@ -949,8 +933,7 @@ ElasticBox-Release: 4.0
 | owner | string | It shows the owner of this box. |
 | service | object | An object that contains information about the instance's service |
 
-### Response Body
-
+#### Response Body
 ```
   {
     "updated": "2018-09-28 21:18:17.691311",
@@ -981,32 +964,15 @@ ElasticBox-Release: 4.0
 
 Get the schema of workspaces in the given organization.
 
-### Response
-
-#### Normal Code
-
-- **200** accepted
-
-#### Error Codes
-
-- Unauthorized (401) - Invalid access token/cookie
-- User doesn’t belong to the organization (403)
-- Not Found (404)
-
 ### URL
-
 #### Structure
-
     [GET] /services/organizations/{organization_name}/workspaces
 
 #### Example
-
     GET https://cam.ctl.io/services/organizations/CenturyLink/workspaces
 
 ### Request
-
 #### Headers
-
 ```
 Content-Type: application/json
 Authorization: Bearer your_json_web_token
@@ -1014,14 +980,20 @@ ElasticBox-Release: 4.0
 ```
 
 #### URI Parameters
-
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
 | Organization name |  String  |  The name of the organization | Yes |
 
+### Response
+#### Normal Code
+- **200** accepted
 
-**Response Parameters**
+#### Error Codes
+- Unauthorized (401) - Invalid access token/cookie
+- User doesn’t belong to the organization (403)
+- Not Found (404)
 
+#### Response Parameters
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | last_name | string | The last name of the user. |
@@ -1049,9 +1021,7 @@ ElasticBox-Release: 4.0
 | members | array | If the user type be a "team" then it shows the workspaces that this user is belonged to |
 | organization | string | The name of the organization that user belongs to it. |
 
-
-### Response Body
-
+#### Response Body
 ```
   {
     "last_name": "1",
@@ -1089,35 +1059,15 @@ ElasticBox-Release: 4.0
 
 Updates an existing organization given its name. Only the organization administrator can update.
 
-### Response
-
-#### Normal Code
-
-- **200** accepted
-
-#### Error Codes
-
-- Bad Request (400) - Request missing, incomplete or includes invalid properties (details provided inside body)
-- Unauthorized (401) - Invalid access token/cookie
-- User doesn’t belong to the organization (403)
-- Not Found (404) - Organization not found
-- Conflict (409) - 'updated' property mismatch. (Make a GET call to API to fetch the current 'updated' property and use it in a new PUT request)
-
-
 ### URL
-
 #### Structure
-
     [PUT] /services/organizations/{organization_name}
 
 #### Example
-
     PUT https://cam.ctl.io/services/organizations/{organization_name}
 
 ### Request
-
 #### Headers
-
 ```
 Content-Type: application/json
 Authorization: Bearer your_json_web_token
@@ -1125,14 +1075,11 @@ ElasticBox-Release: 4.0
 ```
 
 #### URI Parameters
-
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
 | Organization name |  String  |  The name of the organization | Yes |
 
-
 #### Request Body
-
 ```
 {
    "schema":"http://elasticbox.net/schemas/organization",
@@ -1375,8 +1322,18 @@ ElasticBox-Release: 4.0
 | webhooks | array | List of webhooks that integrate with the organization. |
 | cost_centers | array | List of cost centers. Each cost center contains the following properties:<li>enforce: Boolean. If true, an instance cannot be deployed if it is over the quota.</li><li>name: String. Name of the cost center</li><li>workspaces: Array. List of the names that belongs to the cost center.</li><li>quotas: List of quotas. Each quota contains an object with the following properties:</li><ul><li>cost: Required. Boolean. By default it’s false. Specify as true to enable synchronizing with LDAP groups.</li><li>provider: Required. Boolean. By default it’s false. Specify as true to enable synchronizing with LDAP groups.</li><li>allocated: Array. List of instances which are contributing to the current quota. Each allocated instance has these properties:</li><ul><li>instance_id: Required. String. Id of the instance.</li><li>instances: Required. Int. Number of instances.</li><li>started: Required. String. Date when this instance was deployed.</li><li>flavor: Required. String. Type of instance.</li><li>region: Required. String. Region where it was deployed.</li><li>service_type: Required. String. Type of the service.</li><li>terminated: String specifies the username of the LDAP service account to look up users who try to log in.</li></ul><li>resources: Object. Resources of the quota.</li><ul><li>cpu: Required. Int. Number of cpu units.</li><li>disk: Required. Object. A disk with these properties:</li><ul><li>quantity: Required. String. Amount of storage.</li><li>unit: Required. String. Mb, Gb or Tb.</li></ul><li>ram: Required. String. Ram of the quota.</li><ul><li>quantity: Required. String. Amount of storage.</li><li>unit: Required. String. Mb or Gb.</li> </ul>|
 
-#### Response Parameters
+### Response
+#### Normal Code
+- **200** accepted
 
+#### Error Codes
+- Bad Request (400) - Request missing, incomplete or includes invalid properties (details provided inside body)
+- Unauthorized (401) - Invalid access token/cookie
+- User doesn’t belong to the organization (403)
+- Not Found (404) - Organization not found
+- Conflict (409) - 'updated' property mismatch. (Make a GET call to API to fetch the current 'updated' property and use it in a new PUT request)
+
+#### Response Parameters
 |  Parameter  |     Type      |	Description |
 |----------|:-------------|-----|
 | schema |  string| Organization schema URI: **http://elasticbox.net/schemas/organization** |
@@ -1396,7 +1353,6 @@ ElasticBox-Release: 4.0
 | cost_centers | array | List of cost centers. Each cost center contains the following properties:<li>enforce: Boolean. If true, an instance cannot be deployed if it is over the quota.</li><li>name: String. Name of the cost center</li><li>workspaces: Array. List of the names that belongs to the cost center.</li><li>quotas: List of quotas. Each quota contains an object with the following properties:</li><ul><li>cost: Required. Boolean. By default it’s false. Specify as true to enable synchronizing with LDAP groups.</li><li>provider: Required. Boolean. By default it’s false. Specify as true to enable synchronizing with LDAP groups.</li><li>allocated: Array. List of instances which are contributing to the current quota. Each allocated instance has these properties:</li><ul><li>instance_id: Required. String. Id of the instance.</li><li>instances: Required. Int. Number of instances.</li><li>started: Required. String. Date when this instance was deployed.</li><li>flavor: Required. String. Type of instance.</li><li>region: Required. String. Region where it was deployed.</li><li>service_type: Required. String. Type of the service.</li><li>terminated: String specifies the username of the LDAP service account to look up users who try to log in.</li></ul><li>resources: Object. Resources of the quota.</li><ul><li>cpu: Required. Int. Number of cpu units.</li><li>disk: Required. Object. A disk with these properties:</li><ul><li>quantity: Required. String. Amount of storage.</li><li>unit: Required. String. Mb, Gb or Tb.</li></ul><li>ram: Required. String. Ram of the quota.</li><ul><li>quantity: Required. String. Amount of storage.</li><li>unit: Required. String. Mb or Gb.</li> </ul>|
 
 #### Response Body
-
 ```
 {
    "schema":"http://elasticbox.net/schemas/organization",
@@ -1623,45 +1579,35 @@ ElasticBox-Release: 4.0
 
 Queues a request to sync LDAP groups. The sync request, depending on the amount of data from the LDAP service, can take a few minutes. The ldap_last_sync_completed property updates when the request finishes successfully.
 
-### Response
-
-#### Normal Code
-
-- **202** accepted
-
-#### Error Codes
-
-- Unauthorized (401) - Invalid access token/cookie
-- Not Found (404) - Organization not found
-
 ### URL
-
 #### Structure
-
     [PUT] /organizations/{organization_name}/sync_groups
 
 #### Example
-
     PUT https://cam.ctl.io/organizations/{organization_name}/sync_groups
 
 ### Request
-
 #### Headers
-
 ```
 Content-Type: application/json
 Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 #### URI Parameters
-
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
 | Organization name |  String  |  The name of the organization | Yes |
 
+### Response
+#### Normal Code
+- **202** accepted
+
+#### Error Codes
+- Unauthorized (401) - Invalid access token/cookie
+- Not Found (404) - Organization not found
+
 
 #### Response Parameters
-
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | schema |  string| Organization schema URI: **//elasticbox.net/schemas/organization** |
