@@ -1,19 +1,13 @@
 {{{ "title": "Providers API",
 "date": "09-01-2016",
 "author": "",
-"keywords": ["api", "api providers", "providers", "manage api"], 
+"keywords": ["api", "cam api", "cam", "api providers", "providers", "manage api"],
 "attachments": [],
 "contentIsHTML": false
 }}}
 
-### Description
+Manage and perform provider actions.
 
-The provider's Rest API services give the possibility to the user to manage the providers.
-
-### Prerequisites
-
-* The admin users or permitted users will be able to make a GET request to the API service but, only the admin users have the permission to make PUT, POST or DELETE request to the API services.
-* [API authentication](https://www.ctl.io/api-docs/cam/#getting-started-api-overview-and-access)
 ### Manage Providers
 
 |  Resource  |  Description |
@@ -39,28 +33,26 @@ The provider's Rest API services give the possibility to the user to manage the 
 
 Creates a new provider account in Cloud Application Manager and gets the status of the provider.
 
+### URL
+
 #### Structure
 
-    [PUT] /services/providers
+    [POST] /services/providers
 
 #### Example
 
-    PUT https://cam.ctl.io/services/providers
+    POST https://cam.ctl.io/services/providers
 
-**Normal Code**
+### Request
 
-* 202 accepted
-
-**Error Codes**
-
-**Request Headers**
-
+#### Headers
 ```
 content-type:application/json
 Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
-**Request parameters for all providers**
+
+#### Request parameters for all providers
 
 |  Parameter  |      Type     |   Description   |
 |-------------|---------------|-----------------|
@@ -71,14 +63,13 @@ ElasticBox-Release: 4.0
 | name | string | Required. Give the provider account a name in Cloud Application Manager. |
 | owner | string | Specify the user in Cloud Application Manager who owns the provider account. |
 
-**Amazon Web Services request parameters**
+#### Amazon Web Services request parameters
 
 |  Parameter  |      Type     |   Description   |
 |-------------|---------------|-----------------|
 | credentials | object | Required. Contains the credential object, which is either the AWS role ARN name if using Cloud Application Manager as a SaaS or the key and secret if using Cloud Application Manager as an appliance. |
 
-**Amazon Web Services request body**
-
+#### Amazon Web Services request body
 ```
 {
    "icon": "images/platform/aws.png",
@@ -93,14 +84,12 @@ ElasticBox-Release: 4.0
 }
 ```
 
-**Amazon Web Services Gov request parameters**
-
+#### Amazon Web Services Gov request parameters
 |  Parameter  |      Type     |   Description   |
 |-------------|---------------|-----------------|
 | credentials | object | Required. Contains the credential object, which is either the [AWS role ARN name](https://www.ctl.io/knowledge-base/cloud-application-manager/deploying-anywhere/using-your-aws-account/) if using Cloud Application Manager as a SaaS or the key and secret if using Cloud Application Manager as an appliance. |
 
-**Amazon Web Services Gov request body**
-
+#### Amazon Web Services Gov request body
 ```
 {
   "icon": "images/platform/govcloud.png",
@@ -116,8 +105,7 @@ ElasticBox-Release: 4.0
 }
 ```
 
-**Rackspace and OpenStack request parameters**
-
+#### Rackspace and OpenStack request parameters
 |  Parameter  |      Type     |   Description   |
 |-------------|---------------|-----------------|
 | identity_url | string |Required. Specify the identity service endpoint.|
@@ -125,8 +113,7 @@ ElasticBox-Release: 4.0
 | username | string | Required. Specify the username. |
 | password | string | Required. Specify the password. |
 
-**Rackspace request body**
-
+#### Rackspace request body
 ```
 {
    "icon": "images/platform/rackspace.png",
@@ -142,8 +129,7 @@ ElasticBox-Release: 4.0
 }
 ```
 
-**OpenStack request body**
-
+#### OpenStack request body
 ```
 {
    "icon": "images/platform/openstack.png",
@@ -159,16 +145,14 @@ ElasticBox-Release: 4.0
 }
 ```
 
-**VSphere request parameters**
-
+#### VSphere request parameters
 |  Parameter  |      Type     |   Description   |
 |-------------|---------------|-----------------|
 | username | string | Required. Specify a vCenter username. |
 | secret | string | Required. Specify the user’s password. |
 | endpoint | string | Required. Specify the vCenter server URL. |
 
-**VSphere request body**
-
+#### VSphere request body
 ```
 {
    "icon": "images/platform/vsphere.png",
@@ -183,8 +167,7 @@ ElasticBox-Release: 4.0
 }
 ```
 
-**VCloud request parameters**
-
+#### VCloud request parameters
 |  Parameter  |      Type     |   Description   |
 |-------------|---------------|-----------------|
 | username | string | Required. Specify a vCenter username. |
@@ -192,8 +175,7 @@ ElasticBox-Release: 4.0
 | url | string | Required. Specify the vCenter server URL. |
 | organization | string | Required. Organization. |
 
-**VCloud request body**
-
+#### VCloud request body
 ```
 {
   "icon": "images/platform/vcloud.png",
@@ -209,16 +191,14 @@ ElasticBox-Release: 4.0
 }
 ```
 
-**Google Cloud request parameters**
-
+#### Google Cloud request parameters
 |  Parameter  |      Type     |   Description   |
 |-------------|---------------|-----------------|
 | project_id | string | Required. Specify a project ID in Google Cloud that has billing and the Google Compute Engine API enabled. |
 | email | string | Required. Specify your Gmail account associated with Google Cloud. |
 | credentials | object | Required. Specify either the refresh_token object or the key. You can get the refresh_token from Google OAuth 2.0 to allow Cloud Application Manager to make API requests on your behalf. Or you can provide the JSON key for the project service account. |
 
-**Google Cloud request body**
-
+#### Google Cloud request body
 ```
 {
    "icon": "images/platform/google.png",
@@ -235,16 +215,14 @@ ElasticBox-Release: 4.0
 }
 ```
 
-**Azure request parameter**
-
+#### Azure request parameter
 To add an Azure subscription in Cloud Application Manager, you first have to upload the Cloud Application Manager management certificate to your subscription in Azure.
 
 |  Parameter  |      Type     |   Description   |
 |-------------|---------------|-----------------|
 | subscription | string | Required. Specify the Azure subscription ID.|
 
-**Azure request body**
-
+#### Azure request body
 ```
 {
    "icon": "images/platform/azure-storage.png",
@@ -257,16 +235,14 @@ To add an Azure subscription in Cloud Application Manager, you first have to upl
 }
 ```
 
-**CloudStack request parameters**
-
+#### CloudStack request parameters
 |  Parameter  |      Type     |   Description   |
 |-------------|---------------|-----------------|
 | url | string | Required. Specify the API endpoint to the CloudStack management server. |
 | api_key | string | Required. Specify the API key for the CloudStack user account. |
 | secret_key | string | Required. Specify the API secret for the CloudStack user account. |
 
-**CloudStack request body**
-
+#### CloudStack request body
 ```
 {
    "icon": "images/platform/cloudstack.png",
@@ -281,15 +257,13 @@ To add an Azure subscription in Cloud Application Manager, you first have to upl
 }
 ```
 
-**SoftLayer request parameters**
-
+#### SoftLayer request parameters
 |  Parameter  |      Type     |   Description   |
 |-------------|---------------|-----------------|
 | username | string | Required. Specify a SoftLayer account username. |
 | api_key | string | Required. Specify the API key for the SoftLayer user. |
 
-**SoftLayer request body**
-
+#### SoftLayer request body
 ```
 {
    "icon": "images/platform/softlayer.png",
@@ -303,7 +277,17 @@ To add an Azure subscription in Cloud Application Manager, you first have to upl
 }
 ```
 
-**Response parameters for all providers**
+### Response
+
+#### Normal Code
+
+- **202** accepted
+
+#### Error Codes
+
+- No error code
+
+#### Response parameters for all providers
 
 |  Parameter  |      Type     |   Description   |
 |-------------|---------------|-----------------|
@@ -323,14 +307,13 @@ To add an Azure subscription in Cloud Application Manager, you first have to upl
 | type | string | Identifies the provider as one of the following: Amazon Web Services, Rackspace, Openstack, VMware vSphere, Google Compute, Microsoft Azure, Cloudstack, SoftLayer. |
 | schema | string | Returns the schema URL. |
 
-**AWS response parameters**
+#### AWS response parameters
 
 |  Parameter  |      Type     |   Description   |
 |-------------|---------------|-----------------|
 | credentials | object | Returns the Amazon Web Services role ARN if using Cloud Application Manager as a SaaS or identifies the key and secret if using Cloud Application Manager as an appliance. |
 
-**AWS response body**
-
+#### AWS response body
 ```
 {
    "updated": "2015-01-05 18:36:26.227970",
@@ -355,8 +338,7 @@ To add an Azure subscription in Cloud Application Manager, you first have to upl
 }
 ```
 
-**Rackspace and OpenStack response parameters**
-
+#### Rackspace and OpenStack response parameters
 |  Parameter  |      Type     |   Description   |
 |-------------|---------------|-----------------|
 | username | string | Returns the username. |
@@ -364,8 +346,7 @@ To add an Azure subscription in Cloud Application Manager, you first have to upl
 | project | string | Returns the Rackspace project ID or the OpenStack tenant. |
 | identity_url | string | Returns the OpenStack identity service endpoint. |
 
-**Rackspace response example**
-
+#### Rackspace response example
 ```
 {
   "username": "_the_username",
@@ -397,8 +378,7 @@ To add an Azure subscription in Cloud Application Manager, you first have to upl
 }
 ```
 
-**Openstack response example**
-
+#### Openstack response example
 ```
 {
   "username": "_the_username",
@@ -430,16 +410,14 @@ To add an Azure subscription in Cloud Application Manager, you first have to upl
 }
 ```
 
-**VSphere response parameters**
-
+#### VSphere response parameters
 |  Parameter  |      Type     |   Description   |
 |-------------|---------------|-----------------|
 | username | string | Returns the vCenter username. |
 | secret | string | Masks the user’s password. |
 | endpoint | string | Returns the vCenter server URL. |
 
-**VSphere response example**
-
+#### VSphere response example
 ```
 {
   "username": "_the_username",
@@ -470,7 +448,7 @@ To add an Azure subscription in Cloud Application Manager, you first have to upl
 }
 ```
 
-**Google Cloud response parameters**
+#### Google Cloud response parameters
 
 |  Parameter  |      Type     |   Description   |
 |-------------|---------------|-----------------|
@@ -478,7 +456,7 @@ To add an Azure subscription in Cloud Application Manager, you first have to upl
 | email | string | Returns the Gmail account associated with Google Cloud for the provider account. |
 | credentials | object | Returns either the access_token and refresh_token objects or the key. Returns a key if you provided a JSON key for the project service account. |
 
-**Google Cloud response example**
+#### Google Cloud response example
 
 ```
 {
@@ -512,14 +490,13 @@ To add an Azure subscription in Cloud Application Manager, you first have to upl
 }
 ```
 
-**Azure response parameters**
+#### Azure response parameters
 
 |  Parameter  |      Type     |   Description   |
 |-------------|---------------|-----------------|
 | subscription_id | string | Returns the Azure subscription ID that the provider account uses. |
 
-**Azure response example**
-
+#### Azure response example
 ```
 {
   "updated": "2015-10-30 12:49:38.014690",
@@ -548,16 +525,14 @@ To add an Azure subscription in Cloud Application Manager, you first have to upl
 }
 ```
 
-**CloudStack response parameters**
-
+#### CloudStack response parameters
 |  Parameter  |      Type     |   Description   |
 |-------------|---------------|-----------------|
 | url | string | Returns the API endpoint to the CloudStack management server. |
 | api_key | string | Returns the API key for the CloudStack user account. |
 | secret_key | string | Returns the API secret for the CloudStack user account. |
 
-**CloudStack response example**
-
+#### CloudStack response example
 ```
 {
   "updated": "2015-10-30 12:28:22.315749",
@@ -588,15 +563,13 @@ To add an Azure subscription in Cloud Application Manager, you first have to upl
 }
 ```
 
-**SoftLayer response parameters**
-
+#### SoftLayer response parameters
 |  Parameter  |      Type     |   Description   |
 |-------------|---------------|-----------------|
 | username | string | Returns the SoftLayer username the provider account uses. |
 | api_key | string | Returns the API key for the SoftLayer user. |
 
-**SoftLayer response example**
-
+#### SoftLayer response example
 ```
 {
   "username": "_the_username",
@@ -626,10 +599,12 @@ To add an Azure subscription in Cloud Application Manager, you first have to upl
 }
 ```
 
+
 ### GET /services/providers
 
 Gets available providers from the personal workspace of the authenticated user.
 
+### URL
 #### Structure
 
     [GET] /services/providers
@@ -637,27 +612,34 @@ Gets available providers from the personal workspace of the authenticated user.
 #### Example
 
     GET https://cam.ctl.io/services/providers
-    
-**Normal Response Code**
 
-* 200
+### Request
 
-**Error Response Codes**
-
-* Bad Request (400)
-
-**Request**
-
+#### Headers
 ```
-Headers:
-
-Content-Type: application/json
+content-type:application/json
 Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
-**Response parameters**
+#### URI Parameters
 
+| Name | Type | Description | Req. |
+| --- | --- | --- | --- |
+| -------- | ------- | --------------- | ----- |
+
+
+### Response
+
+#### Normal Code
+
+- **200** accepted
+
+#### Error Codes
+
+- Bad Request (400)
+
+#### Response parameters
 |Parameter | Type | Description |
 |----------|------|-------------|
 |updated | string | Date of the last update.|
@@ -674,6 +656,7 @@ ElasticBox-Release: 4.0
 |icon | string | Provider Icon uri.|
 |schema | string | The uri schema of the right provider.|
 
+#### Response body
 ```
 [
     {
@@ -1023,9 +1006,11 @@ ElasticBox-Release: 4.0
 ]
 ```
 
-**GET /services/providers/{provider_id}**
+### GET /services/providers/{provider_id}
 
 Fetches an existing provider when you give the provider ID.
+
+### URL
 
 #### Structure
 
@@ -1034,27 +1019,37 @@ Fetches an existing provider when you give the provider ID.
 #### Example
 
     GET https://cam.ctl.io/services/providers/338f38dc-e667-47e0-9026-b253138f109e
-    
-**Normal Response Codes**
 
-* 202
 
-**Error Response Codes**
+### Request
 
-* Forbidden (403)
-* Not Found (404)
-
-**Request**
+#### Headers
 
 ```
-Headers:
-
-Content-Type: application/json
+content-type:application/json
 Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
-**Response parameters**
+#### URI Parameters
+
+| Name | Type | Description | Req. |
+| --- | --- | --- | --- |
+| Provider id | string | The id of the provider | Yes |
+
+### Response
+
+#### Normal Code
+
+- **202** accepted
+
+#### Error Codes
+
+- Forbidden (403)
+- Not Found (404)
+
+
+#### Response parameters
 
 | Parameter | Type | Description |
 |----------------|--------|-----------------|
@@ -1072,6 +1067,7 @@ ElasticBox-Release: 4.0
 | schema | string | The provider type schema uri. |
 | icon | string | Provider Icon uri. |
 
+#### Response Body
 ```
 {
    "updated":"2014-03-26 14:03:41.783045",
@@ -2098,12 +2094,13 @@ ElasticBox-Release: 4.0
 }
 ```
 
-**PUT /services/providers/{provider_id}**
+### PUT /services/providers/{provider_id}
 
 Updates an existing provider when you give the provider ID. Pass the provider object in the request body to update these fields: name, description, and members.
 
 For AWS, you can also update the key and secret. For VMware vShpere, you can also update the username, secret, and endpoint.
 
+### URL
 #### Structure
 
     [PUT] /services/providers/{provider_id}
@@ -2111,18 +2108,29 @@ For AWS, you can also update the key and secret. For VMware vShpere, you can als
 #### Example
 
     PUT https://cam.ctl.io/services/providers/338f38dc-e667-47e0-9026-b253138f109e
-  
-**Normal Response Codes**
 
-* 200
+### Request
+#### Headers
+```
+Content-Type: application/json
+Authorization: Bearer your_json_web_token
+ElasticBox-Release: 4.0
+```
 
-**Error Response Codes**
+#### URI Parameters
+| Parameter | Type | Description | Req. |
+| Provider id | string | The unique id of the created provider | Yes |
 
-* Invalid Data (400)
-* Conflict (409)
+### Response
 
-**Request parameters**
+#### Normal Response Codes
+- **200** Accepted
 
+#### Common Error Response Codes
+  - Invalid Data (400)
+  - Conflict (409)
+
+#### Response Parameters
 |Parameter | Type | Description |
 |----------|------|-------------|
 |updated | string | Date of the last update.|
@@ -2138,1193 +2146,1187 @@ For AWS, you can also update the key and secret. For VMware vShpere, you can als
 |id | string | Provider unique identificator.|
 |icon | string | Provider Icon uri.|
 
-```
-Headers:
-
-Content-Type: application/json
-Authorization: Bearer your_json_web_token
-ElasticBox-Release: 4.0
+#### Response Body
 ```
 
-```
-Body:
-
-    "schema": "http://elasticbox.net/schemas/gce/provider",
-    "updated": "2015-10-30 12:39:06.518493",
-    "project_id": "the_project_id",
-    "description": "Manage cloud hosting and Linux machines, description has been updated",
-    "created": "2015-10-30 12:34:09.062710",
-    "deleted": null,
-    "uri": "/services/providers/d86e3bfe-1edc-45b4-a03b-28d1e2b7eee2",
-    "name": "GoogleComputeProvider",
-    "owner": "operations",
-    "state": "ready",
-    "email": "therightemail@company.com",
-    "admin_boxes": [],
-    "members": [],
-    "credentials": {},
-    "services": [
-        {
-            "name": "Linux Compute",
-            "zones": [
-                {
-                    "machineTypes": [
-                        {
-                            "description": "1 vCPU (shared physical core) and 0.6 GB RAM",
-                            "name": "f1-micro"
-                        },
-                        {
-                            "description": "1 vCPU (shared physical core) and 1.7 GB RAM",
-                            "name": "g1-small"
-                        },
-                        {
-                            "description": "16 vCPUs, 14.4 GB RAM",
-                            "name": "n1-highcpu-16"
-                        },
-                        {
-                            "description": "2 vCPUs, 1.8 GB RAM",
-                            "name": "n1-highcpu-2"
-                        },
-                        {
-                            "description": "32 vCPUs, 28.8 GB RAM",
-                            "name": "n1-highcpu-32"
-                        },
-                        {
-                            "description": "4 vCPUs, 3.6 GB RAM",
-                            "name": "n1-highcpu-4"
-                        },
-                        {
-                            "description": "8 vCPUs, 7.2 GB RAM",
-                            "name": "n1-highcpu-8"
-                        },
-                        {
-                            "description": "16 vCPUs, 104 GB RAM",
-                            "name": "n1-highmem-16"
-                        },
-                        {
-                            "description": "2 vCPUs, 13 GB RAM",
-                            "name": "n1-highmem-2"
-                        },
-                        {
-                            "description": "32 vCPUs, 208 GB RAM",
-                            "name": "n1-highmem-32"
-                        },
-                        {
-                            "description": "4 vCPUs, 26 GB RAM",
-                            "name": "n1-highmem-4"
-                        },
-                        {
-                            "description": "8 vCPUs, 52 GB RAM",
-                            "name": "n1-highmem-8"
-                        },
-                        {
-                            "description": "1 vCPU, 3.75 GB RAM",
-                            "name": "n1-standard-1"
-                        },
-                        {
-                            "description": "16 vCPUs, 60 GB RAM",
-                            "name": "n1-standard-16"
-                        },
-                        {
-                            "description": "2 vCPUs, 7.5 GB RAM",
-                            "name": "n1-standard-2"
-                        },
-                        {
-                            "description": "32 vCPUs, 120 GB RAM",
-                            "name": "n1-standard-32"
-                        },
-                        {
-                            "description": "4 vCPUs, 15 GB RAM",
-                            "name": "n1-standard-4"
-                        },
-                        {
-                            "description": "8 vCPUs, 30 GB RAM",
-                            "name": "n1-standard-8"
-                        }
-                    ],
-                    "name": "asia-east1-b"
-                },
-                {
-                    "machineTypes": [
-                        {
-                            "description": "1 vCPU (shared physical core) and 0.6 GB RAM",
-                            "name": "f1-micro"
-                        },
-                        {
-                            "description": "1 vCPU (shared physical core) and 1.7 GB RAM",
-                            "name": "g1-small"
-                        },
-                        {
-                            "description": "16 vCPUs, 14.4 GB RAM",
-                            "name": "n1-highcpu-16"
-                        },
-                        {
-                            "description": "2 vCPUs, 1.8 GB RAM",
-                            "name": "n1-highcpu-2"
-                        },
-                        {
-                            "description": "32 vCPUs, 28.8 GB RAM",
-                            "name": "n1-highcpu-32"
-                        },
-                        {
-                            "description": "4 vCPUs, 3.6 GB RAM",
-                            "name": "n1-highcpu-4"
-                        },
-                        {
-                            "description": "8 vCPUs, 7.2 GB RAM",
-                            "name": "n1-highcpu-8"
-                        },
-                        {
-                            "description": "16 vCPUs, 104 GB RAM",
-                            "name": "n1-highmem-16"
-                        },
-                        {
-                            "description": "2 vCPUs, 13 GB RAM",
-                            "name": "n1-highmem-2"
-                        },
-                        {
-                            "description": "32 vCPUs, 208 GB RAM",
-                            "name": "n1-highmem-32"
-                        },
-                        {
-                            "description": "4 vCPUs, 26 GB RAM",
-                            "name": "n1-highmem-4"
-                        },
-                        {
-                            "description": "8 vCPUs, 52 GB RAM",
-                            "name": "n1-highmem-8"
-                        },
-                        {
-                            "description": "1 vCPU, 3.75 GB RAM",
-                            "name": "n1-standard-1"
-                        },
-                        {
-                            "description": "16 vCPUs, 60 GB RAM",
-                            "name": "n1-standard-16"
-                        },
-                        {
-                            "description": "2 vCPUs, 7.5 GB RAM",
-                            "name": "n1-standard-2"
-                        },
-                        {
-                            "description": "32 vCPUs, 120 GB RAM",
-                            "name": "n1-standard-32"
-                        },
-                        {
-                            "description": "4 vCPUs, 15 GB RAM",
-                            "name": "n1-standard-4"
-                        },
-                        {
-                            "description": "8 vCPUs, 30 GB RAM",
-                            "name": "n1-standard-8"
-                        }
-                    ],
-                    "name": "asia-east1-a"
-                },
-                {
-                    "machineTypes": [
-                        {
-                            "description": "1 vCPU (shared physical core) and 0.6 GB RAM",
-                            "name": "f1-micro"
-                        },
-                        {
-                            "description": "1 vCPU (shared physical core) and 1.7 GB RAM",
-                            "name": "g1-small"
-                        },
-                        {
-                            "description": "16 vCPUs, 14.4 GB RAM",
-                            "name": "n1-highcpu-16"
-                        },
-                        {
-                            "description": "2 vCPUs, 1.8 GB RAM",
-                            "name": "n1-highcpu-2"
-                        },
-                        {
-                            "description": "32 vCPUs, 28.8 GB RAM",
-                            "name": "n1-highcpu-32"
-                        },
-                        {
-                            "description": "4 vCPUs, 3.6 GB RAM",
-                            "name": "n1-highcpu-4"
-                        },
-                        {
-                            "description": "8 vCPUs, 7.2 GB RAM",
-                            "name": "n1-highcpu-8"
-                        },
-                        {
-                            "description": "16 vCPUs, 104 GB RAM",
-                            "name": "n1-highmem-16"
-                        },
-                        {
-                            "description": "2 vCPUs, 13 GB RAM",
-                            "name": "n1-highmem-2"
-                        },
-                        {
-                            "description": "32 vCPUs, 208 GB RAM",
-                            "name": "n1-highmem-32"
-                        },
-                        {
-                            "description": "4 vCPUs, 26 GB RAM",
-                            "name": "n1-highmem-4"
-                        },
-                        {
-                            "description": "8 vCPUs, 52 GB RAM",
-                            "name": "n1-highmem-8"
-                        },
-                        {
-                            "description": "1 vCPU, 3.75 GB RAM",
-                            "name": "n1-standard-1"
-                        },
-                        {
-                            "description": "16 vCPUs, 60 GB RAM",
-                            "name": "n1-standard-16"
-                        },
-                        {
-                            "description": "2 vCPUs, 7.5 GB RAM",
-                            "name": "n1-standard-2"
-                        },
-                        {
-                            "description": "32 vCPUs, 120 GB RAM",
-                            "name": "n1-standard-32"
-                        },
-                        {
-                            "description": "4 vCPUs, 15 GB RAM",
-                            "name": "n1-standard-4"
-                        },
-                        {
-                            "description": "8 vCPUs, 30 GB RAM",
-                            "name": "n1-standard-8"
-                        }
-                    ],
-                    "name": "asia-east1-c"
-                },
-                {
-                    "machineTypes": [
-                        {
-                            "description": "1 vCPU (shared physical core) and 0.6 GB RAM",
-                            "name": "f1-micro"
-                        },
-                        {
-                            "description": "1 vCPU (shared physical core) and 1.7 GB RAM",
-                            "name": "g1-small"
-                        },
-                        {
-                            "description": "16 vCPUs, 14.4 GB RAM",
-                            "name": "n1-highcpu-16"
-                        },
-                        {
-                            "description": "2 vCPUs, 1.8 GB RAM",
-                            "name": "n1-highcpu-2"
-                        },
-                        {
-                            "description": "4 vCPUs, 3.6 GB RAM",
-                            "name": "n1-highcpu-4"
-                        },
-                        {
-                            "description": "8 vCPUs, 7.2 GB RAM",
-                            "name": "n1-highcpu-8"
-                        },
-                        {
-                            "description": "16 vCPUs, 104 GB RAM",
-                            "name": "n1-highmem-16"
-                        },
-                        {
-                            "description": "2 vCPUs, 13 GB RAM",
-                            "name": "n1-highmem-2"
-                        },
-                        {
-                            "description": "4 vCPUs, 26 GB RAM",
-                            "name": "n1-highmem-4"
-                        },
-                        {
-                            "description": "8 vCPUs, 52 GB RAM",
-                            "name": "n1-highmem-8"
-                        },
-                        {
-                            "description": "1 vCPU, 3.75 GB RAM",
-                            "name": "n1-standard-1"
-                        },
-                        {
-                            "description": "16 vCPUs, 60 GB RAM",
-                            "name": "n1-standard-16"
-                        },
-                        {
-                            "description": "2 vCPUs, 7.5 GB RAM",
-                            "name": "n1-standard-2"
-                        },
-                        {
-                            "description": "4 vCPUs, 15 GB RAM",
-                            "name": "n1-standard-4"
-                        },
-                        {
-                            "description": "8 vCPUs, 30 GB RAM",
-                            "name": "n1-standard-8"
-                        }
-                    ],
-                    "name": "europe-west1-b"
-                },
-                {
-                    "machineTypes": [
-                        {
-                            "description": "1 vCPU (shared physical core) and 0.6 GB RAM",
-                            "name": "f1-micro"
-                        },
-                        {
-                            "description": "1 vCPU (shared physical core) and 1.7 GB RAM",
-                            "name": "g1-small"
-                        },
-                        {
-                            "description": "16 vCPUs, 14.4 GB RAM",
-                            "name": "n1-highcpu-16"
-                        },
-                        {
-                            "description": "2 vCPUs, 1.8 GB RAM",
-                            "name": "n1-highcpu-2"
-                        },
-                        {
-                            "description": "32 vCPUs, 28.8 GB RAM",
-                            "name": "n1-highcpu-32"
-                        },
-                        {
-                            "description": "4 vCPUs, 3.6 GB RAM",
-                            "name": "n1-highcpu-4"
-                        },
-                        {
-                            "description": "8 vCPUs, 7.2 GB RAM",
-                            "name": "n1-highcpu-8"
-                        },
-                        {
-                            "description": "16 vCPUs, 104 GB RAM",
-                            "name": "n1-highmem-16"
-                        },
-                        {
-                            "description": "2 vCPUs, 13 GB RAM",
-                            "name": "n1-highmem-2"
-                        },
-                        {
-                            "description": "32 vCPUs, 208 GB RAM",
-                            "name": "n1-highmem-32"
-                        },
-                        {
-                            "description": "4 vCPUs, 26 GB RAM",
-                            "name": "n1-highmem-4"
-                        },
-                        {
-                            "description": "8 vCPUs, 52 GB RAM",
-                            "name": "n1-highmem-8"
-                        },
-                        {
-                            "description": "1 vCPU, 3.75 GB RAM",
-                            "name": "n1-standard-1"
-                        },
-                        {
-                            "description": "16 vCPUs, 60 GB RAM",
-                            "name": "n1-standard-16"
-                        },
-                        {
-                            "description": "2 vCPUs, 7.5 GB RAM",
-                            "name": "n1-standard-2"
-                        },
-                        {
-                            "description": "32 vCPUs, 120 GB RAM",
-                            "name": "n1-standard-32"
-                        },
-                        {
-                            "description": "4 vCPUs, 15 GB RAM",
-                            "name": "n1-standard-4"
-                        },
-                        {
-                            "description": "8 vCPUs, 30 GB RAM",
-                            "name": "n1-standard-8"
-                        }
-                    ],
-                    "name": "europe-west1-c"
-                },
-                {
-                    "machineTypes": [
-                        {
-                            "description": "1 vCPU (shared physical core) and 0.6 GB RAM",
-                            "name": "f1-micro"
-                        },
-                        {
-                            "description": "1 vCPU (shared physical core) and 1.7 GB RAM",
-                            "name": "g1-small"
-                        },
-                        {
-                            "description": "16 vCPUs, 14.4 GB RAM",
-                            "name": "n1-highcpu-16"
-                        },
-                        {
-                            "description": "2 vCPUs, 1.8 GB RAM",
-                            "name": "n1-highcpu-2"
-                        },
-                        {
-                            "description": "32 vCPUs, 28.8 GB RAM",
-                            "name": "n1-highcpu-32"
-                        },
-                        {
-                            "description": "4 vCPUs, 3.6 GB RAM",
-                            "name": "n1-highcpu-4"
-                        },
-                        {
-                            "description": "8 vCPUs, 7.2 GB RAM",
-                            "name": "n1-highcpu-8"
-                        },
-                        {
-                            "description": "16 vCPUs, 104 GB RAM",
-                            "name": "n1-highmem-16"
-                        },
-                        {
-                            "description": "2 vCPUs, 13 GB RAM",
-                            "name": "n1-highmem-2"
-                        },
-                        {
-                            "description": "32 vCPUs, 208 GB RAM",
-                            "name": "n1-highmem-32"
-                        },
-                        {
-                            "description": "4 vCPUs, 26 GB RAM",
-                            "name": "n1-highmem-4"
-                        },
-                        {
-                            "description": "8 vCPUs, 52 GB RAM",
-                            "name": "n1-highmem-8"
-                        },
-                        {
-                            "description": "1 vCPU, 3.75 GB RAM",
-                            "name": "n1-standard-1"
-                        },
-                        {
-                            "description": "16 vCPUs, 60 GB RAM",
-                            "name": "n1-standard-16"
-                        },
-                        {
-                            "description": "2 vCPUs, 7.5 GB RAM",
-                            "name": "n1-standard-2"
-                        },
-                        {
-                            "description": "32 vCPUs, 120 GB RAM",
-                            "name": "n1-standard-32"
-                        },
-                        {
-                            "description": "4 vCPUs, 15 GB RAM",
-                            "name": "n1-standard-4"
-                        },
-                        {
-                            "description": "8 vCPUs, 30 GB RAM",
-                            "name": "n1-standard-8"
-                        }
-                    ],
-                    "name": "europe-west1-d"
-                },
-                {
-                    "machineTypes": [
-                        {
-                            "description": "1 vCPU (shared physical core) and 0.6 GB RAM",
-                            "name": "f1-micro"
-                        },
-                        {
-                            "description": "1 vCPU (shared physical core) and 1.7 GB RAM",
-                            "name": "g1-small"
-                        },
-                        {
-                            "description": "16 vCPUs, 14.4 GB RAM",
-                            "name": "n1-highcpu-16"
-                        },
-                        {
-                            "description": "2 vCPUs, 1.8 GB RAM",
-                            "name": "n1-highcpu-2"
-                        },
-                        {
-                            "description": "32 vCPUs, 28.8 GB RAM",
-                            "name": "n1-highcpu-32"
-                        },
-                        {
-                            "description": "4 vCPUs, 3.6 GB RAM",
-                            "name": "n1-highcpu-4"
-                        },
-                        {
-                            "description": "8 vCPUs, 7.2 GB RAM",
-                            "name": "n1-highcpu-8"
-                        },
-                        {
-                            "description": "16 vCPUs, 104 GB RAM",
-                            "name": "n1-highmem-16"
-                        },
-                        {
-                            "description": "2 vCPUs, 13 GB RAM",
-                            "name": "n1-highmem-2"
-                        },
-                        {
-                            "description": "32 vCPUs, 208 GB RAM",
-                            "name": "n1-highmem-32"
-                        },
-                        {
-                            "description": "4 vCPUs, 26 GB RAM",
-                            "name": "n1-highmem-4"
-                        },
-                        {
-                            "description": "8 vCPUs, 52 GB RAM",
-                            "name": "n1-highmem-8"
-                        },
-                        {
-                            "description": "1 vCPU, 3.75 GB RAM",
-                            "name": "n1-standard-1"
-                        },
-                        {
-                            "description": "16 vCPUs, 60 GB RAM",
-                            "name": "n1-standard-16"
-                        },
-                        {
-                            "description": "2 vCPUs, 7.5 GB RAM",
-                            "name": "n1-standard-2"
-                        },
-                        {
-                            "description": "32 vCPUs, 120 GB RAM",
-                            "name": "n1-standard-32"
-                        },
-                        {
-                            "description": "4 vCPUs, 15 GB RAM",
-                            "name": "n1-standard-4"
-                        },
-                        {
-                            "description": "8 vCPUs, 30 GB RAM",
-                            "name": "n1-standard-8"
-                        }
-                    ],
-                    "name": "us-central1-f"
-                },
-                {
-                    "machineTypes": [
-                        {
-                            "description": "1 vCPU (shared physical core) and 0.6 GB RAM",
-                            "name": "f1-micro"
-                        },
-                        {
-                            "description": "1 vCPU (shared physical core) and 1.7 GB RAM",
-                            "name": "g1-small"
-                        },
-                        {
-                            "description": "16 vCPUs, 14.4 GB RAM",
-                            "name": "n1-highcpu-16"
-                        },
-                        {
-                            "description": "2 vCPUs, 1.8 GB RAM",
-                            "name": "n1-highcpu-2"
-                        },
-                        {
-                            "description": "4 vCPUs, 3.6 GB RAM",
-                            "name": "n1-highcpu-4"
-                        },
-                        {
-                            "description": "8 vCPUs, 7.2 GB RAM",
-                            "name": "n1-highcpu-8"
-                        },
-                        {
-                            "description": "16 vCPUs, 104 GB RAM",
-                            "name": "n1-highmem-16"
-                        },
-                        {
-                            "description": "2 vCPUs, 13 GB RAM",
-                            "name": "n1-highmem-2"
-                        },
-                        {
-                            "description": "4 vCPUs, 26 GB RAM",
-                            "name": "n1-highmem-4"
-                        },
-                        {
-                            "description": "8 vCPUs, 52 GB RAM",
-                            "name": "n1-highmem-8"
-                        },
-                        {
-                            "description": "1 vCPU, 3.75 GB RAM",
-                            "name": "n1-standard-1"
-                        },
-                        {
-                            "description": "16 vCPUs, 60 GB RAM",
-                            "name": "n1-standard-16"
-                        },
-                        {
-                            "description": "2 vCPUs, 7.5 GB RAM",
-                            "name": "n1-standard-2"
-                        },
-                        {
-                            "description": "4 vCPUs, 15 GB RAM",
-                            "name": "n1-standard-4"
-                        },
-                        {
-                            "description": "8 vCPUs, 30 GB RAM",
-                            "name": "n1-standard-8"
-                        }
-                    ],
-                    "name": "us-central1-a"
-                },
-                {
-                    "machineTypes": [
-                        {
-                            "description": "1 vCPU (shared physical core) and 0.6 GB RAM",
-                            "name": "f1-micro"
-                        },
-                        {
-                            "description": "1 vCPU (shared physical core) and 1.7 GB RAM",
-                            "name": "g1-small"
-                        },
-                        {
-                            "description": "16 vCPUs, 14.4 GB RAM",
-                            "name": "n1-highcpu-16"
-                        },
-                        {
-                            "description": "2 vCPUs, 1.8 GB RAM",
-                            "name": "n1-highcpu-2"
-                        },
-                        {
-                            "description": "32 vCPUs, 28.8 GB RAM",
-                            "name": "n1-highcpu-32"
-                        },
-                        {
-                            "description": "4 vCPUs, 3.6 GB RAM",
-                            "name": "n1-highcpu-4"
-                        },
-                        {
-                            "description": "8 vCPUs, 7.2 GB RAM",
-                            "name": "n1-highcpu-8"
-                        },
-                        {
-                            "description": "16 vCPUs, 104 GB RAM",
-                            "name": "n1-highmem-16"
-                        },
-                        {
-                            "description": "2 vCPUs, 13 GB RAM",
-                            "name": "n1-highmem-2"
-                        },
-                        {
-                            "description": "32 vCPUs, 208 GB RAM",
-                            "name": "n1-highmem-32"
-                        },
-                        {
-                            "description": "4 vCPUs, 26 GB RAM",
-                            "name": "n1-highmem-4"
-                        },
-                        {
-                            "description": "8 vCPUs, 52 GB RAM",
-                            "name": "n1-highmem-8"
-                        },
-                        {
-                            "description": "1 vCPU, 3.75 GB RAM",
-                            "name": "n1-standard-1"
-                        },
-                        {
-                            "description": "16 vCPUs, 60 GB RAM",
-                            "name": "n1-standard-16"
-                        },
-                        {
-                            "description": "2 vCPUs, 7.5 GB RAM",
-                            "name": "n1-standard-2"
-                        },
-                        {
-                            "description": "32 vCPUs, 120 GB RAM",
-                            "name": "n1-standard-32"
-                        },
-                        {
-                            "description": "4 vCPUs, 15 GB RAM",
-                            "name": "n1-standard-4"
-                        },
-                        {
-                            "description": "8 vCPUs, 30 GB RAM",
-                            "name": "n1-standard-8"
-                        }
-                    ],
-                    "name": "us-central1-b"
-                },
-                {
-                    "machineTypes": [
-                        {
-                            "description": "1 vCPU (shared physical core) and 0.6 GB RAM",
-                            "name": "f1-micro"
-                        },
-                        {
-                            "description": "1 vCPU (shared physical core) and 1.7 GB RAM",
-                            "name": "g1-small"
-                        },
-                        {
-                            "description": "16 vCPUs, 14.4 GB RAM",
-                            "name": "n1-highcpu-16"
-                        },
-                        {
-                            "description": "2 vCPUs, 1.8 GB RAM",
-                            "name": "n1-highcpu-2"
-                        },
-                        {
-                            "description": "32 vCPUs, 28.8 GB RAM",
-                            "name": "n1-highcpu-32"
-                        },
-                        {
-                            "description": "4 vCPUs, 3.6 GB RAM",
-                            "name": "n1-highcpu-4"
-                        },
-                        {
-                            "description": "8 vCPUs, 7.2 GB RAM",
-                            "name": "n1-highcpu-8"
-                        },
-                        {
-                            "description": "16 vCPUs, 104 GB RAM",
-                            "name": "n1-highmem-16"
-                        },
-                        {
-                            "description": "2 vCPUs, 13 GB RAM",
-                            "name": "n1-highmem-2"
-                        },
-                        {
-                            "description": "32 vCPUs, 208 GB RAM",
-                            "name": "n1-highmem-32"
-                        },
-                        {
-                            "description": "4 vCPUs, 26 GB RAM",
-                            "name": "n1-highmem-4"
-                        },
-                        {
-                            "description": "8 vCPUs, 52 GB RAM",
-                            "name": "n1-highmem-8"
-                        },
-                        {
-                            "description": "1 vCPU, 3.75 GB RAM",
-                            "name": "n1-standard-1"
-                        },
-                        {
-                            "description": "16 vCPUs, 60 GB RAM",
-                            "name": "n1-standard-16"
-                        },
-                        {
-                            "description": "2 vCPUs, 7.5 GB RAM",
-                            "name": "n1-standard-2"
-                        },
-                        {
-                            "description": "32 vCPUs, 120 GB RAM",
-                            "name": "n1-standard-32"
-                        },
-                        {
-                            "description": "4 vCPUs, 15 GB RAM",
-                            "name": "n1-standard-4"
-                        },
-                        {
-                            "description": "8 vCPUs, 30 GB RAM",
-                            "name": "n1-standard-8"
-                        }
-                    ],
-                    "name": "us-central1-c"
-                },
-                {
-                    "machineTypes": [
-                        {
-                            "description": "1 vCPU (shared physical core) and 0.6 GB RAM",
-                            "name": "f1-micro"
-                        },
-                        {
-                            "description": "1 vCPU (shared physical core) and 1.7 GB RAM",
-                            "name": "g1-small"
-                        },
-                        {
-                            "description": "16 vCPUs, 14.4 GB RAM",
-                            "name": "n1-highcpu-16"
-                        },
-                        {
-                            "description": "2 vCPUs, 1.8 GB RAM",
-                            "name": "n1-highcpu-2"
-                        },
-                        {
-                            "description": "32 vCPUs, 28.8 GB RAM",
-                            "name": "n1-highcpu-32"
-                        },
-                        {
-                            "description": "4 vCPUs, 3.6 GB RAM",
-                            "name": "n1-highcpu-4"
-                        },
-                        {
-                            "description": "8 vCPUs, 7.2 GB RAM",
-                            "name": "n1-highcpu-8"
-                        },
-                        {
-                            "description": "16 vCPUs, 104 GB RAM",
-                            "name": "n1-highmem-16"
-                        },
-                        {
-                            "description": "2 vCPUs, 13 GB RAM",
-                            "name": "n1-highmem-2"
-                        },
-                        {
-                            "description": "32 vCPUs, 208 GB RAM",
-                            "name": "n1-highmem-32"
-                        },
-                        {
-                            "description": "4 vCPUs, 26 GB RAM",
-                            "name": "n1-highmem-4"
-                        },
-                        {
-                            "description": "8 vCPUs, 52 GB RAM",
-                            "name": "n1-highmem-8"
-                        },
-                        {
-                            "description": "1 vCPU, 3.75 GB RAM",
-                            "name": "n1-standard-1"
-                        },
-                        {
-                            "description": "16 vCPUs, 60 GB RAM",
-                            "name": "n1-standard-16"
-                        },
-                        {
-                            "description": "2 vCPUs, 7.5 GB RAM",
-                            "name": "n1-standard-2"
-                        },
-                        {
-                            "description": "32 vCPUs, 120 GB RAM",
-                            "name": "n1-standard-32"
-                        },
-                        {
-                            "description": "4 vCPUs, 15 GB RAM",
-                            "name": "n1-standard-4"
-                        },
-                        {
-                            "description": "8 vCPUs, 30 GB RAM",
-                            "name": "n1-standard-8"
-                        }
-                    ],
-                    "name": "us-east1-c"
-                },
-                {
-                    "machineTypes": [
-                        {
-                            "description": "1 vCPU (shared physical core) and 0.6 GB RAM",
-                            "name": "f1-micro"
-                        },
-                        {
-                            "description": "1 vCPU (shared physical core) and 1.7 GB RAM",
-                            "name": "g1-small"
-                        },
-                        {
-                            "description": "16 vCPUs, 14.4 GB RAM",
-                            "name": "n1-highcpu-16"
-                        },
-                        {
-                            "description": "2 vCPUs, 1.8 GB RAM",
-                            "name": "n1-highcpu-2"
-                        },
-                        {
-                            "description": "32 vCPUs, 28.8 GB RAM",
-                            "name": "n1-highcpu-32"
-                        },
-                        {
-                            "description": "4 vCPUs, 3.6 GB RAM",
-                            "name": "n1-highcpu-4"
-                        },
-                        {
-                            "description": "8 vCPUs, 7.2 GB RAM",
-                            "name": "n1-highcpu-8"
-                        },
-                        {
-                            "description": "16 vCPUs, 104 GB RAM",
-                            "name": "n1-highmem-16"
-                        },
-                        {
-                            "description": "2 vCPUs, 13 GB RAM",
-                            "name": "n1-highmem-2"
-                        },
-                        {
-                            "description": "32 vCPUs, 208 GB RAM",
-                            "name": "n1-highmem-32"
-                        },
-                        {
-                            "description": "4 vCPUs, 26 GB RAM",
-                            "name": "n1-highmem-4"
-                        },
-                        {
-                            "description": "8 vCPUs, 52 GB RAM",
-                            "name": "n1-highmem-8"
-                        },
-                        {
-                            "description": "1 vCPU, 3.75 GB RAM",
-                            "name": "n1-standard-1"
-                        },
-                        {
-                            "description": "16 vCPUs, 60 GB RAM",
-                            "name": "n1-standard-16"
-                        },
-                        {
-                            "description": "2 vCPUs, 7.5 GB RAM",
-                            "name": "n1-standard-2"
-                        },
-                        {
-                            "description": "32 vCPUs, 120 GB RAM",
-                            "name": "n1-standard-32"
-                        },
-                        {
-                            "description": "4 vCPUs, 15 GB RAM",
-                            "name": "n1-standard-4"
-                        },
-                        {
-                            "description": "8 vCPUs, 30 GB RAM",
-                            "name": "n1-standard-8"
-                        }
-                    ],
-                    "name": "us-east1-d"
-                },
-                {
-                    "machineTypes": [
-                        {
-                            "description": "1 vCPU (shared physical core) and 0.6 GB RAM",
-                            "name": "f1-micro"
-                        },
-                        {
-                            "description": "1 vCPU (shared physical core) and 1.7 GB RAM",
-                            "name": "g1-small"
-                        },
-                        {
-                            "description": "16 vCPUs, 14.4 GB RAM",
-                            "name": "n1-highcpu-16"
-                        },
-                        {
-                            "description": "2 vCPUs, 1.8 GB RAM",
-                            "name": "n1-highcpu-2"
-                        },
-                        {
-                            "description": "32 vCPUs, 28.8 GB RAM",
-                            "name": "n1-highcpu-32"
-                        },
-                        {
-                            "description": "4 vCPUs, 3.6 GB RAM",
-                            "name": "n1-highcpu-4"
-                        },
-                        {
-                            "description": "8 vCPUs, 7.2 GB RAM",
-                            "name": "n1-highcpu-8"
-                        },
-                        {
-                            "description": "16 vCPUs, 104 GB RAM",
-                            "name": "n1-highmem-16"
-                        },
-                        {
-                            "description": "2 vCPUs, 13 GB RAM",
-                            "name": "n1-highmem-2"
-                        },
-                        {
-                            "description": "32 vCPUs, 208 GB RAM",
-                            "name": "n1-highmem-32"
-                        },
-                        {
-                            "description": "4 vCPUs, 26 GB RAM",
-                            "name": "n1-highmem-4"
-                        },
-                        {
-                            "description": "8 vCPUs, 52 GB RAM",
-                            "name": "n1-highmem-8"
-                        },
-                        {
-                            "description": "1 vCPU, 3.75 GB RAM",
-                            "name": "n1-standard-1"
-                        },
-                        {
-                            "description": "16 vCPUs, 60 GB RAM",
-                            "name": "n1-standard-16"
-                        },
-                        {
-                            "description": "2 vCPUs, 7.5 GB RAM",
-                            "name": "n1-standard-2"
-                        },
-                        {
-                            "description": "32 vCPUs, 120 GB RAM",
-                            "name": "n1-standard-32"
-                        },
-                        {
-                            "description": "4 vCPUs, 15 GB RAM",
-                            "name": "n1-standard-4"
-                        },
-                        {
-                            "name": "n1-standard-8"
-                        }
-                    ],
-                    "name": "us-east1-b"
-                }
-            ],
-            "images": [
-                {
-                    "description": "",
-                    "name": "ubuntu-14-04-lts-v20140709"
-                },
-                {
-                    "description": "CentOS, CentOS, 6.7, x86_64 built on 2015-09-29",
-                    "name": "centos-6-v20150929"
-                },
-                {
-                    "description": "CentOS, CentOS, 7.1.1503, x86_64 built on 2015-09-29",
-                    "name": "centos-7-v20150929"
-                },
-                {
-                    "description": "Debian, Debian GNU/Linux, 7.9 (wheezy), amd64 with backports kernel and SSH packages built on 2015-09-29",
-                    "name": "backports-debian-7-wheezy-v20150929"
-                },
-                {
-                    "description": "Accounts Beta Debian GNU/Linux, 7.9 (wheezy), amd64 with backports kernel and SSH packages and beta accounts packages built on 2015-09-30",
-                    "name": "beta-accounts-backports-debian-7-wheezy-v20150930"
-                },
-                {
-                    "description": "Accounts Beta Debian GNU/Linux, 8.1 (jessie), amd64 with beta accounts package built on 2015-09-30",
-                    "name": "beta-accounts-debian-8-jessie-v20150930"
-                },
-                {
-                    "description": "Debian, Debian GNU/Linux, 7.9 (wheezy), amd64 built on 2015-09-29",
-                    "name": "debian-7-wheezy-v20150929"
-                },
-                {
-                    "description": "Debian, Debian GNU/Linux, 8.1 (jessie), amd64 built on 2015-09-29",
-                    "name": "debian-8-jessie-v20150929"
-                },
-                {
-                    "description": "Red Hat, Red Hat Enterprise Linux, 6.7, x86_64 built on 2015-09-29",
-                    "name": "rhel-6-v20150929"
-                },
-                {
-                    "description": "Red Hat, Red Hat Enterprise Linux, 7.1, x86_64 built on 2015-09-29",
-                    "name": "rhel-7-v20150929"
-                },
-                {
-                    "description": "SLES, SUSE Linux Enterprise Server, 11 SP4, x86_64 built on 2015-07-14",
-                    "name": "sles-11-sp4-v20150714"
-                },
-                {
-                    "description": "SUSE, SUSE Linux Enterprise Server, 12, x86_64 built on 2015-05-11",
-                    "name": "sles-12-v20150511"
-                },
-                {
-                    "description": "Canonical, Ubuntu, 12.04 LTS, amd64 precise image built on 2015-09-10",
-                    "name": "ubuntu-1204-precise-v20150910"
-                },
-                {
-                    "description": "Canonical, Ubuntu, 14.04 LTS, amd64 trusty image built on 2015-09-09",
-                    "name": "ubuntu-1404-trusty-v20150909a"
-                },
-                {
-                    "description": "Canonical, Ubuntu, 15.04, amd64 vivid image built on 2015-09-11",
-                    "name": "ubuntu-1504-vivid-v20150911"
-                },
-                {
-                    "description": "Canonical, Ubuntu, 15.10, amd64 wily image built on 2015-10-26",
-                    "name": "ubuntu-1510-wily-v20151026"
-                }
-            ],
-            "icon": "images/platform/linux.png",
-            "networks": [
-                {
-                    "routes": [],
-                    "firewalls": [
-                        {
-                            "target_tags": [
-                                "couchbase"
-                            ],
-                            "description": "",
-                            "name": "couchbase"
-                        },
-                        {
-                            "target_tags": [
-                                "http-server"
-                            ],
-                            "description": "",
-                            "name": "default-allow-http"
-                        },
-                        {
-                            "target_tags": [
-                                "https-server"
-                            ],
-                            "description": "",
-                            "name": "default-allow-https"
-                        },
-                        {
-                            "target_tags": [
-                                "allow-internal"
-                            ],
-                            "description": "Internal traffic from default allowed",
-                            "name": "default-allow-internal"
-                        },
-                        {
-                            "target_tags": [
-                                "jboss"
-                            ],
-                            "description": "",
-                            "name": "jboss"
-                        },
-                        {
-                            "target_tags": [
-                                "jbossmgmt"
-                            ],
-                            "description": "",
-                            "name": "jbossmgmt"
-                        },
-                        {
-                            "target_tags": [
-                                "jenkins"
-                            ],
-                            "description": "",
-                            "name": "jenkins"
-                        },
-                        {
-                            "target_tags": [
-                                "mongo"
-                            ],
-                            "description": "Firewall rule for MongoDB server",
-                            "description": "8 vCPUs, 30 GB RAM",
-                            "name": "mongodb"
-                        },
-                        {
-                            "target_tags": [
-                                "mysql"
-                            ],
-                            "description": "",
-                            "name": "mysql"
-                        },
-                        {
-                            "target_tags": [
-                                "rabbitmq"
-                            ],
-                            "description": "Firewall rule for RabbitMQ server",
-                            "name": "rabbitmq"
-                        },
-                        {
-                            "target_tags": [
-                                "redis"
-                            ],
-                            "description": "rule used for testing redis in gce",
-                            "name": "redis"
-                        },
-                        {
-                            "target_tags": [
-                                "test-firewall"
-                            ],
-                            "description": "Don't Delete. Use by scenario tests",
-                            "name": "test-firewall"
-                        },
-                        {
-                            "target_tags": [
-                                "web"
-                            ],
-                            "description": "Firewall rule for Web Server",
-                            "name": "web"
-                        }
-                    ],
-                    "description": "Default network for the project",
-                    "name": "default"
-                }
-            ],
-            "schema": "http://elasticbox.net/schemas/gce/compute/linux"
-        }
-    ],
-    "organization": "elasticbox",
-    "type": "Google Compute",
-    "id": "d86e3bfe-1edc-45b4-a03b-28d1e2b7eee2",
-    "icon": "images/platform/google.png"
+"schema": "http://elasticbox.net/schemas/gce/provider",
+"updated": "2015-10-30 12:39:06.518493",
+"project_id": "the_project_id",
+"description": "Manage cloud hosting and Linux machines, description has been updated",
+"created": "2015-10-30 12:34:09.062710",
+"deleted": null,
+"uri": "/services/providers/d86e3bfe-1edc-45b4-a03b-28d1e2b7eee2",
+"name": "GoogleComputeProvider",
+"owner": "operations",
+"state": "ready",
+"email": "therightemail@company.com",
+"admin_boxes": [],
+"members": [],
+"credentials": {},
+"services": [
+    {
+        "name": "Linux Compute",
+        "zones": [
+            {
+                "machineTypes": [
+                    {
+                        "description": "1 vCPU (shared physical core) and 0.6 GB RAM",
+                        "name": "f1-micro"
+                    },
+                    {
+                        "description": "1 vCPU (shared physical core) and 1.7 GB RAM",
+                        "name": "g1-small"
+                    },
+                    {
+                        "description": "16 vCPUs, 14.4 GB RAM",
+                        "name": "n1-highcpu-16"
+                    },
+                    {
+                        "description": "2 vCPUs, 1.8 GB RAM",
+                        "name": "n1-highcpu-2"
+                    },
+                    {
+                        "description": "32 vCPUs, 28.8 GB RAM",
+                        "name": "n1-highcpu-32"
+                    },
+                    {
+                        "description": "4 vCPUs, 3.6 GB RAM",
+                        "name": "n1-highcpu-4"
+                    },
+                    {
+                        "description": "8 vCPUs, 7.2 GB RAM",
+                        "name": "n1-highcpu-8"
+                    },
+                    {
+                        "description": "16 vCPUs, 104 GB RAM",
+                        "name": "n1-highmem-16"
+                    },
+                    {
+                        "description": "2 vCPUs, 13 GB RAM",
+                        "name": "n1-highmem-2"
+                    },
+                    {
+                        "description": "32 vCPUs, 208 GB RAM",
+                        "name": "n1-highmem-32"
+                    },
+                    {
+                        "description": "4 vCPUs, 26 GB RAM",
+                        "name": "n1-highmem-4"
+                    },
+                    {
+                        "description": "8 vCPUs, 52 GB RAM",
+                        "name": "n1-highmem-8"
+                    },
+                    {
+                        "description": "1 vCPU, 3.75 GB RAM",
+                        "name": "n1-standard-1"
+                    },
+                    {
+                        "description": "16 vCPUs, 60 GB RAM",
+                        "name": "n1-standard-16"
+                    },
+                    {
+                        "description": "2 vCPUs, 7.5 GB RAM",
+                        "name": "n1-standard-2"
+                    },
+                    {
+                        "description": "32 vCPUs, 120 GB RAM",
+                        "name": "n1-standard-32"
+                    },
+                    {
+                        "description": "4 vCPUs, 15 GB RAM",
+                        "name": "n1-standard-4"
+                    },
+                    {
+                        "description": "8 vCPUs, 30 GB RAM",
+                        "name": "n1-standard-8"
+                    }
+                ],
+                "name": "asia-east1-b"
+            },
+            {
+                "machineTypes": [
+                    {
+                        "description": "1 vCPU (shared physical core) and 0.6 GB RAM",
+                        "name": "f1-micro"
+                    },
+                    {
+                        "description": "1 vCPU (shared physical core) and 1.7 GB RAM",
+                        "name": "g1-small"
+                    },
+                    {
+                        "description": "16 vCPUs, 14.4 GB RAM",
+                        "name": "n1-highcpu-16"
+                    },
+                    {
+                        "description": "2 vCPUs, 1.8 GB RAM",
+                        "name": "n1-highcpu-2"
+                    },
+                    {
+                        "description": "32 vCPUs, 28.8 GB RAM",
+                        "name": "n1-highcpu-32"
+                    },
+                    {
+                        "description": "4 vCPUs, 3.6 GB RAM",
+                        "name": "n1-highcpu-4"
+                    },
+                    {
+                        "description": "8 vCPUs, 7.2 GB RAM",
+                        "name": "n1-highcpu-8"
+                    },
+                    {
+                        "description": "16 vCPUs, 104 GB RAM",
+                        "name": "n1-highmem-16"
+                    },
+                    {
+                        "description": "2 vCPUs, 13 GB RAM",
+                        "name": "n1-highmem-2"
+                    },
+                    {
+                        "description": "32 vCPUs, 208 GB RAM",
+                        "name": "n1-highmem-32"
+                    },
+                    {
+                        "description": "4 vCPUs, 26 GB RAM",
+                        "name": "n1-highmem-4"
+                    },
+                    {
+                        "description": "8 vCPUs, 52 GB RAM",
+                        "name": "n1-highmem-8"
+                    },
+                    {
+                        "description": "1 vCPU, 3.75 GB RAM",
+                        "name": "n1-standard-1"
+                    },
+                    {
+                        "description": "16 vCPUs, 60 GB RAM",
+                        "name": "n1-standard-16"
+                    },
+                    {
+                        "description": "2 vCPUs, 7.5 GB RAM",
+                        "name": "n1-standard-2"
+                    },
+                    {
+                        "description": "32 vCPUs, 120 GB RAM",
+                        "name": "n1-standard-32"
+                    },
+                    {
+                        "description": "4 vCPUs, 15 GB RAM",
+                        "name": "n1-standard-4"
+                    },
+                    {
+                        "description": "8 vCPUs, 30 GB RAM",
+                        "name": "n1-standard-8"
+                    }
+                ],
+                "name": "asia-east1-a"
+            },
+            {
+                "machineTypes": [
+                    {
+                        "description": "1 vCPU (shared physical core) and 0.6 GB RAM",
+                        "name": "f1-micro"
+                    },
+                    {
+                        "description": "1 vCPU (shared physical core) and 1.7 GB RAM",
+                        "name": "g1-small"
+                    },
+                    {
+                        "description": "16 vCPUs, 14.4 GB RAM",
+                        "name": "n1-highcpu-16"
+                    },
+                    {
+                        "description": "2 vCPUs, 1.8 GB RAM",
+                        "name": "n1-highcpu-2"
+                    },
+                    {
+                        "description": "32 vCPUs, 28.8 GB RAM",
+                        "name": "n1-highcpu-32"
+                    },
+                    {
+                        "description": "4 vCPUs, 3.6 GB RAM",
+                        "name": "n1-highcpu-4"
+                    },
+                    {
+                        "description": "8 vCPUs, 7.2 GB RAM",
+                        "name": "n1-highcpu-8"
+                    },
+                    {
+                        "description": "16 vCPUs, 104 GB RAM",
+                        "name": "n1-highmem-16"
+                    },
+                    {
+                        "description": "2 vCPUs, 13 GB RAM",
+                        "name": "n1-highmem-2"
+                    },
+                    {
+                        "description": "32 vCPUs, 208 GB RAM",
+                        "name": "n1-highmem-32"
+                    },
+                    {
+                        "description": "4 vCPUs, 26 GB RAM",
+                        "name": "n1-highmem-4"
+                    },
+                    {
+                        "description": "8 vCPUs, 52 GB RAM",
+                        "name": "n1-highmem-8"
+                    },
+                    {
+                        "description": "1 vCPU, 3.75 GB RAM",
+                        "name": "n1-standard-1"
+                    },
+                    {
+                        "description": "16 vCPUs, 60 GB RAM",
+                        "name": "n1-standard-16"
+                    },
+                    {
+                        "description": "2 vCPUs, 7.5 GB RAM",
+                        "name": "n1-standard-2"
+                    },
+                    {
+                        "description": "32 vCPUs, 120 GB RAM",
+                        "name": "n1-standard-32"
+                    },
+                    {
+                        "description": "4 vCPUs, 15 GB RAM",
+                        "name": "n1-standard-4"
+                    },
+                    {
+                        "description": "8 vCPUs, 30 GB RAM",
+                        "name": "n1-standard-8"
+                    }
+                ],
+                "name": "asia-east1-c"
+            },
+            {
+                "machineTypes": [
+                    {
+                        "description": "1 vCPU (shared physical core) and 0.6 GB RAM",
+                        "name": "f1-micro"
+                    },
+                    {
+                        "description": "1 vCPU (shared physical core) and 1.7 GB RAM",
+                        "name": "g1-small"
+                    },
+                    {
+                        "description": "16 vCPUs, 14.4 GB RAM",
+                        "name": "n1-highcpu-16"
+                    },
+                    {
+                        "description": "2 vCPUs, 1.8 GB RAM",
+                        "name": "n1-highcpu-2"
+                    },
+                    {
+                        "description": "4 vCPUs, 3.6 GB RAM",
+                        "name": "n1-highcpu-4"
+                    },
+                    {
+                        "description": "8 vCPUs, 7.2 GB RAM",
+                        "name": "n1-highcpu-8"
+                    },
+                    {
+                        "description": "16 vCPUs, 104 GB RAM",
+                        "name": "n1-highmem-16"
+                    },
+                    {
+                        "description": "2 vCPUs, 13 GB RAM",
+                        "name": "n1-highmem-2"
+                    },
+                    {
+                        "description": "4 vCPUs, 26 GB RAM",
+                        "name": "n1-highmem-4"
+                    },
+                    {
+                        "description": "8 vCPUs, 52 GB RAM",
+                        "name": "n1-highmem-8"
+                    },
+                    {
+                        "description": "1 vCPU, 3.75 GB RAM",
+                        "name": "n1-standard-1"
+                    },
+                    {
+                        "description": "16 vCPUs, 60 GB RAM",
+                        "name": "n1-standard-16"
+                    },
+                    {
+                        "description": "2 vCPUs, 7.5 GB RAM",
+                        "name": "n1-standard-2"
+                    },
+                    {
+                        "description": "4 vCPUs, 15 GB RAM",
+                        "name": "n1-standard-4"
+                    },
+                    {
+                        "description": "8 vCPUs, 30 GB RAM",
+                        "name": "n1-standard-8"
+                    }
+                ],
+                "name": "europe-west1-b"
+            },
+            {
+                "machineTypes": [
+                    {
+                        "description": "1 vCPU (shared physical core) and 0.6 GB RAM",
+                        "name": "f1-micro"
+                    },
+                    {
+                        "description": "1 vCPU (shared physical core) and 1.7 GB RAM",
+                        "name": "g1-small"
+                    },
+                    {
+                        "description": "16 vCPUs, 14.4 GB RAM",
+                        "name": "n1-highcpu-16"
+                    },
+                    {
+                        "description": "2 vCPUs, 1.8 GB RAM",
+                        "name": "n1-highcpu-2"
+                    },
+                    {
+                        "description": "32 vCPUs, 28.8 GB RAM",
+                        "name": "n1-highcpu-32"
+                    },
+                    {
+                        "description": "4 vCPUs, 3.6 GB RAM",
+                        "name": "n1-highcpu-4"
+                    },
+                    {
+                        "description": "8 vCPUs, 7.2 GB RAM",
+                        "name": "n1-highcpu-8"
+                    },
+                    {
+                        "description": "16 vCPUs, 104 GB RAM",
+                        "name": "n1-highmem-16"
+                    },
+                    {
+                        "description": "2 vCPUs, 13 GB RAM",
+                        "name": "n1-highmem-2"
+                    },
+                    {
+                        "description": "32 vCPUs, 208 GB RAM",
+                        "name": "n1-highmem-32"
+                    },
+                    {
+                        "description": "4 vCPUs, 26 GB RAM",
+                        "name": "n1-highmem-4"
+                    },
+                    {
+                        "description": "8 vCPUs, 52 GB RAM",
+                        "name": "n1-highmem-8"
+                    },
+                    {
+                        "description": "1 vCPU, 3.75 GB RAM",
+                        "name": "n1-standard-1"
+                    },
+                    {
+                        "description": "16 vCPUs, 60 GB RAM",
+                        "name": "n1-standard-16"
+                    },
+                    {
+                        "description": "2 vCPUs, 7.5 GB RAM",
+                        "name": "n1-standard-2"
+                    },
+                    {
+                        "description": "32 vCPUs, 120 GB RAM",
+                        "name": "n1-standard-32"
+                    },
+                    {
+                        "description": "4 vCPUs, 15 GB RAM",
+                        "name": "n1-standard-4"
+                    },
+                    {
+                        "description": "8 vCPUs, 30 GB RAM",
+                        "name": "n1-standard-8"
+                    }
+                ],
+                "name": "europe-west1-c"
+            },
+            {
+                "machineTypes": [
+                    {
+                        "description": "1 vCPU (shared physical core) and 0.6 GB RAM",
+                        "name": "f1-micro"
+                    },
+                    {
+                        "description": "1 vCPU (shared physical core) and 1.7 GB RAM",
+                        "name": "g1-small"
+                    },
+                    {
+                        "description": "16 vCPUs, 14.4 GB RAM",
+                        "name": "n1-highcpu-16"
+                    },
+                    {
+                        "description": "2 vCPUs, 1.8 GB RAM",
+                        "name": "n1-highcpu-2"
+                    },
+                    {
+                        "description": "32 vCPUs, 28.8 GB RAM",
+                        "name": "n1-highcpu-32"
+                    },
+                    {
+                        "description": "4 vCPUs, 3.6 GB RAM",
+                        "name": "n1-highcpu-4"
+                    },
+                    {
+                        "description": "8 vCPUs, 7.2 GB RAM",
+                        "name": "n1-highcpu-8"
+                    },
+                    {
+                        "description": "16 vCPUs, 104 GB RAM",
+                        "name": "n1-highmem-16"
+                    },
+                    {
+                        "description": "2 vCPUs, 13 GB RAM",
+                        "name": "n1-highmem-2"
+                    },
+                    {
+                        "description": "32 vCPUs, 208 GB RAM",
+                        "name": "n1-highmem-32"
+                    },
+                    {
+                        "description": "4 vCPUs, 26 GB RAM",
+                        "name": "n1-highmem-4"
+                    },
+                    {
+                        "description": "8 vCPUs, 52 GB RAM",
+                        "name": "n1-highmem-8"
+                    },
+                    {
+                        "description": "1 vCPU, 3.75 GB RAM",
+                        "name": "n1-standard-1"
+                    },
+                    {
+                        "description": "16 vCPUs, 60 GB RAM",
+                        "name": "n1-standard-16"
+                    },
+                    {
+                        "description": "2 vCPUs, 7.5 GB RAM",
+                        "name": "n1-standard-2"
+                    },
+                    {
+                        "description": "32 vCPUs, 120 GB RAM",
+                        "name": "n1-standard-32"
+                    },
+                    {
+                        "description": "4 vCPUs, 15 GB RAM",
+                        "name": "n1-standard-4"
+                    },
+                    {
+                        "description": "8 vCPUs, 30 GB RAM",
+                        "name": "n1-standard-8"
+                    }
+                ],
+                "name": "europe-west1-d"
+            },
+            {
+                "machineTypes": [
+                    {
+                        "description": "1 vCPU (shared physical core) and 0.6 GB RAM",
+                        "name": "f1-micro"
+                    },
+                    {
+                        "description": "1 vCPU (shared physical core) and 1.7 GB RAM",
+                        "name": "g1-small"
+                    },
+                    {
+                        "description": "16 vCPUs, 14.4 GB RAM",
+                        "name": "n1-highcpu-16"
+                    },
+                    {
+                        "description": "2 vCPUs, 1.8 GB RAM",
+                        "name": "n1-highcpu-2"
+                    },
+                    {
+                        "description": "32 vCPUs, 28.8 GB RAM",
+                        "name": "n1-highcpu-32"
+                    },
+                    {
+                        "description": "4 vCPUs, 3.6 GB RAM",
+                        "name": "n1-highcpu-4"
+                    },
+                    {
+                        "description": "8 vCPUs, 7.2 GB RAM",
+                        "name": "n1-highcpu-8"
+                    },
+                    {
+                        "description": "16 vCPUs, 104 GB RAM",
+                        "name": "n1-highmem-16"
+                    },
+                    {
+                        "description": "2 vCPUs, 13 GB RAM",
+                        "name": "n1-highmem-2"
+                    },
+                    {
+                        "description": "32 vCPUs, 208 GB RAM",
+                        "name": "n1-highmem-32"
+                    },
+                    {
+                        "description": "4 vCPUs, 26 GB RAM",
+                        "name": "n1-highmem-4"
+                    },
+                    {
+                        "description": "8 vCPUs, 52 GB RAM",
+                        "name": "n1-highmem-8"
+                    },
+                    {
+                        "description": "1 vCPU, 3.75 GB RAM",
+                        "name": "n1-standard-1"
+                    },
+                    {
+                        "description": "16 vCPUs, 60 GB RAM",
+                        "name": "n1-standard-16"
+                    },
+                    {
+                        "description": "2 vCPUs, 7.5 GB RAM",
+                        "name": "n1-standard-2"
+                    },
+                    {
+                        "description": "32 vCPUs, 120 GB RAM",
+                        "name": "n1-standard-32"
+                    },
+                    {
+                        "description": "4 vCPUs, 15 GB RAM",
+                        "name": "n1-standard-4"
+                    },
+                    {
+                        "description": "8 vCPUs, 30 GB RAM",
+                        "name": "n1-standard-8"
+                    }
+                ],
+                "name": "us-central1-f"
+            },
+            {
+                "machineTypes": [
+                    {
+                        "description": "1 vCPU (shared physical core) and 0.6 GB RAM",
+                        "name": "f1-micro"
+                    },
+                    {
+                        "description": "1 vCPU (shared physical core) and 1.7 GB RAM",
+                        "name": "g1-small"
+                    },
+                    {
+                        "description": "16 vCPUs, 14.4 GB RAM",
+                        "name": "n1-highcpu-16"
+                    },
+                    {
+                        "description": "2 vCPUs, 1.8 GB RAM",
+                        "name": "n1-highcpu-2"
+                    },
+                    {
+                        "description": "4 vCPUs, 3.6 GB RAM",
+                        "name": "n1-highcpu-4"
+                    },
+                    {
+                        "description": "8 vCPUs, 7.2 GB RAM",
+                        "name": "n1-highcpu-8"
+                    },
+                    {
+                        "description": "16 vCPUs, 104 GB RAM",
+                        "name": "n1-highmem-16"
+                    },
+                    {
+                        "description": "2 vCPUs, 13 GB RAM",
+                        "name": "n1-highmem-2"
+                    },
+                    {
+                        "description": "4 vCPUs, 26 GB RAM",
+                        "name": "n1-highmem-4"
+                    },
+                    {
+                        "description": "8 vCPUs, 52 GB RAM",
+                        "name": "n1-highmem-8"
+                    },
+                    {
+                        "description": "1 vCPU, 3.75 GB RAM",
+                        "name": "n1-standard-1"
+                    },
+                    {
+                        "description": "16 vCPUs, 60 GB RAM",
+                        "name": "n1-standard-16"
+                    },
+                    {
+                        "description": "2 vCPUs, 7.5 GB RAM",
+                        "name": "n1-standard-2"
+                    },
+                    {
+                        "description": "4 vCPUs, 15 GB RAM",
+                        "name": "n1-standard-4"
+                    },
+                    {
+                        "description": "8 vCPUs, 30 GB RAM",
+                        "name": "n1-standard-8"
+                    }
+                ],
+                "name": "us-central1-a"
+            },
+            {
+                "machineTypes": [
+                    {
+                        "description": "1 vCPU (shared physical core) and 0.6 GB RAM",
+                        "name": "f1-micro"
+                    },
+                    {
+                        "description": "1 vCPU (shared physical core) and 1.7 GB RAM",
+                        "name": "g1-small"
+                    },
+                    {
+                        "description": "16 vCPUs, 14.4 GB RAM",
+                        "name": "n1-highcpu-16"
+                    },
+                    {
+                        "description": "2 vCPUs, 1.8 GB RAM",
+                        "name": "n1-highcpu-2"
+                    },
+                    {
+                        "description": "32 vCPUs, 28.8 GB RAM",
+                        "name": "n1-highcpu-32"
+                    },
+                    {
+                        "description": "4 vCPUs, 3.6 GB RAM",
+                        "name": "n1-highcpu-4"
+                    },
+                    {
+                        "description": "8 vCPUs, 7.2 GB RAM",
+                        "name": "n1-highcpu-8"
+                    },
+                    {
+                        "description": "16 vCPUs, 104 GB RAM",
+                        "name": "n1-highmem-16"
+                    },
+                    {
+                        "description": "2 vCPUs, 13 GB RAM",
+                        "name": "n1-highmem-2"
+                    },
+                    {
+                        "description": "32 vCPUs, 208 GB RAM",
+                        "name": "n1-highmem-32"
+                    },
+                    {
+                        "description": "4 vCPUs, 26 GB RAM",
+                        "name": "n1-highmem-4"
+                    },
+                    {
+                        "description": "8 vCPUs, 52 GB RAM",
+                        "name": "n1-highmem-8"
+                    },
+                    {
+                        "description": "1 vCPU, 3.75 GB RAM",
+                        "name": "n1-standard-1"
+                    },
+                    {
+                        "description": "16 vCPUs, 60 GB RAM",
+                        "name": "n1-standard-16"
+                    },
+                    {
+                        "description": "2 vCPUs, 7.5 GB RAM",
+                        "name": "n1-standard-2"
+                    },
+                    {
+                        "description": "32 vCPUs, 120 GB RAM",
+                        "name": "n1-standard-32"
+                    },
+                    {
+                        "description": "4 vCPUs, 15 GB RAM",
+                        "name": "n1-standard-4"
+                    },
+                    {
+                        "description": "8 vCPUs, 30 GB RAM",
+                        "name": "n1-standard-8"
+                    }
+                ],
+                "name": "us-central1-b"
+            },
+            {
+                "machineTypes": [
+                    {
+                        "description": "1 vCPU (shared physical core) and 0.6 GB RAM",
+                        "name": "f1-micro"
+                    },
+                    {
+                        "description": "1 vCPU (shared physical core) and 1.7 GB RAM",
+                        "name": "g1-small"
+                    },
+                    {
+                        "description": "16 vCPUs, 14.4 GB RAM",
+                        "name": "n1-highcpu-16"
+                    },
+                    {
+                        "description": "2 vCPUs, 1.8 GB RAM",
+                        "name": "n1-highcpu-2"
+                    },
+                    {
+                        "description": "32 vCPUs, 28.8 GB RAM",
+                        "name": "n1-highcpu-32"
+                    },
+                    {
+                        "description": "4 vCPUs, 3.6 GB RAM",
+                        "name": "n1-highcpu-4"
+                    },
+                    {
+                        "description": "8 vCPUs, 7.2 GB RAM",
+                        "name": "n1-highcpu-8"
+                    },
+                    {
+                        "description": "16 vCPUs, 104 GB RAM",
+                        "name": "n1-highmem-16"
+                    },
+                    {
+                        "description": "2 vCPUs, 13 GB RAM",
+                        "name": "n1-highmem-2"
+                    },
+                    {
+                        "description": "32 vCPUs, 208 GB RAM",
+                        "name": "n1-highmem-32"
+                    },
+                    {
+                        "description": "4 vCPUs, 26 GB RAM",
+                        "name": "n1-highmem-4"
+                    },
+                    {
+                        "description": "8 vCPUs, 52 GB RAM",
+                        "name": "n1-highmem-8"
+                    },
+                    {
+                        "description": "1 vCPU, 3.75 GB RAM",
+                        "name": "n1-standard-1"
+                    },
+                    {
+                        "description": "16 vCPUs, 60 GB RAM",
+                        "name": "n1-standard-16"
+                    },
+                    {
+                        "description": "2 vCPUs, 7.5 GB RAM",
+                        "name": "n1-standard-2"
+                    },
+                    {
+                        "description": "32 vCPUs, 120 GB RAM",
+                        "name": "n1-standard-32"
+                    },
+                    {
+                        "description": "4 vCPUs, 15 GB RAM",
+                        "name": "n1-standard-4"
+                    },
+                    {
+                        "description": "8 vCPUs, 30 GB RAM",
+                        "name": "n1-standard-8"
+                    }
+                ],
+                "name": "us-central1-c"
+            },
+            {
+                "machineTypes": [
+                    {
+                        "description": "1 vCPU (shared physical core) and 0.6 GB RAM",
+                        "name": "f1-micro"
+                    },
+                    {
+                        "description": "1 vCPU (shared physical core) and 1.7 GB RAM",
+                        "name": "g1-small"
+                    },
+                    {
+                        "description": "16 vCPUs, 14.4 GB RAM",
+                        "name": "n1-highcpu-16"
+                    },
+                    {
+                        "description": "2 vCPUs, 1.8 GB RAM",
+                        "name": "n1-highcpu-2"
+                    },
+                    {
+                        "description": "32 vCPUs, 28.8 GB RAM",
+                        "name": "n1-highcpu-32"
+                    },
+                    {
+                        "description": "4 vCPUs, 3.6 GB RAM",
+                        "name": "n1-highcpu-4"
+                    },
+                    {
+                        "description": "8 vCPUs, 7.2 GB RAM",
+                        "name": "n1-highcpu-8"
+                    },
+                    {
+                        "description": "16 vCPUs, 104 GB RAM",
+                        "name": "n1-highmem-16"
+                    },
+                    {
+                        "description": "2 vCPUs, 13 GB RAM",
+                        "name": "n1-highmem-2"
+                    },
+                    {
+                        "description": "32 vCPUs, 208 GB RAM",
+                        "name": "n1-highmem-32"
+                    },
+                    {
+                        "description": "4 vCPUs, 26 GB RAM",
+                        "name": "n1-highmem-4"
+                    },
+                    {
+                        "description": "8 vCPUs, 52 GB RAM",
+                        "name": "n1-highmem-8"
+                    },
+                    {
+                        "description": "1 vCPU, 3.75 GB RAM",
+                        "name": "n1-standard-1"
+                    },
+                    {
+                        "description": "16 vCPUs, 60 GB RAM",
+                        "name": "n1-standard-16"
+                    },
+                    {
+                        "description": "2 vCPUs, 7.5 GB RAM",
+                        "name": "n1-standard-2"
+                    },
+                    {
+                        "description": "32 vCPUs, 120 GB RAM",
+                        "name": "n1-standard-32"
+                    },
+                    {
+                        "description": "4 vCPUs, 15 GB RAM",
+                        "name": "n1-standard-4"
+                    },
+                    {
+                        "description": "8 vCPUs, 30 GB RAM",
+                        "name": "n1-standard-8"
+                    }
+                ],
+                "name": "us-east1-c"
+            },
+            {
+                "machineTypes": [
+                    {
+                        "description": "1 vCPU (shared physical core) and 0.6 GB RAM",
+                        "name": "f1-micro"
+                    },
+                    {
+                        "description": "1 vCPU (shared physical core) and 1.7 GB RAM",
+                        "name": "g1-small"
+                    },
+                    {
+                        "description": "16 vCPUs, 14.4 GB RAM",
+                        "name": "n1-highcpu-16"
+                    },
+                    {
+                        "description": "2 vCPUs, 1.8 GB RAM",
+                        "name": "n1-highcpu-2"
+                    },
+                    {
+                        "description": "32 vCPUs, 28.8 GB RAM",
+                        "name": "n1-highcpu-32"
+                    },
+                    {
+                        "description": "4 vCPUs, 3.6 GB RAM",
+                        "name": "n1-highcpu-4"
+                    },
+                    {
+                        "description": "8 vCPUs, 7.2 GB RAM",
+                        "name": "n1-highcpu-8"
+                    },
+                    {
+                        "description": "16 vCPUs, 104 GB RAM",
+                        "name": "n1-highmem-16"
+                    },
+                    {
+                        "description": "2 vCPUs, 13 GB RAM",
+                        "name": "n1-highmem-2"
+                    },
+                    {
+                        "description": "32 vCPUs, 208 GB RAM",
+                        "name": "n1-highmem-32"
+                    },
+                    {
+                        "description": "4 vCPUs, 26 GB RAM",
+                        "name": "n1-highmem-4"
+                    },
+                    {
+                        "description": "8 vCPUs, 52 GB RAM",
+                        "name": "n1-highmem-8"
+                    },
+                    {
+                        "description": "1 vCPU, 3.75 GB RAM",
+                        "name": "n1-standard-1"
+                    },
+                    {
+                        "description": "16 vCPUs, 60 GB RAM",
+                        "name": "n1-standard-16"
+                    },
+                    {
+                        "description": "2 vCPUs, 7.5 GB RAM",
+                        "name": "n1-standard-2"
+                    },
+                    {
+                        "description": "32 vCPUs, 120 GB RAM",
+                        "name": "n1-standard-32"
+                    },
+                    {
+                        "description": "4 vCPUs, 15 GB RAM",
+                        "name": "n1-standard-4"
+                    },
+                    {
+                        "description": "8 vCPUs, 30 GB RAM",
+                        "name": "n1-standard-8"
+                    }
+                ],
+                "name": "us-east1-d"
+            },
+            {
+                "machineTypes": [
+                    {
+                        "description": "1 vCPU (shared physical core) and 0.6 GB RAM",
+                        "name": "f1-micro"
+                    },
+                    {
+                        "description": "1 vCPU (shared physical core) and 1.7 GB RAM",
+                        "name": "g1-small"
+                    },
+                    {
+                        "description": "16 vCPUs, 14.4 GB RAM",
+                        "name": "n1-highcpu-16"
+                    },
+                    {
+                        "description": "2 vCPUs, 1.8 GB RAM",
+                        "name": "n1-highcpu-2"
+                    },
+                    {
+                        "description": "32 vCPUs, 28.8 GB RAM",
+                        "name": "n1-highcpu-32"
+                    },
+                    {
+                        "description": "4 vCPUs, 3.6 GB RAM",
+                        "name": "n1-highcpu-4"
+                    },
+                    {
+                        "description": "8 vCPUs, 7.2 GB RAM",
+                        "name": "n1-highcpu-8"
+                    },
+                    {
+                        "description": "16 vCPUs, 104 GB RAM",
+                        "name": "n1-highmem-16"
+                    },
+                    {
+                        "description": "2 vCPUs, 13 GB RAM",
+                        "name": "n1-highmem-2"
+                    },
+                    {
+                        "description": "32 vCPUs, 208 GB RAM",
+                        "name": "n1-highmem-32"
+                    },
+                    {
+                        "description": "4 vCPUs, 26 GB RAM",
+                        "name": "n1-highmem-4"
+                    },
+                    {
+                        "description": "8 vCPUs, 52 GB RAM",
+                        "name": "n1-highmem-8"
+                    },
+                    {
+                        "description": "1 vCPU, 3.75 GB RAM",
+                        "name": "n1-standard-1"
+                    },
+                    {
+                        "description": "16 vCPUs, 60 GB RAM",
+                        "name": "n1-standard-16"
+                    },
+                    {
+                        "description": "2 vCPUs, 7.5 GB RAM",
+                        "name": "n1-standard-2"
+                    },
+                    {
+                        "description": "32 vCPUs, 120 GB RAM",
+                        "name": "n1-standard-32"
+                    },
+                    {
+                        "description": "4 vCPUs, 15 GB RAM",
+                        "name": "n1-standard-4"
+                    },
+                    {
+                        "name": "n1-standard-8"
+                    }
+                ],
+                "name": "us-east1-b"
+            }
+        ],
+        "images": [
+            {
+                "description": "",
+                "name": "ubuntu-14-04-lts-v20140709"
+            },
+            {
+                "description": "CentOS, CentOS, 6.7, x86_64 built on 2015-09-29",
+                "name": "centos-6-v20150929"
+            },
+            {
+                "description": "CentOS, CentOS, 7.1.1503, x86_64 built on 2015-09-29",
+                "name": "centos-7-v20150929"
+            },
+            {
+                "description": "Debian, Debian GNU/Linux, 7.9 (wheezy), amd64 with backports kernel and SSH packages built on 2015-09-29",
+                "name": "backports-debian-7-wheezy-v20150929"
+            },
+            {
+                "description": "Accounts Beta Debian GNU/Linux, 7.9 (wheezy), amd64 with backports kernel and SSH packages and beta accounts packages built on 2015-09-30",
+                "name": "beta-accounts-backports-debian-7-wheezy-v20150930"
+            },
+            {
+                "description": "Accounts Beta Debian GNU/Linux, 8.1 (jessie), amd64 with beta accounts package built on 2015-09-30",
+                "name": "beta-accounts-debian-8-jessie-v20150930"
+            },
+            {
+                "description": "Debian, Debian GNU/Linux, 7.9 (wheezy), amd64 built on 2015-09-29",
+                "name": "debian-7-wheezy-v20150929"
+            },
+            {
+                "description": "Debian, Debian GNU/Linux, 8.1 (jessie), amd64 built on 2015-09-29",
+                "name": "debian-8-jessie-v20150929"
+            },
+            {
+                "description": "Red Hat, Red Hat Enterprise Linux, 6.7, x86_64 built on 2015-09-29",
+                "name": "rhel-6-v20150929"
+            },
+            {
+                "description": "Red Hat, Red Hat Enterprise Linux, 7.1, x86_64 built on 2015-09-29",
+                "name": "rhel-7-v20150929"
+            },
+            {
+                "description": "SLES, SUSE Linux Enterprise Server, 11 SP4, x86_64 built on 2015-07-14",
+                "name": "sles-11-sp4-v20150714"
+            },
+            {
+                "description": "SUSE, SUSE Linux Enterprise Server, 12, x86_64 built on 2015-05-11",
+                "name": "sles-12-v20150511"
+            },
+            {
+                "description": "Canonical, Ubuntu, 12.04 LTS, amd64 precise image built on 2015-09-10",
+                "name": "ubuntu-1204-precise-v20150910"
+            },
+            {
+                "description": "Canonical, Ubuntu, 14.04 LTS, amd64 trusty image built on 2015-09-09",
+                "name": "ubuntu-1404-trusty-v20150909a"
+            },
+            {
+                "description": "Canonical, Ubuntu, 15.04, amd64 vivid image built on 2015-09-11",
+                "name": "ubuntu-1504-vivid-v20150911"
+            },
+            {
+                "description": "Canonical, Ubuntu, 15.10, amd64 wily image built on 2015-10-26",
+                "name": "ubuntu-1510-wily-v20151026"
+            }
+        ],
+        "icon": "images/platform/linux.png",
+        "networks": [
+            {
+                "routes": [],
+                "firewalls": [
+                    {
+                        "target_tags": [
+                            "couchbase"
+                        ],
+                        "description": "",
+                        "name": "couchbase"
+                    },
+                    {
+                        "target_tags": [
+                            "http-server"
+                        ],
+                        "description": "",
+                        "name": "default-allow-http"
+                    },
+                    {
+                        "target_tags": [
+                            "https-server"
+                        ],
+                        "description": "",
+                        "name": "default-allow-https"
+                    },
+                    {
+                        "target_tags": [
+                            "allow-internal"
+                        ],
+                        "description": "Internal traffic from default allowed",
+                        "name": "default-allow-internal"
+                    },
+                    {
+                        "target_tags": [
+                            "jboss"
+                        ],
+                        "description": "",
+                        "name": "jboss"
+                    },
+                    {
+                        "target_tags": [
+                            "jbossmgmt"
+                        ],
+                        "description": "",
+                        "name": "jbossmgmt"
+                    },
+                    {
+                        "target_tags": [
+                            "jenkins"
+                        ],
+                        "description": "",
+                        "name": "jenkins"
+                    },
+                    {
+                        "target_tags": [
+                            "mongo"
+                        ],
+                        "description": "Firewall rule for MongoDB server",
+                        "description": "8 vCPUs, 30 GB RAM",
+                        "name": "mongodb"
+                    },
+                    {
+                        "target_tags": [
+                            "mysql"
+                        ],
+                        "description": "",
+                        "name": "mysql"
+                    },
+                    {
+                        "target_tags": [
+                            "rabbitmq"
+                        ],
+                        "description": "Firewall rule for RabbitMQ server",
+                        "name": "rabbitmq"
+                    },
+                    {
+                        "target_tags": [
+                            "redis"
+                        ],
+                        "description": "rule used for testing redis in gce",
+                        "name": "redis"
+                    },
+                    {
+                        "target_tags": [
+                            "test-firewall"
+                        ],
+                        "description": "Don't Delete. Use by scenario tests",
+                        "name": "test-firewall"
+                    },
+                    {
+                        "target_tags": [
+                            "web"
+                        ],
+                        "description": "Firewall rule for Web Server",
+                        "name": "web"
+                    }
+                ],
+                "description": "Default network for the project",
+                "name": "default"
+            }
+        ],
+        "schema": "http://elasticbox.net/schemas/gce/compute/linux"
+    }
+],
+"organization": "elasticbox",
+"type": "Google Compute",
+"id": "d86e3bfe-1edc-45b4-a03b-28d1e2b7eee2",
+"icon": "images/platform/google.png"
 }
 ```
 
-**DELETE /services/providers/{provider_id}**
+### DELETE /services/providers/{provider_id}
 
 Deletes an existing provider when you give the provider ID.
+
+### URL
 
 #### Structure
 
@@ -3333,35 +3335,36 @@ Deletes an existing provider when you give the provider ID.
 #### Example
 
     DELETE https://cam.ctl.io/services/providers/338f38dc-e667-47e0-9026-b253138f109e
-  
-**Normal Response Codes**
 
-* 202
+### Request
 
-**Error Response Codes**
-
-* Invalid Data (400)
-* Forbidden (403)
-* Active service using the provider (400)
-
-**Request**
-
+#### Headers
 ```
-Headers:
-
 Content-Type: application/json
 Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
-```
-DELETE /services/providers/{provider_id}
-```
+#### URI Parameters
+| Parameter | Type | Description | Req. |
+| --- | --- | --- | --- |
+| Provider id | string | The unique id that given to each provider | Yes |
 
-**PUT /services/providers/{provider_id}/sync**
+### Response
+#### Normal Response Codes
+- **202** Accepted
+
+#### Common Error Response Codes
+- Invalid Data (400)
+- Forbidden (403)
+- Active service using the provider (400)
+
+
+### PUT /services/providers/{provider_id}/sync
 
 Syncs an existing provider when you give the provider ID.
 
+### URL
 #### Structure
 
     [PUT] /services/providers/{provider_id}/sync
@@ -3369,58 +3372,64 @@ Syncs an existing provider when you give the provider ID.
 #### Example
 
     PUT https://cam.ctl.io/services/providers/338f38dc-e667-47e0-9026-b253138f109e/sync
-  
-**Normal Response Codes**
 
-* 202
 
-**Error Response Codes**
+### Request
 
-* Forbidden (403)
-* Not Found (404)
-
-**Request**
-
+#### Headers
 ```
-Headers:
-
 Content-Type: application/json
 Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
-**GET /services/providers/{provider_id}/logs**
+#### URI Parameters
+| Parameter | Type | Description | Req. |
+| --- | --- | --- | --- |
+| Provider id | string | The unique id that given to each provider | Yes |
+
+### Response
+#### Normal Response Codes
+- **202** Accepted
+
+#### Common Error Response Codes
+- Forbidden (403)
+- Not Found (404)
+
+
+### GET /services/providers/{provider_id}/logs
 
 Retrieves the logs of a provider when you give the provider ID.
 
+### URL
 #### Structure
-
-    [GET] /services/providers/{provider_id}/log
+    [GET] /services/providers/{provider_id}/logs
 
 #### Example
+    GET https://cam.ctl.io/services/providers/338f38dc-e667-47e0-9026-b253138f109e/logs
 
-    PUT https://cam.ctl.io/services/providers/338f38dc-e667-47e0-9026-b253138f109e/log
-  
-**Normal Response Codes**
-
-* 200
-
-**Error Response Codes**
-
-* Forbidden (403)
-* Not Found (404)
-
-**Request**
-
+### Request
+#### Headers
 ```
-Headers:
-
 Content-Type: application/json
 Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
-**Response parameters**
+#### URI Parameters
+| Parameter | Type | Description | Req. |
+| --- | --- | --- | --- |
+| Provider id | string | The unique id that given to each provider | Yes |
+
+### Response
+#### Normal Response Codes
+- **200** Accepted
+
+#### Common Error Response Codes
+- Forbidden (403)
+- Not Found (404)
+
+#### Response Parameters
 
 |Parameter | Type | Description |
 |----------|------|-------------|
@@ -3433,6 +3442,8 @@ ElasticBox-Release: 4.0
 |id | string | Provider unique identifier.|
 |schema | string | Provider-log schema url.|
 
+
+#### Response Body
 ```
 [
    {
@@ -3458,39 +3469,40 @@ ElasticBox-Release: 4.0
 ]
 ```
 
-**GET /services/providers/{provider_id}/unregisted-instances**
+### GET /services/providers/{provider_id}/unregisted-instances
 
 Retrieves a list of unregistered instances found in a provider when you give the provider ID.
 
+### URL
 #### Structure
-
     [GET] /services/providers/{provider_id}/unregisted-instances
 
 #### Example
-
     GET https://cam.ctl.io/services/providers/338f38dc-e667-47e0-9026-b253138f109e/unregisted-instances
-  
-**Normal Response Codes**
 
-* 200
-
-**Error Response Codes**
-
-* Forbidden (403)
-* Not Found (404)
-
-**Request**
-
+### Request
+#### Headers
 ```
-Headers:
-
 Content-Type: application/json
 Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
-**Response parameters**
+#### URI Parameters
+| Parameter | Type | Description | Req. |
+| --- | --- | --- | --- |
+| Provider id | string | The unique id that given to each provider | Yes |
 
+### Response
+
+#### Normal Response Codes
+- **200** Accepted
+
+#### Common Error Response Codes
+- Forbidden (403)
+- Not Found (404)
+
+#### Response Parameters
 |Parameter | Type | Description |
 |----------|------|-------------|
 |profile | object | Instance profile. |
@@ -3517,6 +3529,7 @@ ElasticBox-Release: 4.0
 |id | string | Instance unique identifier.|
 |schema | string | Unregistered-instance schema url.|
 
+#### Response Body
 ```
 [
   {
@@ -3556,47 +3569,39 @@ ElasticBox-Release: 4.0
 ]
 ```
 
-**POST /services/providers/{provider_id}/images**
+### POST /services/providers/{provider_id}/images
 
 Adds a new machine image to a provider when you give the provider ID.
 
+### URL
 #### Structure
-
     [POST] /services/providers/{provider_id}/images
 
 #### Example
-
     POST https://cam.ctl.io/services/providers/338f38dc-e667-47e0-9026-b253138f109e/images
 
-**Normal Response Codes**
+### Request
+#### Headers
+```
+Content-Type: application/json
+Authorization: Bearer your_json_web_token
+ElasticBox-Release: 4.0
+```
 
-* 202
+#### URI Parameters
+| Parameter | Type | Description | Req. |
+| --- | --- | --- | --- |
+| Provider id | string | The unique id that given to each provider | Yes |
 
-**Error Response Codes**
-
-* Invalid Data (400)
-* Forbidden (403)
-* Not Found (404)
-
-**Request Parameters**
-
+#### Request Body Parameters
 |Parameter | Type | Description|
 |----------|------|------------|
 |location | string | Image location. |
 |name | string | Image name. |
 |description | string | Image description. |
 
+#### Request Body
 ```
-Headers:
-
-Content-Type: application/json
-Authorization: Bearer your_json_web_token
-ElasticBox-Release: 4.0
-```
-
-```
-Body:
-
 {
    "location":"us-east-1",
    "name":"ami-3275ee5b",
@@ -3604,47 +3609,55 @@ Body:
 }
 ```
 
-**DELETE /services/providers/{provider_id}/images/{machine_image_id}**
+### Response
+#### Normal Response Codes
+- **202** Accepted
+
+#### Common Error Response Codes
+- Invalid Data (400)
+- Forbidden (403)
+- Not Found (404)
+
+
+### DELETE /services/providers/{provider_id}/images/{machine_image_id}
 
 Deletes an existing machine image when you give the provider ID and the machine image ID.
 
+### URL
 #### Structure
-
     [DELETE] /services/providers/{provider_id}/images/{machine_image_id}
 
 #### Example
+    DELETE https://cam.ctl.io/services/providers/338f38dc-e667-47e0-9026-b253138f109e/images/b253138f109e?location=us-east-1
 
-    DELETE https://cam.ctl.io/services/providers/338f38dc-e667-47e0-9026-b253138f109e/images/9339ff77-f4b9-4a27-979b-977c472a729a
-
-**Normal Response Codes**
-
-* 202
-
-**Error Response Codes**
-
-* Location query parameter is missing (400)
-* Forbidden (403)
-* Not Found (404)
-
-**Request Parameters**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-|location | string | Location of the machine image to be deleted. |
-
+### Request
+#### Headers
 ```
-Headers:
-
 Content-Type: application/json
 Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
-```
-Body:
+#### URI Parameters
+| Parameter | Type | Description | Req. |
+| --- | --- | --- | --- |
+| Provider id | string | The unique id that given to each provider | Yes |
 
-DELETE /services/providers/{provider_id}/images/{machine_image_id}?location=us-east-1
-```
+#### Request Body Parameters
+| Parameter | Type | Description |
+|-----------|------|-------------|
+|location | string | Location of the machine image to be deleted. |
+
+
+### Response
+#### Normal Response Codes
+- **202** Accepted
+
+#### Common Error Response Codes
+- Location query parameter is missing (400)
+- Forbidden (403)
+- Not Found (404)
+
 
 ### Contacting Cloud Application Manager Support
 
