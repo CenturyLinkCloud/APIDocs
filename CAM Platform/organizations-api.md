@@ -10,7 +10,11 @@
 
 | Resource | Description |
 |----------|-------------|
-| GET /services/organizations/{organization_name} | Gets the schema of the given organization. |
+| GET /services/organizations/{organization_name} | Get the schema of the given organization. |
+| GET /services/organizations/{organization_name}/boxes | Get the boxes of the given organization. |
+| GET /services/organizations/{organization_name}/instances | Get the instances of the given organization. |
+| GET /services/organizations/{organization_name}/providers | Get the providers of the given organization. |
+| GET /services/organizations/{organization_name}/workspaces | Get the workspaces of the given organization. |
 | PUT /services/organizations/{organization_name} | Updates an existing organization. |
 | PUT /organizations/{organization_name}/sync_groups | Queues a request to sync LDAP groups. |
 
@@ -275,23 +279,35 @@ ElasticBox-Release: 4.0
 }
 ```
 
-### PUT /services/organizations/{organization_name}
+### GET /services/organizations/{organization_name}/boxes
 
-Updates an existing organization given its name. Only the organization administrator can update.
+Get the schema of boxes in the given organization.
 
-**Normal Response Codes**
+### Response
 
-* 200
+#### Normal Code
 
-**Common Error Response Codes**
+- **200** accepted
 
-* Bad Request (400) - Request missing, incomplete or includes invalid properties (details provided inside body)
-* Unauthorized (401) - Invalid access token/cookie
-* User doesn’t belong to the organization (403)
-* Not Found (404) - Organization not found
-* Conflict (409) - 'updated' property mismatch. (Make a GET call to API to fetch the current 'updated' property and use it in a new PUT request)
+#### Error Codes
 
-**Request Headers**
+- Unauthorized (401) - Invalid access token/cookie
+- User doesn’t belong to the organization (403)
+- Not Found (404)
+
+### URL
+
+#### Structure
+
+    [GET] /services/organizations/{organization_name}/boxes
+
+#### Example
+
+    GET https://cam.ctl.io/services/organizations/CenturyLink/boxes
+
+### Request
+
+#### Headers
 
 ```
 Content-Type: application/json
@@ -299,7 +315,823 @@ Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
-**Request Body**
+#### URI Parameters
+
+| Name | Type | Description | Req. |
+| --- | --- | --- | --- |
+| Organization name |  String  |  The name of the organization | Yes |
+
+
+**Response Parameters**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| schema |  string| Box schema URI: **//elasticbox.net/schemas/boxes** |
+| name |    string   |  Organization's Box name |
+| id | string |  Organization's Box identification number. |
+| auto_update | boolean |   Auto update the box if any related requirement get updated. |
+| updated | string | Date of the last update. |
+| created | string | Creation date. |
+| deleted | string | Deletion date. |
+| profile | array | It shows the profile information of the box. |
+| members | array | List of users who can access this box. |
+| organization | string | It shows the name of the organization. |
+| provider_id | string | It says to what provider is belonged this box. |
+| uri | string | A url to the API service that makes a possibility to fetch the data of this box directly by a GET request. |
+| readme | array | List of the information about the documentation for this API service. |
+| owner | string | It shows the owner of this box. |
+| visibility | strings | It indicates the visibility of the box for public or workspace or only organization. |
+| variables | array | A list of the variables that defined in the box |
+| claims | array | A list of the claims that defined in the box |
+
+### Response Body
+
+```
+  {
+    "profile": {
+      "datacenter": "va1",
+      "group": [
+        "Default Group"
+      ],
+      "network": "vlan_3135_10.128.235",
+      "server_type": "Standard",
+      "pricing_info": {
+        "estimated_monthly": 2592000000,
+        "provider_type": "CenturyLink",
+        "hourly_price": 3600000,
+        "factor": 100000000
+      },
+      "disks": [],
+      "cpus": 1,
+      "public_ip": false,
+      "instances": 1,
+      "template": "CENTOS-7-64-TEMPLATE",
+      "memory": 2,
+      "managed_os": false,
+      "schema": "http://elasticbox.net/schemas/centurylink/compute/profile"
+    },
+    "provider_id": "338f38dc-e667-47e0-9026-b253138f109e",
+    "automatic_updates": "off",
+    "name": "default-small-va1",
+    "created": "2018-08-21 20:26:17.273033",
+    "deleted": null,
+    "variables": [],
+    "updated": "2018-08-21 20:26:17.273033",
+    "visibility": "workspace",
+    "uri": "/services/boxes/55c6aad7-393c-439e-94a0-88108ae1ee76",
+    "readme": {
+      "url": "services/resources/default_box_overview.md",
+      "upload_date": "2018-08-21 20:26:17.272359",
+      "length": 1307,
+      "content_type": "text/x-markdown"
+    },
+    "members": [],
+    "claims": [
+      "small",
+      "linux"
+    ],
+    "owner": "cam3",
+    "organization": "mission-field",
+    "id": "55c6aad7-393c-439e-94a0-88108ae1ee76",
+    "schema": "http://elasticbox.net/schemas/boxes/policy"
+  }
+```
+
+### GET /services/organizations/{organization_name}/instances
+
+Get the schema of instances in the given organization.
+
+### Response
+
+#### Normal Code
+
+- **200** accepted
+
+#### Error Codes
+
+- Unauthorized (401) - Invalid access token/cookie
+- User doesn’t belong to the organization (403)
+- Not Found (404)
+
+### URL
+
+#### Structure
+
+    [GET] /services/organizations/{organization_name}/instances
+
+#### Example
+
+    GET https://cam.ctl.io/services/organizations/CenturyLink/instances
+
+### Request
+
+#### Headers
+
+```
+Content-Type: application/json
+Authorization: Bearer your_json_web_token
+ElasticBox-Release: 4.0
+```
+
+#### URI Parameters
+
+| Name | Type | Description | Req. |
+| --- | --- | --- | --- |
+| Organization name |  String  |  The name of the organization | Yes |
+
+
+**Response Parameters**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| schema |  string| Organization schema URI: **//elasticbox.net/schemas/instance** |
+| name |    string   |  Instance name |
+| id | string |  Instance Identifier |
+| updated | string | Date of the last update |
+| created | string | Creation date |
+| auto_update | boolean |   Auto update the box if any related requirement get updated. |
+| box | string | The identifier of the last deployed box. |
+| boxes | array | A list of the boxes that defined in the lifecycle of the instance |
+| bindings | array | List of specified bindings of the instance |
+| uri | string | A url to the API service that makes a possibility to fetch the data of this box directly by a GET request. |
+| owner | string | It shows the owner of this box. |
+| state | string | The last state of the instance |
+| members | array | List of users who can access this box. |
+| service | object | An object that contains information about the instance's service |
+| policy_box | object | An object that includes the policy of the box that is defined for the instance. |
+
+### Response Body
+
+```
+  {
+    "box": "c2be22d3-22bf-4694-8a6d-e2efe3dceebd",
+    "bindings": [],
+    "updated": "2018-08-22 13:32:51.728997",
+    "automatic_updates": "off",
+    "policy_box": {
+      "profile": {
+        "datacenter": "va1",
+        "group": [
+          "Default Group"
+        ],
+        "network": "vlan_3135_10.128.235",
+        "server_type": "Standard",
+        "pricing_info": {
+          "estimated_monthly": 5388004080,
+          "factor": 100000000,
+          "hourly_price": 7483339,
+          "provider_type": "CenturyLink"
+        },
+        "disks": [],
+        "cpus": 2,
+        "public_ip": false,
+        "instances": 1,
+        "template": "CENTOS-7-64-TEMPLATE",
+        "memory": 4,
+        "managed_os": false,
+        "schema": "http://elasticbox.net/schemas/centurylink/compute/profile"
+      },
+      "provider_id": "338f38dc-e667-47e0-9026-b253138f109e",
+      "automatic_updates": "off",
+      "name": "management-appliance-va1",
+      "deleted": null,
+      "variables": [],
+      "visibility": "workspace",
+      "owner": "cam3",
+      "members": [],
+      "organization": "mission-field",
+      "readme": {
+        "url": "services/resources/default_box_overview.md",
+        "upload_date": "2018-08-22 13:16:15.650210",
+        "length": 1307,
+        "content_type": "text/x-markdown"
+      },
+      "claims": [
+        "centos7",
+        "linux"
+      ],
+      "id": "01bf237e-2e73-416c-a72b-d94ea10d1c2e",
+      "schema": "http://elasticbox.net/schemas/boxes/policy"
+    },
+    "name": "managed-provider-appliance-va1",
+    "service": {
+      "type": "Linux Compute",
+      "id": "eb-6okdo",
+      "machines": [
+        {
+          "state": "done",
+          "name": "managed-provider-appliance-va1-6okdo-1",
+          "workflow": []
+        }
+      ]
+    },
+    "tags": [
+      "managed",
+      "appliance"
+    ],
+    "variables": [
+      {
+        "scope": "gateway.constants",
+        "type": "Text",
+        "value": "https://gateway.managedos.ctl.io",
+        "visibility": "internal",
+        "name": "managed_os_api_url"
+      },
+      {
+        "scope": "gateway.constants",
+        "type": "Text",
+        "visibility": "internal",
+        "value": "https://api.watcher.ctl.io/",
+        "name": "watcher_reg_url"
+      },
+      {
+        "scope": "gateway.constants",
+        "type": "Text",
+        "value": "https://pkg.watcher.ctl.io",
+        "visibility": "internal",
+        "name": "watcher_package_url"
+      },
+      {
+        "scope": "active_directory_controller.constants",
+        "type": "Text",
+        "visibility": "internal",
+        "value": "https://gateway.managedos.ctl.io",
+        "name": "managed_os_api_url"
+      },
+      {
+        "scope": "metadata.constants",
+        "type": "Text",
+        "value": "https://gateway.managedos.ctl.io",
+        "visibility": "internal",
+        "name": "managed_os_api_url"
+      },
+      {
+        "scope": "managed_server.watcher_agent.constants",
+        "type": "Text",
+        "visibility": "internal",
+        "value": "https://gateway.managedos.ctl.io",
+        "name": "managed_os_api_url"
+      },
+      {
+        "scope": "managed_server.billing.constants",
+        "type": "Text",
+        "value": "https://gateway.managedos.ctl.io",
+        "visibility": "internal",
+        "name": "managed_os_api_url"
+      },
+      {
+        "scope": "managed_server.constants",
+        "type": "Text",
+        "visibility": "internal",
+        "value": "https://gateway.managedos.ctl.io",
+        "name": "managed_os_api_url"
+      },
+      {
+        "scope": "managed_server.metadata.constants",
+        "type": "Text",
+        "value": "https://gateway.managedos.ctl.io",
+        "visibility": "internal",
+        "name": "managed_os_api_url"
+      },
+      {
+        "scope": "managed_server.watcher_agent",
+        "type": "Text",
+        "visibility": "internal",
+        "value": "https://api.watcher.ctl.io/",
+        "name": "watcher_reg_url"
+      },
+      {
+        "scope": "managed_server.watcher_agent",
+        "type": "Text",
+        "value": "https://pkg.watcher.ctl.io",
+        "visibility": "internal",
+        "name": "watcher_package_url"
+      },
+      {
+        "scope": "active_directory_controller",
+        "type": "Text",
+        "visibility": "private",
+        "value": "",
+        "name": "TrustADIPAddress"
+      },
+      {
+        "scope": "active_directory_controller",
+        "type": "Text",
+        "value": "",
+        "visibility": "private",
+        "name": "TrustADNetbiosName"
+      },
+      {
+        "scope": "active_directory_controller",
+        "type": "Text",
+        "visibility": "private",
+        "value": "",
+        "name": "TrustADDomainName"
+      },
+      {
+        "scope": "active_directory_controller",
+        "type": "Text",
+        "value": "",
+        "visibility": "private",
+        "name": "TrustADUser"
+      },
+      {
+        "scope": "active_directory_controller",
+        "type": "Password",
+        "visibility": "private",
+        "value": "",
+        "name": "TrustADPassword"
+      },
+      {
+        "scope": "managed_server.register.constants",
+        "type": "Text",
+        "value": "https://gateway.managedos.ctl.io",
+        "visibility": "internal",
+        "name": "managed_os_api_url"
+      },
+      {
+        "scope": "managed_server.register",
+        "type": "Text",
+        "visibility": "internal",
+        "value": "120",
+        "name": "MaximumTries"
+      },
+      {
+        "scope": "managed_server",
+        "type": "Text",
+        "value": "true",
+        "visibility": "internal",
+        "name": "IsAppliance"
+      },
+      {
+        "scope": "proxies",
+        "type": "Options",
+        "visibility": "public",
+        "value": "prod",
+        "name": "watcher_environment"
+      },
+      {
+        "scope": "gateway",
+        "type": "Text",
+        "visibility": "internal",
+        "value": "zxhnva1umwcmanage01gw",
+        "name": "GatewayName"
+      }
+    ],
+    "created": "2018-08-22 13:16:15.687975",
+    "boxes": [
+      {
+        "schema": "http://elasticbox.net/schemas/boxes/script",
+        "updated": "2018-08-07 23:20:02.898885",
+        "automatic_updates": "off",
+        "requirements": [
+          "centos7",
+          "linux"
+        ],
+        "description": "CenturyLink Management Appliance",
+        "created": "2018-08-08 16:43:02.151411",
+        "icon_metadata": {
+          "image": "/services/blobs/download/58a21fb465eca605038edc67/centurylink-logo.svg",
+          "border": "#8CC63F",
+          "fill": "#ffffff"
+        },
+        "variables": [
+          {
+            "name": "WaitForCMDBRecon",
+            "required": true,
+            "visibility": "internal",
+            "value": "true",
+            "type": "Options",
+            "options": "true,false"
+          },
+          {
+            "required": true,
+            "type": "Text",
+            "name": "CMDB_MaxTries",
+            "value": "120",
+            "visibility": "internal"
+          },
+          {
+            "required": false,
+            "type": "Text",
+            "name": "TrustADIPAddress",
+            "value": "",
+            "visibility": "public"
+          },
+          {
+            "required": false,
+            "type": "Text",
+            "name": "TrustADNetbiosName",
+            "value": "",
+            "visibility": "public"
+          },
+          {
+            "required": false,
+            "type": "Text",
+            "name": "TrustADDomainName",
+            "value": "",
+            "visibility": "public"
+          },
+          {
+            "required": false,
+            "type": "Text",
+            "name": "TrustADUser",
+            "value": "",
+            "visibility": "public"
+          },
+          {
+            "required": false,
+            "type": "Password",
+            "name": "TrustADPassword",
+            "value": "",
+            "visibility": "public"
+          },
+          {
+            "required": true,
+            "type": "Text",
+            "name": "centos_allowed",
+            "value": "true",
+            "visibility": "internal"
+          },
+          {
+            "required": true,
+            "type": "Text",
+            "name": "IsAppliance",
+            "value": "true",
+            "visibility": "internal"
+          },
+          {
+            "automatic_updates": "off",
+            "name": "constants",
+            "required": false,
+            "visibility": "internal",
+            "value": "51fa717e-cc9e-4d48-8026-49fb56f3c774",
+            "type": "Box"
+          },
+          {
+            "automatic_updates": "off",
+            "name": "ssh_keygen",
+            "required": false,
+            "value": "15b2f0dc-ffba-4301-931d-a7b71989dbc9",
+            "visibility": "public",
+            "type": "Box"
+          },
+          {
+            "automatic_updates": "off",
+            "name": "metadata",
+            "required": false,
+            "value": "cbfb4440-75b8-42dd-a4bf-e1c57605c00e",
+            "visibility": "internal",
+            "type": "Box"
+          },
+          {
+            "automatic_updates": "off",
+            "name": "centos_required",
+            "required": false,
+            "visibility": "internal",
+            "value": "a37f166d-c5c6-4830-9988-be8caaf8d974",
+            "type": "Box"
+          },
+          {
+            "automatic_updates": "off",
+            "name": "gateway",
+            "required": false,
+            "value": "3d923e65-4c68-40e8-96f7-596eefd13d07",
+            "visibility": "internal",
+            "type": "Box"
+          },
+          {
+            "automatic_updates": "off",
+            "name": "managed_server",
+            "required": false,
+            "visibility": "internal",
+            "value": "1e3f17a8-0c28-412b-89a0-72f6d67c2a1d",
+            "type": "Box"
+          },
+          {
+            "automatic_updates": "off",
+            "name": "active_directory_controller",
+            "required": false,
+            "value": "d17db027-f709-458f-b77e-f2d9807798e6",
+            "visibility": "internal",
+            "type": "Box"
+          },
+          {
+            "automatic_updates": "off",
+            "name": "proxies",
+            "required": false,
+            "visibility": "internal",
+            "value": "3963f11e-f762-41c6-8f51-bd0f06f882a4",
+            "type": "Box"
+          }
+        ],
+        "visibility": "workspace",
+        "name": "CenturyLink Management Appliance",
+        "deleted": null,
+        "version": {
+          "box": "c2be22d3-22bf-4694-8a6d-e2efe3dceebd",
+          "number": {
+            "major": 0,
+            "minor": 5,
+            "patch": 5
+          },
+          "workspace": "keithhomco",
+          "description": "Limited support for no outbound connectivity scenarios (contact cam-msa@centurylink.com for details)"
+        },
+        "id": "fe257f92-2808-4c1a-aa1d-310a87e228b9",
+        "categories": [
+          "managed"
+        ],
+        "members": [
+          {
+            "role": "read",
+            "workspace": "mgd"
+          },
+          {
+            "role": "read",
+            "workspace": "managed6"
+          }
+        ],
+        "owner": "managed1",
+        "organization": "centurylink",
+        "readme": {
+          "url": "/services/blobs/download/593843b76d4c585793fe1fb9/README.md",
+          "upload_date": "2017-06-07 18:19:35.185072",
+          "length": 2962,
+          "content_type": "text/x-markdown"
+        },
+        "events": {
+          "pre_install": {
+            "url": "/services/blobs/download/5b6a26565fc39f10a99fefaa/pre_install",
+            "length": 2170,
+            "destination_path": "scripts",
+            "content_type": "text/x-shellscript"
+          }
+        },
+        "draft_from": "7f1bd23f-14cf-4e44-a831-53716e0f20a8",
+        "icon": "/icons/boxes/c2be22d3-22bf-4694-8a6d-e2efe3dceebd"
+      }
+    ],
+    "uri": "/services/instances/i-k2tj0y",
+    "is_deploy_only": true,
+    "state": "done",
+    "members": [],
+    "owner": "cam3",
+    "operation": {
+      "event": "deploy",
+      "workspace": "cam3",
+      "created": "2018-08-22 13:16:15.857029"
+    },
+    "id": "i-k2tj0y",
+    "schema": "http://elasticbox.net/schemas/instance"
+  }
+```
+
+### GET /services/organizations/{organization_name}/providers
+
+Get the schema of providers in the given organization.
+
+### Response
+
+#### Normal Code
+
+- **200** accepted
+
+#### Error Codes
+
+- Unauthorized (401) - Invalid access token/cookie
+- User doesn’t belong to the organization (403)
+- Not Found (404)
+
+### URL
+
+#### Structure
+
+    [GET] /services/organizations/{organization_name}/providers
+
+#### Example
+
+    GET https://cam.ctl.io/services/organizations/CenturyLink/providers
+
+### Request
+
+#### Headers
+
+```
+Content-Type: application/json
+Authorization: Bearer your_json_web_token
+ElasticBox-Release: 4.0
+```
+
+#### URI Parameters
+
+| Name | Type | Description | Req. |
+| --- | --- | --- | --- |
+| Organization name |  String  |  The name of the organization | Yes |
+
+
+**Response Parameters**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| schema |  string| Provider schema URI: **//elasticbox.net/schemas/providers** |
+| name |    string   |  It defines the provider name |
+| icon | string |   Provider icon URI |
+| updated | string | Date of the last update |
+| created | string | Creation date |
+| description | string | Short description about the provider |
+| uri | string | A url to the API service that makes a possibility to fetch the data of this box directly by a GET request. |
+| state | string | It shows the last state of the provider |
+| members | array | List of users who can access this box. |
+| type | string | Indicates the type of the provider. |
+| id | string | Contains the id of provider |
+| providers | array | List of cloud providers the organization can enable to register and deploy. Each provider type has the following properties enabled:<li>Boolean value of true if enabled, else false.</li><li>type: String values of the supported cloud providers: Amazon Web Services, Openstack, VMWare vSphere, Google Compute, Microsoft Azure, Cloudstack, SoftLayer, VMware vCloud Director, Amazon Web Services GovCloud, Rackspace.</li><li>description: String that briefly enumerates the services from the cloud provider.</li><li>pricing: Array of pricing information for Linux and Windows compute instance types. Only available for Amazon Web Services.</li> |
+| owner | string | It shows the owner of this box. |
+| service | object | An object that contains information about the instance's service |
+
+### Response Body
+
+```
+  {
+    "updated": "2018-09-28 21:18:17.691311",
+    "description": "UMW Lab Account for CAM MSA Testing",
+    "icon": "images/platform/centurylink.svg",
+    "created": "2018-08-21 20:03:15.901180",
+    "deleted": null,
+    "uri": "/services/providers/338f38dc-e667-47e0-9026-b253138f109e",
+    "name": "UMWC",
+    "services": [
+      {
+        "name": "Linux Compute"
+      },
+      {
+        "name": "Windows Compute"
+      }
+    ],
+    "state": "ready",
+    "members": [],
+    "owner": "cam3",
+    "type": "CenturyLink",
+    "id": "338f38dc-e667-47e0-9026-b253138f109e",
+    "schema": "http://elasticbox.net/schemas/centurylink/provider"
+  }
+```
+
+### GET /services/organizations/{organization_name}/workspaces
+
+Get the schema of workspaces in the given organization.
+
+### Response
+
+#### Normal Code
+
+- **200** accepted
+
+#### Error Codes
+
+- Unauthorized (401) - Invalid access token/cookie
+- User doesn’t belong to the organization (403)
+- Not Found (404)
+
+### URL
+
+#### Structure
+
+    [GET] /services/organizations/{organization_name}/workspaces
+
+#### Example
+
+    GET https://cam.ctl.io/services/organizations/CenturyLink/workspaces
+
+### Request
+
+#### Headers
+
+```
+Content-Type: application/json
+Authorization: Bearer your_json_web_token
+ElasticBox-Release: 4.0
+```
+
+#### URI Parameters
+
+| Name | Type | Description | Req. |
+| --- | --- | --- | --- |
+| Organization name |  String  |  The name of the organization | Yes |
+
+
+**Response Parameters**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| last_name | string | The last name of the user. |
+| favorites | array | List of the users or organizations that has been selected as favorite.
+| clc_alias | string | Indicates the CenturyLink billing alias if it exists for the workspace. |
+| id | string | The user name in this workspace. |
+| last_login | string | The date of the last login. |
+| add_provider | boolean |
+| deploy_instance | boolean |
+| type | string | The type of the user. |
+| email | string | The email of the user. |
+| schema |  string| Provider schema URI: **//elasticbox.net/schemas/providers** |
+| updated | string | Date of the last update |
+| take_tour | boolean | Indicates if had the first login tour or not. |
+| deleted | string | The Deletion date of the user. |
+| costcenter | string | The given name of the cost center when the user got created. |
+| icon | string | The user icon URI |
+| group_dns | array | The list of the users that have been configured by AD in a local network. |
+| email_validated_at | string | The date that user got validated. |
+| validate_email_id | string | The validation id that generated for the user. |
+| reset_password_id | string | The reset id that generated for the user. |
+| name | string | The given name of the user. |
+| created | string | The creation date of the user |
+| uri | string | A url to the API service that makes a possibility to fetch the data of this box directly by a GET request. |
+| members | array | If the user type be a "team" then it shows the workspaces that this user is belonged to |
+| organization | string | The name of the organization that user belongs to it. |
+
+
+### Response Body
+
+```
+  {
+    "last_name": "1",
+    "favorites": [
+      {
+        "type": "team_workspace",
+        "id": "insightglobal4"
+      }
+    ],
+    "clc_alias": "DMFC",
+    "id": "missionfields1",
+    "last_login": "2018-07-25 14:18:22.323786",
+    "add_provider": true,
+    "deploy_instance": true,
+    "type": "personal",
+    "email": "user1@mission-field.com",
+    "schema": "http://elasticbox.net/schemas/workspaces/personal",
+    "updated": "2018-07-25 14:24:05.510205",
+    "take_tour": true,
+    "deleted": null,
+    "clc_username": null,
+    "costcenter": "c3195962-4c70-4ad6-a17a-189a5579a45a",
+    "icon": null,
+    "group_dns": [],
+    "email_validated_at": "2017-02-01 15:03:54.087863",
+    "name": "MF User",
+    "created": "2017-02-01 15:03:54.087863",
+    "support_user_created": true,
+    "uri": "/services/workspaces/missionfields1",
+    "organization": "mission-field"
+  }
+```
+
+### PUT /services/organizations/{organization_name}
+
+Updates an existing organization given its name. Only the organization administrator can update.
+
+### Response
+
+#### Normal Code
+
+- **200** accepted
+
+#### Error Codes
+
+- Bad Request (400) - Request missing, incomplete or includes invalid properties (details provided inside body)
+- Unauthorized (401) - Invalid access token/cookie
+- User doesn’t belong to the organization (403)
+- Not Found (404) - Organization not found
+- Conflict (409) - 'updated' property mismatch. (Make a GET call to API to fetch the current 'updated' property and use it in a new PUT request)
+
+
+### URL
+
+#### Structure
+
+    [PUT] /services/organizations/{organization_name}
+
+#### Example
+
+    PUT https://cam.ctl.io/services/organizations/{organization_name}
+
+### Request
+
+#### Headers
+
+```
+Content-Type: application/json
+Authorization: Bearer your_json_web_token
+ElasticBox-Release: 4.0
+```
+
+#### URI Parameters
+
+| Name | Type | Description | Req. |
+| --- | --- | --- | --- |
+| Organization name |  String  |  The name of the organization | Yes |
+
+
+#### Request Body
 
 ```
 {
@@ -523,7 +1355,7 @@ ElasticBox-Release: 4.0
 }
 ```
 
-**Request Parameters**
+#### Request Parameters
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
@@ -543,7 +1375,7 @@ ElasticBox-Release: 4.0
 | webhooks | array | List of webhooks that integrate with the organization. |
 | cost_centers | array | List of cost centers. Each cost center contains the following properties:<li>enforce: Boolean. If true, an instance cannot be deployed if it is over the quota.</li><li>name: String. Name of the cost center</li><li>workspaces: Array. List of the names that belongs to the cost center.</li><li>quotas: List of quotas. Each quota contains an object with the following properties:</li><ul><li>cost: Required. Boolean. By default it’s false. Specify as true to enable synchronizing with LDAP groups.</li><li>provider: Required. Boolean. By default it’s false. Specify as true to enable synchronizing with LDAP groups.</li><li>allocated: Array. List of instances which are contributing to the current quota. Each allocated instance has these properties:</li><ul><li>instance_id: Required. String. Id of the instance.</li><li>instances: Required. Int. Number of instances.</li><li>started: Required. String. Date when this instance was deployed.</li><li>flavor: Required. String. Type of instance.</li><li>region: Required. String. Region where it was deployed.</li><li>service_type: Required. String. Type of the service.</li><li>terminated: String specifies the username of the LDAP service account to look up users who try to log in.</li></ul><li>resources: Object. Resources of the quota.</li><ul><li>cpu: Required. Int. Number of cpu units.</li><li>disk: Required. Object. A disk with these properties:</li><ul><li>quantity: Required. String. Amount of storage.</li><li>unit: Required. String. Mb, Gb or Tb.</li></ul><li>ram: Required. String. Ram of the quota.</li><ul><li>quantity: Required. String. Amount of storage.</li><li>unit: Required. String. Mb or Gb.</li> </ul>|
 
-**Response Parameters**
+#### Response Parameters
 
 |  Parameter  |     Type      |	Description |
 |----------|:-------------|-----|
@@ -563,7 +1395,7 @@ ElasticBox-Release: 4.0
 | webhooks | array | List of webhooks that integrate with the organization. |
 | cost_centers | array | List of cost centers. Each cost center contains the following properties:<li>enforce: Boolean. If true, an instance cannot be deployed if it is over the quota.</li><li>name: String. Name of the cost center</li><li>workspaces: Array. List of the names that belongs to the cost center.</li><li>quotas: List of quotas. Each quota contains an object with the following properties:</li><ul><li>cost: Required. Boolean. By default it’s false. Specify as true to enable synchronizing with LDAP groups.</li><li>provider: Required. Boolean. By default it’s false. Specify as true to enable synchronizing with LDAP groups.</li><li>allocated: Array. List of instances which are contributing to the current quota. Each allocated instance has these properties:</li><ul><li>instance_id: Required. String. Id of the instance.</li><li>instances: Required. Int. Number of instances.</li><li>started: Required. String. Date when this instance was deployed.</li><li>flavor: Required. String. Type of instance.</li><li>region: Required. String. Region where it was deployed.</li><li>service_type: Required. String. Type of the service.</li><li>terminated: String specifies the username of the LDAP service account to look up users who try to log in.</li></ul><li>resources: Object. Resources of the quota.</li><ul><li>cpu: Required. Int. Number of cpu units.</li><li>disk: Required. Object. A disk with these properties:</li><ul><li>quantity: Required. String. Amount of storage.</li><li>unit: Required. String. Mb, Gb or Tb.</li></ul><li>ram: Required. String. Ram of the quota.</li><ul><li>quantity: Required. String. Amount of storage.</li><li>unit: Required. String. Mb or Gb.</li> </ul>|
 
-**Response Body**
+#### Response Body
 
 ```
 {
@@ -791,24 +1623,44 @@ ElasticBox-Release: 4.0
 
 Queues a request to sync LDAP groups. The sync request, depending on the amount of data from the LDAP service, can take a few minutes. The ldap_last_sync_completed property updates when the request finishes successfully.
 
-**Normal Response Codes**
+### Response
 
-* Accepted (202)
+#### Normal Code
 
-**Error Response Codes**
+- **202** accepted
 
-* Unauthorized (401) - Invalid access token/cookie
-* Not Found (404) - Organization not found
+#### Error Codes
 
-**Request Headers**
+- Unauthorized (401) - Invalid access token/cookie
+- Not Found (404) - Organization not found
+
+### URL
+
+#### Structure
+
+    [PUT] /organizations/{organization_name}/sync_groups
+
+#### Example
+
+    PUT https://cam.ctl.io/organizations/{organization_name}/sync_groups
+
+### Request
+
+#### Headers
 
 ```
 Content-Type: application/json
 Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
+#### URI Parameters
 
-**Response Parameters**
+| Name | Type | Description | Req. |
+| --- | --- | --- | --- |
+| Organization name |  String  |  The name of the organization | Yes |
+
+
+#### Response Parameters
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
@@ -828,7 +1680,7 @@ ElasticBox-Release: 4.0
 | webhooks | array | List of webhooks that integrate with the organization. |
 | cost_centers | array | List of cost centers. Each cost center contains the following properties:<li>enforce: Boolean. If true, an instance cannot be deployed if it is over the quota.</li><li>name: String. Name of the cost center</li><li>workspaces: Array. List of the names that belongs to the cost center.</li><li>quotas: List of quotas. Each quota contains an object with the following properties:</li><ul><li>cost: Required. Boolean. By default it’s false. Specify as true to enable synchronizing with LDAP groups.</li><li>provider: Required. Boolean. By default it’s false. Specify as true to enable synchronizing with LDAP groups.</li><li>allocated: Array. List of instances which are contributing to the current quota. Each allocated instance has these properties:</li><ul><li>instance_id: Required. String. Id of the instance.</li><li>instances: Required. Int. Number of instances.</li><li>started: Required. String. Date when this instance was deployed.</li><li>flavor: Required. String. Type of instance.</li><li>region: Required. String. Region where it was deployed.</li><li>service_type: Required. String. Type of the service.</li><li>terminated: String specifies the username of the LDAP service account to look up users who try to log in.</li></ul><li>resources: Object. Resources of the quota.</li><ul><li>cpu: Required. Int. Number of cpu units.</li><li>disk: Required. Object. A disk with these properties:</li><ul><li>quantity: Required. String. Amount of storage.</li><li>unit: Required. String. Mb, Gb or Tb.</li></ul><li>ram: Required. String. Ram of the quota.</li><ul><li>quantity: Required. String. Amount of storage.</li><li>unit: Required. String. Mb or Gb.</li></ul> |
 
-**Response Body**
+#### Response Body
 
 ```
 {
