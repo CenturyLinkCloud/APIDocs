@@ -3,7 +3,8 @@
 "date": "09-01-2016",
 "author": "",
 "attachments": [],
-"contentIsHTML": false
+"contentIsHTML": false,
+"keywords": ["api", "organization api", "manage api", "manage organization"]
 }}}
 
 ### Manage an Organization
@@ -76,218 +77,346 @@ ElasticBox-Release: 4.0
 #### Response Body
 ```
 {
-   {
-   "schema":"http://elasticbox.net/schemas/organization",
-   "name":"elasticbox",
-   "icon":"/services/blobs/download/5452705c3bbd224ef9541c41/elasticbox.png",
-   "theme":null,
-   "updated":"2015-04-06 14:28:12.874910",
-   "created":"2014-02-14 15:12:21.526672",
-   "setup":true,
-   "administrators":[
-      "x",
-      "a",
-      "bc",
-      "ca",
-      "ce",
-      "di",
-      "el",
-      "ig",
-      "la",
-      "ma",
-      "mas",
-      "mr",
-      "os",
-      "ra",
-      "ri",
-      "ri",
-      "ys",
-      "lu"
-   ],
-   "domains":[
-      "cam.ctl.io"
-   ],
-   "authentication":{
-      "github":false,
-      "google":true,
-      "ldap":true,
-      "password":false,
-      "ldap_config":{
-         "sources":[
-            {
-               "host":"ldap://ldap.cam.ctl.io",
-               "email_field":"mail"
-            }
-         ]
-      }
-   },
-   "features":{
-      "admin_boxes":true,
-      "cost_center":true,
-      "custom_pricing":false,
-      "onboard_checklist":false,
-      "provider_sharing":true,
-      "reporting":true
-   },
-   "providers":[
-      {
-         "enabled":true,
-         "type":"Amazon Web Services",
-         "description":"Manage EC2, ECS and Cloudformation instances",
-         "pricing":[
-            {
-               "platform":"Linux Compute",
-               "price":7000,
-               "region":"ap-southeast-2",
-               "flavor":"i2.8xlarge",
-               "schema":"http://elasticbox.net/schemas/aws/compute/pricing"
-            },
-            {
-               "platform":"Linux Compute",
-               "price":5,
-               "region":"us-east-1",
-               "flavor":"t2.micro",
-               "schema":"http://elasticbox.net/schemas/aws/compute/pricing"
-            },
-            {
-               "platform":"Windows Compute",
-               "price":10,
-               "region":"us-east-1",
-               "flavor":"t2.micro",
-               "schema":"http://elasticbox.net/schemas/aws/compute/pricing"
-            }
-         ]
-      },
-      {
-         "enabled":true,
-         "type":"Openstack",
-         "description":"Manage cloud hosting, Linux and Windows machines",
-         "pricing":[
-
-         ]
-      },
-      {
-         "enabled":true,
-         "type":"VMware vSphere",
-         "description":"Manage cloud hosting, Linux and Windows machines",
-         "pricing":[
-
-         ]
-      },
-      {
-         "enabled":true,
-         "type":"Google Compute",
-         "description":"Manage cloud hosting and Linux machines",
-         "pricing":[
-
-         ]
-      },
-      {
-         "enabled":true,
-         "type":"Microsoft Azure",
-         "description":"Manage compute services for Windows and Linux machines.",
-         "pricing":[
-
-         ]
-      },
-      {
-         "enabled":true,
-         "type":"Cloudstack",
-         "description":"Manage cloud hosting, Linux and Windows machines",
-         "pricing":[
-
-         ]
-      },
-      {
-         "enabled":true,
-         "type":"SoftLayer",
-         "description":"Manage compute services for Windows and Linux machines.",
-         "pricing":[
-
-         ]
-      },
-      {
-         "enabled":true,
-         "type":"VMware vCloud Director",
-         "description":"Manage cloud hosting, Linux and Windows machines",
-         "pricing":[
-
-         ]
-      },
-      {
-         "enabled":true,
-         "type":"Amazon Web Services GovCloud",
-         "description":"Manage compute services in an isolated ITAR compliant AWS region.",
-         "pricing":[
-
-         ]
-      },
-      {
-         "enabled":true,
-         "type":"Rackspace",
-         "description":"Manage cloud hosting and Linux machines.",
-         "pricing":[
-
-         ]
-      }
-   ],
-   "tags":[
-      {
-         "name":"workspace",
-         "type":"Workspace",
-         "value":null
-      },
-      {
-         "name":"box",
-         "type":"Box",
-         "value":null
-      },
-      {
-         "name":"environment",
-         "type":"Environment",
-         "value":null
-      },
-      {
-         "name":"email",
-         "type":"Email",
-         "value":null
-      },
-      {
-         "name":"user",
-         "type":"User ID",
-         "value":null
-      },
-      {
-         "name":"Name",
-         "type":"Service Instance ID",
-         "value":null
-      }
-   ],
-   "cost_centers":[
-      {
-         "name":"test",
-         "enforce":false,
-         "quotas":[
-            {
-               "allocated":[
-
-               ],
-               "cost":0,
-               "provider":"2bf1bd2c-b03d-460f-80da-647d26bdbcfe"
-            },
-            {
-               "cost":3000,
-               "provider":"5908ee9b-0c0a-4af6-8eef-2dc9f95d033a"
-            }
-         ],
-         "workspaces":[
-            "operations"
-         ]
-      }
-   ],
-   "webhooks":[
-
-   ]
+    "remedy_account_id": "CPY000000115554",
+    "features": {
+        "net_x": true,
+        "alm": true,
+        "monitoring": true,
+        "managed_provider": true,
+        "show_unregistered_resources": true,
+        "sync_corporate_groups": false,
+        "aws_reseller": true,
+        "ignore_velocity_templates": true,
+        "safehaven_dr": false,
+        "reporting": false,
+        "ucpe": false,
+        "managed_clc_provider": true,
+        "delegate_managed_os": true,
+        "custom_pricing": false,
+        "analytics": true,
+        "provider_sharing": true,
+        "validate_emails": true,
+        "safehaven_migration": false,
+        "azure_reseller": true,
+        "onboard_checklist": false,
+        "aware_duplicate_arns": false
+    },
+    "providers": [
+        {
+            "enabled": true,
+            "type": "CenturyLink",
+            "description": "Manage cloud hosting, Linux and Windows machines",
+            "pricing": []
+        },
+        {
+            "enabled": true,
+            "type": "CenturyLink DCC Foundation",
+            "description": "Manage cloud hosting, Linux and Windows machines.",
+            "pricing": []
+        },
+        {
+            "enabled": true,
+            "type": "CenturyLink DCC",
+            "pricing": [],
+            "description": "Manage cloud hosting, Linux and Windows machines"
+        },
+        {
+            "enabled": true,
+            "type": "Microsoft Azure",
+            "pricing": [],
+            "description": "Manage Microsoft services using Azure Resource Manager"
+        },
+        {
+            "enabled": true,
+            "type": "Amazon Web Services",
+            "description": "Manage EC2, S3, Dynamo DB, and RDS instances",
+            "pricing": []
+        },
+        {
+            "enabled": true,
+            "type": "Openstack",
+            "description": "Manage cloud hosting, Linux and Windows machines",
+            "pricing": []
+        },
+        {
+            "enabled": true,
+            "type": "VMware vSphere",
+            "description": "Manage cloud hosting, Linux and Windows machines",
+            "pricing": []
+        },
+        {
+            "enabled": true,
+            "type": "Google Compute",
+            "description": "Manage cloud hosting and Linux machines",
+            "pricing": []
+        },
+        {
+            "enabled": true,
+            "type": "Azure Classic",
+            "description": "Manage compute services for Windows and Linux machines.",
+            "pricing": []
+        },
+        {
+            "enabled": true,
+            "type": "Cloudstack",
+            "description": "Manage cloud hosting, Linux and Windows machines",
+            "pricing": []
+        },
+        {
+            "enabled": true,
+            "type": "SoftLayer",
+            "description": "Manage compute services for Windows and Linux machines.",
+            "pricing": []
+        },
+        {
+            "enabled": true,
+            "type": "Rackspace",
+            "description": "Manage cloud hosting and Linux machines.",
+            "pricing": []
+        },
+        {
+            "enabled": true,
+            "type": "VMware vCloud Director",
+            "description": "Manage cloud hosting, Linux and Windows machines.",
+            "pricing": []
+        },
+        {
+            "enabled": true,
+            "type": "Dimension Data",
+            "description": "Manage cloud hosting, Linux and Windows machines",
+            "pricing": []
+        }
+    ],
+    "account_installed_product": "750910",
+    "clc_alias": "ZXHN",
+    "plugins": [],
+    "account_status": "Active",
+    "vantive_id": "S626423",
+    "display_name": "MissionField LLC",
+    "billing_account_number": "626423",
+    "theme": {
+        "logo": "/services/blobs/download/58888fc42364025f58d42b9a/mission-field.png",
+        "accent": null,
+        "css": "/services/blobs/download/58888fd3c571007a8af06207/mission-field.css"
+    },
+    "authentication": {
+        "password": true,
+        "google": true,
+        "saml": false,
+        "saml_config": {},
+        "github": true,
+        "ldap": true,
+        "clc": false,
+        "ldap_config": {
+            "ldap_group_sync": true,
+            "sources": [
+                {
+                    "host": "ldap://ldap.eerrewre.com",
+                    "ldap_search_password": "fdfDDSAdsadsdasd"
+                }
+            ]
+        }
+    },
+    "itsm": {
+        "servicenow": {
+            "enabled": false
+        }
+    },
+    "default_costcenter": "c3195962-4c70-4ad6-a17a-189a5579a45a",
+    "ldap_groups": [],
+    "schema": "http://elasticbox.net/schemas/organization",
+    "updated": "2018-10-25 15:48:03.290547",
+    "account_type": "Billable",
+    "tags": [
+        {
+            "type": "Box",
+            "name": "box",
+            "value": null
+        },
+        {
+            "type": "Email",
+            "name": "email",
+            "value": null
+        },
+        {
+            "type": "User ID",
+            "name": "user",
+            "value": null
+        },
+        {
+            "type": "Instance name",
+            "name": "Name",
+            "value": null
+        }
+    ],
+    "deleted": null,
+    "ldap_last_sync_completed": null,
+    "domains": [
+        "mission-field.com"
+    ],
+    "members": [
+        {
+            "role": "administrator",
+            "type": "workspace",
+            "id": "diego"
+        },
+        {
+            "type": "workspace",
+            "role": "administrator",
+            "id": "thomasbroadwell1"
+        },
+        {
+            "type": "workspace",
+            "role": "administrator",
+            "id": "keithhomco"
+        },
+        {
+            "role": "administrator",
+            "type": "workspace",
+            "id": "rangachakravarthula"
+        },
+        {
+            "role": "administrator",
+            "type": "workspace",
+            "id": "thomasbroadwell"
+        },
+        {
+            "role": "administrator",
+            "type": "workspace",
+            "id": "davidflynn"
+        },
+        {
+            "type": "workspace",
+            "role": "administrator",
+            "id": "missionfields1"
+        },
+        {
+            "type": "workspace",
+            "role": "administrator",
+            "id": "guillermosanchez"
+        },
+        {
+            "role": "administrator",
+            "type": "workspace",
+            "id": "pashagmohammed"
+        },
+        {
+            "role": "administrator",
+            "type": "workspace",
+            "id": "christophergeers1"
+        },
+        {
+            "type": "workspace",
+            "role": "administrator",
+            "id": "sivanjaneyulupopuri"
+        },
+        {
+            "type": "workspace",
+            "role": "administrator",
+            "id": "gustavollorente"
+        },
+        {
+            "role": "administrator",
+            "type": "workspace",
+            "id": "cristinatorres"
+        },
+        {
+            "type": "workspace",
+            "role": "administrator",
+            "id": "thomaslitton"
+        },
+        {
+            "role": "administrator",
+            "type": "workspace",
+            "id": "benjaminschwedler"
+        },
+        {
+            "type": "workspace",
+            "role": "administrator",
+            "id": "cristinagarcia"
+        },
+        {
+            "type": "workspace",
+            "role": "administrator",
+            "id": "julianatienza"
+        },
+        {
+            "type": "workspace",
+            "role": "administrator",
+            "id": "guillermo"
+        },
+        {
+            "role": "administrator",
+            "type": "workspace",
+            "id": "joseluis"
+        },
+        {
+            "role": "administrator",
+            "type": "workspace",
+            "id": "jose"
+        },
+        {
+            "type": "workspace",
+            "role": "administrator",
+            "id": "sergioquintanacastillo"
+        },
+        {
+            "type": "workspace",
+            "role": "administrator",
+            "id": "amaliagarciademirasierraperez"
+        },
+        {
+            "type": "workspace",
+            "role": "administrator",
+            "id": "danielpena"
+        },
+        {
+            "type": "workspace",
+            "role": "administrator",
+            "id": "davidojeda"
+        },
+        {
+            "type": "workspace",
+            "role": "administrator",
+            "id": "denespal"
+        },
+        {
+            "type": "workspace",
+            "role": "administrator",
+            "id": "aryaroudi"
+        },
+        {
+            "type": "workspace",
+            "role": "administrator",
+            "id": "juanmorra1"
+        },
+        {
+            "type": "workspace",
+            "role": "administrator",
+            "id": "thomasbroadwell2"
+        },
+        {
+            "type": "workspace",
+            "role": "administrator",
+            "id": "msa_service_account1"
+        },
+        {
+            "role": "administrator",
+            "type": "ldap",
+            "id": "CN=Cloud Application Manager Support,OU=Internal Server Security Groups,OU=Protected,OU=EmployeeAccts,OU=ManagedHosting,DC=na,DC=msmps,DC=net"
+        }
+    ],
+    "icon": "/services/blobs/download/58888fc42364025f58d42b9a/mission-field.png",
+    "federated_to": [
+        "elasticbox",
+        "centurylink",
+        "contoso",
+        "ctlops"
+    ],
+    "name": "mission-field",
+    "created": "2017-01-25 11:11:13.254512",
+    "setup": true,
+    "release": "4.0"
 }
 ```
 
@@ -303,7 +432,7 @@ Get the schema of boxes in the given organization.
 
 #### Example
 
-    GET https://cam.ctl.io/services/organizations/CenturyLink/boxes
+    GET https://cam.ctl.io/services/organizations/centurylink/boxes
 
 ### Request
 #### Headers
@@ -410,7 +539,7 @@ Get the schema of instances in the given organization.
     [GET] /services/organizations/{organization_name}/instances
 
 #### Example
-    GET https://cam.ctl.io/services/organizations/CenturyLink/instances
+    GET https://cam.ctl.io/services/organizations/centurylink/instances
 
 ### Request
 #### Headers
@@ -455,428 +584,428 @@ ElasticBox-Release: 4.0
 
 #### Response Body
 ```
-  {
-    "box": "c2be22d3-22bf-4694-8a6d-e2efe3dceebd",
-    "bindings": [],
-    "updated": "2018-08-22 13:32:51.728997",
-    "automatic_updates": "off",
-    "policy_box": {
-      "profile": {
-        "datacenter": "va1",
-        "group": [
-          "Default Group"
-        ],
-        "network": "vlan_3135_10.128.235",
-        "server_type": "Standard",
-        "pricing_info": {
-          "estimated_monthly": 5388004080,
-          "factor": 100000000,
-          "hourly_price": 7483339,
-          "provider_type": "CenturyLink"
-        },
-        "disks": [],
-        "cpus": 2,
-        "public_ip": false,
-        "instances": 1,
-        "template": "CENTOS-7-64-TEMPLATE",
-        "memory": 4,
-        "managed_os": false,
-        "schema": "http://elasticbox.net/schemas/centurylink/compute/profile"
-      },
-      "provider_id": "338f38dc-e667-47e0-9026-b253138f109e",
-      "automatic_updates": "off",
-      "name": "management-appliance-va1",
-      "deleted": null,
-      "variables": [],
-      "visibility": "workspace",
-      "owner": "cam3",
-      "members": [],
-      "organization": "mission-field",
-      "readme": {
-        "url": "services/resources/default_box_overview.md",
-        "upload_date": "2018-08-22 13:16:15.650210",
-        "length": 1307,
-        "content_type": "text/x-markdown"
-      },
-      "claims": [
-        "centos7",
-        "linux"
-      ],
-      "id": "01bf237e-2e73-416c-a72b-d94ea10d1c2e",
-      "schema": "http://elasticbox.net/schemas/boxes/policy"
-    },
-    "name": "managed-provider-appliance-va1",
-    "service": {
-      "type": "Linux Compute",
-      "id": "eb-6okdo",
-      "machines": [
-        {
-          "state": "done",
-          "name": "managed-provider-appliance-va1-6okdo-1",
-          "workflow": []
-        }
-      ]
-    },
-    "tags": [
-      "managed",
-      "appliance"
-    ],
-    "variables": [
-      {
-        "scope": "gateway.constants",
-        "type": "Text",
-        "value": "https://gateway.managedos.ctl.io",
-        "visibility": "internal",
-        "name": "managed_os_api_url"
-      },
-      {
-        "scope": "gateway.constants",
-        "type": "Text",
-        "visibility": "internal",
-        "value": "https://api.watcher.ctl.io/",
-        "name": "watcher_reg_url"
-      },
-      {
-        "scope": "gateway.constants",
-        "type": "Text",
-        "value": "https://pkg.watcher.ctl.io",
-        "visibility": "internal",
-        "name": "watcher_package_url"
-      },
-      {
-        "scope": "active_directory_controller.constants",
-        "type": "Text",
-        "visibility": "internal",
-        "value": "https://gateway.managedos.ctl.io",
-        "name": "managed_os_api_url"
-      },
-      {
-        "scope": "metadata.constants",
-        "type": "Text",
-        "value": "https://gateway.managedos.ctl.io",
-        "visibility": "internal",
-        "name": "managed_os_api_url"
-      },
-      {
-        "scope": "managed_server.watcher_agent.constants",
-        "type": "Text",
-        "visibility": "internal",
-        "value": "https://gateway.managedos.ctl.io",
-        "name": "managed_os_api_url"
-      },
-      {
-        "scope": "managed_server.billing.constants",
-        "type": "Text",
-        "value": "https://gateway.managedos.ctl.io",
-        "visibility": "internal",
-        "name": "managed_os_api_url"
-      },
-      {
-        "scope": "managed_server.constants",
-        "type": "Text",
-        "visibility": "internal",
-        "value": "https://gateway.managedos.ctl.io",
-        "name": "managed_os_api_url"
-      },
-      {
-        "scope": "managed_server.metadata.constants",
-        "type": "Text",
-        "value": "https://gateway.managedos.ctl.io",
-        "visibility": "internal",
-        "name": "managed_os_api_url"
-      },
-      {
-        "scope": "managed_server.watcher_agent",
-        "type": "Text",
-        "visibility": "internal",
-        "value": "https://api.watcher.ctl.io/",
-        "name": "watcher_reg_url"
-      },
-      {
-        "scope": "managed_server.watcher_agent",
-        "type": "Text",
-        "value": "https://pkg.watcher.ctl.io",
-        "visibility": "internal",
-        "name": "watcher_package_url"
-      },
-      {
-        "scope": "active_directory_controller",
-        "type": "Text",
-        "visibility": "private",
-        "value": "",
-        "name": "TrustADIPAddress"
-      },
-      {
-        "scope": "active_directory_controller",
-        "type": "Text",
-        "value": "",
-        "visibility": "private",
-        "name": "TrustADNetbiosName"
-      },
-      {
-        "scope": "active_directory_controller",
-        "type": "Text",
-        "visibility": "private",
-        "value": "",
-        "name": "TrustADDomainName"
-      },
-      {
-        "scope": "active_directory_controller",
-        "type": "Text",
-        "value": "",
-        "visibility": "private",
-        "name": "TrustADUser"
-      },
-      {
-        "scope": "active_directory_controller",
-        "type": "Password",
-        "visibility": "private",
-        "value": "",
-        "name": "TrustADPassword"
-      },
-      {
-        "scope": "managed_server.register.constants",
-        "type": "Text",
-        "value": "https://gateway.managedos.ctl.io",
-        "visibility": "internal",
-        "name": "managed_os_api_url"
-      },
-      {
-        "scope": "managed_server.register",
-        "type": "Text",
-        "visibility": "internal",
-        "value": "120",
-        "name": "MaximumTries"
-      },
-      {
-        "scope": "managed_server",
-        "type": "Text",
-        "value": "true",
-        "visibility": "internal",
-        "name": "IsAppliance"
-      },
-      {
-        "scope": "proxies",
-        "type": "Options",
-        "visibility": "public",
-        "value": "prod",
-        "name": "watcher_environment"
-      },
-      {
-        "scope": "gateway",
-        "type": "Text",
-        "visibility": "internal",
-        "value": "zxhnva1umwcmanage01gw",
-        "name": "GatewayName"
-      }
-    ],
-    "created": "2018-08-22 13:16:15.687975",
-    "boxes": [
-      {
-        "schema": "http://elasticbox.net/schemas/boxes/script",
-        "updated": "2018-08-07 23:20:02.898885",
+    {
+        "box": "c2be22d3-22bf-4694-8a6d-e2efe3dceebd",
+        "bindings": [],
+        "updated": "2018-08-22 13:32:51.728997",
         "automatic_updates": "off",
-        "requirements": [
-          "centos7",
-          "linux"
-        ],
-        "description": "CenturyLink Management Appliance",
-        "created": "2018-08-08 16:43:02.151411",
-        "icon_metadata": {
-          "image": "/services/blobs/download/58a21fb465eca605038edc67/centurylink-logo.svg",
-          "border": "#8CC63F",
-          "fill": "#ffffff"
+        "policy_box": {
+            "profile": {
+                "datacenter": "va1",
+                "group": [
+                    "Default Group"
+                ],
+                "network": "vlan_3135_10.128.235",
+                "server_type": "Standard",
+                "pricing_info": {
+                    "estimated_monthly": 5388004080,
+                    "factor": 100000000,
+                    "hourly_price": 7483339,
+                    "provider_type": "CenturyLink"
+                },
+                "disks": [],
+                "cpus": 2,
+                "public_ip": false,
+                "instances": 1,
+                "template": "CENTOS-7-64-TEMPLATE",
+                "memory": 4,
+                "managed_os": false,
+                "schema": "http://elasticbox.net/schemas/centurylink/compute/profile"
+            },
+            "provider_id": "338f38dc-e667-47e0-9026-b253138f109e",
+            "automatic_updates": "off",
+            "name": "management-appliance-va1",
+            "deleted": null,
+            "variables": [],
+            "visibility": "workspace",
+            "owner": "cam3",
+            "members": [],
+            "organization": "mission-field",
+            "readme": {
+                "url": "services/resources/default_box_overview.md",
+                "upload_date": "2018-08-22 13:16:15.650210",
+                "length": 1307,
+                "content_type": "text/x-markdown"
+            },
+            "claims": [
+                "centos7",
+                "linux"
+            ],
+            "id": "01bf237e-2e73-416c-a72b-d94ea10d1c2e",
+            "schema": "http://elasticbox.net/schemas/boxes/policy"
         },
+        "name": "managed-provider-appliance-va1",
+        "service": {
+            "type": "Linux Compute",
+            "id": "eb-6okdo",
+            "machines": [
+                {
+                    "state": "done",
+                    "name": "managed-provider-appliance-va1-6okdo-1",
+                    "workflow": []
+                }
+            ]
+        },
+        "tags": [
+            "managed",
+            "appliance"
+        ],
         "variables": [
-          {
-            "name": "WaitForCMDBRecon",
-            "required": true,
-            "visibility": "internal",
-            "value": "true",
-            "type": "Options",
-            "options": "true,false"
-          },
-          {
-            "required": true,
-            "type": "Text",
-            "name": "CMDB_MaxTries",
-            "value": "120",
-            "visibility": "internal"
-          },
-          {
-            "required": false,
-            "type": "Text",
-            "name": "TrustADIPAddress",
-            "value": "",
-            "visibility": "public"
-          },
-          {
-            "required": false,
-            "type": "Text",
-            "name": "TrustADNetbiosName",
-            "value": "",
-            "visibility": "public"
-          },
-          {
-            "required": false,
-            "type": "Text",
-            "name": "TrustADDomainName",
-            "value": "",
-            "visibility": "public"
-          },
-          {
-            "required": false,
-            "type": "Text",
-            "name": "TrustADUser",
-            "value": "",
-            "visibility": "public"
-          },
-          {
-            "required": false,
-            "type": "Password",
-            "name": "TrustADPassword",
-            "value": "",
-            "visibility": "public"
-          },
-          {
-            "required": true,
-            "type": "Text",
-            "name": "centos_allowed",
-            "value": "true",
-            "visibility": "internal"
-          },
-          {
-            "required": true,
-            "type": "Text",
-            "name": "IsAppliance",
-            "value": "true",
-            "visibility": "internal"
-          },
-          {
-            "automatic_updates": "off",
-            "name": "constants",
-            "required": false,
-            "visibility": "internal",
-            "value": "51fa717e-cc9e-4d48-8026-49fb56f3c774",
-            "type": "Box"
-          },
-          {
-            "automatic_updates": "off",
-            "name": "ssh_keygen",
-            "required": false,
-            "value": "15b2f0dc-ffba-4301-931d-a7b71989dbc9",
-            "visibility": "public",
-            "type": "Box"
-          },
-          {
-            "automatic_updates": "off",
-            "name": "metadata",
-            "required": false,
-            "value": "cbfb4440-75b8-42dd-a4bf-e1c57605c00e",
-            "visibility": "internal",
-            "type": "Box"
-          },
-          {
-            "automatic_updates": "off",
-            "name": "centos_required",
-            "required": false,
-            "visibility": "internal",
-            "value": "a37f166d-c5c6-4830-9988-be8caaf8d974",
-            "type": "Box"
-          },
-          {
-            "automatic_updates": "off",
-            "name": "gateway",
-            "required": false,
-            "value": "3d923e65-4c68-40e8-96f7-596eefd13d07",
-            "visibility": "internal",
-            "type": "Box"
-          },
-          {
-            "automatic_updates": "off",
-            "name": "managed_server",
-            "required": false,
-            "visibility": "internal",
-            "value": "1e3f17a8-0c28-412b-89a0-72f6d67c2a1d",
-            "type": "Box"
-          },
-          {
-            "automatic_updates": "off",
-            "name": "active_directory_controller",
-            "required": false,
-            "value": "d17db027-f709-458f-b77e-f2d9807798e6",
-            "visibility": "internal",
-            "type": "Box"
-          },
-          {
-            "automatic_updates": "off",
-            "name": "proxies",
-            "required": false,
-            "visibility": "internal",
-            "value": "3963f11e-f762-41c6-8f51-bd0f06f882a4",
-            "type": "Box"
-          }
+            {
+                "scope": "gateway.constants",
+                "type": "Text",
+                "value": "https://gateway.managedos.ctl.io",
+                "visibility": "internal",
+                "name": "managed_os_api_url"
+            },
+            {
+                "scope": "gateway.constants",
+                "type": "Text",
+                "visibility": "internal",
+                "value": "https://api.watcher.ctl.io/",
+                "name": "watcher_reg_url"
+            },
+            {
+                "scope": "gateway.constants",
+                "type": "Text",
+                "value": "https://pkg.watcher.ctl.io",
+                "visibility": "internal",
+                "name": "watcher_package_url"
+            },
+            {
+                "scope": "active_directory_controller.constants",
+                "type": "Text",
+                "visibility": "internal",
+                "value": "https://gateway.managedos.ctl.io",
+                "name": "managed_os_api_url"
+            },
+            {
+                "scope": "metadata.constants",
+                "type": "Text",
+                "value": "https://gateway.managedos.ctl.io",
+                "visibility": "internal",
+                "name": "managed_os_api_url"
+            },
+            {
+                "scope": "managed_server.watcher_agent.constants",
+                "type": "Text",
+                "visibility": "internal",
+                "value": "https://gateway.managedos.ctl.io",
+                "name": "managed_os_api_url"
+            },
+            {
+                "scope": "managed_server.billing.constants",
+                "type": "Text",
+                "value": "https://gateway.managedos.ctl.io",
+                "visibility": "internal",
+                "name": "managed_os_api_url"
+            },
+            {
+                "scope": "managed_server.constants",
+                "type": "Text",
+                "visibility": "internal",
+                "value": "https://gateway.managedos.ctl.io",
+                "name": "managed_os_api_url"
+            },
+            {
+                "scope": "managed_server.metadata.constants",
+                "type": "Text",
+                "value": "https://gateway.managedos.ctl.io",
+                "visibility": "internal",
+                "name": "managed_os_api_url"
+            },
+            {
+                "scope": "managed_server.watcher_agent",
+                "type": "Text",
+                "visibility": "internal",
+                "value": "https://api.watcher.ctl.io/",
+                "name": "watcher_reg_url"
+            },
+            {
+                "scope": "managed_server.watcher_agent",
+                "type": "Text",
+                "value": "https://pkg.watcher.ctl.io",
+                "visibility": "internal",
+                "name": "watcher_package_url"
+            },
+            {
+                "scope": "active_directory_controller",
+                "type": "Text",
+                "visibility": "private",
+                "value": "",
+                "name": "TrustADIPAddress"
+            },
+            {
+                "scope": "active_directory_controller",
+                "type": "Text",
+                "value": "",
+                "visibility": "private",
+                "name": "TrustADNetbiosName"
+            },
+            {
+                "scope": "active_directory_controller",
+                "type": "Text",
+                "visibility": "private",
+                "value": "",
+                "name": "TrustADDomainName"
+            },
+            {
+                "scope": "active_directory_controller",
+                "type": "Text",
+                "value": "",
+                "visibility": "private",
+                "name": "TrustADUser"
+            },
+            {
+                "scope": "active_directory_controller",
+                "type": "Password",
+                "visibility": "private",
+                "value": "",
+                "name": "TrustADPassword"
+            },
+            {
+                "scope": "managed_server.register.constants",
+                "type": "Text",
+                "value": "https://gateway.managedos.ctl.io",
+                "visibility": "internal",
+                "name": "managed_os_api_url"
+            },
+            {
+                "scope": "managed_server.register",
+                "type": "Text",
+                "visibility": "internal",
+                "value": "120",
+                "name": "MaximumTries"
+            },
+            {
+                "scope": "managed_server",
+                "type": "Text",
+                "value": "true",
+                "visibility": "internal",
+                "name": "IsAppliance"
+            },
+            {
+                "scope": "proxies",
+                "type": "Options",
+                "visibility": "public",
+                "value": "prod",
+                "name": "watcher_environment"
+            },
+            {
+                "scope": "gateway",
+                "type": "Text",
+                "visibility": "internal",
+                "value": "zxhnva1umwcmanage01gw",
+                "name": "GatewayName"
+            }
         ],
-        "visibility": "workspace",
-        "name": "CenturyLink Management Appliance",
-        "deleted": null,
-        "version": {
-          "box": "c2be22d3-22bf-4694-8a6d-e2efe3dceebd",
-          "number": {
-            "major": 0,
-            "minor": 5,
-            "patch": 5
-          },
-          "workspace": "keithhomco",
-          "description": "Limited support for no outbound connectivity scenarios (contact cam-msa@centurylink.com for details)"
-        },
-        "id": "fe257f92-2808-4c1a-aa1d-310a87e228b9",
-        "categories": [
-          "managed"
+        "created": "2018-08-22 13:16:15.687975",
+        "boxes": [
+            {
+                "schema": "http://elasticbox.net/schemas/boxes/script",
+                "updated": "2018-08-07 23:20:02.898885",
+                "automatic_updates": "off",
+                "requirements": [
+                    "centos7",
+                    "linux"
+                ],
+                "description": "CenturyLink Management Appliance",
+                "created": "2018-08-08 16:43:02.151411",
+                "icon_metadata": {
+                    "image": "/services/blobs/download/58a21fb465eca605038edc67/centurylink-logo.svg",
+                    "border": "#8CC63F",
+                    "fill": "#ffffff"
+                },
+                "variables": [
+                    {
+                        "name": "WaitForCMDBRecon",
+                        "required": true,
+                        "visibility": "internal",
+                        "value": "true",
+                        "type": "Options",
+                        "options": "true,false"
+                    },
+                    {
+                        "required": true,
+                        "type": "Text",
+                        "name": "CMDB_MaxTries",
+                        "value": "120",
+                        "visibility": "internal"
+                    },
+                    {
+                        "required": false,
+                        "type": "Text",
+                        "name": "TrustADIPAddress",
+                        "value": "",
+                        "visibility": "public"
+                    },
+                    {
+                        "required": false,
+                        "type": "Text",
+                        "name": "TrustADNetbiosName",
+                        "value": "",
+                        "visibility": "public"
+                    },
+                    {
+                        "required": false,
+                        "type": "Text",
+                        "name": "TrustADDomainName",
+                        "value": "",
+                        "visibility": "public"
+                    },
+                    {
+                        "required": false,
+                        "type": "Text",
+                        "name": "TrustADUser",
+                        "value": "",
+                        "visibility": "public"
+                    },
+                    {
+                        "required": false,
+                        "type": "Password",
+                        "name": "TrustADPassword",
+                        "value": "",
+                        "visibility": "public"
+                    },
+                    {
+                        "required": true,
+                        "type": "Text",
+                        "name": "centos_allowed",
+                        "value": "true",
+                        "visibility": "internal"
+                    },
+                    {
+                        "required": true,
+                        "type": "Text",
+                        "name": "IsAppliance",
+                        "value": "true",
+                        "visibility": "internal"
+                    },
+                    {
+                        "automatic_updates": "off",
+                        "name": "constants",
+                        "required": false,
+                        "visibility": "internal",
+                        "value": "51fa717e-cc9e-4d48-8026-49fb56f3c774",
+                        "type": "Box"
+                    },
+                    {
+                        "automatic_updates": "off",
+                        "name": "ssh_keygen",
+                        "required": false,
+                        "value": "15b2f0dc-ffba-4301-931d-a7b71989dbc9",
+                        "visibility": "public",
+                        "type": "Box"
+                    },
+                    {
+                        "automatic_updates": "off",
+                        "name": "metadata",
+                        "required": false,
+                        "value": "cbfb4440-75b8-42dd-a4bf-e1c57605c00e",
+                        "visibility": "internal",
+                        "type": "Box"
+                    },
+                    {
+                        "automatic_updates": "off",
+                        "name": "centos_required",
+                        "required": false,
+                        "visibility": "internal",
+                        "value": "a37f166d-c5c6-4830-9988-be8caaf8d974",
+                        "type": "Box"
+                    },
+                    {
+                        "automatic_updates": "off",
+                        "name": "gateway",
+                        "required": false,
+                        "value": "3d923e65-4c68-40e8-96f7-596eefd13d07",
+                        "visibility": "internal",
+                        "type": "Box"
+                    },
+                    {
+                        "automatic_updates": "off",
+                        "name": "managed_server",
+                        "required": false,
+                        "visibility": "internal",
+                        "value": "1e3f17a8-0c28-412b-89a0-72f6d67c2a1d",
+                        "type": "Box"
+                    },
+                    {
+                        "automatic_updates": "off",
+                        "name": "active_directory_controller",
+                        "required": false,
+                        "value": "d17db027-f709-458f-b77e-f2d9807798e6",
+                        "visibility": "internal",
+                        "type": "Box"
+                    },
+                    {
+                        "automatic_updates": "off",
+                        "name": "proxies",
+                        "required": false,
+                        "visibility": "internal",
+                        "value": "3963f11e-f762-41c6-8f51-bd0f06f882a4",
+                        "type": "Box"
+                    }
+                ],
+                "visibility": "workspace",
+                "name": "CenturyLink Management Appliance",
+                "deleted": null,
+                "version": {
+                    "box": "c2be22d3-22bf-4694-8a6d-e2efe3dceebd",
+                    "number": {
+                        "major": 0,
+                        "minor": 5,
+                        "patch": 5
+                    },
+                    "workspace": "keithhomco",
+                    "description": "Limited support for no outbound connectivity scenarios (contact cam-msa@centurylink.com for details)"
+                },
+                "id": "fe257f92-2808-4c1a-aa1d-310a87e228b9",
+                "categories": [
+                    "managed"
+                ],
+                "members": [
+                    {
+                        "role": "read",
+                        "workspace": "mgd"
+                    },
+                    {
+                        "role": "read",
+                        "workspace": "managed6"
+                    }
+                ],
+                "owner": "managed1",
+                "organization": "centurylink",
+                "readme": {
+                    "url": "/services/blobs/download/593843b76d4c585793fe1fb9/README.md",
+                    "upload_date": "2017-06-07 18:19:35.185072",
+                    "length": 2962,
+                    "content_type": "text/x-markdown"
+                },
+                "events": {
+                    "pre_install": {
+                        "url": "/services/blobs/download/5b6a26565fc39f10a99fefaa/pre_install",
+                        "length": 2170,
+                        "destination_path": "scripts",
+                        "content_type": "text/x-shellscript"
+                    }
+                },
+                "draft_from": "7f1bd23f-14cf-4e44-a831-53716e0f20a8",
+                "icon": "/icons/boxes/c2be22d3-22bf-4694-8a6d-e2efe3dceebd"
+            }
         ],
-        "members": [
-          {
-            "role": "read",
-            "workspace": "mgd"
-          },
-          {
-            "role": "read",
-            "workspace": "managed6"
-          }
-        ],
-        "owner": "managed1",
-        "organization": "centurylink",
-        "readme": {
-          "url": "/services/blobs/download/593843b76d4c585793fe1fb9/README.md",
-          "upload_date": "2017-06-07 18:19:35.185072",
-          "length": 2962,
-          "content_type": "text/x-markdown"
+        "uri": "/services/instances/i-k2tj0y",
+        "is_deploy_only": true,
+        "state": "done",
+        "members": [],
+        "owner": "cam3",
+        "operation": {
+            "event": "deploy",
+            "workspace": "cam3",
+            "created": "2018-08-22 13:16:15.857029"
         },
-        "events": {
-          "pre_install": {
-            "url": "/services/blobs/download/5b6a26565fc39f10a99fefaa/pre_install",
-            "length": 2170,
-            "destination_path": "scripts",
-            "content_type": "text/x-shellscript"
-          }
-        },
-        "draft_from": "7f1bd23f-14cf-4e44-a831-53716e0f20a8",
-        "icon": "/icons/boxes/c2be22d3-22bf-4694-8a6d-e2efe3dceebd"
-      }
-    ],
-    "uri": "/services/instances/i-k2tj0y",
-    "is_deploy_only": true,
-    "state": "done",
-    "members": [],
-    "owner": "cam3",
-    "operation": {
-      "event": "deploy",
-      "workspace": "cam3",
-      "created": "2018-08-22 13:16:15.857029"
-    },
-    "id": "i-k2tj0y",
-    "schema": "http://elasticbox.net/schemas/instance"
-  }
+        "id": "i-k2tj0y",
+        "schema": "http://elasticbox.net/schemas/instance"
+    }
 ```
 
 ### GET /services/organizations/{organization_name}/providers
@@ -890,7 +1019,7 @@ Get the schema of providers in the given organization.
 
 #### Example
 
-    GET https://cam.ctl.io/services/organizations/CenturyLink/providers
+    GET https://cam.ctl.io/services/organizations/centurylink/providers
 
 ### Request
 #### Headers
@@ -969,7 +1098,7 @@ Get the schema of workspaces in the given organization.
     [GET] /services/organizations/{organization_name}/workspaces
 
 #### Example
-    GET https://cam.ctl.io/services/organizations/CenturyLink/workspaces
+    GET https://cam.ctl.io/services/organizations/centurylink/workspaces
 
 ### Request
 #### Headers
