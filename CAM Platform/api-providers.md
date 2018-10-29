@@ -1070,1027 +1070,3931 @@ ElasticBox-Release: 4.0
 #### Response Body
 ```
 {
-   "updated":"2014-03-26 14:03:41.783045",
-   "description":"Manage EC2, ECS and Cloudformation instances",
-   "created":"2014-03-26 14:03:30.192871",
-   "uri":"/services/providers/8c501fe3-54d7-49eb-b5d3-05016becabe3",
-   "state":"ready",
-   "name":"MyAmazon",
-   "members":[
-
-   ],
-   "services":[
-      {
-         "flavors":[
-            {
-               "name":"t1.micro"
-            },
-            {
-               "name":"m1.small"
-            },
-            {
-               "name":"m1.medium"
-            },
-            {
-               "name":"m1.large"
-            },
-            {
-               "name":"m1.xlarge"
-            },
-            {
-               "name":"m2.xlarge"
-            },
-            {
-               "name":"m2.2xlarge"
-            },
-            {
-               "name":"m2.4xlarge"
-            },
-            {
-               "name":"c1.medium"
-            },
-            {
-               "name":"c1.xlarge"
-            },
-            {
-               "name":"c3.4xlarge"
-            },
-            {
-               "name":"cr1.8xlarge"
-            },
-            {
-               "name":"m3.medium"
-            },
-            {
-               "name":"m3.large"
-            },
-            {
-               "name":"m3.xlarge"
-            },
-            {
-               "name":"m3.2xlarge"
-            }
-         ],
-         "schema":"http://elasticbox.net/schemas/aws/compute/linux",
-         "locations":[
-            {
-               "images":[
-                  {
-                     "description":"Latest AWS Linux AMI",
-                     "name":"Linux Compute"
-                  }
-               ],
-               "clouds":[
-                  {
-                     "subnets":[
+    "costcenter": "c3195962-4c70-4ad6-a17a-189a5579a45a",
+    "owner": "dryrun",
+    "default_managed_iis_policies_created": true,
+    "clc_alias": "DA4",
+    "management_state": true,
+    "id": "8132cc1d-38b0-4867-b7a3-1af7b83d4792",
+    "state": "ready",
+    "admin_boxes": [],
+    "type": "Amazon Web Services",
+    "managed_os": true,
+    "schema": "http://elasticbox.net/schemas/aws/provider",
+    "updated": "2018-10-15 19:10:57.749750",
+    "description": null,
+    "management_state_history": [
+        {
+            "started": "2018-04-06 00:29:28.414938",
+            "state": "up",
+            "completed": "2018-07-26 18:43:46.867016"
+        },
+        {
+            "started": "2018-07-26 18:43:46.867016",
+            "state": "down",
+            "completed": "2018-07-26 18:53:27.827179"
+        },
+        {
+            "started": "2018-07-26 18:53:27.827179",
+            "state": "up",
+            "completed": "2018-07-26 19:07:06.443650"
+        },
+        {
+            "started": "2018-07-26 19:07:06.443650",
+            "state": "down",
+            "completed": "2018-07-26 19:09:30.067475"
+        },
+        {
+            "started": "2018-07-26 19:09:30.067475",
+            "state": "up",
+            "completed": "2018-08-28 10:08:56.914918"
+        },
+        {
+            "started": "2018-08-28 10:08:56.914918",
+            "state": "down",
+            "completed": "2018-09-04 21:28:32.573472"
+        },
+        {
+            "started": "2018-09-04 21:28:32.573472",
+            "state": "up",
+            "completed": "2018-09-24 16:09:01.728550"
+        },
+        {
+            "started": "2018-09-24 16:09:01.728550",
+            "state": "down",
+            "completed": "2018-09-24 16:21:34.906171"
+        },
+        {
+            "started": "2018-09-24 16:21:34.906171",
+            "state": "up"
+        }
+    ],
+    "default_sql_server_policies_created": true,
+    "deleted": null,
+    "default_management_appliance_policies_created": true,
+    "default_policies_created": true,
+    "members": [
+        {
+            "role": "read",
+            "workspace": "mission5"
+        }
+    ],
+    "services": [
+        {
+            "icon": "images/platform/aws-cloudformation.png",
+            "locations": [
+                {
+                    "name": "ap-northeast-1"
+                },
+                {
+                    "name": "ap-northeast-2"
+                },
+                {
+                    "name": "ap-south-1"
+                },
+                {
+                    "name": "ap-southeast-1"
+                },
+                {
+                    "name": "ap-southeast-2"
+                },
+                {
+                    "name": "ca-central-1"
+                },
+                {
+                    "name": "eu-central-1"
+                },
+                {
+                    "name": "eu-west-1"
+                },
+                {
+                    "name": "eu-west-2"
+                },
+                {
+                    "name": "eu-west-3"
+                },
+                {
+                    "name": "sa-east-1"
+                },
+                {
+                    "name": "us-east-1"
+                },
+                {
+                    "name": "us-east-2"
+                },
+                {
+                    "name": "us-west-1"
+                },
+                {
+                    "name": "us-west-2"
+                }
+            ],
+            "name": "CloudFormation Service",
+            "schema": "http://elasticbox.net/schemas/aws/cloudformation/cloudformation"
+        },
+        {
+            "locations": [
+                {
+                    "clusters": [],
+                    "name": "ap-northeast-1"
+                },
+                {
+                    "name": "ap-northeast-2"
+                },
+                {
+                    "name": "ap-south-1"
+                },
+                {
+                    "clusters": [],
+                    "name": "ap-southeast-1"
+                },
+                {
+                    "clusters": [],
+                    "name": "ap-southeast-2"
+                },
+                {
+                    "clusters": [],
+                    "name": "ca-central-1"
+                },
+                {
+                    "clusters": [],
+                    "name": "eu-central-1"
+                },
+                {
+                    "clusters": [],
+                    "name": "eu-west-1"
+                },
+                {
+                    "clusters": [],
+                    "name": "eu-west-2"
+                },
+                {
+                    "clusters": [],
+                    "name": "eu-west-3"
+                },
+                {
+                    "name": "sa-east-1"
+                },
+                {
+                    "clusters": [],
+                    "name": "us-east-1"
+                },
+                {
+                    "clusters": [],
+                    "name": "us-east-2"
+                },
+                {
+                    "clusters": [],
+                    "name": "us-west-1"
+                },
+                {
+                    "clusters": [],
+                    "name": "us-west-2"
+                }
+            ],
+            "icon": "images/platform/amazon-ecs.png",
+            "name": "Container Service",
+            "roles": [
+                {
+                    "name": "None"
+                }
+            ],
+            "schema": "http://elasticbox.net/schemas/aws/ecs/container"
+        },
+        {
+            "flavors": [
+                {
+                    "name": "c1.medium"
+                },
+                {
+                    "name": "c1.xlarge"
+                },
+                {
+                    "name": "c3.large"
+                },
+                {
+                    "name": "c3.xlarge"
+                },
+                {
+                    "name": "c3.2xlarge"
+                },
+                {
+                    "name": "c3.4xlarge"
+                },
+                {
+                    "name": "c3.8xlarge"
+                },
+                {
+                    "name": "c4.large"
+                },
+                {
+                    "name": "c4.xlarge"
+                },
+                {
+                    "name": "c4.2xlarge"
+                },
+                {
+                    "name": "c4.4xlarge"
+                },
+                {
+                    "name": "c4.8xlarge"
+                },
+                {
+                    "name": "c5.large"
+                },
+                {
+                    "name": "c5.xlarge"
+                },
+                {
+                    "name": "c5.2xlarge"
+                },
+                {
+                    "name": "c5.4xlarge"
+                },
+                {
+                    "name": "c5.9xlarge"
+                },
+                {
+                    "name": "c5.18xlarge"
+                },
+                {
+                    "name": "c5d.large"
+                },
+                {
+                    "name": "c5d.xlarge"
+                },
+                {
+                    "name": "c5d.2xlarge"
+                },
+                {
+                    "name": "c5d.4xlarge"
+                },
+                {
+                    "name": "c5d.9xlarge"
+                },
+                {
+                    "name": "c5d.18xlarge"
+                },
+                {
+                    "name": "cc2.8xlarge"
+                },
+                {
+                    "name": "cr1.8xlarge"
+                },
+                {
+                    "name": "d2.xlarge"
+                },
+                {
+                    "name": "d2.2xlarge"
+                },
+                {
+                    "name": "d2.4xlarge"
+                },
+                {
+                    "name": "d2.8xlarge"
+                },
+                {
+                    "name": "f1.2xlarge"
+                },
+                {
+                    "name": "f1.16xlarge"
+                },
+                {
+                    "name": "g2.2xlarge"
+                },
+                {
+                    "name": "g2.8xlarge"
+                },
+                {
+                    "name": "g3.4xlarge"
+                },
+                {
+                    "name": "g3.8xlarge"
+                },
+                {
+                    "name": "g3.16xlarge"
+                },
+                {
+                    "name": "h1.2xlarge"
+                },
+                {
+                    "name": "h1.4xlarge"
+                },
+                {
+                    "name": "h1.8xlarge"
+                },
+                {
+                    "name": "h1.16xlarge"
+                },
+                {
+                    "name": "hs1.8xlarge"
+                },
+                {
+                    "name": "i2.xlarge"
+                },
+                {
+                    "name": "i2.2xlarge"
+                },
+                {
+                    "name": "i2.4xlarge"
+                },
+                {
+                    "name": "i2.8xlarge"
+                },
+                {
+                    "name": "i3.large"
+                },
+                {
+                    "name": "i3.metal"
+                },
+                {
+                    "name": "i3.xlarge"
+                },
+                {
+                    "name": "i3.2xlarge"
+                },
+                {
+                    "name": "i3.4xlarge"
+                },
+                {
+                    "name": "i3.8xlarge"
+                },
+                {
+                    "name": "i3.16xlarge"
+                },
+                {
+                    "name": "m1.small"
+                },
+                {
+                    "name": "m1.medium"
+                },
+                {
+                    "name": "m1.large"
+                },
+                {
+                    "name": "m1.xlarge"
+                },
+                {
+                    "name": "m2.xlarge"
+                },
+                {
+                    "name": "m2.2xlarge"
+                },
+                {
+                    "name": "m2.4xlarge"
+                },
+                {
+                    "name": "m3.medium"
+                },
+                {
+                    "name": "m3.large"
+                },
+                {
+                    "name": "m3.xlarge"
+                },
+                {
+                    "name": "m3.2xlarge"
+                },
+                {
+                    "name": "m4.large"
+                },
+                {
+                    "name": "m4.xlarge"
+                },
+                {
+                    "name": "m4.2xlarge"
+                },
+                {
+                    "name": "m4.4xlarge"
+                },
+                {
+                    "name": "m4.10xlarge"
+                },
+                {
+                    "name": "m4.16xlarge"
+                },
+                {
+                    "name": "m5.large"
+                },
+                {
+                    "name": "m5.xlarge"
+                },
+                {
+                    "name": "m5.2xlarge"
+                },
+                {
+                    "name": "m5.4xlarge"
+                },
+                {
+                    "name": "m5.12xlarge"
+                },
+                {
+                    "name": "m5.24xlarge"
+                },
+                {
+                    "name": "m5d.large"
+                },
+                {
+                    "name": "m5d.xlarge"
+                },
+                {
+                    "name": "m5d.2xlarge"
+                },
+                {
+                    "name": "m5d.4xlarge"
+                },
+                {
+                    "name": "m5d.12xlarge"
+                },
+                {
+                    "name": "m5d.24xlarge"
+                },
+                {
+                    "name": "p2.xlarge"
+                },
+                {
+                    "name": "p2.8xlarge"
+                },
+                {
+                    "name": "p2.16xlarge"
+                },
+                {
+                    "name": "r3.large"
+                },
+                {
+                    "name": "r3.xlarge"
+                },
+                {
+                    "name": "r3.2xlarge"
+                },
+                {
+                    "name": "r3.4xlarge"
+                },
+                {
+                    "name": "r3.8xlarge"
+                },
+                {
+                    "name": "r4.large"
+                },
+                {
+                    "name": "r4.xlarge"
+                },
+                {
+                    "name": "r4.2xlarge"
+                },
+                {
+                    "name": "r4.4xlarge"
+                },
+                {
+                    "name": "r4.8xlarge"
+                },
+                {
+                    "name": "r4.16xlarge"
+                },
+                {
+                    "name": "t1.micro"
+                },
+                {
+                    "name": "t2.micro"
+                },
+                {
+                    "name": "t2.small"
+                },
+                {
+                    "name": "t2.medium"
+                },
+                {
+                    "name": "t2.large"
+                },
+                {
+                    "name": "t2.xlarge"
+                },
+                {
+                    "name": "t2.2xlarge"
+                },
+                {
+                    "name": "x1.16xlarge"
+                },
+                {
+                    "name": "x1.32xlarge"
+                },
+                {
+                    "name": "x1e.xlarge"
+                },
+                {
+                    "name": "x1e.2xlarge"
+                },
+                {
+                    "name": "x1e.4xlarge"
+                },
+                {
+                    "name": "x1e.8xlarge"
+                },
+                {
+                    "name": "x1e.16xlarge"
+                },
+                {
+                    "name": "x1e.32xlarge"
+                }
+            ],
+            "name": "Linux Compute",
+            "roles": [
+                {
+                    "name": "None"
+                },
+                {
+                    "name": "AutoScaleS3Access"
+                },
+                {
+                    "name": "MeyerTest"
+                },
+                {
+                    "name": "test-chris"
+                }
+            ],
+            "locations": [
+                {
+                    "clouds": [
                         {
-                           "name":"us-east-1b"
+                            "subnets": [
+                                {
+                                    "description": "172.31.16.0/20",
+                                    "name": "subnet-231b2d0b"
+                                },
+                                {
+                                    "description": "172.31.0.0/20",
+                                    "name": "subnet-af8e04f4"
+                                },
+                                {
+                                    "description": "172.31.32.0/20",
+                                    "name": "subnet-f2e2bcbb"
+                                }
+                            ],
+                            "description": "172.31.0.0/16",
+                            "target_groups": [],
+                            "load_balancers": [],
+                            "security_groups": [
+                                {
+                                    "name": "Automatic"
+                                },
+                                {
+                                    "description": "default VPC security group",
+                                    "name": "sg-40c1ea39"
+                                }
+                            ],
+                            "name": "vpc-9ff879f8"
+                        }
+                    ],
+                    "name": "ap-northeast-1",
+                    "placement_groups": [],
+                    "images": [
+                        {
+                            "owner": "user",
+                            "description": "Latest Amazon AMI",
+                            "name": "Linux Compute"
                         },
                         {
-                           "name":"us-east-1c"
+                            "owner": "user",
+                            "description": "CentOS 7 for Management Appliance",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 8
+                            },
+                            "name": "ami-3185744e"
+                        }
+                    ],
+                    "alarms": [],
+                    "keypairs": [
+                        {
+                            "name": "None"
+                        }
+                    ]
+                },
+                {
+                    "clouds": [
+                        {
+                            "subnets": [
+                                {
+                                    "description": "172.31.0.0/20",
+                                    "name": "subnet-9ecc86f6"
+                                },
+                                {
+                                    "description": "172.31.16.0/20",
+                                    "name": "subnet-1dee5651"
+                                }
+                            ],
+                            "description": "172.31.0.0/16",
+                            "target_groups": [],
+                            "load_balancers": [],
+                            "security_groups": [
+                                {
+                                    "name": "Automatic"
+                                },
+                                {
+                                    "description": "default VPC security group",
+                                    "name": "sg-ff282394"
+                                }
+                            ],
+                            "name": "vpc-08296b60"
+                        }
+                    ],
+                    "name": "ap-northeast-2",
+                    "placement_groups": [],
+                    "images": [
+                        {
+                            "owner": "user",
+                            "description": "Latest Amazon AMI",
+                            "name": "Linux Compute"
                         },
                         {
-                           "name":"us-east-1d"
+                            "owner": "user",
+                            "description": "CentOS 7 for Management Appliance",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 8
+                            },
+                            "name": "ami-46963e28"
                         }
-                     ],
-                     "name":"EC2",
-                     "security_groups":[
+                    ],
+                    "alarms": [],
+                    "keypairs": [
                         {
-                           "name":"Automatic"
+                            "name": "None"
                         }
-                     ]
-                  },
-                  {
-                     "subnets":[
+                    ]
+                },
+                {
+                    "clouds": [
                         {
-                           "description":"172.31.0.0/20",
-                           "name":"subnet-53556515"
+                            "subnets": [
+                                {
+                                    "description": "172.31.0.0/20",
+                                    "name": "subnet-d310e69f"
+                                },
+                                {
+                                    "description": "172.31.16.0/20",
+                                    "name": "subnet-f855d390"
+                                }
+                            ],
+                            "description": "172.31.0.0/16",
+                            "target_groups": [],
+                            "load_balancers": [],
+                            "security_groups": [
+                                {
+                                    "name": "Automatic"
+                                },
+                                {
+                                    "description": "default VPC security group",
+                                    "name": "sg-d39d11b8"
+                                }
+                            ],
+                            "name": "vpc-1585067d"
+                        }
+                    ],
+                    "name": "ap-south-1",
+                    "placement_groups": [],
+                    "images": [
+                        {
+                            "owner": "user",
+                            "description": "Latest Amazon AMI",
+                            "name": "Linux Compute"
                         },
                         {
-                           "description":"172.31.16.0/20",
-                           "name":"subnet-002b3c74"
+                            "owner": "user",
+                            "description": "CentOS 7 for Management Appliance",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 8
+                            },
+                            "name": "ami-48301d27"
+                        }
+                    ],
+                    "alarms": [],
+                    "keypairs": [
+                        {
+                            "name": "None"
+                        }
+                    ]
+                },
+                {
+                    "clouds": [
+                        {
+                            "subnets": [
+                                {
+                                    "description": "172.31.16.0/20",
+                                    "name": "subnet-15dc9372"
+                                },
+                                {
+                                    "description": "172.31.0.0/20",
+                                    "name": "subnet-2d60776b"
+                                },
+                                {
+                                    "description": "172.31.32.0/20",
+                                    "name": "subnet-22b6c96b"
+                                }
+                            ],
+                            "description": "172.31.0.0/16",
+                            "target_groups": [],
+                            "load_balancers": [],
+                            "security_groups": [
+                                {
+                                    "name": "Automatic"
+                                },
+                                {
+                                    "description": "default VPC security group",
+                                    "name": "sg-e3a2269a"
+                                }
+                            ],
+                            "name": "vpc-b00a89d7"
+                        }
+                    ],
+                    "name": "ap-southeast-1",
+                    "placement_groups": [],
+                    "images": [
+                        {
+                            "owner": "user",
+                            "description": "Latest Amazon AMI",
+                            "name": "Linux Compute"
                         },
                         {
-                           "description":"172.31.32.0/20",
-                           "name":"subnet-425b0b6a"
+                            "owner": "user",
+                            "description": "CentOS 7 for Management Appliance",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 8
+                            },
+                            "name": "ami-da6151a6"
                         }
-                     ],
-                     "description":"172.31.0.0/16",
-                     "security_groups":[
+                    ],
+                    "alarms": [],
+                    "keypairs": [
                         {
-                           "description":"Elasticbox:a0215ef6-dd9e-49c3-bcbf-77f1567c630c - SG for eb-aknf5",
-                           "name":"sg-babf1cdf"
+                            "name": "None"
+                        }
+                    ]
+                },
+                {
+                    "clouds": [
+                        {
+                            "subnets": [
+                                {
+                                    "description": "172.31.32.0/20",
+                                    "name": "subnet-66492f2f"
+                                },
+                                {
+                                    "description": "172.31.0.0/20",
+                                    "name": "subnet-dfc5b0b8"
+                                },
+                                {
+                                    "description": "172.31.16.0/20",
+                                    "name": "subnet-3a699f62"
+                                }
+                            ],
+                            "description": "172.31.0.0/16",
+                            "target_groups": [],
+                            "load_balancers": [],
+                            "security_groups": [
+                                {
+                                    "name": "Automatic"
+                                },
+                                {
+                                    "description": "default VPC security group",
+                                    "name": "sg-5b299b22"
+                                }
+                            ],
+                            "name": "vpc-65329802"
+                        }
+                    ],
+                    "name": "ap-southeast-2",
+                    "placement_groups": [],
+                    "images": [
+                        {
+                            "owner": "user",
+                            "description": "Latest Amazon AMI",
+                            "name": "Linux Compute"
                         },
                         {
-                           "description":"default VPC security group",
-                           "name":"sg-77b71412"
+                            "owner": "user",
+                            "description": "CentOS 7 for Management Appliance",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 8
+                            },
+                            "name": "ami-0d13c26f"
+                        }
+                    ],
+                    "alarms": [],
+                    "keypairs": [
+                        {
+                            "name": "None"
+                        }
+                    ]
+                },
+                {
+                    "clouds": [
+                        {
+                            "subnets": [
+                                {
+                                    "description": "172.31.16.0/20",
+                                    "name": "subnet-3119e159"
+                                },
+                                {
+                                    "description": "172.31.0.0/20",
+                                    "name": "subnet-823b2cf9"
+                                }
+                            ],
+                            "description": "172.31.0.0/16",
+                            "target_groups": [],
+                            "load_balancers": [],
+                            "security_groups": [
+                                {
+                                    "name": "Automatic"
+                                },
+                                {
+                                    "description": "default VPC security group",
+                                    "name": "sg-c09fa1a8"
+                                }
+                            ],
+                            "name": "vpc-9e3fccf6"
+                        }
+                    ],
+                    "name": "ca-central-1",
+                    "placement_groups": [],
+                    "images": [
+                        {
+                            "owner": "user",
+                            "description": "Latest Amazon AMI",
+                            "name": "Linux Compute"
                         },
                         {
-                           "description":"Elasticbox:a0215ef6-dd9e-49c3-bcbf-77f1567c630c - SG for eb-u3yyi",
-                           "name":"sg-12c26077"
+                            "owner": "user",
+                            "description": "CentOS 7 for Management Appliance",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 8
+                            },
+                            "name": "ami-456aea21"
                         }
-                     ],
-                     "name":"vpc-f6f10e93"
-                  }
-               ],
-               "keypairs":[
-                  {
-                     "name":"None"
-                  }
-               ],
-               "name":"us-east-1"
-            },
-            {
-               "images":[
-                  {
-                     "description":"Latest AWS Linux AMI",
-                     "name":"Linux Compute"
-                  }
-               ],
-               "clouds":[
-                  {
-                     "subnets":[
+                    ],
+                    "alarms": [],
+                    "keypairs": [
                         {
-                           "name":"us-west-1a"
+                            "name": "None"
+                        }
+                    ]
+                },
+                {
+                    "clouds": [
+                        {
+                            "subnets": [
+                                {
+                                    "description": "172.31.16.0/20",
+                                    "name": "subnet-1557147e"
+                                },
+                                {
+                                    "description": "172.31.32.0/20",
+                                    "name": "subnet-454af238"
+                                },
+                                {
+                                    "description": "172.31.0.0/20",
+                                    "name": "subnet-07029b4a"
+                                }
+                            ],
+                            "description": "172.31.0.0/16",
+                            "target_groups": [],
+                            "load_balancers": [],
+                            "security_groups": [
+                                {
+                                    "name": "Automatic"
+                                },
+                                {
+                                    "description": "default VPC security group",
+                                    "name": "sg-8a14a6e7"
+                                }
+                            ],
+                            "name": "vpc-70e7671b"
+                        }
+                    ],
+                    "name": "eu-central-1",
+                    "placement_groups": [],
+                    "images": [
+                        {
+                            "owner": "user",
+                            "description": "Latest Amazon AMI",
+                            "name": "Linux Compute"
                         },
                         {
-                           "name":"us-west-1b"
+                            "owner": "user",
+                            "description": "CentOS 7 for Management Appliance",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 8
+                            },
+                            "name": "ami-9a183671"
                         }
-                     ],
-                     "name":"EC2",
-                     "security_groups":[
+                    ],
+                    "alarms": [],
+                    "keypairs": [
                         {
-                           "name":"Automatic"
+                            "name": "None"
                         }
-                     ]
-                  },
-                  {
-                     "subnets":[
+                    ]
+                },
+                {
+                    "clouds": [
                         {
-                           "description":"172.31.0.0/20",
-                           "name":"subnet-68e4c32e"
+                            "subnets": [
+                                {
+                                    "description": "172.31.16.0/20",
+                                    "name": "subnet-836db4cb"
+                                },
+                                {
+                                    "description": "172.31.0.0/20",
+                                    "name": "subnet-3948835f"
+                                },
+                                {
+                                    "description": "172.31.32.0/20",
+                                    "name": "subnet-9b5d49c0"
+                                }
+                            ],
+                            "description": "172.31.0.0/16",
+                            "target_groups": [],
+                            "load_balancers": [],
+                            "security_groups": [
+                                {
+                                    "name": "Automatic"
+                                },
+                                {
+                                    "description": "default VPC security group",
+                                    "name": "sg-3e154144"
+                                }
+                            ],
+                            "name": "vpc-2b5fe54d"
+                        }
+                    ],
+                    "name": "eu-west-1",
+                    "placement_groups": [],
+                    "images": [
+                        {
+                            "owner": "user",
+                            "description": "Latest Amazon AMI",
+                            "name": "Linux Compute"
                         },
                         {
-                           "description":"172.31.16.0/20",
-                           "name":"subnet-75846010"
+                            "owner": "user",
+                            "description": "CentOS 7 for Management Appliance",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 8
+                            },
+                            "name": "ami-4c457735"
                         }
-                     ],
-                     "description":"172.31.0.0/16",
-                     "security_groups":[
+                    ],
+                    "alarms": [],
+                    "keypairs": [
                         {
-                           "description":"default VPC security group",
-                           "name":"sg-14e80c71"
+                            "name": "None"
                         }
-                     ],
-                     "name":"vpc-4cf4e82e"
-                  }
-               ],
-               "keypairs":[
-                  {
-                     "name":"None"
-                  }
-               ],
-               "name":"us-west-1"
-            },
-            {
-               "images":[
-                  {
-                     "description":"Latest AWS Linux AMI",
-                     "name":"Linux Compute"
-                  }
-               ],
-               "clouds":[
-                  {
-                     "subnets":[
+                    ]
+                },
+                {
+                    "clouds": [
                         {
-                           "name":"us-west-2a"
+                            "subnets": [
+                                {
+                                    "description": "172.31.16.0/20",
+                                    "name": "subnet-9f7e9fe5"
+                                },
+                                {
+                                    "description": "172.31.32.0/20",
+                                    "name": "subnet-fae6d0b7"
+                                },
+                                {
+                                    "description": "172.31.0.0/20",
+                                    "name": "subnet-286fc141"
+                                }
+                            ],
+                            "description": "172.31.0.0/16",
+                            "target_groups": [],
+                            "load_balancers": [],
+                            "security_groups": [
+                                {
+                                    "name": "Automatic"
+                                },
+                                {
+                                    "description": "default VPC security group",
+                                    "name": "sg-e98e8581"
+                                }
+                            ],
+                            "name": "vpc-2b1fda43"
+                        }
+                    ],
+                    "name": "eu-west-2",
+                    "placement_groups": [],
+                    "images": [
+                        {
+                            "owner": "user",
+                            "description": "Latest Amazon AMI",
+                            "name": "Linux Compute"
                         },
                         {
-                           "name":"us-west-2b"
+                            "owner": "user",
+                            "description": "CentOS 7 for Management Appliance",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 8
+                            },
+                            "name": "ami-4726cb20"
+                        }
+                    ],
+                    "alarms": [],
+                    "keypairs": [
+                        {
+                            "name": "None"
+                        }
+                    ]
+                },
+                {
+                    "clouds": [
+                        {
+                            "subnets": [
+                                {
+                                    "description": "172.31.16.0/20",
+                                    "name": "subnet-d134e3aa"
+                                },
+                                {
+                                    "description": "172.31.32.0/20",
+                                    "name": "subnet-c70fe38a"
+                                },
+                                {
+                                    "description": "172.31.0.0/20",
+                                    "name": "subnet-b909b4d0"
+                                }
+                            ],
+                            "description": "172.31.0.0/16",
+                            "target_groups": [],
+                            "load_balancers": [],
+                            "security_groups": [
+                                {
+                                    "name": "Automatic"
+                                },
+                                {
+                                    "description": "default VPC security group",
+                                    "name": "sg-3d155254"
+                                }
+                            ],
+                            "name": "vpc-ac15aec5"
+                        }
+                    ],
+                    "name": "eu-west-3",
+                    "placement_groups": [],
+                    "images": [
+                        {
+                            "owner": "user",
+                            "description": "Latest Amazon AMI",
+                            "name": "Linux Compute"
                         },
                         {
-                           "name":"us-west-2c"
+                            "owner": "user",
+                            "description": "CentOS 7 for Management Appliance",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 8
+                            },
+                            "name": "ami-6276c71f"
                         }
-                     ],
-                     "name":"EC2",
-                     "security_groups":[
+                    ],
+                    "alarms": [],
+                    "keypairs": [
                         {
-                           "name":"Automatic"
+                            "name": "None"
                         }
-                     ]
-                  },
-                  {
-                     "subnets":[
+                    ]
+                },
+                {
+                    "clouds": [
                         {
-                           "description":"172.31.16.0/20",
-                           "name":"subnet-b1353dc5"
+                            "subnets": [
+                                {
+                                    "description": "172.31.0.0/20",
+                                    "name": "subnet-35133052"
+                                },
+                                {
+                                    "description": "172.31.16.0/20",
+                                    "name": "subnet-aa3001f2"
+                                }
+                            ],
+                            "description": "172.31.0.0/16",
+                            "target_groups": [],
+                            "load_balancers": [],
+                            "security_groups": [
+                                {
+                                    "name": "Automatic"
+                                },
+                                {
+                                    "description": "default VPC security group",
+                                    "name": "sg-39b32a5f"
+                                }
+                            ],
+                            "name": "vpc-050fa062"
+                        }
+                    ],
+                    "name": "sa-east-1",
+                    "placement_groups": [],
+                    "images": [
+                        {
+                            "owner": "user",
+                            "description": "Latest Amazon AMI",
+                            "name": "Linux Compute"
                         },
                         {
-                           "description":"172.31.0.0/20",
-                           "name":"subnet-63e2c925"
+                            "owner": "user",
+                            "description": "CentOS 7 for Management Appliance",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 8
+                            },
+                            "name": "ami-c2e6baae"
+                        }
+                    ],
+                    "alarms": [],
+                    "keypairs": [
+                        {
+                            "name": "None"
+                        }
+                    ]
+                },
+                {
+                    "clouds": [
+                        {
+                            "subnets": [
+                                {
+                                    "description": "Private subnet",
+                                    "name": "subnet-0f4d827f0959c45a4"
+                                },
+                                {
+                                    "description": "Public subnet",
+                                    "name": "subnet-0d3033d2b8bf13f12"
+                                }
+                            ],
+                            "description": "VPC1",
+                            "target_groups": [],
+                            "load_balancers": [],
+                            "security_groups": [
+                                {
+                                    "name": "Automatic"
+                                },
+                                {
+                                    "description": "default VPC security group",
+                                    "name": "sg-0c48ef851d23ee3cc"
+                                }
+                            ],
+                            "name": "vpc-0ad1a5959b295f65e"
                         },
                         {
-                           "description":"172.31.32.0/20",
-                           "name":"subnet-97d43cf2"
-                        }
-                     ],
-                     "description":"172.31.0.0/16",
-                     "security_groups":[
-                        {
-                           "description":"default VPC security group",
-                           "name":"sg-0d659d68"
-                        }
-                     ],
-                     "name":"vpc-efa1418a"
-                  }
-               ],
-               "keypairs":[
-                  {
-                     "name":"None"
-                  }
-               ],
-               "name":"us-west-2"
-            },
-            {
-               "images":[
-                  {
-                     "description":"Latest AWS Linux AMI",
-                     "name":"Linux Compute"
-                  }
-               ],
-               "clouds":[
-                  {
-                     "subnets":[
-                        {
-                           "name":"eu-west-1a"
+                            "subnets": [
+                                {
+                                    "description": "172.31.64.0/20",
+                                    "name": "subnet-f56242ca"
+                                },
+                                {
+                                    "description": "172.31.0.0/20",
+                                    "name": "subnet-32a9bc56"
+                                },
+                                {
+                                    "description": "172.31.16.0/20",
+                                    "name": "subnet-09e41a43"
+                                },
+                                {
+                                    "description": "172.31.32.0/20",
+                                    "name": "subnet-4ec7ed13"
+                                },
+                                {
+                                    "description": "172.31.48.0/20",
+                                    "name": "subnet-772d8978"
+                                },
+                                {
+                                    "description": "172.31.80.0/20",
+                                    "name": "subnet-c4f5c1eb"
+                                }
+                            ],
+                            "description": "172.31.0.0/16",
+                            "target_groups": [
+                                {
+                                    "default_port": 80,
+                                    "protocol": "HTTP",
+                                    "target_type": "instance",
+                                    "arn": "arn:aws:elasticloadbalancing:us-east-1:636588615608:targetgroup/partsultdLBRouting/e1031aa116bf033f",
+                                    "name": "partsultdLBRouting"
+                                }
+                            ],
+                            "load_balancers": [],
+                            "security_groups": [
+                                {
+                                    "name": "Automatic"
+                                },
+                                {
+                                    "description": "This security group was generated by AWS Marketplace and is based on recommended settings for Red Hat Enterprise Linux (RHEL) 6 (HVM) version 6.7_HVM_20160219 provided by Amazon Web Services",
+                                    "name": "sg-06f2b8b511216c8f3"
+                                },
+                                {
+                                    "description": "This security group was generated by AWS Marketplace and is based on recommended settings for CentOS 7 (x86_64) - with Updates HVM version 1805_01 provided by Centos.org",
+                                    "name": "sg-0752c07ce1afb7f9a"
+                                },
+                                {
+                                    "description": "Enable SSH access via port 22",
+                                    "name": "sg-092de9abb7c435e37"
+                                },
+                                {
+                                    "description": "This security group was generated by AWS Marketplace and is based on recommended settings for Red Hat Enterprise Linux (RHEL) 6 version 6.5_GA provided by Amazon Web Services",
+                                    "name": "sg-0db584c264083fbd2"
+                                },
+                                {
+                                    "description": "This security group was generated by AWS Marketplace and is based on recommended settings for CentOS 6 (x86_64) - with Updates HVM version 1805_01 provided by Centos.org",
+                                    "name": "sg-0f53c2fa9738d1f55"
+                                },
+                                {
+                                    "description": "default VPC security group",
+                                    "name": "sg-6969051f"
+                                }
+                            ],
+                            "name": "vpc-711a9f0a"
                         },
                         {
-                           "name":"eu-west-1b"
+                            "subnets": [
+                                {
+                                    "description": "Public Subnet #2",
+                                    "name": "subnet-01f48b41fd743c464"
+                                },
+                                {
+                                    "description": "Private subnet",
+                                    "name": "subnet-072d27171887b3f3b"
+                                },
+                                {
+                                    "description": "Public subnet",
+                                    "name": "subnet-08c8e59037abe931d"
+                                },
+                                {
+                                    "description": "Private subnet #2",
+                                    "name": "subnet-00175e924b602a94f"
+                                }
+                            ],
+                            "description": "VPC2",
+                            "target_groups": [
+                                {
+                                    "default_port": 80,
+                                    "protocol": "HTTP",
+                                    "target_type": "instance",
+                                    "arn": "arn:aws:elasticloadbalancing:us-east-1:636588615608:targetgroup/partsultdASGGroup/21bf3b5ba88c8714",
+                                    "name": "partsultdASGGroup"
+                                }
+                            ],
+                            "load_balancers": [],
+                            "security_groups": [
+                                {
+                                    "name": "Automatic"
+                                },
+                                {
+                                    "description": "launch-wizard-3 created 2018-03-18T15:37:19.910-05:00",
+                                    "name": "sg-00004b4a49e24b9ff"
+                                },
+                                {
+                                    "description": "launch-wizard-4 created 2018-03-20T13:45:11.721-05:00",
+                                    "name": "sg-02419971da8f7872e"
+                                },
+                                {
+                                    "description": "SG for AutoScale Group",
+                                    "name": "sg-06a3092ac1fdfc419"
+                                },
+                                {
+                                    "description": "launch-wizard-1 created 2018-03-18T14:29:23.439-05:00",
+                                    "name": "sg-07a8d5b8803636fcc"
+                                },
+                                {
+                                    "description": "launch-wizard-2 created 2018-03-18T14:32:32.770-05:00",
+                                    "name": "sg-081aae6f8f5b4f495"
+                                },
+                                {
+                                    "description": "default VPC security group",
+                                    "name": "sg-090fe3844fa6abfb6"
+                                },
+                                {
+                                    "description": "Created from the RDS Management Console: 2018/03/17 01:58:33",
+                                    "name": "sg-0a401b0de0f86fcee"
+                                },
+                                {
+                                    "description": "launch-wizard-5 created 2018-03-20T13:50:32.057-05:00",
+                                    "name": "sg-0d9aa67d083634708"
+                                },
+                                {
+                                    "description": "launch-wizard-6 created 2018-03-20T20:01:05.847-05:00",
+                                    "name": "sg-0dd22da7d662ab2b8"
+                                }
+                            ],
+                            "name": "vpc-e446c29f"
+                        }
+                    ],
+                    "name": "us-east-1",
+                    "placement_groups": [],
+                    "images": [
+                        {
+                            "owner": "external",
+                            "description": "Ubunut 16.04 USE1",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 8
+                            },
+                            "name": "ami-759bc50a"
                         },
                         {
-                           "name":"eu-west-1c"
-                        }
-                     ],
-                     "name":"EC2",
-                     "security_groups":[
-                        {
-                           "name":"Automatic"
-                        }
-                     ]
-                  },
-                  {
-                     "subnets":[
-                        {
-                           "description":"172.31.16.0/20",
-                           "name":"subnet-b50ae6d0"
+                            "owner": "external",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 8
+                            },
+                            "name": "ami-456b493a",
+                            "description": "Ubuntu 14.04 AWSUSE1"
                         },
                         {
-                           "description":"172.31.0.0/20",
-                           "name":"subnet-76d1f830"
+                            "owner": "external",
+                            "description": "RHEL 7.5 AWSUSE1",
+                            "name": "ami-6871a115",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 10
+                            }
                         },
                         {
-                           "description":"172.31.32.0/20",
-                           "name":"subnet-c75f57b3"
-                        }
-                     ],
-                     "description":"172.31.0.0/16",
-                     "security_groups":[
-                        {
-                           "description":"default VPC security group",
-                           "name":"sg-91d831f4"
-                        }
-                     ],
-                     "name":"vpc-b9c2dadb"
-                  }
-               ],
-               "keypairs":[
-                  {
-                     "name":"None"
-                  }
-               ],
-               "name":"eu-west-1"
-            },
-            {
-               "images":[
-                  {
-                     "description":"Latest AWS Linux AMI",
-                     "name":"Linux Compute"
-                  }
-               ],
-               "clouds":[
-                  {
-                     "subnets":[
-                        {
-                           "name":"ap-northeast-1a"
+                            "owner": "external",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 10
+                            },
+                            "name": "ami-f37b4b99",
+                            "description": "RHEL6 AWSUSE1"
                         },
                         {
-                           "name":"ap-northeast-1c"
-                        }
-                     ],
-                     "name":"EC2",
-                     "security_groups":[
-                        {
-                           "name":"Automatic"
-                        }
-                     ]
-                  },
-                  {
-                     "subnets":[
-                        {
-                           "description":"172.31.16.0/20",
-                           "name":"subnet-2c27046a"
+                            "owner": "external",
+                            "description": "CentOS7 AWSUSE1",
+                            "name": "ami-9887c6e7",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 8
+                            }
                         },
                         {
-                           "description":"172.31.0.0/20",
-                           "name":"subnet-1b4e4c6f"
-                        }
-                     ],
-                     "description":"172.31.0.0/16",
-                     "security_groups":[
-                        {
-                           "description":"default VPC security group",
-                           "name":"sg-0995726c"
-                        }
-                     ],
-                     "name":"vpc-3997885b"
-                  }
-               ],
-               "keypairs":[
-                  {
-                     "name":"None"
-                  }
-               ],
-               "name":"ap-northeast-1"
-            },
-            {
-               "images":[
-                  {
-                     "description":"Latest AWS Linux AMI",
-                     "name":"Linux Compute"
-                  }
-               ],
-               "clouds":[
-                  {
-                     "subnets":[
-                        {
-                           "name":"ap-southeast-1a"
+                            "owner": "external",
+                            "description": "CentOS6 AWSUSE1",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 8
+                            },
+                            "name": "ami-1585c46a"
                         },
                         {
-                           "name":"ap-southeast-1b"
-                        }
-                     ],
-                     "name":"EC2",
-                     "security_groups":[
-                        {
-                           "name":"Automatic"
-                        }
-                     ]
-                  },
-                  {
-                     "subnets":[
-                        {
-                           "description":"172.31.16.0/20",
-                           "name":"subnet-ea12149e"
+                            "owner": "external",
+                            "root_disk": null,
+                            "name": "ami-b08dd3cf",
+                            "description": "Ubuntu16.04 - 2"
                         },
                         {
-                           "description":"172.31.0.0/20",
-                           "name":"subnet-35618750"
-                        }
-                     ],
-                     "description":"172.31.0.0/16",
-                     "security_groups":[
-                        {
-                           "description":"default VPC security group",
-                           "name":"sg-3c668359"
-                        }
-                     ],
-                     "name":"vpc-95435cf7"
-                  }
-               ],
-               "keypairs":[
-                  {
-                     "name":"None"
-                  }
-               ],
-               "name":"ap-southeast-1"
-            },
-            {
-               "images":[
-                  {
-                     "description":"Latest AWS Linux AMI",
-                     "name":"Linux Compute"
-                  }
-               ],
-               "clouds":[
-                  {
-                     "subnets":[
-                        {
-                           "name":"ap-southeast-2a"
+                            "owner": "external",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 8
+                            },
+                            "description": "Ubuntu 16.04 - 3",
+                            "name": "ami-749bc50b"
                         },
                         {
-                           "name":"ap-southeast-2b"
-                        }
-                     ],
-                     "name":"EC2",
-                     "security_groups":[
-                        {
-                           "name":"Automatic"
-                        }
-                     ]
-                  },
-                  {
-                     "subnets":[
-                        {
-                           "description":"172.31.16.0/20",
-                           "name":"subnet-cb595abf"
+                            "owner": "user",
+                            "description": "Latest Amazon AMI",
+                            "name": "Linux Compute"
                         },
                         {
-                           "description":"172.31.0.0/20",
-                           "name":"subnet-95fd1af0"
-                        }
-                     ],
-                     "description":"172.31.0.0/16",
-                     "security_groups":[
-                        {
-                           "description":"default VPC security group",
-                           "name":"sg-9ffa1dfa"
-                        }
-                     ],
-                     "name":"vpc-c3e6f9a1"
-                  }
-               ],
-               "keypairs":[
-                  {
-                     "name":"None"
-                  }
-               ],
-               "name":"ap-southeast-2"
-            },
-            {
-               "images":[
-                  {
-                     "description":"Latest AWS Linux AMI",
-                     "name":"Linux Compute"
-                  }
-               ],
-               "clouds":[
-                  {
-                     "subnets":[
-                        {
-                           "name":"sa-east-1a"
+                            "owner": "user",
+                            "description": "CentOS 7 for Management Appliance",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 8
+                            },
+                            "name": "ami-d5bf2caa"
                         },
                         {
-                           "name":"sa-east-1b"
+                            "owner": "external",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 10
+                            },
+                            "name": "ami-2051294a",
+                            "description": "RHEL-7.2"
                         }
-                     ],
-                     "name":"EC2",
-                     "security_groups":[
+                    ],
+                    "alarms": [],
+                    "keypairs": [
                         {
-                           "name":"Automatic"
-                        }
-                     ]
-                  },
-                  {
-                     "subnets":[
-                        {
-                           "description":"172.31.16.0/20",
-                           "name":"subnet-04eff766"
+                            "name": "None"
                         },
                         {
-                           "description":"172.31.0.0/20",
-                           "name":"subnet-24281050"
-                        }
-                     ],
-                     "description":"172.31.0.0/16",
-                     "security_groups":[
-                        {
-                           "description":"default VPC security group",
-                           "name":"sg-27263d45"
-                        }
-                     ],
-                     "name":"vpc-058e2960"
-                  }
-               ],
-               "keypairs":[
-                  {
-                     "name":"None"
-                  }
-               ],
-               "name":"sa-east-1"
-            }
-         ],
-         "name":"Linux Compute",
-         "icon":"images/platform/large/linux.png"
-      },
-      {
-         "flavors":[
-            {
-               "name":"t1.micro"
-            },
-            {
-               "name":"m1.small"
-            },
-            {
-               "name":"m1.medium"
-            },
-            {
-               "name":"m1.large"
-            },
-            {
-               "name":"m1.xlarge"
-            },
-            {
-               "name":"m2.xlarge"
-            },
-            {
-               "name":"m2.2xlarge"
-            },
-            {
-               "name":"m2.4xlarge"
-            },
-            {
-               "name":"c1.medium"
-            },
-            {
-               "name":"c1.xlarge"
-            },
-            {
-               "name":"c3.4xlarge"
-            },
-            {
-               "name":"cr1.8xlarge"
-            },
-            {
-               "name":"m3.medium"
-            },
-            {
-               "name":"m3.large"
-            },
-            {
-               "name":"m3.xlarge"
-            },
-            {
-               "name":"m3.2xlarge"
-            }
-         ],
-         "schema":"http://elasticbox.net/schemas/aws/compute/windows",
-         "locations":[
-            {
-               "images":[
-                  {
-                     "description":"Latest AWS Windows AMI",
-                     "name":"Windows Compute"
-                  }
-               ],
-               "clouds":[
-                  {
-                     "subnets":[
-                        {
-                           "name":"us-east-1b"
+                            "name": "partsultd"
                         },
                         {
-                           "name":"us-east-1c"
+                            "name": "partsultdEC2Key"
+                        }
+                    ]
+                },
+                {
+                    "clouds": [
+                        {
+                            "subnets": [
+                                {
+                                    "description": "172.31.32.0/20",
+                                    "name": "subnet-6af8c827"
+                                },
+                                {
+                                    "description": "172.31.16.0/20",
+                                    "name": "subnet-5746832d"
+                                },
+                                {
+                                    "description": "172.31.0.0/20",
+                                    "name": "subnet-c569e4ad"
+                                }
+                            ],
+                            "description": "172.31.0.0/16",
+                            "target_groups": [],
+                            "load_balancers": [],
+                            "security_groups": [
+                                {
+                                    "name": "Automatic"
+                                },
+                                {
+                                    "description": "default VPC security group",
+                                    "name": "sg-70f68b1b"
+                                }
+                            ],
+                            "name": "vpc-463cb52e"
+                        }
+                    ],
+                    "name": "us-east-2",
+                    "placement_groups": [],
+                    "images": [
+                        {
+                            "owner": "user",
+                            "description": "Latest Amazon AMI",
+                            "name": "Linux Compute"
                         },
                         {
-                           "name":"us-east-1d"
+                            "owner": "user",
+                            "description": "CentOS 7 for Management Appliance",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 8
+                            },
+                            "name": "ami-77724e12"
                         }
-                     ],
-                     "name":"EC2",
-                     "security_groups":[
+                    ],
+                    "alarms": [],
+                    "keypairs": [
                         {
-                           "name":"Automatic"
+                            "name": "None"
                         }
-                     ]
-                  },
-                  {
-                     "subnets":[
+                    ]
+                },
+                {
+                    "clouds": [
                         {
-                           "description":"172.31.0.0/20",
-                           "name":"subnet-53556515"
+                            "subnets": [
+                                {
+                                    "description": "172.31.16.0/20",
+                                    "name": "subnet-5ac28b3d"
+                                },
+                                {
+                                    "description": "172.31.0.0/20",
+                                    "name": "subnet-7b198320"
+                                }
+                            ],
+                            "description": "172.31.0.0/16",
+                            "target_groups": [],
+                            "load_balancers": [],
+                            "security_groups": [
+                                {
+                                    "name": "Automatic"
+                                },
+                                {
+                                    "description": "default VPC security group",
+                                    "name": "sg-bc511fc5"
+                                }
+                            ],
+                            "name": "vpc-9561dbf2"
+                        }
+                    ],
+                    "name": "us-west-1",
+                    "placement_groups": [],
+                    "images": [
+                        {
+                            "owner": "user",
+                            "description": "Latest Amazon AMI",
+                            "name": "Linux Compute"
                         },
                         {
-                           "description":"172.31.16.0/20",
-                           "name":"subnet-002b3c74"
+                            "owner": "user",
+                            "description": "CentOS 7 for Management Appliance",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 8
+                            },
+                            "name": "ami-3b89905b"
+                        }
+                    ],
+                    "alarms": [],
+                    "keypairs": [
+                        {
+                            "name": "None"
+                        }
+                    ]
+                },
+                {
+                    "clouds": [
+                        {
+                            "subnets": [
+                                {
+                                    "description": "172.31.32.0/20",
+                                    "name": "subnet-4f408404"
+                                },
+                                {
+                                    "description": "172.31.16.0/20",
+                                    "name": "subnet-eb872292"
+                                },
+                                {
+                                    "description": "172.31.0.0/20",
+                                    "name": "subnet-58cd4c02"
+                                }
+                            ],
+                            "description": "172.31.0.0/16",
+                            "target_groups": [],
+                            "load_balancers": [],
+                            "security_groups": [
+                                {
+                                    "name": "Automatic"
+                                },
+                                {
+                                    "description": "default VPC security group",
+                                    "name": "sg-54cac02b"
+                                }
+                            ],
+                            "name": "vpc-f8d0a181"
+                        }
+                    ],
+                    "name": "us-west-2",
+                    "placement_groups": [],
+                    "images": [
+                        {
+                            "owner": "user",
+                            "description": "Latest Amazon AMI",
+                            "name": "Linux Compute"
                         },
                         {
-                           "description":"172.31.32.0/20",
-                           "name":"subnet-425b0b6a"
+                            "owner": "user",
+                            "description": "CentOS 7 for Management Appliance",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 8
+                            },
+                            "name": "ami-5490ed2c"
                         }
-                     ],
-                     "description":"172.31.0.0/16",
-                     "security_groups":[
+                    ],
+                    "alarms": [],
+                    "keypairs": [
                         {
-                           "description":"Elasticbox:a0215ef6-dd9e-49c3-bcbf-77f1567c630c - SG for eb-aknf5",
-                           "name":"sg-babf1cdf"
+                            "name": "None"
+                        }
+                    ]
+                }
+            ],
+            "certificates": [],
+            "schema": "http://elasticbox.net/schemas/aws/compute/linux",
+            "icon": "images/platform/linux.png"
+        },
+        {
+            "flavors": [
+                {
+                    "name": "c1.medium"
+                },
+                {
+                    "name": "c1.xlarge"
+                },
+                {
+                    "name": "c3.large"
+                },
+                {
+                    "name": "c3.xlarge"
+                },
+                {
+                    "name": "c3.2xlarge"
+                },
+                {
+                    "name": "c3.4xlarge"
+                },
+                {
+                    "name": "c3.8xlarge"
+                },
+                {
+                    "name": "c4.large"
+                },
+                {
+                    "name": "c4.xlarge"
+                },
+                {
+                    "name": "c4.2xlarge"
+                },
+                {
+                    "name": "c4.4xlarge"
+                },
+                {
+                    "name": "c4.8xlarge"
+                },
+                {
+                    "name": "c5.large"
+                },
+                {
+                    "name": "c5.xlarge"
+                },
+                {
+                    "name": "c5.2xlarge"
+                },
+                {
+                    "name": "c5.4xlarge"
+                },
+                {
+                    "name": "c5.9xlarge"
+                },
+                {
+                    "name": "c5.18xlarge"
+                },
+                {
+                    "name": "c5d.large"
+                },
+                {
+                    "name": "c5d.xlarge"
+                },
+                {
+                    "name": "c5d.2xlarge"
+                },
+                {
+                    "name": "c5d.4xlarge"
+                },
+                {
+                    "name": "c5d.9xlarge"
+                },
+                {
+                    "name": "c5d.18xlarge"
+                },
+                {
+                    "name": "cc2.8xlarge"
+                },
+                {
+                    "name": "cr1.8xlarge"
+                },
+                {
+                    "name": "d2.xlarge"
+                },
+                {
+                    "name": "d2.2xlarge"
+                },
+                {
+                    "name": "d2.4xlarge"
+                },
+                {
+                    "name": "d2.8xlarge"
+                },
+                {
+                    "name": "f1.2xlarge"
+                },
+                {
+                    "name": "f1.16xlarge"
+                },
+                {
+                    "name": "g2.2xlarge"
+                },
+                {
+                    "name": "g2.8xlarge"
+                },
+                {
+                    "name": "g3.4xlarge"
+                },
+                {
+                    "name": "g3.8xlarge"
+                },
+                {
+                    "name": "g3.16xlarge"
+                },
+                {
+                    "name": "h1.2xlarge"
+                },
+                {
+                    "name": "h1.4xlarge"
+                },
+                {
+                    "name": "h1.8xlarge"
+                },
+                {
+                    "name": "h1.16xlarge"
+                },
+                {
+                    "name": "hs1.8xlarge"
+                },
+                {
+                    "name": "i2.xlarge"
+                },
+                {
+                    "name": "i2.2xlarge"
+                },
+                {
+                    "name": "i2.4xlarge"
+                },
+                {
+                    "name": "i2.8xlarge"
+                },
+                {
+                    "name": "i3.large"
+                },
+                {
+                    "name": "i3.metal"
+                },
+                {
+                    "name": "i3.xlarge"
+                },
+                {
+                    "name": "i3.2xlarge"
+                },
+                {
+                    "name": "i3.4xlarge"
+                },
+                {
+                    "name": "i3.8xlarge"
+                },
+                {
+                    "name": "i3.16xlarge"
+                },
+                {
+                    "name": "m1.small"
+                },
+                {
+                    "name": "m1.medium"
+                },
+                {
+                    "name": "m1.large"
+                },
+                {
+                    "name": "m1.xlarge"
+                },
+                {
+                    "name": "m2.xlarge"
+                },
+                {
+                    "name": "m2.2xlarge"
+                },
+                {
+                    "name": "m2.4xlarge"
+                },
+                {
+                    "name": "m3.medium"
+                },
+                {
+                    "name": "m3.large"
+                },
+                {
+                    "name": "m3.xlarge"
+                },
+                {
+                    "name": "m3.2xlarge"
+                },
+                {
+                    "name": "m4.large"
+                },
+                {
+                    "name": "m4.xlarge"
+                },
+                {
+                    "name": "m4.2xlarge"
+                },
+                {
+                    "name": "m4.4xlarge"
+                },
+                {
+                    "name": "m4.10xlarge"
+                },
+                {
+                    "name": "m4.16xlarge"
+                },
+                {
+                    "name": "m5.large"
+                },
+                {
+                    "name": "m5.xlarge"
+                },
+                {
+                    "name": "m5.2xlarge"
+                },
+                {
+                    "name": "m5.4xlarge"
+                },
+                {
+                    "name": "m5.12xlarge"
+                },
+                {
+                    "name": "m5.24xlarge"
+                },
+                {
+                    "name": "m5d.large"
+                },
+                {
+                    "name": "m5d.xlarge"
+                },
+                {
+                    "name": "m5d.2xlarge"
+                },
+                {
+                    "name": "m5d.4xlarge"
+                },
+                {
+                    "name": "m5d.12xlarge"
+                },
+                {
+                    "name": "m5d.24xlarge"
+                },
+                {
+                    "name": "p2.xlarge"
+                },
+                {
+                    "name": "p2.8xlarge"
+                },
+                {
+                    "name": "p2.16xlarge"
+                },
+                {
+                    "name": "r3.large"
+                },
+                {
+                    "name": "r3.xlarge"
+                },
+                {
+                    "name": "r3.2xlarge"
+                },
+                {
+                    "name": "r3.4xlarge"
+                },
+                {
+                    "name": "r3.8xlarge"
+                },
+                {
+                    "name": "r4.large"
+                },
+                {
+                    "name": "r4.xlarge"
+                },
+                {
+                    "name": "r4.2xlarge"
+                },
+                {
+                    "name": "r4.4xlarge"
+                },
+                {
+                    "name": "r4.8xlarge"
+                },
+                {
+                    "name": "r4.16xlarge"
+                },
+                {
+                    "name": "t1.micro"
+                },
+                {
+                    "name": "t2.micro"
+                },
+                {
+                    "name": "t2.small"
+                },
+                {
+                    "name": "t2.medium"
+                },
+                {
+                    "name": "t2.large"
+                },
+                {
+                    "name": "t2.xlarge"
+                },
+                {
+                    "name": "t2.2xlarge"
+                },
+                {
+                    "name": "x1.16xlarge"
+                },
+                {
+                    "name": "x1.32xlarge"
+                },
+                {
+                    "name": "x1e.xlarge"
+                },
+                {
+                    "name": "x1e.2xlarge"
+                },
+                {
+                    "name": "x1e.4xlarge"
+                },
+                {
+                    "name": "x1e.8xlarge"
+                },
+                {
+                    "name": "x1e.16xlarge"
+                },
+                {
+                    "name": "x1e.32xlarge"
+                }
+            ],
+            "name": "Windows Compute",
+            "roles": [
+                {
+                    "name": "None"
+                },
+                {
+                    "name": "AutoScaleS3Access"
+                },
+                {
+                    "name": "MeyerTest"
+                },
+                {
+                    "name": "test-chris"
+                }
+            ],
+            "locations": [
+                {
+                    "clouds": [
+                        {
+                            "subnets": [
+                                {
+                                    "description": "172.31.16.0/20",
+                                    "name": "subnet-231b2d0b"
+                                },
+                                {
+                                    "description": "172.31.0.0/20",
+                                    "name": "subnet-af8e04f4"
+                                },
+                                {
+                                    "description": "172.31.32.0/20",
+                                    "name": "subnet-f2e2bcbb"
+                                }
+                            ],
+                            "description": "172.31.0.0/16",
+                            "target_groups": [],
+                            "load_balancers": [],
+                            "security_groups": [
+                                {
+                                    "name": "Automatic"
+                                },
+                                {
+                                    "description": "default VPC security group",
+                                    "name": "sg-40c1ea39"
+                                }
+                            ],
+                            "name": "vpc-9ff879f8"
+                        }
+                    ],
+                    "name": "ap-northeast-1",
+                    "placement_groups": [],
+                    "images": [
+                        {
+                            "owner": "user",
+                            "description": "Latest Amazon AMI",
+                            "name": "Windows Compute"
                         },
                         {
-                           "description":"default VPC security group",
-                           "name":"sg-77b71412"
+                            "owner": "user",
+                            "description": "SQL Srv 2k08 Std-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-c57de7a3"
                         },
                         {
-                           "description":"Elasticbox:a0215ef6-dd9e-49c3-bcbf-77f1567c630c - SG for eb-u3yyi",
-                           "name":"sg-12c26077"
-                        }
-                     ],
-                     "name":"vpc-f6f10e93"
-                  }
-               ],
-               "keypairs":[
-                  {
-                     "name":"None"
-                  }
-               ],
-               "name":"us-east-1"
-            },
-            {
-               "images":[
-                  {
-                     "description":"Latest AWS Windows AMI",
-                     "name":"Windows Compute"
-                  }
-               ],
-               "clouds":[
-                  {
-                     "subnets":[
-                        {
-                           "name":"us-west-1a"
+                            "owner": "user",
+                            "description": "SQL Srv 2k14 Std-Win2k12 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-c671eba0"
                         },
                         {
-                           "name":"us-west-1b"
-                        }
-                     ],
-                     "name":"EC2",
-                     "security_groups":[
-                        {
-                           "name":"Automatic"
-                        }
-                     ]
-                  },
-                  {
-                     "subnets":[
-                        {
-                           "description":"172.31.0.0/20",
-                           "name":"subnet-68e4c32e"
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Std-Win2k12",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-3e6ef458"
                         },
                         {
-                           "description":"172.31.16.0/20",
-                           "name":"subnet-75846010"
-                        }
-                     ],
-                     "description":"172.31.0.0/16",
-                     "security_groups":[
-                        {
-                           "description":"default VPC security group",
-                           "name":"sg-14e80c71"
-                        }
-                     ],
-                     "name":"vpc-4cf4e82e"
-                  }
-               ],
-               "keypairs":[
-                  {
-                     "name":"None"
-                  }
-               ],
-               "name":"us-west-1"
-            },
-            {
-               "images":[
-                  {
-                     "description":"Latest AWS Windows AMI",
-                     "name":"Windows Compute"
-                  }
-               ],
-               "clouds":[
-                  {
-                     "subnets":[
-                        {
-                           "name":"us-west-2a"
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Ent-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-5e7ce638"
                         },
                         {
-                           "name":"us-west-2b"
+                            "owner": "user",
+                            "description": "SQL Srv 2k14 Ent-Win2k12 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-7b2eb41d"
                         },
                         {
-                           "name":"us-west-2c"
-                        }
-                     ],
-                     "name":"EC2",
-                     "security_groups":[
-                        {
-                           "name":"Automatic"
-                        }
-                     ]
-                  },
-                  {
-                     "subnets":[
-                        {
-                           "description":"172.31.16.0/20",
-                           "name":"subnet-b1353dc5"
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Std-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-2572e843"
                         },
                         {
-                           "description":"172.31.0.0/20",
-                           "name":"subnet-63e2c925"
+                            "owner": "user",
+                            "description": "Microsoft Windows Server 2016 with Desktop Experience Locale",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 30
+                            },
+                            "name": "ami-ec279c8a"
+                        }
+                    ],
+                    "alarms": [],
+                    "keypairs": [
+                        {
+                            "name": "None"
+                        }
+                    ]
+                },
+                {
+                    "clouds": [
+                        {
+                            "subnets": [
+                                {
+                                    "description": "172.31.0.0/20",
+                                    "name": "subnet-9ecc86f6"
+                                },
+                                {
+                                    "description": "172.31.16.0/20",
+                                    "name": "subnet-1dee5651"
+                                }
+                            ],
+                            "description": "172.31.0.0/16",
+                            "target_groups": [],
+                            "load_balancers": [],
+                            "security_groups": [
+                                {
+                                    "name": "Automatic"
+                                },
+                                {
+                                    "description": "default VPC security group",
+                                    "name": "sg-ff282394"
+                                }
+                            ],
+                            "name": "vpc-08296b60"
+                        }
+                    ],
+                    "name": "ap-northeast-2",
+                    "placement_groups": [],
+                    "images": [
+                        {
+                            "owner": "user",
+                            "description": "Latest Amazon AMI",
+                            "name": "Windows Compute"
                         },
                         {
-                           "description":"172.31.32.0/20",
-                           "name":"subnet-97d43cf2"
-                        }
-                     ],
-                     "description":"172.31.0.0/16",
-                     "security_groups":[
-                        {
-                           "description":"default VPC security group",
-                           "name":"sg-0d659d68"
-                        }
-                     ],
-                     "name":"vpc-efa1418a"
-                  }
-               ],
-               "keypairs":[
-                  {
-                     "name":"None"
-                  }
-               ],
-               "name":"us-west-2"
-            },
-            {
-               "images":[
-                  {
-                     "description":"Latest AWS Windows AMI",
-                     "name":"Windows Compute"
-                  }
-               ],
-               "clouds":[
-                  {
-                     "subnets":[
-                        {
-                           "name":"eu-west-1a"
+                            "owner": "user",
+                            "description": "SQL Srv 2k08 Std-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-fc4ded92"
                         },
                         {
-                           "name":"eu-west-1b"
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Std-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-b34fefdd"
                         },
                         {
-                           "name":"eu-west-1c"
-                        }
-                     ],
-                     "name":"EC2",
-                     "security_groups":[
-                        {
-                           "name":"Automatic"
-                        }
-                     ]
-                  },
-                  {
-                     "subnets":[
-                        {
-                           "description":"172.31.16.0/20",
-                           "name":"subnet-b50ae6d0"
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Std-Win2k12",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-c64fefa8"
                         },
                         {
-                           "description":"172.31.0.0/20",
-                           "name":"subnet-76d1f830"
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Ent-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-e34fef8d"
                         },
                         {
-                           "description":"172.31.32.0/20",
-                           "name":"subnet-c75f57b3"
-                        }
-                     ],
-                     "description":"172.31.0.0/16",
-                     "security_groups":[
-                        {
-                           "description":"default VPC security group",
-                           "name":"sg-91d831f4"
-                        }
-                     ],
-                     "name":"vpc-b9c2dadb"
-                  }
-               ],
-               "keypairs":[
-                  {
-                     "name":"None"
-                  }
-               ],
-               "name":"eu-west-1"
-            },
-            {
-               "images":[
-                  {
-                     "description":"Latest AWS Windows AMI",
-                     "name":"Windows Compute"
-                  }
-               ],
-               "clouds":[
-                  {
-                     "subnets":[
-                        {
-                           "name":"ap-northeast-1a"
+                            "owner": "user",
+                            "description": "SQL Srv 2k14 Ent-Win2k12 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-2b55f545"
                         },
                         {
-                           "name":"ap-northeast-1c"
-                        }
-                     ],
-                     "name":"EC2",
-                     "security_groups":[
-                        {
-                           "name":"Automatic"
-                        }
-                     ]
-                  },
-                  {
-                     "subnets":[
-                        {
-                           "description":"172.31.16.0/20",
-                           "name":"subnet-2c27046a"
+                            "owner": "user",
+                            "description": "SQL Srv 2k14 Std-Win2k12 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-cd4deda3"
                         },
                         {
-                           "description":"172.31.0.0/20",
-                           "name":"subnet-1b4e4c6f"
+                            "owner": "user",
+                            "description": "Microsoft Windows Server 2016 with Desktop Experience Locale",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 30
+                            },
+                            "name": "ami-e8ef4986"
                         }
-                     ],
-                     "description":"172.31.0.0/16",
-                     "security_groups":[
+                    ],
+                    "alarms": [],
+                    "keypairs": [
                         {
-                           "description":"default VPC security group",
-                           "name":"sg-0995726c"
+                            "name": "None"
                         }
-                     ],
-                     "name":"vpc-3997885b"
-                  }
-               ],
-               "keypairs":[
-                  {
-                     "name":"None"
-                  }
-               ],
-               "name":"ap-northeast-1"
-            },
-            {
-               "images":[
-                  {
-                     "description":"Latest AWS Windows AMI",
-                     "name":"Windows Compute"
-                  }
-               ],
-               "clouds":[
-                  {
-                     "subnets":[
+                    ]
+                },
+                {
+                    "clouds": [
                         {
-                           "name":"ap-southeast-1a"
+                            "subnets": [
+                                {
+                                    "description": "172.31.0.0/20",
+                                    "name": "subnet-d310e69f"
+                                },
+                                {
+                                    "description": "172.31.16.0/20",
+                                    "name": "subnet-f855d390"
+                                }
+                            ],
+                            "description": "172.31.0.0/16",
+                            "target_groups": [],
+                            "load_balancers": [],
+                            "security_groups": [
+                                {
+                                    "name": "Automatic"
+                                },
+                                {
+                                    "description": "default VPC security group",
+                                    "name": "sg-d39d11b8"
+                                }
+                            ],
+                            "name": "vpc-1585067d"
+                        }
+                    ],
+                    "name": "ap-south-1",
+                    "placement_groups": [],
+                    "images": [
+                        {
+                            "owner": "user",
+                            "description": "Latest Amazon AMI",
+                            "name": "Windows Compute"
                         },
                         {
-                           "name":"ap-southeast-1b"
-                        }
-                     ],
-                     "name":"EC2",
-                     "security_groups":[
-                        {
-                           "name":"Automatic"
-                        }
-                     ]
-                  },
-                  {
-                     "subnets":[
-                        {
-                           "description":"172.31.16.0/20",
-                           "name":"subnet-ea12149e"
+                            "owner": "user",
+                            "description": "SQL Srv 2k08 Std-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-5fb4e330"
                         },
                         {
-                           "description":"172.31.0.0/20",
-                           "name":"subnet-35618750"
-                        }
-                     ],
-                     "description":"172.31.0.0/16",
-                     "security_groups":[
-                        {
-                           "description":"default VPC security group",
-                           "name":"sg-3c668359"
-                        }
-                     ],
-                     "name":"vpc-95435cf7"
-                  }
-               ],
-               "keypairs":[
-                  {
-                     "name":"None"
-                  }
-               ],
-               "name":"ap-southeast-1"
-            },
-            {
-               "images":[
-                  {
-                     "description":"Latest AWS Windows AMI",
-                     "name":"Windows Compute"
-                  }
-               ],
-               "clouds":[
-                  {
-                     "subnets":[
-                        {
-                           "name":"ap-southeast-2a"
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Std-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-35b6e15a"
                         },
                         {
-                           "name":"ap-southeast-2b"
-                        }
-                     ],
-                     "name":"EC2",
-                     "security_groups":[
-                        {
-                           "name":"Automatic"
-                        }
-                     ]
-                  },
-                  {
-                     "subnets":[
-                        {
-                           "description":"172.31.16.0/20",
-                           "name":"subnet-cb595abf"
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Ent-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-edb3e482"
                         },
                         {
-                           "description":"172.31.0.0/20",
-                           "name":"subnet-95fd1af0"
-                        }
-                     ],
-                     "description":"172.31.0.0/16",
-                     "security_groups":[
-                        {
-                           "description":"default VPC security group",
-                           "name":"sg-9ffa1dfa"
-                        }
-                     ],
-                     "name":"vpc-c3e6f9a1"
-                  }
-               ],
-               "keypairs":[
-                  {
-                     "name":"None"
-                  }
-               ],
-               "name":"ap-southeast-2"
-            },
-            {
-               "images":[
-                  {
-                     "description":"Latest AWS Windows AMI",
-                     "name":"Windows Compute"
-                  }
-               ],
-               "clouds":[
-                  {
-                     "subnets":[
-                        {
-                           "name":"sa-east-1a"
+                            "owner": "user",
+                            "description": "SQL Srv 2k14 Ent-Win2k12 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-a6bcebc9"
                         },
                         {
-                           "name":"sa-east-1b"
-                        }
-                     ],
-                     "name":"EC2",
-                     "security_groups":[
-                        {
-                           "name":"Automatic"
-                        }
-                     ]
-                  },
-                  {
-                     "subnets":[
-                        {
-                           "description":"172.31.16.0/20",
-                           "name":"subnet-04eff766"
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Std-Win2k12",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-69b3e406"
                         },
                         {
-                           "description":"172.31.0.0/20",
-                           "name":"subnet-24281050"
-                        }
-                     ],
-                     "description":"172.31.0.0/16",
-                     "security_groups":[
+                            "owner": "user",
+                            "description": "SQL Srv 2k14 Std-Win2k12 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-8cb5e2e3"
+                        },
                         {
-                           "description":"default VPC security group",
-                           "name":"sg-27263d45"
+                            "owner": "user",
+                            "description": "Microsoft Windows Server 2016 with Desktop Experience Locale",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 30
+                            },
+                            "name": "ami-100f467f"
                         }
-                     ],
-                     "name":"vpc-058e2960"
-                  }
-               ],
-               "keypairs":[
-                  {
-                     "name":"None"
-                  }
-               ],
-               "name":"sa-east-1"
-            }
-         ],
-         "name":"Windows Compute",
-         "icon":"images/platform/large/windows.png"
-      }
-   ],
-   "key":"AKIAJPKHHGHLEAOTKQ6A",
-   "owner":"--owner--",
-   "icon":"images/platform/aws.png",
-   "type":"Amazon Web Services",
-   "id":"8c501fe3-54d7-49eb-b5d3-05016becabe3",
-   "schema":"http://elasticbox.net/schemas/aws/provider"
+                    ],
+                    "alarms": [],
+                    "keypairs": [
+                        {
+                            "name": "None"
+                        }
+                    ]
+                },
+                {
+                    "clouds": [
+                        {
+                            "subnets": [
+                                {
+                                    "description": "172.31.16.0/20",
+                                    "name": "subnet-15dc9372"
+                                },
+                                {
+                                    "description": "172.31.0.0/20",
+                                    "name": "subnet-2d60776b"
+                                },
+                                {
+                                    "description": "172.31.32.0/20",
+                                    "name": "subnet-22b6c96b"
+                                }
+                            ],
+                            "description": "172.31.0.0/16",
+                            "target_groups": [],
+                            "load_balancers": [],
+                            "security_groups": [
+                                {
+                                    "name": "Automatic"
+                                },
+                                {
+                                    "description": "default VPC security group",
+                                    "name": "sg-e3a2269a"
+                                }
+                            ],
+                            "name": "vpc-b00a89d7"
+                        }
+                    ],
+                    "name": "ap-southeast-1",
+                    "placement_groups": [],
+                    "images": [
+                        {
+                            "owner": "user",
+                            "description": "Latest Amazon AMI",
+                            "name": "Windows Compute"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k08 Std-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-39364b45"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k14 Ent-Win2k12 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-0d097471"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Std-Win2k12",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-11275a6d"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Ent-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-95304de9"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k14 Std-Win2k12 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-9d2c51e1"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Std-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-93334eef"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "Microsoft Windows Server 2016 with Desktop Experience Locale",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 30
+                            },
+                            "name": "ami-870855e4"
+                        }
+                    ],
+                    "alarms": [],
+                    "keypairs": [
+                        {
+                            "name": "None"
+                        }
+                    ]
+                },
+                {
+                    "clouds": [
+                        {
+                            "subnets": [
+                                {
+                                    "description": "172.31.32.0/20",
+                                    "name": "subnet-66492f2f"
+                                },
+                                {
+                                    "description": "172.31.0.0/20",
+                                    "name": "subnet-dfc5b0b8"
+                                },
+                                {
+                                    "description": "172.31.16.0/20",
+                                    "name": "subnet-3a699f62"
+                                }
+                            ],
+                            "description": "172.31.0.0/16",
+                            "target_groups": [],
+                            "load_balancers": [],
+                            "security_groups": [
+                                {
+                                    "name": "Automatic"
+                                },
+                                {
+                                    "description": "default VPC security group",
+                                    "name": "sg-5b299b22"
+                                }
+                            ],
+                            "name": "vpc-65329802"
+                        }
+                    ],
+                    "name": "ap-southeast-2",
+                    "placement_groups": [],
+                    "images": [
+                        {
+                            "owner": "user",
+                            "description": "Latest Amazon AMI",
+                            "name": "Windows Compute"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Std-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-cda15daf"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k08 Std-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-85a65ae7"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Ent-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-01a75b63"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k14 Ent-Win2k12 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-0d8d716f"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Std-Win2k12",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-9b9965f9"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k14 Std-Win2k12 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-629e6200"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "Microsoft Windows Server 2016 with Desktop Experience Locale",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 30
+                            },
+                            "name": "ami-de5eabbc"
+                        }
+                    ],
+                    "alarms": [],
+                    "keypairs": [
+                        {
+                            "name": "None"
+                        }
+                    ]
+                },
+                {
+                    "clouds": [
+                        {
+                            "subnets": [
+                                {
+                                    "description": "172.31.16.0/20",
+                                    "name": "subnet-3119e159"
+                                },
+                                {
+                                    "description": "172.31.0.0/20",
+                                    "name": "subnet-823b2cf9"
+                                }
+                            ],
+                            "description": "172.31.0.0/16",
+                            "target_groups": [],
+                            "load_balancers": [],
+                            "security_groups": [
+                                {
+                                    "name": "Automatic"
+                                },
+                                {
+                                    "description": "default VPC security group",
+                                    "name": "sg-c09fa1a8"
+                                }
+                            ],
+                            "name": "vpc-9e3fccf6"
+                        }
+                    ],
+                    "name": "ca-central-1",
+                    "placement_groups": [],
+                    "images": [
+                        {
+                            "owner": "user",
+                            "description": "Latest Amazon AMI",
+                            "name": "Windows Compute"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k08 Std-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-3fb5305b"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Ent-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-aab431ce"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Std-Win2k12",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-bab431de"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Std-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-3bb5305f"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "Microsoft Windows Server 2016 with Desktop Experience Locale",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 30
+                            },
+                            "name": "ami-5e3b803a"
+                        }
+                    ],
+                    "alarms": [],
+                    "keypairs": [
+                        {
+                            "name": "None"
+                        }
+                    ]
+                },
+                {
+                    "clouds": [
+                        {
+                            "subnets": [
+                                {
+                                    "description": "172.31.16.0/20",
+                                    "name": "subnet-1557147e"
+                                },
+                                {
+                                    "description": "172.31.32.0/20",
+                                    "name": "subnet-454af238"
+                                },
+                                {
+                                    "description": "172.31.0.0/20",
+                                    "name": "subnet-07029b4a"
+                                }
+                            ],
+                            "description": "172.31.0.0/16",
+                            "target_groups": [],
+                            "load_balancers": [],
+                            "security_groups": [
+                                {
+                                    "name": "Automatic"
+                                },
+                                {
+                                    "description": "default VPC security group",
+                                    "name": "sg-8a14a6e7"
+                                }
+                            ],
+                            "name": "vpc-70e7671b"
+                        }
+                    ],
+                    "name": "eu-central-1",
+                    "placement_groups": [],
+                    "images": [
+                        {
+                            "owner": "user",
+                            "description": "Latest Amazon AMI",
+                            "name": "Windows Compute"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Std-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-e3079a8c"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k08 Std-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-98079af7"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Ent-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-3c039e53"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Std-Win2k12",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-c53ca1aa"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k14 Std-Win2k12 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-f1039e9e"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k14 Ent-Win2k12 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-1a31ac75"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "Microsoft Windows Server 2016 with Desktop Experience Locale",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 30
+                            },
+                            "name": "ami-da9b14b5"
+                        }
+                    ],
+                    "alarms": [],
+                    "keypairs": [
+                        {
+                            "name": "None"
+                        }
+                    ]
+                },
+                {
+                    "clouds": [
+                        {
+                            "subnets": [
+                                {
+                                    "description": "172.31.16.0/20",
+                                    "name": "subnet-836db4cb"
+                                },
+                                {
+                                    "description": "172.31.0.0/20",
+                                    "name": "subnet-3948835f"
+                                },
+                                {
+                                    "description": "172.31.32.0/20",
+                                    "name": "subnet-9b5d49c0"
+                                }
+                            ],
+                            "description": "172.31.0.0/16",
+                            "target_groups": [],
+                            "load_balancers": [],
+                            "security_groups": [
+                                {
+                                    "name": "Automatic"
+                                },
+                                {
+                                    "description": "default VPC security group",
+                                    "name": "sg-3e154144"
+                                }
+                            ],
+                            "name": "vpc-2b5fe54d"
+                        }
+                    ],
+                    "name": "eu-west-1",
+                    "placement_groups": [],
+                    "images": [
+                        {
+                            "owner": "user",
+                            "description": "Latest Amazon AMI",
+                            "name": "Windows Compute"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k08 Std-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-17b62a6e"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Std-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-0db72b74"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Ent-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-76b62a0f"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k14 Std-Win2k12 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-61ad3118"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Std-Win2k12",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-b9a935c0"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k14 Ent-Win2k12 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-c558c4bc"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "Microsoft Windows Server 2016 with Desktop Experience Locale",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 30
+                            },
+                            "name": "ami-e055e899"
+                        }
+                    ],
+                    "alarms": [],
+                    "keypairs": [
+                        {
+                            "name": "None"
+                        }
+                    ]
+                },
+                {
+                    "clouds": [
+                        {
+                            "subnets": [
+                                {
+                                    "description": "172.31.16.0/20",
+                                    "name": "subnet-9f7e9fe5"
+                                },
+                                {
+                                    "description": "172.31.32.0/20",
+                                    "name": "subnet-fae6d0b7"
+                                },
+                                {
+                                    "description": "172.31.0.0/20",
+                                    "name": "subnet-286fc141"
+                                }
+                            ],
+                            "description": "172.31.0.0/16",
+                            "target_groups": [],
+                            "load_balancers": [],
+                            "security_groups": [
+                                {
+                                    "name": "Automatic"
+                                },
+                                {
+                                    "description": "default VPC security group",
+                                    "name": "sg-e98e8581"
+                                }
+                            ],
+                            "name": "vpc-2b1fda43"
+                        }
+                    ],
+                    "name": "eu-west-2",
+                    "placement_groups": [],
+                    "images": [
+                        {
+                            "owner": "user",
+                            "description": "Latest Amazon AMI",
+                            "name": "Windows Compute"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k08 Std-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-87667de3"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Std-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-58677c3c"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Std-Win2k12",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-0b647f6f"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Ent-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-c0677ca4"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "Microsoft Windows Server 2016 with Desktop Experience Locale",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 30
+                            },
+                            "name": "ami-78657b1c"
+                        }
+                    ],
+                    "alarms": [],
+                    "keypairs": [
+                        {
+                            "name": "None"
+                        }
+                    ]
+                },
+                {
+                    "clouds": [
+                        {
+                            "subnets": [
+                                {
+                                    "description": "172.31.16.0/20",
+                                    "name": "subnet-d134e3aa"
+                                },
+                                {
+                                    "description": "172.31.32.0/20",
+                                    "name": "subnet-c70fe38a"
+                                },
+                                {
+                                    "description": "172.31.0.0/20",
+                                    "name": "subnet-b909b4d0"
+                                }
+                            ],
+                            "description": "172.31.0.0/16",
+                            "target_groups": [],
+                            "load_balancers": [],
+                            "security_groups": [
+                                {
+                                    "name": "Automatic"
+                                },
+                                {
+                                    "description": "default VPC security group",
+                                    "name": "sg-3d155254"
+                                }
+                            ],
+                            "name": "vpc-ac15aec5"
+                        }
+                    ],
+                    "name": "eu-west-3",
+                    "placement_groups": [],
+                    "images": [
+                        {
+                            "owner": "user",
+                            "description": "Latest Amazon AMI",
+                            "name": "Windows Compute"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "Microsoft Windows Server 2016 with Desktop Experience Locale",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 30
+                            },
+                            "name": "ami-2e67d053"
+                        }
+                    ],
+                    "alarms": [],
+                    "keypairs": [
+                        {
+                            "name": "None"
+                        }
+                    ]
+                },
+                {
+                    "clouds": [
+                        {
+                            "subnets": [
+                                {
+                                    "description": "172.31.0.0/20",
+                                    "name": "subnet-35133052"
+                                },
+                                {
+                                    "description": "172.31.16.0/20",
+                                    "name": "subnet-aa3001f2"
+                                }
+                            ],
+                            "description": "172.31.0.0/16",
+                            "target_groups": [],
+                            "load_balancers": [],
+                            "security_groups": [
+                                {
+                                    "name": "Automatic"
+                                },
+                                {
+                                    "description": "default VPC security group",
+                                    "name": "sg-39b32a5f"
+                                }
+                            ],
+                            "name": "vpc-050fa062"
+                        }
+                    ],
+                    "name": "sa-east-1",
+                    "placement_groups": [],
+                    "images": [
+                        {
+                            "owner": "user",
+                            "description": "Latest Amazon AMI",
+                            "name": "Windows Compute"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k08 Std-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-f5c58799"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Std-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-5bca8837"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k14 Std-Win2k12 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-faca8896"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k14 Ent-Win2k12 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-bdc98bd1"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Ent-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-89c587e5"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Std-Win2k12",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-accb89c0"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "Microsoft Windows Server 2016 with Desktop Experience Locale",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 30
+                            },
+                            "name": "ami-41bffb2d"
+                        }
+                    ],
+                    "alarms": [],
+                    "keypairs": [
+                        {
+                            "name": "None"
+                        }
+                    ]
+                },
+                {
+                    "clouds": [
+                        {
+                            "subnets": [
+                                {
+                                    "description": "Private subnet",
+                                    "name": "subnet-0f4d827f0959c45a4"
+                                },
+                                {
+                                    "description": "Public subnet",
+                                    "name": "subnet-0d3033d2b8bf13f12"
+                                }
+                            ],
+                            "description": "VPC1",
+                            "target_groups": [],
+                            "load_balancers": [],
+                            "security_groups": [
+                                {
+                                    "name": "Automatic"
+                                },
+                                {
+                                    "description": "default VPC security group",
+                                    "name": "sg-0c48ef851d23ee3cc"
+                                }
+                            ],
+                            "name": "vpc-0ad1a5959b295f65e"
+                        },
+                        {
+                            "subnets": [
+                                {
+                                    "description": "172.31.64.0/20",
+                                    "name": "subnet-f56242ca"
+                                },
+                                {
+                                    "description": "172.31.0.0/20",
+                                    "name": "subnet-32a9bc56"
+                                },
+                                {
+                                    "description": "172.31.16.0/20",
+                                    "name": "subnet-09e41a43"
+                                },
+                                {
+                                    "description": "172.31.32.0/20",
+                                    "name": "subnet-4ec7ed13"
+                                },
+                                {
+                                    "description": "172.31.48.0/20",
+                                    "name": "subnet-772d8978"
+                                },
+                                {
+                                    "description": "172.31.80.0/20",
+                                    "name": "subnet-c4f5c1eb"
+                                }
+                            ],
+                            "description": "172.31.0.0/16",
+                            "target_groups": [
+                                {
+                                    "default_port": 80,
+                                    "protocol": "HTTP",
+                                    "target_type": "instance",
+                                    "arn": "arn:aws:elasticloadbalancing:us-east-1:636588615608:targetgroup/partsultdLBRouting/e1031aa116bf033f",
+                                    "name": "partsultdLBRouting"
+                                }
+                            ],
+                            "load_balancers": [],
+                            "security_groups": [
+                                {
+                                    "name": "Automatic"
+                                },
+                                {
+                                    "description": "This security group was generated by AWS Marketplace and is based on recommended settings for Red Hat Enterprise Linux (RHEL) 6 (HVM) version 6.7_HVM_20160219 provided by Amazon Web Services",
+                                    "name": "sg-06f2b8b511216c8f3"
+                                },
+                                {
+                                    "description": "This security group was generated by AWS Marketplace and is based on recommended settings for CentOS 7 (x86_64) - with Updates HVM version 1805_01 provided by Centos.org",
+                                    "name": "sg-0752c07ce1afb7f9a"
+                                },
+                                {
+                                    "description": "Enable SSH access via port 22",
+                                    "name": "sg-092de9abb7c435e37"
+                                },
+                                {
+                                    "description": "This security group was generated by AWS Marketplace and is based on recommended settings for Red Hat Enterprise Linux (RHEL) 6 version 6.5_GA provided by Amazon Web Services",
+                                    "name": "sg-0db584c264083fbd2"
+                                },
+                                {
+                                    "description": "This security group was generated by AWS Marketplace and is based on recommended settings for CentOS 6 (x86_64) - with Updates HVM version 1805_01 provided by Centos.org",
+                                    "name": "sg-0f53c2fa9738d1f55"
+                                },
+                                {
+                                    "description": "default VPC security group",
+                                    "name": "sg-6969051f"
+                                }
+                            ],
+                            "name": "vpc-711a9f0a"
+                        },
+                        {
+                            "subnets": [
+                                {
+                                    "description": "Public Subnet #2",
+                                    "name": "subnet-01f48b41fd743c464"
+                                },
+                                {
+                                    "description": "Private subnet",
+                                    "name": "subnet-072d27171887b3f3b"
+                                },
+                                {
+                                    "description": "Public subnet",
+                                    "name": "subnet-08c8e59037abe931d"
+                                },
+                                {
+                                    "description": "Private subnet #2",
+                                    "name": "subnet-00175e924b602a94f"
+                                }
+                            ],
+                            "description": "VPC2",
+                            "target_groups": [
+                                {
+                                    "default_port": 80,
+                                    "protocol": "HTTP",
+                                    "target_type": "instance",
+                                    "arn": "arn:aws:elasticloadbalancing:us-east-1:636588615608:targetgroup/partsultdASGGroup/21bf3b5ba88c8714",
+                                    "name": "partsultdASGGroup"
+                                }
+                            ],
+                            "load_balancers": [],
+                            "security_groups": [
+                                {
+                                    "name": "Automatic"
+                                },
+                                {
+                                    "description": "launch-wizard-3 created 2018-03-18T15:37:19.910-05:00",
+                                    "name": "sg-00004b4a49e24b9ff"
+                                },
+                                {
+                                    "description": "launch-wizard-4 created 2018-03-20T13:45:11.721-05:00",
+                                    "name": "sg-02419971da8f7872e"
+                                },
+                                {
+                                    "description": "SG for AutoScale Group",
+                                    "name": "sg-06a3092ac1fdfc419"
+                                },
+                                {
+                                    "description": "launch-wizard-1 created 2018-03-18T14:29:23.439-05:00",
+                                    "name": "sg-07a8d5b8803636fcc"
+                                },
+                                {
+                                    "description": "launch-wizard-2 created 2018-03-18T14:32:32.770-05:00",
+                                    "name": "sg-081aae6f8f5b4f495"
+                                },
+                                {
+                                    "description": "default VPC security group",
+                                    "name": "sg-090fe3844fa6abfb6"
+                                },
+                                {
+                                    "description": "Created from the RDS Management Console: 2018/03/17 01:58:33",
+                                    "name": "sg-0a401b0de0f86fcee"
+                                },
+                                {
+                                    "description": "launch-wizard-5 created 2018-03-20T13:50:32.057-05:00",
+                                    "name": "sg-0d9aa67d083634708"
+                                },
+                                {
+                                    "description": "launch-wizard-6 created 2018-03-20T20:01:05.847-05:00",
+                                    "name": "sg-0dd22da7d662ab2b8"
+                                }
+                            ],
+                            "name": "vpc-e446c29f"
+                        }
+                    ],
+                    "name": "us-east-1",
+                    "placement_groups": [],
+                    "images": [
+                        {
+                            "owner": "external",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 30
+                            },
+                            "description": "Win2k12 R2 Base",
+                            "name": "ami-60093e1f"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "Latest Amazon AMI",
+                            "name": "Windows Compute"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k08 Std-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-f3052289"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Std-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-2e0b2c54"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Std-Win2k12",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-211c3b5b"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k14 Std-Win2k12 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-d91334a3"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Ent-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-42391e38"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k14 Ent-Win2k12 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-f2f0d788"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "Microsoft Windows Server 2016 with Desktop Experience Locale",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 30
+                            },
+                            "name": "ami-08910872"
+                        }
+                    ],
+                    "alarms": [],
+                    "keypairs": [
+                        {
+                            "name": "None"
+                        },
+                        {
+                            "name": "partsultd"
+                        },
+                        {
+                            "name": "partsultdEC2Key"
+                        }
+                    ]
+                },
+                {
+                    "clouds": [
+                        {
+                            "subnets": [
+                                {
+                                    "description": "172.31.32.0/20",
+                                    "name": "subnet-6af8c827"
+                                },
+                                {
+                                    "description": "172.31.16.0/20",
+                                    "name": "subnet-5746832d"
+                                },
+                                {
+                                    "description": "172.31.0.0/20",
+                                    "name": "subnet-c569e4ad"
+                                }
+                            ],
+                            "description": "172.31.0.0/16",
+                            "target_groups": [],
+                            "load_balancers": [],
+                            "security_groups": [
+                                {
+                                    "name": "Automatic"
+                                },
+                                {
+                                    "description": "default VPC security group",
+                                    "name": "sg-70f68b1b"
+                                }
+                            ],
+                            "name": "vpc-463cb52e"
+                        }
+                    ],
+                    "name": "us-east-2",
+                    "placement_groups": [],
+                    "images": [
+                        {
+                            "owner": "user",
+                            "description": "Latest Amazon AMI",
+                            "name": "Windows Compute"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k08 Std-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-da476dbf"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Std-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-d9476dbc"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k14 Std-Win2k12 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-c7466ca2"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k14 Ent-Win2k12 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-27597342"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Std-Win2k12",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-da446ebf"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Ent-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-3b476d5e"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "Microsoft Windows Server 2016 with Desktop Experience Locale",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 30
+                            },
+                            "name": "ami-21587144"
+                        }
+                    ],
+                    "alarms": [],
+                    "keypairs": [
+                        {
+                            "name": "None"
+                        }
+                    ]
+                },
+                {
+                    "clouds": [
+                        {
+                            "subnets": [
+                                {
+                                    "description": "172.31.16.0/20",
+                                    "name": "subnet-5ac28b3d"
+                                },
+                                {
+                                    "description": "172.31.0.0/20",
+                                    "name": "subnet-7b198320"
+                                }
+                            ],
+                            "description": "172.31.0.0/16",
+                            "target_groups": [],
+                            "load_balancers": [],
+                            "security_groups": [
+                                {
+                                    "name": "Automatic"
+                                },
+                                {
+                                    "description": "default VPC security group",
+                                    "name": "sg-bc511fc5"
+                                }
+                            ],
+                            "name": "vpc-9561dbf2"
+                        }
+                    ],
+                    "name": "us-west-1",
+                    "placement_groups": [],
+                    "images": [
+                        {
+                            "owner": "user",
+                            "description": "Latest Amazon AMI",
+                            "name": "Windows Compute"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k08 Std-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-55838035"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Std-Win2k12",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-9d8083fd"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k14 Ent-Win2k12 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-a08586c0"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Ent-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-1b82817b"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Std-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-19828179"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k14 Std-Win2k12 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-ed81828d"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "Microsoft Windows Server 2016 with Desktop Experience Locale",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 30
+                            },
+                            "name": "ami-406d5720"
+                        }
+                    ],
+                    "alarms": [],
+                    "keypairs": [
+                        {
+                            "name": "None"
+                        }
+                    ]
+                },
+                {
+                    "clouds": [
+                        {
+                            "subnets": [
+                                {
+                                    "description": "172.31.32.0/20",
+                                    "name": "subnet-4f408404"
+                                },
+                                {
+                                    "description": "172.31.16.0/20",
+                                    "name": "subnet-eb872292"
+                                },
+                                {
+                                    "description": "172.31.0.0/20",
+                                    "name": "subnet-58cd4c02"
+                                }
+                            ],
+                            "description": "172.31.0.0/16",
+                            "target_groups": [],
+                            "load_balancers": [],
+                            "security_groups": [
+                                {
+                                    "name": "Automatic"
+                                },
+                                {
+                                    "description": "default VPC security group",
+                                    "name": "sg-54cac02b"
+                                }
+                            ],
+                            "name": "vpc-f8d0a181"
+                        }
+                    ],
+                    "name": "us-west-2",
+                    "placement_groups": [],
+                    "images": [
+                        {
+                            "owner": "user",
+                            "description": "Latest Amazon AMI",
+                            "name": "Windows Compute"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k08 Std-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-add061d5"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Std-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-bed160c6"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Ent-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-2cd36254"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Std-Win2k12",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-aedd6cd6"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k14 Ent-Win2k12 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-04c9787c"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k14 Std-Win2k12 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-90d160e8"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "Microsoft Windows Server 2016 with Desktop Experience Locale",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 30
+                            },
+                            "name": "ami-f6d8008e"
+                        }
+                    ],
+                    "alarms": [],
+                    "keypairs": [
+                        {
+                            "name": "None"
+                        }
+                    ]
+                }
+            ],
+            "certificates": [],
+            "schema": "http://elasticbox.net/schemas/aws/compute/windows",
+            "icon": "images/platform/windows.png"
+        }
+    ],
+    "credentials": {
+        "role": "arn:aws:iam::636588615608:role/ElasticBox_Access"
+    },
+    "icon": "images/platform/aws.svg",
+    "target_regions": [
+        {
+            "appliance_id": "i-q428yw",
+            "name": "us-east-1",
+            "vpc": "vpc-e446c29f"
+        }
+    ],
+    "name": "Dry-Run AWS",
+    "reseller": false,
+    "created": "2018-03-16 16:17:59.531589",
+    "uri": "/services/providers/8132cc1d-38b0-4867-b7a3-1af7b83d4792",
+    "organization": "mission-field"
 }
 ```
 
@@ -2143,1182 +5047,3937 @@ ElasticBox-Release: 4.0
 |members | array | List of members with access to the provider.|
 |owner | string | Provider owner.|
 |type | string | Provider type, there are two possible providers: Amazon Web Services or VMware vShpere. |
-|id | string | Provider unique identificator.|
+|id | string | Provider unique identifier.|
 |icon | string | Provider Icon uri.|
 
 #### Response Body
 ```
-
-"schema": "http://elasticbox.net/schemas/gce/provider",
-"updated": "2015-10-30 12:39:06.518493",
-"project_id": "the_project_id",
-"description": "Manage cloud hosting and Linux machines, description has been updated",
-"created": "2015-10-30 12:34:09.062710",
-"deleted": null,
-"uri": "/services/providers/d86e3bfe-1edc-45b4-a03b-28d1e2b7eee2",
-"name": "GoogleComputeProvider",
-"owner": "operations",
-"state": "ready",
-"email": "therightemail@company.com",
-"admin_boxes": [],
-"members": [],
-"credentials": {},
-"services": [
-    {
-        "name": "Linux Compute",
-        "zones": [
-            {
-                "machineTypes": [
-                    {
-                        "description": "1 vCPU (shared physical core) and 0.6 GB RAM",
-                        "name": "f1-micro"
-                    },
-                    {
-                        "description": "1 vCPU (shared physical core) and 1.7 GB RAM",
-                        "name": "g1-small"
-                    },
-                    {
-                        "description": "16 vCPUs, 14.4 GB RAM",
-                        "name": "n1-highcpu-16"
-                    },
-                    {
-                        "description": "2 vCPUs, 1.8 GB RAM",
-                        "name": "n1-highcpu-2"
-                    },
-                    {
-                        "description": "32 vCPUs, 28.8 GB RAM",
-                        "name": "n1-highcpu-32"
-                    },
-                    {
-                        "description": "4 vCPUs, 3.6 GB RAM",
-                        "name": "n1-highcpu-4"
-                    },
-                    {
-                        "description": "8 vCPUs, 7.2 GB RAM",
-                        "name": "n1-highcpu-8"
-                    },
-                    {
-                        "description": "16 vCPUs, 104 GB RAM",
-                        "name": "n1-highmem-16"
-                    },
-                    {
-                        "description": "2 vCPUs, 13 GB RAM",
-                        "name": "n1-highmem-2"
-                    },
-                    {
-                        "description": "32 vCPUs, 208 GB RAM",
-                        "name": "n1-highmem-32"
-                    },
-                    {
-                        "description": "4 vCPUs, 26 GB RAM",
-                        "name": "n1-highmem-4"
-                    },
-                    {
-                        "description": "8 vCPUs, 52 GB RAM",
-                        "name": "n1-highmem-8"
-                    },
-                    {
-                        "description": "1 vCPU, 3.75 GB RAM",
-                        "name": "n1-standard-1"
-                    },
-                    {
-                        "description": "16 vCPUs, 60 GB RAM",
-                        "name": "n1-standard-16"
-                    },
-                    {
-                        "description": "2 vCPUs, 7.5 GB RAM",
-                        "name": "n1-standard-2"
-                    },
-                    {
-                        "description": "32 vCPUs, 120 GB RAM",
-                        "name": "n1-standard-32"
-                    },
-                    {
-                        "description": "4 vCPUs, 15 GB RAM",
-                        "name": "n1-standard-4"
-                    },
-                    {
-                        "description": "8 vCPUs, 30 GB RAM",
-                        "name": "n1-standard-8"
-                    }
-                ],
-                "name": "asia-east1-b"
-            },
-            {
-                "machineTypes": [
-                    {
-                        "description": "1 vCPU (shared physical core) and 0.6 GB RAM",
-                        "name": "f1-micro"
-                    },
-                    {
-                        "description": "1 vCPU (shared physical core) and 1.7 GB RAM",
-                        "name": "g1-small"
-                    },
-                    {
-                        "description": "16 vCPUs, 14.4 GB RAM",
-                        "name": "n1-highcpu-16"
-                    },
-                    {
-                        "description": "2 vCPUs, 1.8 GB RAM",
-                        "name": "n1-highcpu-2"
-                    },
-                    {
-                        "description": "32 vCPUs, 28.8 GB RAM",
-                        "name": "n1-highcpu-32"
-                    },
-                    {
-                        "description": "4 vCPUs, 3.6 GB RAM",
-                        "name": "n1-highcpu-4"
-                    },
-                    {
-                        "description": "8 vCPUs, 7.2 GB RAM",
-                        "name": "n1-highcpu-8"
-                    },
-                    {
-                        "description": "16 vCPUs, 104 GB RAM",
-                        "name": "n1-highmem-16"
-                    },
-                    {
-                        "description": "2 vCPUs, 13 GB RAM",
-                        "name": "n1-highmem-2"
-                    },
-                    {
-                        "description": "32 vCPUs, 208 GB RAM",
-                        "name": "n1-highmem-32"
-                    },
-                    {
-                        "description": "4 vCPUs, 26 GB RAM",
-                        "name": "n1-highmem-4"
-                    },
-                    {
-                        "description": "8 vCPUs, 52 GB RAM",
-                        "name": "n1-highmem-8"
-                    },
-                    {
-                        "description": "1 vCPU, 3.75 GB RAM",
-                        "name": "n1-standard-1"
-                    },
-                    {
-                        "description": "16 vCPUs, 60 GB RAM",
-                        "name": "n1-standard-16"
-                    },
-                    {
-                        "description": "2 vCPUs, 7.5 GB RAM",
-                        "name": "n1-standard-2"
-                    },
-                    {
-                        "description": "32 vCPUs, 120 GB RAM",
-                        "name": "n1-standard-32"
-                    },
-                    {
-                        "description": "4 vCPUs, 15 GB RAM",
-                        "name": "n1-standard-4"
-                    },
-                    {
-                        "description": "8 vCPUs, 30 GB RAM",
-                        "name": "n1-standard-8"
-                    }
-                ],
-                "name": "asia-east1-a"
-            },
-            {
-                "machineTypes": [
-                    {
-                        "description": "1 vCPU (shared physical core) and 0.6 GB RAM",
-                        "name": "f1-micro"
-                    },
-                    {
-                        "description": "1 vCPU (shared physical core) and 1.7 GB RAM",
-                        "name": "g1-small"
-                    },
-                    {
-                        "description": "16 vCPUs, 14.4 GB RAM",
-                        "name": "n1-highcpu-16"
-                    },
-                    {
-                        "description": "2 vCPUs, 1.8 GB RAM",
-                        "name": "n1-highcpu-2"
-                    },
-                    {
-                        "description": "32 vCPUs, 28.8 GB RAM",
-                        "name": "n1-highcpu-32"
-                    },
-                    {
-                        "description": "4 vCPUs, 3.6 GB RAM",
-                        "name": "n1-highcpu-4"
-                    },
-                    {
-                        "description": "8 vCPUs, 7.2 GB RAM",
-                        "name": "n1-highcpu-8"
-                    },
-                    {
-                        "description": "16 vCPUs, 104 GB RAM",
-                        "name": "n1-highmem-16"
-                    },
-                    {
-                        "description": "2 vCPUs, 13 GB RAM",
-                        "name": "n1-highmem-2"
-                    },
-                    {
-                        "description": "32 vCPUs, 208 GB RAM",
-                        "name": "n1-highmem-32"
-                    },
-                    {
-                        "description": "4 vCPUs, 26 GB RAM",
-                        "name": "n1-highmem-4"
-                    },
-                    {
-                        "description": "8 vCPUs, 52 GB RAM",
-                        "name": "n1-highmem-8"
-                    },
-                    {
-                        "description": "1 vCPU, 3.75 GB RAM",
-                        "name": "n1-standard-1"
-                    },
-                    {
-                        "description": "16 vCPUs, 60 GB RAM",
-                        "name": "n1-standard-16"
-                    },
-                    {
-                        "description": "2 vCPUs, 7.5 GB RAM",
-                        "name": "n1-standard-2"
-                    },
-                    {
-                        "description": "32 vCPUs, 120 GB RAM",
-                        "name": "n1-standard-32"
-                    },
-                    {
-                        "description": "4 vCPUs, 15 GB RAM",
-                        "name": "n1-standard-4"
-                    },
-                    {
-                        "description": "8 vCPUs, 30 GB RAM",
-                        "name": "n1-standard-8"
-                    }
-                ],
-                "name": "asia-east1-c"
-            },
-            {
-                "machineTypes": [
-                    {
-                        "description": "1 vCPU (shared physical core) and 0.6 GB RAM",
-                        "name": "f1-micro"
-                    },
-                    {
-                        "description": "1 vCPU (shared physical core) and 1.7 GB RAM",
-                        "name": "g1-small"
-                    },
-                    {
-                        "description": "16 vCPUs, 14.4 GB RAM",
-                        "name": "n1-highcpu-16"
-                    },
-                    {
-                        "description": "2 vCPUs, 1.8 GB RAM",
-                        "name": "n1-highcpu-2"
-                    },
-                    {
-                        "description": "4 vCPUs, 3.6 GB RAM",
-                        "name": "n1-highcpu-4"
-                    },
-                    {
-                        "description": "8 vCPUs, 7.2 GB RAM",
-                        "name": "n1-highcpu-8"
-                    },
-                    {
-                        "description": "16 vCPUs, 104 GB RAM",
-                        "name": "n1-highmem-16"
-                    },
-                    {
-                        "description": "2 vCPUs, 13 GB RAM",
-                        "name": "n1-highmem-2"
-                    },
-                    {
-                        "description": "4 vCPUs, 26 GB RAM",
-                        "name": "n1-highmem-4"
-                    },
-                    {
-                        "description": "8 vCPUs, 52 GB RAM",
-                        "name": "n1-highmem-8"
-                    },
-                    {
-                        "description": "1 vCPU, 3.75 GB RAM",
-                        "name": "n1-standard-1"
-                    },
-                    {
-                        "description": "16 vCPUs, 60 GB RAM",
-                        "name": "n1-standard-16"
-                    },
-                    {
-                        "description": "2 vCPUs, 7.5 GB RAM",
-                        "name": "n1-standard-2"
-                    },
-                    {
-                        "description": "4 vCPUs, 15 GB RAM",
-                        "name": "n1-standard-4"
-                    },
-                    {
-                        "description": "8 vCPUs, 30 GB RAM",
-                        "name": "n1-standard-8"
-                    }
-                ],
-                "name": "europe-west1-b"
-            },
-            {
-                "machineTypes": [
-                    {
-                        "description": "1 vCPU (shared physical core) and 0.6 GB RAM",
-                        "name": "f1-micro"
-                    },
-                    {
-                        "description": "1 vCPU (shared physical core) and 1.7 GB RAM",
-                        "name": "g1-small"
-                    },
-                    {
-                        "description": "16 vCPUs, 14.4 GB RAM",
-                        "name": "n1-highcpu-16"
-                    },
-                    {
-                        "description": "2 vCPUs, 1.8 GB RAM",
-                        "name": "n1-highcpu-2"
-                    },
-                    {
-                        "description": "32 vCPUs, 28.8 GB RAM",
-                        "name": "n1-highcpu-32"
-                    },
-                    {
-                        "description": "4 vCPUs, 3.6 GB RAM",
-                        "name": "n1-highcpu-4"
-                    },
-                    {
-                        "description": "8 vCPUs, 7.2 GB RAM",
-                        "name": "n1-highcpu-8"
-                    },
-                    {
-                        "description": "16 vCPUs, 104 GB RAM",
-                        "name": "n1-highmem-16"
-                    },
-                    {
-                        "description": "2 vCPUs, 13 GB RAM",
-                        "name": "n1-highmem-2"
-                    },
-                    {
-                        "description": "32 vCPUs, 208 GB RAM",
-                        "name": "n1-highmem-32"
-                    },
-                    {
-                        "description": "4 vCPUs, 26 GB RAM",
-                        "name": "n1-highmem-4"
-                    },
-                    {
-                        "description": "8 vCPUs, 52 GB RAM",
-                        "name": "n1-highmem-8"
-                    },
-                    {
-                        "description": "1 vCPU, 3.75 GB RAM",
-                        "name": "n1-standard-1"
-                    },
-                    {
-                        "description": "16 vCPUs, 60 GB RAM",
-                        "name": "n1-standard-16"
-                    },
-                    {
-                        "description": "2 vCPUs, 7.5 GB RAM",
-                        "name": "n1-standard-2"
-                    },
-                    {
-                        "description": "32 vCPUs, 120 GB RAM",
-                        "name": "n1-standard-32"
-                    },
-                    {
-                        "description": "4 vCPUs, 15 GB RAM",
-                        "name": "n1-standard-4"
-                    },
-                    {
-                        "description": "8 vCPUs, 30 GB RAM",
-                        "name": "n1-standard-8"
-                    }
-                ],
-                "name": "europe-west1-c"
-            },
-            {
-                "machineTypes": [
-                    {
-                        "description": "1 vCPU (shared physical core) and 0.6 GB RAM",
-                        "name": "f1-micro"
-                    },
-                    {
-                        "description": "1 vCPU (shared physical core) and 1.7 GB RAM",
-                        "name": "g1-small"
-                    },
-                    {
-                        "description": "16 vCPUs, 14.4 GB RAM",
-                        "name": "n1-highcpu-16"
-                    },
-                    {
-                        "description": "2 vCPUs, 1.8 GB RAM",
-                        "name": "n1-highcpu-2"
-                    },
-                    {
-                        "description": "32 vCPUs, 28.8 GB RAM",
-                        "name": "n1-highcpu-32"
-                    },
-                    {
-                        "description": "4 vCPUs, 3.6 GB RAM",
-                        "name": "n1-highcpu-4"
-                    },
-                    {
-                        "description": "8 vCPUs, 7.2 GB RAM",
-                        "name": "n1-highcpu-8"
-                    },
-                    {
-                        "description": "16 vCPUs, 104 GB RAM",
-                        "name": "n1-highmem-16"
-                    },
-                    {
-                        "description": "2 vCPUs, 13 GB RAM",
-                        "name": "n1-highmem-2"
-                    },
-                    {
-                        "description": "32 vCPUs, 208 GB RAM",
-                        "name": "n1-highmem-32"
-                    },
-                    {
-                        "description": "4 vCPUs, 26 GB RAM",
-                        "name": "n1-highmem-4"
-                    },
-                    {
-                        "description": "8 vCPUs, 52 GB RAM",
-                        "name": "n1-highmem-8"
-                    },
-                    {
-                        "description": "1 vCPU, 3.75 GB RAM",
-                        "name": "n1-standard-1"
-                    },
-                    {
-                        "description": "16 vCPUs, 60 GB RAM",
-                        "name": "n1-standard-16"
-                    },
-                    {
-                        "description": "2 vCPUs, 7.5 GB RAM",
-                        "name": "n1-standard-2"
-                    },
-                    {
-                        "description": "32 vCPUs, 120 GB RAM",
-                        "name": "n1-standard-32"
-                    },
-                    {
-                        "description": "4 vCPUs, 15 GB RAM",
-                        "name": "n1-standard-4"
-                    },
-                    {
-                        "description": "8 vCPUs, 30 GB RAM",
-                        "name": "n1-standard-8"
-                    }
-                ],
-                "name": "europe-west1-d"
-            },
-            {
-                "machineTypes": [
-                    {
-                        "description": "1 vCPU (shared physical core) and 0.6 GB RAM",
-                        "name": "f1-micro"
-                    },
-                    {
-                        "description": "1 vCPU (shared physical core) and 1.7 GB RAM",
-                        "name": "g1-small"
-                    },
-                    {
-                        "description": "16 vCPUs, 14.4 GB RAM",
-                        "name": "n1-highcpu-16"
-                    },
-                    {
-                        "description": "2 vCPUs, 1.8 GB RAM",
-                        "name": "n1-highcpu-2"
-                    },
-                    {
-                        "description": "32 vCPUs, 28.8 GB RAM",
-                        "name": "n1-highcpu-32"
-                    },
-                    {
-                        "description": "4 vCPUs, 3.6 GB RAM",
-                        "name": "n1-highcpu-4"
-                    },
-                    {
-                        "description": "8 vCPUs, 7.2 GB RAM",
-                        "name": "n1-highcpu-8"
-                    },
-                    {
-                        "description": "16 vCPUs, 104 GB RAM",
-                        "name": "n1-highmem-16"
-                    },
-                    {
-                        "description": "2 vCPUs, 13 GB RAM",
-                        "name": "n1-highmem-2"
-                    },
-                    {
-                        "description": "32 vCPUs, 208 GB RAM",
-                        "name": "n1-highmem-32"
-                    },
-                    {
-                        "description": "4 vCPUs, 26 GB RAM",
-                        "name": "n1-highmem-4"
-                    },
-                    {
-                        "description": "8 vCPUs, 52 GB RAM",
-                        "name": "n1-highmem-8"
-                    },
-                    {
-                        "description": "1 vCPU, 3.75 GB RAM",
-                        "name": "n1-standard-1"
-                    },
-                    {
-                        "description": "16 vCPUs, 60 GB RAM",
-                        "name": "n1-standard-16"
-                    },
-                    {
-                        "description": "2 vCPUs, 7.5 GB RAM",
-                        "name": "n1-standard-2"
-                    },
-                    {
-                        "description": "32 vCPUs, 120 GB RAM",
-                        "name": "n1-standard-32"
-                    },
-                    {
-                        "description": "4 vCPUs, 15 GB RAM",
-                        "name": "n1-standard-4"
-                    },
-                    {
-                        "description": "8 vCPUs, 30 GB RAM",
-                        "name": "n1-standard-8"
-                    }
-                ],
-                "name": "us-central1-f"
-            },
-            {
-                "machineTypes": [
-                    {
-                        "description": "1 vCPU (shared physical core) and 0.6 GB RAM",
-                        "name": "f1-micro"
-                    },
-                    {
-                        "description": "1 vCPU (shared physical core) and 1.7 GB RAM",
-                        "name": "g1-small"
-                    },
-                    {
-                        "description": "16 vCPUs, 14.4 GB RAM",
-                        "name": "n1-highcpu-16"
-                    },
-                    {
-                        "description": "2 vCPUs, 1.8 GB RAM",
-                        "name": "n1-highcpu-2"
-                    },
-                    {
-                        "description": "4 vCPUs, 3.6 GB RAM",
-                        "name": "n1-highcpu-4"
-                    },
-                    {
-                        "description": "8 vCPUs, 7.2 GB RAM",
-                        "name": "n1-highcpu-8"
-                    },
-                    {
-                        "description": "16 vCPUs, 104 GB RAM",
-                        "name": "n1-highmem-16"
-                    },
-                    {
-                        "description": "2 vCPUs, 13 GB RAM",
-                        "name": "n1-highmem-2"
-                    },
-                    {
-                        "description": "4 vCPUs, 26 GB RAM",
-                        "name": "n1-highmem-4"
-                    },
-                    {
-                        "description": "8 vCPUs, 52 GB RAM",
-                        "name": "n1-highmem-8"
-                    },
-                    {
-                        "description": "1 vCPU, 3.75 GB RAM",
-                        "name": "n1-standard-1"
-                    },
-                    {
-                        "description": "16 vCPUs, 60 GB RAM",
-                        "name": "n1-standard-16"
-                    },
-                    {
-                        "description": "2 vCPUs, 7.5 GB RAM",
-                        "name": "n1-standard-2"
-                    },
-                    {
-                        "description": "4 vCPUs, 15 GB RAM",
-                        "name": "n1-standard-4"
-                    },
-                    {
-                        "description": "8 vCPUs, 30 GB RAM",
-                        "name": "n1-standard-8"
-                    }
-                ],
-                "name": "us-central1-a"
-            },
-            {
-                "machineTypes": [
-                    {
-                        "description": "1 vCPU (shared physical core) and 0.6 GB RAM",
-                        "name": "f1-micro"
-                    },
-                    {
-                        "description": "1 vCPU (shared physical core) and 1.7 GB RAM",
-                        "name": "g1-small"
-                    },
-                    {
-                        "description": "16 vCPUs, 14.4 GB RAM",
-                        "name": "n1-highcpu-16"
-                    },
-                    {
-                        "description": "2 vCPUs, 1.8 GB RAM",
-                        "name": "n1-highcpu-2"
-                    },
-                    {
-                        "description": "32 vCPUs, 28.8 GB RAM",
-                        "name": "n1-highcpu-32"
-                    },
-                    {
-                        "description": "4 vCPUs, 3.6 GB RAM",
-                        "name": "n1-highcpu-4"
-                    },
-                    {
-                        "description": "8 vCPUs, 7.2 GB RAM",
-                        "name": "n1-highcpu-8"
-                    },
-                    {
-                        "description": "16 vCPUs, 104 GB RAM",
-                        "name": "n1-highmem-16"
-                    },
-                    {
-                        "description": "2 vCPUs, 13 GB RAM",
-                        "name": "n1-highmem-2"
-                    },
-                    {
-                        "description": "32 vCPUs, 208 GB RAM",
-                        "name": "n1-highmem-32"
-                    },
-                    {
-                        "description": "4 vCPUs, 26 GB RAM",
-                        "name": "n1-highmem-4"
-                    },
-                    {
-                        "description": "8 vCPUs, 52 GB RAM",
-                        "name": "n1-highmem-8"
-                    },
-                    {
-                        "description": "1 vCPU, 3.75 GB RAM",
-                        "name": "n1-standard-1"
-                    },
-                    {
-                        "description": "16 vCPUs, 60 GB RAM",
-                        "name": "n1-standard-16"
-                    },
-                    {
-                        "description": "2 vCPUs, 7.5 GB RAM",
-                        "name": "n1-standard-2"
-                    },
-                    {
-                        "description": "32 vCPUs, 120 GB RAM",
-                        "name": "n1-standard-32"
-                    },
-                    {
-                        "description": "4 vCPUs, 15 GB RAM",
-                        "name": "n1-standard-4"
-                    },
-                    {
-                        "description": "8 vCPUs, 30 GB RAM",
-                        "name": "n1-standard-8"
-                    }
-                ],
-                "name": "us-central1-b"
-            },
-            {
-                "machineTypes": [
-                    {
-                        "description": "1 vCPU (shared physical core) and 0.6 GB RAM",
-                        "name": "f1-micro"
-                    },
-                    {
-                        "description": "1 vCPU (shared physical core) and 1.7 GB RAM",
-                        "name": "g1-small"
-                    },
-                    {
-                        "description": "16 vCPUs, 14.4 GB RAM",
-                        "name": "n1-highcpu-16"
-                    },
-                    {
-                        "description": "2 vCPUs, 1.8 GB RAM",
-                        "name": "n1-highcpu-2"
-                    },
-                    {
-                        "description": "32 vCPUs, 28.8 GB RAM",
-                        "name": "n1-highcpu-32"
-                    },
-                    {
-                        "description": "4 vCPUs, 3.6 GB RAM",
-                        "name": "n1-highcpu-4"
-                    },
-                    {
-                        "description": "8 vCPUs, 7.2 GB RAM",
-                        "name": "n1-highcpu-8"
-                    },
-                    {
-                        "description": "16 vCPUs, 104 GB RAM",
-                        "name": "n1-highmem-16"
-                    },
-                    {
-                        "description": "2 vCPUs, 13 GB RAM",
-                        "name": "n1-highmem-2"
-                    },
-                    {
-                        "description": "32 vCPUs, 208 GB RAM",
-                        "name": "n1-highmem-32"
-                    },
-                    {
-                        "description": "4 vCPUs, 26 GB RAM",
-                        "name": "n1-highmem-4"
-                    },
-                    {
-                        "description": "8 vCPUs, 52 GB RAM",
-                        "name": "n1-highmem-8"
-                    },
-                    {
-                        "description": "1 vCPU, 3.75 GB RAM",
-                        "name": "n1-standard-1"
-                    },
-                    {
-                        "description": "16 vCPUs, 60 GB RAM",
-                        "name": "n1-standard-16"
-                    },
-                    {
-                        "description": "2 vCPUs, 7.5 GB RAM",
-                        "name": "n1-standard-2"
-                    },
-                    {
-                        "description": "32 vCPUs, 120 GB RAM",
-                        "name": "n1-standard-32"
-                    },
-                    {
-                        "description": "4 vCPUs, 15 GB RAM",
-                        "name": "n1-standard-4"
-                    },
-                    {
-                        "description": "8 vCPUs, 30 GB RAM",
-                        "name": "n1-standard-8"
-                    }
-                ],
-                "name": "us-central1-c"
-            },
-            {
-                "machineTypes": [
-                    {
-                        "description": "1 vCPU (shared physical core) and 0.6 GB RAM",
-                        "name": "f1-micro"
-                    },
-                    {
-                        "description": "1 vCPU (shared physical core) and 1.7 GB RAM",
-                        "name": "g1-small"
-                    },
-                    {
-                        "description": "16 vCPUs, 14.4 GB RAM",
-                        "name": "n1-highcpu-16"
-                    },
-                    {
-                        "description": "2 vCPUs, 1.8 GB RAM",
-                        "name": "n1-highcpu-2"
-                    },
-                    {
-                        "description": "32 vCPUs, 28.8 GB RAM",
-                        "name": "n1-highcpu-32"
-                    },
-                    {
-                        "description": "4 vCPUs, 3.6 GB RAM",
-                        "name": "n1-highcpu-4"
-                    },
-                    {
-                        "description": "8 vCPUs, 7.2 GB RAM",
-                        "name": "n1-highcpu-8"
-                    },
-                    {
-                        "description": "16 vCPUs, 104 GB RAM",
-                        "name": "n1-highmem-16"
-                    },
-                    {
-                        "description": "2 vCPUs, 13 GB RAM",
-                        "name": "n1-highmem-2"
-                    },
-                    {
-                        "description": "32 vCPUs, 208 GB RAM",
-                        "name": "n1-highmem-32"
-                    },
-                    {
-                        "description": "4 vCPUs, 26 GB RAM",
-                        "name": "n1-highmem-4"
-                    },
-                    {
-                        "description": "8 vCPUs, 52 GB RAM",
-                        "name": "n1-highmem-8"
-                    },
-                    {
-                        "description": "1 vCPU, 3.75 GB RAM",
-                        "name": "n1-standard-1"
-                    },
-                    {
-                        "description": "16 vCPUs, 60 GB RAM",
-                        "name": "n1-standard-16"
-                    },
-                    {
-                        "description": "2 vCPUs, 7.5 GB RAM",
-                        "name": "n1-standard-2"
-                    },
-                    {
-                        "description": "32 vCPUs, 120 GB RAM",
-                        "name": "n1-standard-32"
-                    },
-                    {
-                        "description": "4 vCPUs, 15 GB RAM",
-                        "name": "n1-standard-4"
-                    },
-                    {
-                        "description": "8 vCPUs, 30 GB RAM",
-                        "name": "n1-standard-8"
-                    }
-                ],
-                "name": "us-east1-c"
-            },
-            {
-                "machineTypes": [
-                    {
-                        "description": "1 vCPU (shared physical core) and 0.6 GB RAM",
-                        "name": "f1-micro"
-                    },
-                    {
-                        "description": "1 vCPU (shared physical core) and 1.7 GB RAM",
-                        "name": "g1-small"
-                    },
-                    {
-                        "description": "16 vCPUs, 14.4 GB RAM",
-                        "name": "n1-highcpu-16"
-                    },
-                    {
-                        "description": "2 vCPUs, 1.8 GB RAM",
-                        "name": "n1-highcpu-2"
-                    },
-                    {
-                        "description": "32 vCPUs, 28.8 GB RAM",
-                        "name": "n1-highcpu-32"
-                    },
-                    {
-                        "description": "4 vCPUs, 3.6 GB RAM",
-                        "name": "n1-highcpu-4"
-                    },
-                    {
-                        "description": "8 vCPUs, 7.2 GB RAM",
-                        "name": "n1-highcpu-8"
-                    },
-                    {
-                        "description": "16 vCPUs, 104 GB RAM",
-                        "name": "n1-highmem-16"
-                    },
-                    {
-                        "description": "2 vCPUs, 13 GB RAM",
-                        "name": "n1-highmem-2"
-                    },
-                    {
-                        "description": "32 vCPUs, 208 GB RAM",
-                        "name": "n1-highmem-32"
-                    },
-                    {
-                        "description": "4 vCPUs, 26 GB RAM",
-                        "name": "n1-highmem-4"
-                    },
-                    {
-                        "description": "8 vCPUs, 52 GB RAM",
-                        "name": "n1-highmem-8"
-                    },
-                    {
-                        "description": "1 vCPU, 3.75 GB RAM",
-                        "name": "n1-standard-1"
-                    },
-                    {
-                        "description": "16 vCPUs, 60 GB RAM",
-                        "name": "n1-standard-16"
-                    },
-                    {
-                        "description": "2 vCPUs, 7.5 GB RAM",
-                        "name": "n1-standard-2"
-                    },
-                    {
-                        "description": "32 vCPUs, 120 GB RAM",
-                        "name": "n1-standard-32"
-                    },
-                    {
-                        "description": "4 vCPUs, 15 GB RAM",
-                        "name": "n1-standard-4"
-                    },
-                    {
-                        "description": "8 vCPUs, 30 GB RAM",
-                        "name": "n1-standard-8"
-                    }
-                ],
-                "name": "us-east1-d"
-            },
-            {
-                "machineTypes": [
-                    {
-                        "description": "1 vCPU (shared physical core) and 0.6 GB RAM",
-                        "name": "f1-micro"
-                    },
-                    {
-                        "description": "1 vCPU (shared physical core) and 1.7 GB RAM",
-                        "name": "g1-small"
-                    },
-                    {
-                        "description": "16 vCPUs, 14.4 GB RAM",
-                        "name": "n1-highcpu-16"
-                    },
-                    {
-                        "description": "2 vCPUs, 1.8 GB RAM",
-                        "name": "n1-highcpu-2"
-                    },
-                    {
-                        "description": "32 vCPUs, 28.8 GB RAM",
-                        "name": "n1-highcpu-32"
-                    },
-                    {
-                        "description": "4 vCPUs, 3.6 GB RAM",
-                        "name": "n1-highcpu-4"
-                    },
-                    {
-                        "description": "8 vCPUs, 7.2 GB RAM",
-                        "name": "n1-highcpu-8"
-                    },
-                    {
-                        "description": "16 vCPUs, 104 GB RAM",
-                        "name": "n1-highmem-16"
-                    },
-                    {
-                        "description": "2 vCPUs, 13 GB RAM",
-                        "name": "n1-highmem-2"
-                    },
-                    {
-                        "description": "32 vCPUs, 208 GB RAM",
-                        "name": "n1-highmem-32"
-                    },
-                    {
-                        "description": "4 vCPUs, 26 GB RAM",
-                        "name": "n1-highmem-4"
-                    },
-                    {
-                        "description": "8 vCPUs, 52 GB RAM",
-                        "name": "n1-highmem-8"
-                    },
-                    {
-                        "description": "1 vCPU, 3.75 GB RAM",
-                        "name": "n1-standard-1"
-                    },
-                    {
-                        "description": "16 vCPUs, 60 GB RAM",
-                        "name": "n1-standard-16"
-                    },
-                    {
-                        "description": "2 vCPUs, 7.5 GB RAM",
-                        "name": "n1-standard-2"
-                    },
-                    {
-                        "description": "32 vCPUs, 120 GB RAM",
-                        "name": "n1-standard-32"
-                    },
-                    {
-                        "description": "4 vCPUs, 15 GB RAM",
-                        "name": "n1-standard-4"
-                    },
-                    {
-                        "name": "n1-standard-8"
-                    }
-                ],
-                "name": "us-east1-b"
-            }
-        ],
-        "images": [
-            {
-                "description": "",
-                "name": "ubuntu-14-04-lts-v20140709"
-            },
-            {
-                "description": "CentOS, CentOS, 6.7, x86_64 built on 2015-09-29",
-                "name": "centos-6-v20150929"
-            },
-            {
-                "description": "CentOS, CentOS, 7.1.1503, x86_64 built on 2015-09-29",
-                "name": "centos-7-v20150929"
-            },
-            {
-                "description": "Debian, Debian GNU/Linux, 7.9 (wheezy), amd64 with backports kernel and SSH packages built on 2015-09-29",
-                "name": "backports-debian-7-wheezy-v20150929"
-            },
-            {
-                "description": "Accounts Beta Debian GNU/Linux, 7.9 (wheezy), amd64 with backports kernel and SSH packages and beta accounts packages built on 2015-09-30",
-                "name": "beta-accounts-backports-debian-7-wheezy-v20150930"
-            },
-            {
-                "description": "Accounts Beta Debian GNU/Linux, 8.1 (jessie), amd64 with beta accounts package built on 2015-09-30",
-                "name": "beta-accounts-debian-8-jessie-v20150930"
-            },
-            {
-                "description": "Debian, Debian GNU/Linux, 7.9 (wheezy), amd64 built on 2015-09-29",
-                "name": "debian-7-wheezy-v20150929"
-            },
-            {
-                "description": "Debian, Debian GNU/Linux, 8.1 (jessie), amd64 built on 2015-09-29",
-                "name": "debian-8-jessie-v20150929"
-            },
-            {
-                "description": "Red Hat, Red Hat Enterprise Linux, 6.7, x86_64 built on 2015-09-29",
-                "name": "rhel-6-v20150929"
-            },
-            {
-                "description": "Red Hat, Red Hat Enterprise Linux, 7.1, x86_64 built on 2015-09-29",
-                "name": "rhel-7-v20150929"
-            },
-            {
-                "description": "SLES, SUSE Linux Enterprise Server, 11 SP4, x86_64 built on 2015-07-14",
-                "name": "sles-11-sp4-v20150714"
-            },
-            {
-                "description": "SUSE, SUSE Linux Enterprise Server, 12, x86_64 built on 2015-05-11",
-                "name": "sles-12-v20150511"
-            },
-            {
-                "description": "Canonical, Ubuntu, 12.04 LTS, amd64 precise image built on 2015-09-10",
-                "name": "ubuntu-1204-precise-v20150910"
-            },
-            {
-                "description": "Canonical, Ubuntu, 14.04 LTS, amd64 trusty image built on 2015-09-09",
-                "name": "ubuntu-1404-trusty-v20150909a"
-            },
-            {
-                "description": "Canonical, Ubuntu, 15.04, amd64 vivid image built on 2015-09-11",
-                "name": "ubuntu-1504-vivid-v20150911"
-            },
-            {
-                "description": "Canonical, Ubuntu, 15.10, amd64 wily image built on 2015-10-26",
-                "name": "ubuntu-1510-wily-v20151026"
-            }
-        ],
-        "icon": "images/platform/linux.png",
-        "networks": [
-            {
-                "routes": [],
-                "firewalls": [
-                    {
-                        "target_tags": [
-                            "couchbase"
-                        ],
-                        "description": "",
-                        "name": "couchbase"
-                    },
-                    {
-                        "target_tags": [
-                            "http-server"
-                        ],
-                        "description": "",
-                        "name": "default-allow-http"
-                    },
-                    {
-                        "target_tags": [
-                            "https-server"
-                        ],
-                        "description": "",
-                        "name": "default-allow-https"
-                    },
-                    {
-                        "target_tags": [
-                            "allow-internal"
-                        ],
-                        "description": "Internal traffic from default allowed",
-                        "name": "default-allow-internal"
-                    },
-                    {
-                        "target_tags": [
-                            "jboss"
-                        ],
-                        "description": "",
-                        "name": "jboss"
-                    },
-                    {
-                        "target_tags": [
-                            "jbossmgmt"
-                        ],
-                        "description": "",
-                        "name": "jbossmgmt"
-                    },
-                    {
-                        "target_tags": [
-                            "jenkins"
-                        ],
-                        "description": "",
-                        "name": "jenkins"
-                    },
-                    {
-                        "target_tags": [
-                            "mongo"
-                        ],
-                        "description": "Firewall rule for MongoDB server",
-                        "description": "8 vCPUs, 30 GB RAM",
-                        "name": "mongodb"
-                    },
-                    {
-                        "target_tags": [
-                            "mysql"
-                        ],
-                        "description": "",
-                        "name": "mysql"
-                    },
-                    {
-                        "target_tags": [
-                            "rabbitmq"
-                        ],
-                        "description": "Firewall rule for RabbitMQ server",
-                        "name": "rabbitmq"
-                    },
-                    {
-                        "target_tags": [
-                            "redis"
-                        ],
-                        "description": "rule used for testing redis in gce",
-                        "name": "redis"
-                    },
-                    {
-                        "target_tags": [
-                            "test-firewall"
-                        ],
-                        "description": "Don't Delete. Use by scenario tests",
-                        "name": "test-firewall"
-                    },
-                    {
-                        "target_tags": [
-                            "web"
-                        ],
-                        "description": "Firewall rule for Web Server",
-                        "name": "web"
-                    }
-                ],
-                "description": "Default network for the project",
-                "name": "default"
-            }
-        ],
-        "schema": "http://elasticbox.net/schemas/gce/compute/linux"
-    }
-],
-"organization": "elasticbox",
-"type": "Google Compute",
-"id": "d86e3bfe-1edc-45b4-a03b-28d1e2b7eee2",
-"icon": "images/platform/google.png"
+{
+    "costcenter": "c3195962-4c70-4ad6-a17a-189a5579a45a",
+    "owner": "dryrun",
+    "default_managed_iis_policies_created": true,
+    "clc_alias": "DA4",
+    "management_state": true,
+    "id": "8132cc1d-38b0-4867-b7a3-1af7b83d4792",
+    "state": "ready",
+    "admin_boxes": [],
+    "type": "Amazon Web Services",
+    "managed_os": true,
+    "schema": "http://elasticbox.net/schemas/aws/provider",
+    "updated": "2018-10-15 19:10:57.749750",
+    "description": null,
+    "management_state_history": [
+        {
+            "started": "2018-04-06 00:29:28.414938",
+            "state": "up",
+            "completed": "2018-07-26 18:43:46.867016"
+        },
+        {
+            "started": "2018-07-26 18:43:46.867016",
+            "state": "down",
+            "completed": "2018-07-26 18:53:27.827179"
+        },
+        {
+            "started": "2018-07-26 18:53:27.827179",
+            "state": "up",
+            "completed": "2018-07-26 19:07:06.443650"
+        },
+        {
+            "started": "2018-07-26 19:07:06.443650",
+            "state": "down",
+            "completed": "2018-07-26 19:09:30.067475"
+        },
+        {
+            "started": "2018-07-26 19:09:30.067475",
+            "state": "up",
+            "completed": "2018-08-28 10:08:56.914918"
+        },
+        {
+            "started": "2018-08-28 10:08:56.914918",
+            "state": "down",
+            "completed": "2018-09-04 21:28:32.573472"
+        },
+        {
+            "started": "2018-09-04 21:28:32.573472",
+            "state": "up",
+            "completed": "2018-09-24 16:09:01.728550"
+        },
+        {
+            "started": "2018-09-24 16:09:01.728550",
+            "state": "down",
+            "completed": "2018-09-24 16:21:34.906171"
+        },
+        {
+            "started": "2018-09-24 16:21:34.906171",
+            "state": "up"
+        }
+    ],
+    "default_sql_server_policies_created": true,
+    "deleted": null,
+    "default_management_appliance_policies_created": true,
+    "default_policies_created": true,
+    "members": [
+        {
+            "role": "read",
+            "workspace": "mission5"
+        }
+    ],
+    "services": [
+        {
+            "icon": "images/platform/aws-cloudformation.png",
+            "locations": [
+                {
+                    "name": "ap-northeast-1"
+                },
+                {
+                    "name": "ap-northeast-2"
+                },
+                {
+                    "name": "ap-south-1"
+                },
+                {
+                    "name": "ap-southeast-1"
+                },
+                {
+                    "name": "ap-southeast-2"
+                },
+                {
+                    "name": "ca-central-1"
+                },
+                {
+                    "name": "eu-central-1"
+                },
+                {
+                    "name": "eu-west-1"
+                },
+                {
+                    "name": "eu-west-2"
+                },
+                {
+                    "name": "eu-west-3"
+                },
+                {
+                    "name": "sa-east-1"
+                },
+                {
+                    "name": "us-east-1"
+                },
+                {
+                    "name": "us-east-2"
+                },
+                {
+                    "name": "us-west-1"
+                },
+                {
+                    "name": "us-west-2"
+                }
+            ],
+            "name": "CloudFormation Service",
+            "schema": "http://elasticbox.net/schemas/aws/cloudformation/cloudformation"
+        },
+        {
+            "locations": [
+                {
+                    "clusters": [],
+                    "name": "ap-northeast-1"
+                },
+                {
+                    "name": "ap-northeast-2"
+                },
+                {
+                    "name": "ap-south-1"
+                },
+                {
+                    "clusters": [],
+                    "name": "ap-southeast-1"
+                },
+                {
+                    "clusters": [],
+                    "name": "ap-southeast-2"
+                },
+                {
+                    "clusters": [],
+                    "name": "ca-central-1"
+                },
+                {
+                    "clusters": [],
+                    "name": "eu-central-1"
+                },
+                {
+                    "clusters": [],
+                    "name": "eu-west-1"
+                },
+                {
+                    "clusters": [],
+                    "name": "eu-west-2"
+                },
+                {
+                    "clusters": [],
+                    "name": "eu-west-3"
+                },
+                {
+                    "name": "sa-east-1"
+                },
+                {
+                    "clusters": [],
+                    "name": "us-east-1"
+                },
+                {
+                    "clusters": [],
+                    "name": "us-east-2"
+                },
+                {
+                    "clusters": [],
+                    "name": "us-west-1"
+                },
+                {
+                    "clusters": [],
+                    "name": "us-west-2"
+                }
+            ],
+            "icon": "images/platform/amazon-ecs.png",
+            "name": "Container Service",
+            "roles": [
+                {
+                    "name": "None"
+                }
+            ],
+            "schema": "http://elasticbox.net/schemas/aws/ecs/container"
+        },
+        {
+            "flavors": [
+                {
+                    "name": "c1.medium"
+                },
+                {
+                    "name": "c1.xlarge"
+                },
+                {
+                    "name": "c3.large"
+                },
+                {
+                    "name": "c3.xlarge"
+                },
+                {
+                    "name": "c3.2xlarge"
+                },
+                {
+                    "name": "c3.4xlarge"
+                },
+                {
+                    "name": "c3.8xlarge"
+                },
+                {
+                    "name": "c4.large"
+                },
+                {
+                    "name": "c4.xlarge"
+                },
+                {
+                    "name": "c4.2xlarge"
+                },
+                {
+                    "name": "c4.4xlarge"
+                },
+                {
+                    "name": "c4.8xlarge"
+                },
+                {
+                    "name": "c5.large"
+                },
+                {
+                    "name": "c5.xlarge"
+                },
+                {
+                    "name": "c5.2xlarge"
+                },
+                {
+                    "name": "c5.4xlarge"
+                },
+                {
+                    "name": "c5.9xlarge"
+                },
+                {
+                    "name": "c5.18xlarge"
+                },
+                {
+                    "name": "c5d.large"
+                },
+                {
+                    "name": "c5d.xlarge"
+                },
+                {
+                    "name": "c5d.2xlarge"
+                },
+                {
+                    "name": "c5d.4xlarge"
+                },
+                {
+                    "name": "c5d.9xlarge"
+                },
+                {
+                    "name": "c5d.18xlarge"
+                },
+                {
+                    "name": "cc2.8xlarge"
+                },
+                {
+                    "name": "cr1.8xlarge"
+                },
+                {
+                    "name": "d2.xlarge"
+                },
+                {
+                    "name": "d2.2xlarge"
+                },
+                {
+                    "name": "d2.4xlarge"
+                },
+                {
+                    "name": "d2.8xlarge"
+                },
+                {
+                    "name": "f1.2xlarge"
+                },
+                {
+                    "name": "f1.16xlarge"
+                },
+                {
+                    "name": "g2.2xlarge"
+                },
+                {
+                    "name": "g2.8xlarge"
+                },
+                {
+                    "name": "g3.4xlarge"
+                },
+                {
+                    "name": "g3.8xlarge"
+                },
+                {
+                    "name": "g3.16xlarge"
+                },
+                {
+                    "name": "h1.2xlarge"
+                },
+                {
+                    "name": "h1.4xlarge"
+                },
+                {
+                    "name": "h1.8xlarge"
+                },
+                {
+                    "name": "h1.16xlarge"
+                },
+                {
+                    "name": "hs1.8xlarge"
+                },
+                {
+                    "name": "i2.xlarge"
+                },
+                {
+                    "name": "i2.2xlarge"
+                },
+                {
+                    "name": "i2.4xlarge"
+                },
+                {
+                    "name": "i2.8xlarge"
+                },
+                {
+                    "name": "i3.large"
+                },
+                {
+                    "name": "i3.metal"
+                },
+                {
+                    "name": "i3.xlarge"
+                },
+                {
+                    "name": "i3.2xlarge"
+                },
+                {
+                    "name": "i3.4xlarge"
+                },
+                {
+                    "name": "i3.8xlarge"
+                },
+                {
+                    "name": "i3.16xlarge"
+                },
+                {
+                    "name": "m1.small"
+                },
+                {
+                    "name": "m1.medium"
+                },
+                {
+                    "name": "m1.large"
+                },
+                {
+                    "name": "m1.xlarge"
+                },
+                {
+                    "name": "m2.xlarge"
+                },
+                {
+                    "name": "m2.2xlarge"
+                },
+                {
+                    "name": "m2.4xlarge"
+                },
+                {
+                    "name": "m3.medium"
+                },
+                {
+                    "name": "m3.large"
+                },
+                {
+                    "name": "m3.xlarge"
+                },
+                {
+                    "name": "m3.2xlarge"
+                },
+                {
+                    "name": "m4.large"
+                },
+                {
+                    "name": "m4.xlarge"
+                },
+                {
+                    "name": "m4.2xlarge"
+                },
+                {
+                    "name": "m4.4xlarge"
+                },
+                {
+                    "name": "m4.10xlarge"
+                },
+                {
+                    "name": "m4.16xlarge"
+                },
+                {
+                    "name": "m5.large"
+                },
+                {
+                    "name": "m5.xlarge"
+                },
+                {
+                    "name": "m5.2xlarge"
+                },
+                {
+                    "name": "m5.4xlarge"
+                },
+                {
+                    "name": "m5.12xlarge"
+                },
+                {
+                    "name": "m5.24xlarge"
+                },
+                {
+                    "name": "m5d.large"
+                },
+                {
+                    "name": "m5d.xlarge"
+                },
+                {
+                    "name": "m5d.2xlarge"
+                },
+                {
+                    "name": "m5d.4xlarge"
+                },
+                {
+                    "name": "m5d.12xlarge"
+                },
+                {
+                    "name": "m5d.24xlarge"
+                },
+                {
+                    "name": "p2.xlarge"
+                },
+                {
+                    "name": "p2.8xlarge"
+                },
+                {
+                    "name": "p2.16xlarge"
+                },
+                {
+                    "name": "r3.large"
+                },
+                {
+                    "name": "r3.xlarge"
+                },
+                {
+                    "name": "r3.2xlarge"
+                },
+                {
+                    "name": "r3.4xlarge"
+                },
+                {
+                    "name": "r3.8xlarge"
+                },
+                {
+                    "name": "r4.large"
+                },
+                {
+                    "name": "r4.xlarge"
+                },
+                {
+                    "name": "r4.2xlarge"
+                },
+                {
+                    "name": "r4.4xlarge"
+                },
+                {
+                    "name": "r4.8xlarge"
+                },
+                {
+                    "name": "r4.16xlarge"
+                },
+                {
+                    "name": "t1.micro"
+                },
+                {
+                    "name": "t2.micro"
+                },
+                {
+                    "name": "t2.small"
+                },
+                {
+                    "name": "t2.medium"
+                },
+                {
+                    "name": "t2.large"
+                },
+                {
+                    "name": "t2.xlarge"
+                },
+                {
+                    "name": "t2.2xlarge"
+                },
+                {
+                    "name": "x1.16xlarge"
+                },
+                {
+                    "name": "x1.32xlarge"
+                },
+                {
+                    "name": "x1e.xlarge"
+                },
+                {
+                    "name": "x1e.2xlarge"
+                },
+                {
+                    "name": "x1e.4xlarge"
+                },
+                {
+                    "name": "x1e.8xlarge"
+                },
+                {
+                    "name": "x1e.16xlarge"
+                },
+                {
+                    "name": "x1e.32xlarge"
+                }
+            ],
+            "name": "Linux Compute",
+            "roles": [
+                {
+                    "name": "None"
+                },
+                {
+                    "name": "AutoScaleS3Access"
+                },
+                {
+                    "name": "MeyerTest"
+                },
+                {
+                    "name": "test-chris"
+                }
+            ],
+            "locations": [
+                {
+                    "clouds": [
+                        {
+                            "subnets": [
+                                {
+                                    "description": "172.31.16.0/20",
+                                    "name": "subnet-231b2d0b"
+                                },
+                                {
+                                    "description": "172.31.0.0/20",
+                                    "name": "subnet-af8e04f4"
+                                },
+                                {
+                                    "description": "172.31.32.0/20",
+                                    "name": "subnet-f2e2bcbb"
+                                }
+                            ],
+                            "description": "172.31.0.0/16",
+                            "target_groups": [],
+                            "load_balancers": [],
+                            "security_groups": [
+                                {
+                                    "name": "Automatic"
+                                },
+                                {
+                                    "description": "default VPC security group",
+                                    "name": "sg-40c1ea39"
+                                }
+                            ],
+                            "name": "vpc-9ff879f8"
+                        }
+                    ],
+                    "name": "ap-northeast-1",
+                    "placement_groups": [],
+                    "images": [
+                        {
+                            "owner": "user",
+                            "description": "Latest Amazon AMI",
+                            "name": "Linux Compute"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "CentOS 7 for Management Appliance",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 8
+                            },
+                            "name": "ami-3185744e"
+                        }
+                    ],
+                    "alarms": [],
+                    "keypairs": [
+                        {
+                            "name": "None"
+                        }
+                    ]
+                },
+                {
+                    "clouds": [
+                        {
+                            "subnets": [
+                                {
+                                    "description": "172.31.0.0/20",
+                                    "name": "subnet-9ecc86f6"
+                                },
+                                {
+                                    "description": "172.31.16.0/20",
+                                    "name": "subnet-1dee5651"
+                                }
+                            ],
+                            "description": "172.31.0.0/16",
+                            "target_groups": [],
+                            "load_balancers": [],
+                            "security_groups": [
+                                {
+                                    "name": "Automatic"
+                                },
+                                {
+                                    "description": "default VPC security group",
+                                    "name": "sg-ff282394"
+                                }
+                            ],
+                            "name": "vpc-08296b60"
+                        }
+                    ],
+                    "name": "ap-northeast-2",
+                    "placement_groups": [],
+                    "images": [
+                        {
+                            "owner": "user",
+                            "description": "Latest Amazon AMI",
+                            "name": "Linux Compute"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "CentOS 7 for Management Appliance",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 8
+                            },
+                            "name": "ami-46963e28"
+                        }
+                    ],
+                    "alarms": [],
+                    "keypairs": [
+                        {
+                            "name": "None"
+                        }
+                    ]
+                },
+                {
+                    "clouds": [
+                        {
+                            "subnets": [
+                                {
+                                    "description": "172.31.0.0/20",
+                                    "name": "subnet-d310e69f"
+                                },
+                                {
+                                    "description": "172.31.16.0/20",
+                                    "name": "subnet-f855d390"
+                                }
+                            ],
+                            "description": "172.31.0.0/16",
+                            "target_groups": [],
+                            "load_balancers": [],
+                            "security_groups": [
+                                {
+                                    "name": "Automatic"
+                                },
+                                {
+                                    "description": "default VPC security group",
+                                    "name": "sg-d39d11b8"
+                                }
+                            ],
+                            "name": "vpc-1585067d"
+                        }
+                    ],
+                    "name": "ap-south-1",
+                    "placement_groups": [],
+                    "images": [
+                        {
+                            "owner": "user",
+                            "description": "Latest Amazon AMI",
+                            "name": "Linux Compute"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "CentOS 7 for Management Appliance",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 8
+                            },
+                            "name": "ami-48301d27"
+                        }
+                    ],
+                    "alarms": [],
+                    "keypairs": [
+                        {
+                            "name": "None"
+                        }
+                    ]
+                },
+                {
+                    "clouds": [
+                        {
+                            "subnets": [
+                                {
+                                    "description": "172.31.16.0/20",
+                                    "name": "subnet-15dc9372"
+                                },
+                                {
+                                    "description": "172.31.0.0/20",
+                                    "name": "subnet-2d60776b"
+                                },
+                                {
+                                    "description": "172.31.32.0/20",
+                                    "name": "subnet-22b6c96b"
+                                }
+                            ],
+                            "description": "172.31.0.0/16",
+                            "target_groups": [],
+                            "load_balancers": [],
+                            "security_groups": [
+                                {
+                                    "name": "Automatic"
+                                },
+                                {
+                                    "description": "default VPC security group",
+                                    "name": "sg-e3a2269a"
+                                }
+                            ],
+                            "name": "vpc-b00a89d7"
+                        }
+                    ],
+                    "name": "ap-southeast-1",
+                    "placement_groups": [],
+                    "images": [
+                        {
+                            "owner": "user",
+                            "description": "Latest Amazon AMI",
+                            "name": "Linux Compute"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "CentOS 7 for Management Appliance",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 8
+                            },
+                            "name": "ami-da6151a6"
+                        }
+                    ],
+                    "alarms": [],
+                    "keypairs": [
+                        {
+                            "name": "None"
+                        }
+                    ]
+                },
+                {
+                    "clouds": [
+                        {
+                            "subnets": [
+                                {
+                                    "description": "172.31.32.0/20",
+                                    "name": "subnet-66492f2f"
+                                },
+                                {
+                                    "description": "172.31.0.0/20",
+                                    "name": "subnet-dfc5b0b8"
+                                },
+                                {
+                                    "description": "172.31.16.0/20",
+                                    "name": "subnet-3a699f62"
+                                }
+                            ],
+                            "description": "172.31.0.0/16",
+                            "target_groups": [],
+                            "load_balancers": [],
+                            "security_groups": [
+                                {
+                                    "name": "Automatic"
+                                },
+                                {
+                                    "description": "default VPC security group",
+                                    "name": "sg-5b299b22"
+                                }
+                            ],
+                            "name": "vpc-65329802"
+                        }
+                    ],
+                    "name": "ap-southeast-2",
+                    "placement_groups": [],
+                    "images": [
+                        {
+                            "owner": "user",
+                            "description": "Latest Amazon AMI",
+                            "name": "Linux Compute"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "CentOS 7 for Management Appliance",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 8
+                            },
+                            "name": "ami-0d13c26f"
+                        }
+                    ],
+                    "alarms": [],
+                    "keypairs": [
+                        {
+                            "name": "None"
+                        }
+                    ]
+                },
+                {
+                    "clouds": [
+                        {
+                            "subnets": [
+                                {
+                                    "description": "172.31.16.0/20",
+                                    "name": "subnet-3119e159"
+                                },
+                                {
+                                    "description": "172.31.0.0/20",
+                                    "name": "subnet-823b2cf9"
+                                }
+                            ],
+                            "description": "172.31.0.0/16",
+                            "target_groups": [],
+                            "load_balancers": [],
+                            "security_groups": [
+                                {
+                                    "name": "Automatic"
+                                },
+                                {
+                                    "description": "default VPC security group",
+                                    "name": "sg-c09fa1a8"
+                                }
+                            ],
+                            "name": "vpc-9e3fccf6"
+                        }
+                    ],
+                    "name": "ca-central-1",
+                    "placement_groups": [],
+                    "images": [
+                        {
+                            "owner": "user",
+                            "description": "Latest Amazon AMI",
+                            "name": "Linux Compute"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "CentOS 7 for Management Appliance",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 8
+                            },
+                            "name": "ami-456aea21"
+                        }
+                    ],
+                    "alarms": [],
+                    "keypairs": [
+                        {
+                            "name": "None"
+                        }
+                    ]
+                },
+                {
+                    "clouds": [
+                        {
+                            "subnets": [
+                                {
+                                    "description": "172.31.16.0/20",
+                                    "name": "subnet-1557147e"
+                                },
+                                {
+                                    "description": "172.31.32.0/20",
+                                    "name": "subnet-454af238"
+                                },
+                                {
+                                    "description": "172.31.0.0/20",
+                                    "name": "subnet-07029b4a"
+                                }
+                            ],
+                            "description": "172.31.0.0/16",
+                            "target_groups": [],
+                            "load_balancers": [],
+                            "security_groups": [
+                                {
+                                    "name": "Automatic"
+                                },
+                                {
+                                    "description": "default VPC security group",
+                                    "name": "sg-8a14a6e7"
+                                }
+                            ],
+                            "name": "vpc-70e7671b"
+                        }
+                    ],
+                    "name": "eu-central-1",
+                    "placement_groups": [],
+                    "images": [
+                        {
+                            "owner": "user",
+                            "description": "Latest Amazon AMI",
+                            "name": "Linux Compute"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "CentOS 7 for Management Appliance",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 8
+                            },
+                            "name": "ami-9a183671"
+                        }
+                    ],
+                    "alarms": [],
+                    "keypairs": [
+                        {
+                            "name": "None"
+                        }
+                    ]
+                },
+                {
+                    "clouds": [
+                        {
+                            "subnets": [
+                                {
+                                    "description": "172.31.16.0/20",
+                                    "name": "subnet-836db4cb"
+                                },
+                                {
+                                    "description": "172.31.0.0/20",
+                                    "name": "subnet-3948835f"
+                                },
+                                {
+                                    "description": "172.31.32.0/20",
+                                    "name": "subnet-9b5d49c0"
+                                }
+                            ],
+                            "description": "172.31.0.0/16",
+                            "target_groups": [],
+                            "load_balancers": [],
+                            "security_groups": [
+                                {
+                                    "name": "Automatic"
+                                },
+                                {
+                                    "description": "default VPC security group",
+                                    "name": "sg-3e154144"
+                                }
+                            ],
+                            "name": "vpc-2b5fe54d"
+                        }
+                    ],
+                    "name": "eu-west-1",
+                    "placement_groups": [],
+                    "images": [
+                        {
+                            "owner": "user",
+                            "description": "Latest Amazon AMI",
+                            "name": "Linux Compute"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "CentOS 7 for Management Appliance",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 8
+                            },
+                            "name": "ami-4c457735"
+                        }
+                    ],
+                    "alarms": [],
+                    "keypairs": [
+                        {
+                            "name": "None"
+                        }
+                    ]
+                },
+                {
+                    "clouds": [
+                        {
+                            "subnets": [
+                                {
+                                    "description": "172.31.16.0/20",
+                                    "name": "subnet-9f7e9fe5"
+                                },
+                                {
+                                    "description": "172.31.32.0/20",
+                                    "name": "subnet-fae6d0b7"
+                                },
+                                {
+                                    "description": "172.31.0.0/20",
+                                    "name": "subnet-286fc141"
+                                }
+                            ],
+                            "description": "172.31.0.0/16",
+                            "target_groups": [],
+                            "load_balancers": [],
+                            "security_groups": [
+                                {
+                                    "name": "Automatic"
+                                },
+                                {
+                                    "description": "default VPC security group",
+                                    "name": "sg-e98e8581"
+                                }
+                            ],
+                            "name": "vpc-2b1fda43"
+                        }
+                    ],
+                    "name": "eu-west-2",
+                    "placement_groups": [],
+                    "images": [
+                        {
+                            "owner": "user",
+                            "description": "Latest Amazon AMI",
+                            "name": "Linux Compute"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "CentOS 7 for Management Appliance",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 8
+                            },
+                            "name": "ami-4726cb20"
+                        }
+                    ],
+                    "alarms": [],
+                    "keypairs": [
+                        {
+                            "name": "None"
+                        }
+                    ]
+                },
+                {
+                    "clouds": [
+                        {
+                            "subnets": [
+                                {
+                                    "description": "172.31.16.0/20",
+                                    "name": "subnet-d134e3aa"
+                                },
+                                {
+                                    "description": "172.31.32.0/20",
+                                    "name": "subnet-c70fe38a"
+                                },
+                                {
+                                    "description": "172.31.0.0/20",
+                                    "name": "subnet-b909b4d0"
+                                }
+                            ],
+                            "description": "172.31.0.0/16",
+                            "target_groups": [],
+                            "load_balancers": [],
+                            "security_groups": [
+                                {
+                                    "name": "Automatic"
+                                },
+                                {
+                                    "description": "default VPC security group",
+                                    "name": "sg-3d155254"
+                                }
+                            ],
+                            "name": "vpc-ac15aec5"
+                        }
+                    ],
+                    "name": "eu-west-3",
+                    "placement_groups": [],
+                    "images": [
+                        {
+                            "owner": "user",
+                            "description": "Latest Amazon AMI",
+                            "name": "Linux Compute"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "CentOS 7 for Management Appliance",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 8
+                            },
+                            "name": "ami-6276c71f"
+                        }
+                    ],
+                    "alarms": [],
+                    "keypairs": [
+                        {
+                            "name": "None"
+                        }
+                    ]
+                },
+                {
+                    "clouds": [
+                        {
+                            "subnets": [
+                                {
+                                    "description": "172.31.0.0/20",
+                                    "name": "subnet-35133052"
+                                },
+                                {
+                                    "description": "172.31.16.0/20",
+                                    "name": "subnet-aa3001f2"
+                                }
+                            ],
+                            "description": "172.31.0.0/16",
+                            "target_groups": [],
+                            "load_balancers": [],
+                            "security_groups": [
+                                {
+                                    "name": "Automatic"
+                                },
+                                {
+                                    "description": "default VPC security group",
+                                    "name": "sg-39b32a5f"
+                                }
+                            ],
+                            "name": "vpc-050fa062"
+                        }
+                    ],
+                    "name": "sa-east-1",
+                    "placement_groups": [],
+                    "images": [
+                        {
+                            "owner": "user",
+                            "description": "Latest Amazon AMI",
+                            "name": "Linux Compute"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "CentOS 7 for Management Appliance",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 8
+                            },
+                            "name": "ami-c2e6baae"
+                        }
+                    ],
+                    "alarms": [],
+                    "keypairs": [
+                        {
+                            "name": "None"
+                        }
+                    ]
+                },
+                {
+                    "clouds": [
+                        {
+                            "subnets": [
+                                {
+                                    "description": "Private subnet",
+                                    "name": "subnet-0f4d827f0959c45a4"
+                                },
+                                {
+                                    "description": "Public subnet",
+                                    "name": "subnet-0d3033d2b8bf13f12"
+                                }
+                            ],
+                            "description": "VPC1",
+                            "target_groups": [],
+                            "load_balancers": [],
+                            "security_groups": [
+                                {
+                                    "name": "Automatic"
+                                },
+                                {
+                                    "description": "default VPC security group",
+                                    "name": "sg-0c48ef851d23ee3cc"
+                                }
+                            ],
+                            "name": "vpc-0ad1a5959b295f65e"
+                        },
+                        {
+                            "subnets": [
+                                {
+                                    "description": "172.31.64.0/20",
+                                    "name": "subnet-f56242ca"
+                                },
+                                {
+                                    "description": "172.31.0.0/20",
+                                    "name": "subnet-32a9bc56"
+                                },
+                                {
+                                    "description": "172.31.16.0/20",
+                                    "name": "subnet-09e41a43"
+                                },
+                                {
+                                    "description": "172.31.32.0/20",
+                                    "name": "subnet-4ec7ed13"
+                                },
+                                {
+                                    "description": "172.31.48.0/20",
+                                    "name": "subnet-772d8978"
+                                },
+                                {
+                                    "description": "172.31.80.0/20",
+                                    "name": "subnet-c4f5c1eb"
+                                }
+                            ],
+                            "description": "172.31.0.0/16",
+                            "target_groups": [
+                                {
+                                    "default_port": 80,
+                                    "protocol": "HTTP",
+                                    "target_type": "instance",
+                                    "arn": "arn:aws:elasticloadbalancing:us-east-1:636588615608:targetgroup/partsultdLBRouting/e1031aa116bf033f",
+                                    "name": "partsultdLBRouting"
+                                }
+                            ],
+                            "load_balancers": [],
+                            "security_groups": [
+                                {
+                                    "name": "Automatic"
+                                },
+                                {
+                                    "description": "This security group was generated by AWS Marketplace and is based on recommended settings for Red Hat Enterprise Linux (RHEL) 6 (HVM) version 6.7_HVM_20160219 provided by Amazon Web Services",
+                                    "name": "sg-06f2b8b511216c8f3"
+                                },
+                                {
+                                    "description": "This security group was generated by AWS Marketplace and is based on recommended settings for CentOS 7 (x86_64) - with Updates HVM version 1805_01 provided by Centos.org",
+                                    "name": "sg-0752c07ce1afb7f9a"
+                                },
+                                {
+                                    "description": "Enable SSH access via port 22",
+                                    "name": "sg-092de9abb7c435e37"
+                                },
+                                {
+                                    "description": "This security group was generated by AWS Marketplace and is based on recommended settings for Red Hat Enterprise Linux (RHEL) 6 version 6.5_GA provided by Amazon Web Services",
+                                    "name": "sg-0db584c264083fbd2"
+                                },
+                                {
+                                    "description": "This security group was generated by AWS Marketplace and is based on recommended settings for CentOS 6 (x86_64) - with Updates HVM version 1805_01 provided by Centos.org",
+                                    "name": "sg-0f53c2fa9738d1f55"
+                                },
+                                {
+                                    "description": "default VPC security group",
+                                    "name": "sg-6969051f"
+                                }
+                            ],
+                            "name": "vpc-711a9f0a"
+                        },
+                        {
+                            "subnets": [
+                                {
+                                    "description": "Public Subnet #2",
+                                    "name": "subnet-01f48b41fd743c464"
+                                },
+                                {
+                                    "description": "Private subnet",
+                                    "name": "subnet-072d27171887b3f3b"
+                                },
+                                {
+                                    "description": "Public subnet",
+                                    "name": "subnet-08c8e59037abe931d"
+                                },
+                                {
+                                    "description": "Private subnet #2",
+                                    "name": "subnet-00175e924b602a94f"
+                                }
+                            ],
+                            "description": "VPC2",
+                            "target_groups": [
+                                {
+                                    "default_port": 80,
+                                    "protocol": "HTTP",
+                                    "target_type": "instance",
+                                    "arn": "arn:aws:elasticloadbalancing:us-east-1:636588615608:targetgroup/partsultdASGGroup/21bf3b5ba88c8714",
+                                    "name": "partsultdASGGroup"
+                                }
+                            ],
+                            "load_balancers": [],
+                            "security_groups": [
+                                {
+                                    "name": "Automatic"
+                                },
+                                {
+                                    "description": "launch-wizard-3 created 2018-03-18T15:37:19.910-05:00",
+                                    "name": "sg-00004b4a49e24b9ff"
+                                },
+                                {
+                                    "description": "launch-wizard-4 created 2018-03-20T13:45:11.721-05:00",
+                                    "name": "sg-02419971da8f7872e"
+                                },
+                                {
+                                    "description": "SG for AutoScale Group",
+                                    "name": "sg-06a3092ac1fdfc419"
+                                },
+                                {
+                                    "description": "launch-wizard-1 created 2018-03-18T14:29:23.439-05:00",
+                                    "name": "sg-07a8d5b8803636fcc"
+                                },
+                                {
+                                    "description": "launch-wizard-2 created 2018-03-18T14:32:32.770-05:00",
+                                    "name": "sg-081aae6f8f5b4f495"
+                                },
+                                {
+                                    "description": "default VPC security group",
+                                    "name": "sg-090fe3844fa6abfb6"
+                                },
+                                {
+                                    "description": "Created from the RDS Management Console: 2018/03/17 01:58:33",
+                                    "name": "sg-0a401b0de0f86fcee"
+                                },
+                                {
+                                    "description": "launch-wizard-5 created 2018-03-20T13:50:32.057-05:00",
+                                    "name": "sg-0d9aa67d083634708"
+                                },
+                                {
+                                    "description": "launch-wizard-6 created 2018-03-20T20:01:05.847-05:00",
+                                    "name": "sg-0dd22da7d662ab2b8"
+                                }
+                            ],
+                            "name": "vpc-e446c29f"
+                        }
+                    ],
+                    "name": "us-east-1",
+                    "placement_groups": [],
+                    "images": [
+                        {
+                            "owner": "external",
+                            "description": "Ubunut 16.04 USE1",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 8
+                            },
+                            "name": "ami-759bc50a"
+                        },
+                        {
+                            "owner": "external",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 8
+                            },
+                            "name": "ami-456b493a",
+                            "description": "Ubuntu 14.04 AWSUSE1"
+                        },
+                        {
+                            "owner": "external",
+                            "description": "RHEL 7.5 AWSUSE1",
+                            "name": "ami-6871a115",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 10
+                            }
+                        },
+                        {
+                            "owner": "external",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 10
+                            },
+                            "name": "ami-f37b4b99",
+                            "description": "RHEL6 AWSUSE1"
+                        },
+                        {
+                            "owner": "external",
+                            "description": "CentOS7 AWSUSE1",
+                            "name": "ami-9887c6e7",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 8
+                            }
+                        },
+                        {
+                            "owner": "external",
+                            "description": "CentOS6 AWSUSE1",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 8
+                            },
+                            "name": "ami-1585c46a"
+                        },
+                        {
+                            "owner": "external",
+                            "root_disk": null,
+                            "name": "ami-b08dd3cf",
+                            "description": "Ubuntu16.04 - 2"
+                        },
+                        {
+                            "owner": "external",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 8
+                            },
+                            "description": "Ubuntu 16.04 - 3",
+                            "name": "ami-749bc50b"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "Latest Amazon AMI",
+                            "name": "Linux Compute"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "CentOS 7 for Management Appliance",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 8
+                            },
+                            "name": "ami-d5bf2caa"
+                        },
+                        {
+                            "owner": "external",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 10
+                            },
+                            "name": "ami-2051294a",
+                            "description": "RHEL-7.2"
+                        }
+                    ],
+                    "alarms": [],
+                    "keypairs": [
+                        {
+                            "name": "None"
+                        },
+                        {
+                            "name": "partsultd"
+                        },
+                        {
+                            "name": "partsultdEC2Key"
+                        }
+                    ]
+                },
+                {
+                    "clouds": [
+                        {
+                            "subnets": [
+                                {
+                                    "description": "172.31.32.0/20",
+                                    "name": "subnet-6af8c827"
+                                },
+                                {
+                                    "description": "172.31.16.0/20",
+                                    "name": "subnet-5746832d"
+                                },
+                                {
+                                    "description": "172.31.0.0/20",
+                                    "name": "subnet-c569e4ad"
+                                }
+                            ],
+                            "description": "172.31.0.0/16",
+                            "target_groups": [],
+                            "load_balancers": [],
+                            "security_groups": [
+                                {
+                                    "name": "Automatic"
+                                },
+                                {
+                                    "description": "default VPC security group",
+                                    "name": "sg-70f68b1b"
+                                }
+                            ],
+                            "name": "vpc-463cb52e"
+                        }
+                    ],
+                    "name": "us-east-2",
+                    "placement_groups": [],
+                    "images": [
+                        {
+                            "owner": "user",
+                            "description": "Latest Amazon AMI",
+                            "name": "Linux Compute"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "CentOS 7 for Management Appliance",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 8
+                            },
+                            "name": "ami-77724e12"
+                        }
+                    ],
+                    "alarms": [],
+                    "keypairs": [
+                        {
+                            "name": "None"
+                        }
+                    ]
+                },
+                {
+                    "clouds": [
+                        {
+                            "subnets": [
+                                {
+                                    "description": "172.31.16.0/20",
+                                    "name": "subnet-5ac28b3d"
+                                },
+                                {
+                                    "description": "172.31.0.0/20",
+                                    "name": "subnet-7b198320"
+                                }
+                            ],
+                            "description": "172.31.0.0/16",
+                            "target_groups": [],
+                            "load_balancers": [],
+                            "security_groups": [
+                                {
+                                    "name": "Automatic"
+                                },
+                                {
+                                    "description": "default VPC security group",
+                                    "name": "sg-bc511fc5"
+                                }
+                            ],
+                            "name": "vpc-9561dbf2"
+                        }
+                    ],
+                    "name": "us-west-1",
+                    "placement_groups": [],
+                    "images": [
+                        {
+                            "owner": "user",
+                            "description": "Latest Amazon AMI",
+                            "name": "Linux Compute"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "CentOS 7 for Management Appliance",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 8
+                            },
+                            "name": "ami-3b89905b"
+                        }
+                    ],
+                    "alarms": [],
+                    "keypairs": [
+                        {
+                            "name": "None"
+                        }
+                    ]
+                },
+                {
+                    "clouds": [
+                        {
+                            "subnets": [
+                                {
+                                    "description": "172.31.32.0/20",
+                                    "name": "subnet-4f408404"
+                                },
+                                {
+                                    "description": "172.31.16.0/20",
+                                    "name": "subnet-eb872292"
+                                },
+                                {
+                                    "description": "172.31.0.0/20",
+                                    "name": "subnet-58cd4c02"
+                                }
+                            ],
+                            "description": "172.31.0.0/16",
+                            "target_groups": [],
+                            "load_balancers": [],
+                            "security_groups": [
+                                {
+                                    "name": "Automatic"
+                                },
+                                {
+                                    "description": "default VPC security group",
+                                    "name": "sg-54cac02b"
+                                }
+                            ],
+                            "name": "vpc-f8d0a181"
+                        }
+                    ],
+                    "name": "us-west-2",
+                    "placement_groups": [],
+                    "images": [
+                        {
+                            "owner": "user",
+                            "description": "Latest Amazon AMI",
+                            "name": "Linux Compute"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "CentOS 7 for Management Appliance",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 8
+                            },
+                            "name": "ami-5490ed2c"
+                        }
+                    ],
+                    "alarms": [],
+                    "keypairs": [
+                        {
+                            "name": "None"
+                        }
+                    ]
+                }
+            ],
+            "certificates": [],
+            "schema": "http://elasticbox.net/schemas/aws/compute/linux",
+            "icon": "images/platform/linux.png"
+        },
+        {
+            "flavors": [
+                {
+                    "name": "c1.medium"
+                },
+                {
+                    "name": "c1.xlarge"
+                },
+                {
+                    "name": "c3.large"
+                },
+                {
+                    "name": "c3.xlarge"
+                },
+                {
+                    "name": "c3.2xlarge"
+                },
+                {
+                    "name": "c3.4xlarge"
+                },
+                {
+                    "name": "c3.8xlarge"
+                },
+                {
+                    "name": "c4.large"
+                },
+                {
+                    "name": "c4.xlarge"
+                },
+                {
+                    "name": "c4.2xlarge"
+                },
+                {
+                    "name": "c4.4xlarge"
+                },
+                {
+                    "name": "c4.8xlarge"
+                },
+                {
+                    "name": "c5.large"
+                },
+                {
+                    "name": "c5.xlarge"
+                },
+                {
+                    "name": "c5.2xlarge"
+                },
+                {
+                    "name": "c5.4xlarge"
+                },
+                {
+                    "name": "c5.9xlarge"
+                },
+                {
+                    "name": "c5.18xlarge"
+                },
+                {
+                    "name": "c5d.large"
+                },
+                {
+                    "name": "c5d.xlarge"
+                },
+                {
+                    "name": "c5d.2xlarge"
+                },
+                {
+                    "name": "c5d.4xlarge"
+                },
+                {
+                    "name": "c5d.9xlarge"
+                },
+                {
+                    "name": "c5d.18xlarge"
+                },
+                {
+                    "name": "cc2.8xlarge"
+                },
+                {
+                    "name": "cr1.8xlarge"
+                },
+                {
+                    "name": "d2.xlarge"
+                },
+                {
+                    "name": "d2.2xlarge"
+                },
+                {
+                    "name": "d2.4xlarge"
+                },
+                {
+                    "name": "d2.8xlarge"
+                },
+                {
+                    "name": "f1.2xlarge"
+                },
+                {
+                    "name": "f1.16xlarge"
+                },
+                {
+                    "name": "g2.2xlarge"
+                },
+                {
+                    "name": "g2.8xlarge"
+                },
+                {
+                    "name": "g3.4xlarge"
+                },
+                {
+                    "name": "g3.8xlarge"
+                },
+                {
+                    "name": "g3.16xlarge"
+                },
+                {
+                    "name": "h1.2xlarge"
+                },
+                {
+                    "name": "h1.4xlarge"
+                },
+                {
+                    "name": "h1.8xlarge"
+                },
+                {
+                    "name": "h1.16xlarge"
+                },
+                {
+                    "name": "hs1.8xlarge"
+                },
+                {
+                    "name": "i2.xlarge"
+                },
+                {
+                    "name": "i2.2xlarge"
+                },
+                {
+                    "name": "i2.4xlarge"
+                },
+                {
+                    "name": "i2.8xlarge"
+                },
+                {
+                    "name": "i3.large"
+                },
+                {
+                    "name": "i3.metal"
+                },
+                {
+                    "name": "i3.xlarge"
+                },
+                {
+                    "name": "i3.2xlarge"
+                },
+                {
+                    "name": "i3.4xlarge"
+                },
+                {
+                    "name": "i3.8xlarge"
+                },
+                {
+                    "name": "i3.16xlarge"
+                },
+                {
+                    "name": "m1.small"
+                },
+                {
+                    "name": "m1.medium"
+                },
+                {
+                    "name": "m1.large"
+                },
+                {
+                    "name": "m1.xlarge"
+                },
+                {
+                    "name": "m2.xlarge"
+                },
+                {
+                    "name": "m2.2xlarge"
+                },
+                {
+                    "name": "m2.4xlarge"
+                },
+                {
+                    "name": "m3.medium"
+                },
+                {
+                    "name": "m3.large"
+                },
+                {
+                    "name": "m3.xlarge"
+                },
+                {
+                    "name": "m3.2xlarge"
+                },
+                {
+                    "name": "m4.large"
+                },
+                {
+                    "name": "m4.xlarge"
+                },
+                {
+                    "name": "m4.2xlarge"
+                },
+                {
+                    "name": "m4.4xlarge"
+                },
+                {
+                    "name": "m4.10xlarge"
+                },
+                {
+                    "name": "m4.16xlarge"
+                },
+                {
+                    "name": "m5.large"
+                },
+                {
+                    "name": "m5.xlarge"
+                },
+                {
+                    "name": "m5.2xlarge"
+                },
+                {
+                    "name": "m5.4xlarge"
+                },
+                {
+                    "name": "m5.12xlarge"
+                },
+                {
+                    "name": "m5.24xlarge"
+                },
+                {
+                    "name": "m5d.large"
+                },
+                {
+                    "name": "m5d.xlarge"
+                },
+                {
+                    "name": "m5d.2xlarge"
+                },
+                {
+                    "name": "m5d.4xlarge"
+                },
+                {
+                    "name": "m5d.12xlarge"
+                },
+                {
+                    "name": "m5d.24xlarge"
+                },
+                {
+                    "name": "p2.xlarge"
+                },
+                {
+                    "name": "p2.8xlarge"
+                },
+                {
+                    "name": "p2.16xlarge"
+                },
+                {
+                    "name": "r3.large"
+                },
+                {
+                    "name": "r3.xlarge"
+                },
+                {
+                    "name": "r3.2xlarge"
+                },
+                {
+                    "name": "r3.4xlarge"
+                },
+                {
+                    "name": "r3.8xlarge"
+                },
+                {
+                    "name": "r4.large"
+                },
+                {
+                    "name": "r4.xlarge"
+                },
+                {
+                    "name": "r4.2xlarge"
+                },
+                {
+                    "name": "r4.4xlarge"
+                },
+                {
+                    "name": "r4.8xlarge"
+                },
+                {
+                    "name": "r4.16xlarge"
+                },
+                {
+                    "name": "t1.micro"
+                },
+                {
+                    "name": "t2.micro"
+                },
+                {
+                    "name": "t2.small"
+                },
+                {
+                    "name": "t2.medium"
+                },
+                {
+                    "name": "t2.large"
+                },
+                {
+                    "name": "t2.xlarge"
+                },
+                {
+                    "name": "t2.2xlarge"
+                },
+                {
+                    "name": "x1.16xlarge"
+                },
+                {
+                    "name": "x1.32xlarge"
+                },
+                {
+                    "name": "x1e.xlarge"
+                },
+                {
+                    "name": "x1e.2xlarge"
+                },
+                {
+                    "name": "x1e.4xlarge"
+                },
+                {
+                    "name": "x1e.8xlarge"
+                },
+                {
+                    "name": "x1e.16xlarge"
+                },
+                {
+                    "name": "x1e.32xlarge"
+                }
+            ],
+            "name": "Windows Compute",
+            "roles": [
+                {
+                    "name": "None"
+                },
+                {
+                    "name": "AutoScaleS3Access"
+                },
+                {
+                    "name": "MeyerTest"
+                },
+                {
+                    "name": "test-chris"
+                }
+            ],
+            "locations": [
+                {
+                    "clouds": [
+                        {
+                            "subnets": [
+                                {
+                                    "description": "172.31.16.0/20",
+                                    "name": "subnet-231b2d0b"
+                                },
+                                {
+                                    "description": "172.31.0.0/20",
+                                    "name": "subnet-af8e04f4"
+                                },
+                                {
+                                    "description": "172.31.32.0/20",
+                                    "name": "subnet-f2e2bcbb"
+                                }
+                            ],
+                            "description": "172.31.0.0/16",
+                            "target_groups": [],
+                            "load_balancers": [],
+                            "security_groups": [
+                                {
+                                    "name": "Automatic"
+                                },
+                                {
+                                    "description": "default VPC security group",
+                                    "name": "sg-40c1ea39"
+                                }
+                            ],
+                            "name": "vpc-9ff879f8"
+                        }
+                    ],
+                    "name": "ap-northeast-1",
+                    "placement_groups": [],
+                    "images": [
+                        {
+                            "owner": "user",
+                            "description": "Latest Amazon AMI",
+                            "name": "Windows Compute"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k08 Std-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-c57de7a3"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k14 Std-Win2k12 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-c671eba0"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Std-Win2k12",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-3e6ef458"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Ent-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-5e7ce638"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k14 Ent-Win2k12 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-7b2eb41d"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Std-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-2572e843"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "Microsoft Windows Server 2016 with Desktop Experience Locale",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 30
+                            },
+                            "name": "ami-ec279c8a"
+                        }
+                    ],
+                    "alarms": [],
+                    "keypairs": [
+                        {
+                            "name": "None"
+                        }
+                    ]
+                },
+                {
+                    "clouds": [
+                        {
+                            "subnets": [
+                                {
+                                    "description": "172.31.0.0/20",
+                                    "name": "subnet-9ecc86f6"
+                                },
+                                {
+                                    "description": "172.31.16.0/20",
+                                    "name": "subnet-1dee5651"
+                                }
+                            ],
+                            "description": "172.31.0.0/16",
+                            "target_groups": [],
+                            "load_balancers": [],
+                            "security_groups": [
+                                {
+                                    "name": "Automatic"
+                                },
+                                {
+                                    "description": "default VPC security group",
+                                    "name": "sg-ff282394"
+                                }
+                            ],
+                            "name": "vpc-08296b60"
+                        }
+                    ],
+                    "name": "ap-northeast-2",
+                    "placement_groups": [],
+                    "images": [
+                        {
+                            "owner": "user",
+                            "description": "Latest Amazon AMI",
+                            "name": "Windows Compute"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k08 Std-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-fc4ded92"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Std-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-b34fefdd"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Std-Win2k12",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-c64fefa8"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Ent-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-e34fef8d"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k14 Ent-Win2k12 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-2b55f545"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k14 Std-Win2k12 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-cd4deda3"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "Microsoft Windows Server 2016 with Desktop Experience Locale",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 30
+                            },
+                            "name": "ami-e8ef4986"
+                        }
+                    ],
+                    "alarms": [],
+                    "keypairs": [
+                        {
+                            "name": "None"
+                        }
+                    ]
+                },
+                {
+                    "clouds": [
+                        {
+                            "subnets": [
+                                {
+                                    "description": "172.31.0.0/20",
+                                    "name": "subnet-d310e69f"
+                                },
+                                {
+                                    "description": "172.31.16.0/20",
+                                    "name": "subnet-f855d390"
+                                }
+                            ],
+                            "description": "172.31.0.0/16",
+                            "target_groups": [],
+                            "load_balancers": [],
+                            "security_groups": [
+                                {
+                                    "name": "Automatic"
+                                },
+                                {
+                                    "description": "default VPC security group",
+                                    "name": "sg-d39d11b8"
+                                }
+                            ],
+                            "name": "vpc-1585067d"
+                        }
+                    ],
+                    "name": "ap-south-1",
+                    "placement_groups": [],
+                    "images": [
+                        {
+                            "owner": "user",
+                            "description": "Latest Amazon AMI",
+                            "name": "Windows Compute"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k08 Std-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-5fb4e330"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Std-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-35b6e15a"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Ent-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-edb3e482"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k14 Ent-Win2k12 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-a6bcebc9"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Std-Win2k12",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-69b3e406"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k14 Std-Win2k12 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-8cb5e2e3"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "Microsoft Windows Server 2016 with Desktop Experience Locale",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 30
+                            },
+                            "name": "ami-100f467f"
+                        }
+                    ],
+                    "alarms": [],
+                    "keypairs": [
+                        {
+                            "name": "None"
+                        }
+                    ]
+                },
+                {
+                    "clouds": [
+                        {
+                            "subnets": [
+                                {
+                                    "description": "172.31.16.0/20",
+                                    "name": "subnet-15dc9372"
+                                },
+                                {
+                                    "description": "172.31.0.0/20",
+                                    "name": "subnet-2d60776b"
+                                },
+                                {
+                                    "description": "172.31.32.0/20",
+                                    "name": "subnet-22b6c96b"
+                                }
+                            ],
+                            "description": "172.31.0.0/16",
+                            "target_groups": [],
+                            "load_balancers": [],
+                            "security_groups": [
+                                {
+                                    "name": "Automatic"
+                                },
+                                {
+                                    "description": "default VPC security group",
+                                    "name": "sg-e3a2269a"
+                                }
+                            ],
+                            "name": "vpc-b00a89d7"
+                        }
+                    ],
+                    "name": "ap-southeast-1",
+                    "placement_groups": [],
+                    "images": [
+                        {
+                            "owner": "user",
+                            "description": "Latest Amazon AMI",
+                            "name": "Windows Compute"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k08 Std-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-39364b45"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k14 Ent-Win2k12 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-0d097471"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Std-Win2k12",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-11275a6d"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Ent-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-95304de9"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k14 Std-Win2k12 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-9d2c51e1"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Std-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-93334eef"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "Microsoft Windows Server 2016 with Desktop Experience Locale",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 30
+                            },
+                            "name": "ami-870855e4"
+                        }
+                    ],
+                    "alarms": [],
+                    "keypairs": [
+                        {
+                            "name": "None"
+                        }
+                    ]
+                },
+                {
+                    "clouds": [
+                        {
+                            "subnets": [
+                                {
+                                    "description": "172.31.32.0/20",
+                                    "name": "subnet-66492f2f"
+                                },
+                                {
+                                    "description": "172.31.0.0/20",
+                                    "name": "subnet-dfc5b0b8"
+                                },
+                                {
+                                    "description": "172.31.16.0/20",
+                                    "name": "subnet-3a699f62"
+                                }
+                            ],
+                            "description": "172.31.0.0/16",
+                            "target_groups": [],
+                            "load_balancers": [],
+                            "security_groups": [
+                                {
+                                    "name": "Automatic"
+                                },
+                                {
+                                    "description": "default VPC security group",
+                                    "name": "sg-5b299b22"
+                                }
+                            ],
+                            "name": "vpc-65329802"
+                        }
+                    ],
+                    "name": "ap-southeast-2",
+                    "placement_groups": [],
+                    "images": [
+                        {
+                            "owner": "user",
+                            "description": "Latest Amazon AMI",
+                            "name": "Windows Compute"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Std-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-cda15daf"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k08 Std-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-85a65ae7"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Ent-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-01a75b63"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k14 Ent-Win2k12 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-0d8d716f"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Std-Win2k12",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-9b9965f9"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k14 Std-Win2k12 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-629e6200"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "Microsoft Windows Server 2016 with Desktop Experience Locale",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 30
+                            },
+                            "name": "ami-de5eabbc"
+                        }
+                    ],
+                    "alarms": [],
+                    "keypairs": [
+                        {
+                            "name": "None"
+                        }
+                    ]
+                },
+                {
+                    "clouds": [
+                        {
+                            "subnets": [
+                                {
+                                    "description": "172.31.16.0/20",
+                                    "name": "subnet-3119e159"
+                                },
+                                {
+                                    "description": "172.31.0.0/20",
+                                    "name": "subnet-823b2cf9"
+                                }
+                            ],
+                            "description": "172.31.0.0/16",
+                            "target_groups": [],
+                            "load_balancers": [],
+                            "security_groups": [
+                                {
+                                    "name": "Automatic"
+                                },
+                                {
+                                    "description": "default VPC security group",
+                                    "name": "sg-c09fa1a8"
+                                }
+                            ],
+                            "name": "vpc-9e3fccf6"
+                        }
+                    ],
+                    "name": "ca-central-1",
+                    "placement_groups": [],
+                    "images": [
+                        {
+                            "owner": "user",
+                            "description": "Latest Amazon AMI",
+                            "name": "Windows Compute"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k08 Std-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-3fb5305b"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Ent-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-aab431ce"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Std-Win2k12",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-bab431de"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Std-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-3bb5305f"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "Microsoft Windows Server 2016 with Desktop Experience Locale",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 30
+                            },
+                            "name": "ami-5e3b803a"
+                        }
+                    ],
+                    "alarms": [],
+                    "keypairs": [
+                        {
+                            "name": "None"
+                        }
+                    ]
+                },
+                {
+                    "clouds": [
+                        {
+                            "subnets": [
+                                {
+                                    "description": "172.31.16.0/20",
+                                    "name": "subnet-1557147e"
+                                },
+                                {
+                                    "description": "172.31.32.0/20",
+                                    "name": "subnet-454af238"
+                                },
+                                {
+                                    "description": "172.31.0.0/20",
+                                    "name": "subnet-07029b4a"
+                                }
+                            ],
+                            "description": "172.31.0.0/16",
+                            "target_groups": [],
+                            "load_balancers": [],
+                            "security_groups": [
+                                {
+                                    "name": "Automatic"
+                                },
+                                {
+                                    "description": "default VPC security group",
+                                    "name": "sg-8a14a6e7"
+                                }
+                            ],
+                            "name": "vpc-70e7671b"
+                        }
+                    ],
+                    "name": "eu-central-1",
+                    "placement_groups": [],
+                    "images": [
+                        {
+                            "owner": "user",
+                            "description": "Latest Amazon AMI",
+                            "name": "Windows Compute"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Std-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-e3079a8c"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k08 Std-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-98079af7"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Ent-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-3c039e53"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Std-Win2k12",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-c53ca1aa"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k14 Std-Win2k12 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-f1039e9e"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k14 Ent-Win2k12 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-1a31ac75"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "Microsoft Windows Server 2016 with Desktop Experience Locale",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 30
+                            },
+                            "name": "ami-da9b14b5"
+                        }
+                    ],
+                    "alarms": [],
+                    "keypairs": [
+                        {
+                            "name": "None"
+                        }
+                    ]
+                },
+                {
+                    "clouds": [
+                        {
+                            "subnets": [
+                                {
+                                    "description": "172.31.16.0/20",
+                                    "name": "subnet-836db4cb"
+                                },
+                                {
+                                    "description": "172.31.0.0/20",
+                                    "name": "subnet-3948835f"
+                                },
+                                {
+                                    "description": "172.31.32.0/20",
+                                    "name": "subnet-9b5d49c0"
+                                }
+                            ],
+                            "description": "172.31.0.0/16",
+                            "target_groups": [],
+                            "load_balancers": [],
+                            "security_groups": [
+                                {
+                                    "name": "Automatic"
+                                },
+                                {
+                                    "description": "default VPC security group",
+                                    "name": "sg-3e154144"
+                                }
+                            ],
+                            "name": "vpc-2b5fe54d"
+                        }
+                    ],
+                    "name": "eu-west-1",
+                    "placement_groups": [],
+                    "images": [
+                        {
+                            "owner": "user",
+                            "description": "Latest Amazon AMI",
+                            "name": "Windows Compute"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k08 Std-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-17b62a6e"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Std-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-0db72b74"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Ent-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-76b62a0f"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k14 Std-Win2k12 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-61ad3118"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Std-Win2k12",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-b9a935c0"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k14 Ent-Win2k12 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-c558c4bc"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "Microsoft Windows Server 2016 with Desktop Experience Locale",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 30
+                            },
+                            "name": "ami-e055e899"
+                        }
+                    ],
+                    "alarms": [],
+                    "keypairs": [
+                        {
+                            "name": "None"
+                        }
+                    ]
+                },
+                {
+                    "clouds": [
+                        {
+                            "subnets": [
+                                {
+                                    "description": "172.31.16.0/20",
+                                    "name": "subnet-9f7e9fe5"
+                                },
+                                {
+                                    "description": "172.31.32.0/20",
+                                    "name": "subnet-fae6d0b7"
+                                },
+                                {
+                                    "description": "172.31.0.0/20",
+                                    "name": "subnet-286fc141"
+                                }
+                            ],
+                            "description": "172.31.0.0/16",
+                            "target_groups": [],
+                            "load_balancers": [],
+                            "security_groups": [
+                                {
+                                    "name": "Automatic"
+                                },
+                                {
+                                    "description": "default VPC security group",
+                                    "name": "sg-e98e8581"
+                                }
+                            ],
+                            "name": "vpc-2b1fda43"
+                        }
+                    ],
+                    "name": "eu-west-2",
+                    "placement_groups": [],
+                    "images": [
+                        {
+                            "owner": "user",
+                            "description": "Latest Amazon AMI",
+                            "name": "Windows Compute"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k08 Std-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-87667de3"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Std-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-58677c3c"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Std-Win2k12",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-0b647f6f"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Ent-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-c0677ca4"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "Microsoft Windows Server 2016 with Desktop Experience Locale",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 30
+                            },
+                            "name": "ami-78657b1c"
+                        }
+                    ],
+                    "alarms": [],
+                    "keypairs": [
+                        {
+                            "name": "None"
+                        }
+                    ]
+                },
+                {
+                    "clouds": [
+                        {
+                            "subnets": [
+                                {
+                                    "description": "172.31.16.0/20",
+                                    "name": "subnet-d134e3aa"
+                                },
+                                {
+                                    "description": "172.31.32.0/20",
+                                    "name": "subnet-c70fe38a"
+                                },
+                                {
+                                    "description": "172.31.0.0/20",
+                                    "name": "subnet-b909b4d0"
+                                }
+                            ],
+                            "description": "172.31.0.0/16",
+                            "target_groups": [],
+                            "load_balancers": [],
+                            "security_groups": [
+                                {
+                                    "name": "Automatic"
+                                },
+                                {
+                                    "description": "default VPC security group",
+                                    "name": "sg-3d155254"
+                                }
+                            ],
+                            "name": "vpc-ac15aec5"
+                        }
+                    ],
+                    "name": "eu-west-3",
+                    "placement_groups": [],
+                    "images": [
+                        {
+                            "owner": "user",
+                            "description": "Latest Amazon AMI",
+                            "name": "Windows Compute"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "Microsoft Windows Server 2016 with Desktop Experience Locale",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 30
+                            },
+                            "name": "ami-2e67d053"
+                        }
+                    ],
+                    "alarms": [],
+                    "keypairs": [
+                        {
+                            "name": "None"
+                        }
+                    ]
+                },
+                {
+                    "clouds": [
+                        {
+                            "subnets": [
+                                {
+                                    "description": "172.31.0.0/20",
+                                    "name": "subnet-35133052"
+                                },
+                                {
+                                    "description": "172.31.16.0/20",
+                                    "name": "subnet-aa3001f2"
+                                }
+                            ],
+                            "description": "172.31.0.0/16",
+                            "target_groups": [],
+                            "load_balancers": [],
+                            "security_groups": [
+                                {
+                                    "name": "Automatic"
+                                },
+                                {
+                                    "description": "default VPC security group",
+                                    "name": "sg-39b32a5f"
+                                }
+                            ],
+                            "name": "vpc-050fa062"
+                        }
+                    ],
+                    "name": "sa-east-1",
+                    "placement_groups": [],
+                    "images": [
+                        {
+                            "owner": "user",
+                            "description": "Latest Amazon AMI",
+                            "name": "Windows Compute"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k08 Std-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-f5c58799"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Std-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-5bca8837"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k14 Std-Win2k12 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-faca8896"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k14 Ent-Win2k12 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-bdc98bd1"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Ent-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-89c587e5"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Std-Win2k12",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-accb89c0"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "Microsoft Windows Server 2016 with Desktop Experience Locale",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 30
+                            },
+                            "name": "ami-41bffb2d"
+                        }
+                    ],
+                    "alarms": [],
+                    "keypairs": [
+                        {
+                            "name": "None"
+                        }
+                    ]
+                },
+                {
+                    "clouds": [
+                        {
+                            "subnets": [
+                                {
+                                    "description": "Private subnet",
+                                    "name": "subnet-0f4d827f0959c45a4"
+                                },
+                                {
+                                    "description": "Public subnet",
+                                    "name": "subnet-0d3033d2b8bf13f12"
+                                }
+                            ],
+                            "description": "VPC1",
+                            "target_groups": [],
+                            "load_balancers": [],
+                            "security_groups": [
+                                {
+                                    "name": "Automatic"
+                                },
+                                {
+                                    "description": "default VPC security group",
+                                    "name": "sg-0c48ef851d23ee3cc"
+                                }
+                            ],
+                            "name": "vpc-0ad1a5959b295f65e"
+                        },
+                        {
+                            "subnets": [
+                                {
+                                    "description": "172.31.64.0/20",
+                                    "name": "subnet-f56242ca"
+                                },
+                                {
+                                    "description": "172.31.0.0/20",
+                                    "name": "subnet-32a9bc56"
+                                },
+                                {
+                                    "description": "172.31.16.0/20",
+                                    "name": "subnet-09e41a43"
+                                },
+                                {
+                                    "description": "172.31.32.0/20",
+                                    "name": "subnet-4ec7ed13"
+                                },
+                                {
+                                    "description": "172.31.48.0/20",
+                                    "name": "subnet-772d8978"
+                                },
+                                {
+                                    "description": "172.31.80.0/20",
+                                    "name": "subnet-c4f5c1eb"
+                                }
+                            ],
+                            "description": "172.31.0.0/16",
+                            "target_groups": [
+                                {
+                                    "default_port": 80,
+                                    "protocol": "HTTP",
+                                    "target_type": "instance",
+                                    "arn": "arn:aws:elasticloadbalancing:us-east-1:636588615608:targetgroup/partsultdLBRouting/e1031aa116bf033f",
+                                    "name": "partsultdLBRouting"
+                                }
+                            ],
+                            "load_balancers": [],
+                            "security_groups": [
+                                {
+                                    "name": "Automatic"
+                                },
+                                {
+                                    "description": "This security group was generated by AWS Marketplace and is based on recommended settings for Red Hat Enterprise Linux (RHEL) 6 (HVM) version 6.7_HVM_20160219 provided by Amazon Web Services",
+                                    "name": "sg-06f2b8b511216c8f3"
+                                },
+                                {
+                                    "description": "This security group was generated by AWS Marketplace and is based on recommended settings for CentOS 7 (x86_64) - with Updates HVM version 1805_01 provided by Centos.org",
+                                    "name": "sg-0752c07ce1afb7f9a"
+                                },
+                                {
+                                    "description": "Enable SSH access via port 22",
+                                    "name": "sg-092de9abb7c435e37"
+                                },
+                                {
+                                    "description": "This security group was generated by AWS Marketplace and is based on recommended settings for Red Hat Enterprise Linux (RHEL) 6 version 6.5_GA provided by Amazon Web Services",
+                                    "name": "sg-0db584c264083fbd2"
+                                },
+                                {
+                                    "description": "This security group was generated by AWS Marketplace and is based on recommended settings for CentOS 6 (x86_64) - with Updates HVM version 1805_01 provided by Centos.org",
+                                    "name": "sg-0f53c2fa9738d1f55"
+                                },
+                                {
+                                    "description": "default VPC security group",
+                                    "name": "sg-6969051f"
+                                }
+                            ],
+                            "name": "vpc-711a9f0a"
+                        },
+                        {
+                            "subnets": [
+                                {
+                                    "description": "Public Subnet #2",
+                                    "name": "subnet-01f48b41fd743c464"
+                                },
+                                {
+                                    "description": "Private subnet",
+                                    "name": "subnet-072d27171887b3f3b"
+                                },
+                                {
+                                    "description": "Public subnet",
+                                    "name": "subnet-08c8e59037abe931d"
+                                },
+                                {
+                                    "description": "Private subnet #2",
+                                    "name": "subnet-00175e924b602a94f"
+                                }
+                            ],
+                            "description": "VPC2",
+                            "target_groups": [
+                                {
+                                    "default_port": 80,
+                                    "protocol": "HTTP",
+                                    "target_type": "instance",
+                                    "arn": "arn:aws:elasticloadbalancing:us-east-1:636588615608:targetgroup/partsultdASGGroup/21bf3b5ba88c8714",
+                                    "name": "partsultdASGGroup"
+                                }
+                            ],
+                            "load_balancers": [],
+                            "security_groups": [
+                                {
+                                    "name": "Automatic"
+                                },
+                                {
+                                    "description": "launch-wizard-3 created 2018-03-18T15:37:19.910-05:00",
+                                    "name": "sg-00004b4a49e24b9ff"
+                                },
+                                {
+                                    "description": "launch-wizard-4 created 2018-03-20T13:45:11.721-05:00",
+                                    "name": "sg-02419971da8f7872e"
+                                },
+                                {
+                                    "description": "SG for AutoScale Group",
+                                    "name": "sg-06a3092ac1fdfc419"
+                                },
+                                {
+                                    "description": "launch-wizard-1 created 2018-03-18T14:29:23.439-05:00",
+                                    "name": "sg-07a8d5b8803636fcc"
+                                },
+                                {
+                                    "description": "launch-wizard-2 created 2018-03-18T14:32:32.770-05:00",
+                                    "name": "sg-081aae6f8f5b4f495"
+                                },
+                                {
+                                    "description": "default VPC security group",
+                                    "name": "sg-090fe3844fa6abfb6"
+                                },
+                                {
+                                    "description": "Created from the RDS Management Console: 2018/03/17 01:58:33",
+                                    "name": "sg-0a401b0de0f86fcee"
+                                },
+                                {
+                                    "description": "launch-wizard-5 created 2018-03-20T13:50:32.057-05:00",
+                                    "name": "sg-0d9aa67d083634708"
+                                },
+                                {
+                                    "description": "launch-wizard-6 created 2018-03-20T20:01:05.847-05:00",
+                                    "name": "sg-0dd22da7d662ab2b8"
+                                }
+                            ],
+                            "name": "vpc-e446c29f"
+                        }
+                    ],
+                    "name": "us-east-1",
+                    "placement_groups": [],
+                    "images": [
+                        {
+                            "owner": "external",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 30
+                            },
+                            "description": "Win2k12 R2 Base",
+                            "name": "ami-60093e1f"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "Latest Amazon AMI",
+                            "name": "Windows Compute"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k08 Std-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-f3052289"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Std-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-2e0b2c54"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Std-Win2k12",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-211c3b5b"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k14 Std-Win2k12 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-d91334a3"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Ent-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-42391e38"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k14 Ent-Win2k12 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-f2f0d788"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "Microsoft Windows Server 2016 with Desktop Experience Locale",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 30
+                            },
+                            "name": "ami-08910872"
+                        }
+                    ],
+                    "alarms": [],
+                    "keypairs": [
+                        {
+                            "name": "None"
+                        },
+                        {
+                            "name": "partsultd"
+                        },
+                        {
+                            "name": "partsultdEC2Key"
+                        }
+                    ]
+                },
+                {
+                    "clouds": [
+                        {
+                            "subnets": [
+                                {
+                                    "description": "172.31.32.0/20",
+                                    "name": "subnet-6af8c827"
+                                },
+                                {
+                                    "description": "172.31.16.0/20",
+                                    "name": "subnet-5746832d"
+                                },
+                                {
+                                    "description": "172.31.0.0/20",
+                                    "name": "subnet-c569e4ad"
+                                }
+                            ],
+                            "description": "172.31.0.0/16",
+                            "target_groups": [],
+                            "load_balancers": [],
+                            "security_groups": [
+                                {
+                                    "name": "Automatic"
+                                },
+                                {
+                                    "description": "default VPC security group",
+                                    "name": "sg-70f68b1b"
+                                }
+                            ],
+                            "name": "vpc-463cb52e"
+                        }
+                    ],
+                    "name": "us-east-2",
+                    "placement_groups": [],
+                    "images": [
+                        {
+                            "owner": "user",
+                            "description": "Latest Amazon AMI",
+                            "name": "Windows Compute"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k08 Std-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-da476dbf"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Std-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-d9476dbc"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k14 Std-Win2k12 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-c7466ca2"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k14 Ent-Win2k12 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-27597342"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Std-Win2k12",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-da446ebf"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Ent-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-3b476d5e"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "Microsoft Windows Server 2016 with Desktop Experience Locale",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 30
+                            },
+                            "name": "ami-21587144"
+                        }
+                    ],
+                    "alarms": [],
+                    "keypairs": [
+                        {
+                            "name": "None"
+                        }
+                    ]
+                },
+                {
+                    "clouds": [
+                        {
+                            "subnets": [
+                                {
+                                    "description": "172.31.16.0/20",
+                                    "name": "subnet-5ac28b3d"
+                                },
+                                {
+                                    "description": "172.31.0.0/20",
+                                    "name": "subnet-7b198320"
+                                }
+                            ],
+                            "description": "172.31.0.0/16",
+                            "target_groups": [],
+                            "load_balancers": [],
+                            "security_groups": [
+                                {
+                                    "name": "Automatic"
+                                },
+                                {
+                                    "description": "default VPC security group",
+                                    "name": "sg-bc511fc5"
+                                }
+                            ],
+                            "name": "vpc-9561dbf2"
+                        }
+                    ],
+                    "name": "us-west-1",
+                    "placement_groups": [],
+                    "images": [
+                        {
+                            "owner": "user",
+                            "description": "Latest Amazon AMI",
+                            "name": "Windows Compute"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k08 Std-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-55838035"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Std-Win2k12",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-9d8083fd"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k14 Ent-Win2k12 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-a08586c0"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Ent-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-1b82817b"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Std-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-19828179"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k14 Std-Win2k12 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-ed81828d"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "Microsoft Windows Server 2016 with Desktop Experience Locale",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 30
+                            },
+                            "name": "ami-406d5720"
+                        }
+                    ],
+                    "alarms": [],
+                    "keypairs": [
+                        {
+                            "name": "None"
+                        }
+                    ]
+                },
+                {
+                    "clouds": [
+                        {
+                            "subnets": [
+                                {
+                                    "description": "172.31.32.0/20",
+                                    "name": "subnet-4f408404"
+                                },
+                                {
+                                    "description": "172.31.16.0/20",
+                                    "name": "subnet-eb872292"
+                                },
+                                {
+                                    "description": "172.31.0.0/20",
+                                    "name": "subnet-58cd4c02"
+                                }
+                            ],
+                            "description": "172.31.0.0/16",
+                            "target_groups": [],
+                            "load_balancers": [],
+                            "security_groups": [
+                                {
+                                    "name": "Automatic"
+                                },
+                                {
+                                    "description": "default VPC security group",
+                                    "name": "sg-54cac02b"
+                                }
+                            ],
+                            "name": "vpc-f8d0a181"
+                        }
+                    ],
+                    "name": "us-west-2",
+                    "placement_groups": [],
+                    "images": [
+                        {
+                            "owner": "user",
+                            "description": "Latest Amazon AMI",
+                            "name": "Windows Compute"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k08 Std-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-add061d5"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Std-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-bed160c6"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Ent-Win2k8 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-2cd36254"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k12 Std-Win2k12",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-aedd6cd6"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k14 Ent-Win2k12 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-04c9787c"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "SQL Srv 2k14 Std-Win2k12 R2",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 50
+                            },
+                            "name": "ami-90d160e8"
+                        },
+                        {
+                            "owner": "user",
+                            "description": "Microsoft Windows Server 2016 with Desktop Experience Locale",
+                            "root_disk": {
+                                "device": "/dev/sda1",
+                                "iops": null,
+                                "type": "gp2",
+                                "size": 30
+                            },
+                            "name": "ami-f6d8008e"
+                        }
+                    ],
+                    "alarms": [],
+                    "keypairs": [
+                        {
+                            "name": "None"
+                        }
+                    ]
+                }
+            ],
+            "certificates": [],
+            "schema": "http://elasticbox.net/schemas/aws/compute/windows",
+            "icon": "images/platform/windows.png"
+        }
+    ],
+    "credentials": {
+        "role": "arn:aws:iam::636588615608:role/ElasticBox_Access"
+    },
+    "icon": "images/platform/aws.svg",
+    "target_regions": [
+        {
+            "appliance_id": "i-q428yw",
+            "name": "us-east-1",
+            "vpc": "vpc-e446c29f"
+        }
+    ],
+    "name": "Dry-Run AWS",
+    "reseller": false,
+    "created": "2018-03-16 16:17:59.531589",
+    "uri": "/services/providers/8132cc1d-38b0-4867-b7a3-1af7b83d4792",
+    "organization": "mission-field"
 }
 ```
 
@@ -3445,28 +9104,33 @@ ElasticBox-Release: 4.0
 
 #### Response Body
 ```
-[
-   {
-      "workspace":"--workspace name--",
-      "provider_id":"8c501fe3-54d7-49eb-b5d3-05016becabe3",
-      "created":"2014-03-28 12:18:02.455710",
-      "text":"Provider 'MyAmazon' synchronized",
-      "level":40,
-      "updated":"2014-03-28 12:18:02.456441",
-      "id":"6303cd2f-3c73-4b8e-9aa3-12cdacc15093",
-      "schema":"http://elasticbox.net/schemas/provider-log"
-   },
-   {
-      "workspace":"--workspace name--",
-      "provider_id":"8c501fe3-54d7-49eb-b5d3-05016becabe3",
-      "created":"2014-03-26 14:03:41.863572",
-      "text":"Provider 'MyAmazon' synchronized",
-      "level":40,
-      "updated":"2014-03-26 14:03:41.864242",
-      "id":"3fa58165-2af8-47eb-99e9-98f68e76c9b2",
-      "schema":"http://elasticbox.net/schemas/provider-log"
-   }
-]
+ [
+    {
+       provider_id: "8132cc1d-38b0-4867-b7a3-1af7b83d4792",
+       level: 40,
+       text: "Amazon Web Services Management Console was accessed",
+       created: "2018-10-22 07:30:47.808486",
+       updated: "2018-10-22 07:30:47.808621",
+       role: "arn:aws:iam::636588615608:role/ElasticBox_Access",
+       workspace: "thomasbroadwell",
+       request_id: "e09360e1-7738-4cd9-91f2-cdd3c9f83a91",
+       operation: "console_access",
+       id: "231373e4-ab8f-4c28-8ba6-d91f331fae2c",
+       schema: "http://elasticbox.net/schemas/provider-log"
+    },
+    {
+       provider_id: "8132cc1d-38b0-4867-b7a3-1af7b83d4792",
+       level: 40,
+       text: "Image ami-2051294a in location us-east-1 added successfully.",
+       created: "2018-10-15 19:10:57.765608",
+       updated: "2018-10-15 19:10:57.766848",
+       workspace: "msa_service_account1",
+       request_id: "3ee09e46-1655-4e09-a500-0ccf83161eec",
+       operation: "sync",
+       id: "b79820d6-64c4-4103-ac0b-97cdfe672893",
+       schema: "http://elasticbox.net/schemas/provider-log"
+    }
+ ]
 ```
 
 ### GET /services/providers/{provider_id}/unregisted-instances
@@ -3531,42 +9195,30 @@ ElasticBox-Release: 4.0
 
 #### Response Body
 ```
-[
-  {
-    "profile": {
-      "subnet": "ca-central-1a",
-      "cloud": "vpc-083cc961",
-      "image": "ami-bf5ee2db",
-      "ebs_optimized": false,
-      "instances": 1,
-      "keypair": "Operations",
-      "security_groups": [],
-      "volumes": [],
-      "flavor": "t2.micro",
-      "schema": "http://elasticbox.net/schemas/aws/ec2/profile",
-      "managed_os": false,
-      "location": "ca-central-1"
-    },
-    "provider_id": "8c501fe3-54d7-49eb-b5d3-05016becabe3",
-    "name": "AWS LDAP Windows",
-    "created": "2017-06-15 11:40:00.243971",
-    "deleted": null,
-    "type": "Windows Compute",
-    "server_info": {
-      "public_ip": "52.62.222.233",
-      "private_ip": "172.33.22.199",
-      "public_dns": "ec2-52-62-222-233.ca-central-1.compute.amazonaws.com"
-    },
-    "updated": "2017-06-15 11:40:00.243971",
-    "power_state": "running",
-    "organization": "centurylink",
-    "external_id": "i-06bee885e4e806ca0",
-    "id": "957625f1-3c6f-423c-a8ac-430983c369f7",
-    "schema": "http://elasticbox.net/schemas/unregistered-instance"
-  },
-  {...},
-  {...}
-]
+  [
+     {
+       profile: {
+       location: "us-west-2",
+       service: "cloudtrail",
+       schema: "http://elasticbox.net/schemas/aws/native-service/profile"
+       },
+       schema: "http://elasticbox.net/schemas/unregistered-instance",
+       provider_id: "8132cc1d-38b0-4867-b7a3-1af7b83d4792",
+       description: "S3 Bucket: partsultd-cloudtrail",
+       created: "2018-09-24 16:10:06.198406",
+       deleted: null,
+       type: "Native Service",
+       server_info: { },
+       updated: "2018-09-24 16:22:18.000760",
+       stack_id: null,
+       autoscaling_group: null,
+       power_state: "running",
+       organization: "mission-field",
+       external_id: "PartsUltdAPILogs-Mgmt",
+       id: "451873d3-07cb-450d-b20d-12b4ba3ec343",
+       name: "PartsUltdAPILogs-Mgmt"
+     }
+  ]
 ```
 
 ### POST /services/providers/{provider_id}/images
