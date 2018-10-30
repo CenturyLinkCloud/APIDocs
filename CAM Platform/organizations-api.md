@@ -191,7 +191,6 @@ ElasticBox-Release: 4.0
     ],
     "icon": "/services/blobs/download/58888fc42364025f58d42b9a/mission-field.png",
     "federated_to": [
-        "elasticbox",
         "centurylink",
         "contoso",
         "ctlops"
