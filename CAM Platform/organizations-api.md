@@ -51,7 +51,7 @@ ElasticBox-Release: 4.0
 
 #### Common Error Response Codes
 - 401: Unauthorized - Invalid access token/cookie
-- User doesn’t belong to the organization (403)
+- 403: Forbidden - User doesn’t belong to the organization
 - Not Found (404)
 
 #### Response Parameters
