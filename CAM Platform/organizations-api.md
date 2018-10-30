@@ -1,7 +1,7 @@
 {{{
 "title": "Organizations API",
-"date": "09-01-2016",
-"author": "",
+"date": "10-30-2018",
+"author": "Arya Roudi",
 "attachments": [],
 "contentIsHTML": false,
 "keywords": ["api", "organization api", "manage api", "manage organization"]
@@ -101,20 +101,92 @@ ElasticBox-Release: 4.0
         "onboard_checklist": false,
         "aware_duplicate_arns": false
     },
-    "providers": [
-        {
-            "enabled": true,
-            "type": "CenturyLink",
-            "description": "Manage cloud hosting, Linux and Windows machines",
-            "pricing": []
-        },
-        {
-            "enabled": true,
-            "type": "CenturyLink DCC Foundation",
-            "description": "Manage cloud hosting, Linux and Windows machines.",
-            "pricing": []
-        }
-    ],
+        "providers": [
+            {
+                "enabled": true,
+                "type": "CenturyLink",
+                "description": "Manage cloud hosting, Linux and Windows machines",
+                "pricing": []
+            },
+            {
+                "enabled": true,
+                "type": "CenturyLink DCC Foundation",
+                "description": "Manage cloud hosting, Linux and Windows machines.",
+                "pricing": []
+            },
+            {
+                "enabled": true,
+                "type": "CenturyLink DCC",
+                "pricing": [],
+                "description": "Manage cloud hosting, Linux and Windows machines"
+            },
+            {
+                "enabled": true,
+                "type": "Microsoft Azure",
+                "pricing": [],
+                "description": "Manage Microsoft services using Azure Resource Manager"
+            },
+            {
+                "enabled": true,
+                "type": "Amazon Web Services",
+                "description": "Manage EC2, S3, Dynamo DB, and RDS instances",
+                "pricing": []
+            },
+            {
+                "enabled": true,
+                "type": "Openstack",
+                "description": "Manage cloud hosting, Linux and Windows machines",
+                "pricing": []
+            },
+            {
+                "enabled": true,
+                "type": "VMware vSphere",
+                "description": "Manage cloud hosting, Linux and Windows machines",
+                "pricing": []
+            },
+            {
+                "enabled": true,
+                "type": "Google Compute",
+                "description": "Manage cloud hosting and Linux machines",
+                "pricing": []
+            },
+            {
+                "enabled": true,
+                "type": "Azure Classic",
+                "description": "Manage compute services for Windows and Linux machines.",
+                "pricing": []
+            },
+            {
+                "enabled": true,
+                "type": "Cloudstack",
+                "description": "Manage cloud hosting, Linux and Windows machines",
+                "pricing": []
+            },
+            {
+                "enabled": true,
+                "type": "SoftLayer",
+                "description": "Manage compute services for Windows and Linux machines.",
+                "pricing": []
+            },
+            {
+                "enabled": true,
+                "type": "Rackspace",
+                "description": "Manage cloud hosting and Linux machines.",
+                "pricing": []
+            },
+            {
+                "enabled": true,
+                "type": "VMware vCloud Director",
+                "description": "Manage cloud hosting, Linux and Windows machines.",
+                "pricing": []
+            },
+            {
+                "enabled": true,
+                "type": "Dimension Data",
+                "description": "Manage cloud hosting, Linux and Windows machines",
+                "pricing": []
+            }
+        ],
     "account_installed_product": "******",
     "clc_alias": "*****",
     "plugins": [],
@@ -653,9 +725,9 @@ ElasticBox-Release: 4.0
 - **200** accepted
 
 #### Error Codes
-- Unauthorized (401) - Invalid access token/cookie
-- User doesn’t belong to the organization (403)
-- Not Found (404)
+- 401: Unauthorized - Invalid access token/cookie
+- 403: Forbidden - User doesn’t belong to the organization
+- 404: Not Found
 
 #### Response Parameters
 | Parameter | Type | Description |
@@ -887,11 +959,11 @@ ElasticBox-Release: 4.0
 - **200** accepted
 
 #### Error Codes
-- Bad Request (400) - Request missing, incomplete or includes invalid properties (details provided inside body)
-- Unauthorized (401) - Invalid access token/cookie
-- User doesn’t belong to the organization (403)
-- Not Found (404) - Organization not found
-- Conflict (409) - 'updated' property mismatch. (Make a GET call to API to fetch the current 'updated' property and use it in a new PUT request)
+- 400: Bad Request - Request missing, incomplete or includes invalid properties (details provided inside body)
+- 401: Unauthorized - Invalid access token/cookie
+- 403: Forbidden - User doesn’t belong to the organization
+- 404: Not Found
+- 409: Conflict - 'updated' property mismatch. (Make a GET call to API to fetch the current 'updated' property and use it in a new PUT request)
 
 #### Response Parameters
 |  Parameter  |     Type      |	Description |
@@ -1060,8 +1132,8 @@ ElasticBox-Release: 4.0
 - **202** accepted
 
 #### Error Codes
-- Unauthorized (401) - Invalid access token/cookie
-- Not Found (404) - Organization not found
+- 401: Unauthorized - Invalid access token/cookie
+- 404: Not Found
 
 
 #### Response Parameters
@@ -1117,24 +1189,92 @@ ElasticBox-Release: 4.0
    "ldap_groups":[
 
    ],
-   "providers":[
-      {
-         "enabled":true,
-         "type":"Amazon Web Services",
-         "description":"Manage EC2, ECS and Cloudformation instances",
-         "pricing":[
-
-         ]
-      },
-      {
-         "enabled":true,
-         "type":"Google Compute",
-         "description":"Manage cloud hosting and Linux machines.",
-         "pricing":[
-
-         ]
-      }
-   ],
+       "providers": [
+           {
+               "enabled": true,
+               "type": "CenturyLink",
+               "description": "Manage cloud hosting, Linux and Windows machines",
+               "pricing": []
+           },
+           {
+               "enabled": true,
+               "type": "CenturyLink DCC Foundation",
+               "description": "Manage cloud hosting, Linux and Windows machines.",
+               "pricing": []
+           },
+           {
+               "enabled": true,
+               "type": "CenturyLink DCC",
+               "pricing": [],
+               "description": "Manage cloud hosting, Linux and Windows machines"
+           },
+           {
+               "enabled": true,
+               "type": "Microsoft Azure",
+               "pricing": [],
+               "description": "Manage Microsoft services using Azure Resource Manager"
+           },
+           {
+               "enabled": true,
+               "type": "Amazon Web Services",
+               "description": "Manage EC2, S3, Dynamo DB, and RDS instances",
+               "pricing": []
+           },
+           {
+               "enabled": true,
+               "type": "Openstack",
+               "description": "Manage cloud hosting, Linux and Windows machines",
+               "pricing": []
+           },
+           {
+               "enabled": true,
+               "type": "VMware vSphere",
+               "description": "Manage cloud hosting, Linux and Windows machines",
+               "pricing": []
+           },
+           {
+               "enabled": true,
+               "type": "Google Compute",
+               "description": "Manage cloud hosting and Linux machines",
+               "pricing": []
+           },
+           {
+               "enabled": true,
+               "type": "Azure Classic",
+               "description": "Manage compute services for Windows and Linux machines.",
+               "pricing": []
+           },
+           {
+               "enabled": true,
+               "type": "Cloudstack",
+               "description": "Manage cloud hosting, Linux and Windows machines",
+               "pricing": []
+           },
+           {
+               "enabled": true,
+               "type": "SoftLayer",
+               "description": "Manage compute services for Windows and Linux machines.",
+               "pricing": []
+           },
+           {
+               "enabled": true,
+               "type": "Rackspace",
+               "description": "Manage cloud hosting and Linux machines.",
+               "pricing": []
+           },
+           {
+               "enabled": true,
+               "type": "VMware vCloud Director",
+               "description": "Manage cloud hosting, Linux and Windows machines.",
+               "pricing": []
+           },
+           {
+               "enabled": true,
+               "type": "Dimension Data",
+               "description": "Manage cloud hosting, Linux and Windows machines",
+               "pricing": []
+           }
+       ],
    "ldap_last_sync_completed":null,
    "tags":[
       {
