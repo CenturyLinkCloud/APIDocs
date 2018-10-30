@@ -186,7 +186,7 @@ ElasticBox-Release: 4.0
         {
             "role": "administrator",
             "type": "ldap",
-            "id": "CN=Cloud Application Manager Support,OU=Internal Server Security Groups,OU=Protected,OU=EmployeeAccts,OU=ManagedHosting,DC=na,DC=msmps,DC=net"
+            "id": "CN=Cloud Application Manager Support,OU=Internal Server Security Groups,OU=******,OU=******,OU=ManagedHosting,DC=na,DC=msmps,DC=net"
         }
     ],
     "icon": "/services/blobs/download/58888fc42364025f58d42b9a/mission-field.png",
