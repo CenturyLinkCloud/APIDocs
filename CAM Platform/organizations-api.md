@@ -342,7 +342,7 @@ ElasticBox-Release: 4.0
 #### Error Codes
 - 401: Unauthorized - Invalid access token/cookie
 - 403: Forbidden - User doesn’t belong to the organization
-- Not Found (404)
+- 404: Not Found
 
 #### Response Parameters
 | Parameter | Type | Description |
