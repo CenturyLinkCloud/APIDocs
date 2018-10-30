@@ -113,87 +113,15 @@ ElasticBox-Release: 4.0
             "type": "CenturyLink DCC Foundation",
             "description": "Manage cloud hosting, Linux and Windows machines.",
             "pricing": []
-        },
-        {
-            "enabled": true,
-            "type": "CenturyLink DCC",
-            "pricing": [],
-            "description": "Manage cloud hosting, Linux and Windows machines"
-        },
-        {
-            "enabled": true,
-            "type": "Microsoft Azure",
-            "pricing": [],
-            "description": "Manage Microsoft services using Azure Resource Manager"
-        },
-        {
-            "enabled": true,
-            "type": "Amazon Web Services",
-            "description": "Manage EC2, S3, Dynamo DB, and RDS instances",
-            "pricing": []
-        },
-        {
-            "enabled": true,
-            "type": "Openstack",
-            "description": "Manage cloud hosting, Linux and Windows machines",
-            "pricing": []
-        },
-        {
-            "enabled": true,
-            "type": "VMware vSphere",
-            "description": "Manage cloud hosting, Linux and Windows machines",
-            "pricing": []
-        },
-        {
-            "enabled": true,
-            "type": "Google Compute",
-            "description": "Manage cloud hosting and Linux machines",
-            "pricing": []
-        },
-        {
-            "enabled": true,
-            "type": "Azure Classic",
-            "description": "Manage compute services for Windows and Linux machines.",
-            "pricing": []
-        },
-        {
-            "enabled": true,
-            "type": "Cloudstack",
-            "description": "Manage cloud hosting, Linux and Windows machines",
-            "pricing": []
-        },
-        {
-            "enabled": true,
-            "type": "SoftLayer",
-            "description": "Manage compute services for Windows and Linux machines.",
-            "pricing": []
-        },
-        {
-            "enabled": true,
-            "type": "Rackspace",
-            "description": "Manage cloud hosting and Linux machines.",
-            "pricing": []
-        },
-        {
-            "enabled": true,
-            "type": "VMware vCloud Director",
-            "description": "Manage cloud hosting, Linux and Windows machines.",
-            "pricing": []
-        },
-        {
-            "enabled": true,
-            "type": "Dimension Data",
-            "description": "Manage cloud hosting, Linux and Windows machines",
-            "pricing": []
         }
     ],
-    "account_installed_product": "750910",
-    "clc_alias": "ZXHN",
+    "account_installed_product": "******",
+    "clc_alias": "*****",
     "plugins": [],
     "account_status": "Active",
     "vantive_id": "S626423",
     "display_name": "MissionField LLC",
-    "billing_account_number": "626423",
+    "billing_account_number": "*******",
     "theme": {
         "logo": "/services/blobs/download/58888fc42364025f58d42b9a/mission-field.png",
         "accent": null,
@@ -211,8 +139,8 @@ ElasticBox-Release: 4.0
             "ldap_group_sync": true,
             "sources": [
                 {
-                    "host": "ldap://ldap.eerrewre.com",
-                    "ldap_search_password": "fdfDDSAdsadsdasd"
+                    "host": "ldap://ldap.***********.com",
+                    "ldap_search_password": "************"
                 }
             ]
         }
@@ -237,168 +165,23 @@ ElasticBox-Release: 4.0
             "type": "Email",
             "name": "email",
             "value": null
-        },
-        {
-            "type": "User ID",
-            "name": "user",
-            "value": null
-        },
-        {
-            "type": "Instance name",
-            "name": "Name",
-            "value": null
         }
     ],
     "deleted": null,
     "ldap_last_sync_completed": null,
     "domains": [
-        "mission-field.com"
+        "**************"
     ],
     "members": [
         {
             "role": "administrator",
             "type": "workspace",
-            "id": "diego"
+            "id": "********"
         },
         {
             "type": "workspace",
             "role": "administrator",
-            "id": "thomasbroadwell1"
-        },
-        {
-            "type": "workspace",
-            "role": "administrator",
-            "id": "keithhomco"
-        },
-        {
-            "role": "administrator",
-            "type": "workspace",
-            "id": "rangachakravarthula"
-        },
-        {
-            "role": "administrator",
-            "type": "workspace",
-            "id": "thomasbroadwell"
-        },
-        {
-            "role": "administrator",
-            "type": "workspace",
-            "id": "davidflynn"
-        },
-        {
-            "type": "workspace",
-            "role": "administrator",
-            "id": "missionfields1"
-        },
-        {
-            "type": "workspace",
-            "role": "administrator",
-            "id": "guillermosanchez"
-        },
-        {
-            "role": "administrator",
-            "type": "workspace",
-            "id": "pashagmohammed"
-        },
-        {
-            "role": "administrator",
-            "type": "workspace",
-            "id": "christophergeers1"
-        },
-        {
-            "type": "workspace",
-            "role": "administrator",
-            "id": "sivanjaneyulupopuri"
-        },
-        {
-            "type": "workspace",
-            "role": "administrator",
-            "id": "gustavollorente"
-        },
-        {
-            "role": "administrator",
-            "type": "workspace",
-            "id": "cristinatorres"
-        },
-        {
-            "type": "workspace",
-            "role": "administrator",
-            "id": "thomaslitton"
-        },
-        {
-            "role": "administrator",
-            "type": "workspace",
-            "id": "benjaminschwedler"
-        },
-        {
-            "type": "workspace",
-            "role": "administrator",
-            "id": "cristinagarcia"
-        },
-        {
-            "type": "workspace",
-            "role": "administrator",
-            "id": "julianatienza"
-        },
-        {
-            "type": "workspace",
-            "role": "administrator",
-            "id": "guillermo"
-        },
-        {
-            "role": "administrator",
-            "type": "workspace",
-            "id": "joseluis"
-        },
-        {
-            "role": "administrator",
-            "type": "workspace",
-            "id": "jose"
-        },
-        {
-            "type": "workspace",
-            "role": "administrator",
-            "id": "sergioquintanacastillo"
-        },
-        {
-            "type": "workspace",
-            "role": "administrator",
-            "id": "amaliagarciademirasierraperez"
-        },
-        {
-            "type": "workspace",
-            "role": "administrator",
-            "id": "danielpena"
-        },
-        {
-            "type": "workspace",
-            "role": "administrator",
-            "id": "davidojeda"
-        },
-        {
-            "type": "workspace",
-            "role": "administrator",
-            "id": "denespal"
-        },
-        {
-            "type": "workspace",
-            "role": "administrator",
-            "id": "aryaroudi"
-        },
-        {
-            "type": "workspace",
-            "role": "administrator",
-            "id": "juanmorra1"
-        },
-        {
-            "type": "workspace",
-            "role": "administrator",
-            "id": "thomasbroadwell2"
-        },
-        {
-            "type": "workspace",
-            "role": "administrator",
-            "id": "msa_service_account1"
+            "id": "**************"
         },
         {
             "role": "administrator",
@@ -664,139 +447,6 @@ ElasticBox-Release: 4.0
                 "visibility": "internal",
                 "value": "https://api.watcher.ctl.io/",
                 "name": "watcher_reg_url"
-            },
-            {
-                "scope": "gateway.constants",
-                "type": "Text",
-                "value": "https://pkg.watcher.ctl.io",
-                "visibility": "internal",
-                "name": "watcher_package_url"
-            },
-            {
-                "scope": "active_directory_controller.constants",
-                "type": "Text",
-                "visibility": "internal",
-                "value": "https://gateway.managedos.ctl.io",
-                "name": "managed_os_api_url"
-            },
-            {
-                "scope": "metadata.constants",
-                "type": "Text",
-                "value": "https://gateway.managedos.ctl.io",
-                "visibility": "internal",
-                "name": "managed_os_api_url"
-            },
-            {
-                "scope": "managed_server.watcher_agent.constants",
-                "type": "Text",
-                "visibility": "internal",
-                "value": "https://gateway.managedos.ctl.io",
-                "name": "managed_os_api_url"
-            },
-            {
-                "scope": "managed_server.billing.constants",
-                "type": "Text",
-                "value": "https://gateway.managedos.ctl.io",
-                "visibility": "internal",
-                "name": "managed_os_api_url"
-            },
-            {
-                "scope": "managed_server.constants",
-                "type": "Text",
-                "visibility": "internal",
-                "value": "https://gateway.managedos.ctl.io",
-                "name": "managed_os_api_url"
-            },
-            {
-                "scope": "managed_server.metadata.constants",
-                "type": "Text",
-                "value": "https://gateway.managedos.ctl.io",
-                "visibility": "internal",
-                "name": "managed_os_api_url"
-            },
-            {
-                "scope": "managed_server.watcher_agent",
-                "type": "Text",
-                "visibility": "internal",
-                "value": "https://api.watcher.ctl.io/",
-                "name": "watcher_reg_url"
-            },
-            {
-                "scope": "managed_server.watcher_agent",
-                "type": "Text",
-                "value": "https://pkg.watcher.ctl.io",
-                "visibility": "internal",
-                "name": "watcher_package_url"
-            },
-            {
-                "scope": "active_directory_controller",
-                "type": "Text",
-                "visibility": "private",
-                "value": "",
-                "name": "TrustADIPAddress"
-            },
-            {
-                "scope": "active_directory_controller",
-                "type": "Text",
-                "value": "",
-                "visibility": "private",
-                "name": "TrustADNetbiosName"
-            },
-            {
-                "scope": "active_directory_controller",
-                "type": "Text",
-                "visibility": "private",
-                "value": "",
-                "name": "TrustADDomainName"
-            },
-            {
-                "scope": "active_directory_controller",
-                "type": "Text",
-                "value": "",
-                "visibility": "private",
-                "name": "TrustADUser"
-            },
-            {
-                "scope": "active_directory_controller",
-                "type": "Password",
-                "visibility": "private",
-                "value": "",
-                "name": "TrustADPassword"
-            },
-            {
-                "scope": "managed_server.register.constants",
-                "type": "Text",
-                "value": "https://gateway.managedos.ctl.io",
-                "visibility": "internal",
-                "name": "managed_os_api_url"
-            },
-            {
-                "scope": "managed_server.register",
-                "type": "Text",
-                "visibility": "internal",
-                "value": "120",
-                "name": "MaximumTries"
-            },
-            {
-                "scope": "managed_server",
-                "type": "Text",
-                "value": "true",
-                "visibility": "internal",
-                "name": "IsAppliance"
-            },
-            {
-                "scope": "proxies",
-                "type": "Options",
-                "visibility": "public",
-                "value": "prod",
-                "name": "watcher_environment"
-            },
-            {
-                "scope": "gateway",
-                "type": "Text",
-                "visibility": "internal",
-                "value": "zxhnva1umwcmanage01gw",
-                "name": "GatewayName"
             }
         ],
         "created": "2018-08-22 13:16:15.687975",
@@ -831,119 +481,6 @@ ElasticBox-Release: 4.0
                         "name": "CMDB_MaxTries",
                         "value": "120",
                         "visibility": "internal"
-                    },
-                    {
-                        "required": false,
-                        "type": "Text",
-                        "name": "TrustADIPAddress",
-                        "value": "",
-                        "visibility": "public"
-                    },
-                    {
-                        "required": false,
-                        "type": "Text",
-                        "name": "TrustADNetbiosName",
-                        "value": "",
-                        "visibility": "public"
-                    },
-                    {
-                        "required": false,
-                        "type": "Text",
-                        "name": "TrustADDomainName",
-                        "value": "",
-                        "visibility": "public"
-                    },
-                    {
-                        "required": false,
-                        "type": "Text",
-                        "name": "TrustADUser",
-                        "value": "",
-                        "visibility": "public"
-                    },
-                    {
-                        "required": false,
-                        "type": "Password",
-                        "name": "TrustADPassword",
-                        "value": "",
-                        "visibility": "public"
-                    },
-                    {
-                        "required": true,
-                        "type": "Text",
-                        "name": "centos_allowed",
-                        "value": "true",
-                        "visibility": "internal"
-                    },
-                    {
-                        "required": true,
-                        "type": "Text",
-                        "name": "IsAppliance",
-                        "value": "true",
-                        "visibility": "internal"
-                    },
-                    {
-                        "automatic_updates": "off",
-                        "name": "constants",
-                        "required": false,
-                        "visibility": "internal",
-                        "value": "51fa717e-cc9e-4d48-8026-49fb56f3c774",
-                        "type": "Box"
-                    },
-                    {
-                        "automatic_updates": "off",
-                        "name": "ssh_keygen",
-                        "required": false,
-                        "value": "15b2f0dc-ffba-4301-931d-a7b71989dbc9",
-                        "visibility": "public",
-                        "type": "Box"
-                    },
-                    {
-                        "automatic_updates": "off",
-                        "name": "metadata",
-                        "required": false,
-                        "value": "cbfb4440-75b8-42dd-a4bf-e1c57605c00e",
-                        "visibility": "internal",
-                        "type": "Box"
-                    },
-                    {
-                        "automatic_updates": "off",
-                        "name": "centos_required",
-                        "required": false,
-                        "visibility": "internal",
-                        "value": "a37f166d-c5c6-4830-9988-be8caaf8d974",
-                        "type": "Box"
-                    },
-                    {
-                        "automatic_updates": "off",
-                        "name": "gateway",
-                        "required": false,
-                        "value": "3d923e65-4c68-40e8-96f7-596eefd13d07",
-                        "visibility": "internal",
-                        "type": "Box"
-                    },
-                    {
-                        "automatic_updates": "off",
-                        "name": "managed_server",
-                        "required": false,
-                        "visibility": "internal",
-                        "value": "1e3f17a8-0c28-412b-89a0-72f6d67c2a1d",
-                        "type": "Box"
-                    },
-                    {
-                        "automatic_updates": "off",
-                        "name": "active_directory_controller",
-                        "required": false,
-                        "value": "d17db027-f709-458f-b77e-f2d9807798e6",
-                        "visibility": "internal",
-                        "type": "Box"
-                    },
-                    {
-                        "automatic_updates": "off",
-                        "name": "proxies",
-                        "required": false,
-                        "visibility": "internal",
-                        "value": "3963f11e-f762-41c6-8f51-bd0f06f882a4",
-                        "type": "Box"
                     }
                 ],
                 "visibility": "workspace",
@@ -1166,7 +703,7 @@ ElasticBox-Release: 4.0
     "add_provider": true,
     "deploy_instance": true,
     "type": "personal",
-    "email": "user1@mission-field.com",
+    "email": "*****@*************.com",
     "schema": "http://elasticbox.net/schemas/workspaces/personal",
     "updated": "2018-07-25 14:24:05.510205",
     "take_tour": true,
@@ -1220,23 +757,7 @@ ElasticBox-Release: 4.0
    "setup":true,
    "administrators":[
       "ad",
-      "al",
-      "ar",
-      "ca",
-      "ce",
-      "di",
-      "el",
-      "ig",
-      "la",
-      "ma",
-      "mas",
-      "mr",
-      "os",
-      "ra",
-      "ri",
-      "ric",
-      "ys",
-      "lu"
+      "al"
    ],
    "domains":[
       "cam.ctl.io"
@@ -1283,13 +804,6 @@ ElasticBox-Release: 4.0
                "region":"us-east-1",
                "flavor":"t2.micro",
                "schema":"http://elasticbox.net/schemas/aws/compute/pricing"
-            },
-            {
-               "platform":"Windows Compute",
-               "price":10,
-               "region":"us-east-1",
-               "flavor":"t2.micro",
-               "schema":"http://elasticbox.net/schemas/aws/compute/pricing"
             }
          ]
       },
@@ -1308,62 +822,6 @@ ElasticBox-Release: 4.0
          "pricing":[
 
          ]
-      },
-      {
-         "enabled":true,
-         "type":"Google Compute",
-         "description":"Manage cloud hosting and Linux machines",
-         "pricing":[
-
-         ]
-      },
-      {
-         "enabled":true,
-         "type":"Microsoft Azure",
-         "description":"Manage compute services for Windows and Linux machines.",
-         "pricing":[
-
-         ]
-      },
-      {
-         "enabled":true,
-         "type":"Cloudstack",
-         "description":"Manage cloud hosting, Linux and Windows machines",
-         "pricing":[
-
-         ]
-      },
-      {
-         "enabled":true,
-         "type":"SoftLayer",
-         "description":"Manage compute services for Windows and Linux machines.",
-         "pricing":[
-
-         ]
-      },
-      {
-         "enabled":true,
-         "type":"VMware vCloud Director",
-         "description":"Manage cloud hosting, Linux and Windows machines",
-         "pricing":[
-
-         ]
-      },
-      {
-         "enabled":true,
-         "type":"Amazon Web Services GovCloud",
-         "description":"Manage compute services in an isolated ITAR compliant AWS region.",
-         "pricing":[
-
-         ]
-      },
-      {
-         "enabled":true,
-         "type":"Rackspace",
-         "description":"Manage cloud hosting and Linux machines.",
-         "pricing":[
-
-         ]
       }
    ],
    "tags":[
@@ -1376,31 +834,6 @@ ElasticBox-Release: 4.0
          "name":"box",
          "type":"Box",
          "value":null
-      },
-      {
-         "name":"environment",
-         "type":"Environment",
-         "value":null
-      },
-      {
-         "name":"email",
-         "type":"Email",
-         "value":null
-      },
-      {
-         "name":"user",
-         "type":"User ID",
-         "value":null
-      },
-      {
-         "name":"Name",
-         "type":"Service Instance ID",
-         "value":null
-      },
-      {
-         "name":"Testing",
-         "type":"Custom",
-         "value":"test"
       }
    ],
    "cost_centers":[
@@ -1494,22 +927,7 @@ ElasticBox-Release: 4.0
    "administrators":[
       "ad",
       "al",
-      "ar",
-      "ca",
-      "ce",
-      "di",
-      "el",
-      "ig",
-      "la",
-      "ma",
-      "mas",
-      "mr",
-      "os",
-      "ra",
-      "ri",
-      "ric",
-      "ys",
-      "lu"
+      "ar"
    ],
    "domains":[
       "cam.ctl.io"
@@ -1556,70 +974,7 @@ ElasticBox-Release: 4.0
                "region":"us-east-1",
                "flavor":"t2.micro",
                "schema":"http://elasticbox.net/schemas/aws/compute/pricing"
-            },
-            {
-               "platform":"Windows Compute",
-               "price":10,
-               "region":"us-east-1",
-               "flavor":"t2.micro",
-               "schema":"http://elasticbox.net/schemas/aws/compute/pricing"
             }
-         ]
-      },
-      {
-         "enabled":true,
-         "type":"Openstack",
-         "description":"Manage cloud hosting, Linux and Windows machines",
-         "pricing":[
-
-         ]
-      },
-      {
-         "enabled":true,
-         "type":"VMware vSphere",
-         "description":"Manage cloud hosting, Linux and Windows machines",
-         "pricing":[
-
-         ]
-      },
-      {
-         "enabled":true,
-         "type":"Google Compute",
-         "description":"Manage cloud hosting and Linux machines",
-         "pricing":[
-
-         ]
-      },
-      {
-         "enabled":true,
-         "type":"Microsoft Azure",
-         "description":"Manage compute services for Windows and Linux machines.",
-         "pricing":[
-
-         ]
-      },
-      {
-         "enabled":true,
-         "type":"Cloudstack",
-         "description":"Manage cloud hosting, Linux and Windows machines",
-         "pricing":[
-
-         ]
-      },
-      {
-         "enabled":true,
-         "type":"SoftLayer",
-         "description":"Manage compute services for Windows and Linux machines.",
-         "pricing":[
-
-         ]
-      },
-      {
-         "enabled":true,
-         "type":"VMware vCloud Director",
-         "description":"Manage cloud hosting, Linux and Windows machines",
-         "pricing":[
-
          ]
       },
       {
@@ -1649,31 +1004,6 @@ ElasticBox-Release: 4.0
          "name":"box",
          "type":"Box",
          "value":null
-      },
-      {
-         "name":"environment",
-         "type":"Environment",
-         "value":null
-      },
-      {
-         "name":"email",
-         "type":"Email",
-         "value":null
-      },
-      {
-         "name":"user",
-         "type":"User ID",
-         "value":null
-      },
-      {
-         "name":"Name",
-         "type":"Service Instance ID",
-         "value":null
-      },
-      {
-         "name":"Testing",
-         "type":"Custom",
-         "value":"test"
       }
    ],
    "cost_centers":[
@@ -1805,62 +1135,6 @@ ElasticBox-Release: 4.0
          "pricing":[
 
          ]
-      },
-      {
-         "enabled":true,
-         "type":"Openstack",
-         "description":"Manage cloud hosting, Linux and Windows machines.",
-         "pricing":[
-
-         ]
-      },
-      {
-         "enabled":true,
-         "type":"VMware vSphere",
-         "description":"Manage cloud hosting, Linux and Windows machines",
-         "pricing":[
-
-         ]
-      },
-      {
-         "enabled":true,
-         "type":"Microsoft Azure",
-         "description":"Manage compute services for Windows and Linux machines.",
-         "pricing":[
-
-         ]
-      },
-      {
-         "enabled":true,
-         "type":"Cloudstack",
-         "description":"Manage cloud hosting, Linux and Windows machines.",
-         "pricing":[
-
-         ]
-      },
-      {
-         "enabled":true,
-         "type":"VMware vCloud Director",
-         "description":"Manage cloud hosting, Linux and Windows machines.",
-         "pricing":[
-
-         ]
-      },
-      {
-         "enabled":true,
-         "type":"Amazon Web Services GovCloud",
-         "description":"Manage compute services in an isolated ITAR compliant AWS region.",
-         "pricing":[
-
-         ]
-      },
-      {
-         "enabled":true,
-         "type":"Rackspace",
-         "description":"Manage cloud hosting and Linux machines.",
-         "pricing":[
-
-         ]
       }
    ],
    "ldap_last_sync_completed":null,
@@ -1874,11 +1148,6 @@ ElasticBox-Release: 4.0
          "name":"environment",
          "type":"Environment",
          "value":null
-      },
-      {
-         "name":"devenv",
-         "type":"Custom",
-         "value":"Cloud Application Manager Dev Environment"
       }
    ],
    "cost_centers":[
