@@ -119,7 +119,7 @@ ElasticBox-Release: 4.0
     "clc_alias": "*****",
     "plugins": [],
     "account_status": "Active",
-    "vantive_id": "S626423",
+    "vantive_id": "*******",
     "display_name": "MissionField LLC",
     "billing_account_number": "*******",
     "theme": {
