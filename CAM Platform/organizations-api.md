@@ -574,7 +574,7 @@ ElasticBox-Release: 4.0
 - **200** accepted
 
 #### Error Codes
-- Unauthorized (401) - Invalid access token/cookie
+- 401: Unauthorized - Invalid access token/cookie
 - User doesn’t belong to the organization (403)
 - Not Found (404)
 
