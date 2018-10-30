@@ -1,6 +1,6 @@
 {{{ "title": "Providers API",
-"date": "09-01-2016",
-"author": "",
+"date": "10-30-2018",
+"author": "Arya Roudi",
 "keywords": ["api", "cam api", "cam", "api providers", "providers", "manage api"],
 "attachments": [],
 "contentIsHTML": false
@@ -637,7 +637,7 @@ ElasticBox-Release: 4.0
 
 #### Error Codes
 
-- Bad Request (400)
+- 400: Bad Request
 
 #### Response parameters
 |Parameter | Type | Description |
@@ -819,8 +819,8 @@ ElasticBox-Release: 4.0
 
 #### Error Codes
 
-- Forbidden (403)
-- Not Found (404)
+- 403: Forbidden
+- 404: Not Found
 
 
 #### Response parameters
@@ -1044,8 +1044,8 @@ ElasticBox-Release: 4.0
 - **200** Accepted
 
 #### Common Error Response Codes
-  - Invalid Data (400)
-  - Conflict (409)
+- 400: Bad Request - Invalid Data
+- 409: Conflict
 
 #### Response Parameters
 |Parameter | Type | Description |
@@ -1321,9 +1321,9 @@ ElasticBox-Release: 4.0
 - **202** Accepted
 
 #### Common Error Response Codes
-- Invalid Data (400)
-- Forbidden (403)
-- Active service using the provider (400)
+- 400: Bad Request - Invalid Data
+- 400: Bad Request - Active service using the provider
+- 403: Forbidden
 
 
 ### PUT /services/providers/{provider_id}/sync
@@ -1359,8 +1359,8 @@ ElasticBox-Release: 4.0
 - **202** Accepted
 
 #### Common Error Response Codes
-- Forbidden (403)
-- Not Found (404)
+- 403: Forbidden - User doesn’t belong to the organization
+- 404: Not Found
 
 
 ### GET /services/providers/{provider_id}/logs
@@ -1392,8 +1392,8 @@ ElasticBox-Release: 4.0
 - **200** Accepted
 
 #### Common Error Response Codes
-- Forbidden (403)
-- Not Found (404)
+- 403: Forbidden - User doesn’t belong to the organization
+- 404: Not Found
 
 #### Response Parameters
 
@@ -1470,8 +1470,8 @@ ElasticBox-Release: 4.0
 - **200** Accepted
 
 #### Common Error Response Codes
-- Forbidden (403)
-- Not Found (404)
+- 403: Forbidden - User doesn’t belong to the organization
+- 404: Not Found
 
 #### Response Parameters
 |Parameter | Type | Description |
@@ -1528,12 +1528,12 @@ ElasticBox-Release: 4.0
   ]
 ```
 
-### POST /services/providers/{provider_id}/images
 
 Adds a new machine image to a provider when you give the provider ID.
 
 ### URL
 #### Structure
+### POST /services/providers/{provider_id}/images
     [POST] /services/providers/{provider_id}/images
 
 #### Example
@@ -1573,9 +1573,9 @@ ElasticBox-Release: 4.0
 - **202** Accepted
 
 #### Common Error Response Codes
-- Invalid Data (400)
-- Forbidden (403)
-- Not Found (404)
+- 400: Bad Request - Request missing, incomplete or includes invalid properties (details provided inside body)
+- 403: Forbidden - User doesn’t belong to the organization
+- 404: Not Found
 
 
 ### DELETE /services/providers/{provider_id}/images/{machine_image_id}
@@ -1613,10 +1613,9 @@ ElasticBox-Release: 4.0
 - **202** Accepted
 
 #### Common Error Response Codes
-- Location query parameter is missing (400)
-- Forbidden (403)
-- Not Found (404)
-
+- 400: Bad Request - Request missing, incomplete or includes invalid properties (details provided inside body)
+- 403: Forbidden - User doesn’t belong to the organization
+- 404: Not Found
 
 ### Contacting Cloud Application Manager Support
 
