@@ -10,12 +10,14 @@
 
 | Resource | Description |
 |----------|-------------|
-| [POST /services/blobs/upload](#anchor1) | Uploads a file using multi-part form data |
-| [POST /services/blobs/upload/{file_name}](#anchor2) | Creates a blob from submitted data |
-| [GET /services/blobs/download/{file_id}/{file_name}](#anchor3) | Downloads a file uploaded previously |
+| [POST /services/blobs/upload](#post-servicesblobsupload) | Uploads a file using multi-part form data |
+| [POST /services/blobs/upload/{file_name}](#post-servicesblobsuploadfile_name) | Creates a blob from submitted data |
+| [GET /services/blobs/download/{file_id}/{file_name}](#get-servicesblobsdownloadfile_idfile_name) | Downloads a file uploaded previously |
 
-### <a name="anchor1"></a>URL
+## POST /services/blobs/upload
 Uploads a file using multi-part form data.
+
+### URL
 
 #### Structure
 ```
@@ -67,9 +69,11 @@ ElasticBox-Release: 4.0
     "content_type": "image/png"
 }
 ```
-
-### <a name="anchor2"></a>URL
+## POST /services/blobs/upload/{file_name}
 Creates a blob from submitted data.
+
+### URL
+
 #### Structure
 ```
 [POST] /services/blobs/upload/{file_name}
@@ -118,8 +122,10 @@ ElasticBox-Release: 4.0
     "content_type": "multipart/form-data; boundary=--------------------------077273512344925050592348"
 }
 ```
-### <a name="anchor3"></a>URL
+
+## GET /services/blobs/download/{file_id}/{file_name}
 Downloads a file uploaded previously.
+### URL
 
 #### Structure
 ```
