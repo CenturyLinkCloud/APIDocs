@@ -8,130 +8,161 @@
 
 **Manage Blobs**
 
-| Resource | Description |
-|----------|-------------|
-| POST /services/blobs/upload | Uploads a file using multi-part form data. |
-| POST /services/blobs/upload/{file_name} | Creates a blob from submitted data. |
-| GET /services/blobs/download/{file_id}/{file_name} | Downloads a file uploaded previously. |
+### URL
+Uploads a file using multi-part form data.
 
-### POST /services/blobs/upload
-
-Uploads a file using multi-part form data when you give these parameters in the request body: url, length, upload_date, and content_type.
-
-**Normal Response Codes**
-
-* 200
-
-**Error Response Codes**
-
-* Bad Request (400)
-
+#### Structure
 ```
-Headers:
+[POST] /services/blobs/upload
+```
+#### Example
+```
+[POST] https://cam.ctl.io/services/blobs/upload
+```
+### Request
 
-Content-Type: application/json
+#### Headers
+```
+Content-Type: multipart/form-data
 Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
+#### URI Parameters
+* None
+#### Request body parameters
+* Form data: blob (binary)
 
-**Response Parameters**
+### Response
+#### Normal Response Codes
 
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| url | string | The URL of the uploaded file. |
-| length | integer | The file length in bytes. |
-| upload_date | string | The upload date. |
-| content_type | string | The content type of the file. |
+- **200** OK
+
+#### Common Error Response Codes
+
+* Bad Request (**400**)
+
+#### Response Parameters
+
+| Parameter | Type |Description |
+|-----------|------|------------|
+| content-type | string | File content type |
+| length | number | File size in bytes |
+| upload_date | string | Date when file was uploaded |
+| url | string | Url to download the file |
+
+#### Response Body
 
 ```
 {
-   "url":"/services/blobs/download/533577cb7d0083310b7c9600/arrow.png",
-   "upload_date":"2014-03-28 13:23:23.462060",
-   "length":1287,
-   "content_type":"image/png"
+    "url": "/services/blobs/download/5be2de281862a32389a50d81/Screen-Shot-2018-11-07-at-13.44.12.png",
+    "upload_date": "2018-11-07 12:44:24.254860",
+    "length": 12715,
+    "content_type": "image/png"
 }
 ```
 
-### POST /services/blobs/upload/{file_name}
+### URL
+Uploads a file using multi-part form data with the ability of giving file any name when saving in the system.
 
-Creates a blob from submitted data when you give the file name.
-
-**Normal Response Codes**
-* 200
-
-**Error Response Codes**
-* Bad request (400)
-
-**Request Parameters**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| tags | string | Box tags. |
-| bindings | string | List of Box bindings. |
-| binding | object | Binding contained in the bindings list, each binding have a box and a name. |
-| owner | string | Box owner, the user name for a personal workspace and the workspace name for a team workspace. |
-| name | string | Box name. |
-| description | string | Box description. |
-| service | string | Required. Can be one of these types: Linux Compute, Windows Compute, CloudFormation Service. |
-| icon | string | Icon url. |
-| schema | string | Box schema. |
-
+#### Structure
 ```
-Headers:
+[POST] /services/blobs/upload/{file_name}
+```
+#### Example
+```
+[POST] https://cam.ctl.io/services/blobs/upload/another-file-name.png
+```
+### Request
 
-Content-Type: application/json
+#### Headers
+```
+Content-Type: multipart/form-data
 Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
+#### URI Parameters
+* None
+#### Request body parameters
+* Form data: blob (binary)
 
-**Response Parameters**
+### Response
+#### Normal Response Codes
 
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| url | string | The URL of the uploaded file. |
-| length | integer | The file length in bytes. |
-| upload_date | string | The upload date. |
-| content_type | string | The content type of the file. |
+- **200** OK
+
+#### Common Error Response Codes
+
+* Bad Request (**400**)
+
+#### Response Parameters
+
+| Parameter | Type |Description |
+|-----------|------|------------|
+| content-type | string | File content type |
+| length | number | File size in bytes |
+| upload_date | string | Date when file was uploaded |
+| url | string | Url to download the file |
+
+#### Response Body
 
 ```
 {
-   "url":"/services/blobs/download/53357ac57d0083310b7c960b/miblob",
-   "upload_date":"2014-03-28 13:36:05.227905",
-   "length":143951,
-   "content_type":"multipart/form-data"
+    "url": "/services/blobs/download/5be30e001862a32389a50d8f/another-file-name.png",
+    "upload_date": "2018-11-07 16:08:32.178537",
+    "length": 7264,
+    "content_type": "multipart/form-data; boundary=--------------------------077273512344925050592348"
 }
 ```
-
-### GET /services/blobs/download/{file_id}/{file_name}
-
+### URL
 Downloads a file uploaded previously when you give the file_id and the file_name. You can get the full download URL from the response body of the file upload request.
-
-**Normal Response Codes**
-
-* 200
-
-**Error Response Codes**
-
-* Bad Request (400)
-
-**Request**
-
+#### Structure
 ```
-Headers:
+[GET] /services/blobs/download/{file_id}/{file_name}
+```
+#### Example
+```
+[GET] https://cam.ctl.io/services/blobs/download/5be2de281862a32389a50d81/Screen-Shot-2018-11-07-at-13.44.12.png
+```
+### Request
 
-Content-Type: application/json
+#### Headers
+```
 Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
+#### URI Parameters
+| NAME | TYPE | DESCRIPTION | REQ. |
+|------| ---- | ----------- | ---- |
+| file_id | string | File id | Yes |
+| file_name | string | File name | Yes |
 
-**Response Parameters**
+#### Request body parameters
+* None
 
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| url | string | The URL of the uploaded file. |
-| length | integer | The file length in bytes. |
-| upload_date | string | The upload date. |
-| content_type | string | The content type of the file. |
+### Response
+#### Normal Response Codes
+
+- **200** OK
+
+#### Common Error Response Codes
+
+* Bad Request (**400**)
+
+#### Response Parameters
+
+| Parameter | Type |Description |
+|-----------|------|------------|
+| content-type | string | File content type |
+| length | number | File size in bytes |
+| upload_date | string | Date when file was uploaded |
+| url | string | Url to download the file |
+
+#### Response Body
+
+```
+The file
+```
+
 
 ### Contacting Cloud Application Manager Support
 
