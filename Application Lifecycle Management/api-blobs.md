@@ -8,7 +8,13 @@
 
 **Manage Blobs**
 
-### URL
+| Resource | Description |
+|----------|-------------|
+| [POST /services/blobs/upload](#anchor1) | Uploads a file using multi-part form data |
+| [POST /services/blobs/upload/{file_name}](#anchor2) | Creates a blob from submitted data |
+| [GET /services/blobs/download/{file_id}/{file_name}](#anchor3) | Downloads a file uploaded previously |
+
+### <a name="anchor1"></a>URL
 Uploads a file using multi-part form data.
 
 #### Structure
@@ -39,7 +45,8 @@ ElasticBox-Release: 4.0
 
 #### Common Error Response Codes
 
-* Bad Request (**400**)
+- **400** Bad Request
+- **401** Unauthorized
 
 #### Response Parameters
 
@@ -61,9 +68,8 @@ ElasticBox-Release: 4.0
 }
 ```
 
-### URL
-Uploads a file using multi-part form data with the ability of giving file any name when saving in the system.
-
+### <a name="anchor2"></a>URL
+Creates a blob from submitted data.
 #### Structure
 ```
 [POST] /services/blobs/upload/{file_name}
@@ -91,9 +97,8 @@ ElasticBox-Release: 4.0
 - **200** OK
 
 #### Common Error Response Codes
-
-* Bad Request (**400**)
-
+- **400** Bad Request
+- **401** Unauthorized
 #### Response Parameters
 
 | Parameter | Type |Description |
@@ -113,8 +118,9 @@ ElasticBox-Release: 4.0
     "content_type": "multipart/form-data; boundary=--------------------------077273512344925050592348"
 }
 ```
-### URL
-Downloads a file uploaded previously when you give the file_id and the file_name. You can get the full download URL from the response body of the file upload request.
+### <a name="anchor3"></a>URL
+Downloads a file uploaded previously.
+
 #### Structure
 ```
 [GET] /services/blobs/download/{file_id}/{file_name}
@@ -145,9 +151,8 @@ ElasticBox-Release: 4.0
 - **200** OK
 
 #### Common Error Response Codes
-
-* Bad Request (**400**)
-
+- **400** Bad Request
+- **401** Unauthorized
 #### Response Parameters
 
 | Parameter | Type |Description |
