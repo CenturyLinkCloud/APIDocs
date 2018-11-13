@@ -29,7 +29,7 @@ Manage and perform actions on workspaces.
 
 
 ## GET /services/workspaces
-Gets the default workspace if no parameter is provided. If ids parameter (a list of workspace ids) is provided then it fetches all the workspaces corresponding to that list.
+Gets the default workspace if no parameter is provided and user has no other privilege. If ids parameter (a list of workspace ids) is provided then it fetches all the workspaces corresponding to that list and user has access to.
 
 ### URL
 
@@ -53,6 +53,7 @@ ElasticBox-Release: 4.0
 | NAME | TYPE | DESCRIPTION | REQ. |
 |------| ---- | ----------- | ---- |
 | ids | string | Fetches the workspaces corresponding to each workspace id in the string. The ids will be separated by commas. For example: workspace4,operations,workspace5. | No |
+| limit | integer | It limits the number of workspaces listed in the reply. | No |
 
 #### Request body parameters
 
@@ -61,7 +62,7 @@ ElasticBox-Release: 4.0
 ### Response
 #### Normal Response Codes
 
-- **202** Accepted
+- **200** OK
 
 #### Common Error Response Codes
 
@@ -80,13 +81,13 @@ ElasticBox-Release: 4.0
 | created | string | Creation date |
 | costcenter | string | Cost center id |
 | dashboard_notice | boolean | If the flag is False we don't show the dashboard notice to the user |
-| deleted | boolean | If the workspace has been deleted |
+| deleted | string | It will be null if the resource is valid or a string with the time and date of deletion if it was deleted. End users will always see this parameter as null | |
 | deploy_instance | boolean | Indicates if the workspace has deployed an instance |
 | email | string | User email |
 | email_validated_at | string | Email validation date. |
-| favourites | array | List of user's favourite workspaces. User set a workspace as favourite when he clicks on a star. |
+| favorites | array | List of user's favourite workspaces. User set a workspace as favourite when he clicks on a star. |
 | group_dns | array | List of fully qualified names of LDAP groups to which a user’s personal workspace belongs. You can’t update this field. Present in Personal Workspaces |
-| icon | string | Workspace icon |
+| icon | string | Relative URL to a file that is stored as a blob in CAM and represents the workspace icon|
 | id | string | Workspace unique identifier |
 | last_login | string | Date of the last login. Example “2015-07-02 10:23:47.748740” |
 | last_name | string | User last name |
@@ -94,13 +95,13 @@ ElasticBox-Release: 4.0
 | members | array | Lists members of a team workspace |
 | name | string | User (Workspace) name |
 | organization | string | (Personal Workspaces) Organization of the workspace |
-| organizations | array | (Team Workspaces) List of the organizations' ids of the workspace |
+| organizations | array | (Team Workspaces) List of the organizations' name of the workspace |
 | owner | string | Refers to the username that owns the workspace. Present in Team Workspaces |
 | saml_id | string | (optional) Account id if user logged in with SAML |
 | schema | string | Schema URI. For personal workspace:  “http://elasticbox.net/schemas/workspaces/personal” For team workspace:  “http://elasticbox.net/schemas/workspaces/team” |
-| support_user_created | boolean | If true, it is a support system user |
-| take_tour | boolean | If true, a hekp wizard will be displayed when users access the application |
-| type | string | Indicates if the workspace is personal or team |
+| support_user_created | boolean | True if support CAM user for this workspace has been created and is ready |
+| take_tour | boolean | If true, the user has dismissed the tour popup |
+| type | string | Workspace type. Can be personal or team. Users can edit personal workspace as long as schemas are valid and the user has privileges. |
 | updated | string | Date of the last update |
 | uri | string | Workspace uri |
 
@@ -113,25 +114,21 @@ ElasticBox-Release: 4.0
     {
         "last_name": "ElasticBox",
         "costcenter": "3ef6e6e0-a08d-40f1-98bf-4a7fc9b9c63a",
+        "clc_alias": "CTLX",
         "id": "operations",
         "billing_notice": true,
-        "last_login": "2018-10-24 10:33:47.951698",
+        "last_login": "2018-12-11 12:53:11.636462",
         "add_provider": true,
-        "deploy_instance": false,
+        "deploy_instance": true,
         "type": "personal",
         "email": "operations@elasticbox.com",
         "schema": "http://elasticbox.net/schemas/workspaces/personal",
-        "updated": "2018-10-24 10:33:47.951974",
+        "updated": "2018-12-11 12:53:11.636781",
         "take_tour": true,
         "deleted": null,
         "dashboard_notice": true,
         "email_validated_at": "2018-10-11 12:10:03.468280",
-        "favorites": [
-            {
-                "type": "team_workspace",
-                "id": "workspace4"
-            }
-        ],
+        "favorites": [],
         "icon": null,
         "group_dns": [],
         "clc_username": null,
@@ -142,7 +139,6 @@ ElasticBox-Release: 4.0
         "organization": "elasticbox"
     }
 ]
-
 ```
 * Response to request with parameter
 ```
@@ -208,7 +204,6 @@ ElasticBox-Release: 4.0
 #### Common Error Response Codes
 - **400** Invalid Data
 - **401** Unauthorized
-- **409** Conflict
 
 #### Response Parameters
 
@@ -216,13 +211,13 @@ ElasticBox-Release: 4.0
 |-----------|------|------------|
 | costcenter | string | Cost center id |
 | created | string | Creation date |
-| deleted | boolean | If true, the workspace has been deleted |
+| deleted | string | It will be null if the resource is valid or a string with the time and date of deletion if it was deleted. End users will always see this parameter as null |
 | id | string | Workspace id |
 | members | array | Lists members of a team workspace. |
 | name | string | Workspace name |
-| organizations | array | List of organization ids |
+| organizations | array | List of organization names |
 | schema | string | Schema URI. Either “http://elasticbox.net/schemas/workspaces/personal” or “http://elasticbox.net/schemas/workspaces/team” |
-| type | string | It can be team or personal |
+| type | string | Workspace type. Can be personal or team. Users can edit personal workspace as long as schemas are valid and the user has privileges. |
 | updated | string | Update date |
 | uri | string | Url to access the workspace |
 
@@ -246,10 +241,10 @@ ElasticBox-Release: 4.0
     "schema": "http://elasticbox.net/schemas/workspaces/team"
 }
 ```
-### URL
-
+## GET /services/workspaces/{workspace_id}
 Fetches an existing workspace for the specified workspace ID.
 
+### URL
 #### Structure
 ```
 [GET] /services/workspaces/{workspace_id}
@@ -284,7 +279,6 @@ ElasticBox-Release: 4.0
 
 - **401** Unauthorized
 - **404** Not Found
-- **409** Conflict
 
 #### Response Parameters
 
@@ -292,14 +286,14 @@ ElasticBox-Release: 4.0
 |-----------|------|------------|
 | costcenter | string | Cost center id |
 | created | string | Creation date |
-| deleted | boolean | If true, the workspace has been deleted |
+| deleted | string | It will be null if the resource is valid or a string with the time and date of deletion if it was deleted. End users will always see this parameter as null |
 | icon | string | Url to Workspace avatar |
 | id | string | Workspace id |
 | members | array | Lists members of a team workspace |
 | name | string | Workspace name |
-| organizations | array | List of organization ids |
+| organizations | array | List of organization names |
 | schema | string | Schema URI. Either “http://elasticbox.net/schemas/workspaces/personal” or “http://elasticbox.net/schemas/workspaces/team” |
-| type | string | It can be team or personal |
+| type | string | Workspace type. Can be personal or team. Users can edit personal workspace as long as schemas are valid and the user has privileges. |
 | updated | string | Update date |
 | uri | string | Url to access the workspace |
 
@@ -358,14 +352,14 @@ ElasticBox-Release: 4.0
 |------| ---- | ----------- | ---- |
 | costcenter | string | Cost center id | Yes |
 | created | string | Workspace creation date | No |
-| deleted | boolean | If true, the workspace has been deleted | No |
+| deleted | string | It will be null if the resource is valid or a string with the time and date of deletion if it was deleted. End users will always see this parameter as null | No |
 | icon | string | Icon url | No |
 | id | string | Workspace id | Yes |
 | members | array | List of objects representing the members (other workspaces) added to this workspace | No |
 | name | string | New workspace name | Yes |
-| organizations | array | List of organization ids  | Yes |
+| organizations | array | List of organization names  | Yes |
 | schema | string | Workspace schema uri. Schema URI. Either “http://elasticbox.net/schemas/workspaces/personal” or “http://elasticbox.net/schemas/workspaces/team” | Yes |
-| type | string | Workspace type. Can be personal or team but from the website view, only team is sent as user only can edit team workspaces | No |
+| type | string | Workspace type. Can be personal or team. Users can edit personal workspace as long as schemas are valid and the user has privileges. | No |
 | updated | string | Workspace update date | No |
 ```
 {
@@ -396,9 +390,8 @@ ElasticBox-Release: 4.0
 
 #### Common Error Response Codes
 
-- **400** Invalid Data
+- **400** Bad Request
 - **401** Unauthorized
-- **403** Forbidden
 - **404** Not Found
 
 #### Response Parameters
@@ -406,14 +399,14 @@ ElasticBox-Release: 4.0
 |-----------|------|------------|
 | costcenter | string | Cost center id |
 | created | string | Workspace creation date |
-| deleted | boolean | If true, the workspace has been deleted | No |
+| deleted | string | It will be null if the resource is valid or a string with the time and date of deletion if it was deleted. End users will always see this parameter as null | No |
 | icon | string | Icon url |
 | id | string | Workspace id |
 | members | array | List of objects representing the members (other workspaces) added to this workspace |
 | name | string | New workspace name |
-| organizations | array | List of organization ids  |
+| organizations | array | List of organization names  |
 | schema | string | Workspace schema uri. Schema URI. Either “http://elasticbox.net/schemas/workspaces/personal” or “http://elasticbox.net/schemas/workspaces/team” |
-| type | string | Workspace type. Can be personal or team but from the website view, only team is sent as user only can edit team workspaces |
+| type | string | Workspace type. Can be personal or team. Users can edit personal workspace as long as schemas are valid and the user has privileges. |
 | updated | string | Workspace update date |
 | uri | string | Url to access the updated workspace view |
 
@@ -485,7 +478,6 @@ ElasticBox-Release: 4.0
 #### Common Error Response Codes
 
 - **401** Unauthorized
-- **403** Forbidden
 - **404** Not Found
 
 #### Response Parameters
@@ -532,7 +524,6 @@ ElasticBox-Release: 4.0
 
 #### Common Error Response Codes
 
-- **400** Bad Request
 - **401** Unauthorized
 - **404** Not found
 
@@ -547,7 +538,7 @@ ElasticBox-Release: 4.0
 | members | array | List of members with access to the provider |
 | name | string | Provider name |
 | owner | string | Workspace id where the provider belongs to |
-| schema | string | Provider schema uri. "http://elasticbox.net/schemas/test/provider" |
+| schema | string | Provider schema uri. For example, "http://elasticbox.net/schemas/aws/provider" [See provider API documentation for a full list of schema types](./api-providers.md)|
 | services | array | List of services associated to the provider |
 | state | string | Provider state |
 | type | string | Provider type |
@@ -559,29 +550,36 @@ ElasticBox-Release: 4.0
 ```
 [
     {
-        "updated": "2018-10-26 13:38:16.036107",
-        "description": "This is provider A",
-        "icon": "images/platform/provider.svg",
-        "created": "2018-10-26 13:38:12.215828",
-        "uri": "/services/providers/30eae5fb-ae2b-4a57-a272-06a082591748",
-        "name": "PROVIDER A",
-        "services": [
-            {
-                "locations": [
-                    {}
-                ],
-                "name": "Linux Compute"
-            }
-        ],
+        "updated": "2018-11-20 12:23:10.654685",
+        "description": null,
+        "icon": "images/platform/aws.svg",
+        "created": "2018-11-19 12:20:44.788595",
+        "uri": "/services/providers/5b98633e-31d5-46ed-b530-f959d2898eef",
+        "name": "My Amazon Web Services Provider",
+        "services": [...],
         "state": "ready",
         "members": [],
         "owner": "operations",
-        "type": "Test Provider",
-        "id": "30eae5fb-ae2b-4a57-a272-06a082591748",
-        "schema": "http://elasticbox.net/schemas/test/provider"
+        "credentials": {},
+        "type": "Amazon Web Services",
+        "id": "5b98633e-31d5-46ed-b530-f959d2898eef",
+        "schema": "http://elasticbox.net/schemas/aws/provider"
+    },
+    {
+        "updated": "2018-11-20 12:23:11.057875",
+        "name": "My Centurly Link Provider",
+        "icon": "images/platform/centurylink.svg",
+        "created": "2018-11-20 08:57:43.926910",
+        "uri": "/services/providers/ca33877a-6ade-4d28-8ed1-8c5e455148fa",
+        "services": [...],
+        "state": "ready",
+        "members": [],
+        "owner": "operations",
+        "type": "CenturyLink",
+        "id": "ca33877a-6ade-4d28-8ed1-8c5e455148fa",
+        "schema": "http://elasticbox.net/schemas/centurylink/provider"
     }
 ]
-
 ```
 ## GET /services/workspaces/{workspace_id}/boxes
 Gets the all the boxes in a workspace.
@@ -619,7 +617,6 @@ ElasticBox-Release: 4.0
 
 #### Common Error Response Codes
 
-- **400** Bad Request
 - **401** Unauthorized
 - **404** Not Found
 
@@ -629,8 +626,7 @@ ElasticBox-Release: 4.0
 |-----------|------|------------|
 | automatic_updates | string | Type of automatic update |
 | created | string | Box creation date |
-| deleted | boolean | If the workspace has been deleted |
- |
+| deleted | string | It will be null if the resource is valid or a string with the time and date of deletion if it was deleted. End users will always see this parameter as null |
 | description | string | Box description |
 | event | object | Event contained in one of the event lists, each event object contains the parameters: url, upload_date, length and destination_path |
 | events | object | List of Box events, there may be nine event lists: configure, dispose, install, pre_configure, pre_dispose, pre_install, pre_start, pre_stop, start and stop. |
@@ -638,7 +634,7 @@ ElasticBox-Release: 4.0
 | id | string | Box id |
 | members | array | List of members with access to the box |
 | name | string | Box name |
-| organization | string | Organization id |
+| organization | string | Organization name |
 | owner | string | Workspace owner id |
 | requirements | array | List of requirements of the box |
 | schema | string | Box schema uri |
@@ -704,7 +700,7 @@ ElasticBox-Release: 4.0
         "schema": "http://elasticbox.net/schemas/boxes/script"
     },
 
-    ... MORE SERVICES ...
+    ... MORE BOXES ...
 
     {
         "updated": "2018-10-26 09:39:10.156446",
@@ -744,7 +740,7 @@ Gets the all the instances in a workspace.
 ```
 #### Example
 ```
-[GET] https://cam.ctl.io/services/workspaces/workspace4/instances
+[GET] https://cam.ctl.io/services/workspaces/myworkspace/instances
 ```
 ### Request
 
@@ -770,7 +766,6 @@ ElasticBox-Release: 4.0
 
 #### Common Error Response Codes
 
-- **400** Bad Request
 - **401** Unauthorized
 - **404** Not Found
 
@@ -779,10 +774,8 @@ ElasticBox-Release: 4.0
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | automatic_updates | string | Type of automatic update |
-| binding | object | Binding contained in the bindings list, each binding object contains the parameters: instance and name |
 | bindings | array | List of instance bindings |
 | boxes | array | List of boxes where each box object contains a service parameter. The service parameter can have one of these values: Linux Compute, Windows Compute and CloudFormation Service |
-| environment | string | Environment name |
 | icon | string | Instance icon uri |
 | id | string | Instance id |
 | is_deploy_only | boolean | If the instance is deploy only |
@@ -810,93 +803,104 @@ ElasticBox-Release: 4.0
 ```
 [
     {
-        "box": "b634cec5-60df-425d-992f-3ec130a0c8ca",
-        "bindings": [],
-        "updated": "2018-11-07 11:59:06.970768",
+        "box": "29a9fe00-517a-4635-a77c-6eb473f4d7a1",
+        "lease": {
+            "released": false,
+            "operation": "terminate",
+            "expire": "2018-12-12 11:20:48.751000"
+        },
+        "updated": "2018-12-12 10:30:56.151018",
         "automatic_updates": "off",
         "policy_box": {
             "profile": {
+                "subnet": "subnet-3412a250",
+                "volumes": [],
                 "pricing_info": {
-                    "estimated_monthly": 720,
-                    "price": 1,
-                    "provider_type": "Test Provider",
-                    "hourly_price": 1,
-                    "factor": 100
+                    "estimated_monthly": 417600,
+                    "factor": 100000,
+                    "hourly_price": 580,
+                    "provider_type": "Amazon Web Services"
                 },
-                "image": "test",
+                "image": "Linux Compute",
+                "elastic_ip": false,
+                "managed_os": false,
                 "instances": 1,
-                "keypair": "test_keypair",
-                "location": "Simulated Location",
-                "flavor": "test.micro",
-                "schema": "http://elasticbox.net/schemas/test/compute/profile"
+                "keypair": "None",
+                "role": "None",
+                "location": "us-west-2",
+                "placement_group": "",
+                "cloud": "vpc-c52e9aa1",
+                "flavor": "t2.nano",
+                "security_groups": [
+                    "Automatic"
+                ],
+                "schema": "http://elasticbox.net/schemas/aws/ec2/profile"
             },
-            "provider_id": "8c0343c3-e07e-4062-81bb-764744731403",
+            "provider_id": "cdcb8062-c792-4f92-9099-fc77831f5e0f",
             "automatic_updates": "off",
-            "name": "Test provider 1 Deploy Policy - Linux Compute",
-            "created": "2018-11-07 11:57:06.492338",
+            "name": "My Deployment Policy",
+            "created": "2018-12-12 10:19:21.170223",
             "deleted": null,
             "variables": [],
-            "updated": "2018-11-07 11:57:06.492338",
-            "visibility": "workspace",
-            "readme": {
-                "url": "services/resources/default_box_overview.md",
-                "upload_date": "2018-11-07 11:57:06.492058",
-                "length": 1307,
-                "content_type": "text/x-markdown"
+            "updated": "2018-12-12 10:20:25.788933",
+            "lifespan": {
+                "operation": "terminate",
+                "interval": "hours",
+                "quantity": 1
             },
+            "visibility": "workspace",
             "members": [],
+            "claims": [],
+            "owner": "myworkspace",
             "organization": "elasticbox",
-            "owner": "workspace_b",
-            "claims": [
-                "linux"
-            ],
-            "id": "183139ee-9557-461d-aafe-184be3024de0",
+            "id": "0e37ec16-ac46-4fd6-a7d4-343b65982828",
             "schema": "http://elasticbox.net/schemas/boxes/policy"
         },
-        "name": "instancia 1",
+        "name": "My Script Box",
         "service": {
             "type": "Linux Compute",
-            "id": "eb-k1nb9",
+            "id": "eb-e1uyz",
             "machines": [
                 {
                     "state": "done",
-                    "name": "instancia-1-eb-k1nb9-1",
+                    "name": "my-script-box-eb-e1uyz-1",
                     "workflow": []
                 }
             ]
         },
         "tags": [],
         "variables": [],
-        "created": "2018-11-07 11:59:03.475541",
+        "created": "2018-12-12 10:21:48.709303",
         "boxes": [
             {
-                "updated": "2018-11-07 11:58:39.727364",
+                "updated": "2018-12-12 10:16:51.895046",
                 "automatic_updates": "off",
                 "requirements": [],
-                "name": "script 1",
-                "created": "2018-11-07 11:58:39.727364",
+                "name": "My Script Box",
+                "created": "2018-12-12 10:16:51.895046",
                 "deleted": null,
                 "variables": [],
                 "visibility": "workspace",
-                "events": {},
+                "id": "29a9fe00-517a-4635-a77c-6eb473f4d7a1",
                 "members": [],
-                "owner": "workspace_b",
+                "owner": "myworkspace",
                 "organization": "elasticbox",
-                "id": "b634cec5-60df-425d-992f-3ec130a0c8ca",
+                "events": {},
                 "schema": "http://elasticbox.net/schemas/boxes/script"
             }
         ],
-        "uri": "/services/instances/i-ubndby",
+        "id": "i-8jo5n5",
         "is_deploy_only": true,
         "state": "done",
         "members": [],
-        "owner": "workspace_b",
+        "owner": "myworkspace",
+        "bindings": [],
+        "uri": "/services/instances/i-8jo5n5",
         "operation": {
             "event": "deploy",
             "workspace": "operations",
-            "created": "2018-11-07 11:59:03.740090"
+            "created": "2018-12-12 10:27:53.778494"
         },
-        "id": "i-ubndby",
         "schema": "http://elasticbox.net/schemas/instance"
     }
 ]
