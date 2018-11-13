@@ -66,6 +66,8 @@ ElasticBox-Release: 4.0
 #### Common Error Response Codes
 
 - **400** Bad Request
+- **401** Unauthorized
+- **404** Not Found
 
 #### Response Parameters
 
@@ -75,13 +77,13 @@ ElasticBox-Release: 4.0
 | billing_notice | boolean | If the flag is False we don't show the billing notice to the user |
 | clc_alias | string | (optional) Account Id for billing customers that have an account at CL |
 | clc_username | string | If user has CLC authentication |
-| created | string | Creation date. Example “2015-07-02 10:23:47.748740” |
+| created | string | Creation date |
 | costcenter | string | Cost center id |
 | dashboard_notice | boolean | If the flag is False we don't show the dashboard notice to the user |
 | deleted | boolean | If the workspace has been deleted |
 | deploy_instance | boolean | Indicates if the workspace has deployed an instance |
 | email | string | User email |
-| email_validated_at | string | Email validation date. Example “2015-07-02 10:23:47.748740” |
+| email_validated_at | string | Email validation date. |
 | favourites | array | List of user's favourite workspaces. User set a workspace as favourite when he clicks on a star. |
 | group_dns | array | List of fully qualified names of LDAP groups to which a user’s personal workspace belongs. You can’t update this field. Present in Personal Workspaces |
 | icon | string | Workspace icon |
@@ -96,10 +98,10 @@ ElasticBox-Release: 4.0
 | owner | string | Refers to the username that owns the workspace. Present in Team Workspaces |
 | saml_id | string | (optional) Account id if user logged in with SAML |
 | schema | string | Schema URI. For personal workspace:  “http://elasticbox.net/schemas/workspaces/personal” For team workspace:  “http://elasticbox.net/schemas/workspaces/team” |
-| support_user_created | boolean |  |
+| support_user_created | boolean | If true, it is a support system user |
 | take_tour | boolean | If true, a hekp wizard will be displayed when users access the application |
 | type | string | Indicates if the workspace is personal or team |
-| updated | string | Date of the last update. Example “2015-07-02 10:23:47.748740” |
+| updated | string | Date of the last update |
 | uri | string | Workspace uri |
 
 
@@ -205,6 +207,7 @@ ElasticBox-Release: 4.0
 
 #### Common Error Response Codes
 - **400** Invalid Data
+- **401** Unauthorized
 - **409** Conflict
 
 #### Response Parameters
@@ -212,15 +215,15 @@ ElasticBox-Release: 4.0
 | Parameter | Type |Description |
 |-----------|------|------------|
 | costcenter | string | Cost center id |
-| created | string | Creation date. Example “2015-07-02 10:23:47.748740” |
+| created | string | Creation date |
 | deleted | boolean | If true, the workspace has been deleted |
 | id | string | Workspace id |
 | members | array | Lists members of a team workspace. |
 | name | string | Workspace name |
-| organizations | array | Array of strings. Each string corresponds to an organization id |
+| organizations | array | List of organization ids |
 | schema | string | Schema URI. Either “http://elasticbox.net/schemas/workspaces/personal” or “http://elasticbox.net/schemas/workspaces/team” |
-| type | string | It can be team or personal. |
-| updated | string | Update date. Example “2015-07-02 10:23:47.748740” |
+| type | string | It can be team or personal |
+| updated | string | Update date |
 | uri | string | Url to access the workspace |
 
 
@@ -288,16 +291,16 @@ ElasticBox-Release: 4.0
 | Parameter | Type |Description |
 |-----------|------|------------|
 | costcenter | string | Cost center id |
-| created | string | Creation date. Example “2015-07-02 10:23:47.748740” |
+| created | string | Creation date |
 | deleted | boolean | If true, the workspace has been deleted |
 | icon | string | Url to Workspace avatar |
 | id | string | Workspace id |
-| members | array | Lists members of a team workspace. |
+| members | array | Lists members of a team workspace |
 | name | string | Workspace name |
-| organizations | array | Array of strings. Each string corresponds to an organization id |
+| organizations | array | List of organization ids |
 | schema | string | Schema URI. Either “http://elasticbox.net/schemas/workspaces/personal” or “http://elasticbox.net/schemas/workspaces/team” |
-| type | string | It can be team or personal. |
-| updated | string | Update date. Example “2015-07-02 10:23:47.748740” |
+| type | string | It can be team or personal |
+| updated | string | Update date |
 | uri | string | Url to access the workspace |
 
 
@@ -354,16 +357,16 @@ ElasticBox-Release: 4.0
 | NAME | TYPE | DESCRIPTION | REQ. |
 |------| ---- | ----------- | ---- |
 | costcenter | string | Cost center id | Yes |
-| created | string | Workspace creation date. Example “2015-07-02 10:23:47.748740” | No |
+| created | string | Workspace creation date | No |
 | deleted | boolean | If true, the workspace has been deleted | No |
 | icon | string | Icon url | No |
 | id | string | Workspace id | Yes |
-| members | array | Array of objects representing the members (other workspaces) added to this workspace | No |
+| members | array | List of objects representing the members (other workspaces) added to this workspace | No |
 | name | string | New workspace name | Yes |
-| organizations | array | Array of strings. Each string corresponds to an organization id  | Yes |
+| organizations | array | List of organization ids  | Yes |
 | schema | string | Workspace schema uri. Schema URI. Either “http://elasticbox.net/schemas/workspaces/personal” or “http://elasticbox.net/schemas/workspaces/team” | Yes |
 | type | string | Workspace type. Can be personal or team but from the website view, only team is sent as user only can edit team workspaces | No |
-| updated | string | Workspace update date. Example “2015-07-02 10:23:47.748740” | No |
+| updated | string | Workspace update date | No |
 ```
 {
     "organizations":["elasticbox"],
@@ -402,16 +405,16 @@ ElasticBox-Release: 4.0
 | Parameter | Type |Description |
 |-----------|------|------------|
 | costcenter | string | Cost center id |
-| created | string | Workspace creation date. Example “2015-07-02 10:23:47.748740” |
+| created | string | Workspace creation date |
 | deleted | boolean | If true, the workspace has been deleted | No |
 | icon | string | Icon url |
 | id | string | Workspace id |
-| members | array | Array of objects representing the members (other workspaces) added to this workspace |
+| members | array | List of objects representing the members (other workspaces) added to this workspace |
 | name | string | New workspace name |
-| organizations | array | Array of strings. Each string corresponds to an organization id  |
+| organizations | array | List of organization ids  |
 | schema | string | Workspace schema uri. Schema URI. Either “http://elasticbox.net/schemas/workspaces/personal” or “http://elasticbox.net/schemas/workspaces/team” |
 | type | string | Workspace type. Can be personal or team but from the website view, only team is sent as user only can edit team workspaces |
-| updated | string | Workspace update date. Example “2015-07-02 10:23:47.748740” |
+| updated | string | Workspace update date |
 | uri | string | Url to access the updated workspace view |
 
 #### Response Body
@@ -481,9 +484,10 @@ ElasticBox-Release: 4.0
 
 #### Common Error Response Codes
 
+- **401** Unauthorized
 - **403** Forbidden
 - **404** Not Found
-- **401** Unauthorized
+
 #### Response Parameters
 
 * None
@@ -530,11 +534,13 @@ ElasticBox-Release: 4.0
 
 - **400** Bad Request
 - **401** Unauthorized
+- **404** Not found
+
 #### Response Parameters
 
 | Parameter | Type |Description |
 |-----------|------|------------|
-| created | string | Provider creation date. Example “2015-07-02 10:23:47.748740” |
+| created | string | Provider creation date |
 | description | string | Provider description |
 | icon | string | Provider icon url |
 | id | string | Provider id |
@@ -545,7 +551,7 @@ ElasticBox-Release: 4.0
 | services | array | List of services associated to the provider |
 | state | string | Provider state |
 | type | string | Provider type |
-| updated | string | Provider update date. Example “2015-07-02 10:23:47.748740” |
+| updated | string | Provider update date |
 | uri | string | Url to access the provider view |
 
 #### Response Body
@@ -615,27 +621,29 @@ ElasticBox-Release: 4.0
 
 - **400** Bad Request
 - **401** Unauthorized
+- **404** Not Found
+
 #### Response Parameters
 
 | Parameter | Type |Description |
 |-----------|------|------------|
 | automatic_updates | string | Type of automatic update |
-| created | string | Box creation date. Example “2015-07-02 10:23:47.748740” |
+| created | string | Box creation date |
 | deleted | boolean | If the workspace has been deleted |
  |
 | description | string | Box description |
-| events | object | |
+| event | object | Event contained in one of the event lists, each event object contains the parameters: url, upload_date, length and destination_path |
+| events | object | List of Box events, there may be nine event lists: configure, dispose, install, pre_configure, pre_dispose, pre_install, pre_start, pre_stop, start and stop. |
 | icon | string | Box icon url |
 | id | string | Box id |
-| members | array | List of members with access to the box. |
+| members | array | List of members with access to the box |
 | name | string | Box name |
 | organization | string | Organization id |
 | owner | string | Workspace owner id |
-| requirements | array |  |
+| requirements | array | List of requirements of the box |
 | schema | string | Box schema uri |
-| services | array | Box type |
 | type | string | Box type |
-| updated | string | Box update date. Example “2015-07-02 10:23:47.748740” |
+| updated | string | Box update date |
 | uri | string | Url to access the box view |
 | variables | array | List of variables associated to the box |
 | visibility | string | Type of visibility the provider has |
@@ -764,6 +772,7 @@ ElasticBox-Release: 4.0
 
 - **400** Bad Request
 - **401** Unauthorized
+- **404** Not Found
 
 #### Response Parameters
 
@@ -780,24 +789,21 @@ ElasticBox-Release: 4.0
 | machine | object | Machine contained in the service machines list |
 | machine.name | string | Machine name |
 | machine.state | string | Machine state, there are three possible states: processing, done and unavailable |
-| machine.workflow | List | List of workflow actions, each workflow action object contains three parameters: box, event and script |
+| machine.workflow | array | List of workflow actions, each workflow action object contains three parameters: box, event and script |
 | members | array | List of members with access to the instance |
 | name | string | Instance name |
-| operation | string | Last operation, there are seven types of operations: deploy, shutdown, poweron, reinstall, reconfigure, terminate and terminate_service |
+| operation | object | Last operation, there are several types of operations: deploy, shutdown, poweron, reinstall, reconfigure, terminate, terminate_service |
 | policy_box | object | Instance policy box |
 | schema | string | Instance schema uri |
-| service | Object | Instance service |
+| service | object | Instance service |
 | service.id | string | Service id |
 | service.machines | array | List of service machines |
 | service.type | string | Required. Can be one of these types: Linux Compute, Windows Compute and CloudFormation Service |
 | state | string | Instance state, there are three possible states: processing, done and unavailable |
-| tags | array | Instance tags |
+| tags | array | List of Instance tags |
 | updated | string | Date of the last update |
 | uri | string | Instance uri |
-| variables | array | Instance variables |
-| workflow.box | string | Workflow action box |
-| workflow.event | string | Workflow action event |
-| workflow.script | string | Workflow action script uri |
+| variables | array | List of instance variables |
 
 **Response Body**
 
