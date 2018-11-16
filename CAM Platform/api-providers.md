@@ -12,24 +12,24 @@ Manage and perform provider actions.
 
 |  Resource  |  Description |
 |------------|--------------|
-| POST /services/providers | Creates a new provider account in Cloud Application Manager and gets the status of the provider. |
-| GET /services/providers | Gets the list of providers. |
-| GET /services/providers/{provider_id} | Fetches an existing provider. |
-| PUT /services/providers/{provider_id} | Updates an existing provider. |
-| DELETE /services/providers/{provider_id}| Deletes an existing provider.|
+| [POST /services/providers](#post-servicesproviders) | Creates a new provider account in Cloud Application Manager and gets the status of the provider. |
+| [GET /services/providers](#get-servicesproviders) | Gets the list of providers. |
+| [GET /services/providers/{provider_id}](#get-servicesprovidersprovider_id) | Fetches an existing provider. |
+| [PUT /services/providers/{provider_id}](#put-servicesprovidersprovider_id) | Updates an existing provider. |
+| [DELETE /services/providers/{provider_id}](#delete-servicesprovidersprovider_id) | Deletes an existing provider.|
 
 ### Provider Operations
 
 |  Resource  |  Description |
 |------------|--------------|
-| PUT /services/providers/{provider_id}/sync |Syncs an existing provider.|
-| GET /services/providers/{provider_id}/logs | Gets the logs of a provider. |
-| GET /services/providers/{provider_id}/unregisted-instances | Gets the unregistered instances of a provider. |
-| POST /services/providers/{provider_id}/images | Adds a new machine image to a provider. |
-| DELETE /services/providers/{provider_id}/images/{machine_image_id} | Updates an existing provider. |
+| [PUT /services/providers/{provider_id}/sync](#put-servicesprovidersprovider_idsync) |Syncs an existing provider.|
+| [GET /services/providers/{provider_id}/logs](#get-servicesprovidersprovider_idlogs) | Gets the logs of a provider. |
+| [GET /services/providers/{provider_id}/unregisted-instances](#get-servicesprovidersprovider_idunregisted-instances) | Gets the unregistered instances of a provider. |
+| [POST /services/providers/{provider_id}/images](#post-servicesprovidersprovider_idimages) | Adds a new machine image to a provider. |
+| [DELETE /services/providers/{provider_id}/images/{machine_image_id}](#delete-servicesprovidersprovider_idimagesmachine_image_id) | Updates an existing provider. |
 
 
-### POST /services/providers
+## POST /services/providers
 
 Creates a new provider account in Cloud Application Manager and gets the status of the provider.
 
@@ -600,7 +600,7 @@ To add an Azure subscription in Cloud Application Manager, you first have to upl
 ```
 
 
-### GET /services/providers
+## GET /services/providers
 
 Gets available providers from the personal workspace of the authenticated user.
 
@@ -780,7 +780,7 @@ ElasticBox-Release: 4.0
 ]
 ```
 
-### GET /services/providers/{provider_id}
+## GET /services/providers/{provider_id}
 
 Fetches an existing provider when you give the provider ID.
 
@@ -1011,7 +1011,7 @@ ElasticBox-Release: 4.0
 }
 ```
 
-### PUT /services/providers/{provider_id}
+## PUT /services/providers/{provider_id}
 
 Updates an existing provider when you give the provider ID. Pass the provider object in the request body to update these fields: name, description, and members.
 
@@ -1288,7 +1288,7 @@ ElasticBox-Release: 4.0
 }
 ```
 
-### DELETE /services/providers/{provider_id}
+## DELETE /services/providers/{provider_id}
 
 Deletes an existing provider when you give the provider ID.
 
@@ -1326,7 +1326,7 @@ ElasticBox-Release: 4.0
 - 403: Forbidden
 
 
-### PUT /services/providers/{provider_id}/sync
+## PUT /services/providers/{provider_id}/sync
 
 Syncs an existing provider when you give the provider ID.
 
@@ -1363,7 +1363,7 @@ ElasticBox-Release: 4.0
 - 404: Not Found
 
 
-### GET /services/providers/{provider_id}/logs
+## GET /services/providers/{provider_id}/logs
 
 Retrieves the logs of a provider when you give the provider ID.
 
@@ -1440,7 +1440,7 @@ ElasticBox-Release: 4.0
  ]
 ```
 
-### GET /services/providers/{provider_id}/unregisted-instances
+## GET /services/providers/{provider_id}/unregisted-instances
 
 Retrieves a list of unregistered instances found in a provider when you give the provider ID.
 
@@ -1531,9 +1531,12 @@ ElasticBox-Release: 4.0
 
 Adds a new machine image to a provider when you give the provider ID.
 
+## POST /services/providers/{provider_id}/images
+
+Adds a new machine image to a provider when you give the provider ID.
+
 ### URL
 #### Structure
-### POST /services/providers/{provider_id}/images
     [POST] /services/providers/{provider_id}/images
 
 #### Example
@@ -1578,7 +1581,7 @@ ElasticBox-Release: 4.0
 - 404: Not Found
 
 
-### DELETE /services/providers/{provider_id}/images/{machine_image_id}
+## DELETE /services/providers/{provider_id}/images/{machine_image_id}
 
 Deletes an existing machine image when you give the provider ID and the machine image ID.
 
