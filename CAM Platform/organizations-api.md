@@ -11,15 +11,15 @@
 
 | Resource | Description |
 |----------|-------------|
-| GET /services/organizations/{organization_name} | Get the schema of the given organization. |
-| GET /services/organizations/{organization_name}/boxes | Get the boxes of the given organization. |
-| GET /services/organizations/{organization_name}/instances | Get the instances of the given organization. |
-| GET /services/organizations/{organization_name}/providers | Get the providers of the given organization. |
-| GET /services/organizations/{organization_name}/workspaces | Get the workspaces of the given organization. |
-| PUT /services/organizations/{organization_name} | Updates an existing organization. |
-| PUT /organizations/{organization_name}/sync_groups | Queues a request to sync LDAP groups. |
+| [GET /services/organizations/{organization_name}](#get-servicesorganizationsorganization_name) | Get the schema of the given organization. |
+| [GET /services/organizations/{organization_name}/boxes](#get-servicesorganizationsorganization_nameboxes) | Get the boxes of the given organization. |
+| [GET /services/organizations/{organization_name}/instances](#get-servicesorganizationsorganization_nameinstances) | Get the instances of the given organization. |
+| [GET /services/organizations/{organization_name}/providers](#get-servicesorganizationsorganization_nameproviders) | Get the providers of the given organization. |
+| [GET /services/organizations/{organization_name}/workspaces](#get-servicesorganizationsorganization_nameworkspaces) | Get the workspaces of the given organization. |
+| [PUT /services/organizations/{organization_name}](#put-servicesorganizationsorganization_name) | Updates an existing organization. |
+| [PUT /organizations/{organization_name}/sync_groups](#put-organizationsorganization_namesync_groups) | Queues a request to sync LDAP groups. |
 
-### GET /services/organizations/{organization_name}
+## GET /services/organizations/{organization_name}
 
 Gets the schema of a given organization.
 
@@ -273,7 +273,7 @@ ElasticBox-Release: 4.0
 }
 ```
 
-### GET /services/organizations/{organization_name}/boxes
+## GET /services/organizations/{organization_name}/boxes
 
 Get the schema of boxes in the given organization.
 
@@ -383,7 +383,7 @@ ElasticBox-Release: 4.0
   }
 ```
 
-### GET /services/organizations/{organization_name}/instances
+## GET /services/organizations/{organization_name}/instances
 
 Get the schema of instances in the given organization.
 
@@ -615,7 +615,7 @@ ElasticBox-Release: 4.0
     }
 ```
 
-### GET /services/organizations/{organization_name}/providers
+## GET /services/organizations/{organization_name}/providers
 
 Get the schema of providers in the given organization.
 
@@ -696,7 +696,7 @@ ElasticBox-Release: 4.0
   }
 ```
 
-### GET /services/organizations/{organization_name}/workspaces
+## GET /services/organizations/{organization_name}/workspaces
 
 Get the schema of workspaces in the given organization.
 
@@ -791,7 +791,7 @@ ElasticBox-Release: 4.0
   }
 ```
 
-### PUT /services/organizations/{organization_name}
+## PUT /services/organizations/{organization_name}
 
 Updates an existing organization given its name. Only the organization administrator can update.
 
@@ -1104,7 +1104,7 @@ ElasticBox-Release: 4.0
 }
 ```
 
-### PUT /organizations/{organization_name}/sync_groups
+## PUT /organizations/{organization_name}/sync_groups
 
 Queues a request to sync LDAP groups. The sync request, depending on the amount of data from the LDAP service, can take a few minutes. The ldap_last_sync_completed property updates when the request finishes successfully.
 
