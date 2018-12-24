@@ -2,60 +2,101 @@
 "title": "Instance Flow",
 "date": "09-01-2016",
 "author": "",
+"date": "12-19-2018",
+"author": "Julio Castanar",
 "attachments": [],
-"contentIsHTML": false
+"contentIsHTML": false,
+"keywords": ["api", "example", "authentication", "deployment", "provider", "Policy Box", "Box", "Instance", "Terminate" ]
 }}}
 
-### Using the API: from Registering a Provider to the Deployment of an Instance
+## Overview
 
-This guide shows all the steps you need to deploy a box using the Cloud Application Manager API.
-* Authentication and Deployment Variables
-* Register a Provider
-* Create a New Deployment Policy Box
-* Create a Box
-* Deploy the Instance
-* Terminate the Instance
+This guide shows **how to use Cloud Application Manager API from Registering a Provider to the Deployment of an Instance**. The steps you need are:
 
-**Note:** We use cURL commands to send HTTP requests to the API objects in JSON. JSON is the required format for all API requests and responses.
+ * [Authenticate with Cloud Application Manager](#authenticate-with-cloud-application-manager)
+ * [Obtain Deployment Variables](#obtain-deployment-variables)
+ * [Register a Provider in Cloud Application Manager](#register-a-provider-in-cloud-application-manager)
+ * [Create a Deployment Policy Box](#create-a-deployment-policy-box)
+ * [Create a Custom Box](#create-a-custom-box-in-order-to-deploy-it-using-the-previous-deployment-policy-box)
+ * [Deploy the Instance](#deploy-the-instance)
+ * [Terminate the Instance](#terminate-the-instance)
+
+
+**Note:** You will use cURL commands to send HTTP requests to the API objects in JSON. JSON is the required format for all API requests and responses.
+
+cURL commands in examples use -k parameter for convenience allowing curl to proceed and operate even for server connections considered insecure. Don't use it in production.
+
+When executing a command, it takes a while for the resources to be ready, and calling the next step before the previous is completed may lead to error (i.e. right after creating the provider it will start the synchronization, and the deployment box cannot be created until the first sync completes).
 
 Now let’s look at the script in sections to understand how you can make API calls from any code you like.
 
-### Authenticate with Cloud Application Manager
-Before calling to the API you have to sig in into the Cloud Application Manager website and [getting an authentication token](https://www.ctl.io/knowledge-base/cloud-application-manager/administering-your-organization/admin-access/). You use this token as an http header to perform every call to the Cloud Application Manager API.
+## Authenticate with Cloud Application Manager
 
-**Declare Deployment Variables**
+First of all, you need to hold the administrator role on a workspace to be able to run these steps. You must obtain [Administrator access](https://www.ctl.io/knowledge-base/cloud-application-manager/administering-your-organization/admin-access/) to Cloud Application Manager. 
+Before calling to the API you have to sign in into the Cloud Application Manager website and [get an authentication token](https://www.ctl.io/api-docs/cam/#getting-started).You will use this token as a HTTP header to perform every call to the Cloud Application Manager API.
 
-In this case we decided to use AWS so we will need the account key and secret to register it as provider. Box deployment arguments such as owner, environment and token are declared as variables because they can differ between deployments. That way, each time you run the script, you can pass different arguments.
+## Obtain Deployment Variables
+
+Next, define the variables that will contain the parameters of the script. This way, each time you run the script, you can pass different deployment arguments. These declared variables are referenced later in your script as request parameter values.
+
+| Variable | Description |
+|----------|-------------|
+| provider_key | You need the provider account key and secret to register a provider. |
+| provider_secret | See below how to [register a provider](#Register-a-Provider-in-Cloud-Application-Manager) and get its parameters. |
+| json_web_token | This is the [authentication token](#Authenticate-with-Cloud-Application-Manager) obtained before.<br>It's a long BASE64 encoded string that starts with something like:<br/>  *eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJvcGVyYb25z...* |
+| environment | Set your URL organization hostname or your appliance IP, where API calls are sent.<br>Examples are:  *your-organization.cam.ctl.io*, *centurylink.cam.ctl.io*,  *192.168.1.10*. |
+| owner | Specify the user ID in Cloud Application Manager who owns the provider account. |
+
+Start with your script with the following lines:
 ```
-aws_provider_key=$1
-aws_provider_secret=$2
-environment=$3
-json_web_token=$4
+# Deployment common variables
+provider_key=$1
+provider_secret=$2
+json_web_token=$3
+environment=$4
 owner=$5
 ```
 
-### Register a Provider in Cloud Application Manager
+There are other variables obtained during the script execution and necessary in next script steps.
+| Variable | Description |
+|----------|-------------|
+| provider_id | Obtained when registering a provider. |
+| policy_box_id | Obtained when creating a deployment policy box. |
+| box_id | Obtained when creating a custom box. |
+| instance_id | Obtained when deployin a box instance. |
 
-A provider is a public or private cloud account you can register in Cloud Application Manager. In this case we choose AWS as provider. From the AWS account credential we will need the key and the secret right now.
 
+## Register a Provider in Cloud Application Manager
+
+A provider is a public or private cloud account you can register in Cloud Application Manager. 
+
+To register a provider send a POST request to the [Providers endpoint](https://www.ctl.io/api-docs/cam/#cam-platform-providers-api) with the requiered parameters.
+
+In this case choose create an AWS as provider in an appliance. It will be necessary a key and the secret pair.  
+Creating it in an oragnization service requieres a role ARN as credential instance of a key pair.  
+Other provider types require different credential sets that you can obtain check in the [Providers endpoint](https://www.ctl.io/api-docs/cam/#cam-platform-providers-api) API doc.
+
+If there’s an error registering the provider, it outputs the error. Else, it outputs the provider ID and saves it in *provider_id* variable.
+
+Add the following lines to the script:
 ```
-# Register the provider in Cloud Application Manager
+# Register the provider AWS in Cloud Application Manager script
 payload="{
   \"icon\": \"images/platform/aws.png\",
   \"type\": \"Amazon Web Services\",
   \"description\": \"Manage EC2, ECS and Cloudformation instances\",
   \"schema\": \"http://elasticbox.net/schemas/aws/provider\",
-  \"name\": \"AWS Example Provider via CURL\",
+  \"name\": \"AWS Provider example via API\",
   \"credentials\": {
-    \"key\": \"$example_provider_key\",
-    \"secret\": \"$example_provider_secret\"
+    \"key\": \"$provider_key\",
+    \"secret\": \"$provider_secret\"
   },
   \"owner\": \"$owner\"
 }"
 provider=$(curl -k -s \
     -X POST \
     -H "Authorization:Bearer $json_web_token" \
-    -H "elasticbox-release:4.0" -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/534.30 (KHTML, like Gecko) Chrome/12.0.742.112 Safari/534.30" \
+    -H "elasticbox-release:4.0" \
     -H "Accept: application/json, text/plain, */*" \
     -H "Accept-encoding: gzip, deflate" \
     -H "Content-Type: application/json" \
@@ -68,12 +109,17 @@ else
 fi;
 ```
 
-### Create a New Deployment Policy Box
+## Create a Deployment Policy Box
 
-A deployment policy box is where you specify settings to deploy applications in a specific virtual environment. We send parameters for creating the deployment policy box in a POST request to the box object. If there’s an error in creating the policy box, we output the error. Else, we output the created box.
+A deployment policy box contains the settings to deploy applications in a specific virtual environment. For AWS, it contains details about the region, VPC, security groups, etc.
 
+To create a deployment policy box send a POST request to the [Boxes endpoint](https://www.ctl.io/api-docs/cam/#application-lifecycle-management-boxes-api) with the provider ID obtained when registering the provider in the *provider_id* variable. 
+
+If there’s an error in creating the deployment policy box, it outputs the error. Else, it outputs the created deployment policy box ID and saves it in *policy_box_id* variable.
+
+Add the following lines to the script:
 ```
-# Once we have created the provider we can set the proper policy box
+# Once the provider has been created, the proper policy box can be set
 payload="{
   \"owner\": \"$owner\",
   \"schema\": \"http://elasticbox.net/schemas/boxes/policy\",
@@ -85,7 +131,7 @@ payload="{
   },
   \"automatic_updates\": \"off\",
   \"provider_id\": \"$provider_id\",
-  \"name\": \"Deployment Policy Box Example\",
+  \"name\": \"Deployment Policy Box example via API\",
   \"description\": \"Just one example of deployment policy box creation via API\",
   \"profile\": {
     \"schema\": \"http://elasticbox.net/schemas/aws/ec2/profile\",
@@ -105,7 +151,7 @@ policy_box=$(curl -k -s \
     -X POST \
     -H "Content-Type:application/json" \
     -H "Authorization:Bearer $json_web_token" \
-    -H "elasticbox-release:4.0" -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/534.30 (KHTML, like Gecko) Chrome/12.0.742.112 Safari/534.30" \
+    -H "elasticbox-release:4.0" \
     -H "Accept: application/json, text/plain, */*" \
     -H "Accept-encoding: gzip, deflate" \
     -H "Content-Type: application/json;charset=UTF-8" \
@@ -118,18 +164,25 @@ else
 fi;
 ```
 
-### Create a Custom Box in Order to Deploy It Using the Previous Deployment Policy Box
+## Create a Custom Box
 
-In a POST request to the Box object, we send the features for our script box. Also we will use two already created blobs. You can take a look to the [blobs](../Application Lifecycle Management/api-blobs.md), API doc if you need to know how you can create them.
+A script box defines the behavior of your application during deployment, reconfiguration and termination.
 
+To create a box send a POST request to the [Boxes endpoint](https://www.ctl.io/api-docs/cam/#application-lifecycle-management-boxes-api). 
+
+Also use two already created blobs. You can take a look to the [Blobs endpoint](https://www.ctl.io/api-docs/cam/#application-lifecycle-management-blobs-api), API documentation if you need to know how you can create them.
+
+If there’s an error creating this box, it outputs the error. Else, it outputs the box ID and saves it in *box_id* variable.
+
+Add the following lines to the script:
 ```
-# We create a box to deploy with that policy box, in this case we are going to use a previously uploaded scripts.
+# Create a box to deploy with that policy box. In this case use a previously uploaded scripts.
 payload="{
   \"automatic_updates\": \"off\",
   \"requirements\": [
 
   ],
-  \"description\": \"sample box created via API\",
+  \"description\": \"create box example via API\",
   \"name\": \"ScriptBoxSample\",
   \"deleted\": null,
   \"variables\": [
@@ -167,7 +220,7 @@ box=$(curl -k -s \
     -X POST \
     -H "Content-Type:application/json" \
     -H "Authorization:Bearer $json_web_token" \
-    -H "elasticbox-release:4.0" -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/534.30 (KHTML, like Gecko) Chrome/12.0.742.112 Safari/534.30" \
+    -H "elasticbox-release:4.0" \
     -H "Accept: application/json, text/plain, */*" \
     -H "Accept-encoding: gzip, deflate" \
     -H "Content-Type: application/json;charset=UTF-8" \
@@ -180,12 +233,15 @@ else
 fi;
 ```
 
-### Deploy the Instance
+## Deploy the Instance
 
-To remove the instance from the virtual machine, we send a DELETE request to the Instances object with the instance ID. Then we check its response status. If it’s 200, we say that the specific instance is terminated. Else, we output the error state from the response.
+To deploy an instance of the previous box, send a POST request to the [Instances endpoint](https://www.ctl.io/api-docs/cam/#application-lifecycle-management-instances-api) with the box ID obtained when creating the box in the *box_id* variable and the policy box ID obtained when creating the policy box in the *policy_box_id* variable.
 
+If there’s an error deploying the instance, it outputs the error. Else, it outputs the deployed instance ID and saves it in *instance_id* variable.
+
+Add the following lines to the script:
 ```
-# Finally we are going to deploy the instance
+# Finally, deploy the instance
 payload="{
     \"schema\": \"http://elasticbox.net/schemas/deploy-instance-request\",
     \"owner\": \"$owner\",
@@ -210,7 +266,7 @@ instance=$(curl -k -s \
     -X POST \
     -H "Content-Type:application/json" \
     -H "Authorization:Bearer $json_web_token" \
-    -H "elasticbox-release:4.0" -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/534.30 (KHTML, like Gecko) Chrome/12.0.742.112 Safari/534.30" \
+    -H "elasticbox-release:4.0" 
     -H "Accept: application/json, text/plain, */*" \
     -H "Accept-encoding: gzip, deflate" \
     -H "Content-Type: application/json;charset=UTF-8" \
@@ -223,24 +279,39 @@ else
 fi;
 ```
 
-### Terminate the Instance
+## Terminate and Delete the Instance
 
-To remove the instance from the virtual machine, we send a DELETE request to the Instances object with the instance ID. Then we check its response status. If it’s 200, we say that the specific instance is terminated. Else, we output the error state from the response.
+Removing the instance from the virtual machine must be done into two steps: first, terminate the instance and then, delete it.
 
+Terminate runs the stop and terminate events scripts, and then removes the cloud resources, but does not remove the instance from the Cloud Application Manager database. Send a DELETE request to the [Instances endpoint](https://www.ctl.io/api-docs/cam/#application-lifecycle-management-instances-api) with the instance ID obtained when deploying the instance in the *instance_id* variable and with an `operation=terminate` URL parameter.
+
+ Then check its response status. If it’s 200, say that the specific instance is terminated. Else, output the error state from the response.
+
+ You can force terminate it using `operation=force_terminate` URL parameter. See detailed [DELETE API command](https://www.ctl.io/api-docs/cam/#application-lifecycle-management-instances-api-delete--services-instances--instance_id-) in Instances API.
+
+Add the following lines to the script:
 ```
 curl -k -s \
 -X DELETE \
 -H "Authorization:Bearer $json_web_token" \
 -H "elasticbox-release:4.0" \
--A "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/534.30 (KHTML, like Gecko) Chrome/12.0.742.112 Safari/534.30" \
 -H "Accept: application/json, text/plain, */*" \
 -H "Accept-encoding: gzip, deflate" \
- https://$environment/services/instances/$instance_id
+ https://$environment/services/instances/$instance_id??operation=terminate
 
-echo "Undeployed box: $instance_id"
+echo "Undeployed box instance: $instance_id"
+```
+Followed send a DELETE command again, with an `operation=delete` URL parameter to remove definitely the instance.
+
+ Copy previous script lines again and override the last two lines with these new ones:
+ ```
+   https://$environment/services/instances/$instance_id??operation=delete
+
+ echo "Removed box instance: $instance_id"
 ```
 
-### Contacting Cloud Application Manager Support
+
+## Contacting Cloud Application Manager Support
 
 We’re sorry you’re having an issue in [Cloud Application Manager](https://www.ctl.io/cloud-application-manager/). Please review the [troubleshooting tips](https://www.ctl.io/knowledge-base/cloud-application-manager/troubleshooting/troubleshooting-tips/), or contact [Cloud Application Manager support](mailto:incident@CenturyLink.com) with details and screenshots where possible.
 
@@ -248,4 +319,4 @@ For issues related to API calls, send the request body along with details relate
 
 In the case of a box error, share the box in the workspace that your organization and Cloud Application Manager can access and attach the logs.
 * Linux: SSH and locate the log at /var/log/elasticbox/elasticbox-agent.log
-* Windows: RDP into the instance to locate the log at ProgramDataElasticBoxLogselasticbox-agent.log
+* Windows: RDP into the instance to locate the log at \ProgramData\ElasticBox\Logs\elasticbox-agent.log
