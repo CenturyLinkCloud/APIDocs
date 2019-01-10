@@ -48,7 +48,6 @@ Use this API operation when you want to get a list of CLC Data Centers.
       7:  "NY1 - US East (New York)"
       8:  "SG1 - APAC (Singapore)"
       9:  "UC1 - US West (Santa Clara)"
-      10:  "UT1 - US Central (Salt Lake City)"
-      11:  "VA1 - US East (Sterling)"
-      12:  "WA1 - US West (Seattle)"
+      10:  "VA1 - US East (Sterling)"
+      11:  "WA1 - US West (Seattle)"
     }
