@@ -26,7 +26,7 @@ Manage and perform provider actions.
 | [GET /services/providers/{provider_id}/logs](#get-servicesprovidersprovider_idlogs) | Gets the logs of a provider. |
 | [GET /services/providers/{provider_id}/unregisted-instances](#get-servicesprovidersprovider_idunregisted-instances) | Gets the unregistered instances of a provider. |
 | [POST /services/providers/{provider_id}/images](#post-servicesprovidersprovider_idimages) | Adds a new machine image to a provider. |
-| [DELETE /services/providers/{provider_id}/images/{machine_image_id}](#delete-servicesprovidersprovider_idimagesmachine_image_id) | Updates an existing provider. |
+| [DELETE /services/providers/{provider_id}/images/{machine_image_id}](#delete-servicesprovidersprovider_idimagesmachine_image_id) | Deletes an existing machine image from a provider. |
 
 
 ## POST /services/providers
@@ -57,11 +57,11 @@ ElasticBox-Release: 4.0
 |  Parameter  |      Type     |   Description   |
 |-------------|---------------|-----------------|
 | icon | string | Specify an icon URI for the provider account. |
-| type | string | Required. Specify the account type as one of the following: Amazon Web Services, Rackspace, Openstack, VMware vSphere, Google Compute, Microsoft Azure, Cloudstack, SoftLayer. |
+| type | string | Required. Specify the account type as one of the following: Amazon Web Services, Amazon Web Services GovCloud, Rackspace, Openstack, VMware vSphere, VMware vCloud Director, Google Compute, Microsoft Azure, Microsoft Azure Classic, Cloudstack, SoftLayer, CenturyLink, CenturyLink DCC, CenturyLink DCC Foundation, Dimension Data. |
 | description | string | Describe the services from the provider. |
 | schema | string | Required. Provide the schema for the request. |
 | name | string | Required. Give the provider account a name in Cloud Application Manager. |
-| owner | string | Specify the user in Cloud Application Manager who owns the provider account. |
+| owner | string | Specify the workspace ID in Cloud Application Manager who owns the provider account. |
 
 #### Amazon Web Services request parameters
 
@@ -87,7 +87,7 @@ ElasticBox-Release: 4.0
 #### Amazon Web Services Gov request parameters
 |  Parameter  |      Type     |   Description   |
 |-------------|---------------|-----------------|
-| credentials | object | Required. Contains the credential object, which is either the [AWS role ARN name](https://www.ctl.io/knowledge-base/cloud-application-manager/deploying-anywhere/using-your-aws-account/) if using Cloud Application Manager as a SaaS or the key and secret if using Cloud Application Manager as an appliance. |
+| credentials | object | Required (key-secret or role). Contains the credential object, which is either the [AWS role ARN name](https://www.ctl.io/knowledge-base/cloud-application-manager/deploying-anywhere/using-your-aws-account/) if using Cloud Application Manager as a SaaS or the key and secret if using Cloud Application Manager as an appliance. |
 
 #### Amazon Web Services Gov request body
 ```
@@ -100,6 +100,18 @@ ElasticBox-Release: 4.0
   "credentials": {
     "key": "_the_key",
     "secret": "_the_secret"
+  },
+  "owner": "operations"
+}
+
+{
+  "icon": "images/platform/govcloud.png",
+  "type": "Amazon Web Services GovCloud",
+  "description": "Manage compute services in an isolated ITAR compliant AWS region",
+  "schema": "http://elasticbox.net/schemas/aws/provider",
+  "name": "AWSGovCloud",
+  "credentials": {
+    "role": "arn:aws:iam::63659945208:role/Cam_Access"
   },
   "owner": "operations"
 }
@@ -145,14 +157,14 @@ ElasticBox-Release: 4.0
 }
 ```
 
-#### VSphere request parameters
+#### VMware vSphere request parameters
 |  Parameter  |      Type     |   Description   |
 |-------------|---------------|-----------------|
 | username | string | Required. Specify a vCenter username. |
 | secret | string | Required. Specify the user’s password. |
 | endpoint | string | Required. Specify the vCenter server URL. |
 
-#### VSphere request body
+#### VMware vSphere request body
 ```
 {
    "icon": "images/platform/vsphere.png",
@@ -167,7 +179,7 @@ ElasticBox-Release: 4.0
 }
 ```
 
-#### VCloud request parameters
+#### VMware vCloud Director request parameters
 |  Parameter  |      Type     |   Description   |
 |-------------|---------------|-----------------|
 | username | string | Required. Specify a vCenter username. |
@@ -175,7 +187,7 @@ ElasticBox-Release: 4.0
 | url | string | Required. Specify the vCenter server URL. |
 | organization | string | Required. Organization. |
 
-#### VCloud request body
+#### VMware vCloud Director request body
 ```
 {
   "icon": "images/platform/vcloud.png",
@@ -215,14 +227,14 @@ ElasticBox-Release: 4.0
 }
 ```
 
-#### Azure request parameter
-To add an Azure subscription in Cloud Application Manager, you first have to upload the Cloud Application Manager management certificate to your subscription in Azure.
+#### Microsoft Azure Classic request parameter
+To add an Azure subscription in Cloud Application Manager, you first have to upload the Cloud Application Manager management certificate to your subscription in Azure Classic.
 
 |  Parameter  |      Type     |   Description   |
 |-------------|---------------|-----------------|
-| subscription | string | Required. Specify the Azure subscription ID.|
+| subscription_id | string | Required. Specify the Azure subscription ID.|
 
-#### Azure request body
+#### Microsoft Azure Classic request body
 ```
 {
    "icon": "images/platform/azure-storage.png",
@@ -232,6 +244,32 @@ To add an Azure subscription in Cloud Application Manager, you first have to upl
    "name": "example azure",
    "subscription_id": "your_Azure_subscription_ID",
    "owner": "mrina"
+}
+```
+
+#### Microsoft Azure request parameter
+To add an Azure subscription in Cloud Application Manager, you first have to upload the Cloud Application Manager management certificate to your subscription in Azure.
+
+|  Parameter  |      Type     |   Description   |
+|-------------|---------------|-----------------|
+| subscription_id | string | Required. Specify the Azure subscription ID.|
+| client_id | string | Only required for normal users. The resellers doesn't require this field. |
+| secret | string | The secret key that will be provided by Azure for the user |
+| tenant | string | The tenant instance specified in Azure panel. |
+
+#### Microsoft Azure request body
+```
+{
+   "icon": "images/platform/azure-storage.png",
+   "type": "Microsoft Azure",
+   "description": "Manage compute services for Windows and Linux machines.",
+   "schema": "http://elasticbox.net/schemas/azure/provider",
+   "name": "example azure",
+   "owner": "mrina",
+   "subscription_id": "",
+   "client_id": "",
+   "secret": "",
+   "tenant": "1728acb8-cf75-45d8-bf56-ec39873b7e1b"
 }
 ```
 
@@ -410,14 +448,14 @@ To add an Azure subscription in Cloud Application Manager, you first have to upl
 }
 ```
 
-#### VSphere response parameters
+#### vSphere response parameters
 |  Parameter  |      Type     |   Description   |
 |-------------|---------------|-----------------|
 | username | string | Returns the vCenter username. |
 | secret | string | Masks the user’s password. |
 | endpoint | string | Returns the vCenter server URL. |
 
-#### VSphere response example
+#### vSphere response example
 ```
 {
   "username": "_the_username",
@@ -429,7 +467,7 @@ To add an Azure subscription in Cloud Application Manager, you first have to upl
   "created": "2015-10-30 12:51:53.729679",
   "uri": "/services/providers/3afc1c99-dd66-436a-ace4-33979dd5f5ca",
   "name": "VMWareVSphereProvider",
-  "services": [
+  "services": [Provider id
 
   ],
   "secret": "_the_secret",
@@ -490,13 +528,13 @@ To add an Azure subscription in Cloud Application Manager, you first have to upl
 }
 ```
 
-#### Azure response parameters
+#### Microsoft Azure Classic response parameters
 
 |  Parameter  |      Type     |   Description   |
 |-------------|---------------|-----------------|
 | subscription_id | string | Returns the Azure subscription ID that the provider account uses. |
 
-#### Azure response example
+#### Microsoft Azure Classic response example
 ```
 {
   "updated": "2015-10-30 12:49:38.014690",
@@ -519,9 +557,41 @@ To add an Azure subscription in Cloud Application Manager, you first have to upl
   "organization": "elasticbox",
   "subscription_id": "_the_subscription_id",
   "icon": "images/platform/azure-storage.png",
-  "type": "Microsoft Azure",
+  "type": "Azure Classic",
   "id": "57b41251-43fd-4a18-9182-c71db30f9035",
   "schema": "http://elasticbox.net/schemas/azure/provider"
+}
+```
+
+#### Microsoft Azure response example
+```
+{
+  "updated": "2015-10-30 12:49:38.014690",
+  "description": "Manage compute services for Windows and Linux machines",
+  "created": "2015-10-30 12:49:38.014690",
+  "deleted": null,
+  "uri": "/services/providers/57b41251-43fd-4a18-9182-XXXXXXXXX",
+  "name": "MicrosoftAzureServiceProvider",
+  "services": [
+
+  ],
+  "state": "initializing",
+  "admin_boxes": [
+
+  ],
+  "members": [
+
+  ],
+  "owner": "operations",
+  "organization": "elasticbox",
+  "subscription_id": "_the_subscription_id",
+  "icon": "images/platform/azure-storage.png",
+  "type": "Microsoft Azure",
+  "id": "57b41251-43fd-4a18-9182-XXXXXXXXXX",
+  "schema": "http://elasticbox.net/schemas/azure/provider"
+ "client_id": "_client_id",
+ "secret": "_secret",
+ "tenant": "1728acb8-cf75-45d8-bf56-XXXXXXXXX"
 }
 ```
 
@@ -564,6 +634,7 @@ To add an Azure subscription in Cloud Application Manager, you first have to upl
 ```
 
 #### SoftLayer response parameters
+
 |  Parameter  |      Type     |   Description   |
 |-------------|---------------|-----------------|
 | username | string | Returns the SoftLayer username the provider account uses. |
@@ -809,13 +880,13 @@ ElasticBox-Release: 4.0
 
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
-| Provider id | string | The id of the provider | Yes |
+| provider_id | string | The id of the provider | Yes |
 
 ### Response
 
 #### Normal Code
 
-- **202** accepted
+- **202** Accepted
 
 #### Error Codes
 
@@ -937,11 +1008,11 @@ ElasticBox-Release: 4.0
                             "subnets": [
                                 {
                                     "description": "172.31.16.0/20",
-                                    "name": "subnet-231b2d0b"
+                                    "name": "subnet-ygygjyg"
                                 },
                                 {
                                     "description": "172.31.0.0/20",
-                                    "name": "subnet-af8e04f4"
+                                    "name": "subnet-97ty97h"
                                 }
                             ],
                             "description": "172.31.0.0/16",
@@ -993,7 +1064,7 @@ ElasticBox-Release: 4.0
         },
     ],
     "credentials": {
-        "role": "arn:aws:iam::636588615608:role/ElasticBox_Access"
+        "role": "arn:aws:iam::6366654466:role/Cam_Access"
     },
     "icon": "images/platform/aws.svg",
     "target_regions": [
@@ -1015,7 +1086,7 @@ ElasticBox-Release: 4.0
 
 Updates an existing provider when you give the provider ID. Pass the provider object in the request body to update these fields: name, description, and members.
 
-For AWS, you can also update the key and secret. For VMware vShpere, you can also update the username, secret, and endpoint.
+For AWS, you can also update the key and secret. For VMware vShpere, Sftlayer you can also update the username, secret, and endpoint.
 
 ### URL
 #### Structure
@@ -1036,7 +1107,8 @@ ElasticBox-Release: 4.0
 
 #### URI Parameters
 | Parameter | Type | Description | Req. |
-| Provider id | string | The unique id of the created provider | Yes |
+|-----------|------|-------------|------|
+| provider_id | string | The unique id of the created provider | Yes |
 
 ### Response
 
@@ -1045,6 +1117,8 @@ ElasticBox-Release: 4.0
 
 #### Common Error Response Codes
 - 400: Bad Request - Invalid Data
+- 403: Forbidden - User doesn’t belong to the organization
+- 404: Not Found
 - 409: Conflict
 
 #### Response Parameters
@@ -1270,7 +1344,7 @@ ElasticBox-Release: 4.0
         }
     ],
     "credentials": {
-        "role": "arn:aws:iam::636588615608:role/ElasticBox_Access"
+        "role": "arn:aws:iam::636534623543:role/Cam_Access"
     },
     "icon": "images/platform/aws.svg",
     "target_regions": [
@@ -1314,7 +1388,8 @@ ElasticBox-Release: 4.0
 #### URI Parameters
 | Parameter | Type | Description | Req. |
 | --- | --- | --- | --- |
-| Provider id | string | The unique id that given to each provider | Yes |
+
+| provider_id | string | The unique id that given to each provider | Yes |
 
 ### Response
 #### Normal Response Codes
@@ -1324,6 +1399,7 @@ ElasticBox-Release: 4.0
 - 400: Bad Request - Invalid Data
 - 400: Bad Request - Active service using the provider
 - 403: Forbidden
+- 404: Not Found
 
 
 ## PUT /services/providers/{provider_id}/sync
@@ -1352,7 +1428,8 @@ ElasticBox-Release: 4.0
 #### URI Parameters
 | Parameter | Type | Description | Req. |
 | --- | --- | --- | --- |
-| Provider id | string | The unique id that given to each provider | Yes |
+
+| provider_id | string | The unique id that given to each provider | Yes |
 
 ### Response
 #### Normal Response Codes
@@ -1385,7 +1462,8 @@ ElasticBox-Release: 4.0
 #### URI Parameters
 | Parameter | Type | Description | Req. |
 | --- | --- | --- | --- |
-| Provider id | string | The unique id that given to each provider | Yes |
+
+| provider_id | string | The unique id that given to each provider | Yes |
 
 ### Response
 #### Normal Response Codes
@@ -1413,28 +1491,28 @@ ElasticBox-Release: 4.0
 ```
  [
     {
-       provider_id: "8132cc1d-38b0-4867-b7a3-1af7b83d4792",
+       provider_id: "72626gg12d-38b0-4867-b7a3-1af7b83d4792",
        level: 40,
        text: "Amazon Web Services Management Console was accessed",
        created: "2018-10-22 07:30:47.808486",
        updated: "2018-10-22 07:30:47.808621",
        role: "arn:aws:iam::636588615608:role/ElasticBox_Access",
        workspace: "thomasbroadwell",
-       request_id: "e09360e1-7738-4cd9-91f2-cdd3c9f83a91",
+       request_id: "e09360e1-7738-4cd9-91f2-dhh7883253fv",
        operation: "console_access",
-       id: "231373e4-ab8f-4c28-8ba6-d91f331fae2c",
+       id: "231373e4-ab8f-4c28-8ba6-i981fhgw6923gs9",
        schema: "http://elasticbox.net/schemas/provider-log"
     },
     {
-       provider_id: "8132cc1d-38b0-4867-b7a3-1af7b83d4792",
+       provider_id: "8132cc1d-38b0-4867-b1hsh-1af7b83d4792",
        level: 40,
        text: "Image ami-2051294a in location us-east-1 added successfully.",
        created: "2018-10-15 19:10:57.765608",
        updated: "2018-10-15 19:10:57.766848",
        workspace: "msa_service_account1",
-       request_id: "3ee09e46-1655-4e09-a500-0ccf83161eec",
+       request_id: "77aac7887c1-1655-4e09-a500-0ccf83161eec",
        operation: "sync",
-       id: "b79820d6-64c4-4103-ac0b-97cdfe672893",
+       id: "b87672c001d-64c4-4103-ac0b-92927373f",
        schema: "http://elasticbox.net/schemas/provider-log"
     }
  ]
@@ -1462,7 +1540,7 @@ ElasticBox-Release: 4.0
 #### URI Parameters
 | Parameter | Type | Description | Req. |
 | --- | --- | --- | --- |
-| Provider id | string | The unique id that given to each provider | Yes |
+| provider_id | string | The unique id that given to each provider | Yes |
 
 ### Response
 
@@ -1476,17 +1554,7 @@ ElasticBox-Release: 4.0
 #### Response Parameters
 |Parameter | Type | Description |
 |----------|------|-------------|
-|profile | object | Instance profile. |
-| profile.subnet | string | Instance subnet. |
-| profile.image | string | Instance image. |
-| profile.keypair | string | Instance keypair. |
-| profile.location | string| Instance location. |
-| profile.security_groups | string | Instance security groups. |
-| profile.flavor | string | Instance flavor. |
-| profile.manageos | boolean | Instance Manage. |
-| profile.autoscalable | boolean | Instance autoscalable. |
-| profile.cloud | boolean | Cloud type. |
-| profile.schema | string | Instance schema uri. |
+|profile | object | Instance profile. (the profile object depends on provider, has different sub-object) |
 |provider_id | string | Instance provider unique identifier. |
 |name | string | Instance name. |
 |created | string | Creation date.|
@@ -1510,7 +1578,7 @@ ElasticBox-Release: 4.0
        schema: "http://elasticbox.net/schemas/aws/native-service/profile"
        },
        schema: "http://elasticbox.net/schemas/unregistered-instance",
-       provider_id: "8132cc1d-38b0-4867-b7a3-1af7b83d4792",
+       provider_id: "34g4-38b0-4867-b7a3-a8827f662g1b",
        description: "S3 Bucket: partsultd-cloudtrail",
        created: "2018-09-24 16:10:06.198406",
        deleted: null,
@@ -1521,19 +1589,17 @@ ElasticBox-Release: 4.0
        autoscaling_group: null,
        power_state: "running",
        organization: "mission-field",
-       external_id: "PartsUltdAPILogs-Mgmt",
-       id: "451873d3-07cb-450d-b20d-12b4ba3ec343",
+       external_id: "MissionField-Mgmt",
+       id: "451873d3-07cb-450d-b20d-183g3189d2001f",
        name: "PartsUltdAPILogs-Mgmt"
      }
   ]
 ```
 
 
-Adds a new machine image to a provider when you give the provider ID.
-
 ## POST /services/providers/{provider_id}/images
 
-Adds a new machine image to a provider when you give the provider ID.
+Adds a new machine image to a provider when you give the provider ID. Only Supported by AWS and Azure.
 
 ### URL
 #### Structure
@@ -1553,12 +1619,12 @@ ElasticBox-Release: 4.0
 #### URI Parameters
 | Parameter | Type | Description | Req. |
 | --- | --- | --- | --- |
-| Provider id | string | The unique id that given to each provider | Yes |
+| provider_id | string | The unique id that given to each provider | Yes |
 
 #### Request Body Parameters
 |Parameter | Type | Description|
 |----------|------|------------|
-|location | string | Image location. |
+|location | string | Image region. |
 |name | string | Image name. |
 |description | string | Image description. |
 
@@ -1603,12 +1669,12 @@ ElasticBox-Release: 4.0
 #### URI Parameters
 | Parameter | Type | Description | Req. |
 | --- | --- | --- | --- |
-| Provider id | string | The unique id that given to each provider | Yes |
+| provider_id | string | The unique id that given to each provider | Yes |
 
 #### Request Body Parameters
 | Parameter | Type | Description |
 |-----------|------|-------------|
-|location | string | Location of the machine image to be deleted. |
+|location | string | Region of the machine image to be deleted. |
 
 
 ### Response
@@ -1619,6 +1685,67 @@ ElasticBox-Release: 4.0
 - 400: Bad Request - Request missing, incomplete or includes invalid properties (details provided inside body)
 - 403: Forbidden - User doesn’t belong to the organization
 - 404: Not Found
+
+
+## GET /services/providers/{provider_id}/search/images"
+
+Deletes an existing machine image when you give the provider ID and the machine image ID.
+
+### URL
+#### Structure
+    [GET] GET /services/providers/{provider_id}/search/images
+
+#### Example
+    GET https://cam.ctl.io/services/providers/de5524a3-94f4-406b-a878-c9600bf3ed1a/search/images?publisher=4psa&offer=voipnow
+
+### Request
+#### Headers
+```
+Content-Type: application/json
+Authorization: Bearer your_json_web_token
+ElasticBox-Release: 4.0
+```
+
+#### URI Parameters
+| Parameter | Type | Description | Req. |
+| --- | --- | --- | --- |
+| provider_id | string | The unique id that given to each provider | Yes |
+| publisher | string | The publisher unique number | No |
+| offer | string | The offer number | No |
+
+### Response
+If no publisher is in query string
+
+```
+{
+ "publishers": [
+    "128technology",
+    "1e",
+    "4psa",
+    "5nine-software-inc",
+    "7isolutions",
+    "a10networks",
+    "a10_networks-5255398",
+    ...
+ }
+```
+if publisher has offers
+
+```
+{
+  offers: [
+    "voipnow"
+  ]
+}
+```
+
+#### Normal Response Codes
+- **202** Accepted
+
+#### Common Error Response Codes
+- 400: Bad Request - Operation not supported for XXXXXXXXXXX
+- 500: Internal Server Error - Critical error while processing request: XXXXXXXXXXX
+- 404: Not Found - Provider with ID XXXXXXXXXXX cannot be found
 
 ### Contacting Cloud Application Manager Support
 
