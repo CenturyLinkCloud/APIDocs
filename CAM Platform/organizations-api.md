@@ -11,7 +11,7 @@
 
 | Resource | Description |
 |----------|-------------|
-| [GET /services/organizations/{organization_name}](#get-servicesorganizationsorganization_name) | Get the schema of the given organization. |
+| [GET /services/organizations/{organization_name}](#get-servicesorganizationsorganization_name) | Gets the organization document |
 | [GET /services/organizations/{organization_name}/boxes](#get-servicesorganizationsorganization_nameboxes) | Get the boxes of the given organization. |
 | [GET /services/organizations/{organization_name}/instances](#get-servicesorganizationsorganization_nameinstances) | Get the instances of the given organization. |
 | [GET /services/organizations/{organization_name}/providers](#get-servicesorganizationsorganization_nameproviders) | Get the providers of the given organization. |
@@ -30,7 +30,7 @@ Gets the schema of a given organization.
 
 #### Example
 
-    GET https://cam.ctl.io/services/organizations/centurylink
+    GET https://cam.ctl.io/services/organizations/customer_org
 
 ### Request
 #### Headers
@@ -43,11 +43,11 @@ ElasticBox-Release: 4.0
 #### URI Parameters
 | Parameter | Type | Description | Req. |
 | --- | --- | --- | --- |
-| Organization name | string | the name of the organization | Yes |
+| organization_name| string | the name of the organization | Yes |
 
 ### Response
 #### Normal Response Codes
-- **200** Accepted
+- **200** OK
 
 #### Common Error Response Codes
 - 401: Unauthorized - Invalid access token/cookie
@@ -72,7 +72,6 @@ ElasticBox-Release: 4.0
 | providers | array | List of cloud providers the organization can enable to register and deploy. Each provider type has the following properties enabled:<li>Boolean value of true if enabled, else false.</li><li>type: String values of the supported cloud providers: Amazon Web Services, Openstack, VMWare vSphere, Google Compute, Microsoft Azure, Cloudstack, SoftLayer, VMware vCloud Director, Amazon Web Services GovCloud, Rackspace.</li><li>description: String that briefly enumerates the services from the cloud provider.</li><li>pricing: Array of pricing information for Linux and Windows compute instance types. Only available for Amazon Web Services.</li> |
 | tags | array | List of [tags](https://www.ctl.io/knowledge-base/cloud-application-manager/administering-your-organization/resource-tags/) applied on instances deployed to cloud providers from the organization. Each tag has three properties:<li>name: String you apply as a tag.</li><li>type: String identifies the type of tag whether an Cloud Application Manager object or a custom one. Allowed values are Box, Workspace, Provider, Environment, Email, User ID, Service Instance ID, Service ID, Workspace ID, Instance ID, Custom.</li><li>value: String value of null for Cloud Application Manager objects. For custom tags, set its value using this property.</li> |
 | webhooks | array | List of webhooks that integrate with the organization. |
-| cost_centers | array | List of cost centers. Each cost center contains the following properties:<li>enforce: Boolean. If true, an instance cannot be deployed if it is over the quota.</li><li>name: String. Name of the cost center</li><li>workspaces: Array. List of the names that belongs to the cost center.</li><li>quotas: List of quotas. Each quota contains an object with the following properties:</li><ul><li>cost: Required. Boolean. By default it’s false. Specify as true to enable synchronizing with LDAP groups.</li><li>provider: Required. Boolean. By default it’s false. Specify as true to enable synchronizing with LDAP groups.</li><li>allocated: Array. List of instances which are contributing to the current quota. Each allocated instance has these properties:</li> <ul><li>instance_id: Required. String. Id of the instance.</li><li>instances: Required. Int. Number of instances.</li><li>started: Required. String. Date when this instance was deployed.</li><li>flavor: Required. String. Type of instance.</li><li>region: Required. String. Region where it was deployed.</li><li>service_type: Required. String. Type of the service.</li><li>terminated: String specifies the username of the LDAP service account to look up users who try to log in.</li></ul><li>resources: Object. Resources of the quota.</li><ul><li>cpu: Required. Int. Number of cpu units.</li><li>disk: Required. Object. A disk with these properties:</li><ul><li>quantity: Required. String. Amount of storage.</li><li>unit: Required. String. Mb, Gb or Tb.</li></ul><li>ram: Required. String. Ram of the quota.</li><ul><li>quantity: Required. String. Amount of storage.</li><li>unit: Required. String. Mb or Gb.</li> </ul>|
 
 #### Response Body
 ```
@@ -275,7 +274,7 @@ ElasticBox-Release: 4.0
 
 ## GET /services/organizations/{organization_name}/boxes
 
-Get the schema of boxes in the given organization.
+Get the boxes in the given organization.
 
 ### URL
 
@@ -299,11 +298,11 @@ ElasticBox-Release: 4.0
 
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
-| Organization name |  String  |  The name of the organization | Yes |
+| organization_name |  String  |  The name of the organization | Yes |
 
 ### Response
 #### Normal Code
-- **200** accepted
+- **200** OK
 
 #### Error Codes
 - 401: Unauthorized - Invalid access token/cookie
@@ -392,7 +391,7 @@ Get the schema of instances in the given organization.
     [GET] /services/organizations/{organization_name}/instances
 
 #### Example
-    GET https://cam.ctl.io/services/organizations/centurylink/instances
+    GET https://cam.ctl.io/services/organizations/customer_org/instances
 
 ### Request
 #### Headers
@@ -405,11 +404,11 @@ ElasticBox-Release: 4.0
 #### URI Parameters
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
-| Organization name |  String  |  The name of the organization | Yes |
+| organization_name |  String  |  The name of the organization | Yes |
 
 ### Response
 #### Normal Code
-- **200** accepted
+- **200** OK
 
 #### Error Codes
 - 401: Unauthorized - Invalid access token/cookie
@@ -639,11 +638,11 @@ ElasticBox-Release: 4.0
 #### URI Parameters
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
-| Organization name |  String  |  The name of the organization | Yes |
+| organization_name |  String  |  The name of the organization | Yes |
 
 ### Response
 #### Normal Code
-- **200** accepted
+- **200** OK
 
 #### Error Codes
 - 401: Unauthorized - Invalid access token/cookie
@@ -718,11 +717,11 @@ ElasticBox-Release: 4.0
 #### URI Parameters
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
-| Organization name |  String  |  The name of the organization | Yes |
+| organization_name |  String  |  The name of the organization | Yes |
 
 ### Response
 #### Normal Code
-- **200** accepted
+- **200** OK
 
 #### Error Codes
 - 401: Unauthorized - Invalid access token/cookie
@@ -813,7 +812,7 @@ ElasticBox-Release: 4.0
 #### URI Parameters
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
-| Organization name |  String  |  The name of the organization | Yes |
+| organization_name |  String  |  The name of the organization | Yes |
 
 #### Request Body
 ```
@@ -956,7 +955,7 @@ ElasticBox-Release: 4.0
 
 ### Response
 #### Normal Code
-- **200** accepted
+- **200** OK
 
 #### Error Codes
 - 400: Bad Request - Request missing, incomplete or includes invalid properties (details provided inside body)
@@ -1125,11 +1124,11 @@ ElasticBox-Release: 4.0
 #### URI Parameters
 | Name | Type | Description | Req. |
 | --- | --- | --- | --- |
-| Organization name |  String  |  The name of the organization | Yes |
+| organization_name |  String  |  The name of the organization | Yes |
 
 ### Response
 #### Normal Code
-- **202** accepted
+- **202** Accepted
 
 #### Error Codes
 - 401: Unauthorized - Invalid access token/cookie
