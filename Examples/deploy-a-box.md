@@ -2,53 +2,120 @@
 "title": "Deploy a Box",
 "date": "09-01-2016",
 "author": "",
+"date": "12-26-2018",
+"author": "Virginia Sierra",
 "attachments": [],
-"contentIsHTML": false
+"contentIsHTML": false,
+"keywords": ["api", "example", "authentication", "deployment", "box", "MongoDB", "Box", "Instance", "Terminate" ]
 }}}
 
-### Sample: Deploy a MongoDB instance via the API
+## Overview
 
-Here you can see how to deploy a mongoDB instance using the Cloud Application Manager API. Typically you want to structure API calls to mirror your workflow in Cloud Application Manager. Most workflows involve tasks such as these: defining a [box](../Application Lifecycle Management/api-boxes.md), for example a Jenkins box to automate continuous integration and delivery; registering a [provider](../CAM Platform/api-providers.md) like AWS, Google Cloud, vSphere, OpenStack, or CloudStack to host your box application deployments; creating a [deployment profile](https://www.ctl.io/knowledge-base/cloud-application-manager/deploying-anywhere/deploying-managing-instances/) to specify provider specific options for a deployment; deploying an instance to launch a box in the virtual environment; or performing lifecycle tasks like deploying, reconfiguring, and terminating an instance.
+This guide shows **how to deploy a mongoDB instance using the Cloud Application Manager API**. In this sample, we deploy a MongoDB instance using the existing MongoDB public box, the steps you need are:
 
-In this sample, we follow this workflow to deploy a MongoDB instance using the existing MongoDB public box:
+ * [Authenticate with Cloud Application Manager](#authenticate-with-cloud-application-manager)
+ * [Declare Deployment Arguments](#declare-deployment-arguments)
+ * [Register a Provider in Cloud Application Manager](#register-a-provider-in-cloud-application-manager)
+ * [Create a Deployment Policy Box](#create-a-deployment-policy-box)
+ * [Deploy a MongoDB Instance](#deploy-a-mongodb-instance)
+ * [Terminate the Instance](#terminate-the-instance)
 
-* Declare deployment arguments
-* Authenticate with Cloud Application Manager
-* Create a deployment profile
-* Deploy a MongoDB instance
-* Terminate the instance
 
 **Note:** We use cURL commands to send HTTP requests to the API objects in JSON. JSON is the required format for all API requests and responses.
 
 Now let’s look at the script in sections to understand how you can make API calls from any code you like.
 
-### Declare Deployment Arguments
+## Authenticate with Cloud Application Manager
 
-MongoDB deployment arguments such as username, password, environment, owner are declared as variables because they can differ between deployments. That way, each time you run the script, you can pass different arguments. In this case we decided to use AWS as provider so we will need the account key and secret to register it as provider. Those are variables too.
+First of all, you should be Administrator on the target workspace or have [Administrator access](https://www.ctl.io/knowledge-base/cloud-application-manager/administering-your-organization/admin-access/) to your organization in Cloud Application Manager. 
+Before calling to the API you have to log in into the Cloud Application Manager website and [get an authentication token](https://www.ctl.io/api-docs/cam/#getting-started). You will use this token later as an http header to perform every call to the Cloud Application Manager API.
 
+## Declare Deployment Arguments
+
+Next variables are set with script calling parameters. This way, each time you run the script, you can pass different deployment arguments. These declared variables are referenced later in your script as request parameter values.
+
+| Variable |     Type    |  Description  |
+|----------|-------------|---------------|
+| provider_key<br>provider_secret | string | We will need the provider account key and secret to register a provider.<br>See below how to [register a provider](#Register-a-Provider-in-Cloud-Application-Manager) and get its parameters. |
+| json_web_token | string | This is the [authentication token](#Authenticate-with-Cloud-Application-Manager) obtained before.<br>An example is *eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJvcGVyYb25z...* |
+| environment | string | Set your URL organization hostname or your appliance IP, where API calls are sent.<br>Examples are:  *your-organization.cam.ctl.io*, *centurylink.cam.ctl.io*,  *192.168.1.10*. |
+| owner | string | Specify the user ID in Cloud Application Manager who owns the provider account. |
+| username | string | Name of the admin user. |
+| password | string | Password of the admin user. |
+
+Start your script with the following lines:
 ```
-aws_provider_key=$1
-aws_provider_secret=$2
+# Deployment common variables
+provider_key=$1
+provider_secret=$2
 
-environment=$3
-json_web_token=$4
+json_web_token=$3
+environment=$4
 owner=$5
 
-username=$1
-password=$2
+username=$6
+password=$7
 ```
 
-### Authenticate with Cloud Application Manager
+There are other variables obtained during the script execution and necessary in next script steps.
 
-All API calls start with signing in to the Cloud Application Manager website and [getting an authentication token](../Getting Started/api-overview-and-access.md). You use this token to perform tasks in your Cloud Application Manager workflow. In this example, we pass the token in the format as shown to all of the API requests that relate to deploying MongoDB.
+| Variable |     Type    | Description |
+|----------|-------------|-------------|
+| provider_id | string | Obtained when registering a provider. |
+| policy_box_id | string | Obtained when creating a deployment policy box. |
+| instance_id | string | Obtained when deployin a box instance. |
 
+## Register a Provider in Cloud Application Manager
+
+A provider is a public or private cloud account you can register in Cloud Application Manager. 
+
+To register a provider we send a POST request to the [Provider object](https://www.ctl.io/api-docs/cam/#cam-platform-providers-api) with the required parameters.
+
+In this case, we choose to create an AWS as provider in the appliance. From the AWS account credentials we will need the key and the secret right now. Creating it in an organization service requires ARN code as credential. You can obtain the required parameters for other providers in [Provider object](https://www.ctl.io/api-docs/cam/#cam-platform-providers-api) API doc.
+
+If there’s an error registering the provider, we output the error. Else, we output the provider ID and save it in *provider_id* variable.
+
+Add the following lines to your script:
 ```
-Authorization:Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJvcGVyYXRpb25zIiwianRpIjoiNjk0YTgzMTgtZjZlMy00MDA5LTgxNTItYzdlNTE0NzFlMzU3IiwiZXhwIjoxNTExMzY3ODYxLCJvcmdhbml6YXRpb24iOiJlbGFzdGljYm94IiwiaWF0IjoxNTEwMDcxODYxLCJ0eXBlIjoidXNlciIsIm5hbWUiOiJPcGVyYXRpb25zIEVsYXN0aWNCb3gifQ.hob7M5swTflmbsw_iGe94FPnFgBvWbVKscvKN8Ij_4AgRj7PFrYVIwW8Xyd-PIuDKWLe3cGGE0Hz8g6KdDUMzbfp-dXk4JjqyenejCA-UTF9dv1z-pWt69IevRNR5XdYR5iVff4-Yy33RMaeWHaLuYTbOQHjVI2MDB7shlOCx4sERDtd31OyD6ZjNgRMLLDR0AFLTj2KRDleoH8iG0yXodD0AVk0iAcBCaakgZR5ROAZDb3SoSpsKYPS4dC-eWd_s0VgdYaWOd1jI0ev66-oPgSul9kAuIjozyNZ3s4vW0i-8Y5sH4lTWgMqTmf3lmjA6e2sj5lV9-boE3k3ALJwPg
+# Register the provider AWS in Cloud Application Manager script
+payload="{
+  \"icon\": \"images/platform/aws.png\",
+  \"type\": \"Amazon Web Services\",
+  \"description\": \"Manage EC2, ECS and Cloudformation instances\",
+  \"schema\": \"http://elasticbox.net/schemas/aws/provider\",
+  \"name\": \"AWS Provider example via API\",
+  \"credentials\": {
+    \"key\": \"$provider_key\",
+    \"secret\": \"$provider_secret\"
+  },
+  \"owner\": \"$owner\"
+}"
+provider=$(curl -k -s \
+    -X POST \
+    -H "Authorization:Bearer $json_web_token" \
+    -H "elasticbox-release:4.0" \
+    -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/534.30 (KHTML, like Gecko) Chrome/12.0.742.112 Safari/534.30" \
+    -H "Accept: application/json, text/plain, */*" \
+    -H "Accept-encoding: gzip, deflate" \
+    -H "Content-Type: application/json" \
+    -d "$payload" https://$environment/services/providers)
+provider_id=$(echo $provider | python -c 'import json,sys; print json.load(sys.stdin)["id"]')
+if [ -z != $provider_id ]; then
+    echo "Created provider $provider_id"
+else
+    echo "Error creating the provider: $provider"
+fi;
 ```
 
 ### Create a Deployment Policy Box
 
-A deployment policy box is where you specify settings to deploy applications in a specific virtual environment. We send parameters for creating the deployment profile in a POST request to the Profiles object. If there’s an error in creating the profile, we output the error. Else, we output the created profile.
+A deployment policy box is where you specify settings to deploy applications in a specific virtual environment.
+
+To create a deployment policy box we send a POST request to the [Box object](https://www.ctl.io/api-docs/cam/#application-lifecycle-management-boxes-api) with the provider ID obtained when registering the provider in the *provider_id* variable. 
+
+If there’s an error in creating the deployment policy box, we output the error. Else, we output the created deployment policy box ID and save it in *policy_box_id* variable.
+
+Add the following lines to your script:
 
 ```
 payload="{
@@ -98,7 +165,11 @@ fi;
 
 ### Deploy a MongoDB Instance
 
-In a POST request to the Instances object, we send along the deployment profile with other instance parameters to launch a MongoDB instance in the virtual environment.
+To deploy a MongoDB instance using the existing MongoDB public box, we send a POST request to the [Instances object](https://www.ctl.io/api-docs/cam/#application-lifecycle-management-instances-api) with the box ID of the MongoDB box  *mongo_box_id* variable and the policy box ID obtained when creating the policy box in the *policy_box_id* variable.
+
+If there’s an error deploying instance, we output the error. Else, we output the deployed instance ID and save it in *instance_id* variable.
+
+Add the following lines to your script:
 
 ```
 #Deploy the instance
@@ -260,4 +331,4 @@ For issues related to API calls, send the request body along with details relate
 
 In the case of a box error, share the box in the workspace that your organization and Cloud Application Manager can access and attach the logs.
 * Linux: SSH and locate the log at /var/log/elasticbox/elasticbox-agent.log
-* Windows: RDP into the instance to locate the log at ProgramDataElasticBoxLogselasticbox-agent.log
+* Windows:  RDP into the instance to locate the log at \ProgramData\ElasticBox\Logs\elasticbox-agent.log
