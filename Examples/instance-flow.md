@@ -1,39 +1,42 @@
 {{{
 "title": "Instance Flow",
-"date": "09-01-2016",
-"author": "",
 "date": "12-19-2018",
 "author": "Julio Castanar",
 "attachments": [],
 "contentIsHTML": false,
-"keywords": ["api", "example", "authentication", "deployment", "provider", "Policy Box", "Box", "Instance", "Terminate" ]
+"keywords": ["api", "example", "authentication", "deployment", "provider", "policy box", "box", "instance", "terminate" ]
 }}}
+
+**In this article**
+
+* [Overview](#overview)
+* [Authenticate with Cloud Application Manager](#authenticate-with-cloud-application-manager)
+* [Obtain Deployment Variables](#obtain-deployment-variables)
+* [Register a Provider in Cloud Application Manager](#register-a-provider-in-cloud-application-manager)
+* [Create a Deployment Policy Box](#create-a-deployment-policy-box)
+* [Create a Custom Box](#create-a-custom-box)
+* [Deploy the Instance](#deploy-the-instance)
+* [Terminate and Delete the Instance](#terminate-and-delete-the-instance)
+* [Contacting Cloud Application Manager Support](#contacting-cloud-application-manager-support)
 
 ## Overview
 
-This guide shows **how to use Cloud Application Manager API from Registering a Provider to the Deployment of an Instance**. The steps you need are:
-
- * [Authenticate with Cloud Application Manager](#authenticate-with-cloud-application-manager)
- * [Obtain Deployment Variables](#obtain-deployment-variables)
- * [Register a Provider in Cloud Application Manager](#register-a-provider-in-cloud-application-manager)
- * [Create a Deployment Policy Box](#create-a-deployment-policy-box)
- * [Create a Custom Box](#create-a-custom-box-in-order-to-deploy-it-using-the-previous-deployment-policy-box)
- * [Deploy the Instance](#deploy-the-instance)
- * [Terminate the Instance](#terminate-the-instance)
+This guide shows **how to use Cloud Application Manager API from Registering a Provider to the Deployment of an Instance**.
 
 
-**Note:** You will use cURL commands to send HTTP requests to the API objects in JSON. JSON is the required format for all API requests and responses.
+**Notes:** 
+1. You will use cURL commands to send HTTP requests to the API objects in JSON. JSON is the required format for all API requests and responses.
 
-cURL commands in examples use -k parameter for convenience allowing curl to proceed and operate even for server connections considered insecure. Don't use it in production.
+2. cURL commands in examples use -k parameter for convenience allowing curl to proceed and operate even for server connections considered insecure. Don't use it in production.
 
-When executing a command, it takes a while for the resources to be ready, and calling the next step before the previous is completed may lead to error (i.e. right after creating the provider it will start the synchronization, and the deployment box cannot be created until the first sync completes).
+3. When executing a command, it takes a while for the resources to be ready, and calling the next step before the previous is completed may lead to error (i.e. right after creating the provider it will start the synchronization, and the deployment box cannot be created until the first sync completes).
 
 Now let’s look at the script in sections to understand how you can make API calls from any code you like.
 
 ## Authenticate with Cloud Application Manager
 
 First of all, you need to hold the administrator role on a workspace to be able to run these steps. You must obtain [Administrator access](https://www.ctl.io/knowledge-base/cloud-application-manager/administering-your-organization/admin-access/) to Cloud Application Manager. 
-Before calling to the API you have to sign in into the Cloud Application Manager website and [get an authentication token](https://www.ctl.io/api-docs/cam/#getting-started).You will use this token as a HTTP header to perform every call to the Cloud Application Manager API.
+Before calling to the API you have to sign in into the Cloud Application Manager website and [get an authentication token](https://www.ctl.io/api-docs/cam/#getting-started).You will use this token as an authentication HTTP header to perform every call to the Cloud Application Manager API.
 
 ## Obtain Deployment Variables
 
@@ -281,11 +284,11 @@ fi;
 
 ## Terminate and Delete the Instance
 
-Removing the instance from the virtual machine must be done into two steps: first, terminate the instance and then, delete it.
+Removing the instance from the virtual machine must be done into two steps: first, terminate the instance and second, delete it.
 
 Terminate runs the stop and terminate events scripts, and then removes the cloud resources, but does not remove the instance from the Cloud Application Manager database. Send a DELETE request to the [Instances endpoint](https://www.ctl.io/api-docs/cam/#application-lifecycle-management-instances-api) with the instance ID obtained when deploying the instance in the *instance_id* variable and with an `operation=terminate` URL parameter.
 
- Then check its response status. If it’s 200, say that the specific instance is terminated. Else, output the error state from the response.
+ Then check its response status. If it’s 200, the specific instance has been terminated. Else, check the error state from the response.
 
  You can force terminate it using `operation=force_terminate` URL parameter. See detailed [DELETE API command](https://www.ctl.io/api-docs/cam/#application-lifecycle-management-instances-api-delete--services-instances--instance_id-) in Instances API.
 
@@ -301,10 +304,10 @@ curl -k -s \
 
 echo "Undeployed box instance: $instance_id"
 ```
-Followed send a DELETE command again, with an `operation=delete` URL parameter to remove definitely the instance.
+Afterwards, send a DELETE command again with an `operation=delete` URL parameter to remove definitely the instance from Cloud Application Manager.
 
  Copy previous script lines again and override the last two lines with these new ones:
- ```
+```
    https://$environment/services/instances/$instance_id??operation=delete
 
  echo "Removed box instance: $instance_id"
