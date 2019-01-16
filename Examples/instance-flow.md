@@ -25,9 +25,9 @@ This guide shows **how to use Cloud Application Manager API from Registering a P
 
 
 **Notes:** 
-1. You will use cURL commands to send HTTP requests to the API objects in JSON. JSON is the required format for all API requests and responses.
+1. The following examples use cURL command to send HTTP requests to the API objects in JSON. JSON is the required format for all API requests and responses.
 
-2. cURL commands in examples use -k parameter for convenience allowing curl to proceed and operate even for server connections considered insecure. Don't use it in production.
+2. cURL command is used with the -k parameter for convenience, allowing it to proceed and operate even for server connections considered insecure. Don't use it in production.
 
 3. When executing a command, it takes a while for the resources to be ready, and calling the next step before the previous is completed may lead to error (i.e. right after creating the provider it will start the synchronization, and the deployment box cannot be created until the first sync completes).
 
@@ -35,8 +35,8 @@ Now let’s look at the script in sections to understand how you can make API ca
 
 ## Authenticate with Cloud Application Manager
 
-First of all, you need to hold the administrator role on a workspace to be able to run these steps. You must obtain [Administrator access](https://www.ctl.io/knowledge-base/cloud-application-manager/administering-your-organization/admin-access/) to Cloud Application Manager. 
-Before calling to the API you have to sign in into the Cloud Application Manager website and [get an authentication token](https://www.ctl.io/api-docs/cam/#getting-started).You will use this token as an authentication HTTP header to perform every call to the Cloud Application Manager API.
+First of all, you need to hold the administrator role on a workspace to be able to run these steps. You must obtain [Administrator access](https://www.ctl.io/knowledge-base/cloud-application-manager/administering-your-organization/admin-access/) to Cloud Application Manager.  
+Before calling to the API you have to sign in into the Cloud Application Manager website and [get an authentication token](https://www.ctl.io/api-docs/cam/#getting-started). You will use this token as an authentication HTTP header to perform every call to the Cloud Application Manager API.
 
 ## Obtain Deployment Variables
 
@@ -47,7 +47,7 @@ Next, define the variables that will contain the parameters of the script. This 
 | provider_key | You need the provider account key and secret to register a provider. |
 | provider_secret | See below how to [register a provider](#Register-a-Provider-in-Cloud-Application-Manager) and get its parameters. |
 | json_web_token | This is the [authentication token](#Authenticate-with-Cloud-Application-Manager) obtained before.<br>It's a long BASE64 encoded string that starts with something like:<br/>  *eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJvcGVyYb25z...* |
-| environment | Set your URL organization hostname or your appliance IP, where API calls are sent.<br>Examples are:  *your-organization.cam.ctl.io*, *centurylink.cam.ctl.io*,  *192.168.1.10*. |
+| environment | Set your URL organization hostname or your appliance IP, where API calls are sent.<br>Examples are:  *cam.ctl.io*, *your-organization.cam.ctl.io*, *192.168.1.10*. |
 | owner | Specify the user ID in Cloud Application Manager who owns the provider account. |
 
 Start with your script with the following lines:
@@ -73,11 +73,11 @@ There are other variables obtained during the script execution and necessary in 
 
 A provider is a public or private cloud account you can register in Cloud Application Manager. 
 
-To register a provider send a POST request to the [Providers endpoint](https://www.ctl.io/api-docs/cam/#cam-platform-providers-api) with the requiered parameters.
+To register a provider send a POST request to the [Providers endpoint](https://www.ctl.io/api-docs/cam/#cam-platform-providers-api) with the required parameters.
 
-In this case choose create an AWS as provider in an appliance. It will be necessary a key and the secret pair.  
-Creating it in an oragnization service requieres a role ARN as credential instance of a key pair.  
-Other provider types require different credential sets that you can obtain check in the [Providers endpoint](https://www.ctl.io/api-docs/cam/#cam-platform-providers-api) API doc.
+This example follows the steps to create an AWS provider in a Cloud Application Manager appliance. It will be necessary a key and the secret pair.    
+Creating it in an organization service requieres a role ARN as credential instance of a key pair.  
+Other provider types require different credential sets that you can check in the [Providers endpoint](https://www.ctl.io/api-docs/cam/#cam-platform-providers-api) API doc.
 
 If there’s an error registering the provider, it outputs the error. Else, it outputs the provider ID and saves it in *provider_id* variable.
 
