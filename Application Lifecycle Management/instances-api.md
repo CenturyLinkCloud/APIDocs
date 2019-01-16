@@ -3,7 +3,8 @@
 "date": "12-28-2018",
 "author": "Jorge Torres",
 "attachments": [],
-"contentIsHTML": false
+"contentIsHTML": false,
+"keywords": ["cam api", "instances", "alm", "get instance", "delete instance", "binding", "deploy", "power-on", "shutdown", "terminate", "unregistere instance"]
 }}}
 
 **Manage and perform actions on instances.**
@@ -35,8 +36,7 @@
 | [PUT /services/instances/{instance_id}/import](#put-servicesinstancesinstance_idimport) | Retry to import an unregistered instance. |
 | [PUT /services/instances/{instance_id}/cancel_import](#put-servicesinstancesinstance_idcancel_import) | Cancel a failed import of an unregistered instance. |
 
-
-### GET /services/instances
+## GET /services/instances
 Gets instances that are accessible in the personal workspace of the authenticated user.
 ### URL
 
@@ -73,33 +73,33 @@ ElasticBox-Release: 4.0
 
 #### Response Parameters
 
-| Parameter | Type |Description |
+| Parameter | Type | Description |  
 |-----------|------|------------|
 | box | string | Box unique identifier used to create the instance. |
 | lease | array | Schedules an instance with three parameters: <li>released. Is a true or false boolean value. False means that the operation scheduled on the instance is not executed yet.</li><li>operation. Specifies an instance to stop with **shutdown** or **terminate**. When not scheduled, the instance is set to **alwayson**.</li><li>expire. Specifies in UTC format YYYY-MM-DD HH:MM:SS.SSSSSS, the time and date for stopping an instance. It’s required only when an instance is set to terminate or shut down.</li> |
 | created | string | Creation date. |
 | updated |  string | Date of the last update. |
-| automatic_updates | string | One of the: major, minor, patch, off. Default off. |
+| automatic_updates | string | One of these: major, minor, patch, off. Default off. |
 | members | array | List of members whom you shared the instance. |
 | owner | string | Instance owner. |
-| operation | string | Last operation, there are seven types of operations: deploy , shutdown , poweron , reinstall , reconfigure , terminate and terminate_service |
+| operation | string | Last operation, there are seven types of operations: deploy, shutdown , poweron , reinstall , reconfigure , terminate and terminate_service |
 | name | string | Instance name. |
 | service | object | Instance service. |
-| service.type | string | Required. Can be one of these types: Linux Compute, Windows Compute and CloudFormation Service. |
+| service.type | string | Can be one of these types: Linux Compute, Windows Compute and CloudFormation Service. |
 | service.id | string | Service unique identifier. |
 | service.machines | array | List of service machines |
 | machine | object | Machine contained in the service machines list. |
-| machine.state | string | Machine state, there are three possible states: processing , done and unavailable. |
+| machine.state | string | Machine state, there are three possible states: processing, done and unavailable. |
 | machine.name | string | Machine name. |
 | machine.workflow | array | List of workflow actions, where each workflow action object contains three parameters: box, event, and script. |
 | workflow.box | string | Workflow action box. |
 | workflow.event | string | Workflow action event. |
 | workflow.script | string | Workflow action script uri. |
 | tags | array | Instance tags. |
-| variables | array | 	List of instance variables, each variable object contains the parameters: type , name and value. |
+| variables | array | 	List of instance variables, each variable object contains the parameters: type, name, value, visibility, required, etc.. |
 | boxes | array | List of boxes where each box object contains a service parameter. The service parameter can have one of these values: Linux Compute, Windows Compute and CloudFormation Service. |
 | uri |  string | Instance uri. |
-| state | string | Instance state, there are three possible states: processing , done and unavailable |
+| state | string | Instance state, there are three possible states: processing, done and unavailable |
 | bindings | array | List of instance bindings. |
 | binding | object | Binding contained in the bindings list, each binding object contains the parameters: instance and name. |
 | id | array | Instance unique identifier |
@@ -327,7 +327,7 @@ ElasticBox-Release: 4.0
 }]
 ```
 
-### POST /services/instances
+## POST /services/instances
 Creates a new instance and gets the created instance.
 
 ### URL
@@ -351,18 +351,19 @@ Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 #### URI Parameters
-| Parameter | Type |Description |
-|-----------|------|------------|
-| schema | string | Required. Instance schema URI. |
-| owner | string | ID of the workspace where the instance is posted. |
-| box | Object | Box object with its id and a list of overridden variable objects at deployment time |
-| policy_box | Object | Box object with its id and a list of overridden variable objects at deployment time |
-| automatic_updates | string | One of the: major, minor, patch, off. Default off. |
-| lease | array | Schedules an instance with two parameters:<li>expire. Specifies in UTC format YYYY-MM-DD HH:MM:SS.SSSSSS, the time and date for stopping an instance. It’s required only when an instance is set to terminate or shut down.</li><li>operation. Specifies an instance to stop with **shutdown** or **terminate**. When not scheduled, the instance is set to **alwayson**.</li> |
-| name | string | Instance name. |
-| instance_tags | array | List of tags defined at deployment time. |
+* None
 
-
+#### Request Body Parameters
+| Parameter | Type | Description | Req. |
+|-----------|------|------------|----- |
+| schema | string | Instance schema URI. | Yes |
+| owner | string | ID of the workspace where the instance is posted. | Yes |
+| box | Object | Box object with its id and a list of overridden variable objects at deployment time | Yes |
+| policy_box | Object | Box object with its id and a list of overridden variable objects at deployment time |  Yes |
+| automatic_updates | string | One of these: major, minor, patch, off. Default off. |  |
+| lease | array | Schedules an instance with two parameters:<li>expire. Specifies in UTC format YYYY-MM-DD HH:MM:SS.SSSSSS, the time and date for stopping an instance. It’s required only when an instance is set to terminate or shut down.</li><li>operation. Specifies an instance to stop with **shutdown** or **terminate**. When not scheduled, the instance is set to **alwayson**.</li> |  |
+| name | string | Instance name. | Yes |
+| instance_tags | array | List of tags defined at deployment time. |  |
 
 #### Request Body
 The next example its the request schedules the new instance.
@@ -403,7 +404,7 @@ The next example its the request schedules the new instance.
 
 #### Response Parameters
 
-| Parameter | Type |Description |
+| Parameter | Type | Description |
 |-----------|------|------------|
 | lease | array | If scheduled, this object displays these parameters for the instance:<li>released. Is a true or false boolean value. False means that the operation scheduled on the instance is not executed yet.</li><li>expire. Specifies in UTC format YYYY-MM-DD HH:MM:SS.SSSSSS, the time and date for stopping an instance. It applies only when an instance is set to terminate or shut down.</li><li>operation. Specifies the stop operation scheduled as either **shutdown** or **terminate**. When not scheduled, the instance is set to **alwayson**.</li> |
 | bindings | array | List of instance bindings. |
@@ -411,7 +412,7 @@ The next example its the request schedules the new instance.
 | updated | string | Date of the last update. |
 |name | string | Instance name. |
 | service | Object | Instance service. |
-| service.type | string | Required. Can be one of these types: Linux Compute, Windows Compute and CloudFormation Service. |
+| service.type | string | Can be one of these types: Linux Compute, Windows Compute and CloudFormation Service. |
 | service.id | string | Service type. |
 | service.machines | array | List of service machines. |
 | machine | object | Machine contained in the service machines list. |
@@ -422,16 +423,16 @@ The next example its the request schedules the new instance.
 | workflow.event | string |	Workflow action event.|
 | workflow.script | string | Workflow action script uri. |
 | tags | array | Instance tags. |
-| variables | array | 	List of instance variables, each variable object contains the parameters: type , name and value. |
+| variables | array | 	List of instance variables, each variable object contains the parameters: type, name, value, visibility, required, etc.. |
 | created | string | Creation date. |
 | boxes | array | List of boxes |
 | box.visibility | string | Indicates at what level the box is visible. By default, boxes are visible to the workspace they’re created in. Can have one of these values:<li>public: Visible to Cloud Application Manager users across all organizations.</li><li>organization: Visible to all users in the organization where the box was created.</li><li>workspace: By default, the box is visible only to members of the workspace where it was created.</li> |
 | box.organization | string | Organization to which the box belongs. |
 | box.updated | string | Date of the last update. |
 | box.description | string | Box description. |
-| box.service | string | Required. Can be one of these types: Linux Compute, Windows Compute and CloudFormation Service. |
+| box.service | string | Can be one of these types: Linux Compute, Windows Compute and CloudFormation Service. |
 | box.tags | array | Box tags. |
-| box.variables | array | 	List of box variables, each variable object contains the parameters: type , name and value. |
+| box.variables | array | 	List of box variables, each variable object contains the parameters: type, name, value, visibility, required, etc..  |
 | box.created | string | Creation date. |
 | box.uri | string | Box uri. |
 | box.id | array | Box unique identifier. |
@@ -454,7 +455,7 @@ The next example its the request schedules the new instance.
 | schema | string | Instance schema uri. |
 | policy_box | object | specific deployment policy for a provider |
 | policy_box.provider_id | string | provider id |
-| policy_box.automatic_updates | string | One of them: mayor, minor, patch, off |
+| policy_box.automatic_updates | string | One of these: mayor, minor, patch, off |
 | policy_box.name | string | Policy box name |
 | policy_box.variables | array | List of deployment box policy variables |
 | policy_box.claims | array | List of deployment box policy claims |
@@ -627,20 +628,22 @@ Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 #### URI Parameters
+* None
 
-| Parameter | Type |Description |
-|-----------|------|------------|
-| schema | string | Required. Register Instance Request schema URI. |
-| owner | string | ID of the workspace where the instance is imported. |
-| name | string | Instance name to register. |
+#### Request Body Parameters
+| Parameter | Type | Description | Req.| 
+|-----------|------|------------|----|
+| schema | string | Register Instance Request schema URI. | Yes|
+| owner | string | ID of the workspace where the instance is imported. |Yes|
+| name | string | Instance name to register. |Yes|
 | description | string | Instance description to register. |
-| unregistered_id | string | Instance unique identifier |
-| linux_username | string | Linux user to install agent |
-| private_key | string | Linux key to install agent  |
-| windows_username | string | Windows username to install agent |
-| windows_password | string | Windows password to install agent |
+| unregistered_id | string | Instance unique identifier |Yes|
+| linux_username | string | Linux user to install agent |Yes|
+| private_key | string | Linux key to install agent  |Yes|
+| windows_username | string | Windows username to install agent |Yes|
+| windows_password | string | Windows password to install agent |Yes|
 | instance_tags | array | List of tags defined at deployment time. |
-| automatic_updates | string | One of the: major, minor, patch, off. Default off. |
+| automatic_updates | string | One of these: major, minor, patch, off. Default off. |
 | lease | array | Schedules an instance with two parameters:<li>expire. Specifies in UTC format YYYY-MM-DD HH:MM:SS.SSSSSS, the time and date for stopping an instance. It’s required only when an instance is set to terminate or shut down.</li><li>operation. Specifies an instance to stop with **shutdown** or **terminate**. When not scheduled, the instance is set to **alwayson**.</li> |
 
 #### Request Body
@@ -706,7 +709,7 @@ unregistered instances:
 
 #### Response Parameters
 
-| Parameter | Type |Description |
+| Parameter | Type | Description |
 |-----------|------|------------|
 | lease | array | If scheduled, this object displays these parameters for the instance:<li>released. Is a true or false boolean value. False means that the operation scheduled on the instance is not executed yet.</li><li>expire. Specifies in UTC format YYYY-MM-DD HH:MM:SS.SSSSSS, the time and date for stopping an instance. It applies only when an instance is set to terminate or shut down.</li><li>operation. Specifies the stop operation scheduled as either **shutdown** or **terminate**. When not scheduled, the instance is set to **alwayson**.</li> |
 | bindings | array | List of instance bindings. |
@@ -714,7 +717,7 @@ unregistered instances:
 | updated | string | Date of the last update. |
 |name | string | Instance name. |
 | service | Object | Instance service. |
-| service.type | string | Required. Can be one of these types: Linux Compute, Windows Compute and CloudFormation Service. |
+| service.type | string | Can be one of these types: Linux Compute, Windows Compute and CloudFormation Service. |
 | service.id | string | Service type. |
 | service.machines | array | List of service machines. |
 | machine | object | Machine contained in the service machines list. |
@@ -725,16 +728,16 @@ unregistered instances:
 | workflow.event | string |	Workflow action event.|
 | workflow.script | string | Workflow action script uri. |
 | tags | array | Instance tags. |
-| variables | array | 	List of instance variables, each variable object contains the parameters: type , name and value. |
+| variables | array | 	List of instance variables, each variable object contains the parameters: type, name, value, visibility, required, etc.. |
 | created | string | Creation date. |
 | boxes | array | List of boxes |
 | box.visibility | string | Indicates at what level the box is visible. By default, boxes are visible to the workspace they’re created in. Can have one of these values:<li>public: Visible to Cloud Application Manager users across all organizations.</li><li>organization: Visible to all users in the organization where the box was created.</li><li>workspace: By default, the box is visible only to members of the workspace where it was created.</li> |
 | box.organization | string | Organization to which the box belongs. |
 | box.updated | string | Date of the last update. |
 | box.description | string | Box description. |
-| box.service | string | Required. Can be one of these types: Linux Compute, Windows Compute and CloudFormation Service. |
+| box.service | string | Can be one of these types: Linux Compute, Windows Compute and CloudFormation Service. |
 | box.tags | array | Box tags. |
-| box.variables | array | 	List of box variables, each variable object contains the parameters: type , name and value. |
+| box.variables | array | 	List of box variables, each variable object contains the parameters: type, name, value, visibility, required, etc.. |
 | box.created | string | Creation date. |
 | box.uri | string | Box uri. |
 | box.id | array | Box unique identifier. |
@@ -904,7 +907,7 @@ unregistered instances:
 }
 ```
 
-### GET /services/instances/{instance_id}
+## GET /services/instances/{instance_id}
 
 Fetches an existing instance given its ID.
 
@@ -931,9 +934,10 @@ ElasticBox-Release: 4.0
 ```
 
 #### URI Parameters
-|Parameter |Type |Description | Req. |
-|-----------|------|------------| ---- |
+| Parameter | Type | Description | Req. |
+|-----------|------|------------|----|
 | instance_id | string | Instance id | Yes |
+
 
 ### Response
 #### Normal Response Codes
@@ -949,14 +953,14 @@ ElasticBox-Release: 4.0
 
 #### Response Parameters
 
-| Parameter | Type |Description |
+| Parameter | Type | Description |
 |-----------|------|------------|
 | bindings | array | List of instance bindings. |
 | binding | object | Binding contained in the bindings list, each binding object contains the parameters: instance and name. |
 | updated |  string | Date of the last update. |
 | name | string | Instance name. |
 | service | object | Instance service. |
-| service.type | string | Required. Can be one of these types: Linux Compute, Windows Compute and CloudFormation Service. |
+| service.type | string | Can be one of these types: Linux Compute, Windows Compute and CloudFormation Service. |
 | service.id | string | Service type. |
 | service.machines | array | List of service machines |
 | machine | object | Machine contained in the service machines list. |
@@ -967,16 +971,16 @@ ElasticBox-Release: 4.0
 | workflow.event | string | Workflow action event. |
 | workflow.script | string | Workflow action script uri. |
 | tags | array | Instance tags. |
-| variables | array | List of instance variables, each variable object contains the parameters: type , name and value. |
+| variables | array | List of instance variables, each variable object contains the parameters: type, name, value, visibility, required, etc..|
 | created | string | Creation date. |
 | boxes | array | List of boxes |
 | box.visibility | string | Indicates at what level the box is visible. By default, boxes are visible to the workspace they’re created in. Can have one of these values:<li>public: Visible to Cloud Application Manager users across all organizations.</li><li>organization: Visible to all users in the organization where the box was created.</li><li>workspace: By default, the box is visible only to members of the workspace where it was created.</li> |
 | box.organization | string | Organization to which the box belongs. |
 | box.updated | string | Date of the last update. |
 | box.description | string | Box description. |
-| box.service | string | Required. Can be one of these types: Linux Compute, Windows Compute and CloudFormation Service. |
+| box.service | string | Can be one of these types: Linux Compute, Windows Compute and CloudFormation Service. |
 | box.tags | array | Box tags. |
-| box.variables | array | 	List of box variables, each variable object contains the parameters: type , name and value. |
+| box.variables | array | 	List of box variables, each variable object contains the parameters: type, name, value, visibility, required, etc.. |
 | box.created | string | Creation date. |
 | box.uri | string | Box uri. |
 | box.id | array | Box unique identifier. |
@@ -1155,7 +1159,7 @@ ElasticBox-Release: 4.0
 }
 ```
 
-### PUT /services/instances/{instance_id}
+## PUT /services/instances/{instance_id}
 
 Given the instance ID, updates only these fields of an existing instance: boxes, tags, schedule, members, and variables. The request body should contain an instance object.
 
@@ -1182,68 +1186,177 @@ ElasticBox-Release: 4.0
 ```
 
 #### URI Parameters
-
-|Parameter |Type |Description | Req. |
+| Parameter | Type | Description | Req. |
 |-----------|------|------------| ---- |
 | instance_id | string | Instance id | Yes |
-| bindings | array | List of instance bindings. |
-| binding | object | Binding contained in the bindings list, each binding object contains the parameters: instance and name. |
-| updated |  string | Date of the last update. |
-| name | string | Instance name. |
-| service | object | Instance service. |
-| service.type | string | Required. Can be one of these types: Linux Compute, Windows Compute and CloudFormation Service. |
-| service.id | string | Service type. |
-| service.machines | array | List of service machines |
-| machine | object | Machine contained in the service machines list. |
-| machine.state | string | Machine state, there are three possible states: processing , done and unavailable. |
-| machine.name | string | Machine name. |
-| machine.workflow | array | List of workflow actions, where each workflow action object contains three parameters: box, event, and script. |
-| workflow.box | string | Workflow action box. |
-| workflow.event | string | Workflow action event. |
-| workflow.script | string | Workflow action script uri. |
-| tags | array | Instance tags. |
-| variables | array | List of instance variables, each variable object contains the parameters: type , name and value. |
-| created | string | Creation date. |
-| boxes | array | List of boxes |
-| box.visibility | string | Indicates at what level the box is visible. By default, boxes are visible to the workspace they’re created in. Can have one of these values:<li>public: Visible to Cloud Application Manager users across all organizations.</li><li>organization: Visible to all users in the organization where the box was created.</li><li>workspace: By default, the box is visible only to members of the workspace where it was created.</li> |
-| box.organization | string | Organization to which the box belongs. |
-| box.updated | string | Date of the last update. |
-| box.description | string | Box description. |
-| box.service | string | Required. Can be one of these types: Linux Compute, Windows Compute and CloudFormation Service. |
-| box.tags | array | Box tags. |
-| box.variables | array | 	List of box variables, each variable object contains the parameters: type , name and value. |
-| box.created | string | Creation date. |
-| box.uri | string | Box uri. |
-| box.id | array | Box unique identifier. |
-| box.schema | string | Box schema uri. |
-| box.members | array | List of Box members. |
-| box.owner | string | Box owner. |
-| box.bindings | array | List of Box bindings. |
-| box.binding | object | Binding contained in the bindings list, each binding have a box and a name. |
-| box.icon | string | Box icon uri. |
-| box.events | array | 	List of Box events, there may be nine event lists: configure, dispose, install, post_configure, post_dispose, post_install, post_start, post_stop, start, and stop. |
-| box.event | object | Event contained in one of the event lists, each event object contains the parameters: url , upload_date , length and destination_path. |
-| box.name | string | Box name. |
-| policy_box | object | specific deployment policy for a provider |
-| policy_box.provider_id | string | provider id |
-| policy_box.automatic_updates | string | One of them: mayor, minor, patch, off |
-| policy_box.name | string | Policy box name |
-| policy_box.variables | array | List of deployment box policy variables |
-| policy_box.claims | array | List of deployment box policy claims |
-| policy_box.id | string | Deployment box policy id |
-| policy_box.schema | string | Deployment box policy schema |
-| policy_box.members | array | 	List of members sharing the deployment policy box |
-| policy_box.owner | string | Deployment box policy owner |
-| policy_box.readme | object | Readme file for the Deployment policy box |
-| uri | string | instance uri. |
-| state | string | Instance state, there are three possible states: processing , done and unavailable |
-| members | array | Instance members. |
-| owner | string | Instance owner. |
-| operation | string | Last operation, there are seven types of operations: deploy , shutdown , poweron , reinstall , reconfigure , terminate and terminate_service |
-| icon | string | Instance icon uri. |
-| id | array | Instance unique identifier. |
-| schema | string | Instance schema uri. |
-| lease | array | Schedules an instance with two parameters:<li>expire. Specifies in UTC format YYYY-MM-DD HH:MM:SS.SSSSSS, the time and date for stopping an instance. It’s required only when an instance is set to terminate or shut down.</li><li>operation. Specifies an instance to stop with **shutdown** or **terminate**. When not scheduled, the instance is set to **alwayson**.</li> |
+
+
+#### Request Body Parameters
+
+| Parameter | Type | Description | Req. |
+|-----------|------|------------|----|
+| bindings | array | List of instance bindings. | |
+| binding | object | Binding contained in the bindings list, each binding object contains the parameters: instance and name. | |
+| updated |  string | Date of the last update. | |
+| name | string | Instance name. | Yes |
+| service | object | Instance service. | Yes |
+| service.type | string | Can be one of these types: Linux Compute, Windows Compute and CloudFormation Service. | Yes |
+| service.id | string | Service type. | Yes |
+| service.machines | array | List of service machines | |
+| machine | object | Machine contained in the service machines list. | |
+| machine.state | string | Machine state, there are three possible states: processing , done and unavailable. | |
+| machine.name | string | Machine name. | |
+| machine.workflow | array | List of workflow actions, where each workflow action object contains three parameters: box, event, and script. | |
+| workflow.box | string | Workflow action box. | |
+| workflow.event | string | Workflow action event. | |
+| workflow.script | string | Workflow action script uri. | |
+| tags | array | Instance tags. | |
+| variables | array | List of instance variables, each variable object contains the parameters: type, name, value, visibility, required, etc.. | |
+| created | string | Creation date. | |
+| boxes | array | List of boxes | Yes | 
+| box.visibility | string | Indicates at what level the box is visible. By default, boxes are visible to the workspace they’re created in. Can have one of these values:<li>public: Visible to Cloud Application Manager users across all organizations.</li><li>organization: Visible to all users in the organization where the box was created.</li><li>workspace: By default, the box is visible only to members of the workspace where it was created.</li> | |
+| box.organization | string | Organization to which the box belongs. | Yes |
+| box.updated | string | Date of the last update. | |
+| box.description | string | Box description. | |
+| box.service | string |Can be one of these types: Linux Compute, Windows Compute and CloudFormation Service. | Yes | 
+| box.tags | array | Box tags. | |
+| box.variables | array | 	List of box variables, each variable object contains the parameters: type, name, value, visibility, required, etc.. | |
+| box.created | string | Creation date. | |
+| box.uri | string | Box uri. | |
+| box.id | array | Box unique identifier. | Yes |
+| box.schema | string | Box schema uri. | Yes |
+| box.members | array | List of Box members. | |
+| box.owner | string | Box owner. | Yes |
+| box.bindings | array | List of Box bindings. | |
+| box.binding | object | Binding contained in the bindings list, each binding have a box and a name. | |
+| box.icon | string | Box icon uri. | |
+| box.events | array | 	List of Box events, there may be nine event lists: configure, dispose, install, post_configure, post_dispose, post_install, post_start, post_stop, start, and stop. | |
+| box.event | object | Event contained in one of the event lists, each event object contains the parameters: url , upload_date , length and destination_path. | |
+| box.name | string | Box name. | Yes |
+| policy_box | object | specific deployment policy for a provider | |
+| policy_box.provider_id | string | provider id | |
+| policy_box.automatic_updates | string | One of them: mayor, minor, patch, off | |
+| policy_box.name | string | Policy box name | |
+| policy_box.variables | array | List of deployment box policy variables | |
+| policy_box.claims | array | List of deployment box policy claims | |
+| policy_box.id | string | Deployment box policy id | |
+| policy_box.schema | string | Deployment box policy schema | |
+| policy_box.members | array | 	List of members sharing the deployment policy box | |
+| policy_box.owner | string | Deployment box policy owner | |
+| policy_box.readme | object | Readme file for the Deployment policy box | |
+| uri | string | instance uri. | |
+| state | string | Instance state, there are three possible states: processing , done and unavailable | Yes |
+| members | array | Instance members. | |
+| owner | string | Instance owner. | Yes |
+| operation | string | Last operation, there are seven types of operations: deploy , shutdown , poweron , reinstall , reconfigure , terminate and terminate_service | Yes |
+| icon | string | Instance icon uri. | |
+| id | array | Instance unique identifier. | Yes |
+| schema | string | Instance schema uri. | Yes |
+| lease | array | Schedules an instance with two parameters:<li>expire. Specifies in UTC format YYYY-MM-DD HH:MM:SS.SSSSSS, the time and date for stopping an instance. It’s required only when an instance is set to terminate or shut down.</li><li>operation. Specifies an instance to stop with **shutdown** or **terminate**. When not scheduled, the instance is set to **alwayson**.</li> | |
+
+#### Request Body
+```
+{
+   "box": "231dadb5-c3a5-4c33-af8e-fc315b0d11eb",
+   "updated": "2019-01-18 15:19:59.199831",
+   "automatic_updates": "off",
+   "name": "TestServeONE",
+   "service": {
+        "type": "Linux Compute",
+        "id": "eb-n1y4u",
+        "machines": [
+            {
+                "state": "done",
+                "name": "testserveone-eb-n1y4u-1",
+               "workflow": []
+                }
+            ]
+    },
+   "policy_box": {
+       "profile": {
+       	 "subnet": "us-east-1a",
+         "cloud": "EC2",
+         "image": "Linux Compute",
+         "instances": 1,
+         "keypair": "None",
+         "location": "us-east-1",
+         "flavor": "m1.small",
+         "schema": "http://elasticbox.net/schemas/aws/ec2/profile"
+       },
+       "provider_id": "d583d52b-1f6b-436e-82f3-06fdaf15a788",
+       "automatic_updates": "off",
+       "name": "default-small-us-east-1",
+       "created": "2019-01-18 15:11:27.695987",
+       "deleted": null,
+       "variables": [],
+       "updated": "2019-01-18 15:11:27.695987",
+       "visibility": "workspace",
+       "owner": "workspace",
+       "members": [],
+       "claims": [
+         "small",
+         "linux"
+       ],
+       "organization": "public",
+       "id": "aeff44ad-adfb-4b57-b644-6ca0bfba2ab2",
+       "schema": "http://elasticbox.net/schemas/boxes/policy"
+   },
+   "created": "2019-01-18 15:16:19.306559",
+   "uri": "/services/instances/i-gsnjqi",
+   "state": "done",
+   "boxes": [
+   			{
+                "schema": "http://elasticbox.net/schemas/boxes/script",
+                "updated": "2019-01-03 11:02:09.324450",
+                "automatic_updates": "off",
+                "requirements": [
+                    "linux"
+                ],
+                "description": "Linux Machine with no software preinstalled",
+                "created": "2019-01-03 11:02:09.324450",
+                "deleted": null,
+                "variables": [],
+                "visibility": "public",
+                "events": {},
+                "version": {
+                    "box": "231dadb5-c3a5-4c33-af8e-fc315b0d11eb",
+                    "number": {
+                        "major": 1,
+                        "minor": 0,
+                        "patch": 0
+                    },
+                    "workspace": "elasticbox",
+                    "description": "Initial ElasticBox Version"
+                },
+                "friendly_id": "linux-compute",
+                "members": [],
+                "owner": "elasticbox",
+                "organization": "public",
+                "icon": "images/platform/linux.png",
+                "id": "1ee9af93-f9f2-4e65-9cba-71f1f6fbab61",
+                "name": "Linux Compute"
+            }
+   ],
+   "schema": "http://elasticbox.net/schemas/instance",
+   "owner": "default",
+   "variables": [
+       {
+            "required": true,
+            "type": "Text",
+            "name": "variable_name",
+            "value": "overridden variable value at deployment time",
+            "visibility": "public"
+        }
+   ],
+   "operation": {
+       "event": "deploy",
+       "workspace": "default",
+       "created": "2019-01-18 15:16:19.479458"
+   },
+   "id": "i-gsnjqi",
+   "icon": "images/platform/linux.png"
+}
+```
 
 ### Response
 #### Normal Response Codes
@@ -1260,14 +1373,14 @@ ElasticBox-Release: 4.0
 
 #### Response Parameters
 
-| Parameter | Type |Description |
+| Parameter | Type | Description |
 |-----------|------|------------|
 | bindings | array | List of instance bindings. |
 | binding | object | Binding contained in the bindings list, each binding object contains the parameters: instance and name. |
 | updated | string | Date of the last update. |
 |name | string | Instance name. |
 | service | Object | Instance service. |
-| service.type | string | Required. Can be one of these types: Linux Compute, Windows Compute and CloudFormation Service. |
+| service.type | string | Can be one of these types: Linux Compute, Windows Compute and CloudFormation Service. |
 | service.id | string | Service type. |
 | service.machines | array | List of service machines. |
 | machine | object | Machine contained in the service machines list. |
@@ -1278,16 +1391,16 @@ ElasticBox-Release: 4.0
 | workflow.event | string |	Workflow action event.|
 | workflow.script | string | Workflow action script uri. |
 | tags | array | Instance tags. |
-| variables | array | 	List of instance variables, each variable object contains the parameters: type , name and value. |
+| variables | array | 	List of instance variables, each variable object contains the parameters: type, name, value, visibility, required, etc.. |
 | created | string | Creation date. |
 | boxes | array | List of boxes |
 | box.visibility | string | Indicates at what level the box is visible. By default, boxes are visible to the workspace they’re created in. Can have one of these values:<li>public: Visible to Cloud Application Manager users across all organizations.</li><li>organization: Visible to all users in the organization where the box was created.</li><li>workspace: By default, the box is visible only to members of the workspace where it was created.</li> |
 | box.organization | string | Organization to which the box belongs. |
 | box.updated | string | Date of the last update. |
 | box.description | string | Box description. |
-| box.service | string | Required. Can be one of these types: Linux Compute, Windows Compute and CloudFormation Service. |
+| box.service | string | Can be one of these types: Linux Compute, Windows Compute and CloudFormation Service. |
 | box.tags | array | Box tags. |
-| box.variables | array | 	List of box variables, each variable object contains the parameters: type , name and value. |
+| box.variables | array | 	List of box variables, each variable object contains the parameters: type, name, value, visibility, required, etc.. |
 | box.created | string | Creation date. |
 | box.uri | string | Box uri. |
 | box.id | array | Box unique identifier. |
@@ -1322,141 +1435,134 @@ ElasticBox-Release: 4.0
 | lease | array | Schedules an instance with two parameters:<li>released. Is a true or false boolean value. False means that the operation scheduled on the instance is not executed yet.</li><li>expire. Specifies in UTC format YYYY-MM-DD HH:MM:SS.SSSSSS, the time and date for stopping an instance. It’s required only when an instance is set to terminate or shut down.</li><li>operation. Specifies an instance to stop with **shutdown** or **terminate**. When not scheduled, the instance is set to **alwayson**.</li> |
 
 #### Response Body
-In this sample request, the instance is tagged and scheduled to terminate at a given UTC time.
 
 ```
 {
-  "box": "7a99f75c-30e6-4986-9059-f6889d1ff5f9",
-  "bindings": [],
-  "updated": "2015-10-29 14:16:48.304153",
-  "automatic_updates": "off",
-  "name": "ScriptBoxSample",
-  "service": {
-    "type": "Linux Compute",
-    "id": "eb-bbhzh",
-    "machines": [
-      {
-        "state": "done",
-        "name": "eb-bbhzh-1",
-        "workflow": []
-      }
-    ]
-  },
-  "tags": [],
-  "deleted": null,
-  "policy_box": {
-    "profile": {
-      "image": "test",
-      "instances": 1,
-      "keypair": "test_keypair",
-      "location": "Simulated Location",
-      "flavor": "test.micro",
-      "schema": "http://elasticbox.net/schemas/test/compute/profile"
-    },
-    "provider_id": "0476718d-2b00-45ce-8a1c-30b10a16cfc7",
     "automatic_updates": "off",
-    "name": "Deploy Policy - Linux Compute",
-    "created": "2015-10-21 08:35:50.165822",
-    "deleted": null,
-    "variables": [
-      {
-        "automatic_updates": "off",
-        "name": "policy_box_variable",
-        "required": false,
-        "visibility": "public",
-        "value": "381d0fd8-b59e-4be6-afc7-3ee1a0a2db1c",
-        "type": "Box"
-      }
-    ],
-    "updated": "2015-10-29 12:05:39.065397",
-    "visibility": "workspace",
-    "owner": "operations",
-    "members": [],
-    "claims": [
-      "linux"
-    ],
-    "readme": {
-      "url": "/resources/default_box_overview.md",
-      "upload_date": "2015-10-21 08:35:50.164926",
-      "length": 1302,
-      "content_type": "text/x-markdown"
+    "icon_metadata": {
+        "image": "images/platform/linux.png",
+        "border": "#D0D4D8",
+        "fill": "#FFFFFF"
     },
-    "organization": "elasticbox",
-    "id": "e57466ee-7094-4bd4-9121-a6df4395d493",
-    "schema": "http://elasticbox.net/schemas/boxes/policy"
-  },
-  "created": "2015-10-29 12:26:20.377029",
-  "uri": "/services/instances/i-3e43qa",
-  "state": "done",
-  "boxes": [
-    {
-      "updated": "2015-10-29 11:55:23.842461",
-      "automatic_updates": "off",
-      "requirements": [],
-      "description": "sample box",
-      "name": "ScriptBoxSample",
-      "created": "2015-10-29 10:52:08.446868",
-      "deleted": null,
-      "variables": [
+    "variables": [
         {
-          "required": true,
-          "type": "Text",
-          "name": "variable_name",
-          "value": "variable_value",
-          "visibility": "public"
+            "required": true,
+            "type": "Text",
+            "name": "variable_name",
+            "value": "overridden variable value at deployment time",
+            "visibility": "public"
         }
-      ],
-      "visibility": "workspace",
-      "id": "7a99f75c-30e6-4986-9059-f6889d1ff5f9",
-      "members": [],
-      "owner": "operations",
-      "organization": "elasticbox",
-      "events": {
-        "configure": {
-          "url": "/services/blobs/download/5631fa7614841250525226cc/configure",
-          "length": 5,
-          "destination_path": "scripts",
-          "content_type": "text/x-shellscript"
+    ],
+    "automatic_reconfiguration": true,
+    "owner": "default",
+    "bindings": [],
+    "operation": {
+        "event": "deploy",
+        "workspace": "default",
+        "created": "2019-01-18 15:16:19.479458"
+    },
+    "service": {
+        "type": "Linux Compute",
+        "id": "eb-n1y4u",
+        "machines": [
+            {
+                "state": "done",
+                "name": "testserveone-eb-n1y4u-1",
+                "workflow": []
+            }
+        ]
+    },
+    "id": "i-gsnjqi",
+    "is_deploy_only": true,
+    "state": "done",
+    "schema": "http://elasticbox.net/schemas/instance",
+    "updated": "2019-01-18 17:11:59.169299",
+    "tags": [],
+    "deleted": null,
+    "boxes": [
+        {
+            "updated": "2019-01-03 11:02:09.324450",
+            "automatic_updates": "off",
+            "description": "Linux Machine with no software preinstalled",
+            "deleted": null,
+            "variables": [],
+            "visibility": "public",
+            "friendly_id": "linux-compute",
+            "members": [],
+            "owner": "elasticbox",
+            "id": "1ee9af93-f9f2-4e65-9cba-71f1f6fbab61",
+            "icon": "images/platform/linux.png",
+            "requirements": [
+                "linux"
+            ],
+            "name": "Linux Compute",
+            "created": "2019-01-03 11:02:09.324450",
+            "version": {
+                "box": "231dadb5-c3a5-4c33-af8e-fc315b0d11eb",
+                "number": {
+                    "major": 1,
+                    "minor": 0,
+                    "patch": 0
+                },
+                "workspace": "elasticbox",
+                "description": "Initial ElasticBox Version"
+            },
+            "organization": "public",
+            "events": {},
+            "schema": "http://elasticbox.net/schemas/boxes/script"
+        }
+    ],
+    "members": [],
+    "icon": "/icons/instances/i-gsnjqi",
+    "box": "231dadb5-c3a5-4c33-af8e-fc315b0d11eb",
+    "name": "TestServeONE",
+    "created": "2019-01-18 15:16:19.306559",
+    "policy_box": {
+        "profile": {
+            "subnet": "us-east-1a",
+            "cloud": "EC2",
+            "image": "Linux Compute",
+            "location": "us-east-1",
+            "instances": 1,
+            "keypair": "None",
+            "managed_os": false,
+            "volumes": [],
+            "flavor": "m1.small",
+            "security_groups": [
+                "Automatic"
+            ],
+            "schema": "http://elasticbox.net/schemas/aws/ec2/profile"
         },
-        "install": {
-          "url": "/services/blobs/download/5631fa6614841250525226ca/install",
-          "length": 5,
-          "destination_path": "scripts",
-          "content_type": "text/x-shellscript"
-        }
-      },
-      "schema": "http://elasticbox.net/schemas/boxes/script"
-    }
-  ],
-  "schema": "http://elasticbox.net/schemas/instance",
-  "members": [],
-  "owner": "operations",
-  "variables": [
-    {
-      "required": true,
-      "type": "Text",
-      "name": "variable_name",
-      "value": "variable_value_overridden",
-      "visibility": "public"
-    }
-  ],
-  "operation": {
-    "event": "deploy",
-    "workspace": "operations",
-    "created": "2015-10-29 12:26:20.504356"
-  },
-  "lease": {
-    "released": false,
-    "operation": "terminate",
-    "expire": "2015-10-29 19:00:00.000000"
-  },
-  "id": "i-3e43qa",
-  "icon": null
+        "provider_id": "d583d52b-1f6b-436e-82f3-06fdaf15a788",
+        "automatic_updates": "off",
+        "name": "default-small-us-east-1",
+        "created": "2019-01-18 15:11:27.695987",
+        "deleted": null,
+        "variables": [],
+        "updated": "2019-01-18 15:11:27.695987",
+        "visibility": "workspace",
+        "readme": {
+            "url": "services/resources/default_box_overview.md",
+            "upload_date": "2019-01-18 15:11:27.695361",
+            "length": 1307,
+            "content_type": "text/x-markdown"
+        },
+        "members": [],
+        "claims": [
+            "small",
+            "linux"
+        ],
+        "owner": "default",
+        "organization": "public",
+        "id": "aeff44ad-adfb-4b57-b644-6ca0bfba2ab2",
+        "schema": "http://elasticbox.net/schemas/boxes/policy"
+    },
+    "uri": "/services/instances/i-gsnjqi"
 }
 ```
 
 
-### DELETE /services/instances/{instance_id}
+## DELETE /services/instances/{instance_id}
 
 Terminates, force-terminates, or deletes an existing instance based on its instance ID.
 
@@ -1481,7 +1587,7 @@ Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 #### URI Parameters
-|Parameter |Type |Description | Req. |
+| Parameter | Type | Description | Req. |
 |-----------|------|------------| ---- |
 | instance_id | string | Instance id | Yes |
 | operation | string | Operation type must be one of the following values: terminate, force_terminate and delete |Yes |
@@ -1501,7 +1607,7 @@ ElasticBox-Release: 4.0
 
 
 
-### GET /services/instances/{instance_id}/service
+## GET /services/instances/{instance_id}/service
 Gets the service on the instance given its instance ID.
 
 ### URL
@@ -1526,7 +1632,7 @@ ElasticBox-Release: 4.0
 ```
 
 #### URI Parameters
-|Parameter |Type |Description | Req. |
+| Parameter | Type | Description | Req. |
 |-----------|------|------------| ---- |
 | instance_id | string | Instance id | Yes |
 
@@ -1543,7 +1649,7 @@ ElasticBox-Release: 4.0
 
 #### Response Parameters
 
-| Parameter | Type |Description |
+| Parameter | Type | Description |
 |-----------|------|------------|
 | profile | object | Service profile. |
 | profile.subnet | string | Profile subnet. |
@@ -1556,7 +1662,7 @@ ElasticBox-Release: 4.0
 | profile.cloud | boolean | Cloud type. |
 | profile.schema | string | Profile schema uri. |
 | provider_id | string | Profile provider unique identifier. |
-|created | string | Creation date. |
+| created | string | Creation date. |
 | tags | array | Service tags. |
 | state | string | Service state, there are three possible states: processing , done and unavailable |
 | token | string | Service token. |
@@ -1574,13 +1680,9 @@ ElasticBox-Release: 4.0
 | machine.schema | array | Machine schema uri. |
 | schema | string | Service schema uri. |
 | organization | string | The name of the organization that owns this service. |
-| deleted | string | Deleted. |
-
-
-
+| deleted | string | Null when the instance is available. |
 
 #### Response Body
-
 ```
 {
     "profile": {
@@ -1655,7 +1757,7 @@ ElasticBox-Release: 4.0
 }
 ```
 
-### GET /services/instances/{instance_id}/activity
+## GET /services/instances/{instance_id}/activity
 
 Gets all activity logs from operations run on an instance given its instance ID.
 
@@ -1684,7 +1786,7 @@ ElasticBox-Release: 4.0
 ```
 
 #### URI Parameters
-|Parameter |Type |Description | Req. |
+| Parameter | Type | Description | Req. |
 |-----------|------|------------| ---- |
 | instance_id | string | Instance id | Yes |
 
@@ -1701,7 +1803,7 @@ ElasticBox-Release: 4.0
 
 #### Response Parameters
 
-| Parameter | Type |Description |
+| Parameter | Type | Description |
 |-----------|------|------------|
 |* box | string | Box name. |
 | username | string | User who performed the activity. |
@@ -1962,7 +2064,7 @@ ElasticBox-Release: 4.0
 ]
 ```
 
-### GET /services/instances/{instance_id}/machine_logs
+## GET /services/instances/{instance_id}/machine_logs
 
 Gets the logs of one machine for a deployed instance given its instance ID.
 
@@ -1990,13 +2092,13 @@ ElasticBox-Release: 4.0
 ```
 
 #### URI Parameters
-| Parameter | Type |Description |Req. |
+| Parameter | Type | Description | Req. |
 |-----------|------|------------| ---- |
 | instance_id | string | Instance id | Yes |
 | machine_name | string | 	The name of the machine you want to retrieve the log. You can get the name of the machine from the instance document. | Yes |
-| box | string | Box name. | Opt. |
-| event | string | Event type, there may be nine event lists: configure, dispose, install, post_dispose, post_stop, pre_configure, pre_install, pre_start, start and stop. | Opt. |
-| operation | string | The specific operation id, there are seven types of operations: deploy , shutdown , poweron , reinstall , reconfigure, terminate and terminate_service. | Opt. |
+| box | string | Box name. |   |
+| event | string | Event type, there may be nine event lists: configure, dispose, install, post_dispose, post_stop, pre_configure, pre_install, pre_start, start and stop. |   |
+| operation | string | The specific operation id, there are seven types of operations: deploy , shutdown , poweron , reinstall , reconfigure, terminate and terminate_service. |   |
 
 
 ### Response
@@ -2024,7 +2126,7 @@ Executing configure-{instance_id} script
 configure-{instance_id} successfully executed.
 ```
 
-### GET /services/instances/{instance_id}/bindings
+## GET /services/instances/{instance_id}/bindings
 
 Gets the binding of an instance when you give the instance ID.
 
@@ -2051,7 +2153,7 @@ Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 #### URI Parameters
-Parameter |Type |Description | Req. |
+| Parameter | Type | Description | Req. |
 |-----------|------|------------| ---- |
 | instance_id | string | Instance id | Yes |
 
@@ -2067,13 +2169,13 @@ Parameter |Type |Description | Req. |
 
 #### Response Parameters
 
-| Parameter | Type |Description |
+| Parameter | Type | Description |
 |-----------|------|------------|
 | updated | string | Date of the last update. |
 | operation | string | Last operation, there are seven types of operations: deploy , shutdown , poweron , reinstall , reconfigure , terminate and terminate_service |
 | name | string | Instance name. |
 | service| Object | Instance service. |
-| service.type | string | Required. Can be one of these types: Linux Compute, Windows Compute and CloudFormation Service. |
+| service.type | string | Can be one of these types: Linux Compute, Windows Compute and CloudFormation Service. |
 | service.id | string | Service type. |
 | service.machines | array | List of service machines |
 | machine | object | Machine contained in the service machines list. |
@@ -2149,7 +2251,7 @@ Parameter |Type |Description | Req. |
 ]
 ```
 
-### GET /services/instances/{instance_id}/operations
+## GET /services/instances/{instance_id}/operations
 
 Gets all operations run on an instance when you give the instance ID.
 
@@ -2176,7 +2278,7 @@ Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 #### URI Parameters
-Parameter |Type |Description | Req. |
+| Parameter | Type | Description | Req. |
 |-----------|------|------------| ---- |
 | instance_id | string | Instance id | Yes |
 
@@ -2193,7 +2295,7 @@ Parameter |Type |Description | Req. |
 
 #### Response Parameters
 
-| Parameter | Type |Description |
+| Parameter | Type | Description |
 |-----------|------|------------|
 | username | string | User name. |
 | updated | string | Date of the last update. |
@@ -2539,9 +2641,9 @@ Parameter |Type |Description | Req. |
 ```
 
 
-### PUT /services/instances/{instance_id}/deploy
+## PUT /services/instances/{instance_id}/deploy
 
-Re-deploy an existing instance, requires the specified id instance_id.
+Re-deploys an existing instance. It requires the specified id instance_id.
 
 ### URL
 
@@ -2566,7 +2668,7 @@ Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 #### URI Parameters
-Parameter |Type |Description | Req. |
+| Parameter | Type | Description | Req. |
 |-----------|------|------------| ---- |
 | instance_id | string | Instance id | Yes |
 
@@ -2581,7 +2683,7 @@ Parameter |Type |Description | Req. |
 - **409** Operation Conflict
 
 
-### PUT /services/instances/{instance_id}/poweron
+## PUT /services/instances/{instance_id}/poweron
 
 Powers on an existing instance when you give the instance ID.
 
@@ -2607,7 +2709,7 @@ Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 #### URI Parameters
-Parameter |Type |Description | Req. |
+Parameter | Type | Description | Req. |
 |-----------|------|------------| ---- |
 | instance_id | string | Instance id | Yes |
 
@@ -2622,7 +2724,7 @@ Parameter |Type |Description | Req. |
 - **409** Operation Conflict
 
 
-### PUT /services/instances/{instance_id}/shutdown
+## PUT /services/instances/{instance_id}/shutdown
 
 Shuts down an existing instance when you give the instance ID.
 
@@ -2648,7 +2750,7 @@ Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 #### URI Parameters
-Parameter |Type |Description | Req. |
+| Parameter | Type | Description | Req. |
 |-----------|------|------------| ---- |
 | instance_id | string | Instance id | Yes |
 
@@ -2662,7 +2764,7 @@ Parameter |Type |Description | Req. |
 
 - **409** Operation Conflict
 
-### PUT /services/instances/{instance_id}/reinstall
+## PUT /services/instances/{instance_id}/reinstall
 
 Reinstalls an existing instance when you give its ID.
 
@@ -2689,7 +2791,7 @@ Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 #### URI Parameters
-Parameter |Type |Description | Req. |
+| Parameter | Type | Description | Req. |
 |-----------|------|------------| ---- |
 | instance_id | string | Instance id | Yes |
 
@@ -2703,7 +2805,7 @@ Parameter |Type |Description | Req. |
 
 - **409** Operation Conflict
 
-### PUT /services/instances/{instance_id}/reconfigure
+## PUT /services/instances/{instance_id}/reconfigure
 
 Re-configures an existing instance when you give its ID.
 
@@ -2729,7 +2831,7 @@ Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 #### URI Parameters
-Parameter |Type |Description | Req. |
+| Parameter | Type | Description | Req. |
 |-----------|------|------------| ---- |
 | instance_id | string | Instance id | Yes |
 
@@ -2752,9 +2854,9 @@ Parameter |Type |Description | Req. |
 ```
 
 
-### PUT /services/instances/{instance_id}/import
+## PUT /services/instances/{instance_id}/import
 
-Retry to import an unregistered instance. when you give its ID.
+Retries to import an unregistered instance when you give its ID.
 
 ### URL
 
@@ -2780,7 +2882,7 @@ ElasticBox-Release: 4.0
 ```
 
 #### URI Parameters
-Parameter |Type |Description | Req. |
+| Parameter | Type | Description | Req. |
 |-----------|------|------------| ---- |
 | instance_id | string | Instance id | Yes |
 
@@ -2804,9 +2906,9 @@ Parameter |Type |Description | Req. |
 }
 ```
 
-### PUT /services/instances/{instance_id}/cancel_import
+## PUT /services/instances/{instance_id}/cancel_import
 
-Cancel a failed import of an unregistered instance when you give its ID.
+Cancels a failed import of an unregistered instance when you give its ID.
 
 ### URL
 
@@ -2832,7 +2934,7 @@ ElasticBox-Release: 4.0
 ```
 
 #### URI Parameters
-| Parameter | Type |Description |Req.|
+| Parameter | Type | Description | Req.|
 |-----------|------|------------|----|
 | instance_id | string | Instance id | Yes |
 ### Response
@@ -2854,14 +2956,3 @@ ElasticBox-Release: 4.0
   "method":"cancel_import"
 }
 ```
-
-
-### Contacting Cloud Application Manager Support
-
-We’re sorry you’re having an issue in [Cloud Application Manager](https://www.ctl.io/cloud-application-manager/). Please review the [troubleshooting tips](https://www.ctl.io/knowledge-base/cloud-application-manager/troubleshooting/troubleshooting-tips/), or contact [Cloud Application Manager support](mailto:incident@CenturyLink.com) with details and screenshots where possible.
-
-For issues related to API calls, send the request body along with details related to the issue.
-
-In the case of a box error, share the box in the workspace that your organization and Cloud Application Manager can access and attach the logs.
-* Linux: SSH and locate the log at /var/log/elasticbox/elasticbox-agent.log
-* Windows: RDP into the instance to locate the log at ProgramDataElasticBoxLogselasticbox-agent.log
