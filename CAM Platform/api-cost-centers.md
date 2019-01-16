@@ -53,7 +53,7 @@ ElasticBox-Release: 4.0
 
 ##### Members list parameters
 
-An item in the list `members` require 3 parameters:
+An item in the list `members` requires 3 parameters:
 
 | Parameter | Type |Description | Req. |
 |-----------|------|------------|------|
