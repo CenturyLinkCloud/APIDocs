@@ -1,9 +1,10 @@
 {{{
 "title": "Boxes API",
-"date": "09-01-2016",
-"author": "",
+"date": "12-27-2018",
+"author": "Jorge Torres",
 "attachments": [],
-"contentIsHTML": false
+"contentIsHTML": false,
+"keywords": ["cam api", "box", "alm", "get box", "delete box", "box stack", "diff between boxes", "box versions"]
 }}}
 
 Manage and perform actions on boxes.
@@ -12,58 +13,83 @@ Manage and perform actions on boxes.
 
 | Resource | Description |
 |----------|-------------|
-| GET /services/boxes | Gets the list of boxes that are accessible in the personal workspace. |
-| POST /services/boxes | Creates a new box. |
+| [GET /services/boxes](#get-servicesboxes) | Gets the list of boxes that are accessible in the personal workspace. |
+| [POST /services/boxes](#post-servicesboxes) | Creates a new box. |
 
 **Perform Box Operations**
 
 | Resource | Description |
 |----------|-------------|
-| GET /services/boxes/{box_id} | Fetches an existing box. |
-| PUT /services/boxes/{box_id} | Updates an existing box. |
-| DELETE /services/box/{box_id} | Deletes an existing box. |
-| GET /services/boxes/{box_id}/stack | Gets the box stack. |
-| GET /services/boxes/{box_id}/bindings | Gets the box bindings. |
-| GET /services/boxes/{box_id}/versions | Get the list of box versions. |
-| PUT /services/boxes/{box_id}/diff  | Get the diff between two boxes. |
+| [GET /services/boxes/{box_id}](#get-servicesboxesbox_id) | Fetches an existing box. |
+| [PUT /services/boxes/{box_id}](#put-servicesboxesbox_id) | Updates an existing box. |
+| [DELETE /services/box/{box_id}](#delete-servicesboxesbox_id) | Deletes an existing box. |
+| [GET /services/boxes/{box_id}/stack](#get-servicesboxesbox_idstack) | Gets the box stack. |
+| [GET /services/boxes/{box_id}/bindings](#get-servicesboxesbox_idbindings) | Gets the box bindings. |
+| [GET /services/boxes/{box_id}/versions](#get-servicesboxesbox_idversions) | Get the list of box versions. |
+| [PUT /services/boxes/{box_id}/diff](#put-servicesboxesbox_iddiff)  | Get the diff between two boxes. |
 
 **CloudFormation Box**
 
 The Cloud Application Manager CloudFormation box runs on the AWS CloudFormation service. It lets you create and customize templates that you can launch as a single stack of combined services in AWS. Manage CloudFormation configurations in Cloud Application Manager using these [API actions](./api-boxes.md).
 
-### GET /services/boxes
+Some examples include:
+| Example |
+|----------|
+| [Create a CloudFormation box with template](#example-create-a-CloudFormation-box-with-template) |
+| [Modify the CloudFormation Template](#example-modify-the-cloudFormation-template) |
+| [Launch a CloudFormation Box](#example-launch-a-cloudFormation-box) |
+| [Update a CloudFormation Stack in Real-Time](#example-update-a-cloudFormation-stack-in-real-time) |
 
+
+## GET /services/boxes
 Gets boxes that are accessible in the personal workspace of the authenticated user.
 
-**Normal Response Codes:**
+### URL
 
-* 200
-
-**Error Response Codes:**
-
-* Bad Request (400)
-
-**Request Headers**
-
-| Parameter | Style | Type | Description |
-|-----------|-------|------|-------------|
-| ids (optional) | plain | string | Comma-separate list of boxes IDs |
+#### Structure
+```
+[GET] /services/boxes
+```
 
 ```
-Headers:
+[GET] /services/boxes?ids=value
+```
 
+
+#### Example
+```
+[GET] https://cam.ctl.io/services/boxes
+```
+An example with parameters to specify a list of boxes IDs.
+```
+[GET] https://cam.ctl.io/services/boxes?ids=8117657c-572a-4608-a2e2-82204ffa2ba5,540da08f-bbcf-4bb8-95bb-fcb690d44268
+```
+
+### Request
+
+#### Headers
+```
 Content-Type: application/json
 Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
+#### URI Parameters
 
-```
-Body:
+| Parameter | Style | Type | Description | Req. |
+|-----------|-------|------|-------------| ---- |
+| ids | plain | string | Comma-separate list of boxes IDs | Opt. |
 
-GET /services/boxes?ids=05b76b08-5238-4e05-ae5f-8ea8afe00378
-```
+### Response
+#### Normal Response Codes
 
-**Response Parameters**
+- **200** OK
+
+#### Common Error Response Codes
+
+- **400** Invalid Data
+
+
+#### Response Parameters
 
 | Parameter | Style | Type | Description |
 |--------------|-----------|----------|--------------|
@@ -72,7 +98,7 @@ GET /services/boxes?ids=05b76b08-5238-4e05-ae5f-8ea8afe00378
 | updated | plain | string | Date of the last update. |
 | description | plain | string | Box description. |
 | requirements | plain | array | Box requirements. |
-| variables | plain | array | List of box variables, each variable object contains the parameters: type, name and value. |
+| variables | plain | array | List of box variables, each variable object contains the parameters: type, name, value, visibility, required, etc. |
 | created | plain | string | Creation date. |
 | uri | plain | string | Box uri. |
 | id | plain | array | Box unique identificator. |
@@ -84,223 +110,338 @@ GET /services/boxes?ids=05b76b08-5238-4e05-ae5f-8ea8afe00378
 | event | plain | object | Event contained in one of the event lists, each event object contains the  parameters: url, upload_date, length and destination_path. |
 | name | plain | string | Box name. |
 
+
+### Response Body
 ```
 [
-  {
-    "schema": "http://elasticbox.net/schemas/boxes/script",
-    "updated": "2015-05-27 08:25:49.363170",
-    "automatic_updates": "off",
-    "requirements": [
-      "linux"
-    ],
-    "description": "An open source, BSD licensed, advanced key-value store",
-    "created": "2015-04-30 14:09:40.247173",
-    "deleted": null,
-    "variables": [
-      {
-        "required": false,
-        "type": "Port",
-        "name": "redisport",
-        "value": "6379",
-        "visibility": "public"
-      },
-      {
-        "name": "CHEF_DEFAULT_RB",
-        "required": false,
-        "value": "/services/blobs/download/554237a3da3116443909eb79/default.rb",
-        "visibility": "public",
-        "scope": "chef_cookbook",
-        "type": "File"
-      },
-      {
-        "name": "CHEF_METADATA_RB",
-        "required": false,
-        "value": "/services/blobs/download/554237a3da3116443909eb7b/metadata.rb",
-        "visibility": "public",
-        "scope": "chef_cookbook",
-        "type": "File"
-      },
-      {
-        "name": "COOKBOOK_LIST",
-        "required": false,
-        "value": "/services/blobs/download/554237a3da3116443909eb7d/Cookbooks.config",
-        "visibility": "public",
-        "scope": "chef_solo",
-        "type": "File"
-      },
-      {
-        "name": "CHEF_SOLO_JSON",
-        "required": false,
-        "value": "/services/blobs/download/554237a3da3116443909eb7f/solo.json",
-        "visibility": "public",
-        "scope": "chef_solo",
-        "type": "File"
-      },
-      {
+    {
         "automatic_updates": "off",
-        "name": "chef_cookbook",
-        "required": false,
+        "variables": [
+            {
+                "required": false,
+                "type": "Text",
+                "name": "MNESIA_BASE",
+                "value": "/var/lib/rabbitmq/mnesia",
+                "visibility": "public"
+            },
+            {
+                "required": false,
+                "type": "Text",
+                "name": "LOG_BASE",
+                "value": "/var/log/rabbitmq",
+                "visibility": "public"
+            },
+            {
+                "name": "VERSION",
+                "required": false,
+                "value": "3.2.4",
+                "visibility": "public",
+                "type": "Options",
+                "options": "3.2.4,3.3.5"
+            },
+            {
+                "required": false,
+                "type": "Port",
+                "name": "mgmt",
+                "value": "15672",
+                "visibility": "public"
+            },
+            {
+                "required": false,
+                "type": "Port",
+                "name": "rabbitmq",
+                "value": "5672",
+                "visibility": "public"
+            },
+            {
+                "required": false,
+                "type": "Text",
+                "name": "username",
+                "value": "",
+                "visibility": "public"
+            },
+            {
+                "required": false,
+                "type": "Password",
+                "name": "password",
+                "value": "",
+                "visibility": "public"
+            },
+            {
+                "name": "CLONE_URL",
+                "required": false,
+                "visibility": "public",
+                "value": "https://github.com/ElasticBox/rabbitmq.git",
+                "scope": "github.git_repo",
+                "type": "Text"
+            },
+            {
+                "name": "PUPPET_DEFAULT",
+                "required": false,
+                "visibility": "public",
+                "value": "/services/blobs/download/53550d367d0083337633e563/default.pp",
+                "scope": "puppet",
+                "type": "File"
+            },
+            {
+                "required": false,
+                "type": "Port",
+                "name": "ssl_port",
+                "value": "5671",
+                "visibility": "public"
+            },
+            {
+                "required": false,
+                "type": "Text",
+                "name": "CA_CERT_PATH",
+                "value": "",
+                "visibility": "public"
+            },
+            {
+                "required": false,
+                "type": "Text",
+                "name": "SERVER_CERT_PATH",
+                "value": "",
+                "visibility": "public"
+            },
+            {
+                "required": false,
+                "type": "Text",
+                "name": "SERVER_KEY_PATH",
+                "value": "",
+                "visibility": "public"
+            },
+            {
+                "required": false,
+                "type": "File",
+                "name": "CA_CERT_FILE",
+                "value": "/services/blobs/download/530fc09a3d0a0c698ab6fb78/Blank_file",
+                "visibility": "public"
+            },
+            {
+                "required": false,
+                "type": "File",
+                "name": "SERVER_CERT_FILE",
+                "value": "/services/blobs/download/530fc09a3d0a0c698ab6fb78/Blank_file",
+                "visibility": "public"
+            },
+            {
+                "required": false,
+                "type": "File",
+                "name": "SERVER_KEY_FILE",
+                "value": "/services/blobs/download/530fc09a3d0a0c698ab6fb78/Blank_file",
+                "visibility": "public"
+            },
+            {
+                "automatic_updates": "off",
+                "name": "github",
+                "required": false,
+                "value": "758de981-475a-47fc-b0d9-342edda52a82",
+                "visibility": "public",
+                "type": "Box"
+            },
+            {
+                "automatic_updates": "off",
+                "name": "puppet",
+                "required": false,
+                "value": "08cc115c-4738-4f69-a8b7-da2e1dfec27c",
+                "visibility": "public",
+                "type": "Box"
+            },
+            {
+                "name": "CLONE_DIRECTORY",
+                "required": false,
+                "visibility": "public",
+                "value": "/etc/puppet/modules/rabbitmq",
+                "scope": "github.git_repo",
+                "type": "Text"
+            }
+        ],
+        "friendly_id": "rabbitmq",
+        "owner": "elasticbox",
+        "id": "540da08f-bbcf-4bb8-95bb-fcb690d44268",
+        "requirements": [
+            "linux"
+        ],
+        "deleted": null,
+        "version": {
+            "box": "be59362e-87d8-4be3-addd-8363b07a2ae4",
+            "number": {
+                "major": 0,
+                "minor": 1,
+                "patch": 3
+            },
+            "workspace": "matt",
+            "description": "Updated Icon"
+        },
+        "readme": {
+            "url": "/services/blobs/download/55db2cc60468cd7d5cd7ce04/rabbitmq.mdown",
+            "upload_date": "2015-08-24 14:40:06.536836",
+            "length": 4415,
+            "content_type": "application/octet-stream"
+        },
+        "events": {
+            "pre_install": {
+                "url": "/services/blobs/download/53571d577d0083337633e8eb/pre_install",
+                "upload_date": "2014-02-14 15:10:18.540864",
+                "length": 614,
+                "destination_path": "scripts",
+                "content_type": "text/x-shellscript"
+            }
+        },
+        "schema": "http://elasticbox.net/schemas/boxes/script",
+        "updated": "2015-12-22 22:16:30.618152",
+        "description": "Robust and easy-to-use messaging for applications",
+        "icon_metadata": {
+            "image": "images/platform/technologies/rabbitmq.svg",
+            "border": "#EE5715",
+            "fill": "#FF6E0D"
+        },
         "visibility": "public",
-        "value": "391e2946-552d-47b3-8551-d414ed47a97f",
-        "type": "Box"
-      },
-      {
+        "members": [],
+        "categories": [
+            "Message Broker"
+        ],
+        "icon": "/icons/boxes/be59362e-87d8-4be3-addd-8363b07a2ae4",
+        "name": "RabbitMQ",
+        "created": "2015-12-22 22:19:13.638201",
+        "uri": "/services/boxes/540da08f-bbcf-4bb8-95bb-fcb690d44268",
+        "organization": "elasticbox",
+        "draft_from": "8698cbcc-d24e-4258-b18a-df9dd526e4d4"
+    },
+    {
+        "schema": "http://elasticbox.net/schemas/boxes/cloudformation",
+        "updated": "2015-05-22 20:25:17.104346",
         "automatic_updates": "off",
-        "name": "chef_solo",
-        "required": false,
+        "requirements": [
+            "oracle"
+        ],
+        "description": "Oracle Database as a Service",
+        "created": "2014-02-14 15:09:53.382579",
+        "icon_metadata": {
+            "image": "images/platform/oracle.png",
+            "border": "#F8F8F9",
+            "fill": "#FFFFFF"
+        },
+        "variables": [
+            {
+                "required": false,
+                "type": "Port",
+                "name": "port",
+                "value": "1521",
+                "visibility": "public"
+            },
+            {
+                "required": true,
+                "type": "Text",
+                "name": "username",
+                "value": "",
+                "visibility": "public"
+            },
+            {
+                "required": true,
+                "type": "Password",
+                "name": "password",
+                "value": "",
+                "visibility": "public"
+            },
+            {
+                "required": false,
+                "type": "Text",
+                "name": "database_name",
+                "value": "",
+                "visibility": "public"
+            }
+        ],
+        "uri": "/services/boxes/8117657c-572a-4608-a2e2-82204ffa2ba5",
         "visibility": "public",
-        "value": "02d1c985-04fb-41a5-83c0-cff13f02a80b",
-        "type": "Box"
-      }
-    ],
-    "uri": "/services/boxes/7e846aa1-d490-4b8a-a2a1-555407a90105",
-    "visibility": "public",
-    "name": "Redis",
-    "id": "7e846aa1-d490-4b8a-a2a1-555407a90105",
-    "members": [],
-    "owner": "public",
-    "organization": "public",
-    "events": {},
-    "draft_from": "aa5a019a-5dd6-4669-a591-ec52783b123e",
-    "icon": "images/platform/redis.png"
-  },
-  {
-    "schema": "http://elasticbox.net/schemas/boxes/script",
-    "updated": "2015-05-27 08:25:49.536624",
-    "automatic_updates": "off",
-    "requirements": [
-      "linux"
-    ],
-    "description": "A semantic personal publishing platform with a focus on aesthetics, web standards, and usability",
-    "created": "2015-04-30 14:09:40.247173",
-    "deleted": null,
-    "variables": [
-      {
-        "required": false,
-        "type": "Port",
-        "name": "http",
-        "value": "80",
-        "visibility": "public"
-      },
-      {
-        "required": false,
-        "type": "Port",
-        "name": "https",
-        "value": "443",
-        "visibility": "public"
-      },
-      {
-        "automatic_updates": "off",
-        "name": "chef_cookbook",
-        "required": false,
-        "visibility": "public",
-        "value": "391e2946-552d-47b3-8551-d414ed47a97f",
-        "type": "Box"
-      },
-      {
-        "name": "CHEF_DEFAULT_RB",
-        "required": false,
-        "value": "/services/blobs/download/554237a3da3116443909ebc7/default.rb",
-        "visibility": "public",
-        "scope": "chef_cookbook",
-        "type": "File"
-      },
-      {
-        "name": "CHEF_METADATA_RB",
-        "required": false,
-        "value": "/services/blobs/download/554237a3da3116443909ebc9/metadata.rb",
-        "visibility": "public",
-        "scope": "chef_cookbook",
-        "type": "File"
-      },
-      {
-        "name": "COOKBOOK_LIST",
-        "required": false,
-        "value": "/services/blobs/download/554237a4da3116443909ebcb/Cookbooks.config",
-        "visibility": "public",
-        "scope": "chef_solo",
-        "type": "File"
-      },
-      {
-        "name": "CHEF_SOLO_JSON",
-        "required": false,
-        "value": "/services/blobs/download/554237a4da3116443909ebcd/solo.json",
-        "visibility": "public",
-        "scope": "chef_solo",
-        "type": "File"
-      },
-      {
-        "automatic_updates": "off",
-        "name": "chef_solo",
-        "required": false,
-        "visibility": "public",
-        "value": "02d1c985-04fb-41a5-83c0-cff13f02a80b",
-        "type": "Box"
-      }
-    ],
-    "uri": "/services/boxes/74325e01-eefd-4108-abad-b42791960f7e",
-    "visibility": "public",
-    "name": "Wordpress",
-    "id": "74325e01-eefd-4108-abad-b42791960f7e",
-    "members": [],
-    "owner": "public",
-    "organization": "public",
-    "events": {},
-    "draft_from": "412f1e21-02cb-4c51-aafd-7e0b1eff6122",
-    "icon": "images/platform/wordpress.png"
-  }
+        "name": "Oracle Database Service",
+        "deleted": null,
+        "members": [],
+        "owner": "public",
+        "organization": "ebx",
+        "type": "Oracle Database Service",
+        "id": "8117657c-572a-4608-a2e2-82204ffa2ba5",
+        "draft_from": "67695551-7ca9-4f90-bb00-7e8bf774c487",
+        "icon": "/icons/boxes/8117657c-572a-4608-a2e2-82204ffa2ba5"
+    }
 ]
 ```
 
-### POST/services/boxes
-
+## POST /services/boxes
 Creates a new box in the personal workspace and gets the created box.
 
-**Normal Response Codes**
+### URL
 
-* 200
-
-**Error Response Codes**
-
-* Invalid Data (400)
-* Conflict (409)
-
-**Request parameters**
-
-| Parameter | Style | Type | Description |
-|-----------|-------|------|-------------|
-| requirements | plain | array | Box requirements. |
-| owner | plain | string | Box owner, the user name for a personal workspace and the workspace name for a team workspace. |
-| visibility | plain | string | Indicates at what level the box is visible. By default, boxes are visible to the workspace they’re created in. Can have one of these values: <li>public: Visible to Cloud Application Manager users across all organizations.</li> <li>organization: Visible to all users in the organization where the box was created.</li> <li>workspace: By default, the box is visible only to members of the workspace where it was created.</li> |
-| name | plain | string | Box name. |
-| description | plain | string | Box description. |
-| icon | plain | string | Icon url. |
-| schema | plain | string | Box schema. |
-
-**Response parameters**
-
+#### Structure
 ```
-Headers:
+[POST] /services/boxes
+```
 
+#### Example
+```
+[POST] https://cam.ctl.io/services/boxes
+```
+
+### Request
+
+#### Headers
+```
 Content-Type: application/json
 Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
-```
-Body:
 
+#### URI Parameters
+* None
+
+
+#### Request Body Parameters
+
+| Parameter | Style | Type | Description | Req. | 
+|-----------|-------|------|-------------|-----|
+| requirements | plain | array | Box requirements. | |  
+| owner | plain | string | Box owner, the user name for a personal workspace and the workspace name for a team workspace. | |
+| visibility | plain | string | Indicates at what level the box is visible. By default, boxes are visible to the workspace they’re created in. Can have one of these values: <li>public: Visible to Cloud Application Manager users across all organizations.</li> <li>organization: Visible to all users in the organization where the box was created.</li> <li>workspace: By default, the box is visible only to members of the workspace where it was created.</li> | | 
+| name | plain | string | Box name. | Yes | 
+| description | plain | string | Box description. | |
+| icon | plain | string | Icon url. |  | 
+| schema | plain | string | Box schema. | Yes | 
+
+#### Request Body
+
+```
 {
-    "owner": "project",
+    "owner": "operation",
     "schema":"http://elasticbox.net/schemas/boxes/script",
-    "requirements":["linux"],
+    "requirements":["linux","apache"],
     "automatic_updates":"off",
-    "name":"Wordpress Starter Box",
-    "description":"Wordpress Started for our showcase"
+    "name":"Test Starter Box",
+    "description":"Test Started for our showcase",
+    "variables": [
+      {
+        "required": false,
+        "type": "Text",
+        "name": "variable_name",
+        "value": ""
+      }
+    ]
 }
 ```
 
-**Response parameters**
+### Response
+#### Normal Response Codes
+
+- **200** OK
+
+#### Common Error Response Codes
+
+- **400** Invalid Data
+- **409** Conflict
+
+
+#### Response Parameters
 
 | Parameter | Style | Type | Description |
 |-----------|-------|------|-------------|
@@ -309,7 +450,7 @@ Body:
 | updated | plain | string | Date of the last update. |
 | description | plain | string | Box description. |
 | requirements | plain | array | Box requirements. |
-| variables | plain | array | List of box variables, each variable object contains the parameters: type, name and value. |
+| variables | plain | array | List of box variables, each variable object contains the parameters: type, name, value, visibility, required, etc. |
 | created | plain | string | Creation date. |
 | uri | plain | string | Box uri. |
 | id | plain | array | Box unique identificator. |
@@ -321,54 +462,84 @@ Body:
 | event | plain | object | Event contained in one of the event lists, each event object contains the parameters: url, upload_date, length and destination_path. |
 | name | plain | string | Box name. |
 
+
+### Response Body
 ```
 {
-  "updated": "2015-07-02 16:20:35.534878",
-  "automatic_updates": "off",
-  "description": "Wordpress Started for our showcase",
-  "deleted": null,
-  "variables": [],
-  "visibility": "workspace",
-  "members": [],
-  "owner": "project",
-  "id": "60cef61c-73dc-41d9-a32f-70f49a509c66",
-  "requirements": [
-    "linux"
-  ],
-  "name": "Wordpress Starter Box",
-  "created": "2015-07-02 16:20:35.534878",
-  "uri": "/services/boxes/60cef61c-73dc-41d9-a32f-70f49a509c66",
-  "organization": "elasticbox",
-  "events": {},
-  "schema": "http://elasticbox.net/schemas/boxes/script"
+    "updated": "2018-12-28 15:05:52.816432",
+    "automatic_updates": "off",
+    "requirements": [
+        "apache",
+        "linux"
+    ],
+    "description": "Test Started for our showcase",
+    "created": "2018-12-28 15:05:52.816432",
+    "deleted": null,
+    "variables": [
+        {
+            "required": false,
+            "type": "Text",
+            "name": "variable_name",
+            "value": "",
+            "visibility": "public"
+        }
+    ],
+    "uri": "/services/boxes/0e725f03-052b-43e2-8c5d-32341bf60a8d",
+    "visibility": "workspace",
+    "events": {},
+    "members": [],
+    "owner": "operation",
+    "organization": "centurylink",
+    "schema": "http://elasticbox.net/schemas/boxes/script",
+    "id": "0e725f03-052b-43e2-8c5d-32341bf60a8d",
+    "name": "Test Starter Box"
 }
 ```
 
-### GET /services/boxes/{box_id}
+
+## GET /services/boxes/{box_id}
 
 Fetches an existing box, requires the specified id box_id.
 
-**Normal Response Codes**
+### URL
 
-* 200
-
-**Error Response Codes**
-
-* Forbidden (403)
-
-* Not Found (404)
-
-**Request**
-
+#### Structure
 ```
-Headers:
+[GET] /services/boxes/{box_id}
+```
 
+
+#### Example
+```
+[GET] https://cam.ctl.io/services/boxes/0e725f03-052b-43e2-8c5d-32341bf60a8d
+```
+
+### Request
+
+#### Headers
+```
 Content-Type: application/json
 Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
+#### URI Parameters
+|Parameter |Type |Description | Req. |
+|-----------|------|------------| ---- |
+| box_id | string | Box id | Yes |
 
-**Response Parameters**
+
+### Response
+#### Normal Response Codes
+
+- **200** OK
+
+#### Common Error Response Codes
+
+- **403** Forbidden
+- **404** Not Found
+
+
+#### Response Parameters
 
 | Parameter | Style | Type | Description |
 |-----------|-------|------|-------------|
@@ -377,7 +548,7 @@ ElasticBox-Release: 4.0
 | updated | plain | string | Date of the last update. |
 | description | plain | string | Box description. |
 | requirements | plain | array | Box requirements. |
-| variables | plain | array | List of box variables, each variable object contains the parameters: type, name and value. |
+| variables | plain | array | List of box variables, each variable object contains the parameters: type, name, value, visibility, required, etc. |
 | created | plain | string | Creation date. |
 | uri | plain | string | Box uri. |
 | id | plain | array | Box unique identificator. |
@@ -389,6 +560,8 @@ ElasticBox-Release: 4.0
 | event | plain | object | Event contained in one of the event lists, each event object contains the  parameters: url, upload_date, length and destination_path. |
 | name | plain | string | Box name. |
 
+
+### Response Body
 ```
 {
   "schema": "http://elasticbox.net/schemas/boxes/script",
@@ -412,95 +585,79 @@ ElasticBox-Release: 4.0
 }
 ```
 
-### PUT /services/boxes/{box_id}
+## PUT /services/boxes/{box_id}
 
 Requires the box ID to update an existing box. The request body must contain the box object and can only update the following fields: files, variables, ports, requirements, description, icon, name, events, and members.
 
-**Normal Response Codes**
-* 200
+### URL
 
-**Error Response Codes**
-* Invalid Data (400)
-* Forbidden (403)
-* Not Found (404)
+#### Structure
+```
+[PUT] /services/boxes/{box_id}
+```
 
-**Request Headers**
 
+#### Example
+```
+[PUT] https://cam.ctl.io/services/boxes/{box_id}
+```
+
+### Request
+
+#### Headers
 ```
 Content-Type: application/json
 Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
-**Request Parameters**
+#### URI Parameters
 
-| Parameter | Style | Type | Description |
-|-----------|-------|------|-------------|
-| updated | plain | string | Date of the last update. |
-| description | plain | string | Box description. |
-| requirements | plain | array | Box requirements. |
-| variables | plain | array | List of box variables, each variable object contains the parameters: type, name and value. |
-| created | plain | string | Creation date. |
-| uri | plain | string | Box uri. |
-| id | plain | array | Box unique identificator. |
-| schema | plain | string | Box schema uri. |
-| members | plain | array | List of Box members. |
-| owner | plain | string | Box owner. |
-| icon | plain | string | Box icon uri. |
-| events | plain | array | List of Box events, there may be nine event lists: configure, dispose, install, pre_configure, pre_dispose, pre_install, pre_start, pre_stop, start and stop. |
-| event | plain | object | Event contained in one of the event lists, each event object contains the  parameters: url, upload_date, length and destination_path. |
-| name | plain | string | Box name. |
+| Parameter | Style | Type | Description | Req. |
+|-----------|-------|------|-------------|----|
+| box_id | plain | string | Box id | Yes |
 
+
+#### Request Body Parameters
+
+
+| Parameter | Style | Type | Description |  Req. |
+|-----------|-------|------|-------------|-----|
+| updated | plain | string | Date of the last update. | |
+| description | plain | string | Box description. |  |
+| requirements | plain | array | Box requirements. | |
+| variables | plain | array | List of box variables, each variable object contains the parameters: type, name, value, visibility, required, etc. | |
+| created | plain | string | Creation date. | |
+| uri | plain | string | Box uri. | |
+| id | plain | array | Box unique identificator. | |
+| schema | plain | string | Box schema uri. | Yes |
+| members | plain | array | List of Box members. | |
+| owner | plain | string | Box owner. | Yes | |
+| organization | plain | string | Organization to which the box belongs. | Yes |
+| icon | plain | string | Box icon uri. | |
+| events | plain | array | List of Box events, there may be nine event lists: configure, dispose, install, pre_configure, pre_dispose, pre_install, pre_start, pre_stop, start and stop. | |
+| event | plain | object | Event contained in one of the event lists, each event object contains the  parameters: url, upload_date, length and destination_path. | |
+| name | plain | string | Box name. | Yes |
+
+
+#### Request Body
 ```
-Headers:
-
-Content-Type: application/json
-Authorization: Bearer your_json_web_token
-ElasticBox-Release: 4.0
-```
-
-```
-Body:
-
 {
     "schema":"http://elasticbox.net/schemas/boxes/script",
-    "updated":"2015-07-02 16:23:46.702968",
+    "updated":"2018-28-12 16:23:46.702968",
     "automatic_updates":"off",
     "requirements":[
         "linux"
     ],
-    "description":"Wordpress Started box",
+    "description":"New description set",
     "created":"2015-07-02 16:20:15.098554",
     "deleted":null,
     "variables":[
         {
             "required":false,
             "type":"Text",
-            "name":"Text_var",
+            "name":"variable_name",
             "value":"Default value",
-            "visibility":"public"
-
-        },
-        {
-            "required":true,
-            "type":"Port",
-            "name":"Port_variable",
-            "value":"80",
-            "visibility":"public"
-
-        },{
-            "automatic_updates":"off",
-            "name":"Wordpress_base",
-            "required":false,
-            "value":"412f1e21-02cb-4c51-aafd-7e0b1eff6122",
-            "visibility":"internal",
-            "type":"Box"
-
-        },
-        {
-            "name":"Binding_db",
-            "type":"Binding",
-            "value":"2a7a5f6b-280d-47de-afaa-65db5dd85816",
             "visibility":"public"
 
         }
@@ -509,15 +666,26 @@ Body:
         "visibility":"workspace",
         "events":{},
         "members":[],
-        "owner":"project",
+        "owner":"operation",
         "organization":"elasticbox",
-        "id":"60cef61c-73dc-41d9-a32f-70f49a509c66",
-        "name":"Wordpress Starter Box"
+        "id":"0e725f03-052b-43e2-8c5d-32341bf60a8d",
+        "name":"Rename Test Starter Box"
 }
-
 ```
 
-**Response Parameters**
+### Response
+#### Normal Response Codes
+
+- **200** OK
+
+#### Common Error Response Codes
+
+- **400** Invalid Data
+- **403** Forbidden
+- **404** Not Found
+
+
+#### Response Parameters
 
 | Parameter | Style | Type | Description |
 |-----------|-------|------|-------------|
@@ -526,7 +694,7 @@ Body:
 | updated | plain | string | Date of the last update. |
 | description | plain | string | Box description. |
 | requirements | plain | array | Box requirements. |
-| variables | plain | array | List of box variables, each variable object contains the parameters: type, name and value. |
+| variables | plain | array | List of box variables, each variable object contains the parameters: type, name, value, visibility, required, etc. |
 | created | plain | string | Creation date. |
 | uri | plain | string | Box uri. |
 | id | plain | array | Box unique identificator. |
@@ -538,102 +706,124 @@ Body:
 | event | plain | object | Event contained in one of the event lists, each event object contains the  parameters: url, upload_date, length and destination_path. |
 | name | plain | string | Box name. |
 
+
+### Response Body
 ```
 {
-  "updated": "2015-07-02 16:28:13.181040",
-  "automatic_updates": "off",
-  "requirements": [
-    "linux"
-  ],
-  "description": "Wordpress Started box",
-  "name": "Wordpress Starter Box",
-  "created": "2015-07-02 16:20:35.534878",
-  "deleted": null,
-  "variables": [
-    {
-      "required": false,
-      "type": "Text",
-      "name": "Text_var",
-      "value": "Default value",
-      "visibility": "public"
-    },
-    {
-      "required": true,
-      "type": "Port",
-      "name": "Port_variable",
-      "value": "80",
-      "visibility": "public"
-    },
-    {
-      "value": "412f1e21-02cb-4c51-aafd-7e0b1eff6122",
-      "automatic_updates": "off",
-      "name": "Wordpress_base",
-      "required": false,
-      "type": "Box",
-      "visibility": "internal"
-    },
-    {
-      "value": "2a7a5f6b-280d-47de-afaa-65db5dd85816",
-      "required": false,
-      "type": "Binding",
-      "name": "Binding_db",
-      "visibility": "public"
-    }
-  ],
-  "uri": "/services/boxes/60cef61c-73dc-41d9-a32f-70f49a509c66",
-  "visibility": "workspace",
-  "id": "60cef61c-73dc-41d9-a32f-70f49a509c66",
-  "members": [],
-  "owner": "project",
-  "organization": "elasticbox",
-  "events": {},
-  "schema": "http://elasticbox.net/schemas/boxes/script"
+    "updated": "2018-12-28 16:07:08.238548",
+    "automatic_updates": "off",
+    "requirements": [
+        "linux"
+    ],
+    "description": "New description",
+    "name": "Rename Test Starter Box",
+    "created": "2018-12-28 15:05:52.816432",
+    "deleted": null,
+    "variables": [
+        {
+            "required": false,
+            "type": "Text",
+            "name": "variable_name",
+            "value": "Default value",
+            "visibility": "public"
+        }
+    ],
+    "uri": "/services/boxes/0e725f03-052b-43e2-8c5d-32341bf60a8d",
+    "visibility": "workspace",
+    "id": "0e725f03-052b-43e2-8c5d-32341bf60a8d",
+    "members": [],
+    "owner": "operation",
+    "organization": "centurylink",
+    "events": {},
+    "schema": "http://elasticbox.net/schemas/boxes/script"
 }
 ```
 
-### DELETE /services/boxes/{box_id}
-
+## DELETE /services/boxes/{box_id}
 Deletes an existing box, requires the specified id box_id.
 
-**Normal Response Codes**
-* 204
+### URL
 
-**Error Response Codes**
-
-* Forbidden (403)
-* Not Found (404)
-
-**Request**
-
+#### Structure
 ```
-Headers:
+[DELETE] /services/boxes/{box_id}
+```
 
+#### Example
+```
+[DELETE] https://cam.ctl.io/services/boxes/0e725f03-052b-43e2-8c5d-32341bf60a8d
+```
+
+### Request
+
+#### Headers
+```
 Content-Type: application/json
 Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
+#### URI Parameters
 
-### GET /services/boxes/{box_id}/stack
+| Parameter | Style | Type | Description | Req. |
+|-----------|-------|------|-------------| ---- |
+| box_id | plain | string | Box id | Yes |
+
+### Response
+#### Normal Response Codes
+
+- **204** OK
+
+#### Common Error Response Codes
+
+- **403** Forbidden
+- **404** Not Found
+
+
+
+## GET /services/boxes/{box_id}/stack
 
 Gets the box stack. The box stack is a list of boxes. All boxes that are a box variable of the given box are included. The first box is always the given box.
 
-**Normal Response Codes**
-* 200
+### URL
 
-**Error Response Codes**
-* Bad Request (400)
-
-**Request**
-
+#### Structure
 ```
-Headers:
+[GET] /services/boxes//{box_id}/stack
+```
 
+#### Example
+```
+[GET] https://cam.ctl.io/services/boxes/f4dd017f-4bec-42f4-9614-bd27fd8baf74/stack
+```
+
+### Request
+
+#### Headers
+```
 Content-Type: application/json
 Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
-**Response Parameters**
+#### URI Parameters
+
+|Parameter |Type |Description | Req. |
+|-----------|------|------------| ---- |
+| box_id | string | Box id | Yes |
+
+
+
+### Response
+#### Normal Response Codes
+
+- **200** OK
+
+#### Common Error Response Codes
+
+- **400** Bad Request
+
+
+#### Response Parameters
 
 | Parameter | Style | Type | Description |
 |-----------|-------|------|-------------|
@@ -642,7 +832,7 @@ ElasticBox-Release: 4.0
 | updated | plain | string | Date of the last update. |
 | description | plain | string | Box description. |
 | tags | plain | array | Box tags. |
-| variables | plain | array | List of box variables, each variable object contains the parameters: type, name and value. |
+| variables | plain | array | List of box variables, each variable object contains the parameters: type, name, value, visibility, required, etc.  |
 | created | plain | string | Creation date. |
 | uri | plain | string | Box uri. |
 | id | plain | array | Box unique identificator. |
@@ -654,309 +844,837 @@ ElasticBox-Release: 4.0
 | event | plain | object | Event contained in one of the event lists, each event object contains the  parameters: url, upload_date, length and destination_path. |
 | name | plain | string | Box name. |
 
-```
 
-[
-  {
-    "updated": "2015-05-27 08:25:49.655298",
-    "automatic_updates": "off",
-    "requirements": [
-      "linux"
-    ],
-    "description": "Cookbook with a simple recipe",
-    "icon": "images/platform/chef-cookbook.png",
-    "created": "2015-04-30 14:09:40.247173",
-    "deleted": null,
-    "variables": [
-      {
-        "required": false,
-        "type": "Text",
-        "name": "CHEF_COOKBOOK_NAME",
-        "value": "elasticbox",
-        "visibility": "public"
-      },
-      {
-        "required": false,
-        "type": "File",
-        "name": "CHEF_DEFAULT_RB",
-        "value": "/services/blobs/download/554237a3da3116443909eb9f/default.rb",
-        "visibility": "public"
-      },
-      {
-        "required": false,
-        "type": "File",
-        "name": "CHEF_METADATA_RB",
-        "value": "/services/blobs/download/554237a3da3116443909eba1/metadata.rb",
-        "visibility": "public"
-      }
-    ],
-    "uri": "/services/boxes/31689659-fed1-49f0-ac31-379d192751be",
-    "visibility": "public",
-    "name": "Chef Cookbook",
-    "version": {
-      "box": "391e2946-552d-47b3-8551-d414ed47a97f",
-      "description": "Initial Cloud Application Manager Version",
-      "workspace": "public",
-      "number": {
-        "major": 1,
-        "minor": 0,
-        "patch": 0
-      }
-    },
-    "id": "31689659-fed1-49f0-ac31-379d192751be",
-    "members": [],
-    "owner": "public",
-    "organization": "public",
-    "events": {
-      "pre_configure": {
-        "url": "/services/blobs/download/554237a3da3116443909eb9d/pre_configure",
-        "upload_date": "2015-04-30 14:09:39.701080",
-        "length": 252,
-        "destination_path": "scripts",
-        "content_type": null
-      }
-    },
-    "schema": "http://elasticbox.net/schemas/boxes/script"
-  },
-        ....
-  {
-    "updated": "2015-05-27 08:25:49.687260",
-    "automatic_updates": "off",
-    "requirements": [
-      "linux"
-    ],
-    "description": "Opscode Chef client",
-    "icon": "images/platform/chef.png",
-    "created": "2015-04-30 14:09:40.247173",
-    "deleted": null,
-    "variables": [
-      {
-        "required": false,
-        "type": "File",
-        "name": "CHEF_SOLO_JSON",
-        "value": "/services/blobs/download/554237a3da3116443909ebbb/solo.json",
-        "visibility": "public"
-      },
-      {
-        "required": false,
-        "type": "File",
-        "name": "CHEF_SOLO_RB",
-        "value": "/services/blobs/download/554237a3da3116443909ebbd/solo.rb",
-        "visibility": "public"
-      },
-      {
-        "required": false,
-        "type": "File",
-        "name": "COOKBOOK_LIST",
-        "value": "/services/blobs/download/554237a3da3116443909ebbf/Cookbooks.config",
-        "visibility": "public"
-      }
-    ],
-    "uri": "/services/boxes/860e943e-bb69-416c-ba6e-06099dd5f7ea",
-    "visibility": "public",
-    "name": "Chef Solo",
-    "version": {
-      "box": "02d1c985-04fb-41a5-83c0-cff13f02a80b",
-      "description": "Initial Cloud Application Manager Version",
-      "workspace": "public",
-      "number": {
-        "major": 1,
-        "minor": 0,
-        "patch": 0
-      }
-    },
-    "id": "860e943e-bb69-416c-ba6e-06099dd5f7ea",
-    "members": [],
-    "owner": "public",
-    "organization": "public",
-    "events": {
-      "pre_install": {
-        "url": "/services/blobs/download/554237a3da3116443909ebb7/pre_install",
-        "upload_date": "2015-04-30 14:09:39.904687",
-        "length": 1033,
-        "destination_path": "scripts",
-        "content_type": null
-      },
-      "pre_configure": {
-        "url": "/services/blobs/download/554237a3da3116443909ebb9/pre_configure",
-        "upload_date": "2015-04-30 14:09:39.908203",
-        "length": 182,
-        "destination_path": "scripts",
-        "content_type": null
-      }
-    },
-    "schema": "http://elasticbox.net/schemas/boxes/script"
-  }
-]
+### Response Body
+The following example is of the Box that install and configure Magento using nginx and php-fpm boxes to run the application.
 
-```
-
-### GET /services/boxes/{box_id}/bindings
-
-Gets a list of box objects that are bindings of the request box, requires the specified id box_id.
-
-**Normal Response Codes**
-* 200
-
-**Error Response Codes**
-* Bad Request (400)
-* Request
-
-```
-Headers:
-
-Content-Type: application/json
-Authorization: Bearer your_json_web_token
-ElasticBox-Release: 4.0
-```
-
-**Response Parameters**
-
-| Parameter | Style | Type | Description |
-|-----------|-------|------|-------------|
-| uri | plain | string | Box uri. |
-| id | plain | array | Box unique identificator. |
-| icon | plain | string | Box icon uri. |
-| name | plain | string | Box name. |
 
 ```
 [
-  {
-    "id": "2a7a5f6b-280d-47de-afaa-65db5dd85816",
-    "uri": "/services/boxes/2a7a5f6b-280d-47de-afaa-65db5dd85816",
-    "name": "MongoDB Server",
-    "icon": "images/platform/mongodb.png"
-  }
-]
-```
-
-### GET /services/boxes/{box_id}/versions
-
-Gets a list of box versions, requires the specified id box_id. If the box is unversioned is the empty list.
-
-**Normal Response Codes**
-* 200
-
-**Error Response Codes**
-* Forbidden (403)
-* Not Found (404)
-
-**Request**
-
-```
-Headers:
-
-Content-Type: application/json
-Authorization: Bearer your_json_web_token
-ElasticBox-Release: 4.0
-```
-
-**Response Parameters**
-
-| Parameter | Style | Type | Description |
-|-----------|-------|------|-------------|
-| updated | plain | string | Date of the last update. |
-| description | plain | string | Box description. |
-| tags | plain | array | Box tags. |
-| variables | plain | array | List of box variables, each variable object contains the parameters: type, name and value. |
-| members | plain | array | List of Box members. |
-| owner | plain | string | Box owner. |
-| id | plain | array | Box unique identificator. |
-| icon | plain | string | Box icon uri. |
-| visibility | plain | string | Indicates at what level the box is visible. By default, boxes are visible to the workspace they’re created in. Can have one of these values: <li>public: Visible to Cloud Application Manager users across all organizations.</li> <li>organization: Visible to all users in the organization where the box was created.</li> <li>workspace: By default, the box is visible only to members of the workspace where it was created.</li> |
-| organization | plain | string | Organization to which the box belongs. |
-| name | plain | string | Box name. |
-| created | plain | string | Creation date. |
-| uri | plain | string | Box uri. |
-| version | plain | object | The box version object contains the parameters box, description and workspace. |
-| events | plain | array | List of Box events, there may be nine event lists: configure, dispose, install, pre_configure, pre_dispose, pre_install, pre_start, pre_stop, start and stop. |
-| event | plain | object | Event contained in one of the event lists, each event object contains the  parameters: url, upload_date, length and destination_path. |
-| schema | plain | string | Box schema uri. |
-
-```
-[
-  {
-    "schema": "http://elasticbox.net/schemas/boxes/script",
-    "updated": "2015-07-02 16:28:13.181040",
-    "automatic_updates": "off",
-    "requirements": [
-      "linux"
-    ],
-    "description": "Wordpress Started box",
-    "created": "2015-07-02 16:36:30.325064",
-    "deleted": null,
-    "variables": [
-      {
-        "required": false,
-        "type": "Text",
-        "name": "Text_var",
-        "value": "Default value",
-        "visibility": "public"
-      },
-      {
-        "required": true,
-        "type": "Port",
-        "name": "Port_variable",
-        "value": "80",
-        "visibility": "public"
-      },
-      {
+    {
+        "schema": "http://elasticbox.net/schemas/boxes/script",
+        "updated": "2015-12-22 23:11:27.168377",
         "automatic_updates": "off",
-        "name": "Wordpress_base",
-        "required": false,
-        "value": "412f1e21-02cb-4c51-aafd-7e0b1eff6122",
-        "visibility": "internal",
-        "type": "Box"
-      },
-      {
-        "required": false,
-        "type": "Binding",
-        "name": "Binding_db",
-        "value": "2a7a5f6b-280d-47de-afaa-65db5dd85816",
-        "visibility": "public"
-      }
-    ],
-    "uri": "/services/boxes/ca197de8-25e1-4e9b-9d45-c99a049249fc",
-    "visibility": "workspace",
-    "events": {},
-    "version": {
-      "box": "60cef61c-73dc-41d9-a32f-70f49a509c66",
-      "number": {
-        "major": 0,
-        "minor": 1,
-        "patch": 0
-      },
-      "workspace": "operations",
-      "description": "Initial version"
+        "requirements": [
+            "linux"
+        ],
+        "description": "HA proxy for MySQL",
+        "created": "2015-11-30 19:51:27.665743",
+        "deleted": null,
+        "variables": [
+            {
+                "automatic_updates": "major",
+                "name": "haproxy",
+                "required": false,
+                "visibility": "private",
+                "value": "87830b58-ceaf-4790-81d1-4511816b012f",
+                "type": "Box"
+            },
+            {
+                "name": "http",
+                "required": false,
+                "visibility": "internal",
+                "value": "3306",
+                "scope": "haproxy",
+                "type": "Port"
+            },
+            {
+                "name": "fallback_binding_port",
+                "required": false,
+                "visibility": "internal",
+                "value": "3306",
+                "scope": "haproxy",
+                "type": "Port"
+            },
+            {
+                "name": "CONFIG_FILE",
+                "required": false,
+                "visibility": "internal",
+                "value": "/services/blobs/download/56719884974c520dbaf06db0/haproxy.conf",
+                "scope": "haproxy",
+                "type": "File"
+            },
+            {
+                "name": "MODE",
+                "required": false,
+                "visibility": "internal",
+                "value": "tcp",
+                "scope": "haproxy",
+                "type": "Options",
+                "options": "http,tcp,health"
+            }
+        ],
+        "uri": "/services/boxes/f6deab86-3744-4be3-bd48-804697859423",
+        "visibility": "workspace",
+        "name": "MySQL HA Proxy",
+        "icon_metadata": {
+            "image": "images/platform/technologies/mysql.svg",
+            "border": "#227C95",
+            "fill": "#ffffff"
+        },
+        "events": {
+            "configure": {
+                "url": "/services/blobs/download/565d277217fe944e08464179/configure",
+                "length": 1033,
+                "destination_path": "scripts",
+                "content_type": "text/x-shellscript"
+            },
+            "install": {
+                "url": "/services/blobs/download/565e37a9b1ac9f56ad579a8d/install",
+                "length": 634,
+                "destination_path": "scripts",
+                "content_type": "text/x-shellscript"
+            }
+        },
+        "members": [
+            {
+                "role": "collaborator",
+                "workspace": "rackspace1"
+            }
+        ],
+        "owner": "super",
+        "organization": "elasticbox",
+        "id": "f6deab86-3744-4be3-bd48-804697859423",
+        "icon": "/icons/boxes/f6deab86-3744-4be3-bd48-804697859423"
     },
-    "members": [],
-    "owner": "project",
-    "organization": "elasticbox",
-    "id": "ca197de8-25e1-4e9b-9d45-c99a049249fc",
-    "name": "Wordpress Starter Box"
-  }
+    {
+        "automatic_updates": "off",
+        "variables": [
+            {
+                "required": false,
+                "type": "Port",
+                "name": "http",
+                "value": "80",
+                "visibility": "public"
+            },
+            {
+                "required": false,
+                "type": "Port",
+                "name": "fallback_binding_port",
+                "value": "80",
+                "visibility": "public"
+            },
+            {
+                "required": false,
+                "type": "Text",
+                "name": "CONFIG_FILE_NAME",
+                "value": "haproxy.cfg",
+                "visibility": "public"
+            },
+            {
+                "required": false,
+                "type": "File",
+                "name": "CONFIG_FILE",
+                "value": "/services/blobs/download/55dc3b66b8485e51a2a7d236/haproxy.conf",
+                "visibility": "public"
+            },
+            {
+                "name": "MODE",
+                "required": false,
+                "visibility": "public",
+                "value": "http",
+                "type": "Options",
+                "options": "http,tcp,health"
+            },
+            {
+                "required": false,
+                "type": "Binding",
+                "name": "servers",
+                "value": "AnyBox",
+                "visibility": "private"
+            }
+        ],
+        "friendly_id": "haproxy",
+        "owner": "elasticbox",
+        "id": "87830b58-ceaf-4790-81d1-4511816b012f",
+        "requirements": [
+            "linux"
+        ],
+        "icon_metadata": {
+            "image": "images/platform/technologies/haproxy.svg",
+            "border": "#3F52AA",
+            "fill": "#ffffff"
+        },
+        "version": {
+            "box": "fbe1f028-d95e-4bde-958b-00a5d5ca50d6",
+            "number": {
+                "major": 0,
+                "minor": 1,
+                "patch": 4
+            },
+            "workspace": "arnaud-elasticbox",
+            "description": "Fix apt-get update"
+        },
+        "readme": {
+            "url": "/services/blobs/download/565e1bedb1ac9f56ad57986a/README.md",
+            "upload_date": "2015-12-01 22:15:09.369640",
+            "length": 1778,
+            "content_type": "text/x-markdown"
+        },
+        "events": {
+            "start": {
+                "url": "/services/blobs/download/55dc3b65b8485e51a2a7d234/start",
+                "upload_date": "2015-08-25 09:54:45.995814",
+                "length": 40,
+                "destination_path": "scripts",
+                "content_type": null
+            },
+            "configure": {
+                "url": "/services/blobs/download/565cfea1b1ac9f56ad57867b/configure",
+                "upload_date": "2015-08-25 09:54:44.800362",
+                "length": 102,
+                "destination_path": "scripts",
+                "content_type": "text/x-shellscript"
+            },
+            "install": {
+                "url": "/services/blobs/download/565e26e017fe944e08465290/install",
+                "upload_date": "2015-08-25 09:54:43.653716",
+                "length": 524,
+                "destination_path": "scripts",
+                "content_type": "text/x-shellscript"
+            }
+        },
+        "schema": "http://elasticbox.net/schemas/boxes/script",
+        "updated": "2015-12-22 22:30:31.610021",
+        "description": "Reliable, High Performance, TCP / HTTP Load Balancer",
+        "deleted": null,
+        "visibility": "public",
+        "members": [],
+        "categories": [
+            "Load Balancer"
+        ],
+        "icon": "/services/blobs/download/55e6ca6bdda62a64df899596/haproxy.png",
+        "name": "HAProxy",
+        "created": "2015-12-01 23:02:07.975395",
+        "uri": "/services/boxes/87830b58-ceaf-4790-81d1-4511816b012f",
+        "organization": "elasticbox",
+        "draft_from": "35b8e7c0-3074-48ed-9b89-28ec6f279830"
+    },
+    {
+        "schema": "http://elasticbox.net/schemas/boxes/script",
+        "updated": "2016-12-08 18:22:58.904383",
+        "automatic_updates": "off",
+        "requirements": [
+            "linux"
+        ],
+        "description": "A free, open-source, high-performance HTTP server and",
+        "created": "2015-09-12 19:44:34.159558",
+        "deleted": null,
+        "variables": [
+            {
+                "required": false,
+                "type": "Port",
+                "name": "http",
+                "value": "80",
+                "visibility": "public"
+            },
+            {
+                "required": false,
+                "type": "File",
+                "name": "PUBLIC_SSL_CERTIFICATE",
+                "value": "/services/blobs/download/55f48216dda62a5eab4a41ca/public.crt",
+                "visibility": "internal"
+            },
+            {
+                "required": false,
+                "type": "File",
+                "name": "PRIVATE_SSL_KEY",
+                "value": "/services/blobs/download/55f4822bb1ac9f70ec5d4bb9/private.key",
+                "visibility": "internal"
+            },
+            {
+                "required": false,
+                "type": "File",
+                "name": "NGINX_CONF",
+                "value": "/services/blobs/download/57325a5636b43a30a1fb77f7/nginx.conf",
+                "visibility": "internal"
+            },
+            {
+                "required": false,
+                "type": "Text",
+                "name": "NGINX_USER",
+                "value": "root",
+                "visibility": "internal"
+            },
+            {
+                "required": false,
+                "type": "Text",
+                "name": "NGINX_GROUP",
+                "value": "root",
+                "visibility": "internal"
+            },
+            {
+                "required": false,
+                "type": "Text",
+                "name": "LOG_PATH",
+                "value": "/var/log/nginx",
+                "visibility": "internal"
+            },
+            {
+                "required": false,
+                "type": "Text",
+                "name": "CACHE_PATH",
+                "value": "/var/nginx/cache",
+                "visibility": "internal"
+            },
+            {
+                "required": false,
+                "type": "Text",
+                "name": "CERTIFICATE_PATH",
+                "value": "/var/nginx/certificates",
+                "visibility": "internal"
+            }
+        ],
+        "readme": {
+            "url": "/services/blobs/download/56297b2fb1ac9f4d02d1c2ab/README.md",
+            "upload_date": "2015-10-23 00:11:27.558696",
+            "length": 2278,
+            "content_type": "text/x-markdown"
+        },
+        "uri": "/services/boxes/8e176772-5c6c-4d5a-8f6e-cbf342142520",
+        "visibility": "workspace",
+        "name": "Nginx",
+        "icon_metadata": {
+            "image": "images/platform/technologies/nginx.svg",
+            "border": "#007731",
+            "fill": "#00964C"
+        },
+        "events": {
+            "start": {
+                "url": "/services/blobs/download/565e31b5b1ac9f56ad57999b/start",
+                "length": 91,
+                "destination_path": "scripts",
+                "content_type": "text/x-shellscript"
+            },
+            "configure": {
+                "url": "/services/blobs/download/56673867dda62a46af5b4275/configure",
+                "length": 519,
+                "destination_path": "scripts",
+                "content_type": "text/x-shellscript"
+            },
+            "install": {
+                "url": "/services/blobs/download/57e55ad5c60625154acebee3/install",
+                "length": 1515,
+                "destination_path": "scripts",
+                "content_type": "text/x-shellscript"
+            }
+        },
+        "members": [
+            {
+                "role": "collaborator",
+                "workspace": "rackspace1"
+            }
+        ],
+        "owner": "super",
+        "organization": "elasticbox",
+        "id": "8e176772-5c6c-4d5a-8f6e-cbf342142520",
+        "draft_from": "790e4791-be29-40fa-85ca-619dd3061ced",
+        "icon": "/icons/boxes/8e176772-5c6c-4d5a-8f6e-cbf342142520"
+    },
+    {
+        "schema": "http://elasticbox.net/schemas/boxes/script",
+        "updated": "2016-12-08 18:34:39.878898",
+        "automatic_updates": "off",
+        "requirements": [
+            "internal",
+            "linux"
+        ],
+        "name": "Magento",
+        "created": "2015-09-12 18:25:43.678013",
+        "deleted": null,
+        "variables": [
+            {
+                "name": "LOCAL_PATH",
+                "required": true,
+                "value": "/mnt/media",
+                "visibility": "internal",
+                "scope": "nfs",
+                "type": "Text"
+            },
+            {
+                "name": "CONFIG_FILE",
+                "required": false,
+                "value": "/services/blobs/download/565f3c92974c525666cd2f84/haproxy.conf",
+                "visibility": "public",
+                "scope": "redis.haproxy",
+                "type": "File"
+            },
+            {
+                "name": "CONFIG_FILE_NAME",
+                "required": false,
+                "value": "redis.cfg",
+                "visibility": "public",
+                "scope": "redis.haproxy",
+                "type": "Text"
+            },
+            {
+                "required": false,
+                "type": "Text",
+                "name": "MAGENTO_URL",
+                "value": "https://s3-us-west-1.amazonaws.com/ebx-public/magento-1.9.2.2.tar-2015-10-27-03-19-32.gz",
+                "visibility": "internal"
+            },
+            {
+                "required": false,
+                "type": "Text",
+                "name": "SERVER_NAME",
+                "value": "localhost",
+                "visibility": "public"
+            },
+            {
+                "required": false,
+                "type": "Port",
+                "name": "http",
+                "value": "80",
+                "visibility": "public"
+            },
+            {
+                "required": false,
+                "type": "File",
+                "name": "MAGENTO_CONF",
+                "value": "/services/blobs/download/565ca77d17fe944e08463a45/magento.conf",
+                "visibility": "internal"
+            },
+            {
+                "required": false,
+                "type": "File",
+                "name": "MAGENTO_CONFIG",
+                "value": "/services/blobs/download/565f3b1bb1ac9f56ad57b423/local.xml",
+                "visibility": "internal"
+            },
+            {
+                "required": false,
+                "type": "Text",
+                "name": "MAGENTO_PATH",
+                "value": "/opt/magento",
+                "visibility": "internal"
+            },
+            {
+                "automatic_updates": "major",
+                "name": "redis",
+                "required": false,
+                "value": "053c6467-13e4-47fb-b6cf-46f51e6c2294",
+                "visibility": "public",
+                "type": "Box"
+            },
+            {
+                "automatic_updates": "major",
+                "name": "mysql",
+                "required": false,
+                "value": "f6deab86-3744-4be3-bd48-804697859423",
+                "visibility": "public",
+                "type": "Box"
+            },
+            {
+                "automatic_updates": "major",
+                "name": "nginx",
+                "required": false,
+                "visibility": "internal",
+                "value": "8e176772-5c6c-4d5a-8f6e-cbf342142520",
+                "type": "Box"
+            },
+            {
+                "automatic_updates": "major",
+                "name": "php",
+                "required": false,
+                "value": "ed085cfd-8707-4ef7-9611-6e84498d27c6",
+                "visibility": "internal",
+                "type": "Box"
+            },
+            {
+                "automatic_updates": "major",
+                "name": "nfs",
+                "required": false,
+                "value": "320e8be7-5d05-4f74-a040-5d74836ae608",
+                "visibility": "public",
+                "type": "Box"
+            }
+        ],
+        "description": "Magento Web Layer",
+        "readme": {
+            "url": "/services/blobs/download/563a84b1dda62a1ca8ed5bdb/README.md",
+            "upload_date": "2015-11-04 22:20:33.241618",
+            "length": 2264,
+            "content_type": "text/x-markdown"
+        },
+        "uri": "/services/boxes/f4dd017f-4bec-42f4-9614-bd27fd8baf74",
+        "visibility": "workspace",
+        "events": {
+            "configure": {
+                "url": "/services/blobs/download/566604fcb1ac9f56ad5809bf/configure",
+                "length": 702,
+                "destination_path": "scripts",
+                "content_type": "text/x-shellscript"
+            },
+            "install": {
+                "url": "/services/blobs/download/565e1855dda62a46af5acc97/install",
+                "length": 829,
+                "destination_path": "scripts",
+                "content_type": "text/x-shellscript"
+            }
+        },
+        "icon_metadata": {
+            "image": "images/platform/technologies/magento.svg",
+            "border": "#191815",
+            "fill": "#31302B"
+        },
+        "members": [
+            {
+                "role": "collaborator",
+                "workspace": "rackspace1"
+            },
+            {
+                "role": "read",
+                "workspace": "centurylink"
+            }
+        ],
+        "owner": "super",
+        "organization": "elasticbox",
+        "id": "f4dd017f-4bec-42f4-9614-bd27fd8baf74",
+        "draft_from": "de1841f7-cfbe-4443-a996-d13807271a18",
+        "icon": "/icons/boxes/f4dd017f-4bec-42f4-9614-bd27fd8baf74"
+    },
+    {
+        "schema": "http://elasticbox.net/schemas/boxes/script",
+        "updated": "2016-12-02 15:27:33.907741",
+        "automatic_updates": "off",
+        "requirements": [
+            "linux"
+        ],
+        "description": "A simple and robust FastCGI Process Manager for PH",
+        "created": "2015-09-12 18:37:50.024980",
+        "deleted": null,
+        "variables": [
+            {
+                "required": false,
+                "type": "Text",
+                "name": "PHP_USER",
+                "value": "root",
+                "visibility": "internal"
+            },
+            {
+                "required": false,
+                "type": "Text",
+                "name": "PHP_GROUP",
+                "value": "root",
+                "visibility": "internal"
+            },
+            {
+                "required": false,
+                "type": "Text",
+                "name": "LOGS_DIRECTORY",
+                "value": "/var/log/php-fpm",
+                "visibility": "internal"
+            },
+            {
+                "required": false,
+                "type": "File",
+                "name": "PHP_INI",
+                "value": "/services/blobs/download/565deff917fe944e084647bf/php.ini",
+                "visibility": "internal"
+            },
+            {
+                "required": false,
+                "type": "File",
+                "name": "PHP_FPM_CONF",
+                "value": "/services/blobs/download/55f498d917fe94678daaf710/www.conf",
+                "visibility": "internal"
+            }
+        ],
+        "uri": "/services/boxes/ed085cfd-8707-4ef7-9611-6e84498d27c6",
+        "visibility": "workspace",
+        "name": "PHP-FPM",
+        "icon_metadata": {
+            "image": "images/platform/technologies/php.svg",
+            "border": "#484F8C",
+            "fill": "#6068A4"
+        },
+        "events": {
+            "start": {
+                "url": "/services/blobs/download/584190645939a07e69c92cdc/start",
+                "length": 140,
+                "destination_path": "scripts",
+                "content_type": "text/x-shellscript"
+            },
+            "configure": {
+                "url": "/services/blobs/download/565f491217fe944e08466e01/configure",
+                "length": 535,
+                "destination_path": "scripts",
+                "content_type": "text/x-shellscript"
+            },
+            "install": {
+                "url": "/services/blobs/download/565e173517fe944e084651ea/install",
+                "length": 1408,
+                "destination_path": "scripts",
+                "content_type": "text/x-shellscript"
+            }
+        },
+        "members": [
+            {
+                "role": "collaborator",
+                "workspace": "rackspace1"
+            }
+        ],
+        "organization": "elasticbox",
+        "readme": {
+            "url": "/services/blobs/download/56297bc9dda62a3b79416cbb/README.md",
+            "upload_date": "2015-10-23 00:14:01.384408",
+            "length": 2570,
+            "content_type": "text/x-markdown"
+        },
+        "owner": "super",
+        "id": "ed085cfd-8707-4ef7-9611-6e84498d27c6",
+        "draft_from": "be643a40-e7e8-435a-a857-e06fe5854c3c",
+        "icon": "/icons/boxes/ed085cfd-8707-4ef7-9611-6e84498d27c6"
+    },
+    {
+        "schema": "http://elasticbox.net/schemas/boxes/script",
+        "updated": "2015-12-22 23:12:59.290608",
+        "automatic_updates": "off",
+        "requirements": [
+            "linux"
+        ],
+        "description": "HA Proxy for Redis cluster",
+        "created": "2015-11-30 19:44:48.523649",
+        "deleted": null,
+        "variables": [
+            {
+                "automatic_updates": "major",
+                "name": "haproxy",
+                "required": false,
+                "visibility": "private",
+                "value": "87830b58-ceaf-4790-81d1-4511816b012f",
+                "type": "Box"
+            },
+            {
+                "name": "CONFIG_FILE",
+                "required": false,
+                "visibility": "public",
+                "value": "/services/blobs/download/565cac16b1ac9f56ad578071/haproxy.conf",
+                "scope": "haproxy",
+                "type": "File"
+            },
+            {
+                "name": "MODE",
+                "required": false,
+                "value": "tcp",
+                "visibility": "public",
+                "scope": "haproxy",
+                "type": "Options",
+                "options": "http,tcp,health"
+            }
+        ],
+        "uri": "/services/boxes/053c6467-13e4-47fb-b6cf-46f51e6c2294",
+        "visibility": "workspace",
+        "name": "Redis HA Proxy",
+        "icon_metadata": {
+            "image": "images/platform/technologies/redis.svg",
+            "border": "#18191C",
+            "fill": "#2A2C30"
+        },
+        "events": {
+            "install": {
+                "url": "/services/blobs/download/565e380bdda62a46af5acef5/install",
+                "length": 417,
+                "destination_path": "scripts",
+                "content_type": "text/x-shellscript"
+            }
+        },
+        "members": [
+            {
+                "role": "collaborator",
+                "workspace": "rackspace1"
+            }
+        ],
+        "owner": "super",
+        "organization": "elasticbox",
+        "id": "053c6467-13e4-47fb-b6cf-46f51e6c2294",
+        "icon": "/icons/boxes/053c6467-13e4-47fb-b6cf-46f51e6c2294"
+    },
+    {
+        "schema": "http://elasticbox.net/schemas/boxes/script",
+        "updated": "2016-09-08 16:30:40.026518",
+        "automatic_updates": "off",
+        "requirements": [
+            "linux"
+        ],
+        "description": "Mounts an NFS endpoint",
+        "created": "2015-09-13 20:28:14.119832",
+        "deleted": null,
+        "variables": [
+            {
+                "required": true,
+                "type": "Text",
+                "name": "LOCAL_PATH",
+                "value": "",
+                "visibility": "public"
+            },
+            {
+                "required": false,
+                "type": "Binding",
+                "name": "server",
+                "value": "894c39a1-169f-4cfb-a377-20fd41ab95d5",
+                "visibility": "private"
+            }
+        ],
+        "uri": "/services/boxes/320e8be7-5d05-4f74-a040-5d74836ae608",
+        "visibility": "workspace",
+        "name": "NFS Client",
+        "owner": "super",
+        "icon_metadata": {
+            "image": "images/platform/abstract/disk.svg",
+            "border": "#14427A",
+            "fill": "#246099"
+        },
+        "events": {
+            "configure": {
+                "url": "/services/blobs/download/5667372db1ac9f56ad580ebc/configure",
+                "length": 271,
+                "destination_path": "scripts",
+                "content_type": "text/x-shellscript"
+            },
+            "install": {
+                "url": "/services/blobs/download/566736f6dda62a46af5b4272/install",
+                "length": 213,
+                "destination_path": "scripts",
+                "content_type": "text/x-shellscript"
+            }
+        },
+        "members": [
+            {
+                "role": "collaborator",
+                "workspace": "rackspace1"
+            }
+        ],
+        "readme": {
+            "url": "/services/blobs/download/56297c02b1ac9f4d02d1c2ae/README.md",
+            "upload_date": "2015-10-23 00:14:58.186697",
+            "length": 1515,
+            "content_type": "text/x-markdown"
+        },
+        "organization": "elasticbox",
+        "id": "320e8be7-5d05-4f74-a040-5d74836ae608",
+        "draft_from": "7a24d2c7-8e8b-45bb-8a9c-eaf6899d3e85",
+        "icon": "/icons/boxes/320e8be7-5d05-4f74-a040-5d74836ae608"
+    }
 ]
 ```
 
-### PUT /services/boxes/{box_id}/diff
+## GET /services/boxes/{box_id}/bindings
 
-Compares a box to the submitted box, requires the specified id box_id.
+Gets a list of box objects that are bindings of the requested box. Requires the specified box id as a parameter box_id.
 
-**Normal Response Codes**
-* 200
+### URL
 
-**Error Response Codes**
-* Forbidden (403)
-* Not Found (404)
+#### Structure
+```
+[GET] /services/boxes//{box_id}/bindings
+```
 
-**Request parameters**
+#### Example
+```
+[GET] https://cam.ctl.io/services/boxes/f4dd017f-4bec-42f4-9614-bd27fd8baf74/bindings
+```
+
+### Request
+
+#### Headers
+```
+Content-Type: application/json
+Authorization: Bearer your_json_web_token
+ElasticBox-Release: 4.0
+```
+
+#### URI Parameters
+
+|Parameter |Type |Description | Req. |
+|-----------|------|------------| ---- |
+| box_id | string | Box id | Yes |
+
+
+### Response
+#### Normal Response Codes
+
+- **200** OK
+
+#### Common Error Response Codes
+
+- **400** Bad Request
+
+
+
+#### Response Parameters
+
+| Parameter | Style | Type | Description |
+|-----------|-------|------|-------------|
+| uri | plain | string | Box uri. |
+| id | plain | array | Box unique identificator. |
+| icon | plain | string | Box icon uri. |
+| name | plain | string | Box name. |
+
+
+### Response Body
+
+```
+[
+    {
+        "uri": "/services/boxes/894c39a1-169f-4cfb-a377-20fd41ab95d5",
+        "name": "NFS Server",
+        "icon": "/icons/boxes/894c39a1-169f-4cfb-a377-20fd41ab95d5",
+        "id": "894c39a1-169f-4cfb-a377-20fd41ab95d5"
+    }
+]
+```
+
+## GET /services/boxes/{box_id}/versions
+
+Gets a list of box versions for the requested box. Requires the specified box id as a parameter box_id. If the specified box is unversioned it obtains an empty list.
+
+### URL
+
+#### Structure
+```
+[GET] /services/boxes//{box_id}/versions
+```
+
+#### Example
+```
+[GET] https://cam.ctl.io/services/boxes/f4dd017f-4bec-42f4-9614-bd27fd8baf74/versions
+```
+
+### Request
+
+#### Headers
+```
+Content-Type: application/json
+Authorization: Bearer your_json_web_token
+ElasticBox-Release: 4.0
+```
+#### URI Parameters
+
+|Parameter |Type |Description | Req. |
+|-----------|------|------------| ---- |
+| box_id | string | Box id | Yes |
+
+
+### Response
+#### Normal Response Codes
+
+- **200** OK
+
+#### Common Error Response Codes
+
+- **403** Forbidden
+- **404** Not Found
+
+#### Response Parameters
 
 | Parameter | Style | Type | Description |
 |-----------|-------|------|-------------|
 | updated | plain | string | Date of the last update. |
 | description | plain | string | Box description. |
 | tags | plain | array | Box tags. |
-| variables | plain | array | List of box variables, each variable object contains the parameters: type, name and value. |
+| variables | plain | array | List of box variables, each variable object contains the parameters: type, name, value, visibility, required, etc. |
 | members | plain | array | List of Box members. |
 | owner | plain | string | Box owner. |
 | id | plain | array | Box unique identificator. |
@@ -971,63 +1689,433 @@ Compares a box to the submitted box, requires the specified id box_id.
 | event | plain | object | Event contained in one of the event lists, each event object contains the  parameters: url, upload_date, length and destination_path. |
 | schema | plain | string | Box schema uri. |
 
-```
-Headers:
 
+### Response Body
+
+```
+[
+    {
+        "schema": "http://elasticbox.net/schemas/boxes/script",
+        "updated": "2016-11-22 13:39:23.680784",
+        "automatic_updates": "off",
+        "requirements": [
+            "internal",
+            "linux"
+        ],
+        "description": "Magento Web Layer",
+        "created": "2016-05-10 22:03:20.342575",
+        "deleted": null,
+        "variables": [
+            {
+                "name": "LOCAL_PATH",
+                "required": true,
+                "value": "/mnt/media",
+                "visibility": "internal",
+                "scope": "nfs",
+                "type": "Text"
+            },
+            {
+                "name": "CONFIG_FILE",
+                "required": false,
+                "value": "/services/blobs/download/565f3c92974c525666cd2f84/haproxy.conf",
+                "visibility": "public",
+                "scope": "redis.haproxy",
+                "type": "File"
+            },
+            {
+                "name": "CONFIG_FILE_NAME",
+                "required": false,
+                "value": "redis.cfg",
+                "visibility": "public",
+                "scope": "redis.haproxy",
+                "type": "Text"
+            },
+            {
+                "required": false,
+                "type": "Text",
+                "name": "MAGENTO_URL",
+                "value": "https://s3-us-west-1.amazonaws.com/ebx-public/magento-1.9.2.2.tar-2015-10-27-03-19-32.gz",
+                "visibility": "internal"
+            },
+            {
+                "required": false,
+                "type": "Text",
+                "name": "SERVER_NAME",
+                "value": "localhost",
+                "visibility": "public"
+            },
+            {
+                "required": false,
+                "type": "Port",
+                "name": "http",
+                "value": "80",
+                "visibility": "public"
+            },
+            {
+                "required": false,
+                "type": "File",
+                "name": "MAGENTO_CONF",
+                "value": "/services/blobs/download/565ca77d17fe944e08463a45/magento.conf",
+                "visibility": "internal"
+            },
+            {
+                "required": false,
+                "type": "File",
+                "name": "MAGENTO_CONFIG",
+                "value": "/services/blobs/download/565f3b1bb1ac9f56ad57b423/local.xml",
+                "visibility": "internal"
+            },
+            {
+                "required": false,
+                "type": "Text",
+                "name": "MAGENTO_PATH",
+                "value": "/opt/magento",
+                "visibility": "internal"
+            },
+            {
+                "automatic_updates": "major",
+                "name": "redis",
+                "required": false,
+                "value": "053c6467-13e4-47fb-b6cf-46f51e6c2294",
+                "visibility": "public",
+                "type": "Box"
+            },
+            {
+                "automatic_updates": "major",
+                "name": "mysql",
+                "required": false,
+                "value": "f6deab86-3744-4be3-bd48-804697859423",
+                "visibility": "public",
+                "type": "Box"
+            },
+            {
+                "automatic_updates": "major",
+                "name": "nginx",
+                "required": false,
+                "visibility": "internal",
+                "value": "8e176772-5c6c-4d5a-8f6e-cbf342142520",
+                "type": "Box"
+            },
+            {
+                "automatic_updates": "major",
+                "name": "php",
+                "required": false,
+                "value": "ed085cfd-8707-4ef7-9611-6e84498d27c6",
+                "visibility": "internal",
+                "type": "Box"
+            },
+            {
+                "automatic_updates": "major",
+                "name": "nfs",
+                "required": false,
+                "value": "320e8be7-5d05-4f74-a040-5d74836ae608",
+                "visibility": "public",
+                "type": "Box"
+            }
+        ],
+        "readme": {
+            "url": "/services/blobs/download/563a84b1dda62a1ca8ed5bdb/README.md",
+            "upload_date": "2015-11-04 22:20:33.241618",
+            "length": 2264,
+            "content_type": "text/x-markdown"
+        },
+        "uri": "/services/boxes/de1841f7-cfbe-4443-a996-d13807271a18",
+        "visibility": "workspace",
+        "name": "Magento",
+        "icon_metadata": {
+            "image": "images/platform/technologies/magento.svg",
+            "border": "#191815",
+            "fill": "#31302B"
+        },
+        "version": {
+            "box": "f4dd017f-4bec-42f4-9614-bd27fd8baf74",
+            "number": {
+                "major": 0,
+                "minor": 1,
+                "patch": 1
+            },
+            "workspace": "alberto",
+            "description": "Updated boxes"
+        },
+        "events": {
+            "configure": {
+                "url": "/services/blobs/download/566604fcb1ac9f56ad5809bf/configure",
+                "length": 702,
+                "destination_path": "scripts",
+                "content_type": "text/x-shellscript"
+            },
+            "install": {
+                "url": "/services/blobs/download/565e1855dda62a46af5acc97/install",
+                "length": 829,
+                "destination_path": "scripts",
+                "content_type": "text/x-shellscript"
+            }
+        },
+        "members": [
+            {
+                "role": "collaborator",
+                "workspace": "rackspace1"
+            },
+            {
+                "role": "read",
+                "workspace": "centurylink"
+            }
+        ],
+        "owner": "super",
+        "organization": "elasticbox",
+        "id": "de1841f7-cfbe-4443-a996-d13807271a18",
+        "icon": "/icons/boxes/f4dd017f-4bec-42f4-9614-bd27fd8baf74"
+    },
+    {
+        "schema": "http://elasticbox.net/schemas/boxes/script",
+        "updated": "2016-11-22 13:39:23.680784",
+        "automatic_updates": "off",
+        "requirements": [
+            "internal",
+            "linux"
+        ],
+        "description": "Magento Web Layer",
+        "created": "2015-12-10 16:11:01.542052",
+        "icon_metadata": {
+            "image": "images/platform/technologies/magento.svg",
+            "border": "#191815",
+            "fill": "#31302B"
+        },
+        "variables": [
+            {
+                "name": "LOCAL_PATH",
+                "required": true,
+                "visibility": "internal",
+                "value": "/mnt/media",
+                "scope": "nfs",
+                "type": "Text"
+            },
+            {
+                "name": "CONFIG_FILE",
+                "required": false,
+                "visibility": "public",
+                "value": "/services/blobs/download/565f3c92974c525666cd2f84/haproxy.conf",
+                "scope": "redis.haproxy",
+                "type": "File"
+            },
+            {
+                "name": "CONFIG_FILE_NAME",
+                "required": false,
+                "visibility": "public",
+                "value": "redis.cfg",
+                "scope": "redis.haproxy",
+                "type": "Text"
+            },
+            {
+                "required": false,
+                "type": "Text",
+                "name": "SERVER_NAME",
+                "value": "localhost",
+                "visibility": "public"
+            },
+            {
+                "required": false,
+                "type": "Port",
+                "name": "http",
+                "value": "80",
+                "visibility": "public"
+            },
+            {
+                "required": false,
+                "type": "Text",
+                "name": "MAGENTO_URL",
+                "value": "https://s3-us-west-1.amazonaws.com/ebx-public/magento-1.9.2.2.tar-2015-10-27-03-19-32.gz",
+                "visibility": "internal"
+            },
+            {
+                "required": false,
+                "type": "File",
+                "name": "MAGENTO_CONF",
+                "value": "/services/blobs/download/565ca77d17fe944e08463a45/magento.conf",
+                "visibility": "internal"
+            },
+            {
+                "required": false,
+                "type": "File",
+                "name": "MAGENTO_CONFIG",
+                "value": "/services/blobs/download/565f3b1bb1ac9f56ad57b423/local.xml",
+                "visibility": "internal"
+            },
+            {
+                "required": false,
+                "type": "Text",
+                "name": "MAGENTO_PATH",
+                "value": "/opt/magento",
+                "visibility": "internal"
+            },
+            {
+                "automatic_updates": "major",
+                "name": "mysql",
+                "required": false,
+                "visibility": "public",
+                "value": "f6deab86-3744-4be3-bd48-804697859423",
+                "type": "Box"
+            },
+            {
+                "automatic_updates": "major",
+                "name": "redis",
+                "required": false,
+                "visibility": "public",
+                "value": "053c6467-13e4-47fb-b6cf-46f51e6c2294",
+                "type": "Box"
+            },
+            {
+                "automatic_updates": "major",
+                "name": "nginx",
+                "required": false,
+                "value": "8e176772-5c6c-4d5a-8f6e-cbf342142520",
+                "visibility": "internal",
+                "type": "Box"
+            },
+            {
+                "automatic_updates": "major",
+                "name": "php",
+                "required": false,
+                "visibility": "internal",
+                "value": "ed085cfd-8707-4ef7-9611-6e84498d27c6",
+                "type": "Box"
+            },
+            {
+                "automatic_updates": "major",
+                "name": "nfs",
+                "required": false,
+                "visibility": "public",
+                "value": "320e8be7-5d05-4f74-a040-5d74836ae608",
+                "type": "Box"
+            }
+        ],
+        "readme": {
+            "url": "/services/blobs/download/563a84b1dda62a1ca8ed5bdb/README.md",
+            "upload_date": "2015-11-04 22:20:33.241618",
+            "length": 2264,
+            "content_type": "text/x-markdown"
+        },
+        "uri": "/services/boxes/e75f27f6-fded-4647-8630-bd99cf62fcee",
+        "visibility": "workspace",
+        "name": "Magento",
+        "deleted": null,
+        "version": {
+            "box": "f4dd017f-4bec-42f4-9614-bd27fd8baf74",
+            "number": {
+                "major": 0,
+                "minor": 1,
+                "patch": 0
+            },
+            "workspace": "diego",
+            "description": "automatic"
+        },
+        "events": {
+            "configure": {
+                "url": "/services/blobs/download/566604fcb1ac9f56ad5809bf/configure",
+                "length": 702,
+                "destination_path": "scripts",
+                "content_type": "text/x-shellscript"
+            },
+            "install": {
+                "url": "/services/blobs/download/565e1855dda62a46af5acc97/install",
+                "length": 829,
+                "destination_path": "scripts",
+                "content_type": "text/x-shellscript"
+            }
+        },
+        "members": [
+            {
+                "role": "collaborator",
+                "workspace": "rackspace1"
+            },
+            {
+                "role": "read",
+                "workspace": "centurylink"
+            }
+        ],
+        "owner": "super",
+        "organization": "elasticbox",
+        "id": "e75f27f6-fded-4647-8630-bd99cf62fcee",
+        "icon": "/services/blobs/download/55f46e1c974c52710858afb6/magento.png"
+    }
+]
+```
+
+## PUT /services/boxes/{box_id}/diff
+
+Compares a box to the submitted box. Requires the specified box id as parameter box_id.
+
+### URL
+
+#### Structure
+```
+[PUT] /services/boxes//{box_id}/diff
+```
+
+#### Example
+```
+[PUT] https://cam.ctl.io/services/boxes/f4dd017f-4bec-42f4-9614-bd27fd8baf74/diff
+```
+
+### Request
+
+#### Headers
+```
 Content-Type: application/json
 Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
-```
-Body:
 
+#### URI Parameters
+
+| Parameter | Style | Type | Description | Req. |
+|-----------|-------|------|-------------| ---- |
+| box_id | plain | string | Box id | Yes | 
+
+
+#### Request Body Parameters
+
+| Parameter | Style | Type | Description | Req. |
+|-----------|-------|------|-------------|----| 
+| updated | plain | string | Date of the last update. |
+| description | plain | string | Box description. |
+| tags | plain | array | Box tags. |
+| variables | plain | array | List of box variables, each variable object contains the parameters: type, name, value, visibility, required, etc. |
+| members | plain | array | List of Box members. |
+| owner | plain | string | Box owner. | Yes |
+| id | plain | array | Box unique identificator. | Yes |
+| icon | plain | string | Box icon uri. |
+| visibility | plain | string | Indicates at what level the box is visible. By default, boxes are visible to the workspace they’re created in. Can have one of these values: <li>public: Visible to Cloud Application Manager users across all organizations.</li> <li>organization: Visible to all users in the organization where the box was created.</li> <li>workspace: By default, the box is visible only to members of the workspace where it was created.</li> |
+| organization | plain | string | Organization to which the box belongs. | Yes |
+| name | plain | string | Box name. | Yes |
+| created | plain | string | Creation date. |
+| uri | plain | string | Box uri. |
+| version | plain | object | The box version object contains the parameters box, description and workspace. |
+| events | plain | array | List of Box events, there may be nine event lists: configure, dispose, install, pre_configure, pre_dispose, pre_install, pre_start, pre_stop, start and stop. |
+| event | plain | object | Event contained in one of the event lists, each event object contains the  parameters: url, upload_date, length and destination_path. |
+| schema | plain | string | Box schema uri. | Yes |
+
+
+#### Request Body
+```
 {
-  "updated": "2015-07-02 16:36:30.348041",
+  "updated": "2018-07-02 13:36:30.348041",
   "automatic_updates": "off",
   "requirements": [
     "linux",
     "new_requirement"
   ],
-  "description": "Wordpress Started box proposal",
-  "name": "Wordpress Starter Box",
-  "created": "2015-07-02 16:20:35.534878",
+  "description": "Test Started for our showcase",
+  "name": "Test Starter Box",
+  "created": "2018-12-31 11:20:27.349315",
   "deleted": null,
   "variables": [
     {
       "required": false,
       "type": "Text",
-      "name": "Text_var",
-      "value": "Default value",
-      "visibility": "public"
-    },
-    {
-      "required": true,
-      "type": "Port",
-      "name": "Port_variable_renamed",
-      "value": "80",
-      "visibility": "public"
-    },
-    {
-      "automatic_updates": "off",
-      "name": "Wordpress_base",
-      "required": false,
-      "value": "412f1e21-02cb-4c51-aafd-7e0b1eff6122",
-      "visibility": "internal",
-      "type": "Box"
-    },
-    {
-      "required": false,
-      "type": "Binding",
-      "name": "Binding_db",
-      "value": "2a7a5f6b-280d-47de-afaa-65db5dd85816",
-      "visibility": "public"
-    },
-    {
-      "required": false,
-      "type": "Text",
-      "name": "Text_var2",
-      "value": "Default value",
+      "name": "variable_name",
+      "value": "New value",
       "visibility": "public"
     }
   ],
@@ -1035,24 +2123,34 @@ Body:
   "visibility": "workspace",
   "id": "60cef61c-73dc-41d9-a32f-70f49a509c66",
   "members": [],
-  "owner": "project",
+  "owner": "operation",
   "organization": "elasticbox",
   "events": {},
   "draft_from": "ca197de8-25e1-4e9b-9d45-c99a049249fc",
   "schema": "http://elasticbox.net/schemas/boxes/script"
 }
-
 ```
 
+### Response
+#### Normal Response Codes
 
-**Response parameters**
+- **200** OK
+
+#### Common Error Response Codes
+
+- **403** Forbidden
+- **404** Not Found
+
+
+#### Response Parameters
+
 
 | Parameter | Style | Type | Description |
 |-----------|-------|------|-------------|
 | box_variables | plain | object | Differences in the box variables, the object contains a title and three lists: removed, added and changed. |
-| box_variables.removed | plain | array | List of box variables removed, each variable object contains the parameters: type, name and value. |
-| box_variables.added | plain | array | List of box variables added, each variable object contains the parameters: type, name and value. |
-| box_variables.changed | plain | array | List of box variables changed, each variable object contains the parameters: type, name and value. |
+| box_variables.removed | plain | array | List of box variables removed, each variable object contains the parameters: type, name, value, visibility, required, etc. |
+| box_variables.added | plain | array | List of box variables added, each variable object contains the parameters: type, name, value, visibility, required, etc.  |
+| box_variables.changed | plain | array | List of box variables changed, each variable object contains the parameters: type, name, value, visibility, required, etc. |
 | box_details | plain | object | Differences in the box details, the object contains a title and three lists: removed, added and changed. |
 | box_profile_properties | plain | object | Differences in the box profile properties, the object contains a title and three lists: removed, added and changed. Available for Policy boxes. |
 | box_events | plain | array | List of box events. |
@@ -1061,67 +2159,66 @@ Body:
 
 ```
 {
-  "box_profile_properties": {
-    "removed": [],
-    "added": [],
-    "changed": []
-  },
-  "box_details": {
-    "title": "Modified Box Details",
-    "removed": [],
-    "added": [],
-    "changed": [
-      {
-        "new": "Wordpress Started box proposal",
-        "name": "Description",
-        "previous": "Wordpress Started box"
-      },
-      {
-        "new": "linux, new_requirement",
-        "name": "Requirements",
-        "previous": "linux"
-      }
-    ]
-  },
-  "box_events": [],
-  "box_variables": {
-    "title": "Modified Variables",
-    "removed": [
-      {
-        "required": true,
-        "type": "Port",
-        "name": "Port_variable",
-        "value": "80",
-        "visibility": "public"
-      }
-    ],
-    "files_diff": [],
-    "added": [
-      {
-        "required": true,
-        "type": "Port",
-        "name": "Port_variable_renamed",
-        "value": "80",
-        "visibility": "public"
-      },
-      {
-        "required": false,
-        "type": "Text",
-        "name": "Text_var2",
-        "value": "Default value",
-        "visibility": "public"
-      }
-    ],
-    "changed": []
-  },
-  "box_readme": [],
-  "changed": true
+    "changed": true,
+    "box_services": {
+        "removed": [],
+        "added": []
+    },
+    "box_events": [],
+    "box_variables": {
+        "title": "Modified Variables",
+        "removed": [],
+        "changed": [
+            [
+                {
+                    "required": false,
+                    "type": "Text",
+                    "name": "variable_name",
+                    "value": "New value",
+                    "visibility": "public"
+                },
+                {
+                    "required": false,
+                    "type": "Text",
+                    "name": "variable_name",
+                    "value": "",
+                    "visibility": "public"
+                }
+            ]
+        ],
+        "added": [],
+        "files_diff": []
+    },
+    "box_readme": [],
+    "box_details": {
+        "title": "Modified Box Details",
+        "removed": [],
+        "added": [],
+        "changed": [
+            {
+                "new": "linux, new_requirement",
+                "name": "Requirements",
+                "previous": "apache, linux"
+            }
+        ]
+    },
+    "box_profile_properties": {
+        "removed": [],
+        "changed": [],
+        "added": [],
+        "files_diff": []
+    },
+    "box_services_variables": {
+        "removed": [],
+        "added": [],
+        "files_diff": []
+    }
 }
 ```
 
-### Create and Launch a CloudFormation Box
+## Create and Launch a CloudFormation Box
 
-**Create a CloudFormation box with template**
+### Create a CloudFormation box with template
 
 1. [POST /services/boxes](./api-boxes.md)
 Creates a box of the CloudFormation service type. See example create a CloudFormation.
@@ -1136,7 +2233,7 @@ Creates a blob from template data submitted through a file or URL. Here template
 4. [PUT /services/boxes/{box_id}](./api-boxes.md)
 Updates the CloudFormation box with the template. See example create a CloudFormation, part 4.
 
-**Modify the CloudFormation Template**
+###  Modify the CloudFormation Template
 
 1. [POST /services/blobs/upload/{file_name}](./api-blobs.md)
 Creates a blob from modified template data. See example modify a CloudFormation.
@@ -1144,12 +2241,12 @@ Creates a blob from modified template data. See example modify a CloudFormation.
 2. [PUT /services/boxes/{box_id}](./api-boxes.md)
 Updates the CloudFormation box. See example modify a CloudFormation, part 2.
 
-**Delete a CloudFormation Box**
+###  Delete a CloudFormation Box
 
 1. [DELETE /services/box/{box_id}](./api-blobs.md)
 Removes the CloudFormation box from the boxes catalog.
 
-**Launch a CloudFormation Box**
+### Launch a CloudFormation Box
 
 1. [POST /services/profiles](./api-blobs.md)
 This step is optional. Passes deployment settings in a new deployment profile to launch the box in the provider’s infrastructure. See example launch a CloudFormation.
@@ -1157,7 +2254,7 @@ This step is optional. Passes deployment settings in a new deployment profile to
 2. [POST /services/instances](./instances-api.md)
 Creates a new instance of the CloudFormation box.
 
-**Update a CloudFormation Stack in Real-Time**
+### Update a CloudFormation Stack in Real-Time
 
 1. [POST /services/blobs/upload](./api-blobs.md)
 Uploads the modified template data. See example update a CloudFormation.
@@ -1168,24 +2265,22 @@ Updates the instance with the template changes. See example update a CloudFormat
 3. [PUT /services/instances/{instance_id}/reconfigure](./instances-api.md)
 Reconfigures the stack based on the changes. See example update a CloudFormation part 3.
 
-### Example: Create a CloudFormation box with template
+## Example: Create a CloudFormation box with template
 
 **1. POST https://cam.ctl.io/services/boxes/**
 
 Creating a box of the CloudFormation service type.
 
-**Request**
-
+### Request
+#### Headers
 ```
-Headers:
-
 Content-Type: application/json
 Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
+#### Request Body
 ```
-Body:
 {
     "owner": "operations",
     "schema":"http://elasticbox.net/schemas/boxes/cloudformation",
@@ -1194,12 +2289,12 @@ Body:
     "description":"Wordpress Started for our showcase"
 }
 ```
-
-**Response**
+### Response
+#### Response Body
 
 ```
 {
-    "updated": "2015-10-28 11:24:01.854958",
+    "updated": "2019-01-02 10:57:43.782726",
     "automatic_updates": "off",
     "description": "Wordpress Started for our showcase",
     "deleted": null,
@@ -1207,12 +2302,12 @@ Body:
     "visibility": "workspace",
     "members": [],
     "owner": "operations",
-    "id": "262d4cbe-9ad9-4069-b6a8-76fda70a4d90",
+    "id": "755a09cc-6407-44e2-9993-539c386ee559",
     "requirements": [],
     "name": "Wordpress Starter CF",
-    "created": "2015-10-28 11:24:01.854958",
-    "uri": "/services/boxes/262d4cbe-9ad9-4069-b6a8-76fda70a4d90",
-    "organization": "elasticbox",
+    "created": "2019-01-02 10:57:43.782726",
+    "uri": "/services/boxes/755a09cc-6407-44e2-9993-539c386ee559",
+    "organization": "centurylink",
     "type": "CloudFormation Service",
     "schema": "http://elasticbox.net/schemas/boxes/cloudformation"
 }
@@ -1223,18 +2318,16 @@ Body:
 
 Fetches contents from a given URL. Once we have checked that the template is the right one, we could assign it to the CloudFormation box.
 
-**Request**
-
+### Request
+#### Headers
 ```
-Headers:
-
 Content-Type: application/json
 Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
-**Response**
-
+### Response
+#### Response Body
 ```
 {
    "AWSTemplateFormatVersion":"2010-09-09",
@@ -1280,19 +2373,16 @@ ElasticBox-Release: 4.0
 
 Another option is to create the template from the data submitted through a URL.
 
-**Request**
-
+### Request
+#### Headers
 ```
-Headers:
-
 Content-Type: application/json
 Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
+#### Request Body
 ```
-Body:
-
 {
    "AWSTemplateFormatVersion":"2010-09-09",
    "Description":"AWS CloudFormation Sample Template WordPress_Single_Instance_With_RDS: WordPress is web software you can use to create a beautiful website or blog. This template installs a single-instance WordPress deployment using an Amazon RDS database instance for storage. It demonstrates using the AWS CloudFormation bootstrap scripts to install packages and files at instance launch time. **WARNING** This template creates an Amazon EC2 instance and an Amazon RDS database instance. You will be billed for the AWS resources used if you create a stack from this template.",
@@ -1333,8 +2423,8 @@ Body:
 
 ```
 
-**Response**
-
+### Response
+#### Response Body
 ```
 {
    "url":"/services/blobs/download/536a9e867d0083771808bacd/template.json",
@@ -1348,19 +2438,15 @@ Body:
 
 Finally we are going to update the CloudFormation box with one of the templates we have obtained in the last two steps.
 
-**Request**
-
+### Request
+#### Headers
 ```
-Headers:
-
 Content-Type: application/json
 Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
-
+#### Request Body
 ```
-Body:
-
 {
     "schema": "http://elasticbox.net/schemas/boxes/cloudformation",
     "automatic_updates": "off",
@@ -1382,8 +2468,8 @@ Body:
 }
 ```
 
-**Response**
-
+### Response
+#### Response Body
 ```
 {
     "schema": "http://elasticbox.net/schemas/boxes/cloudformation",
@@ -1433,19 +2519,16 @@ Body:
 
 Creates a blob from modified template data.
 
-**Request**
-
+### Request
+#### Headers
 ```
-Headers:
-
 Content-Type: application/json
 Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
+#### Request Body
 ```
-Body:
-
 {
     "AWSTemplateFormatVersion": "2010-09-09",
     "Description": "AWS CloudFormation Sample Template WordPress_Single_Instance_With_RDS: WordPress is web software you can use to create a beautiful website or blog. This template installs a single-instance WordPress deployment using an Amazon RDS database instance for storage. It demonstrates using the AWS CloudFormation bootstrap scripts to install packages and files at instance launch time. **WARNING** This template creates an Amazon EC2 instance and an Amazon RDS database instance. You will be billed for the AWS resources used if you create a stack from this template.",
@@ -1485,8 +2568,8 @@ Body:
 }
 ```
 
-**Response**
-
+### Response
+#### Response Body
 ```
 {
    "url":"/services/blobs/download/536bd5619ac37b2f70318a87/template.json",
@@ -1500,19 +2583,16 @@ Body:
 
 Updates the CloudFormation box.
 
-**Request**
-
+### Request
+#### Headers
 ```
-Headers:
-
 Content-Type: application/json
 Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
+#### Request Body
 ```
-Body:
-
 {
     "schema": "http://elasticbox.net/schemas/boxes/cloudformation",
     "automatic_updates": "off",
@@ -1534,8 +2614,8 @@ Body:
 }
 ```
 
-**Response**
-
+### Response
+#### Response Body
 ```
 {
     "schema": "http://elasticbox.net/schemas/boxes/cloudformation",
@@ -1585,19 +2665,17 @@ Body:
 
 Creates a new instance of the CloudFormation box.
 
-**Request**
+### Request
+#### Headers
 
 ```
-Headers:
-
 Content-Type: application/json
 Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
+#### Request Body
 ```
-Body:
-
 {
   "schema": "http://elasticbox.net/schemas/deploy-instance-request",
   "owner": "operations",
@@ -1630,8 +2708,8 @@ Body:
 }
 ```
 
-**Response**
-
+### Response
+#### Response Body
 ```
 {
   "box": "91645eed-173f-4aac-a713-69c6be7582fe",
@@ -1756,19 +2834,18 @@ Body:
 
 Uploads the modified template data.
 
-**Request**
+### Request
+#### Headers
 
 ```
-Headers:
-
 Content-Type: application/json
 Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
-```
-Body:
+#### Request Body
 
+```
 {
     "Resources" : {
         "HelloBucket" : {
@@ -1779,8 +2856,8 @@ Body:
 
 ```
 
-**Response**
-
+### Response
+#### Response Body
 ```
 {
     "url": "/services/blobs/download/5630d61d14841250525226aa/simple_template.json",
@@ -1794,15 +2871,16 @@ Body:
 
 Updates the instance with the template changes.
 
-**Request**
+### Request
+#### Headers
 
 ```
-Headers:
-
 Content-Type: application/json
 Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
+
+#### Request Body
 
 ```
 {
@@ -1922,7 +3000,8 @@ ElasticBox-Release: 4.0
 }
 ```
 
-**Response**
+### Response
+#### Response Body
 
 ```
 {
@@ -2046,18 +3125,18 @@ ElasticBox-Release: 4.0
 
 Reconfigures the stack based on the changes.
 
-**Request**
+### Request
+#### Headers
 
 ```
-Headers:
-
 Content-Type: application/json
 Authorization: Bearer your_json_web_token
 ElasticBox-Release: 4.0
 ```
 
+#### Request Body
+
 ```
-Body:
 
 {
    "id":"i-ywf1hu",
@@ -2065,16 +3144,7 @@ Body:
 }
 ```
 
-**Response**
-
+### Response
 None.
 
-### Contacting Cloud Application Manager Support
 
-We’re sorry you’re having an issue in [Cloud Application Manager](https://www.ctl.io/cloud-application-manager/). Please review the [troubleshooting tips](https://www.ctl.io/knowledge-base/cloud-application-manager/troubleshooting/troubleshooting-tips/), or contact [Cloud Application Manager support](mailto:incident@CenturyLink.com) with details and screenshots where possible.
-
-For issues related to API calls, send the request body along with details related to the issue.
-
-In the case of a box error, share the box in the workspace that your organization and Cloud Application Manager can access and attach the logs.
-* Linux: SSH and locate the log at /var/log/elasticbox/elasticbox-agent.log
-* Windows: RDP into the instance to locate the log at ProgramDataElasticBoxLogselasticbox-agent.log
