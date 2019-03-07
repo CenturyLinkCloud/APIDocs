@@ -263,7 +263,7 @@ To add an Azure subscription in Cloud Application Manager, you first have to upl
    "icon": "images/platform/azure-storage.png",
    "type": "Microsoft Azure",
    "description": "Manage compute services for Windows and Linux machines.",
-   "schema": "http://elasticbox.net/schemas/azure/provider",
+   "schema": "http://elasticbox.net/schemas/azure-arm/provider",
    "name": "example azure",
    "owner": "mrina",
    "subscription_id": "",
