@@ -35,6 +35,7 @@
 | [PUT /services/instances/{instance_id}/reconfigure](#put-servicesinstancesinstance_idreconfigure) | Re-configure an existing instance. |
 | [PUT /services/instances/{instance_id}/import](#put-servicesinstancesinstance_idimport) | Retry to import an unregistered instance. |
 | [PUT /services/instances/{instance_id}/cancel_import](#put-servicesinstancesinstance_idcancel_import) | Cancel a failed import of an unregistered instance. |
+| [PUT /services/instances/{instance_id}/abort_operation](#put-servicesinstancesinstance_idabort_operation) | Abort executing scripts of a processing instance operation. |
 
 ## GET /services/instances
 Gets instances that are accessible in the personal workspace of the authenticated user.
@@ -2956,3 +2957,47 @@ ElasticBox-Release: 4.0
   "method":"cancel_import"
 }
 ```
+
+## PUT /services/instances/{instance_id}/abort_operation
+
+Abort a processing operation executing scripts on an instance when you give its ID.
+The instance has to be on processiong state and running event scripts.
+Also edit permissions on the instance are required.
+
+### URL
+
+#### Structure
+
+```
+[PUT] /services/instances/{instance_id}/abort_operation
+```
+
+#### Example
+
+```
+[PUT] https://cam.ctl.io/services/instances/i-ndt46z/abort_operation
+```
+
+### Request
+
+#### Headers
+```
+Content-Type: application/json
+Authorization: Bearer your_json_web_token
+ElasticBox-Release: 4.0
+```
+
+#### URI Parameters
+| Parameter | Type | Description | Req.|
+|-----------|------|------------|----|
+| instance_id | string | Instance id | Yes |
+
+### Response
+#### Normal Response Codes
+
+- **200** OK
+
+#### Common Error Response Codes
+
+- **403** Forbidden
+- **404** Not Found
