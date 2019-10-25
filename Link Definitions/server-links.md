@@ -16,7 +16,6 @@ The following link definitions are related to the servers resource. They may be 
 | --- | --- | --- |
 | alertPolicyMap | Retrieve or modify the given alert policy for the given server. | GET / DELETE |
 | alertPolicyMappings | Retrieve or modify the list of alert policies for the given server. | GET / PUT / DELETE |
-| antiAffinityPolicyMapping | Retrieve or modify the anti-affinity policy for the given server. | GET / PUT / DELETE |
 | billing | Retrieve billing information for the given server. | GET |
 | capabilities | Retrieve the supported capabilities listing for the given server. | GET |
 | cpuAutoscalePolicyMapping | Retrieve or modify the vertical autoscale policy for the given server. | GET / PUT / DELETE |
