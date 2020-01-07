@@ -3,7 +3,6 @@
     "Getting Started",
     "Link Definitions",
     "Alert Policies",
-    "Anti-Affinity Policies",
     "Authentication",
     "Autoscale Policies",
     "Billing",
