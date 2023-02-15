@@ -298,7 +298,3 @@ A: As soon as the event occurs in the CenturyLink Cloud platform, it is routed t
 **Q: What happens if the destination is unreachable?**
 
 A: There is no guaranteed delivery with CenturyLink Cloud Webhooks. We make a single attempt to send a message to the designated endpoint and if it fails, it is not retried. This means two things: (1) design your endpoints to be highly available and withstand failures of any single component in the solution, and (2) rely on a combination of Webhooks and daily web service API calls to ensure that your local repositories stay in sync.
-
-**Q: Are there more Webhooks on the way?**
-
-A: Yes! We have ideas for additional Webhooks to add to the platform, but would like to hear from you. If you have suggestions for other Webhooks, send an email to [features@ctl.io](mailto:features@ctl.io).
