@@ -52,7 +52,7 @@ Follow these steps to get a token from your Cloud Application Manager account.
 
 * You can create and use up to 50 tokens.
 * Tokens never expire. To invalidate an API call, simply delete the token that’s used.
-* When making API calls to the [Providers resource](../CAM Platform/api-providers.md), additional provider token limits may apply. To learn about these limits, check your provider documentation.
+* When making API calls to the Providers resource, additional provider token limits may apply. To learn about these limits, check your provider documentation.
 
 ### ElasticBox-Release
 
@@ -72,7 +72,7 @@ ElasticBox-Release: 4.0
 
 ### Contacting Cloud Application Manager Support
 
-We’re sorry you’re having an issue in [Cloud Application Manager](https://www.ctl.io/cloud-application-manager/). Please review the [troubleshooting tips](https://www.ctl.io/knowledge-base/cloud-application-manager/troubleshooting/troubleshooting-tips/), or contact [Cloud Application Manager support](mailto:incident@CenturyLink.com) with details and screenshots where possible.
+We’re sorry you’re having an issue in [Cloud Application Manager](https://www.ctl.io/cloud-application-manager/). Please contact [Cloud Application Manager support](mailto:incident@lumen.com) with details and screenshots where possible.
 
 For issues related to API calls, send the request body along with details related to the issue.
 

@@ -10,9 +10,9 @@
 
 | Resource | Description |
 |----------|-------------|
-| [POST /services/blobs/upload](#post-servicesblobsupload) | Uploads a file using multi-part form data |
-| [POST /services/blobs/upload/{file_name}](#post-servicesblobsuploadfile_name) | Creates a blob from submitted data |
-| [GET /services/blobs/download/{file_id}/{file_name}](#get-servicesblobsdownloadfile_idfile_name) | Downloads a file uploaded previously |
+| POST /services/blobs/upload | Uploads a file using multi-part form data |
+| POST /services/blobs/upload/{file_name} | Creates a blob from submitted data |
+| GET /services/blobs/download/{file_id}/{file_name} | Downloads a file uploaded previously |
 
 ## POST /services/blobs/upload
 Uploads a file using multi-part form data.
@@ -177,7 +177,7 @@ The file
 
 ### Contacting Cloud Application Manager Support
 
-We’re sorry you’re having an issue in [Cloud Application Manager](https://www.ctl.io/cloud-application-manager/). Please review the [troubleshooting tips](https://www.ctl.io/knowledge-base/cloud-application-manager/troubleshooting/troubleshooting-tips/), or contact [Cloud Application Manager support](mailto:incident@CenturyLink.com) with details and screenshots where possible.
+We’re sorry you’re having an issue in [Cloud Application Manager](https://www.ctl.io/cloud-application-manager/). Please contact [Cloud Application Manager support](mailto:incident@lumen.com) with details and screenshots where possible.
 
 For issues related to API calls, send the request body along with details related to the issue.
 
