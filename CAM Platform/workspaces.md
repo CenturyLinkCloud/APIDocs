@@ -774,7 +774,7 @@ ElasticBox-Release: 4.0
 | id | string | Instance id |
 | is_deploy_only | boolean | If the instance is deploy only |
 | machine | object | Machine contained in the service machines list |
-| machine.name | string | Machine name |
+| machine&#8203;.name | string | Machine name |
 | machine.state | string | Machine state, there are three possible states: processing, done and unavailable |
 | machine.workflow | array | List of workflow actions, each workflow action object contains three parameters: box, event and script |
 | members | array | List of members with access to the instance |
@@ -783,7 +783,7 @@ ElasticBox-Release: 4.0
 | policy_box | object | Instance policy box |
 | schema | string | Instance schema uri |
 | service | object | Instance service |
-| service.id | string | Service id |
+| service&#8203;.id | string | Service id |
 | service.machines | array | List of service machines |
 | service.type | string | Required. Can be one of these types: Linux Compute, Windows Compute and CloudFormation Service |
 | state | string | Instance state, there are three possible states: processing, done and unavailable |

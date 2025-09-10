@@ -87,7 +87,7 @@ ElasticBox-Release: 4.0
 #### Amazon Web Services Gov request parameters
 |  Parameter  |      Type     |   Description   |
 |-------------|---------------|-----------------|
-| credentials | object | Required (key-secret or role). Contains the credential object, which is either the [AWS role ARN name](https://www.ctl.io/knowledge-base/cloud-application-manager/deploying-anywhere/using-your-aws-account/) if using Cloud Application Manager as a SaaS or the key and secret if using Cloud Application Manager as an appliance. |
+| credentials | object | Required (key-secret or role). Contains the credential object, which is either the AWS role ARN name if using Cloud Application Manager as a SaaS or the key and secret if using Cloud Application Manager as an appliance. |
 
 #### Amazon Web Services Gov request body
 ```

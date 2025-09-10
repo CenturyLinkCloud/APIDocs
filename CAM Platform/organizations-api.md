@@ -12,7 +12,7 @@
 | Resource | Description |
 |----------|-------------|
 | GET /services/organizations/{organization_name} | Gets the organization document |
-| [GET /services/organizations/{organization_name}/boxes](#get-servicesorganizationsorganization_nameboxes) | Get the boxes of the given organization. |
+| GET /services/organizations/{organization_name}/boxes | Get the boxes of the given organization. |
 | GET /services/organizations/{organization_name}/instances | Get the instances of the given organization. |
 | GET /services/organizations/{organization_name}/providers | Get the providers of the given organization. |
 | GET /services/organizations/{organization_name}/workspaces | Get the workspaces of the given organization. |
