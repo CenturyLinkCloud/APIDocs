@@ -9,15 +9,15 @@
 
 **In this article**
 
-* [Overview](#overview)
-* [Authenticate with Cloud Application Manager](#authenticate-with-cloud-application-manager)
-* [Obtain Deployment Variables](#obtain-deployment-variables)
-* [Register a Provider in Cloud Application Manager](#register-a-provider-in-cloud-application-manager)
-* [Create a Deployment Policy Box](#create-a-deployment-policy-box)
-* [Create a Custom Box](#create-a-custom-box)
-* [Deploy the Instance](#deploy-the-instance)
-* [Terminate and Delete the Instance](#terminate-and-delete-the-instance)
-* [Contacting Cloud Application Manager Support](#contacting-cloud-application-manager-support)
+* Overview
+* Authenticate with Cloud Application Manager
+* Obtain Deployment Variables
+* Register a Provider in Cloud Application Manager
+* Create a Deployment Policy Box
+* Create a Custom Box
+* Deploy the Instance
+* Terminate and Delete the Instance
+* Contacting Cloud Application Manager Support
 
 ## Overview
 
@@ -35,8 +35,8 @@ Now let’s look at the script in sections to understand how you can make API ca
 
 ## Authenticate with Cloud Application Manager
 
-First of all, you need to hold the administrator role on a workspace to be able to run these steps. You must obtain [Administrator access](https://www.ctl.io/knowledge-base/cloud-application-manager/administering-your-organization/admin-access/) to Cloud Application Manager.  
-Before calling to the API you have to sign in into the Cloud Application Manager website and [get an authentication token](https://www.ctl.io/api-docs/cam/#getting-started). You will use this token as an authentication HTTP header to perform every call to the Cloud Application Manager API.
+First of all, you need to hold the administrator role on a workspace to be able to run these steps. You must obtain Administrator access to Cloud Application Manager.  
+Before calling to the API you have to sign in into the Cloud Application Manager website and get an authentication token. You will use this token as an authentication HTTP header to perform every call to the Cloud Application Manager API.
 
 ## Obtain Deployment Variables
 
@@ -45,8 +45,8 @@ Next, define the variables that will contain the parameters of the script. This 
 | Variable | Description |
 |----------|-------------|
 | provider_key | You need the provider account key and secret to register a provider. |
-| provider_secret | See below how to [register a provider](#Register-a-Provider-in-Cloud-Application-Manager) and get its parameters. |
-| json_web_token | This is the [authentication token](#Authenticate-with-Cloud-Application-Manager) obtained before.<br>It's a long BASE64 encoded string that starts with something like:<br/>  *eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJvcGVyYb25z...* |
+| provider_secret | See below how to register a provider and get its parameters. |
+| json_web_token | This is the authentication token obtained before.<br>It's a long BASE64 encoded string that starts with something like:<br/>  *eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJvcGVyYb25z...* |
 | environment | Set your URL organization hostname or your appliance IP, where API calls are sent.<br>Examples are:  *cam.ctl.io*, *your-organization.cam.ctl.io*, *192.168.1.10*. |
 | owner | Specify the user ID in Cloud Application Manager who owns the provider account. |
 
@@ -73,11 +73,11 @@ There are other variables obtained during the script execution and necessary in 
 
 A provider is a public or private cloud account you can register in Cloud Application Manager. 
 
-To register a provider send a POST request to the [Providers endpoint](https://www.ctl.io/api-docs/cam/#cam-platform-providers-api) with the required parameters.
+To register a provider send a POST request to the Providers endpoint with the required parameters.
 
 This example follows the steps to create an AWS provider in a Cloud Application Manager appliance. It will be necessary a key and the secret pair.    
 Creating it in an organization service requieres a role ARN as credential instance of a key pair.  
-Other provider types require different credential sets that you can check in the [Providers endpoint](https://www.ctl.io/api-docs/cam/#cam-platform-providers-api) API doc.
+Other provider types require different credential sets that you can check in the Providers endpoint API doc.
 
 If there’s an error registering the provider, it outputs the error. Else, it outputs the provider ID and saves it in *provider_id* variable.
 
@@ -116,7 +116,7 @@ fi;
 
 A deployment policy box contains the settings to deploy applications in a specific virtual environment. For AWS, it contains details about the region, VPC, security groups, etc.
 
-To create a deployment policy box send a POST request to the [Boxes endpoint](https://www.ctl.io/api-docs/cam/#application-lifecycle-management-boxes-api) with the provider ID obtained when registering the provider in the *provider_id* variable. 
+To create a deployment policy box send a POST request to the Boxes endpoint with the provider ID obtained when registering the provider in the *provider_id* variable. 
 
 If there’s an error in creating the deployment policy box, it outputs the error. Else, it outputs the created deployment policy box ID and saves it in *policy_box_id* variable.
 
@@ -171,9 +171,9 @@ fi;
 
 A script box defines the behavior of your application during deployment, reconfiguration and termination.
 
-To create a box send a POST request to the [Boxes endpoint](https://www.ctl.io/api-docs/cam/#application-lifecycle-management-boxes-api). 
+To create a box send a POST request to the Boxes endpoint. 
 
-Also use two already created blobs. You can take a look to the [Blobs endpoint](https://www.ctl.io/api-docs/cam/#application-lifecycle-management-blobs-api), API documentation if you need to know how you can create them.
+Also use two already created blobs. You can take a look to the Blobs endpoint, API documentation if you need to know how you can create them.
 
 If there’s an error creating this box, it outputs the error. Else, it outputs the box ID and saves it in *box_id* variable.
 
@@ -238,7 +238,7 @@ fi;
 
 ## Deploy the Instance
 
-To deploy an instance of the previous box, send a POST request to the [Instances endpoint](https://www.ctl.io/api-docs/cam/#application-lifecycle-management-instances-api) with the box ID obtained when creating the box in the *box_id* variable and the policy box ID obtained when creating the policy box in the *policy_box_id* variable.
+To deploy an instance of the previous box, send a POST request to the Instances endpoint with the box ID obtained when creating the box in the *box_id* variable and the policy box ID obtained when creating the policy box in the *policy_box_id* variable.
 
 If there’s an error deploying the instance, it outputs the error. Else, it outputs the deployed instance ID and saves it in *instance_id* variable.
 
@@ -286,11 +286,11 @@ fi;
 
 Removing the instance from the virtual machine must be done into two steps: first, terminate the instance and second, delete it.
 
-Terminate runs the stop and terminate events scripts, and then removes the cloud resources, but does not remove the instance from the Cloud Application Manager database. Send a DELETE request to the [Instances endpoint](https://www.ctl.io/api-docs/cam/#application-lifecycle-management-instances-api) with the instance ID obtained when deploying the instance in the *instance_id* variable and with an `operation=terminate` URL parameter.
+Terminate runs the stop and terminate events scripts, and then removes the cloud resources, but does not remove the instance from the Cloud Application Manager database. Send a DELETE request to the Instances endpoint with the instance ID obtained when deploying the instance in the *instance_id* variable and with an `operation=terminate` URL parameter.
 
  Then check its response status. If it’s 200, the specific instance has been terminated. Else, check the error state from the response.
 
- You can force terminate it using `operation=force_terminate` URL parameter. See detailed [DELETE API command](https://www.ctl.io/api-docs/cam/#application-lifecycle-management-instances-api-delete--services-instances--instance_id-) in Instances API.
+ You can force terminate it using `operation=force_terminate` URL parameter. See detailed DELETE API command in Instances API.
 
 Add the following lines to the script:
 ```
@@ -316,7 +316,7 @@ Afterwards, send a DELETE command again with an `operation=delete` URL parameter
 
 ## Contacting Cloud Application Manager Support
 
-We’re sorry you’re having an issue in [Cloud Application Manager](https://www.ctl.io/cloud-application-manager/). Please review the [troubleshooting tips](https://www.ctl.io/knowledge-base/cloud-application-manager/troubleshooting/troubleshooting-tips/), or contact [Cloud Application Manager support](mailto:incident@CenturyLink.com) with details and screenshots where possible.
+We’re sorry you’re having an issue in [Cloud Application Manager](https://www.ctl.io/cloud-application-manager/). Please contact [Cloud Application Manager support](mailto:incident@lumen.com) with details and screenshots where possible.
 
 For issues related to API calls, send the request body along with details related to the issue.
 

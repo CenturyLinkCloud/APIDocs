@@ -13,32 +13,32 @@ Manage and perform actions on boxes.
 
 | Resource | Description |
 |----------|-------------|
-| [GET /services/boxes](#get-servicesboxes) | Gets the list of boxes that are accessible in the personal workspace. |
-| [POST /services/boxes](#post-servicesboxes) | Creates a new box. |
+| GET /services/boxes | Gets the list of boxes that are accessible in the personal workspace. |
+| POST /services/boxes | Creates a new box. |
 
 **Perform Box Operations**
 
 | Resource | Description |
 |----------|-------------|
-| [GET /services/boxes/{box_id}](#get-servicesboxesbox_id) | Fetches an existing box. |
-| [PUT /services/boxes/{box_id}](#put-servicesboxesbox_id) | Updates an existing box. |
-| [DELETE /services/box/{box_id}](#delete-servicesboxesbox_id) | Deletes an existing box. |
-| [GET /services/boxes/{box_id}/stack](#get-servicesboxesbox_idstack) | Gets the box stack. |
-| [GET /services/boxes/{box_id}/bindings](#get-servicesboxesbox_idbindings) | Gets the box bindings. |
-| [GET /services/boxes/{box_id}/versions](#get-servicesboxesbox_idversions) | Get the list of box versions. |
-| [PUT /services/boxes/{box_id}/diff](#put-servicesboxesbox_iddiff)  | Get the diff between two boxes. |
+| GET /services/boxes/{box_id} | Fetches an existing box. |
+| PUT /services/boxes/{box_id} | Updates an existing box. |
+| DELETE /services/box/{box_id} | Deletes an existing box. |
+| GET /services/boxes/{box_id}/stack | Gets the box stack. |
+| GET /services/boxes/{box_id}/bindings | Gets the box bindings. |
+| GET /services/boxes/{box_id}/versions | Get the list of box versions. |
+| PUT /services/boxes/{box_id}/diff | Get the diff between two boxes. |
 
 **CloudFormation Box**
 
-The Cloud Application Manager CloudFormation box runs on the AWS CloudFormation service. It lets you create and customize templates that you can launch as a single stack of combined services in AWS. Manage CloudFormation configurations in Cloud Application Manager using these [API actions](./api-boxes.md).
+The Cloud Application Manager CloudFormation box runs on the AWS CloudFormation service. It lets you create and customize templates that you can launch as a single stack of combined services in AWS.
 
 Some examples include:
 | Example |
 |----------|
-| [Create a CloudFormation box with template](#example-create-a-CloudFormation-box-with-template) |
-| [Modify the CloudFormation Template](#example-modify-the-cloudFormation-template) |
-| [Launch a CloudFormation Box](#example-launch-a-cloudFormation-box) |
-| [Update a CloudFormation Stack in Real-Time](#example-update-a-cloudFormation-stack-in-real-time) |
+| Create a CloudFormation box with template |
+| Modify the CloudFormation Template |
+| Launch a CloudFormation Box |
+| Update a CloudFormation Stack in Real-Time |
 
 
 ## GET /services/boxes
@@ -2220,55 +2220,54 @@ ElasticBox-Release: 4.0
 
 ### Create a CloudFormation box with template
 
-1. [POST /services/boxes](./api-boxes.md)
+1. POST /services/boxes
 Creates a box of the CloudFormation service type. See example create a CloudFormation.
 
-2. [GET /services/blobs/download/{file_id}/{file_name}](./api-blobs.md)
+2. GET /services/blobs/download/{file_id}/{file_name}
 Fetches contents from a given file or URL. See example create a CloudFormation, part 2.
 Submits a blank JSON template as a blob.
 
-3. [POST /services/blobs/upload/{file_name}](./api-blobs.md)
+3. POST /services/blobs/upload/{file_name}
 Creates a blob from template data submitted through a file or URL. Here template data is in the request body. See example create a CloudFormation, part 3.
 
-4. [PUT /services/boxes/{box_id}](./api-boxes.md)
+4. PUT /services/boxes/{box_id}
 Updates the CloudFormation box with the template. See example create a CloudFormation, part 4.
 
 ###  Modify the CloudFormation Template
 
-1. [POST /services/blobs/upload/{file_name}](./api-blobs.md)
+1. POST /services/blobs/upload/{file_name}
 Creates a blob from modified template data. See example modify a CloudFormation.
 
-2. [PUT /services/boxes/{box_id}](./api-boxes.md)
+2. PUT /services/boxes/{box_id}
 Updates the CloudFormation box. See example modify a CloudFormation, part 2.
 
 ###  Delete a CloudFormation Box
 
-1. [DELETE /services/box/{box_id}](./api-blobs.md)
+1. DELETE /services/box/{box_id}
 Removes the CloudFormation box from the boxes catalog.
 
 ### Launch a CloudFormation Box
 
-1. [POST /services/profiles](./api-blobs.md)
+1. POST /services/profiles
 This step is optional. Passes deployment settings in a new deployment profile to launch the box in the provider’s infrastructure. See example launch a CloudFormation.
 
-2. [POST /services/instances](./instances-api.md)
+2. POST /services/instances
 Creates a new instance of the CloudFormation box.
 
 ### Update a CloudFormation Stack in Real-Time
 
-1. [POST /services/blobs/upload](./api-blobs.md)
+1. POST /services/blobs/upload
 Uploads the modified template data. See example update a CloudFormation.
 
-2. [PUT /services/instances/{instance_id}](./instances-api.md)
+2. PUT /services/instances/{instance_id}
 Updates the instance with the template changes. See example update a CloudFormation part 2.
 
-3. [PUT /services/instances/{instance_id}/reconfigure](./instances-api.md)
+3. PUT /services/instances/{instance_id}/reconfigure
 Reconfigures the stack based on the changes. See example update a CloudFormation part 3.
 
 ## Example: Create a CloudFormation box with template
 
-**1. POST https://cam.ctl.io/services/boxes/**
-
+**1. POST `https://cam.ctl.io/services/boxes/`**
 Creating a box of the CloudFormation service type.
 
 ### Request
@@ -2314,7 +2313,7 @@ ElasticBox-Release: 4.0
 
 ```
 
-**2. GET https://cam.ctl.io/services/blobs/download/{blob_id}/file_name**
+**2. GET `https://cam.ctl.io/services/blobs/download/{blob_id}/file_name`**
 
 Fetches contents from a given URL. Once we have checked that the template is the right one, we could assign it to the CloudFormation box.
 
@@ -2369,7 +2368,7 @@ ElasticBox-Release: 4.0
 }
 ```
 
-**3. POST https://cam.ctl.io/services/blobs/upload/template.json**
+**3. POST `https://cam.ctl.io/services/blobs/upload/template.json`**
 
 Another option is to create the template from the data submitted through a URL.
 
@@ -2434,7 +2433,7 @@ ElasticBox-Release: 4.0
 }
 ```
 
-**4. PUT https://cam.ctl.io/services/boxes/{box_id}**
+**4. PUT `https://cam.ctl.io/services/boxes/{box_id}`**
 
 Finally we are going to update the CloudFormation box with one of the templates we have obtained in the last two steps.
 
@@ -2515,7 +2514,7 @@ ElasticBox-Release: 4.0
 
 ### Example: Modify the CloudFormation Template
 
-**1. POST http://cam.ctl.io/services/blobs/upload/template.json**
+**1. POST `http://cam.ctl.io/services/blobs/upload/template.json`**
 
 Creates a blob from modified template data.
 
@@ -2579,7 +2578,7 @@ ElasticBox-Release: 4.0
 }
 ```
 
-**2. PUT http://cam.ctl.io/services/boxes/{box_id}**
+**2. PUT `http://cam.ctl.io/services/boxes/{box_id}`**
 
 Updates the CloudFormation box.
 
@@ -2661,7 +2660,7 @@ ElasticBox-Release: 4.0
 
 ### Example: Launch a CloudFormation Box
 
-**1. POST https://cam.ctl.io/services/instances**
+**1. POST `https://cam.ctl.io/services/instances`**
 
 Creates a new instance of the CloudFormation box.
 
@@ -2830,7 +2829,7 @@ ElasticBox-Release: 4.0
 
 ### Example: Update a CloudFormation Stack in Real-Time
 
-**1. POST http://cam.ctl.io/services/blobs/upload/simple_template.json**
+**1. POST `http://cam.ctl.io/services/blobs/upload/simple_template.json`**
 
 Uploads the modified template data.
 
@@ -2867,7 +2866,7 @@ ElasticBox-Release: 4.0
 }
 ```
 
-**2. PUT http://cam.ctl.io/services/instances/{instance_id}**
+**2. PUT `http://cam.ctl.io/services/instances/{instance_id}`**
 
 Updates the instance with the template changes.
 
@@ -3121,7 +3120,7 @@ ElasticBox-Release: 4.0
 }
 ```
 
-**3. PUT http://cam.ctl.io/services/instances/{instance_id}/reconfigure**
+**3. PUT `http://cam.ctl.io/services/instances/{instance_id}/reconfigure`**
 
 Reconfigures the stack based on the changes.
 

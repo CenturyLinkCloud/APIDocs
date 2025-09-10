@@ -11,10 +11,10 @@
 
 | Resource | Description |
 |----------|-------------|
-| [POST /services/costcenters](#post-servicescostcenters) | Creates a Cost Center. |
-| [GET /services/costcenters/{costcenter_id}](#get-servicescostcenters) |  Fetches an existing Cost Center. |
-| [PUT /services/costcenters/{costcenter_id}](#put-servicescostcenters) | Updates an existing Cost Center.|
-| [DELETE /services/costcenters/{costcenter_id}](#delete-servicescostcenters) | Deletes an existing Cost Center.|
+| POST /services/costcenters | Creates a Cost Center. |
+| GET /services/costcenters/{costcenter_id} |  Fetches an existing Cost Center. |
+| PUT /services/costcenters/{costcenter_id} | Updates an existing Cost Center.|
+| DELETE /services/costcenters/{costcenter_id} | Deletes an existing Cost Center.|
 
 ## POST /services/costcenters
 
@@ -48,7 +48,7 @@ ElasticBox-Release: 4.0
 |------|------|------------|------|
 | name | string | Cost Center name. | Yes  |
 | organization | string | Name of the organization with access to the Cost Center. | Yes |
-| schema | string | Cost Center schema. Always “http://elasticbox.net/schemas/costcenter” | Yes  |
+| schema | string | Cost Center schema. | Yes |
 | members | array | Members' id list of the Cost Center as Administrators. | No |
 
 ##### Members list parameters
@@ -98,10 +98,9 @@ Elasticbox-Release: 4.0.0
 | created | string | Creation date. Example “2015-07-02 10:23:47.748740” |
 | deleted | object | Identifies whether the Cost Center is deleted; *null* for existing objects. |
 | id | string | Cost Center unique identifier. |
-| members | array | Members' list of a Cost Center. See [Member parameters](#members-list-parameters) |
+| members | array | Members' list of a Cost Center. |
 | name | string | Cost Center name |
 | organization | string | Organization which the Cost Center belongs to. |
-| schema | string | Schema URI. http://elasticbox.net/schemas/costcenter. |
 | updated | string | Date of the last update. Example “2018-10-30 16:03:14.409029” |
 | uri | string | Cost Center URI. |
 
@@ -178,10 +177,9 @@ ElasticBox-Release: 4.0
 | created | string | Creation date. Example “2015-07-02 10:23:47.748740” |
 | deleted | object | Identifies whether the Cost Center is deleted. |
 | id | string | Cost Center unique identifier. |
-| members | array | Members' list of a Cost Center. See [Member parameters](#members-list-parameters) |
+| members | array | Members' list of a Cost Center. |
 | name | string | Cost Center name |
 | organization | string | Organization which the Cost Center belongs to. |
-| schema | string | Schema URI. http://elasticbox.net/schemas/costcenter. |
 | updated | string | Date of the last update. Example “2018-10-30 16:03:14.409029” |
 | uri | string | Cost Center URI. |
 
@@ -245,10 +243,9 @@ ElasticBox-Release: 4.0
 | Name | Type | Description | Req. |
 |------| ---- | ----------- | ---- |
 | id | string | Cost Center unique identifier. | Yes |
-| members | array | Members' list of the Cost Center. See [Member parameters](#members-list-parameters) | Yes |
+| members | array | Members' list of the Cost Center. | Yes |
 | name | string | Cost Center name. | Yes |
 | organization | string | Organization which the Cost Center belongs to. | Yes |
-| schema | string | Schema URI. http://elasticbox.net/schemas/costcenter. | Yes |
 | icon_metadata | string | Icon used for the Cost Center account.. | No |
 
 **Note:**
@@ -291,7 +288,7 @@ Elasticbox-Release: 4.0.0
 
 #### Response Body
 
-* See response in [GET command](#get-servicescostcenters).
+* See response in GET command.
 
 
 
