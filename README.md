@@ -108,3 +108,4 @@ TODO: REVERT THIS
 #### Ignoring Files
 
 If a file contains a link that the commit analyzer catches as being invalid (such as in a code sample), and you'd like the analyzer to ignore that file, you can add the filename to `commit_analyzer_ignore.txt`. (It isn't necessary to include the entire file path; just the filename will suffice.) Each new file should be separated by a new line.
+_____________________________________________________
