@@ -35,10 +35,10 @@ The Cloud Application Manager CloudFormation box runs on the AWS CloudFormation 
 Some examples include:
 | Example |
 |----------|
-| [Create a CloudFormation box with template](#create-a-cloudformation-box-with-template) |
-| [Modify the CloudFormation Template](#modify-the-cloudformation-template) |
-| [Launch a CloudFormation Box](#launch-a-cloudformation-box) |
-| [Update a CloudFormation Stack in Real-Time](#update-a-cloudformation-stack-in-real-time) |
+| Create a CloudFormation box with template |
+| Modify the CloudFormation Template |
+| Launch a CloudFormation Box |
+| Update a CloudFormation Stack in Real-Time |
 
 
 ## GET /services/boxes
