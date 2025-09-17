@@ -13,12 +13,12 @@
 
 This guide shows **how to deploy a mongoDB instance using the Cloud Application Manager API**. In this sample, we deploy a MongoDB instance using the existing MongoDB public box, the steps you need are:
 
-* [Authenticate with Cloud Application Manager](#authenticate-with-cloud-application-manager)
-* [Declare Deployment Arguments](#declare-deployment-arguments)
-* [Register a Provider in Cloud Application Manager](#register-a-provider-in-cloud-application-manager)
-* [Create a Deployment Policy Box](#create-a-deployment-policy-box)
-* [Deploy a MongoDB Instance](#deploy-a-mongodb-instance)
-* [Terminate the Instance](#terminate-the-instance)
+* Authenticate with Cloud Application Manager
+* Declare Deployment Arguments
+* Register a Provider in Cloud Application Manager
+* Create a Deployment Policy Box
+* Deploy a MongoDB Instance
+* Terminate the Instance
 
 **Note:** We use cURL commands to send HTTP requests to the API objects in JSON. JSON is the required format for all API requests and responses.
 
@@ -26,9 +26,9 @@ Now let’s look at the script in sections to understand how you can make API ca
 
 ## Authenticate with Cloud Application Manager
 
-First of all, you should be Administrator on the target workspace or have [Administrator access](https://www.ctl.io/knowledge-base/cloud-application-manager/administering-your-organization/admin-access/) to your organization in Cloud Application Manager.
+First of all, you should be Administrator on the target workspace or have Administrator access to your organization in Cloud Application Manager.
 
-Before calling to the API you have to log in into the Cloud Application Manager website and [get an authentication token](https://www.ctl.io/api-docs/cam/#getting-started). You will use this token later as an http header to perform every call to the Cloud Application Manager API.
+Before calling to the API you have to log in into the Cloud Application Manager website and get an authentication token. You will use this token later as an http header to perform every call to the Cloud Application Manager API.
 
 ## Declare Deployment Arguments
 
@@ -36,10 +36,10 @@ Next variables are set with script calling parameters. This way, each time you r
 
 | Variable |     Type    |  Description  |
 |----------|-------------|---------------|
-| provider_key<br>provider_secret | string | We will need the provider account key and secret to register a provider.<br>See below how to [register a provider](#Register-a-Provider-in-Cloud-Application-Manager) and get its parameters. |
-| json_web_token | string | This is the [authentication token](#Authenticate-with-Cloud-Application-Manager) obtained before.<br>An example is *eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJvcGVyYb25z...* |
+| provider_key<br>provider_secret | string | We will need the provider account key and secret to register a provider.<br>See below how to register a provider and get its parameters. |
+| json_web_token | string | This is the authentication token obtained before.<br>An example is *eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJvcGVyYb25z...* |
 | environment | string | Set your URL organization hostname or your appliance IP, where API calls are sent.<br>Examples are:  *cam.ctl.io* (if you are using CAM SaaS edition), *192.168.1.10* (for a local CAM appliance). |
-| owner | string | Specify the user ID in Cloud Application Manager who owns the provider account. You can retrieve it from the [GET provider](../CAM Platform/api-providers.md#get-servicesproviders) API call, in the returned `owner` field. |
+| owner | string | Specify the user ID in Cloud Application Manager who owns the provider account. You can retrieve it from the [GET provider] API call, in the returned `owner` field. |
 | username | string | Name of the admin user. |
 | password | string | Password of the admin user. |
 
@@ -70,9 +70,9 @@ There are other variables obtained during the script execution and necessary in 
 
 A provider is a public or private cloud account you can register in Cloud Application Manager.
 
-To register a provider we send a POST request to the [Provider object](https://www.ctl.io/api-docs/cam/#cam-platform-providers-api) with the required parameters.
+To register a provider we send a POST request to the [Provider object] with the required parameters.
 
-In this case, we choose to create an AWS as provider in the appliance. From the AWS account credentials we will need the key and the secret right now. Creating it in an organization service requires ARN code as credential. You can obtain the required parameters for other providers in [Provider object](https://www.ctl.io/api-docs/cam/#cam-platform-providers-api) API doc.
+In this case, we choose to create an AWS as provider in the appliance. From the AWS account credentials we will need the key and the secret right now. Creating it in an organization service requires ARN code as credential. You can obtain the required parameters for other providers in [Provider object] API doc.
 
 If there’s an error registering the provider, we output the error. Else, we output the provider ID and save it in *provider_id* variable.
 
@@ -113,7 +113,7 @@ fi;
 
 A deployment policy box is where you specify settings to deploy applications in a specific virtual environment.
 
-To create a deployment policy box we send a POST request to the [Box object](https://www.ctl.io/api-docs/cam/#application-lifecycle-management-boxes-api) with the provider ID obtained when registering the provider in the *provider_id* variable.
+To create a deployment policy box we send a POST request to the [Box object] with the provider ID obtained when registering the provider in the *provider_id* variable.
 
 If there’s an error in creating the deployment policy box, we output the error. Else, we output the created deployment policy box ID and save it in *policy_box_id* variable.
 
@@ -167,7 +167,7 @@ fi;
 
 ### Deploy a MongoDB Instance
 
-To deploy a MongoDB instance using the existing MongoDB public box, we send a POST request to the [Instances object](https://www.ctl.io/api-docs/cam/#application-lifecycle-management-instances-api) with the box ID of the MongoDB box  *mongo_box_id* variable and the policy box ID obtained when creating the policy box in the *policy_box_id* variable.
+To deploy a MongoDB instance using the existing MongoDB public box, we send a POST request to the [Instances object] with the box ID of the MongoDB box  *mongo_box_id* variable and the policy box ID obtained when creating the policy box in the *policy_box_id* variable.
 
 If there’s an error deploying instance, we output the error. Else, we output the deployed instance ID and save it in *instance_id* variable.
 
@@ -327,7 +327,7 @@ fi
 
 ### Contacting Cloud Application Manager Support
 
-We’re sorry you’re having an issue in [Cloud Application Manager](https://www.ctl.io/cloud-application-manager/). Please review the [troubleshooting tips](https://www.ctl.io/knowledge-base/cloud-application-manager/troubleshooting/troubleshooting-tips/), or contact [Cloud Application Manager support](mailto:incident@CenturyLink.com) with details and screenshots where possible.
+We’re sorry you’re having an issue in [Cloud Application Manager](https://www.ctl.io/cloud-application-manager/). Please contact [Cloud Application Manager support](mailto:incident@lumen.com) with details and screenshots where possible.
 
 For issues related to API calls, send the request body along with details related to the issue.
 

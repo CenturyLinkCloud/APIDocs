@@ -13,19 +13,19 @@ Manage and perform actions on workspaces.
 
 | Resource |Description |
 |----------|------------|
-| [GET /services/workspaces](#get-servicesworkspaces) | Gets the list of workspaces |
-| [POST /services/workspace](#post-servicesworkspace) | Creates a new team workspace |
+| GET /services/workspaces | Gets the list of workspaces |
+| POST /services/workspace | Creates a new team workspace |
 
 **Perform Other Workspace Operations**
 
 | Parameter | Description |
 |-----------|-------------|
-| [GET /services/workspaces/{workspace_id}](#get-servicesworkspacesworkspace_id) | Fetches an existing workspace |
-| [PUT /services/workspaces/{workspace_id}](#put-servicesworkspacesworkspace_id) | Updates an existing workspace |
-| [DELETE /services/workspaces/{workspace_id}](#delete-servicesworkspacesworkspace_id) | Deletes an existing workspace |
-| [GET /services/workspaces/{workspace_id}/providers](#get-servicesworkspacesworkspace_idproviders) | Gets the cloud providers registered in a workspace |
-| [GET /services/workspaces/{workspace_id}/boxes](#get-servicesworkspacesworkspace_idboxes) | Gets the boxes in a workspace |
-| [GET /services/workspaces/{workspace_id}/instances](#get-servicesworkspacesworkspace_idinstances) | Gets the instances in a workspace |
+| GET /services/workspaces/{workspace_id} | Fetches an existing workspace |
+| PUT /services/workspaces/{workspace_id} | Updates an existing workspace |
+| DELETE /services/workspaces/{workspace_id} | Deletes an existing workspace |
+| GET /services/workspaces/{workspace_id}/providers | Gets the cloud providers registered in a workspace |
+| GET /services/workspaces/{workspace_id}/boxes | Gets the boxes in a workspace |
+| GET /services/workspaces/{workspace_id}/instances | Gets the instances in a workspace |
 
 
 ## GET /services/workspaces
@@ -98,7 +98,6 @@ ElasticBox-Release: 4.0
 | organizations | array | (Team Workspaces) List of the organizations' name of the workspace |
 | owner | string | Refers to the username that owns the workspace. Present in Team Workspaces |
 | saml_id | string | (optional) Account id if user logged in with SAML |
-| schema | string | Schema URI. For personal workspace:  “http://elasticbox.net/schemas/workspaces/personal” For team workspace:  “http://elasticbox.net/schemas/workspaces/team” |
 | support_user_created | boolean | True if support CAM user for this workspace has been created and is ready |
 | take_tour | boolean | If true, the user has dismissed the tour popup |
 | type | string | Workspace type. Can be personal or team. Users can edit personal workspace as long as schemas are valid and the user has privileges. |
@@ -195,7 +194,6 @@ ElasticBox-Release: 4.0
 |------| ---- | ----------- | ---- |
 | costcenter | string | Cost center id | Yes |
 | name | string | Workspace name | Yes |
-| schema | string | Schema Url. For example, http://elasticbox.net/schemas/workspaces/team | Yes |
 
 ### Response
 #### Normal Response Codes
@@ -216,7 +214,6 @@ ElasticBox-Release: 4.0
 | members | array | Lists members of a team workspace. |
 | name | string | Workspace name |
 | organizations | array | List of organization names |
-| schema | string | Schema URI. Either “http://elasticbox.net/schemas/workspaces/personal” or “http://elasticbox.net/schemas/workspaces/team” |
 | type | string | Workspace type. Can be personal or team. Users can edit personal workspace as long as schemas are valid and the user has privileges. |
 | updated | string | Update date |
 | uri | string | Url to access the workspace |
@@ -292,7 +289,6 @@ ElasticBox-Release: 4.0
 | members | array | Lists members of a team workspace |
 | name | string | Workspace name |
 | organizations | array | List of organization names |
-| schema | string | Schema URI. Either “http://elasticbox.net/schemas/workspaces/personal” or “http://elasticbox.net/schemas/workspaces/team” |
 | type | string | Workspace type. Can be personal or team. Users can edit personal workspace as long as schemas are valid and the user has privileges. |
 | updated | string | Update date |
 | uri | string | Url to access the workspace |
@@ -358,7 +354,6 @@ ElasticBox-Release: 4.0
 | members | array | List of objects representing the members (other workspaces) added to this workspace | No |
 | name | string | New workspace name | Yes |
 | organizations | array | List of organization names  | Yes |
-| schema | string | Workspace schema uri. Schema URI. Either “http://elasticbox.net/schemas/workspaces/personal” or “http://elasticbox.net/schemas/workspaces/team” | Yes |
 | type | string | Workspace type. Can be personal or team. Users can edit personal workspace as long as schemas are valid and the user has privileges. | No |
 | updated | string | Workspace update date | No |
 ```
@@ -405,7 +400,6 @@ ElasticBox-Release: 4.0
 | members | array | List of objects representing the members (other workspaces) added to this workspace |
 | name | string | New workspace name |
 | organizations | array | List of organization names  |
-| schema | string | Workspace schema uri. Schema URI. Either “http://elasticbox.net/schemas/workspaces/personal” or “http://elasticbox.net/schemas/workspaces/team” |
 | type | string | Workspace type. Can be personal or team. Users can edit personal workspace as long as schemas are valid and the user has privileges. |
 | updated | string | Workspace update date |
 | uri | string | Url to access the updated workspace view |
@@ -538,7 +532,7 @@ ElasticBox-Release: 4.0
 | members | array | List of members with access to the provider |
 | name | string | Provider name |
 | owner | string | Workspace id where the provider belongs to |
-| schema | string | Provider schema uri. For example, "http://elasticbox.net/schemas/aws/provider" [See provider API documentation for a full list of schema types](./api-providers.md)|
+| schema | string | Provider schema uri. |
 | services | array | List of services associated to the provider |
 | state | string | Provider state |
 | type | string | Provider type |
@@ -780,7 +774,7 @@ ElasticBox-Release: 4.0
 | id | string | Instance id |
 | is_deploy_only | boolean | If the instance is deploy only |
 | machine | object | Machine contained in the service machines list |
-| machine.name | string | Machine name |
+| <span>machine.name</span> | string | Machine name |
 | machine.state | string | Machine state, there are three possible states: processing, done and unavailable |
 | machine.workflow | array | List of workflow actions, each workflow action object contains three parameters: box, event and script |
 | members | array | List of members with access to the instance |
@@ -789,7 +783,7 @@ ElasticBox-Release: 4.0
 | policy_box | object | Instance policy box |
 | schema | string | Instance schema uri |
 | service | object | Instance service |
-| service.id | string | Service id |
+| <span>service.id</span> | string | Service id |
 | service.machines | array | List of service machines |
 | service.type | string | Required. Can be one of these types: Linux Compute, Windows Compute and CloudFormation Service |
 | state | string | Instance state, there are three possible states: processing, done and unavailable |
@@ -908,7 +902,7 @@ ElasticBox-Release: 4.0
 
 ### Contacting Cloud Application Manager Support
 
-We’re sorry you’re having an issue in [Cloud Application Manager](https://www.ctl.io/cloud-application-manager/). Please review the [troubleshooting tips](https://www.ctl.io/knowledge-base/cloud-application-manager/troubleshooting/troubleshooting-tips/), or contact [Cloud Application Manager support](mailto:incident@CenturyLink.com) with details and screenshots where possible.
+We’re sorry you’re having an issue in [Cloud Application Manager](https://www.ctl.io/cloud-application-manager/). Please contact [Cloud Application Manager support](mailto:incident@lumen.com) with details and screenshots where possible.
 
 For issues related to API calls, send the request body along with details related to the issue.
 

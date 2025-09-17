@@ -13,29 +13,29 @@
 
 | Resource | Description |
 |----------|-------------|
-| [GET /services/instances](#get-servicesinstances) | Gets the list of instances. |
-| [POST /services/instances](#post-servicesinstances) | Creates a new instance, imports an unregistered instance or instances based on schema. |
+| GET /services/instances | Gets the list of instances. |
+| POST /services/instances | Creates a new instance, imports an unregistered instance or instances based on schema. |
 
 **Perform Instance Operations**
 
 | Resource | Description |
 |----------|-------------|
-| [GET /services/instances/{instance_id}](#get-servicesinstancesinstance_id)| Fetches an existing instance.|
-| [PUT /services/instances/{instance_id}](#put-servicesinstancesinstance_id) | Updates an existing instance. |
-| [DELETE /services/instances/{instance_id}](#delete-servicesinstancesinstance_id) | Terminates, force-terminates, or deletes an existing instance.|
-| [GET /services/instances/{instance_id}/service](#get-servicesinstancesinstance_idservice) | Gets the instance service. |
-| [GET /services/instances/{instance_id}/activity](#get-servicesinstancesinstance_idactivity) | Gets all activity logs from the executed operations of an instance. |
-| [GET /services/instances/{instance_id}/machine_logs](#get-servicesinstancesinstance_idmachine_logs) | Gets the logs of all machines of a deployed instance. |
-| [GET /services/instances/{instance_id}/bindings](#get-servicesinstancesinstance_idbindings) | Gets the binding of a instance. |
-| [GET /services/instances/{instance_id}/operations](#get-servicesinstancesinstance_idoperations) | Gets all operations of an instance. |
-| [PUT /services/instances/{instance_id}/deploy](#put-servicesinstancesinstance_iddeploy) | Re-deploy an existing instance. |
-| [PUT /services/instances/{instance_id}/poweron](#put-servicesinstancesinstance_idpoweron) | Power-on an existing instance. |
-| [PUT /services/instances/{instance_id}/shutdown](#put-servicesinstancesinstance_idshutdown) | 	Shutdown an existing instance. |
-| [PUT /services/instances/{instance_id}/reinstall](#put-servicesinstancesinstance_idreinstall) | Re-install an existing instance. |
-| [PUT /services/instances/{instance_id}/reconfigure](#put-servicesinstancesinstance_idreconfigure) | Re-configure an existing instance. |
-| [PUT /services/instances/{instance_id}/import](#put-servicesinstancesinstance_idimport) | Retry to import an unregistered instance. |
-| [PUT /services/instances/{instance_id}/cancel_import](#put-servicesinstancesinstance_idcancel_import) | Cancel a failed import of an unregistered instance. |
-| [PUT /services/instances/{instance_id}/abort_operation](#put-servicesinstancesinstance_idabort_operation) | Abort executing scripts of a processing instance operation. |
+| GET /services/instances/{instance_id}| Fetches an existing instance.|
+| PUT /services/instances/{instance_id} | Updates an existing instance. |
+| DELETE /services/instances/{instance_id} | Terminates, force-terminates, or deletes an existing instance.|
+| GET /services/instances/{instance_id}/service | Gets the instance service. |
+| GET /services/instances/{instance_id}/activity | Gets all activity logs from the executed operations of an instance. |
+| GET /services/instances/{instance_id}/machine_logs | Gets the logs of all machines of a deployed instance. |
+| GET /services/instances/{instance_id}/bindings | Gets the binding of a instance. |
+| GET /services/instances/{instance_id}/operations | Gets all operations of an instance. |
+| PUT /services/instances/{instance_id}/deploy | Re-deploy an existing instance. |
+| PUT /services/instances/{instance_id}/poweron | Power-on an existing instance. |
+| PUT /services/instances/{instance_id}/shutdown | 	Shutdown an existing instance. |
+| PUT /services/instances/{instance_id}/reinstall | Re-install an existing instance. |
+| PUT /services/instances/{instance_id}/reconfigure | Re-configure an existing instance. |
+| PUT /services/instances/{instance_id}/import | Retry to import an unregistered instance. |
+| PUT /services/instances/{instance_id}/cancel_import | Cancel a failed import of an unregistered instance. |
+| PUT /services/instances/{instance_id}/abort_operation | Abort executing scripts of a processing instance operation. |
 
 ## GET /services/instances
 Gets instances that are accessible in the personal workspace of the authenticated user.
@@ -87,11 +87,11 @@ ElasticBox-Release: 4.0
 | name | string | Instance name. |
 | service | object | Instance service. |
 | service.type | string | Can be one of these types: Linux Compute, Windows Compute and CloudFormation Service. |
-| service.id | string | Service unique identifier. |
+| <span>service.id</span> | string | Service unique identifier |
 | service.machines | array | List of service machines |
 | machine | object | Machine contained in the service machines list. |
 | machine.state | string | Machine state, there are three possible states: processing, done and unavailable. |
-| machine.name | string | Machine name. |
+| <span>machine.name</span> | string | Machine name |
 | machine.workflow | array | List of workflow actions, where each workflow action object contains three parameters: box, event, and script. |
 | workflow.box | string | Workflow action box. |
 | workflow.event | string | Workflow action event. |
@@ -414,11 +414,11 @@ The next example its the request schedules the new instance.
 |name | string | Instance name. |
 | service | Object | Instance service. |
 | service.type | string | Can be one of these types: Linux Compute, Windows Compute and CloudFormation Service. |
-| service.id | string | Service type. |
+| <span>service.id</span> | string | Service type |
 | service.machines | array | List of service machines. |
 | machine | object | Machine contained in the service machines list. |
 | machine.state | string | Machine state, there are three possible states: processing , done and unavailable. |
-| machine.name | string | Machine name. |
+| <span>machine.name</span> | string | Machine name |
 | machine.workflow | array | 	List of workflow actions, where each workflow action object contains three parameters: box, event, and script. |
 | workflow.box | string | Workflow action box. |
 | workflow.event | string |	Workflow action event.|
@@ -436,7 +436,7 @@ The next example its the request schedules the new instance.
 | box.variables | array | 	List of box variables, each variable object contains the parameters: type, name, value, visibility, required, etc..  |
 | box.created | string | Creation date. |
 | box.uri | string | Box uri. |
-| box.id | array | Box unique identifier. |
+| <span>box.id</span> | array | Box unique identifier. |
 | box.schema | string | Box schema uri. |
 | box.members | array | List of Box members. |
 | box.owner | string | Box owner. |
@@ -445,7 +445,7 @@ The next example its the request schedules the new instance.
 | box.icon | string | Box icon uri. |
 | box.events | array | 	List of Box events, there may be nine event lists: configure, dispose, install, post_configure, post_dispose, post_install, post_start, post_stop, start, and stop. |
 | box.event | object | Event contained in one of the event lists, each event object contains the parameters: url , upload_date , length and destination_path. |
-| box.name | string | Box name. |
+| <span>box.name</span> | string | Box name |
 | uri | string | instance uri. |
 | state | string | Instance state, there are three possible states: processing , done and unavailable |
 | members | array | Instance members. |
@@ -719,11 +719,11 @@ unregistered instances:
 |name | string | Instance name. |
 | service | Object | Instance service. |
 | service.type | string | Can be one of these types: Linux Compute, Windows Compute and CloudFormation Service. |
-| service.id | string | Service type. |
+| <span>service.id</span> | string | Service type |
 | service.machines | array | List of service machines. |
 | machine | object | Machine contained in the service machines list. |
 | machine.state | string | Machine state, there are three possible states: processing , done and unavailable. |
-| machine.name | string | Machine name. |
+| <span>machine.name</span> | string | Machine name |
 | machine.workflow | array | 	List of workflow actions, where each workflow action object contains three parameters: box, event, and script. |
 | workflow.box | string | Workflow action box. |
 | workflow.event | string |	Workflow action event.|
@@ -741,7 +741,7 @@ unregistered instances:
 | box.variables | array | 	List of box variables, each variable object contains the parameters: type, name, value, visibility, required, etc.. |
 | box.created | string | Creation date. |
 | box.uri | string | Box uri. |
-| box.id | array | Box unique identifier. |
+| <span>box.id</span> | array | Box unique identifier |
 | box.schema | string | Box schema uri. |
 | box.members | array | List of Box members. |
 | box.owner | string | Box owner. |
@@ -750,7 +750,7 @@ unregistered instances:
 | box.icon | string | Box icon uri. |
 | box.events | array | 	List of Box events, there may be nine event lists: configure, dispose, install, post_configure, post_dispose, post_install, post_start, post_stop, start, and stop. |
 | box.event | object | Event contained in one of the event lists, each event object contains the parameters: url , upload_date , length and destination_path. |
-| box.name | string | Box name. |
+| <span>box.name</span> | string | Box name |
 | uri | string | instance uri. |
 | state | string | Instance state, there are three possible states: processing , done and unavailable |
 | members | array | Instance members. |
@@ -962,11 +962,11 @@ ElasticBox-Release: 4.0
 | name | string | Instance name. |
 | service | object | Instance service. |
 | service.type | string | Can be one of these types: Linux Compute, Windows Compute and CloudFormation Service. |
-| service.id | string | Service type. |
+| <span>service.id</span> | string | Service type |
 | service.machines | array | List of service machines |
 | machine | object | Machine contained in the service machines list. |
 | machine.state | string | Machine state, there are three possible states: processing , done and unavailable. |
-| machine.name | string | Machine name. |
+| <span>machine.name</span> | string | Machine name |
 | machine.workflow | array | List of workflow actions, where each workflow action object contains three parameters: box, event, and script. |
 | workflow.box | string | Workflow action box. |
 | workflow.event | string | Workflow action event. |
@@ -984,7 +984,7 @@ ElasticBox-Release: 4.0
 | box.variables | array | 	List of box variables, each variable object contains the parameters: type, name, value, visibility, required, etc.. |
 | box.created | string | Creation date. |
 | box.uri | string | Box uri. |
-| box.id | array | Box unique identifier. |
+| <span>box.id</span> | array | Box uunique identifier |
 | box.schema | string | Box schema uri. |
 | box.members | array | List of Box members. |
 | box.owner | string | Box owner. |
@@ -993,7 +993,7 @@ ElasticBox-Release: 4.0
 | box.icon | string | Box icon uri. |
 | box.events | array | 	List of Box events, there may be nine event lists: configure, dispose, install, post_configure, post_dispose, post_install, post_start, post_stop, start, and stop. |
 | box.event | object | Event contained in one of the event lists, each event object contains the parameters: url , upload_date , length and destination_path. |
-| box.name | string | Box name. |
+| <span>box.name</span> | string | Box name |
 | policy_box | object | specific deployment policy for a provider |
 | policy_box.provider_id | string | provider id |
 | policy_box.automatic_updates | string | One of them: mayor, minor, patch, off |
@@ -1202,11 +1202,11 @@ ElasticBox-Release: 4.0
 | name | string | Instance name. | Yes |
 | service | object | Instance service. | Yes |
 | service.type | string | Can be one of these types: Linux Compute, Windows Compute and CloudFormation Service. | Yes |
-| service.id | string | Service type. | Yes |
+| <span>service.id</span> | string | Service type. | Yes |
 | service.machines | array | List of service machines | |
 | machine | object | Machine contained in the service machines list. | |
 | machine.state | string | Machine state, there are three possible states: processing , done and unavailable. | |
-| machine.name | string | Machine name. | |
+| <span>machine.name</span> | string | Machine name | |
 | machine.workflow | array | List of workflow actions, where each workflow action object contains three parameters: box, event, and script. | |
 | workflow.box | string | Workflow action box. | |
 | workflow.event | string | Workflow action event. | |
@@ -1224,7 +1224,7 @@ ElasticBox-Release: 4.0
 | box.variables | array | 	List of box variables, each variable object contains the parameters: type, name, value, visibility, required, etc.. | |
 | box.created | string | Creation date. | |
 | box.uri | string | Box uri. | |
-| box.id | array | Box unique identifier. | Yes |
+| <span>box.id</span> | array | Box unique identifier | |
 | box.schema | string | Box schema uri. | Yes |
 | box.members | array | List of Box members. | |
 | box.owner | string | Box owner. | Yes |
@@ -1233,7 +1233,7 @@ ElasticBox-Release: 4.0
 | box.icon | string | Box icon uri. | |
 | box.events | array | 	List of Box events, there may be nine event lists: configure, dispose, install, post_configure, post_dispose, post_install, post_start, post_stop, start, and stop. | |
 | box.event | object | Event contained in one of the event lists, each event object contains the parameters: url , upload_date , length and destination_path. | |
-| box.name | string | Box name. | Yes |
+| <span>box.name</span> | string | Box name | Yes |
 | policy_box | object | specific deployment policy for a provider | |
 | policy_box.provider_id | string | provider id | |
 | policy_box.automatic_updates | string | One of them: mayor, minor, patch, off | |
@@ -1382,11 +1382,11 @@ ElasticBox-Release: 4.0
 |name | string | Instance name. |
 | service | Object | Instance service. |
 | service.type | string | Can be one of these types: Linux Compute, Windows Compute and CloudFormation Service. |
-| service.id | string | Service type. |
+| <span>service.id</span> | string | Service type |
 | service.machines | array | List of service machines. |
 | machine | object | Machine contained in the service machines list. |
 | machine.state | string | Machine state, there are three possible states: processing , done and unavailable. |
-| machine.name | string | Machine name. |
+| <span>machine.name</span> | string | Machine name |
 | machine.workflow | array | 	List of workflow actions, where each workflow action object contains three parameters: box, event, and script. |
 | workflow.box | string | Workflow action box. |
 | workflow.event | string |	Workflow action event.|
@@ -1404,7 +1404,7 @@ ElasticBox-Release: 4.0
 | box.variables | array | 	List of box variables, each variable object contains the parameters: type, name, value, visibility, required, etc.. |
 | box.created | string | Creation date. |
 | box.uri | string | Box uri. |
-| box.id | array | Box unique identifier. |
+| <span>box.id</span> | array | Box unique identifier |
 | box.schema | string | Box schema uri. |
 | box.members | array | List of Box members. |
 | box.owner | string | Box owner. |
@@ -1413,7 +1413,7 @@ ElasticBox-Release: 4.0
 | box.icon | string | Box icon uri. |
 | box.events | array | 	List of Box events, there may be nine event lists: configure, dispose, install, post_configure, post_dispose, post_install, post_start, post_stop, start, and stop. |
 | box.event | object | Event contained in one of the event lists, each event object contains the parameters: url , upload_date , length and destination_path. |
-| box.name | string | Box name. |
+| <span>box.name</span> | string | Box name |
 | policy_box | object | specific deployment policy for a provider |
 | policy_box.provider_id | string | provider id |
 | policy_box.automatic_updates | string | One of them: mayor, minor, patch, off |
@@ -1673,7 +1673,7 @@ ElasticBox-Release: 4.0
 | id | string | Instance unique identifier. |
 | machines | array | List of service machines. |
 | machine.token | string | Machine token. |
-| machine.name | string | Machine name. |
+| <span>machine.name</span> | string | Machine name |
 | machine.address | array | The array contains the public and private address. |
 | machine.agent_version | array | Machine agent version. |
 | machine.external_id | array | Machine external id. |
@@ -2177,11 +2177,11 @@ ElasticBox-Release: 4.0
 | name | string | Instance name. |
 | service| Object | Instance service. |
 | service.type | string | Can be one of these types: Linux Compute, Windows Compute and CloudFormation Service. |
-| service.id | string | Service type. |
+| <span>service.id</span>| string | Service type |
 | service.machines | array | List of service machines |
 | machine | object | Machine contained in the service machines list. |
 | machine.state | string | Machine state, there are three possible states: processing , done and unavailable. |
-| machine.name | string | Machine name. |
+| <span>machine.name</span> | string | Machine name |
 | machine.workflow | array | List of workflow actions, where each workflow action object contains three parameters: box, event, and script. |
 | workflow.box | string | Workflow action box. |
 | workflow.event | string | Workflow action event. |

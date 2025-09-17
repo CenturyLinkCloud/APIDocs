@@ -12,21 +12,21 @@ Manage and perform provider actions.
 
 |  Resource  |  Description |
 |------------|--------------|
-| [POST /services/providers](#post-servicesproviders) | Creates a new provider account in Cloud Application Manager and gets the status of the provider. |
-| [GET /services/providers](#get-servicesproviders) | Gets the list of providers. |
-| [GET /services/providers/{provider_id}](#get-servicesprovidersprovider_id) | Fetches an existing provider. |
-| [PUT /services/providers/{provider_id}](#put-servicesprovidersprovider_id) | Updates an existing provider. |
-| [DELETE /services/providers/{provider_id}](#delete-servicesprovidersprovider_id) | Deletes an existing provider.|
+| POST /services/providers | Creates a new provider account in Cloud Application Manager and gets the status of the provider. |
+| GET /services/providers | Gets the list of providers. |
+| GET /services/providers/{provider_id} | Fetches an existing provider. |
+| PUT /services/providers/{provider_id} | Updates an existing provider. |
+| DELETE /services/providers/{provider_id} | Deletes an existing provider.|
 
 ### Provider Operations
 
 |  Resource  |  Description |
 |------------|--------------|
-| [PUT /services/providers/{provider_id}/sync](#put-servicesprovidersprovider_idsync) |Syncs an existing provider.|
-| [GET /services/providers/{provider_id}/logs](#get-servicesprovidersprovider_idlogs) | Gets the logs of a provider. |
-| [GET /services/providers/{provider_id}/unregisted-instances](#get-servicesprovidersprovider_idunregisted-instances) | Gets the unregistered instances of a provider. |
-| [POST /services/providers/{provider_id}/images](#post-servicesprovidersprovider_idimages) | Adds a new machine image to a provider. |
-| [DELETE /services/providers/{provider_id}/images/{machine_image_id}](#delete-servicesprovidersprovider_idimagesmachine_image_id) | Deletes an existing machine image from a provider. |
+| PUT /services/providers/{provider_id}/sync |Syncs an existing provider.|
+| GET /services/providers/{provider_id}/logs | Gets the logs of a provider. |
+| GET /services/providers/{provider_id}/unregisted-instances | Gets the unregistered instances of a provider. |
+| POST /services/providers/{provider_id}/images | Adds a new machine image to a provider. |
+| DELETE /services/providers/{provider_id}/images/{machine_image_id} | Deletes an existing machine image from a provider. |
 
 
 ## POST /services/providers
@@ -87,7 +87,7 @@ ElasticBox-Release: 4.0
 #### Amazon Web Services Gov request parameters
 |  Parameter  |      Type     |   Description   |
 |-------------|---------------|-----------------|
-| credentials | object | Required (key-secret or role). Contains the credential object, which is either the [AWS role ARN name](https://www.ctl.io/knowledge-base/cloud-application-manager/deploying-anywhere/using-your-aws-account/) if using Cloud Application Manager as a SaaS or the key and secret if using Cloud Application Manager as an appliance. |
+| credentials | object | Required (key-secret or role). Contains the credential object, which is either the AWS role ARN name if using Cloud Application Manager as a SaaS or the key and secret if using Cloud Application Manager as an appliance. |
 
 #### Amazon Web Services Gov request body
 ```
@@ -1749,7 +1749,7 @@ if publisher has offers
 
 ### Contacting Cloud Application Manager Support
 
-We’re sorry you’re having an issue in [Cloud Application Manager](https://www.ctl.io/cloud-application-manager/). Please review the [troubleshooting tips](https://www.ctl.io/knowledge-base/cloud-application-manager/troubleshooting/troubleshooting-tips/), or contact [Cloud Application Manager support](mailto:incident@CenturyLink.com) with details and screenshots where possible.
+We’re sorry you’re having an issue in [Cloud Application Manager](https://www.ctl.io/cloud-application-manager/). Please contact [Cloud Application Manager support](mailto:incident@lumen.com) with details and screenshots where possible.
 
 For issues related to API calls, send the request body along with details related to the issue.
 
