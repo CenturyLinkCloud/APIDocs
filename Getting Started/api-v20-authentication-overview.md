@@ -1,6 +1,6 @@
 {{{
   "title": "API v2.0 Authentication Overview",
-  "description": "The next API v2.0 Authentication Oveview."
+  "description": "The next API v2.0 Authentication Oveview for CAM"
   "date": "10-13-2014",
   "author": "Richard Seroter",
   "attachments": []
