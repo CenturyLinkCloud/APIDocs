@@ -1,5 +1,6 @@
 {{{ "title": "API Overview and Access",
 "date": "09-01-2016",
+"description": "API Authentication Overview Original"
 "author": "",
 "attachments": [],
 "sticky": true,
