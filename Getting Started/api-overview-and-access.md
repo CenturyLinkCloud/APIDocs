@@ -1,5 +1,5 @@
 {{{ "title": "API Overview and Access",
-"description": "Cloud Application Manager API Overview."
+"description": "Cloud Application Manager original API Overview."
 "date": "09-01-2016",
 "author": "",
 "attachments": [],
