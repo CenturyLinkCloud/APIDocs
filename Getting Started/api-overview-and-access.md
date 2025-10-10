@@ -1,5 +1,5 @@
 {{{ "title": "API Overview and Access",
-"description": "API Overview and Access for CAM",
+"description": "API v2.0 Authentication Overview.",
 "date": "09-01-2016",
 "author": "",
 "attachments": [],
