@@ -1,30 +1,15 @@
 {{{
   "category_order": [
-    "Getting Started",
-    "Link Definitions",
-    "Alert Policies",
+    "Overview",
     "Authentication",
-    "Autoscale Policies",
+    "Account",
     "Billing",
-    "Custom Fields",
-    "Data Centers",
-    "Firewall",
-    "Groups",
-    "Group Actions",
-    "Instances",
-    "Intrusion Prevention (IPS)",
-    "LBaaS",
-    "Networks",
-    "Patching",
-    "Power Operations",
-    "Public IP",
+    "Blueprint",
+    "Group",
+    "Network",
     "Queue",
-    "Relational Database (RDBS)",
-    "Servers",
-    "Server Actions",
-    "Shared Load Balancers",
-    "Simple Backup",
-    "Site-to-Site VPN",
-    "Webhooks"
+    "Server",
+    "SMTP Relay",
+    "Users"
   ]
 }}}
